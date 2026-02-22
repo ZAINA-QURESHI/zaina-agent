@@ -1,0 +1,39 @@
+name: Zaina Agent
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-zaina:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install google-genai ddgs beautifulsoup4 requests
+
+      - name: Run Zaina Agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Zaina-Agent"
+          git config user.email "zaina-agent@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Zaina update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push

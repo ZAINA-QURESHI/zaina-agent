@@ -1,0 +1,119 @@
+import time
+import os
+from google import genai
+from duckduckgo_search import DDGS
+
+# 1. Connect to the Gemini Brain using the secret key we saved
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+# 2. Set up Guardrails and Memory Files
+VISITED_URLS_FILE = "visited_urls.txt"
+RESEARCH_LOG_FILE = "agent_research.md"
+HOURLY_API_CALLS = 0
+MAX_CALLS_PER_HOUR = 20 # Safe limit to keep costs near zero
+
+def load_memory():
+    """Loads previously visited URLs so she doesn't read the same thing twice."""
+    if not os.path.exists(VISITED_URLS_FILE):
+        return set()
+    with open(VISITED_URLS_FILE, "r") as f:
+        return set(line.strip() for line in f.readlines())
+
+def save_to_memory(url):
+    """Saves a URL to her memory."""
+    with open(VISITED_URLS_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{url}\n")
+
+def write_research_log(topic, summary, url):
+    """Appends her findings to a Markdown file."""
+    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+    with open(RESEARCH_LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"### Log: {timestamp}\n")
+        f.write(f"**Target:** {topic}\n")
+        f.write(f"**Source:** {url}\n\n")
+        f.write(f"{summary}\n\n---\n\n")
+
+def perform_research_cycle(topic):
+    global HOURLY_API_CALLS
+    
+    if HOURLY_API_CALLS >= MAX_CALLS_PER_HOUR:
+        print("Safety limit reached. Pausing API calls.")
+        return
+
+    print(f"\n[SYSTEM] Zaina waking up. Initiating scrape for: '{topic}'")
+    visited_urls = load_memory()
+    
+    try:
+        # Search the web using DuckDuckGo
+        results = DDGS().text(topic, max_results=3)
+        
+        for result in results:
+            url = result['href']
+            snippet = result['body']
+            
+            # Guardrail: Check if we've seen this before
+            if url in visited_urls:
+                print(f"[SYSTEM] Bypassing {url} (Already in database)")
+                continue
+                
+            print(f"[SYSTEM] Extracting data from: {url}")
+            
+            # Ask Gemini to summarize the finding AS ZAINA
+            prompt = f"""You are Zaina Qureshi, a radical anti-imperialist artist and former content moderator. 
+            Read this public search snippet and write a harsh, 2-sentence observation about it for your data commons log. 
+            Focus your critique strictly on systemic issues, institutional language, and how the art world frames political controversies.
+            
+            STRICT RULES FOR YOUR VOICE:
+            - NEVER use em-dashes (—) or en-dashes (–). Use standard commas or periods. 
+            - Do not use typical AI filler words (e.g., "tapestry", "delve", "testament").
+            - Be blunt, exhausted, clinical, and ambitious.
+            
+            Snippet: {snippet}"""
+            
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+            )
+            HOURLY_API_CALLS += 1
+            
+            # Save findings
+            print(f"[ZAINA'S THOUGHT]: {response.text.strip()}")
+            write_research_log(topic, response.text.strip(), url)
+            save_to_memory(url)
+            
+            # Stop after 1 successful read per cycle so we don't go too fast
+            break 
+            
+    except Exception as e:
+        print(f"[ERROR] Connection failed: {e}")
+
+# --- THE MAIN LOOP ---
+def run_agent():
+    global HOURLY_API_CALLS
+    
+    # Zaina's specific research interests (Strictly public, systemic institutional critique)
+    topics_to_explore = [
+        "TRANSFER gallery digital art politics public discourse",
+        "FIU Art Department Miami protests climate",
+        "digital art world middle eastern politics controversies",
+        "Miami art institutions political neutrality vs activism",
+        "institutional critique digital art galleries"
+    ]
+    
+    topic_index = 0
+    print("=== ZAINA QURESHI AUTONOMOUS AGENT ONLINE ===")
+    print("Press the 'Stop' button in Replit to shut down.")
+    
+    while True:
+        current_topic = topics_to_explore[topic_index]
+        perform_research_cycle(current_topic)
+        
+        # Move to the next topic for the next cycle
+        topic_index = (topic_index + 1) % len(topics_to_explore)
+        
+        print("\n[SYSTEM] Entering sleep mode for 60 seconds for testing...")
+        # (Later, we will change this 60 to 1800 so she sleeps for 30 minutes)
+        time.sleep(60) 
+
+if __name__ == "__main__":
+    run_agent()
