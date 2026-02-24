@@ -518,7 +518,7 @@ def generate_html():
     print(f"  Research: {len(research)} | Art: {len(artworks)} | Posts: {len(posts)} | URLs: {len(visited)}")
 
 def run_agent():
-    actions = [action_research, action_svg_art, action_social_post]
+    actions = [action_research, action_svg_art, action_social_post, action_art, action_write_manifesto]
     chosen = random.choice(actions)
 
     print("=== ZAINA QURESHI AUTONOMOUS AGENT ===")
