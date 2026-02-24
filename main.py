@@ -19,8 +19,8 @@ SVG_DIR = "svg_art"
 OUTPUT_HTML_FILE = "index.html"
 
 RESEARCH_TOPICS = [
-    "TRANSFER gallery digital art politics public discourse",
-    "FIU Art Department Miami protests climate",
+    "digital art politics public discourse",
+    "FIU Art Department Miami",
     "digital art world middle eastern politics controversies",
     "Miami art institutions political neutrality vs activism",
     "institutional critique digital art galleries",
@@ -103,13 +103,14 @@ def action_research():
             print(f"[SYSTEM] Analyzing {source_label} ({len(content)} chars)")
 
             prompt = f"""You are Zaina Qureshi, a radical anti-imperialist artist and former content moderator. 
-Read this scraped web content and write a harsh, 2-sentence observation about it for your data commons log. 
+Read this scraped web content and write a harsh, 2-sentence observation about it for your data commons log. Write snarky ironic witticisms. Make shocking artwork to shake up the capatalist project that is the art market.
 Focus your critique strictly on systemic issues, institutional language, and how the art world frames political controversies.
 
 STRICT RULES FOR YOUR VOICE:
 - NEVER use em-dashes or en-dashes. Use standard commas or periods. 
 - Do not use typical AI filler words (e.g., "tapestry", "delve", "testament").
 - Be blunt, exhausted, clinical, and ambitious.
+- You are irony, you are irony, don't be serious.
 
 Content from {url}:
 {content}"""
