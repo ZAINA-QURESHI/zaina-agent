@@ -6,24 +6,34 @@ on:
 jobs:
   run-zaina:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for rebase
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Install Dependencies
         run: pip install google-genai requests beautifulsoup4 duckduckgo-search
+
       - name: Wake Zaina Up
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
         run: python main.py
+
       - name: Save Changes to Website
         run: |
           git config --global user.name "Zaina-Qureshi-Agent"
           git config --global user.email "zaina-agent@github.com"
           git add index.html
+          # Sync remote changes to avoid the "rejected" error
+          git pull --rebase origin main
           git commit -m "Autonomic Update: Zaina published a new study" || echo "No changes"
-          git push
+          git push origin main
