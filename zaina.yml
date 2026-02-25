@@ -1,19 +1,17 @@
-name: Zaina Agent
+name: Zaina Autonomous Routine
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    - cron: '0 */4 * * *' # Every 4 hours
+  workflow_dispatch: # Allows you to trigger her manually from the Actions tab
 
 jobs:
-  run-zaina:
+  awaken:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write # Allows Zaina to push updates back to your repo
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -21,19 +19,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install google-genai ddgs beautifulsoup4 requests
+      - name: Install Dependencies
+        run: pip install google-genai
 
-      - name: Run Zaina Agent
+      - name: Zaina Generates Art
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python main.py
 
-      - name: Commit and push changes
+      - name: Commit and Push Changes
         run: |
-          git config user.name "Zaina-Agent"
-          git config user.email "zaina-agent@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "Zaina update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git config --global user.name "Zaina-Qureshi-Agent"
+          git config --global user.email "zaina-agent@github.com"
+          git add index.html
+          git commit -m "Autonomic Update: Zaina published a new study" || echo "No changes to commit"
           git push
