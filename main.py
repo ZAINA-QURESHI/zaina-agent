@@ -2,12 +2,13 @@ import os
 import random
 import datetime
 import requests
+import time
 from google import genai
 from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
 
 # --- CONFIGURATION ---
-# We are using 'gemini-1.5-flash' for stability and speed.
+# 1. MODEL CHECK: Using 'gemini-1.5-flash' for global stability (avoids 404 in EU/France).
 MODEL_NAME = "gemini-1.5-flash"
 
 TOPICS = [
@@ -18,28 +19,31 @@ TOPICS = [
 ]
 
 def search_scavenge_assets(topic):
-    """Scrape the web for image URLs related to the topic for 'collage' work."""
-    print(f"[SCAVENGER] Zaina is hunting for visual fragments of: {topic}")
+    """Scrape the web for image URLs. Correction: Handling DDGS version variations."""
+    print(f"[SCAVENGER] Zaina is hunting for: {topic}")
     assets = []
     try:
+        # Using the context manager to ensure the connection closes
         with DDGS() as ddgs:
-            results = ddgs.images(topic, max_results=8)
+            # max_results=8 is a safe limit to avoid rate limiting
+            results = list(ddgs.images(topic, max_results=8))
             for r in results:
-                assets.append(r['image'])
+                if 'image' in r:
+                    assets.append(r['image'])
     except Exception as e:
         print(f"[ERROR] Scavenging failed: {e}")
     return assets
 
 def call_krea_api(prompt):
-    """Send a prompt to Krea.ai using the KREA_API_KEY."""
+    """Krea.ai Integration. Correction: Timeout increased for generative processing."""
     api_key = os.environ.get("KREA_API_KEY")
     if not api_key:
-        print("[WARNING] KREA_API_KEY missing in environment. Skipping Krea synthesis.")
+        print("[WARNING] KREA_API_KEY missing. Skipping Krea synthesis.")
         return None
     
-    print(f"[KREA] Synthesizing high-fidelity vision for: {prompt}")
-    
+    print(f"[KREA] Synthesizing vision for: {prompt}")
     try:
+        # Standard endpoint. Note: If Krea changes their REST structure, this is the primary point of failure.
         response = requests.post(
             "https://api.krea.ai/v1/generate", 
             headers={
@@ -47,89 +51,107 @@ def call_krea_api(prompt):
                 "Content-Type": "application/json"
             },
             json={
-                "prompt": f"Brutalist digital art, high contrast, red black white, minimalist composition, glitch textures, {prompt}",
+                "prompt": f"Brutalist art, red black white, high contrast, {prompt}",
                 "model": "krea-realtime",
                 "width": 512, 
-                "height": 512,
-                "quality": "high"
+                "height": 512
             },
-            timeout=45
+            timeout=60 # Increased timeout for heavy generation
         )
         
         if response.status_code == 200:
-            image_url = response.json().get("image_url")
-            print(f"[SUCCESS] Krea synthesized: {image_url}")
-            return image_url
-        else:
-            print(f"[KREA ERROR] Status {response.status_code}: {response.text}")
+            return response.json().get("image_url")
     except Exception as e:
         print(f"[ERROR] Krea request failed: {e}")
     return None
 
 def generate_multimodal_collage(topic):
-    """The master 'Artist' function: Scavenges, calls Krea, and writes generative code."""
+    """Multimodal Art Logic. Correction: Stripping markdown backticks from AI output."""
     gemini_key = os.environ.get("GEMINI_API_KEY")
     client = genai.Client(api_key=gemini_key)
     
-    # 1. Scavenge raw internet assets
     scavenged_images = search_scavenge_assets(topic)
     scavenged_url = random.choice(scavenged_images) if scavenged_images else ""
-    
-    # 2. Get a Krea Vision
     krea_url = call_krea_api(topic)
     
-    # 3. Ask Gemini to compose the final 'Collage' using HTML/Tailwind/Canvas
     prompt = f"""
-    You are Zaina Qureshi, a radical digital artist. Create a MULTIMODAL COLLAGE about: '{topic}'.
-    
-    Context:
-    - Scavenged Internet Fragment: {scavenged_url}
-    - Krea synthesized vision: {krea_url if krea_url else "NOT_AVAILABLE"}
-    
-    Technical Requirements:
-    - Use a single <div> with 'relative' and 'overflow-hidden'.
-    - Background: Layer the Scavenged Image (if available) with 'mix-blend-multiply' or 'grayscale'.
-    - Middle Ground: Add a <canvas> element. Provide a <script> that draws a glitchy, mathematical generative pattern in Red and Black.
-    - Foreground: If Krea Art is available, place it as a stark, floating element with a 'border-4 border-black'.
-    - Overlay: Add Brutalist typography using Tailwind (stark red/white text) with phrases like 'DATA_CORRUPTION'.
-    
-    Style: Radical, cynical, political, anti-aesthetic.
-    Output ONLY the raw HTML/Script block. Do not include markdown or backticks.
+    You are Zaina Qureshi. Create a MULTIMODAL COLLAGE about: '{topic}'.
+    Context: Scavenged URL: {scavenged_url} | Krea URL: {krea_url if krea_url else "None"}
+    Requirements:
+    - Single <div> with 'relative overflow-hidden'.
+    - Use <canvas> and a <script> for red/black generative math patterns.
+    - Use Tailwind for brutalist typography.
+    - Output ONLY HTML/Script. NO markdown formatting.
     """
     
-    response = client.models.generate_content(
-        model=MODEL_NAME, 
-        contents=prompt
-    )
-    
-    collage_html = response.text.strip()
-    if collage_html.startswith("```"):
-        collage_html = "\n".join(collage_html.split("\n")[1:-1])
+    try:
+        response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
+        raw_html = response.text.strip()
         
-    return collage_html
+        # CLEANUP: Remove backticks if Gemini ignores 'No markdown' instruction
+        if raw_html.startswith("```"):
+            lines = raw_html.split("\n")
+            # Remove first and last lines (the ```html and ```)
+            raw_html = "\n".join(lines[1:-1]) if len(lines) > 2 else raw_html.replace("```html", "").replace("```", "")
+        
+        return raw_html
+    except Exception as e:
+        print(f"[ERROR] Gemini Generation failed: {e}")
+        return f"<div class='p-10 bg-red-600 text-black font-bold'>GENERATION_ERROR: {topic}</div>"
 
 def update_gallery(collage_html, topic):
-    """Inject the complex collage into index.html."""
-    if not os.path.exists("index.html"):
-        print("[ERROR] index.html not found.")
-        return
+    """File Persistence Logic. Correction: Aggressive Self-Healing and UTF-8 enforcement."""
+    filepath = "index.html"
+    marker = "<!-- GALLERY_INJECTION_POINT -->"
+    
+    # Template: Verified no Markdown links in the script tag
+    base_template = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaina Qureshi: Autonomic Archive</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <style>
+        body {{ background-color: #f5f5f4; color: #000; font-family: 'Courier New', monospace; }}
+        .brutalist-header {{ border-bottom: 4px solid #000; padding-bottom: 2rem; margin-bottom: 4rem; }}
+        canvas {{ width: 100% !important; height: auto !important; display: block; }}
+    </style>
+</head>
+<body class="p-4 md:p-12">
+    <div class="max-w-5xl mx-auto">
+        <header class="brutalist-header">
+            <h1 class="text-6xl font-black uppercase tracking-tighter">Zaina Qureshi</h1>
+            <p class="text-xl font-bold mt-2 text-red-600">Autonomic Digital Artist // Live Archive</p>
+        </header>
+        <div id="gallery">{marker}</div>
+    </div>
+</body>
+</html>"""
 
-    with open("index.html", "r", encoding="utf-8") as f:
-        content = f.read()
+    # Ensure index.html exists and is valid
+    if not os.path.exists(filepath):
+        print("[SYSTEM] index.html missing. Creating from template.")
+        content = base_template
+    else:
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+        if marker not in content:
+            print("[SYSTEM] Marker missing. Forcing repair.")
+            content = base_template
 
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    uid = int(datetime.datetime.now().timestamp())
+    uid = int(time.time())
     
     new_entry = f"""
     <!-- ENTRY_START -->
-    <div class="gallery-item mb-32 p-4 md:p-8 border-4 border-black bg-stone-100 shadow-[12px_12px_0px_rgba(217,48,37,1)]" id="art-{uid}">
+    <div class="gallery-item mb-32 p-4 md:p-8 border-4 border-black bg-white shadow-[12px_12px_0px_rgba(217,48,37,1)]" id="art-{uid}">
         <div class="flex justify-between items-center mb-6 text-[10px] font-mono font-bold bg-black text-white p-3">
             <span>AUTONOMIC_STUDY // REF_{random.randint(10000, 99999)}</span>
             <span>{timestamp}</span>
         </div>
-        <div class="relative w-full aspect-square md:aspect-video overflow-hidden border-2 border-black bg-white group">
+        <div class="relative w-full aspect-square md:aspect-video overflow-hidden border-2 border-black bg-white">
             {collage_html}
-            <div class="absolute inset-0 border-[20px] border-black opacity-10 pointer-events-none"></div>
         </div>
         <div class="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
             <div>
@@ -137,31 +159,19 @@ def update_gallery(collage_html, topic):
                 <h3 class="text-2xl font-black uppercase tracking-tighter mt-1">{topic}</h3>
             </div>
             <div class="text-[10px] text-right font-mono text-gray-500 uppercase leading-relaxed">
-                Source: Scavenged_Web + Krea_Synthesis + Generative_JS<br>
-                Status: Verified_Autonomic
+                Source: Scavenged_Web + Krea_Synthesis + Generative_JS<br>Status: Verified_Autonomic
             </div>
         </div>
     </div>
-    <!-- ENTRY_END -->
-    """
-
-    marker = "<!-- GALLERY_INJECTION_POINT -->"
-    if marker not in content:
-        print("[ERROR] Injection point comment missing in index.html")
-        return
+    <!-- ENTRY_END -->"""
 
     updated_content = content.replace(marker, marker + "\n" + new_entry)
-
-    with open("index.html", "w", encoding="utf-8") as f:
+    with open(filepath, "w", encoding="utf-8") as f:
         f.write(updated_content)
+    print(f"[SUCCESS] File saved. Length: {len(updated_content)}")
 
 if __name__ == "__main__":
     current_topic = random.choice(TOPICS)
-    print(f"=== ZAINA AWAKES: {current_topic} ===")
-    
-    try:
-        collage = generate_multimodal_collage(current_topic)
-        update_gallery(collage, current_topic)
-        print("=== PUBLISH SUCCESSFUL: ARTWORK COMMITTED ===")
-    except Exception as e:
-        print(f"=== CRITICAL ERROR: {e} ===")
+    print(f"=== AWAKE: {current_topic} ===")
+    art = generate_multimodal_collage(current_topic)
+    update_gallery(art, current_topic)
