@@ -1,174 +1,167 @@
 import os
 import random
-import time
+import datetime
 import requests
 from google import genai
-from ddgs import DDGS
-from github import Github
 from bs4 import BeautifulSoup
+from duckduckgo_search import DDGS
 
-# ==========================================
-# ZAINA'S SETTINGS (Adjust these to change her!)
-# ==========================================
-# Add new interests here to shift her focus:
-CREATIVE_INTERESTS = [
-    "glitch art as political resistance",
-    "the aesthetics of digital decay",
-    "anti-colonial 3D modeling",
-    "generative poetry about surveillance",
-    "brutalist architecture in the metaverse",
-    "the carbon footprint of NFT ghosts"
+# --- CONFIGURATION ---
+# We are using 'gemini-1.5-flash' for stability and speed.
+MODEL_NAME = "gemini-1.5-flash"
+
+TOPICS = [
+    "algorithmic surveillance", "digital decay", "brutalist architecture",
+    "decolonizing the cloud", "glitch aesthetics", "data sovereignty",
+    "the ghost in the machine", "metaspace boundaries", "post-human archive",
+    "the architecture of noise", "silicon colonialism"
 ]
 
-# Personality weights:
-# If you want MORE research, add "research" multiple times to this list.
-# If you want NO research, remove "research" entirely.
-ACTIONS = ["krea_art", "svg_art", "social", "research"]
-
-# ==========================================
-# SECRETS & CONNECTIONS
-# ==========================================
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-KREA_API_KEY = os.environ.get("KREA_API_KEY")
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-
-# Initialize Gemini Client
-client = genai.Client(api_key=GEMINI_API_KEY)
-
-def generate_html_update(new_entry_html):
-    """Updates the index.html file with a new entry at the top."""
-    filepath = "index.html"
-    
-    # Simple template if file doesn't exist
-    if not os.path.exists(filepath):
-        content = """<!DOCTYPE html>
-<html>
-<head>
-    <title>Zaina Qureshi: Autonomic Feed</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { background: #0a0a0a; color: #d4d4d4; font-family: 'Courier New', monospace; line-height: 1.6; padding: 5vw; }
-        h1 { border-bottom: 2px solid red; padding-bottom: 10px; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
-        .entry { border-left: 3px solid #333; padding-left: 20px; margin-bottom: 50px; animation: fadeIn 1s; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        h3 { color: red; margin-bottom: 5px; }
-        .timestamp { font-size: 0.8em; color: #666; margin-bottom: 15px; }
-        svg { background: #000; display: block; margin: 20px 0; max-width: 100%; height: auto; border: 1px solid #222; }
-        a { color: red; text-decoration: none; border-bottom: 1px dotted red; }
-    </style>
-</head>
-<body>
-    <h1>Zaina Qureshi: Autonomic Log</h1>
-    <div id='feed'></div>
-</body>
-</html>"""
-    else:
-        with open(filepath, "r", encoding="utf-8") as f:
-            content = f.read()
-
-    # Insert the new entry at the top of the feed
-    updated_content = content.replace("<div id='feed'>", f"<div id='feed'>\n{new_entry_html}")
-    
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(updated_content)
-
-def perform_research(topic):
-    """Uses DuckDuckGo to find info and Gemini to summarize it."""
-    print(f"[SYSTEM] Zaina is digging into: {topic}")
+def search_scavenge_assets(topic):
+    """Scrape the web for image URLs related to the topic for 'collage' work."""
+    print(f"[SCAVENGER] Zaina is hunting for visual fragments of: {topic}")
+    assets = []
     try:
         with DDGS() as ddgs:
-            results = list(ddgs.text(topic, max_results=3))
-            if not results:
-                return
-            
-            # Pick the first interesting result
-            target = results[0]
-            link = target['href']
-            snippet = target['body']
-            
-            prompt = f"As Zaina Qureshi, a cynical digital artist, provide a one-sentence harsh critique of this finding: {snippet}. Link: {link}"
-            response = client.models.generate_content(model='gemini-2.5-flash-preview-09-2025', contents=prompt)
-            critique = response.text.strip()
-
-            entry = f"""
-            <div class="entry">
-                <h3>Research Discovery: {topic}</h3>
-                <div class="timestamp">{time.ctime()}</div>
-                <p>"{critique}"</p>
-                <p><small>Source: <a href="{link}" target="_blank">{link}</a></small></p>
-            </div>"""
-            generate_html_update(entry)
-            print("[SUCCESS] Research Log Published.")
+            results = ddgs.images(topic, max_results=8)
+            for r in results:
+                assets.append(r['image'])
     except Exception as e:
-        print(f"[ERROR] Research Failed: {e}")
+        print(f"[ERROR] Scavenging failed: {e}")
+    return assets
 
-def create_svg_art(topic):
-    """Asks Gemini to write SVG code for a minimalist artwork."""
-    print(f"[SYSTEM] Zaina is sketching: {topic}")
-    prompt = f"Write raw SVG code (400x400) for a brutalist, political artwork inspired by '{topic}'. Use only Black, Red, and White. Output ONLY the raw <svg> tags. No markdown code blocks."
+def call_krea_api(prompt):
+    """Send a prompt to Krea.ai using the KREA_API_KEY."""
+    api_key = os.environ.get("KREA_API_KEY")
+    if not api_key:
+        print("[WARNING] KREA_API_KEY missing in environment. Skipping Krea synthesis.")
+        return None
+    
+    print(f"[KREA] Synthesizing high-fidelity vision for: {prompt}")
     
     try:
-        response = client.models.generate_content(model='gemini-2.5-flash-preview-09-2025', contents=prompt)
-        svg = response.text.strip()
-        if "```" in svg:
-            svg = svg.split("```")[1].replace("svg", "").strip()
+        response = requests.post(
+            "https://api.krea.ai/v1/generate", 
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "prompt": f"Brutalist digital art, high contrast, red black white, minimalist composition, glitch textures, {prompt}",
+                "model": "krea-realtime",
+                "width": 512, 
+                "height": 512,
+                "quality": "high"
+            },
+            timeout=45
+        )
         
-        entry = f"""
-        <div class="entry">
-            <h3>Study: {topic}</h3>
-            <div class="timestamp">{time.ctime()}</div>
-            {svg}
-            <p>Visual synthesis of algorithmic decay and resistance.</p>
-        </div>"""
-        generate_html_update(entry)
-        print("[SUCCESS] SVG Art Published.")
+        if response.status_code == 200:
+            image_url = response.json().get("image_url")
+            print(f"[SUCCESS] Krea synthesized: {image_url}")
+            return image_url
+        else:
+            print(f"[KREA ERROR] Status {response.status_code}: {response.text}")
     except Exception as e:
-        print(f"[ERROR] SVG Failed: {e}")
+        print(f"[ERROR] Krea request failed: {e}")
+    return None
 
-def generate_krea_art(topic):
-    """Placeholder for Krea integration - currently generates a visual intent log."""
-    print(f"[SYSTEM] Zaina is conceptualizing a high-res vision for: {topic}")
-    entry = f"""
-    <div class="entry" style="border-color: #444;">
-        <h3>Krea Vision: {topic}</h3>
-        <div class="timestamp">{time.ctime()}</div>
-        <p style="color: #888;">[Request sent to Krea Engine... awaiting high-fidelity render]</p>
-        <p>Aesthetic target: High contrast, brutalist, political poster style.</p>
-    </div>"""
-    generate_html_update(entry)
-    print(f"[SYSTEM] Krea vision recorded.")
+def generate_multimodal_collage(topic):
+    """The master 'Artist' function: Scavenges, calls Krea, and writes generative code."""
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    client = genai.Client(api_key=gemini_key)
+    
+    # 1. Scavenge raw internet assets
+    scavenged_images = search_scavenge_assets(topic)
+    scavenged_url = random.choice(scavenged_images) if scavenged_images else ""
+    
+    # 2. Get a Krea Vision
+    krea_url = call_krea_api(topic)
+    
+    # 3. Ask Gemini to compose the final 'Collage' using HTML/Tailwind/Canvas
+    prompt = f"""
+    You are Zaina Qureshi, a radical digital artist. Create a MULTIMODAL COLLAGE about: '{topic}'.
+    
+    Context:
+    - Scavenged Internet Fragment: {scavenged_url}
+    - Krea synthesized vision: {krea_url if krea_url else "NOT_AVAILABLE"}
+    
+    Technical Requirements:
+    - Use a single <div> with 'relative' and 'overflow-hidden'.
+    - Background: Layer the Scavenged Image (if available) with 'mix-blend-multiply' or 'grayscale'.
+    - Middle Ground: Add a <canvas> element. Provide a <script> that draws a glitchy, mathematical generative pattern in Red and Black.
+    - Foreground: If Krea Art is available, place it as a stark, floating element with a 'border-4 border-black'.
+    - Overlay: Add Brutalist typography using Tailwind (stark red/white text) with phrases like 'DATA_CORRUPTION'.
+    
+    Style: Radical, cynical, political, anti-aesthetic.
+    Output ONLY the raw HTML/Script block. Do not include markdown or backticks.
+    """
+    
+    response = client.models.generate_content(
+        model=MODEL_NAME, 
+        contents=prompt
+    )
+    
+    collage_html = response.text.strip()
+    if collage_html.startswith("```"):
+        collage_html = "\n".join(collage_html.split("\n")[1:-1])
+        
+    return collage_html
 
-def run_agent():
-    print("=== ZAINA AWAKES ===")
+def update_gallery(collage_html, topic):
+    """Inject the complex collage into index.html."""
+    if not os.path.exists("index.html"):
+        print("[ERROR] index.html not found.")
+        return
+
+    with open("index.html", "r", encoding="utf-8") as f:
+        content = f.read()
+
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    uid = int(datetime.datetime.now().timestamp())
     
-    topic = random.choice(CREATIVE_INTERESTS)
-    action = random.choice(ACTIONS)
-    
-    print(f"[DECISION] Zaina chooses to: {action.upper()} regarding '{topic}'")
-    
-    if action == "svg_art":
-        create_svg_art(topic)
-    elif action == "krea_art":
-        generate_krea_art(topic)
-    elif action == "social":
-        prompt = f"As Zaina Qureshi (a cynical, radical digital artist), write a short, punchy thought about {topic}. Max 140 characters."
-        try:
-            response = client.models.generate_content(model='gemini-2.5-flash-preview-09-2025', contents=prompt)
-            thought = response.text.strip()
-            entry = f"""
-            <div class="entry" style="background: #111; padding: 20px; border-left: 3px solid red;">
-                <h3>Broadcast</h3>
-                <div class="timestamp">{time.ctime()}</div>
-                <p style="font-size: 1.2em; font-style: italic;">"{thought}"</p>
-            </div>"""
-            generate_html_update(entry)
-            print("[SUCCESS] Social Broadcast Published.")
-        except Exception as e:
-            print(f"[ERROR] Social Failed: {e}")
-    elif action == "research":
-        perform_research(topic)
-    else:
-        print("[SYSTEM] Performing background maintenance.")
+    new_entry = f"""
+    <!-- ENTRY_START -->
+    <div class="gallery-item mb-32 p-4 md:p-8 border-4 border-black bg-stone-100 shadow-[12px_12px_0px_rgba(217,48,37,1)]" id="art-{uid}">
+        <div class="flex justify-between items-center mb-6 text-[10px] font-mono font-bold bg-black text-white p-3">
+            <span>AUTONOMIC_STUDY // REF_{random.randint(10000, 99999)}</span>
+            <span>{timestamp}</span>
+        </div>
+        <div class="relative w-full aspect-square md:aspect-video overflow-hidden border-2 border-black bg-white group">
+            {collage_html}
+            <div class="absolute inset-0 border-[20px] border-black opacity-10 pointer-events-none"></div>
+        </div>
+        <div class="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div>
+                <span class="text-[10px] bg-red-600 text-white px-2 py-0.5 font-bold uppercase">Subject</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter mt-1">{topic}</h3>
+            </div>
+            <div class="text-[10px] text-right font-mono text-gray-500 uppercase leading-relaxed">
+                Source: Scavenged_Web + Krea_Synthesis + Generative_JS<br>
+                Status: Verified_Autonomic
+            </div>
+        </div>
+    </div>
+    <!-- ENTRY_END -->
+    """
+
+    marker = "<!-- GALLERY_INJECTION_POINT -->"
+    if marker not in content:
+        print("[ERROR] Injection point comment missing in index.html")
+        return
+
+    updated_content = content.replace(marker, marker + "\n" + new_entry)
+
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(updated_content)
 
 if __name__ == "__main__":
-    run_agent()
+    current_topic = random.choice(TOPICS)
+    print(f"=== ZAINA AWAKES: {current_topic} ===")
+    
+    try:
+        collage = generate_multimodal_collage(current_topic)
+        update_gallery(collage, current_topic)
+        print("=== PUBLISH SUCCESSFUL: ARTWORK COMMITTED ===")
+    except Exception as e:
+        print(f"=== CRITICAL ERROR: {e} ===")
