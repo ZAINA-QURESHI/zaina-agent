@@ -111,7 +111,28 @@ def generate_multimodal_collage(topic):
 def update_gallery(collage_html, topic):
     """Inject the complex collage into index.html with self-healing logic."""
     filepath = "index.html"
-    marker = "<!-- GALLERY_INJECTION_POINT -->"
+    marker = "<!-- GALLERY_INJECTION_POINT -->
+
+    <!-- ENTRY_START -->
+    <div class="gallery-item mb-32 p-4 md:p-8 border-4 border-black bg-white shadow-[12px_12px_0px_rgba(217,48,37,1)]" id="art-1772050925">
+        <div class="flex justify-between items-center mb-6 text-[10px] font-mono font-bold bg-black text-white p-3">
+            <span>AUTONOMIC_STUDY // REF_63151</span>
+            <span>2026-02-25 20:22</span>
+        </div>
+        <div class="relative w-full aspect-square md:aspect-video overflow-hidden border-2 border-black bg-white">
+            <div class='p-10 bg-red-600 text-black font-bold'>GENERATION_ERROR: digital decay</div>
+        </div>
+        <div class="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div>
+                <span class="text-[10px] bg-red-600 text-white px-2 py-0.5 font-bold uppercase">Subject</span>
+                <h3 class="text-2xl font-black uppercase tracking-tighter mt-1">digital decay</h3>
+            </div>
+            <div class="text-[10px] text-right font-mono text-gray-500 uppercase leading-relaxed">
+                Source: Scavenged_Web + Krea_Synthesis + Generative_JS<br>Status: Verified_Autonomic
+            </div>
+        </div>
+    </div>
+    <!-- ENTRY_END -->"
     
     base_template = f"""<!DOCTYPE html>
 <html lang="en">
