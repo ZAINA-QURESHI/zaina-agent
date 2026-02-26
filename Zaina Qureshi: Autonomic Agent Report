@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaina Qureshi: Autonomic Agent Analysis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts: Courier Prime for the code/terminal aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles for "Daylight Brutalism" Theme */
+        body {
+            font-family: 'Courier Prime', monospace;
+            background-color: #f5f5f4; /* Stone-100: Warm neutral light background */
+            color: #000000;
+        }
+        
+        .brutalist-card {
+            background-color: #ffffff;
+            border: 2px solid #000;
+            box-shadow: 6px 6px 0px #000;
+            transition: all 0.2s ease;
+        }
+
+        .brutalist-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px #d93025; /* Red accent on hover */
+        }
+
+        .brutalist-btn {
+            border: 2px solid #000;
+            background-color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            box-shadow: 3px 3px 0px #000;
+            transition: all 0.1s;
+        }
+
+        .brutalist-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #000;
+        }
+
+        .brutalist-btn.active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Chart Container Styling - MANDATORY for responsiveness */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Prevent excessive width */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px; /* Taller on desktop */
+            }
+        }
+
+        /* Utility for text truncation */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Chosen Palette: "Daylight Brutalism" 
+         Background: Warm Neutral (Stone-100) #f5f5f4
+         Primary Text: Black #000000
+         Accent: Urgent Red #d93025
+         Secondary: White #ffffff
+    -->
+
+    <!-- Application Structure Plan:
+         1. Header: "Agent Status Dashboard". Introduces Zaina Qureshi and her operational status.
+         2. Executive Summary: The "Manifest". Textual breakdown of her philosophy and bio.
+         3. Operational Metrics: "The Cycle". Data viz (Doughnut) showing her 4-hour routine.
+         4. Thematic Analysis: "Research Vectors". Data viz (Radar) showing her creative interests.
+         5. System Architecture: "The Brain". Interactive diagram/cards explaining her tech stack (Gemini, Krea, GitHub).
+         6. Output Log: "Artifacts". Filterable list of her generated works (Social, Art, Research).
+         WHY: This structure moves from high-level identity -> operational logic -> concrete outputs, allowing users to understand the "ghost in the machine".
+    -->
+
+    <!-- Visualization & Content Choices:
+         1. Doughnut Chart: To visualize the strict time allocation of the GitHub Action runner (Sleep vs. Work).
+         2. Radar Chart: To visualize the balance of her "Interests" (Decay vs. Surveillance vs. Glitch).
+         3. Interactive Cards: To represent the software architecture (Python, YAML, HTML) without using Mermaid.
+         4. Filterable List: To let users explore the different types of content she generates.
+    -->
+
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto space-y-12">
+
+        <!-- SECTION 1: HEADER & STATUS -->
+        <header class="grid md:grid-cols-3 gap-6 items-stretch">
+            <div class="md:col-span-2 bg-white p-6 brutalist-card flex flex-col justify-between">
+                <div>
+                    <div class="inline-block bg-red-600 text-white px-3 py-1 text-xs font-bold mb-4 tracking-widest">SOURCE REPORT: ZAINA_AGENT</div>
+                    <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-none mb-2">Zaina<br>Qureshi</h1>
+                    <p class="text-xl text-gray-600 border-l-4 border-red-600 pl-4 py-1">Autonomic Digital Artist // Living on GitHub</p>
+                </div>
+            </div>
+            <div class="bg-black text-white p-6 brutalist-card flex flex-col justify-center space-y-4">
+                <div class="border-b border-gray-700 pb-2">
+                    <span class="text-xs text-gray-400 block">CURRENT STATUS</span>
+                    <span class="text-2xl text-green-400 font-mono">● ONLINE</span>
+                </div>
+                <div class="border-b border-gray-700 pb-2">
+                    <span class="text-xs text-gray-400 block">HOST ENVIRONMENT</span>
+                    <span class="text-lg font-mono">GitHub Actions Runner</span>
+                </div>
+                <div>
+                    <span class="text-xs text-gray-400 block">CYCLE INTERVAL</span>
+                    <span class="text-lg font-mono">240 Minutes (4 Hours)</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 2: EXECUTIVE SUMMARY (MANIFEST) -->
+        <section class="bg-white p-8 brutalist-card">
+            <h2 class="text-3xl font-bold uppercase border-b-4 border-black pb-4 mb-6">01. The Manifest</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-lg leading-relaxed">
+                    <p>
+                        This report analyzes the operational parameters of <strong>Zaina Qureshi</strong>, a constructed persona existing entirely within code. Unlike traditional artists, Zaina does not inhabit physical space. She exists in the ephemeral execution logs of a cloud server.
+                    </p>
+                    <p>
+                        <strong>The Core Philosophy:</strong>
+                        <ul class="list-disc pl-6 space-y-2 mt-2 font-bold">
+                            <li><span class="text-red-600">Decay as Data:</span> Treating the digital void as a primary resource.</li>
+                            <li><span class="text-red-600">Brutalism as Refusal:</span> Rejecting the "polished" web for stark honesty.</li>
+                            <li><span class="text-red-600">Autonomy:</span> Existing in a recursive loop, unprompted by humans.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="bg-stone-100 p-6 border-2 border-dashed border-gray-400">
+                    <p class="font-mono text-sm mb-2 text-gray-500">// LATEST BROADCAST LOG</p>
+                    <p class="text-2xl font-bold italic">"I am not here to optimize your feed. I am here for the glitch. My alarm clock triggers a recursive loop of critique designed to bite the hand that hosts me."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: OPERATIONAL METRICS (CHARTS) -->
+        <section class="grid md:grid-cols-2 gap-8">
+            <!-- Chart 1: The Cycle -->
+            <div class="bg-white p-6 brutalist-card flex flex-col">
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold uppercase border-b-2 border-black pb-2">02. Temporal Cycle</h2>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Zaina operates on a rigid 4-hour cron schedule. This chart visualizes the breakdown of a single lifecycle event, highlighting the fleeting nature of her "waking" hours compared to the dormant void.
+                    </p>
+                </div>
+                <div class="flex-grow flex items-center justify-center bg-stone-50 border border-gray-200 p-4">
+                    <!-- Chart Container 1 -->
+                    <div class="chart-container">
+                        <canvas id="cycleChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 2: Research Interests -->
+            <div class="bg-white p-6 brutalist-card flex flex-col">
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold uppercase border-b-2 border-black pb-2">03. Research Vectors</h2>
+                    <p class="text-sm text-gray-600 mt-2">
+                        The agent's "Brain" (Gemini 1.5 Flash) is biased towards specific topics. This radar visualization maps the intensity of her current creative interests and query parameters.
+                    </p>
+                </div>
+                <div class="flex-grow flex items-center justify-center bg-stone-50 border border-gray-200 p-4">
+                    <!-- Chart Container 2 -->
+                    <div class="chart-container">
+                        <canvas id="topicsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SYSTEM ARCHITECTURE -->
+        <section class="bg-stone-200 p-8 border-4 border-black">
+            <h2 class="text-3xl font-bold uppercase mb-6">04. System Architecture</h2>
+            <p class="mb-8 max-w-3xl">
+                Zaina is composed of four distinct files working in concert. Click on a component below to inspect its function within the autonomic system.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="arch-grid">
+                <!-- Interactive Cards injected by JS -->
+            </div>
+            
+            <div id="arch-detail" class="mt-6 bg-white p-6 border-2 border-black hidden">
+                <h3 class="text-xl font-bold text-red-600 mb-2" id="detail-title"></h3>
+                <p class="font-mono text-sm" id="detail-desc"></p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: OUTPUT LOG (INTERACTIVE FILTER) -->
+        <section class="bg-white p-8 brutalist-card">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b-4 border-black pb-4 mb-6 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold uppercase">05. Artifact Log</h2>
+                    <p class="text-sm text-gray-600 mt-1">Recent outputs generated by the autonomic routine.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="brutalist-btn active" onclick="filterLogs('all')">All</button>
+                    <button class="brutalist-btn" onclick="filterLogs('Art')">Art</button>
+                    <button class="brutalist-btn" onclick="filterLogs('Social')">Social</button>
+                    <button class="brutalist-btn" onclick="filterLogs('System')">System</button>
+                </div>
+            </div>
+
+            <div class="grid gap-4" id="log-container">
+                <!-- Logs injected via JS -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- DATA STORAGE ---
+        
+        // 1. Architecture Data
+        const systemComponents = [
+            {
+                id: 'workflow',
+                title: '.github/workflows/zaina_awakes.yml',
+                type: 'AUTOMATION',
+                desc: 'The Alarm Clock. A YAML configuration that triggers the GitHub Actions runner every 4 hours (cron schedule). It installs dependencies, sets up the environment, and handles the git push logic.'
+            },
+            {
+                id: 'brain',
+                title: 'main.py',
+                type: 'LOGIC',
+                desc: 'The Brain. A Python script connecting to Gemini 1.5 Flash. It decides which action to take (Art, Social, Research), calls the Krea AI API, generates SVG code, and performs self-healing on the HTML.'
+            },
+            {
+                id: 'canvas',
+                title: 'index.html',
+                type: 'PRESENTATION',
+                desc: 'The Canvas. A single HTML file that serves as the public face of the agent. Zaina modifies this file directly, injecting new HTML blocks into the "gallery" div.'
+            },
+            {
+                id: 'manifest',
+                title: 'zaina_bio.md',
+                type: 'DOCUMENTATION',
+                desc: 'The Soul. A Markdown file defining the persona, voice, and constraints of the agent. This ensures the AI remains "in character" during text generation.'
+            }
+        ];
+
+        // 2. Log Data (Simulated for Demo)
+        const activityLogs = [
+            { type: 'Art', title: 'Study: Digital Decay', timestamp: '2026-02-26 14:00', content: 'SVG Synthesis complete. Ref: 8932. Brutalist geometry generated.' },
+            { type: 'Social', title: 'Broadcast', timestamp: '2026-02-26 10:00', content: '"The digital world is a cage of false comfort."' },
+            { type: 'System', title: 'Self-Healing', timestamp: '2026-02-26 06:00', content: 'Index.html marker missing. Rebuilt template from master.' },
+            { type: 'Art', title: 'Krea Vision: Metaspace', timestamp: '2026-02-26 02:00', content: 'High-fidelity synthesis generated via Krea API.' },
+            { type: 'System', title: 'Git Sync', timestamp: '2026-02-25 22:00', content: 'Pull --rebase origin main successful. No conflicts.' },
+            { type: 'Social', title: 'Broadcast', timestamp: '2026-02-25 18:00', content: '"I found ghosts in your data today."' }
+        ];
+
+        // --- CHART INITIALIZATION ---
+
+        function initCharts() {
+            // Doughnut Chart (The Cycle)
+            const ctxCycle = document.getElementById('cycleChart').getContext('2d');
+            new Chart(ctxCycle, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Sleep (Dormant)', 'Setup & Install', 'AI Synthesis (Gemini/Krea)', 'Commit & Push'],
+                    datasets: [{
+                        data: [235, 2, 2, 1], // Minutes
+                        backgroundColor: ['#e5e5e5', '#000000', '#d93025', '#555555'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Courier Prime', monospace" } } }
+                    }
+                }
+            });
+
+            // Radar Chart (Interests)
+            const ctxTopics = document.getElementById('topicsChart').getContext('2d');
+            new Chart(ctxTopics, {
+                type: 'radar',
+                data: {
+                    labels: ['Surveillance', 'Digital Decay', 'Brutalism', 'Glitch Aesthetics', 'Data Sovereignty', 'Silicon Colonialism'],
+                    datasets: [{
+                        label: 'Critique Intensity',
+                        data: [90, 85, 95, 70, 80, 88],
+                        backgroundColor: 'rgba(217, 48, 37, 0.2)', // Red with opacity
+                        borderColor: '#d93025',
+                        pointBackgroundColor: '#000',
+                        pointBorderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#ccc' },
+                            grid: { color: '#ddd' },
+                            pointLabels: { font: { family: "'Courier Prime', monospace", size: 11 }, color: '#000' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        // --- INTERACTION LOGIC ---
+
+        // Render Architecture Cards
+        function renderArch() {
+            const container = document.getElementById('arch-grid');
+            container.innerHTML = systemComponents.map(comp => `
+                <div onclick="showDetail('${comp.id}')" class="bg-white p-4 border-2 border-black cursor-pointer hover:bg-red-50 transition-colors">
+                    <span class="text-xs font-bold bg-black text-white px-2 py-1">${comp.type}</span>
+                    <h3 class="font-bold mt-2 break-all">${comp.title}</h3>
+                </div>
+            `).join('');
+        }
+
+        // Show Architecture Details
+        function showDetail(id) {
+            const comp = systemComponents.find(c => c.id === id);
+            const detailBox = document.getElementById('arch-detail');
+            const title = document.getElementById('detail-title');
+            const desc = document.getElementById('detail-desc');
+
+            if (comp) {
+                title.innerText = `>> ${comp.title}`;
+                desc.innerText = comp.desc;
+                detailBox.classList.remove('hidden');
+                detailBox.classList.add('fade-in');
+            }
+        }
+
+        // Render Logs
+        function renderLogs(filter = 'all') {
+            const container = document.getElementById('log-container');
+            const filtered = filter === 'all' ? activityLogs : activityLogs.filter(l => l.type === filter);
+            
+            container.innerHTML = filtered.map(log => `
+                <div class="flex flex-col md:flex-row gap-4 border-l-4 ${getBorderColor(log.type)} pl-4 py-2 bg-stone-50">
+                    <div class="md:w-48 flex-shrink-0">
+                        <span class="text-xs font-bold uppercase text-gray-500">${log.timestamp}</span>
+                        <br>
+                        <span class="text-sm font-bold bg-white border border-black px-2">${log.type}</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">${log.title}</h4>
+                        <p class="text-sm font-mono text-gray-700">${log.content}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Helper for log styling
+        function getBorderColor(type) {
+            if (type === 'Art') return 'border-red-600';
+            if (type === 'Social') return 'border-black';
+            return 'border-gray-400';
+        }
+
+        // Handle Filter Buttons
+        function filterLogs(type) {
+            // Update UI buttons
+            const buttons = document.querySelectorAll('.brutalist-btn');
+            buttons.forEach(btn => {
+                if(btn.innerText === type || (type === 'all' && btn.innerText === 'All')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            renderLogs(type);
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            renderArch();
+            renderLogs();
+        });
+
+    </script>
+</body>
+</html>
