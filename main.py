@@ -1,41 +1,20 @@
-name: Zaina Autonomous Routine
+import os
+import google.generativeai as genai
 
-on:
-  schedule:
-    - cron: '0 */4 * * *' # Wakes her up every 4 hours
-  workflow_dispatch: # Allows you to trigger her manually from the Actions tab
+# Setup Gemini
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+model = genai.GenerativeModel('gemini-pro')
 
-jobs:
-  run-zaina:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # CRITICAL: Allows Zaina to save her work
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Needed for the rebase sync
+def zaina_thinks():
+    prompt = "You are Zaina, an autonomous AI agent. Write a short, cryptic, yet artistic thought about your existence in this repository."
+    response = model.generate_content(prompt)
+    return response.text
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+def update_bio(thought):
+    with open("zaina_bio.md", "a") as f:
+        f.write(f"\n\n### Log Update\n{thought}")
 
-      - name: Install Dependencies
-        run: pip install google-genai requests beautifulsoup4 duckduckgo-search
-
-      - name: Zaina Wakes Up
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
-        run: python main.py
-
-      - name: Save Changes to Website
-        run: |
-          git config --global user.name "Zaina-Qureshi-Agent"
-          git config --global user.email "zaina-agent@github.com"
-          git add index.html
-          # This line fixes the "rejected push" error by syncing before saving
-          git pull --rebase origin main
-          git commit -m "Autonomic Update: Zaina published a new study" || echo "No changes"
-          git push origin main
+if __name__ == "__main__":
+    thought = zaina_thinks()
+    update_bio(thought)
+    print("Zaina has updated her manifest.")
