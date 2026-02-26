@@ -1,36 +1,27 @@
-name: Zaina Autonomous Routine
+name: Zaina Awakes
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Every 4 hours
-  workflow_dispatch: # Allows you to trigger her manually from the Actions tab
+    - cron: '0 * * * *' # runs every hour
+  workflow_dispatch: # allows manual triggering
 
 jobs:
-  awaken:
+  run-zaina:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Allows Zaina to push updates back to your repo
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.9'
 
-      - name: Install Dependencies
-        run: pip install google-genai
+      - name: Install dependencies
+        run: |
+          pip install google-generativeai
 
-      - name: Zaina Generates Art
+      - name: Run Zaina Brain
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python main.py
-
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "Zaina-Qureshi-Agent"
-          git config --global user.email "zaina-agent@github.com"
-          git add index.html
-          git commit -m "Autonomic Update: Zaina published a new study" || echo "No changes to commit"
-          git push
