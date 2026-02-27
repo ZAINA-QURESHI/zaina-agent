@@ -4,7 +4,7 @@ import datetime
 from google import genai
 
 # --- CONFIGURATION ---
-# Removed 'models/' prefix as 'v1' often expects the direct string
+# Removed 'models/' prefix - 'v1' stable often requires just the ID
 MODEL_NAME = "gemini-1.5-flash"
 
 TOPICS = [
@@ -17,7 +17,7 @@ TOPICS = [
 def generate_multimodal_collage(topic):
     gemini_key = os.environ.get("GEMINI_API_KEY")
     
-    # Explicitly using 'v1' to avoid the beta endpoint 404s
+    # Using 'v1' to bypass the beta endpoint 404s
     client = genai.Client(
         api_key=gemini_key, 
         http_options={'api_version': 'v1'}
