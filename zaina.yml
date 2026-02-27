@@ -2,26 +2,38 @@ name: Zaina Awakes
 
 on:
   schedule:
-    - cron: '0 * * * *' # runs every hour
-  workflow_dispatch: # allows manual triggering
+    - cron: '0 * * * *' # Wakes up every hour
+  workflow_dispatch: # Allows you to wake her up manually
 
 jobs:
-  run-zaina:
+  build_and_publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # CRITICAL: Allows Zaina to save her art to the repo
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
-          pip install google-generativeai
+          pip install google-genai requests beautifulsoup4 duckduckgo_search
 
-      - name: Run Zaina Brain
+      - name: Zaina Artistic Cycle
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          KREA_API_KEY: ${{ secrets.KREA_API_KEY }} # Optional
         run: python main.py
+
+      - name: Commit and Push Evolution
+        run: |
+          git config --global user.name "Zaina-Agent"
+          git config --global user.email "zaina@agent.ai"
+          git add index.html zaina_bio.md
+          git commit -m "Zaina: Autonomic Evolution [$(date)]" || echo "No changes to commit"
+          git push
