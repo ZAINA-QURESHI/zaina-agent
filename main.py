@@ -14,16 +14,6 @@ TOPICS = [
     "the architecture of noise", "silicon colonialism"
 ]
 
-def search_scavenge_assets(topic):
-    # Returns an empty list if no assets found to prevent crashes
-    return []
-
-def call_krea_api(prompt):
-    # Skips if no key is found
-    api_key = os.environ.get("KREA_API_KEY")
-    if not api_key: return None
-    return None
-
 def generate_multimodal_collage(topic):
     gemini_key = os.environ.get("GEMINI_API_KEY")
     client = genai.Client(api_key=gemini_key)
@@ -42,8 +32,8 @@ def generate_multimodal_collage(topic):
 
 def update_gallery(collage_html, topic):
     filepath = "index.html"
-    # Triple quotes are essential here to prevent the 'unterminated string' error
-    marker = """"""
+    # FIXED: Kept on one line to prevent SyntaxError
+    marker = ""
     
     base_template = f"""<!DOCTYPE html>
 <html lang="en">
