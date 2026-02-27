@@ -16,7 +16,7 @@ def generate_multimodal_collage(topic):
         raise ValueError("GEMINI_API_KEY is missing from GitHub Secrets.")
 
     # We bypass the buggy SDK and talk directly to the Gemini API endpoint
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
 
     prompt = f"You are Zaina Qureshi, a radical digital artist. Create a single-div HTML/Tailwind brutalist collage about '{topic}'. Use high-contrast red/black/white. Output ONLY raw HTML. No markdown."
 
