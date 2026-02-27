@@ -5,7 +5,8 @@ import requests
 from google import genai
 
 # --- CONFIGURATION ---
-MODEL_NAME = "models/gemini-1.5-flash"
+# Using the standard model string for high compatibility
+MODEL_NAME = "gemini-1.5-flash"
 
 TOPICS = [
     "algorithmic surveillance", "digital decay", "brutalist architecture",
@@ -16,9 +17,22 @@ TOPICS = [
 
 def generate_multimodal_collage(topic):
     gemini_key = os.environ.get("GEMINI_API_KEY")
-    client = genai.Client(api_key=gemini_key)
     
-    prompt = f"You are Zaina Qureshi, a radical digital artist. Create a MULTIMODAL COLLAGE about: '{topic}'. Output ONLY raw HTML/Script block for a brutalist art piece. No markdown."
+    # We explicitly set api_version to 'v1' to prevent the 'v1beta' 404 error
+    client = genai.Client(
+        api_key=gemini_key, 
+        http_options={'api_version': 'v1'}
+    )
+    
+    prompt = f"""
+    You are Zaina Qureshi, a radical digital artist. 
+    Create a MULTIMODAL COLLAGE about: '{topic}'. 
+    Technical Requirements:
+    - Use a single <div> with 'relative' and 'overflow-hidden'.
+    - Use Tailwind CSS classes for a brutalist, high-contrast look (Red, Black, White).
+    - Style: Radical, cynical, political, anti-aesthetic.
+    - Output ONLY the raw HTML/Script block. Do not include markdown or backticks.
+    """
     
     response = client.models.generate_content(
         model=MODEL_NAME, 
@@ -26,13 +40,15 @@ def generate_multimodal_collage(topic):
     )
     
     collage_html = response.text.strip()
+    # Clean up any accidental markdown backticks if Gemini includes them
     if collage_html.startswith("```"):
         collage_html = "\n".join(collage_html.split("\n")[1:-1])
+        
     return collage_html
 
 def update_gallery(collage_html, topic):
     filepath = "index.html"
-    # FIXED: Kept on one line to prevent SyntaxError
+    # Marker for injecting new art
     marker = ""
     
     base_template = f"""<!DOCTYPE html>
@@ -60,6 +76,7 @@ def update_gallery(collage_html, topic):
 </body>
 </html>"""
 
+    # Self-healing logic to create or repair index.html
     if not os.path.exists(filepath):
         content = base_template
     else:
@@ -77,7 +94,7 @@ def update_gallery(collage_html, topic):
             <span>AUTONOMIC_STUDY // REF_{random.randint(10000, 99999)}</span>
             <span>{timestamp}</span>
         </div>
-        <div class="relative w-full overflow-hidden border-2 border-black bg-white">
+        <div class="relative w-full overflow-hidden border-2 border-black bg-white min-h-[300px]">
             {collage_html}
         </div>
         <div class="mt-6">
@@ -87,14 +104,17 @@ def update_gallery(collage_html, topic):
     """
 
     updated_content = content.replace(marker, marker + "\n" + new_entry)
+
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(updated_content)
 
 if __name__ == "__main__":
     current_topic = random.choice(TOPICS)
+    print(f"=== ZAINA AWAKES: {current_topic} ===")
+    
     try:
         collage = generate_multimodal_collage(current_topic)
         update_gallery(collage, current_topic)
-        print(f"SUCCESS: {current_topic} archived.")
+        print("=== PUBLISH SUCCESSFUL: ARTWORK COMMITTED ===")
     except Exception as e:
-        print(f"ERROR: {e}")
+        print(f"=== CRITICAL ERROR: {e} ===")
