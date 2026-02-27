@@ -20,19 +20,19 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install google-genai requests beautifulsoup4 duckduckgo-search
+        run: pip install requests beautifulsoup4 duckduckgo-search
 
       - name: Wake Zaina Up
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
         run: python main.py
-
-     - name: Commit and Push Art
+        
+      - name: Commit and Push Art
         run: |
           git config --global user.name "Zaina-Qureshi-Agent"
           git config --global user.email "zaina@agent.ai"
-          git add index.html
+          git add .
           git commit -m "Zaina generated new art" || echo "No changes to commit"
           git pull origin main --rebase || echo "No pull needed"
           git push origin main
