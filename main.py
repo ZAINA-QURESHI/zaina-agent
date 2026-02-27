@@ -5,7 +5,7 @@ import requests
 from google import genai
 
 # --- CONFIGURATION ---
-MODEL_NAME = "gemini-1.5-flash"
+MODEL_NAME = "models/gemini-1.5-flash"
 
 TOPICS = [
     "algorithmic surveillance", "digital decay", "brutalist architecture",
