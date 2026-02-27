@@ -28,12 +28,11 @@ jobs:
           KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
         run: python main.py
 
-      - name: Save Changes to Website
+     - name: Commit and Push Art
         run: |
           git config --global user.name "Zaina-Qureshi-Agent"
-          git config --global user.email "zaina-agent@github.com"
+          git config --global user.email "zaina@agent.ai"
           git add index.html
-          # Sync remote changes to avoid the "rejected" error
-          git pull --rebase origin main
-          git commit -m "Autonomic Update: Zaina published a new study" || echo "No changes"
+          git commit -m "Zaina generated new art" || echo "No changes to commit"
+          git pull origin main --rebase || echo "No pull needed"
           git push origin main
