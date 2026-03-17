@@ -6,7 +6,8 @@ on:
   workflow_dispatch: 
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # This fixes the Node.js 20 warning
+  # This resolves the Node.js deprecation warning
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
 
 jobs:
   run-zaina:
@@ -37,5 +38,5 @@ jobs:
           git config --global user.name "Zaina-Qureshi-Agent"
           git config --global user.email "zaina@agent.ai"
           git add index.html
-          git commit -m "Zaina: New Artwork Generated" || echo "No changes"
+          git commit -m "Zaina: Autonomic Evolution [$(date)]" || echo "No changes"
           git push
