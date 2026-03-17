@@ -53,8 +53,9 @@ def generate_multimodal_collage(topic):
 
 def update_gallery(collage_html, topic):
     filepath = "index.html"
-    marker = "<!-- ZAINA_INJECTION_MARKER -->"
+    marker = ""
     
+    # This is the "Skeleton" of the site
     base_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,28 +63,40 @@ def update_gallery(collage_html, topic):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaina Qureshi: Autonomic Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {{ background-color: #000; color: #fff; font-family: 'Courier New', monospace; }}
+        .brutalist-card {{ border: 4px solid #f00; margin-bottom: 50px; padding: 20px; background: #111; }}
+    </style>
 </head>
-<body class="p-4 md:p-12 bg-[#f5f5f4] font-mono">
-    <div class="max-w-5xl mx-auto">
-        <header class="border-b-4 border-black pb-8 mb-16">
-            <h1 class="text-6xl font-black uppercase tracking-tighter">Zaina Qureshi</h1>
-            <p class="text-xl font-bold text-red-600">Autonomic Digital Artist // Live Archive</p>
-        </header>
-        <div id="gallery">
-            {marker}
-        </div>
+<body class="p-10">
+    <h1 class="text-5xl font-black text-red-600 mb-10 uppercase">Zaina Qureshi // Archive</h1>
+    <div id="gallery">
+        {marker}
     </div>
 </body>
 </html>"""
 
-    # Self-healing logic for the HTML file
-    if not os.path.exists(filepath):
+    # If the file is missing or broken, reset it
+    if not os.path.exists(filepath) or marker not in open(filepath).read():
         content = base_template
     else:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(filepath, "r") as f:
             content = f.read()
-        if marker not in content:
-            content = base_template
+
+    # The actual "Art Piece"
+    new_entry = f"""
+    <div class="brutalist-card">
+        <div class="text-xs text-red-500 mb-2">SYSTEM_LOG // {datetime.datetime.now()}</div>
+        {collage_html}
+        <h2 class="text-2xl font-bold mt-4 italic">{topic}</h2>
+    </div>
+    """
+
+    # Insert the new art right below the marker
+    updated_content = content.replace(marker, marker + "\n" + new_entry)
+
+    with open(filepath, "w") as f:
+        f.write(updated_content)
 
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_id = random.randint(1000, 9999)
