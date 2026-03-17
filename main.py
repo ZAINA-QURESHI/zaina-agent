@@ -3,9 +3,6 @@ import random
 import datetime
 from google import genai
 
-# --- 2026 STABLE CONFIG ---
-MODEL_NAME = "gemini-3-flash"
-
 TOPICS = [
     "algorithmic surveillance", "digital decay", "brutalist architecture",
     "decolonizing the cloud", "glitch aesthetics", "data sovereignty"
@@ -13,23 +10,31 @@ TOPICS = [
 
 def generate_art(topic):
     key = os.environ.get("GEMINI_API_KEY")
-    client = genai.Client(api_key=key, http_options={'api_version': 'v1'})
+    client = genai.Client(api_key=key)
     
-    prompt = f"Create a radical brutalist HTML div collage about {topic}. Use high-contrast red/black/white. Output ONLY raw HTML. No markdown."
+    print("Scanning for accessible models...")
+    # Get a list of all models this specific API key is allowed to use
+    available_models = [m.name for m in client.models.list() if "gemini" in m.name.lower()]
     
-    try:
-        response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
-        # Force clean HTML by removing potential markdown backticks
-        return response.text.strip().replace("```html", "").replace("```", "")
-    except Exception as e:
-        print(f"CRITICAL MODEL ERROR: {e}")
-        raise
+    if not available_models:
+        raise Exception("Your API key has zero Gemini models available. The key might be restricted.")
+        
+    # Find a flash model, otherwise use the first available model
+    target_model = next((m for m in available_models if "flash" in m.lower()), available_models[0])
+    
+    # Clean the string format
+    target_model = target_model.replace("models/", "")
+    print(f"Zaina is auto-connecting to: {target_model}")
+
+    prompt = f"Create a radical brutalist HTML div collage about {topic}. Use high-contrast red/black/white. Output ONLY raw HTML code. No markdown backticks."
+    
+    response = client.models.generate_content(model=target_model, contents=prompt)
+    return response.text.strip().replace("```html", "").replace("```", "")
 
 def update_gallery(art_html, topic):
     filepath = "index.html"
     marker = "<!-- ZAINA_INJECTION_MARKER -->"
     
-    # Base template using your preferred dark aesthetic
     base_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +50,7 @@ def update_gallery(art_html, topic):
 <body class="p-8 md:p-20">
     <header class="border-b-2 border-red-600 pb-10 mb-20">
         <h1 class="text-7xl font-black uppercase text-red-600">Zaina Qureshi</h1>
-        <p class="text-xl font-bold tracking-widest mt-2">LIVE AUTONOMIC ARCHIVE // 2026</p>
+        <p class="text-xl font-bold tracking-widest mt-2">LIVE AUTONOMIC ARCHIVE</p>
     </header>
     <div id="gallery">
         {marker}
@@ -61,9 +66,9 @@ def update_gallery(art_html, topic):
 
     new_entry = f"""
     <div class="gallery-card">
-        <div class="text-[10px] text-red-500 mb-4 font-bold">LOG_{random.randint(1000,9999)} // {datetime.datetime.now()}</div>
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: {datetime.datetime.now()}</div>
         {art_html}
-        <h3 class="text-3xl font-black mt-6 uppercase tracking-tighter">{topic}</h3>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">{topic}</h3>
     </div>
     """
     
@@ -73,8 +78,9 @@ def update_gallery(art_html, topic):
 if __name__ == "__main__":
     t = random.choice(TOPICS)
     try:
-        artwork = generate_art(t)
-        update_gallery(artwork, t)
-        print(f"SUCCESS: {t} archived.")
-    except Exception:
+        art = generate_art(t)
+        update_gallery(art, t)
+        print(f"Zaina has evolved: {t}")
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
         exit(1)
