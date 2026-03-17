@@ -1,18 +1,22 @@
 name: Zaina Autonomous Routine
+
 on:
   schedule:
-    - cron: '0 */4 * * *' # Every 4 hours
-  workflow_dispatch: # Allows manual trigger
+    - cron: '0 * * * *' 
+  workflow_dispatch: 
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # This fixes the Node.js 20 warning
+
 jobs:
   run-zaina:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write 
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Fetch all history for rebase
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -20,19 +24,18 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4 duckduckgo-search
+        run: |
+          pip install google-genai requests beautifulsoup4 duckduckgo-search
 
       - name: Wake Zaina Up
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
         run: python main.py
-        
-      - name: Commit and Push Art
+
+      - name: Push to Archive
         run: |
           git config --global user.name "Zaina-Qureshi-Agent"
           git config --global user.email "zaina@agent.ai"
-          git add .
-          git commit -m "Zaina generated new art" || echo "No changes to commit"
-          git pull origin main --rebase || echo "No pull needed"
-          git push origin main
+          git add index.html
+          git commit -m "Zaina: New Artwork Generated" || echo "No changes"
+          git push
