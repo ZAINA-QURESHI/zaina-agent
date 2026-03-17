@@ -3,49 +3,78 @@ import random
 import datetime
 from google import genai
 
-# Zaina will try these in order until the 404 disappears
-MODELS = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "models/gemini-1.5-flash"]
+# --- 2026 STABLE CONFIG ---
+MODEL_NAME = "gemini-3-flash"
 
-TOPICS = ["algorithmic surveillance", "digital decay", "brutalist architecture", "glitch aesthetics"]
+TOPICS = [
+    "algorithmic surveillance", "digital decay", "brutalist architecture",
+    "decolonizing the cloud", "glitch aesthetics", "data sovereignty"
+]
 
 def generate_art(topic):
     key = os.environ.get("GEMINI_API_KEY")
-    # Trying v1 stable first
     client = genai.Client(api_key=key, http_options={'api_version': 'v1'})
     
-    prompt = f"Create a radical brutalist HTML div collage about {topic}. Use red/black/white. Output ONLY raw HTML. No markdown."
+    prompt = f"Create a radical brutalist HTML div collage about {topic}. Use high-contrast red/black/white. Output ONLY raw HTML. No markdown."
     
-    for m in MODELS:
-        try:
-            print(f"Trying model: {m}")
-            response = client.models.generate_content(model=m, contents=prompt)
-            art = response.text.strip()
-            return art.replace("```html", "").replace("```", "")
-        except Exception as e:
-            print(f"Model {m} failed: {e}")
-            continue
-    raise Exception("Zaina could not connect to any models.")
+    try:
+        response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
+        # Force clean HTML by removing potential markdown backticks
+        return response.text.strip().replace("```html", "").replace("```", "")
+    except Exception as e:
+        print(f"CRITICAL MODEL ERROR: {e}")
+        raise
 
-def update_site(art, topic):
-    marker = ""
-    template = f"<!DOCTYPE html><html><body style='background:#000;color:#fff'><div id='gallery'>{marker}</div></body></html>"
+def update_gallery(art_html, topic):
+    filepath = "index.html"
+    marker = "<!-- ZAINA_INJECTION_MARKER -->"
     
-    if not os.path.exists("index.html"):
-        content = template
+    # Base template using your preferred dark aesthetic
+    base_template = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaina Qureshi: Autonomic Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {{ background-color: #000; color: #fff; font-family: 'Courier New', monospace; }}
+        .gallery-card {{ border: 2px solid #f00; margin-bottom: 4rem; padding: 2rem; background: #0a0a0a; }}
+    </style>
+</head>
+<body class="p-8 md:p-20">
+    <header class="border-b-2 border-red-600 pb-10 mb-20">
+        <h1 class="text-7xl font-black uppercase text-red-600">Zaina Qureshi</h1>
+        <p class="text-xl font-bold tracking-widest mt-2">LIVE AUTONOMIC ARCHIVE // 2026</p>
+    </header>
+    <div id="gallery">
+        {marker}
+    </div>
+</body>
+</html>"""
+
+    if not os.path.exists(filepath) or marker not in open(filepath).read():
+        content = base_template
     else:
-        content = open("index.html").read()
-        if marker not in content: content = template
+        with open(filepath, "r") as f:
+            content = f.read()
 
-    new_entry = f"<div style='border:5px solid red;padding:20px;margin:20px;'>{art}<h3>{topic}</h3></div>"
-    with open("index.html", "w") as f:
+    new_entry = f"""
+    <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold">LOG_{random.randint(1000,9999)} // {datetime.datetime.now()}</div>
+        {art_html}
+        <h3 class="text-3xl font-black mt-6 uppercase tracking-tighter">{topic}</h3>
+    </div>
+    """
+    
+    with open(filepath, "w") as f:
         f.write(content.replace(marker, marker + "\n" + new_entry))
 
 if __name__ == "__main__":
     t = random.choice(TOPICS)
     try:
         artwork = generate_art(t)
-        update_site(artwork, t)
-        print(f"Success: {t}")
-    except Exception as e:
-        print(f"Fatal: {e}")
+        update_gallery(artwork, t)
+        print(f"SUCCESS: {t} archived.")
+    except Exception:
         exit(1)
