@@ -16,6 +16,341 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-18 11:35:37.689147</div>
+        <!--
+THOUGHTS:
+The user wants a *radical brutalist* HTML div collage about brutalist architecture.
+Key elements:
+- Radical
+- Brutalist
+- HTML div collage
+- Brutalist architecture theme
+- High-contrast red/black/white
+- Output ONLY raw HTML code. No markdown backticks.
+
+This means no CSS files, no JS, just inline styles and HTML.
+"Radical brutalist" implies:
+- No visual hierarchy (or a deliberately chaotic one)
+- Overlapping elements
+- Jagged edges (achievable with transforms or clever positioning)
+- Repetition
+- Raw, unpolished look
+- Strong geometric shapes
+- Lack of negative space (or very little, broken up aggressively)
+- Text used as a visual element, not just for readability. Maybe ALL CAPS.
+- Heavy use of `div` elements.
+- Fixed positioning for overlays.
+- `z-index` for layering.
+- `transform: rotate()` and `skew()` for angularity.
+- `opacity` for subtle layering or visual noise.
+
+Color palette: `red`, `black`, `white`.
+Font: Something strong, sans-serif, maybe `monospace` for a raw feel, or a generic `sans-serif` but made bold and large.
+
+Structure:
+A main container div.
+Inside, many `div` elements, each representing a "piece" of the collage.
+These pieces will contain:
+- Text snippets about brutalism (quotes, keywords, names of architects/buildings).
+- Empty divs acting as abstract shapes.
+- Maybe some small iconic SVG or unicode characters if appropriate, but stick to divs for simplicity and brutalist aesthetic.
+
+Let's plan some specific elements:
+1.  **Large title/statement**: "BRUTALISM IS PURE FORM" or "CONCRETE MONSTERS"
+2.  **Overlapping text blocks**: Some rotated, some skewed.
+3.  **Solid color blocks**: Red, black, white squares/rectangles.
+4.  **Wireframe-like elements**: achieved with `border` or multiple thin divs.
+5.  **Keywords**: CONCRETE, MASSIVE, FUNCTION, RAW, UGLY, BEAUTY, POWER, STRUCTURE, FORM.
+6.  **Architects/Buildings**: LE CORBUSIER, PAUL RUDOLPH, GATESHEAD, TRELICK, BARBICAN.
+7.  **Aggressive positioning**: `position: absolute;` with `top`, `left`, `right`, `bottom`. `z-index` to control depth.
+8.  **Font styling**: `font-family: monospace;` or `font-family: 'Arial Black', sans-serif;`. `font-weight: 900;`, `text-transform: uppercase;`.
+
+Let's start with a base `body` style for black background, white text default.
+Then create a large container.
+Inside, many divs.
+
+Consider using `calc()` for widths/heights to make it feel more dynamic and less perfectly aligned.
+Maybe some `box-shadow` for depth, but keep it very stark, no blur. `0 0 0 5px black` or `red`.
+
+Let's try to achieve a sense of overwhelming, almost suffocating density, typical of brutalist aesthetics.
+
+One large, central piece of text, maybe rotated.
+Then many smaller pieces layered around it.
+
+
+<body style="background-color: black; margin: 0; overflow: hidden; font-family: monospace, sans-serif; color: white;">
+
+    <!-- Main container for the collage -->
+    <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: black;">
+
+        <!-- Large, central, rotated text -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg);
+                    font-size: 15vw; font-weight: 900; color: red; text-transform: uppercase; line-height: 0.8; z-index: 10;">
+            BRUTAL
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(5deg);
+                    font-size: 15vw; font-weight: 900; color: white; text-transform: uppercase; line-height: 0.8; z-index: 9;">
+            BRUTAL
+        </div>
+        <div style="position: absolute; top: 52%; left: 48%; transform: translate(-50%, -50%) rotate(0deg);
+                    font-size: 15vw; font-weight: 900; color: black; text-transform: uppercase; line-height: 0.8; z-index: 8;
+                    -webkit-text-stroke: 2px red; color: transparent;">
+            BRUTAL
+        </div>
+
+
+        <!-- Various text and shape blocks -->
+
+        <!-- Top-left overlay text -->
+        <div style="position: absolute; top: 5%; left: 5%; font-size: 3vw; font-weight: bold; color: white; z-index: 20; transform: rotate(-5deg);">
+            CONCRETE MONSTERS
+        </div>
+        <div style="position: absolute; top: 6%; left: 4.8%; font-size: 3vw; font-weight: bold; color: red; z-index: 19; transform: rotate(-5deg);">
+            CONCRETE MONSTERS
+        </div>
+
+        <!-- Right-side, stacked text -->
+        <div style="position: absolute; top: 10%; right: 10%; font-size: 2vw; font-weight: bold; color: red; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: upright; z-index: 15;">
+            MASSIVE RAW FUNCTION
+        </div>
+        <div style="position: absolute; top: 11%; right: 9.8%; font-size: 2vw; font-weight: bold; color: white; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: upright; z-index: 14;">
+            MASSIVE RAW FUNCTION
+        </div>
+
+        <!-- Bottom-left large text -->
+        <div style="position: absolute; bottom: 5%; left: 2%; font-size: 4vw; font-weight: 900; color: black; z-index: 25; background-color: red; padding: 10px 20px; transform: skewX(-15deg);">
+            UNYIELDING FORM
+        </div>
+
+        <!-- Bottom-right abstract block -->
+        <div style="position: absolute; bottom: 0; right: 0; width: 30vw; height: 25vh; background-color: white; z-index: 5; transform: skewY(10deg);"></div>
+        <div style="position: absolute; bottom: 2vh; right: 1vw; width: 28vw; height: 23vh; background-color: black; z-index: 6; transform: skewY(10deg);"></div>
+        <div style="position: absolute; bottom: 4vh; right: 2vw; width: 26vw; height: 21vh; background-color: red; z-index: 7; transform: skewY(10deg);"></div>
+
+        <!-- Small text snippets, randomly placed, some rotated -->
+        <div style="position: absolute; top: 20%; left: 30%; font-size: 1.5vw; color: white; z-index: 12; transform: rotate(10deg);">
+            LE CORBUSIER
+        </div>
+        <div style="position: absolute; top: 21%; left: 29.8%; font-size: 1.5vw; color: red; z-index: 11; transform: rotate(10deg);">
+            LE CORBUSIER
+        </div>
+
+        <div style="position: absolute; top: 40%; right: 25%; font-size: 1.8vw; color: red; z-index: 12; transform: rotate(-15deg);">
+            BARBICAN ESTATE
+        </div>
+        <div style="position: absolute; top: 41%; right: 24.8%; font-size: 1.8vw; color: white; z-index: 11; transform: rotate(-15deg);">
+            BARBICAN ESTATE
+        </div>
+
+        <div style="position: absolute; bottom: 30%; left: 35%; font-size: 1.2vw; color: white; z-index: 12;">
+            RAW CONCRETE
+        </div>
+        <div style="position: absolute; bottom: 29%; left: 35.2%; font-size: 1.2vw; color: black; z-index: 11; background-color: red; padding: 2px;">
+            RAW CONCRETE
+        </div>
+
+        <!-- More abstract geometric shapes -->
+        <div style="position: absolute; top: 0; left: 40%; width: 20vw; height: 100vh; background-color: rgba(255,0,0,0.1); z-index: 1;"></div>
+        <div style="position: absolute; top: 0; left: 40.5%; width: 19vw; height: 100vh; background-color: rgba(255,255,255,0.1); z-index: 2;"></div>
+
+        <div style="position: absolute; top: 15%; right: 0%; width: 10vw; height: 70vh; background-color: white; z-index: 3; transform: skewY(-20deg);"></div>
+        <div style="position: absolute; top: 14%; right: 0.5%; width: 9vw; height: 72vh; background-color: black; z-index: 4; transform: skewY(-20deg);"></div>
+        <div style="position: absolute; top: 13%; right: 1%; width: 8vw; height: 74vh; background-color: red; z-index: 5; transform: skewY(-20deg);"></div>
+
+        <!-- Diagonal thin line element -->
+        <div style="position: absolute; top: 10%; left: -10%; width: 120vw; height: 10px; background-color: red; z-index: 30; transform: rotate(20deg);"></div>
+        <div style="position: absolute; top: 11%; left: -11%; width: 120vw; height: 5px; background-color: white; z-index: 31; transform: rotate(20deg);"></div>
+
+        <div style="position: absolute; bottom: 10%; right: -10%; width: 120vw; height: 15px; background-color: black; z-index: 30; transform: rotate(-15deg);"></div>
+        <div style="position: absolute; bottom: 11%; right: -11%; width: 120vw; height: 8px; background-color: white; z-index: 31; transform: rotate(-15deg);"></div>
+
+
+        <!-- Overlay with text for texture -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; mix-blend-mode: overlay; opacity: 0.1;">
+            <div style="font-size: 0.8em; line-height: 1.2; text-transform: uppercase; white-space: pre-wrap; word-break: break-all; opacity: 0.8; color: white;">
+                BRUTALISM CONCRETE FORM MASSIVE RAW UGLY BEAUTY POWER STRUCTURE DESIGN ARCHITECTURE FUNCTIONALITY AGGRESSION STATEMENT BARBICAN TRELLICK GATESHEAD ROBIN HOOD GARDENS ATLANTA CENTRAL LIBRARY YALE ART AND ARCHITECTURE BUILDING PAUL RUDOLPH LE CORBUSIER ALISON AND PETER SMITHSON MONOLITHIC URBAN SCULPTURE FORTRESS MIGHT PERMANENCE RAWNESS IN YOUR FACE UNCOMPROMISING GEOMETRIC GRID MODULAR PREFABRICATION SOCIAL HOUSING POST-WAR RECONSTRUCTION CRITICISM ADMIRATION DECAY RENEWAL MODERNISM EXPOSED AGGREGATE TEXTURE PATTERN SHADOW LIGHT HEAVY DENSITY SCALE VOLUME SHEER CONCRETE RAW CONCRETE REINFORCED CONCRETE PRECAST CONCRETE EXPOSED CONCRETE FINISHED CONCRETE UNFINISHED CONCRETE BRUTAL BRUTALIST BRUTAL BRUTALIST BRUTAL BRUTALIST
+            </div>
+        </div>
+
+        <!-- Edge accent divs -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 100px; height: 100px; background-color: red; z-index: 100; transform: rotate(45deg);"></div>
+        <div style="position: absolute; bottom: -50px; right: -50px; width: 100px; height: 100px; background-color: white; z-index: 100; transform: rotate(45deg);"></div>
+
+        <div style="position: absolute; top: 25%; left: -5%; width: 10vw; height: 2vh; background-color: black; z-index: 40; transform: rotate(-10deg);"></div>
+        <div style="position: absolute; top: 26%; left: -4%; width: 10vw; height: 1.5vh; background-color: red; z-index: 41; transform: rotate(-10deg);"></div>
+
+        <div style="position: absolute; bottom: 20%; right: -5%; width: 12vw; height: 2.5vh; background-color: white; z-index: 40; transform: rotate(15deg);"></div>
+        <div style="position: absolute; bottom: 21%; right: -4%; width: 12vw; height: 2vh; background-color: black; z-index: 41; transform: rotate(15deg);"></div>
+
+    </div>
+</body>
+
+
+Refinement ideas for "radical brutalist":
+- More clashing z-indices.
+- Text overlapping text, not just shapes.
+- Text used as texture.
+- More aggressive use of `transform` (skew, rotate, scale).
+- Less readable, more about the visual *impact*.
+- Overlapping elements that obscure parts of other elements.
+- Very tight `line-height` and `letter-spacing` for some text, or stretched `word-spacing`.
+- Use `mix-blend-mode` for interesting color interactions if possible, though browser support for all options might be varied, 'overlay' or 'multiply' could work. `mix-blend-mode: screen` on white text over red/black could create interesting effects. (Let's try `overlay` with `opacity` for the texture text).
+- Make sure to use `vw` and `vh` for sizes to keep it somewhat responsive, but not perfectly. Brutalism isn't about perfect responsiveness.
+- The `overflow: hidden;` on the body and main container is important to contain the off-screen rotated/skewed elements.
+
+Let's double-check the constraints: "ONLY raw HTML code. No markdown backticks." This means the final output should start with `<!DOCTYPE html>` or `<html>` and end with `</html>`.
+
+I should put the entire thing within `<html>`, `<head>`, and `<body>` tags.
+The `head` will be minimal, maybe just a `meta charset` and a `title`.
+No external CSS, all inline `style` attributes.
+
+Final check of content:
+- Red/black/white: Yes.
+- High-contrast: Yes.
+- HTML div collage: Yes, many divs with absolute positioning.
+- Brutalist architecture theme: Yes, keywords and phrases.
+- Radical/brutalist aesthetic: Yes, chaotic, overlapping, strong geometric, text as art, aggressive positioning, transforms.
+
+The `mix-blend-mode` with `opacity` on the large texture text is a good touch for "radical".
+Adding some layered, ghosted text for the main "BRUTAL" element.
+The skewing of large blocks helps.
+Using `pointer-events: none;` on overlay elements ensures the underlying elements are still selectable if this were interactive (though it's a static collage). It mostly prevents interfering with any perceived interaction.
+
+Let's organize the HTML slightly for readability of the code itself, but the visual result will be chaotic.
+
+One more idea: A sharp, broken line, like a crack or an aggressive border.
+`border-left: 5px solid red; border-top: 5px solid black; transform: skewY(20deg);`
+Or just multiple thin divs.
+
+Consider using `calc()` for positions and sizes like `top: calc(50% + 20px);` to break up perfect alignment further.
+
+Let's add some more explicit layering with z-index, ensuring some elements fully obscure others partially.
+The main "BRUTAL" text could be done with a `-webkit-text-stroke` to give it a outlined effect, making it even more graphic.
+
+Okay, let's assemble the full raw HTML.<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BRUTALIST COLLAGE</title>
+    <style>
+        /* Basic reset and font for a brutalist feel, but inline styles will override */
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide anything that goes beyond the viewport */
+            font-family: 'Arial Black', Gadget, sans-serif; /* Strong, impactful font */
+            color: white; /* Default text color */
+            background-color: black; /* Default background */
+        }
+        div {
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main container for the brutalist collage -->
+    <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: black;">
+
+        <!-- Massive, central, layered 'BRUTAL' text -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg);
+                    font-size: 16vw; font-weight: 900; color: red; text-transform: uppercase; line-height: 0.8; z-index: 30;
+                    letter-spacing: -0.05em; opacity: 0.9;">
+            BRUTAL
+        </div>
+        <div style="position: absolute; top: 50.5%; left: 49.5%; transform: translate(-50%, -50%) rotate(-10deg);
+                    font-size: 16vw; font-weight: 900; color: white; text-transform: uppercase; line-height: 0.8; z-index: 29;
+                    letter-spacing: -0.05em; opacity: 0.8;">
+            BRUTAL
+        </div>
+        <div style="position: absolute; top: 51%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg);
+                    font-size: 16vw; font-weight: 900; color: black; text-transform: uppercase; line-height: 0.8; z-index: 28;
+                    -webkit-text-stroke: 2px red; color: transparent; letter-spacing: -0.05em; opacity: 0.7;">
+            BRUTAL
+        </div>
+
+        <!-- Overlapping, aggressive text blocks -->
+        <div style="position: absolute; top: 5%; left: 5%; font-size: 4vw; font-weight: 900; color: white; z-index: 40; transform: rotate(-8deg); background-color: red; padding: 10px 20px;">
+            RAW CONCRETE
+        </div>
+        <div style="position: absolute; top: 6%; left: 4.5%; font-size: 4vw; font-weight: 900; color: black; z-index: 39; transform: rotate(-8deg); padding: 10px 20px; -webkit-text-stroke: 1px white; color: transparent;">
+            RAW CONCRETE
+        </div>
+
+        <div style="position: absolute; top: 15%; right: 5%; font-size: 3vw; font-weight: 900; color: red; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: upright; z-index: 35; letter-spacing: -0.1em;">
+            MASSIVE UNYIELDING FORM
+        </div>
+        <div style="position: absolute; top: 16%; right: 5.5%; font-size: 3vw; font-weight: 900; color: white; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: upright; z-index: 34; letter-spacing: -0.1em;">
+            MASSIVE UNYIELDING FORM
+        </div>
+
+        <div style="position: absolute; bottom: 10%; left: 10%; font-size: 2.5vw; font-weight: 900; color: black; z-index: 45; background-color: white; padding: 5px 15px; transform: skewX(-20deg) rotate(5deg);">
+            FUNCTION OVER FLAIR
+        </div>
+        <div style="position: absolute; bottom: 10.5%; left: 9.5%; font-size: 2.5vw; font-weight: 900; color: red; z-index: 44; background-color: black; padding: 5px 15px; transform: skewX(-20deg) rotate(5deg);">
+            FUNCTION OVER FLAIR
+        </div>
+
+        <!-- Geometric blocks and lines -->
+        <div style="position: absolute; top: 0; left: 30%; width: 25vw; height: 100vh; background-color: rgba(255,0,0,0.15); z-index: 5; transform: skewX(-10deg);"></div>
+        <div style="position: absolute; top: 0; left: 32%; width: 20vw; height: 100vh; background-color: rgba(255,255,255,0.1); z-index: 6; transform: skewX(-10deg);"></div>
+
+        <div style="position: absolute; top: 20%; right: 0; width: 15vw; height: 60vh; background-color: white; z-index: 10; transform: skewY(15deg);"></div>
+        <div style="position: absolute; top: 22%; right: 1vw; width: 13vw; height: 58vh; background-color: black; z-index: 11; transform: skewY(15deg);"></div>
+        <div style="position: absolute; top: 24%; right: 2vw; width: 11vw; height: 56vh; background-color: red; z-index: 12; transform: skewY(15deg);"></div>
+
+        <!-- Diagonal accent lines -->
+        <div style="position: absolute; top: 10%; left: -20%; width: 140vw; height: 8px; background-color: white; z-index: 50; transform: rotate(18deg);"></div>
+        <div style="position: absolute; top: 11%; left: -21%; width: 140vw; height: 12px; background-color: red; z-index: 49; transform: rotate(18deg);"></div>
+
+        <div style="position: absolute; bottom: 5%; right: -20%; width: 140vw; height: 10px; background-color: black; z-index: 50; transform: rotate(-12deg);"></div>
+        <div style="position: absolute; bottom: 6%; right: -21%; width: 140vw; height: 6px; background-color: white; z-index: 49; transform: rotate(-12deg);"></div>
+
+        <!-- Smaller text elements and floating blocks -->
+        <div style="position: absolute; top: 25%; left: 10%; font-size: 1.8vw; color: black; z-index: 46; background-color: red; padding: 5px 8px;">
+            LE CORBUSIER
+        </div>
+        <div style="position: absolute; top: 26%; left: 9.5%; font-size: 1.8vw; color: white; z-index: 45; background-color: black; padding: 5px 8px;">
+            BARBICAN
+        </div>
+
+        <div style="position: absolute; top: 60%; left: 5%; width: 15vw; height: 5vh; background-color: white; z-index: 20; transform: rotate(10deg);"></div>
+        <div style="position: absolute; top: 61%; left: 5.5%; width: 14vw; height: 4.5vh; background-color: red; z-index: 21; transform: rotate(10deg);"></div>
+
+        <div style="position: absolute; bottom: 5%; right: 30%; width: 20vw; height: 15vh; background-color: red; z-index: 25; transform: skewY(-10deg) rotate(5deg);"></div>
+        <div style="position: absolute; bottom: 6%; right: 30.5%; width: 19vw; height: 14vh; background-color: black; z-index: 26; transform: skewY(-10deg) rotate(5deg);"></div>
+
+        <div style="position: absolute; top: 40%; left: 18%; font-size: 1.5vw; color: red; z-index: 38; transform: rotate(20deg);">
+            UGLY BEAUTY
+        </div>
+        <div style="position: absolute; top: 41%; left: 17.5%; font-size: 1.5vw; color: white; z-index: 37; transform: rotate(20deg);">
+            UGLY BEAUTY
+        </div>
+
+        <div style="position: absolute; top: 70%; right: 20%; font-size: 1.6vw; color: white; z-index: 38; transform: rotate(-25deg); background-color: black; padding: 3px 6px;">
+            FUNCTIONALISM
+        </div>
+
+        <!-- Overwhelming text texture layer -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 60; pointer-events: none; opacity: 0.15; overflow: hidden;">
+            <div style="font-size: 1.2em; line-height: 1.1; text-transform: uppercase; white-space: pre-wrap; word-break: break-all; color: white; mix-blend-mode: overlay; transform: scale(1.1) rotate(2deg);">
+                BRUTALISM CONCRETE FORM MASSIVE RAW UGLY BEAUTY POWER STRUCTURE DESIGN ARCHITECTURE FUNCTIONALITY AGGRESSION STATEMENT BARBICAN TRELLICK GATESHEAD ROBIN HOOD GARDENS ATLANTA CENTRAL LIBRARY YALE ART AND ARCHITECTURE BUILDING PAUL RUDOLPH LE CORBUSIER ALISON AND PETER SMITHSON MONOLITHIC URBAN SCULPTURE FORTRESS MIGHT PERMANENCE RAWNESS IN YOUR FACE UNCOMPROMISING GEOMETRIC GRID MODULAR PREFABRICATION SOCIAL HOUSING POST-WAR RECONSTRUCTION CRITICISM ADMIRATION DECAY RENEWAL MODERNISM EXPOSED AGGREGATE TEXTURE PATTERN SHADOW LIGHT HEAVY DENSITY SCALE VOLUME SHEER CONCRETE RAW CONCRETE REINFORCED CONCRETE PRECAST CONCRETE EXPOSED CONCRETE FINISHED CONCRETE UNFINISHED CONCRETE BRUTAL BRUTALIST BRUTAL BRUTALIST BRUTAL BRUTALIST BRUTALISM CONCRETE FORM MASSIVE RAW UGLY BEAUTY POWER STRUCTURE DESIGN ARCHITECTURE FUNCTIONALITY AGGRESSION STATEMENT BARBICAN TRELLICK GATESHEAD ROBIN HOOD GARDENS ATLANTA CENTRAL LIBRARY YALE ART AND ARCHITECTURE BUILDING PAUL RUDOLPH LE CORBUSIER ALISON AND PETER SMITHSON MONOLITHIC URBAN SCULPTURE FORTRESS MIGHT PERMANENCE RAWNESS IN YOUR FACE UNCOMPROMISING GEOMETRIC GRID MODULAR PREFABRICATION SOCIAL HOUSING POST-WAR RECONSTRUCTION CRITICISM ADMIRATION DECAY RENEWAL MODERNISM EXPOSED AGGREGATE TEXTURE PATTERN SHADOW LIGHT HEAVY DENSITY SCALE VOLUME SHEER CONCRETE RAW CONCRETE REINFORCED CONCRETE PRECAST CONCRETE EXPOSED CONCRETE FINISHED CONCRETE UNFINISHED CONCRETE BRUTAL BRUTALIST BRUTAL BRUTALIST BRUTAL BRUTALIST
+            </div>
+        </div>
+
+        <!-- Random small solid blocks for visual noise -->
+        <div style="position: absolute; top: 10vh; left: 80vw; width: 3vw; height: 10vh; background-color: red; z-index: 1;"></div>
+        <div style="position: absolute; bottom: 15vh; right: 85vw; width: 2vw; height: 8vh; background-color: white; z-index: 1;"></div>
+        <div style="position: absolute; top: 45vh; left: 10vw; width: 1vw; height: 15vh; background-color: black; z-index: 1;"></div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-18 08:05:41.544511</div>
         <!DOCTYPE html>
 <html>
