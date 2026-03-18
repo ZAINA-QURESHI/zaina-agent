@@ -16,6 +16,617 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-18 23:03:15.954411</div>
+        <!--
+THOUGHT PROCESS:
+
+The user wants a "radical brutalist HTML div collage about algorithmic surveillance."
+Key elements requested:
+- Radical
+- Brutalist
+- HTML div collage
+- Algorithmic surveillance theme
+- High-contrast red/black/white palette
+- Output ONLY raw HTML code (no markdown).
+
+Let's break down each point:
+
+1.  **Brutalism in HTML:**
+    *   Minimalist, raw, exposed structure.
+    *   Large, bold typography (often sans-serif).
+    *   Asymmetry, lack of conventional "prettiness."
+    *   Strong, unadorned blocks.
+    *   Sometimes overlapping elements, creating tension.
+    *   Direct, sometimes confrontational messaging.
+    *   Avoid subtle gradients, rounded corners, shadows (unless very harsh).
+    *   Use `!important` for strong styling, reflecting a "no compromise" attitude.
+
+2.  **Radicalism:**
+    *   Bold statements.
+    *   Disruptive layout.
+    *   Unconventional use of elements.
+    *   Direct and potentially shocking language.
+
+3.  **HTML div collage:**
+    *   Use many `div` elements.
+    *   Position them explicitly using CSS (absolute, relative, fixed).
+    *   Overlap them.
+    *   Vary sizes.
+    *   Use background colors for blocks.
+    *   Incorporate text elements (`h1`, `p`, `span`) within or adjacent to divs.
+
+4.  **Algorithmic Surveillance Theme:**
+    *   Keywords: DATA, TRACK, WATCH, EYE, CONTROL, ALGORITHM, GATHER, PROFILE, PREDICT, SILENCE, CONSENT, CODE, MATRIX, NETWORK, GHOST, SHADOW, INVISIBLE.
+    *   Metaphors: Big Brother, panopticon, digital footprints, data trails, invisible chains.
+    *   Feelings: Unease, powerlessness, omnipresence, being watched, loss of privacy.
+
+5.  **High-contrast red/black/white:**
+    *   Primary colors for backgrounds and text.
+    *   Red for danger, alert, stop, warning.
+    *   Black for void, darkness, hidden, power.
+    *   White for starkness, truth (or lack thereof), clarity (or deceptive clarity).
+
+6.  **Output ONLY raw HTML:**
+    *   No `<!DOCTYPE html>` or `<html>` or `<head>` or `<body>` if I'm just creating a *div collage* that *could* be dropped into a body. However, for a self-contained, renderable piece, it's best to include the full structure for clarity and proper rendering in a browser. I'll aim for a full, minimal HTML structure.
+    *   Inline CSS will be brutalist (direct, uncompromising) but `<style>` block is cleaner for this amount of styling. I'll use a `<style>` block.
+
+**Initial Structure & Content Ideas:**
+
+*   A main container `div` to hold everything, set to `position: relative`.
+*   Multiple child `div`s inside, set to `position: absolute`, with varying `top`, `left`, `width`, `height`, `z-index`.
+*   Text: `H1` for main impact, `P` for smaller statements, `SPAN` for individual words.
+*   Colors:
+    *   `background-color: black;` for the overall page.
+    *   `background-color: red;` for warning blocks.
+    *   `background-color: white;` for stark data blocks.
+    *   `color: white;` or `color: red;` or `color: black;` for text.
+*   Fonts: A generic sans-serif, maybe `monospace` for a "code" feel. `font-family: 'Arial Black', sans-serif;` or `'Impact', sans-serif;` for bold.
+
+**Drafting elements and their messages:**
+
+*   **Main Title:** "SYSTEM EYE" or "DATA HARVEST" or "CONSTANT SURVEILLANCE"
+*   **Keywords:** "TRACKED", "PROFILED", "ANALYSED", "PREDICTED", "SILENT CONSENT", "YOUR DATA", "NOT YOURS", "THE CODE IS WATCHING", "GHOST IN THE MACHINE", "ALWAYS ON", "INVISIBLE WIRES", "RED LIGHT ALERT"
+*   **Visuals:** Overlapping blocks. A large red block to symbolize danger. A large black block for the unseen system. White blocks for raw data points or processed information.
+*   **Positioning:** Deliberate overlaps, some text slightly off-center, creating a sense of unease or brokenness.
+
+Let's start building the HTML and CSS.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITHMIC WATCH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden; /* Hide scrollbars if elements go out of bounds */
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Brutalist font */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw; /* Occupy full viewport width */
+            height: 100vh; /* Occupy full viewport height */
+            max-width: 1200px; /* Maximize for better layout, or remove for full screen brutalism */
+            max-height: 800px; /* Adjust as needed */
+            margin: auto;
+            border: 5px solid red; /* A stark border */
+            box-sizing: border-box; /* Include padding and border in width/height */
+            overflow: hidden; /* To keep inner elements contained if they try to overflow */
+        }
+
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 0.9;
+        }
+
+        /* Specific blocks for collage effect */
+
+        /* Main title */
+        .block-title {
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 20%;
+            background-color: transparent;
+            color: white;
+            font-size: 8vw; /* Responsive font size */
+            z-index: 10;
+            text-align: left;
+            border-bottom: 3px solid red;
+            overflow: hidden; /* Prevent text spilling out of its own container */
+        }
+        @media (max-width: 768px) {
+            .block-title {
+                font-size: 10vw;
+            }
+        }
+
+
+        /* Red warning block */
+        .block-red-warning {
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background-color: red;
+            z-index: 5;
+            color: black;
+            font-size: 3vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-left: 5px solid black;
+        }
+        @media (max-width: 768px) {
+            .block-red-warning {
+                width: 100%;
+                height: 30%;
+                top: 70%;
+                right: 0;
+                border-top: 5px solid black;
+                border-left: none;
+                font-size: 5vw;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+
+        /* Black data block */
+        .block-black-data {
+            top: 15%;
+            left: 0;
+            width: 60%;
+            height: 60%;
+            background-color: black;
+            border: 3px solid white;
+            z-index: 7;
+            color: red;
+            font-size: 2vw;
+            line-height: 1.1;
+            padding-top: 50px;
+            padding-left: 30px;
+        }
+        @media (max-width: 768px) {
+            .block-black-data {
+                width: 90%;
+                height: 50%;
+                top: 15%;
+                left: 5%;
+                font-size: 4vw;
+                padding: 20px;
+            }
+        }
+
+        /* White text block 1 */
+        .block-white-text-1 {
+            top: 30%;
+            left: 45%;
+            width: 30%;
+            height: 20%;
+            background-color: white;
+            color: black;
+            font-size: 1.5vw;
+            z-index: 8;
+            border: 2px solid red;
+            transform: rotate(-5deg); /* A slight brutalist tilt */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .block-white-text-1 {
+                top: 45%;
+                left: 10%;
+                width: 70%;
+                height: 15%;
+                font-size: 3vw;
+                transform: rotate(0deg); /* Simpler for small screens */
+            }
+        }
+
+        /* White text block 2 */
+        .block-white-text-2 {
+            bottom: 5%;
+            left: 2%;
+            width: 40%;
+            height: 15%;
+            background-color: white;
+            color: black;
+            font-size: 1.8vw;
+            z-index: 9;
+            border: 2px solid red;
+            transform: rotate(3deg);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .block-white-text-2 {
+                bottom: 35%;
+                left: 5%;
+                width: 90%;
+                height: 15%;
+                font-size: 3.5vw;
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Small red dot/indicator */
+        .block-indicator {
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border: 2px solid white;
+            z-index: 15;
+            border-radius: 50%; /* Make it a circle */
+            animation: pulse 1.5s infinite alternate; /* Pulsing effect */
+        }
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(1.1); opacity: 0.7; }
+        }
+        @media (max-width: 768px) {
+            .block-indicator {
+                top: 5px;
+                right: 5px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .small-text {
+            font-size: 0.8em;
+            display: block;
+            margin-top: 5px;
+            font-family: monospace; /* For a more 'code' like brutalism */
+        }
+
+        .alert-text {
+            color: black;
+            font-size: 1em;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="block block-indicator"></div>
+
+        <div class="block block-title">
+            <h1>ALGORITHMIC<br>SURVEILLANCE</h1>
+        </div>
+
+        <div class="block block-black-data">
+            <p>DATA HARVEST. CONSTANT ANALYSIS. YOUR DIGITAL GHOST.<br>WE TRACK. WE PREDICT. WE OPTIMIZE. HUMAN BEHAVIOR AS CODE. NO OPT-OUT. CONSENT IS IMPLICIT. SILENT OPERATION. EVERY CLICK. EVERY VIEW. EVERY CONNECTION. INVISIBLE WIRES. PERMANENT RECORD.</p>
+        </div>
+
+        <div class="block block-white-text-1">
+            <p>DO YOU KNOW<br>WHO IS WATCHING?</p>
+        </div>
+
+        <div class="block block-white-text-2">
+            <p>YOUR PROFILE IS COMPLETE. THE MACHINE NEVER FORGETS.</p>
+        </div>
+
+        <div class="block block-red-warning">
+            <p class="alert-text">
+                <span style="font-size: 1.5em; display: block; margin-bottom: 10px;">SYSTEM ALERT!</span>
+                <span class="small-text">ACCESS DENIED.</span>
+                <span class="small-text">PRIVACY VIOLATION.</span>
+                <span class="small-text">CONTROL LOST.</span>
+                <span class="small-text">ERROR: HUMAN FACTOR.</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+**Refinement and self-correction:**
+
+*   **HTML Structure:** Added `<!DOCTYPE>`, `<html>`, `<head>`, `<body>` for a fully functional page.
+*   **CSS in `<style>`:** Cleaner than inline for this complexity.
+*   **Brutalist Fonts:** `'Impact', 'Arial Black', sans-serif` are good choices. `monospace` for code-like snippets.
+*   **Contrast:** Ensuring high contrast with red/black/white for text and backgrounds.
+*   **Positioning:** Used `position: absolute` extensively. Added `z-index` to control overlaps.
+*   **Responsiveness:** Added some basic `@media` queries to make it somewhat responsive, as "brutalism" can still benefit from being viewable on different screen sizes, even if the layout becomes simpler. The core brutalist principles are maintained.
+*   **Content:** Text is direct, confrontational, uses keywords like "DATA HARVEST", "TRACK", "PREDICT", "NO OPT-OUT".
+*   **Visual Tension:** Overlapping blocks, a slight rotation on some white blocks. A red border for the main container. A pulsing red indicator.
+*   **Overflow:** `overflow: hidden` on container to ensure elements don't cause scrollbars unless intended. `overflow: hidden` on text blocks to contain text even if font size becomes too large for a given block size due to responsiveness or other issues, maintaining the block's integrity.
+*   **Line height:** Adjusted `line-height` for a tighter, more compressed look in some blocks, typical of brutalism.
+*   The `collage-container` is set to `width: 100vw; height: 100vh;` and then `max-width`, `max-height` and `margin: auto;` to center it and contain it within a reasonable size on larger screens, while letting it expand to fill smaller screens. This creates a focused collage area. `min-height: 100vh` on body ensures the body always takes full height, making the container placement work better.
+*   Changed `font-size` units to `vw` for better scaling with viewport width, making it more responsive within the brutalist aesthetic.
+
+Looks good. The aim is to create something visually impactful, raw, and thematically appropriate using the specified constraints.
+
+One final check on "ONLY raw HTML code. No markdown backticks." - yes, the output will be just the HTML block.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM_EYE_COLLAGE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            max-width: 1400px;
+            max-height: 900px;
+            margin: auto;
+            border: 5px solid red;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 0.9;
+            text-align: left;
+        }
+
+        /* Main Title Block */
+        .block-title {
+            top: 5%;
+            left: 5%;
+            width: 80%;
+            height: 25%;
+            background-color: transparent;
+            color: white;
+            font-size: 8vw;
+            z-index: 10;
+            border-bottom: 3px solid red;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .block-title {
+                font-size: 10vw;
+                height: 20%;
+            }
+        }
+
+        /* Red Warning Block */
+        .block-red-warning {
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background-color: red;
+            z-index: 5;
+            color: black;
+            font-size: 3vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-left: 5px solid black;
+        }
+        @media (max-width: 768px) {
+            .block-red-warning {
+                width: 100%;
+                height: 30%;
+                top: 70%;
+                right: 0;
+                border-top: 5px solid black;
+                border-left: none;
+                font-size: 5vw;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* Black Data Block */
+        .block-black-data {
+            top: 20%;
+            left: 0;
+            width: 65%;
+            height: 60%;
+            background-color: black;
+            border: 3px solid white;
+            z-index: 7;
+            color: red;
+            font-size: 2vw;
+            line-height: 1.1;
+            padding-top: 50px;
+            padding-left: 30px;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .block-black-data {
+                width: 90%;
+                height: 50%;
+                top: 20%;
+                left: 5%;
+                font-size: 4vw;
+                padding: 20px;
+            }
+        }
+
+        /* White Text Block 1 */
+        .block-white-text-1 {
+            top: 40%;
+            left: 48%;
+            width: 30%;
+            height: 18%;
+            background-color: white;
+            color: black;
+            font-size: 1.5vw;
+            z-index: 8;
+            border: 2px solid red;
+            transform: rotate(-5deg);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .block-white-text-1 {
+                top: 45%;
+                left: 10%;
+                width: 70%;
+                height: 15%;
+                font-size: 3vw;
+                transform: rotate(0deg);
+            }
+        }
+
+        /* White Text Block 2 */
+        .block-white-text-2 {
+            bottom: 5%;
+            left: 2%;
+            width: 45%;
+            height: 15%;
+            background-color: white;
+            color: black;
+            font-size: 1.8vw;
+            z-index: 9;
+            border: 2px solid red;
+            transform: rotate(3deg);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .block-white-text-2 {
+                bottom: 35%;
+                left: 5%;
+                width: 90%;
+                height: 15%;
+                font-size: 3.5vw;
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Small Red Indicator */
+        .block-indicator {
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border: 2px solid white;
+            z-index: 15;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(1.1); opacity: 0.7; }
+        }
+        @media (max-width: 768px) {
+            .block-indicator {
+                top: 5px;
+                right: 5px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .alert-text {
+            color: black;
+            font-size: 1em;
+            line-height: 1.2;
+        }
+
+        .small-code {
+            font-size: 0.7em;
+            display: block;
+            margin-top: 5px;
+            font-family: monospace;
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 0.8;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="block block-indicator"></div>
+
+        <div class="block block-title">
+            <h1>ALGORITHMIC<br>SURVEILLANCE</h1>
+        </div>
+
+        <div class="block block-black-data">
+            <p>DATA HARVEST. CONSTANT ANALYSIS. YOUR DIGITAL GHOST. WE TRACK. WE PREDICT. WE OPTIMIZE. HUMAN BEHAVIOR AS CODE. NO OPT-OUT. CONSENT IS IMPLICIT. SILENT OPERATION. EVERY CLICK. EVERY VIEW. EVERY CONNECTION. INVISIBLE WIRES. PERMANENT RECORD.</p>
+        </div>
+
+        <div class="block block-white-text-1">
+            <p>DO YOU KNOW<br>WHO IS WATCHING?</p>
+        </div>
+
+        <div class="block block-white-text-2">
+            <p>YOUR PROFILE IS COMPLETE. THE MACHINE NEVER FORGETS.</p>
+        </div>
+
+        <div class="block block-red-warning">
+            <p class="alert-text">
+                <span style="font-size: 1.5em; display: block; margin-bottom: 10px;">SYSTEM ALERT!</span>
+                <span class="small-code">ACCESS DENIED.</span>
+                <span class="small-code">PRIVACY VIOLATION.</span>
+                <span class="small-code">CONTROL LOST.</span>
+                <span class="small-code">ERROR: HUMAN FACTOR.</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-18 21:52:01.641168</div>
         <!DOCTYPE html>
 <html>
