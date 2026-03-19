@@ -16,6 +16,278 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-19 08:01:44.050811</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay: Brutalist Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    background-color: #000;
+    overflow: hidden; /* Prevent scrollbars from layout shifts */
+    color: #FFF;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .fragment {
+    position: absolute;
+    border: 1px solid #F00; /* High contrast red border */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-break: break-all;
+    overflow: hidden;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.8); /* Semi-transparent black for depth */
+    transition: all 0.3s ease-out; /* Subtle interaction */
+    cursor: default;
+    font-size: clamp(0.5rem, 2vw, 2rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: bold;
+    mix-blend-mode: screen; /* Interesting blend mode */
+  }
+
+  .fragment:hover {
+    background-color: rgba(255,0,0,0.9); /* Red on hover */
+    color: #000;
+    z-index: 100;
+    transform: scale(1.02);
+  }
+
+  /* Specific fragment styling for brutalist irregularity */
+  .f1 {
+    width: 30vw; height: 20vh;
+    top: 5vh; left: 5vw;
+    background-color: #000;
+    border-color: #FFF;
+    color: #F00;
+  }
+  .f2 {
+    width: 25vw; height: 15vh;
+    top: 15vh; right: 10vw;
+    background-color: #F00;
+    color: #FFF;
+    transform: rotate(2deg);
+  }
+  .f3 {
+    width: 40vw; height: 10vh;
+    bottom: 10vh; left: 2vw;
+    background-color: #FFF;
+    color: #000;
+    border-color: #000;
+  }
+  .f4 {
+    width: 15vw; height: 30vh;
+    bottom: 5vh; right: 15vw;
+    background-color: #000;
+    border-color: #F00;
+  }
+  .f5 {
+    width: 20vw; height: 25vh;
+    top: 30vh; left: 20vw;
+    background-color: #F00;
+    color: #000;
+    transform: rotate(-3deg);
+    mix-blend-mode: multiply; /* Different blend mode */
+  }
+  .f6 {
+    width: 10vw; height: 40vh;
+    top: 10vh; left: 45vw;
+    background-color: #FFF;
+    color: #F00;
+    border-color: #000;
+    z-index: 10;
+  }
+  .f7 {
+    width: 35vw; height: 8vh;
+    top: 50vh; right: 5vw;
+    background-color: #000;
+    color: #FFF;
+    border-color: #FFF;
+  }
+  .f8 {
+    width: 22vw; height: 12vh;
+    bottom: 25vh; left: 30vw;
+    background-color: #F00;
+    color: #FFF;
+    transform: rotate(1deg);
+  }
+  .f9 {
+    width: 18vw; height: 18vh;
+    top: 55vh; left: 10vw;
+    background-color: #FFF;
+    color: #000;
+    border-color: #F00;
+    mix-blend-mode: overlay;
+  }
+  .f10 {
+    width: 28vw; height: 20vh;
+    top: 20vh; right: 25vw;
+    background-color: #000;
+    color: #F00;
+    border-width: 2px;
+  }
+  .f11 {
+    width: 12vw; height: 15vh;
+    bottom: 35vh; right: 35vw;
+    background-color: #F00;
+    color: #FFF;
+    border-width: 3px;
+    transform: rotate(-5deg);
+  }
+  .f12 {
+    width: 20vw; height: 10vh;
+    top: 70vh; left: 50vw;
+    background-color: #FFF;
+    color: #000;
+    border-width: 1px;
+    border-color: #F00;
+  }
+  .f13 {
+    width: 10vw; height: 10vh;
+    top: 2vh; left: 40vw;
+    background-color: #000;
+    color: #FFF;
+    border-width: 1px;
+    border-color: #FFF;
+  }
+  .f14 {
+    width: 10vw; height: 10vh;
+    bottom: 2vh; right: 40vw;
+    background-color: #F00;
+    color: #000;
+    border-width: 1px;
+    border-color: #FFF;
+  }
+
+  /* Glitch effect on some elements */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); opacity: 0.9; }
+    40% { transform: translate(-2px, -2px); opacity: 1; }
+    60% { transform: translate(2px, 2px); opacity: 0.8; }
+    80% { transform: translate(2px, -2px); opacity: 1; }
+    100% { transform: translate(0); }
+  }
+
+  .glitch {
+    animation: glitch 0.8s infinite step-end alternate;
+  }
+
+  .f1.glitch { animation-duration: 1.2s; animation-delay: 0.1s; }
+  .f4.glitch { animation-duration: 0.9s; animation-delay: 0.3s; }
+  .f7.glitch { animation-duration: 1.5s; animation-delay: 0.5s; }
+  .f10.glitch { animation-duration: 0.7s; animation-delay: 0.7s; }
+
+  /* Flickering text effect */
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow:
+        -0.2rem -0.2rem 1rem #000,
+        0.2rem 0.2rem 1rem #000,
+        0 0 2rem #F00,
+        0 0 4rem #F00,
+        0 0 6rem #F00;
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      text-shadow: none;
+      opacity: 0.8;
+    }
+  }
+
+  .flicker-text {
+    animation: flicker 2s infinite alternate;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="fragment f1 glitch">
+    DATA<br>CORRUPTED<br>MEMORY<br>LOSS
+  </div>
+
+  <div class="fragment f2 flicker-text">
+    BITROT<br>ERROR 404
+  </div>
+
+  <div class="fragment f3">
+    SYSTEM<br>FAILURE<br>ENDPOINT<br>UNREACHABLE
+  </div>
+
+  <div class="fragment f4 glitch">
+    OBSOLETE<br>CODE<br>STACK<br>OVERFLOW
+  </div>
+
+  <div class="fragment f5">
+    VOID<br>EMPTY<br>NULL<br>UNREGISTERED
+  </div>
+
+  <div class="fragment f6">
+    DECRYPT<br>FAILED<br>DEAD<br>LINK
+  </div>
+
+  <div class="fragment f7 glitch flicker-text">
+    CACHE<br>EXPIRED<br>FRAGMENTS
+  </div>
+
+  <div class="fragment f8">
+    GHOST<br>PROTOCOL<br>SHUTDOWN
+  </div>
+
+  <div class="fragment f9">
+    REDUNDANCY<br>LOST<br>BACKUP<br>GONE
+  </div>
+
+  <div class="fragment f10 glitch">
+    STATIC<br>NOISE<br>SIGNAL<br>DEGRADATION
+  </div>
+
+  <div class="fragment f11">
+    ERASE<br>HISTORY<br>RESET
+  </div>
+
+  <div class="fragment f12 flicker-text">
+    ENTROPY<br>PROGRESS
+  </div>
+
+  <div class="fragment f13">
+    01001010
+  </div>
+
+  <div class="fragment f14">
+    10101010
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-19 05:17:47.981919</div>
         <!DOCTYPE html>
 <html>
