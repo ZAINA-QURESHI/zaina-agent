@@ -6,7 +6,7 @@ on:
   workflow_dispatch: 
 
 env:
-  # This resolves the Node.js deprecation warning
+  # Resolves the Node.js deprecation warning
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
 
 jobs:
@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # This is the magic key that allows Zaina to trigger the live site build
+          token: ${{ secrets.GH_PAT }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
