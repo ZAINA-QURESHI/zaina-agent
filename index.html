@@ -16,6 +16,164 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 13:55:36.537274</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Digital Decay: Brutalist Collage</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
+    background-color: #000;
+  }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+  }
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #FFF; /* Subtle white border for harsh separation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-all;
+    font-weight: 900;
+    line-height: 0.9;
+    overflow: hidden; /* Hide overflowing text */
+  }
+
+  /* Specific Block Styles */
+  .b-1 { top: 0; left: 0; width: 30%; height: 40%; background-color: #F00; color: #FFF; font-size: 3vw; border-bottom: 5px solid #000; border-right: 5px solid #000; }
+  .b-2 { top: 0; left: 30%; width: 70%; height: 20%; background-color: #FFF; color: #000; font-size: 4vw; border-bottom: 5px solid #F00; border-left: 5px solid #000; }
+  .b-3 { top: 40%; left: 0; width: 50%; height: 30%; background-color: #000; color: #F00; font-size: 2.5vw; border-top: 5px solid #FFF; border-right: 5px solid #FFF; }
+  .b-4 { top: 20%; left: 30%; width: 30%; height: 20%; background-color: #F00; color: #000; font-size: 1.5vw; border-top: 5px solid #FFF; border-bottom: 5px solid #FFF; border-left: 5px solid #000; border-right: 5px solid #000;}
+  .b-5 { top: 0; right: 0; width: 20%; height: 70%; background-color: #FFF; color: #000; font-size: 1.8vw; writing-mode: vertical-lr; text-orientation: mixed; border-left: 5px solid #000; border-bottom: 5px solid #000; }
+  .b-6 { top: 70%; left: 0; width: 40%; height: 30%; background-color: #FFF; color: #F00; font-size: 3.5vw; border-top: 5px solid #000; border-right: 5px solid #000; }
+  .b-7 { top: 50%; left: 50%; width: 20%; height: 20%; background-color: #F00; color: #FFF; font-size: 1.2vw; border: 5px solid #000; z-index: 10; transform: rotate(-5deg); left: 48%; top: 48%; } /* Slightly rotated, overlapping */
+  .b-8 { top: 70%; left: 40%; width: 60%; height: 30%; background-color: #000; color: #FFF; font-size: 2.8vw; border-top: 5px solid #FFF; border-left: 5px solid #F00;}
+  .b-9 { top: 40%; left: 50%; width: 30%; height: 10%; background-color: #FFF; color: #000; font-size: 2vw; border-bottom: 5px solid #000; border-left: 5px solid #000; }
+  .b-10 { top: 60%; left: 70%; width: 30%; height: 10%; background-color: #F00; color: #FFF; font-size: 1.8vw; border-left: 5px solid #000; border-top: 5px solid #000; }
+
+  /* Glitch-like overlay */
+  .glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0) 50%,
+      rgba(255, 255, 255, 0.1) 50%
+    );
+    background-size: 100% 4px; /* Scanline effect */
+    animation: scanlines 5s infinite linear;
+    mix-blend-mode: overlay; /* Or screen, lighten */
+    opacity: 0.15;
+  }
+
+  @keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+  }
+
+  /* Text animation for subtle 'decay' */
+  .decay-text {
+    animation: flicker 0.8s infinite alternate steps(2, end);
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; transform: scaleX(1); }
+    50% { opacity: 0.9; transform: scaleX(0.98); }
+    100% { opacity: 1; transform: scaleX(1); }
+  }
+
+  /* Specific text elements for more granular control */
+  .corrupted {
+    font-family: monospace;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px #F00, -1px -1px #000;
+    animation: data-corruption 2s infinite alternate steps(5, end);
+  }
+  @keyframes data-corruption {
+    0% { transform: skewX(0); opacity: 1; }
+    25% { transform: skewX(-2deg); opacity: 0.9; }
+    50% { transform: skewX(0); opacity: 0.8; }
+    75% { transform: skewX(2deg); opacity: 0.9; }
+    100% { transform: skewX(0); opacity: 1; }
+  }
+
+  .static {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAABmJLR0QA/wD/AP+AdzggAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4ggMDhA33zE85wAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBUuXP/AAAADUlEQVQI12NkYGBoAAADjAHXhL2EAAAAAElFTkSuQmCC'); /* 2x2 static pixel */
+    background-size: 1px 1px;
+    color: transparent;
+    text-shadow: 0 0 2px rgba(255,255,255,0.8), 0 0 5px rgba(255,0,0,0.5);
+    animation: static-flicker 0.3s infinite alternate;
+  }
+  @keyframes static-flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+
+  .red-bleed {
+      color: #FFF;
+      text-shadow: 1px 0px 0px #F00, -1px 0px 0px #F00, 0px 1px 0px #F00, 0px -1px 0px #F00;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="block b-1"><span class="decay-text">DIGITAL DEATH</span></div>
+  <div class="block b-2"><span class="static">ERRO R_404</span></div>
+  <div class="block b-3"><span class="corrupted">DATA_<br>LOSS</span></div>
+  <div class="block b-4">OBSOLESCENCE IS NOW</div>
+  <div class="block b-5">
+    <span class="red-bleed">CORRUPTION</span><br>
+    <span class="decay-text">BREAKDOWN</span><br>
+    <span class="corrupted">SILENCE</span>
+  </div>
+  <div class="block b-6">
+    <span class="static">VOID</span>
+    <br>
+    <span class="decay-text">FRAGMENT</span>
+  </div>
+  <div class="block b-7">
+    <span class="red-bleed">DECAY</span>
+    <br>
+    <span class="corrupted">SYSTEM_CRASH</span>
+  </div>
+  <div class="block b-8">
+    <span class="decay-text">THE END OF ALL THAT WAS STORED</span>
+  </div>
+  <div class="block b-9">
+    <span class="static">NULL_BYTE</span>
+  </div>
+  <div class="block b-10">
+    <span class="red-bleed">FORGET</span>
+  </div>
+
+  <div class="glitch-overlay"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 11:48:42.258651</div>
         <!DOCTYPE html>
 <html>
