@@ -16,6 +16,171 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 10:57:12.748060</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay Brutalism</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+  }
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle grid line */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 2.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .block span {
+    display: block;
+    mix-blend-mode: difference;
+    color: white;
+    text-shadow: 0 0 5px red;
+    pointer-events: none; /* Make text not interfere with clicks */
+  }
+  /* Color variations */
+  .red { background-color: #FF0000; }
+  .black { background-color: #000000; color: #FF0000; }
+  .white { background-color: #FFFFFF; color: #000000; }
+
+  /* Text color overrides for specific blocks */
+  .block.red span { color: white; text-shadow: none; }
+  .block.black span { color: red; text-shadow: none; }
+  .block.white span { color: black; text-shadow: none; }
+
+  /* Specific block sizing and positioning */
+  .b1 { grid-area: 1 / 1 / 3 / 3; background-color: #FF0000; color: white; font-size: clamp(1.5rem, 4vw, 5rem); }
+  .b2 { grid-area: 1 / 3 / 2 / 5; background-color: #000000; color: #FF0000; }
+  .b3 { grid-area: 1 / 5 / 3 / 7; background-color: #FFFFFF; color: #000000; font-size: clamp(1.2rem, 3vw, 4rem); }
+  .b4 { grid-area: 3 / 1 / 5 / 2; background-color: #000000; color: #FF0000; writing-mode: vertical-lr; text-orientation: mixed;}
+  .b5 { grid-area: 2 / 3 / 4 / 4; background-color: #FF0000; color: white; font-size: clamp(1rem, 2.5vw, 3.5rem); }
+  .b6 { grid-area: 3 / 2 / 4 / 3; background-color: #FFFFFF; color: #000000; }
+  .b7 { grid-area: 2 / 5 / 4 / 6; background-color: #000000; color: #FF0000; }
+  .b8 { grid-area: 4 / 2 / 5 / 4; background-color: #FFFFFF; color: #000000; }
+  .b9 { grid-area: 3 / 4 / 5 / 7; background-color: #FF0000; color: white; font-size: clamp(1.8rem, 5vw, 6rem); }
+  .b10 { grid-area: 5 / 1 / 7 / 3; background-color: #FFFFFF; color: #000000; font-size: clamp(1.5rem, 4vw, 5rem); }
+  .b11 { grid-area: 5 / 3 / 6 / 5; background-color: #000000; color: #FF0000; }
+  .b12 { grid-area: 4 / 1 / 7 / 1; /* This is an error, fixed below */ }
+  .b12_fixed { grid-area: 5 / 5 / 7 / 7; background-color: #FF0000; color: white; writing-mode: vertical-lr; text-orientation: mixed; font-size: clamp(1.2rem, 3vw, 4rem); }
+  .b13 { grid-area: 6 / 3 / 7 / 5; background-color: #FFFFFF; color: #000000; }
+  .b14 { grid-area: 4 / 4 / 5 / 5; background-color: #000000; color: #FF0000; }
+  .b15 { grid-area: 4 / 5 / 5 / 6; background-color: #FF0000; color: white; }
+  .b16 { grid-area: 4 / 6 / 5 / 7; background-color: #FFFFFF; color: #000000; }
+  .b17 { grid-area: 2 / 1 / 3 / 1; background-color: #000000; color: #FF0000; } /* Invisible, covered by b1 */
+
+  /* Additional random blocks to fill gaps and add noise */
+  .r1 { grid-area: 2 / 2 / 3 / 3; background-color: #FFFFFF; color: #000000; font-size: clamp(0.7rem, 1.8vw, 2.2rem); }
+  .r2 { grid-area: 2 / 4 / 3 / 5; background-color: #FF0000; color: white; font-size: clamp(0.7rem, 1.8vw, 2.2rem); }
+  .r3 { grid-area: 4 / 1 / 5 / 2; background-color: #000000; color: #FF0000; font-size: clamp(0.7rem, 1.8vw, 2.2rem); writing-mode: vertical-lr; text-orientation: mixed;} /* Replaced b4 */
+  .r4 { grid-area: 5 / 3 / 6 / 5; background-color: #000000; color: #FF0000; } /* Covers b11 */
+  .r5 { grid-area: 6 / 5 / 7 / 7; background-color: #FF0000; color: white; } /* Covers b12_fixed */
+  .r6 { grid-area: 1 / 1 / 2 / 1; background-color: #FFFFFF; color: #000000; } /* Top-left small */
+
+  /* Glitch/flicker effects */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    5% { opacity: 0.8; }
+    10% { opacity: 1; }
+    15% { opacity: 0.9; }
+    20% { opacity: 1; }
+    25% { opacity: 0.7; }
+    30% { opacity: 1; }
+    35% { opacity: 0.95; }
+    40% { opacity: 1; }
+    45% { opacity: 0.85; }
+    50% { opacity: 1; }
+  }
+  .flicker { animation: flicker 3s infinite steps(1); }
+
+  @keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    10% { filter: hue-rotate(10deg) saturate(1.2); }
+    20% { filter: hue-rotate(0deg); }
+    30% { filter: contrast(1.1); }
+    40% { filter: hue-rotate(-5deg); }
+    50% { filter: contrast(1); }
+    100% { filter: hue-rotate(0deg); }
+  }
+  .color-shift { animation: colorShift 5s infinite steps(1); }
+
+  @keyframes glitchTransform {
+    0% { transform: translate(0, 0); }
+    2% { transform: translate(-2px, 2px); }
+    4% { transform: translate(2px, -2px); }
+    6% { transform: translate(-2px, 2px); }
+    8% { transform: translate(2px, -2px); }
+    10% { transform: translate(0, 0); }
+    100% { transform: translate(0, 0); }
+  }
+  .glitch-text { animation: glitchTransform 8s infinite steps(1); }
+
+  /* Specific glitch applications */
+  .b1 span { animation: glitchTransform 7s infinite steps(1) reverse; }
+  .b9 span { animation: glitchTransform 6s infinite steps(1) forwards; }
+  .b10 span { animation: flicker 4s infinite ease-in-out; }
+  .r3 span { animation: flicker 2s infinite steps(1); }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="block b1 red color-shift"><span>DATA<br>ROT</span></div>
+  <div class="block b2 black"><span>LOSS</span></div>
+  <div class="block b3 white flicker"><span>CORRUPTED</span></div>
+
+  <div class="block r3 black glitch-text"><span>VOID</span></div> <!-- Vertical block -->
+  <div class="block b5 red"><span>ERROR</span></div>
+  <div class="block b6 white"><span>BROKEN</span></div>
+  <div class="block b7 black"><span>NULL</span></div>
+
+  <div class="block r1 white"><span>BIT</span></div> <!-- Small filler block -->
+  <div class="block r2 red"><span>DEGRADE</span></div> <!-- Small filler block -->
+
+  <div class="block b8 white"><span>OBSOLETE</span></div>
+  <div class="block b9 red flicker"><span>FORGOTTEN_SIGNAL</span></div>
+
+  <div class="block b10 white glitch-text"><span>ARCHIVE<br>FAIL</span></div>
+  <div class="block r4 black"><span>DECAY</span></div> <!-- Previously b11 -->
+
+  <div class="block b13 white"><span>EMPTY</span></div>
+  <div class="block b14 black"><span>CODE</span></div>
+  <div class="block b15 red"><span>HASH</span></div>
+  <div class="block b16 white"><span>CRC</span></div>
+
+  <div class="block b12_fixed red flicker"><span>ECHO<br>GONE</span></div> <!-- Vertical block, fills b12 gap -->
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 09:03:27.959994</div>
         <!DOCTYPE html>
 <html lang="en">
