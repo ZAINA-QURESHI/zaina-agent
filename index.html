@@ -16,6 +16,315 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 14:57:22.675583</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G L T C H</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars, essential for collage */
+            font-family: monospace, sans-serif;
+            background-color: #000;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            border: none; /* No visible border for the main container */
+        }
+
+        .glitch-element {
+            position: absolute;
+            box-sizing: border-box; /* Include padding/border in element's total width and height */
+            background-color: #000;
+            color: #FFF;
+            border: 2px solid #F00; /* High-contrast red border */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.2em; /* Base font size */
+            font-weight: bold;
+            line-height: 1.1;
+            transform-origin: center center; /* For rotations */
+            transition: all 0.1s ease-out; /* Subtle animation for interactive elements */
+            cursor: default;
+            z-index: 1; /* Default z-index */
+        }
+
+        /* Specific brutalist / glitch effects */
+        .glitch-text {
+            color: #F00;
+            font-family: 'Press Start 2P', cursive; /* A typical pixel-art font if loaded, otherwise monospace */
+            text-shadow: 2px 2px 0 #FFF, -2px -2px 0 #000; /* Offset shadows for glitch effect */
+            letter-spacing: 0.1em;
+            word-break: break-all;
+            padding: 5px;
+        }
+
+        .white-bg {
+            background-color: #FFF;
+            color: #000;
+            border-color: #000;
+        }
+
+        .red-bg {
+            background-color: #F00;
+            color: #FFF;
+            border-color: #FFF;
+        }
+
+        .black-bg {
+            background-color: #000;
+            color: #F00;
+            border-color: #FFF;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicks to pass through */
+            z-index: 99; /* Always on top */
+            opacity: 0.1; /* Subtle overlay */
+        }
+
+        .glitch-scanlines {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 0, 0, 0.1),
+                rgba(255, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+        }
+
+        .glitch-noise {
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodGg9IjMwMCI+CjxwYXR0ZXJuIGlkPSJzIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iNCIgaGVpZ2h0PSI0Ij4KICAgIDxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNGRkYiLz4KPC9wYXR0ZXJuPgo8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3MpIiBvcGFjaXR5PSIwLjEiLz4KPC9zdmc+') top left / 4px 4px repeat;
+        }
+
+        /* Dynamic glitch effects on hover/click - conceptual, would need JS for true randomness */
+        .glitch-interactive:hover {
+            transform: translate(calc(var(--rand-x) * 1px), calc(var(--rand-y) * 1px)) rotate(calc(var(--rand-r) * 1deg)) scale(calc(1 + var(--rand-s) * 0.01));
+            border-color: #FFF;
+            background-color: #F00;
+            color: #FFF;
+            z-index: 10;
+        }
+
+        .glitch-interactive:active {
+            filter: contrast(200%) brightness(150%);
+            transform: translate(calc(var(--rand-x) * 2px), calc(var(--rand-y) * 2px)) rotate(calc(var(--rand-r) * 2deg)) scale(calc(1 + var(--rand-s) * 0.02));
+        }
+
+        /* Specific positions and sizes for the collage elements */
+
+        /* Large background blocks */
+        .block-1 { top: 0; left: 0; width: 60%; height: 40%; background-color: #F00; border: none; }
+        .block-2 { top: 30%; left: 40%; width: 70%; height: 80%; background-color: #FFF; border: none; }
+        .block-3 { bottom: 0; right: 0; width: 45%; height: 35%; background-color: #000; border: none; }
+
+        /* Overlapping and fragmented elements */
+        .e-1 { top: 5%; left: 5%; width: 25%; height: 20%; background-color: #FFF; border-color: #000; z-index: 2; transform: rotate(-5deg); font-size: 1.8em; }
+        .e-2 { top: 15%; left: 30%; width: 40%; height: 15%; background-color: #000; color: #F00; border-color: #FFF; z-index: 3; }
+        .e-3 { top: 10%; right: 10%; width: 20%; height: 30%; background-color: #F00; color: #FFF; border-color: #000; z-index: 2; transform: rotate(10deg); }
+        .e-4 { bottom: 5%; left: 5%; width: 30%; height: 25%; background-color: #FFF; color: #000; border-color: #F00; z-index: 4; }
+        .e-5 { bottom: 20%; right: 5%; width: 35%; height: 20%; background-color: #000; color: #FFF; border-color: #F00; z-index: 3; transform: rotate(-8deg); }
+        .e-6 { top: 40%; left: 10%; width: 18%; height: 12%; background-color: #F00; color: #FFF; border-color: #FFF; z-index: 5; font-size: 0.9em; }
+        .e-7 { top: 35%; right: 5%; width: 22%; height: 10%; background-color: #FFF; color: #000; border-color: #F00; z-index: 4; transform: rotate(5deg); }
+        .e-8 { top: 55%; left: 30%; width: 28%; height: 18%; background-color: #000; color: #F00; border-color: #FFF; z-index: 6; font-size: 2.2em; }
+        .e-9 { bottom: 10%; left: 40%; width: 20%; height: 10%; background-color: #F00; color: #FFF; border-color: #000; z-index: 5; transform: rotate(-12deg); font-size: 1em; }
+        .e-10 { top: 25%; left: 60%; width: 15%; height: 25%; background-color: #FFF; color: #F00; border-color: #000; z-index: 7; }
+        .e-11 { top: 60%; right: 20%; width: 15%; height: 15%; background-color: #F00; color: #FFF; border-color: #FFF; z-index: 6; transform: rotate(3deg); }
+        .e-12 { top: 0; right: 0; width: 10%; height: 10%; background-color: #000; color: #FFF; border-color: #F00; z-index: 8; transform: rotate(15deg); font-size: 0.8em; padding: 2px; }
+        .e-13 { bottom: 0; left: 0; width: 12%; height: 12%; background-color: #FFF; color: #000; border-color: #F00; z-index: 7; font-size: 0.8em; padding: 2px; }
+        .e-14 { top: 75%; left: 20%; width: 25%; height: 10%; background-color: #000; color: #FFF; border-color: #F00; z-index: 9; transform: rotate(7deg); }
+        .e-15 { top: 45%; left: 50%; width: 30%; height: 20%; background-color: #F00; color: #000; border-color: #FFF; z-index: 10; transform: rotate(-10deg); }
+        .e-16 { top: 5%; left: 70%; width: 10%; height: 8%; background-color: #FFF; color: #000; border-color: #F00; z-index: 11; font-size: 0.7em; }
+        .e-17 { bottom: 30%; right: 40%; width: 15%; height: 10%; background-color: #000; color: #F00; border-color: #FFF; z-index: 12; transform: rotate(2deg); }
+        .e-18 { top: 20%; left: 50%; width: 10%; height: 5%; background-color: #F00; color: #FFF; border-color: #000; z-index: 13; font-size: 0.6em; padding: 1px; }
+
+        /* Media queries for responsiveness (basic brutalist distortion) */
+        @media (max-width: 768px) {
+            .glitch-element {
+                border-width: 1px;
+                font-size: 0.9em;
+            }
+            .e-1, .e-8 { font-size: 1.5em; } /* Adjust larger fonts */
+            /* Further specific adjustments could be made for smaller screens */
+            .collage-container {
+                transform: scale(0.9) rotate(1deg); /* Slight distortion on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .glitch-element {
+                font-size: 0.7em;
+                border-width: 0.5px;
+            }
+            .e-1, .e-8 { font-size: 1.2em; }
+            .collage-container {
+                transform: scale(0.8) rotate(-2deg); /* More distortion */
+            }
+        }
+
+        /* Keyframe animation for subtle, continuous glitching */
+        @keyframes subtleGlitch {
+            0% { transform: translate(0px, 0px); opacity: 1; }
+            7% { transform: translate(-1px, 1px); opacity: 0.95; }
+            14% { transform: translate(1px, -1px); opacity: 1; }
+            21% { transform: translate(-0.5px, 0.5px); opacity: 0.98; }
+            100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        
+        @keyframes colorShift {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(5deg); }
+            100% { filter: hue-rotate(0deg); }
+        }
+
+        .glitch-animated {
+            animation: subtleGlitch 3s infinite step-end, colorShift 10s infinite linear;
+        }
+
+        /* Specific animation delays/properties for some elements */
+        .e-2.glitch-animated { animation-delay: 0.5s; }
+        .e-4.glitch-animated { animation-delay: 1.2s; }
+        .e-8.glitch-animated { animation-delay: 0.8s; }
+        .e-15.glitch-animated { animation-delay: 1.8s; }
+
+        .image-glitch {
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) contrast(200%) brightness(150%);
+            mix-blend-mode: difference; /* Creates stark color interactions */
+        }
+
+        .img-1 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23F00"/><path d="M0 0h50v50H0zm50 50h50v50H50z" fill="%23000"/></svg>'); }
+        .img-2 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%23FFF"/><circle cx="50" cy="50" r="40" fill="%23000"/><rect x="40" y="0" width="20" height="100" fill="%23F00"/></svg>'); }
+
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <!-- Background base blocks (no border, larger scale) -->
+        <div class="glitch-element block-1"></div>
+        <div class="glitch-element block-2"></div>
+        <div class="glitch-element block-3"></div>
+
+        <!-- Glitch elements with text and specific styling -->
+        <div class="glitch-element e-1 white-bg glitch-animated">
+            <span class="glitch-text">DATA<br>CORRUPT</span>
+        </div>
+        <div class="glitch-element e-2 black-bg glitch-animated glitch-interactive" style="--rand-x: 3; --rand-y: -2; --rand-r: 1; --rand-s: 5;">
+            <span class="glitch-text">ERROR_404_NOT_FOUND</span>
+        </div>
+        <div class="glitch-element e-3 red-bg glitch-interactive" style="--rand-x: -5; --rand-y: 5; --rand-r: -2; --rand-s: 10;">
+            <span class="glitch-text">// PIXEL<br>BREAK //</span>
+        </div>
+        <div class="glitch-element e-4 white-bg glitch-animated glitch-interactive" style="--rand-x: 2; --rand-y: 3; --rand-r: 0; --rand-s: 3;">
+            <span class="glitch-text">VOID<br>[FRAG]</span>
+        </div>
+        <div class="glitch-element e-5 black-bg glitch-interactive" style="--rand-x: -1; --rand-y: -4; --rand-r: 3; --rand-s: 7;">
+            <span class="glitch-text">NO<br>SIGNAL</span>
+        </div>
+        <div class="glitch-element e-6 red-bg glitch-animated">
+            <span class="glitch-text">LOOP<br>00110</span>
+        </div>
+        <div class="glitch-element e-7 white-bg glitch-interactive" style="--rand-x: 4; --rand-y: 1; --rand-r: -1; --rand-s: 2;">
+            <span class="glitch-text">OUT_OF_SYNC</span>
+        </div>
+        <div class="glitch-element e-8 black-bg glitch-animated glitch-interactive" style="--rand-x: -3; --rand-y: 2; --rand-r: 2; --rand-s: 6;">
+            <span class="glitch-text">GLTCH</span>
+        </div>
+        <div class="glitch-element e-9 red-bg glitch-interactive" style="--rand-x: 1; --rand-y: -3; --rand-r: -0.5; --rand-s: 4;">
+            <span class="glitch-text">RE<br>BOOT</span>
+        </div>
+        <div class="glitch-element e-10 white-bg glitch-animated">
+            <span class="glitch-text">FAULT</span>
+        </div>
+        <div class="glitch-element e-11 red-bg glitch-interactive" style="--rand-x: -2; --rand-y: 2; --rand-r: 1.5; --rand-s: 8;">
+            <span class="glitch-text">DISTORT</span>
+        </div>
+        <div class="glitch-element e-12 black-bg glitch-animated">
+            <span class="glitch-text">0101</span>
+        </div>
+        <div class="glitch-element e-13 white-bg glitch-interactive" style="--rand-x: 0; --rand-y: 1; --rand-r: -1; --rand-s: 2;">
+            <span class="glitch-text">END</span>
+        </div>
+        <div class="glitch-element e-14 black-bg glitch-animated glitch-interactive" style="--rand-x: 3; --rand-y: -1; --rand-r: 0.5; --rand-s: 5;">
+            <span class="glitch-text">STATIC_</span>
+        </div>
+        <div class="glitch-element e-15 red-bg glitch-animated glitch-interactive" style="--rand-x: -4; --rand-y: 4; --rand-r: -3; --rand-s: 9;">
+            <span class="glitch-text">SIGNAL<br>LOST</span>
+        </div>
+        <div class="glitch-element e-16 white-bg glitch-animated">
+            <span class="glitch-text">RAW</span>
+        </div>
+        <div class="glitch-element e-17 black-bg glitch-animated glitch-interactive" style="--rand-x: 2; --rand-y: -2; --rand-r: 1; --rand-s: 3;">
+            <span class="glitch-text">GRID<br>LOCK</span>
+        </div>
+        <div class="glitch-element e-18 red-bg glitch-animated">
+            <span class="glitch-text">CRC</span>
+        </div>
+
+        <!-- Elements with SVG/image based glitch patterns -->
+        <div class="glitch-element image-glitch img-1" style="top: 25%; left: 10%; width: 15%; height: 10%; z-index: 10; transform: rotate(-15deg);"></div>
+        <div class="glitch-element image-glitch img-2" style="bottom: 15%; right: 25%; width: 12%; height: 18%; z-index: 11; transform: rotate(8deg);"></div>
+
+        <!-- Overlays for scanlines and noise -->
+        <div class="glitch-overlay glitch-scanlines"></div>
+        <div class="glitch-overlay glitch-noise"></div>
+
+    </div>
+
+    <!-- Optional: Add a subtle script for more interactive glitch effects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const interactiveElements = document.querySelectorAll('.glitch-interactive');
+            
+            interactiveElements.forEach(el => {
+                // Set initial random properties for CSS variables
+                el.style.setProperty('--rand-x', (Math.random() * 6 - 3).toFixed(0)); // -3 to 3
+                el.style.setProperty('--rand-y', (Math.random() * 6 - 3).toFixed(0)); // -3 to 3
+                el.style.setProperty('--rand-r', (Math.random() * 4 - 2).toFixed(1)); // -2 to 2
+                el.style.setProperty('--rand-s', (Math.random() * 8 - 4).toFixed(0)); // -4 to 4
+
+                el.addEventListener('click', () => {
+                    // On click, apply new random glitch values
+                    el.style.setProperty('--rand-x', (Math.random() * 10 - 5).toFixed(0)); // -5 to 5
+                    el.style.setProperty('--rand-y', (Math.random() * 10 - 5).toFixed(0)); // -5 to 5
+                    el.style.setProperty('--rand-r', (Math.random() * 6 - 3).toFixed(1)); // -3 to 3
+                    el.style.setProperty('--rand-s', (Math.random() * 10 - 5).toFixed(0)); // -5 to 5
+                    
+                    // Trigger a re-render/re-application of the hover style immediately
+                    el.style.transform = `translate(calc(var(--rand-x) * 1px), calc(var(--rand-y) * 1px)) rotate(calc(var(--rand-r) * 1deg)) scale(calc(1 + var(--rand-s) * 0.01))`;
+                    
+                    // Reset after a short delay to allow visual effect to settle (or just let CSS handle it)
+                    setTimeout(() => {
+                        el.style.transform = ''; // Reset to base state or let hover reapply
+                    }, 200);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-21 13:55:36.537274</div>
         <!DOCTYPE html>
 <html>
