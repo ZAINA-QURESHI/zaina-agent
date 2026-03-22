@@ -16,6 +16,306 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-22 22:58:03.469568</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Brutalism: The Collage</title>
+</head>
+<body>
+    <style>
+        /* Base styles for a radical, brutalist aesthetic */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', Impact, sans-serif; /* Strong, bold typography */
+            overflow: hidden; /* Prevent scrollbars for the collage */
+            background-color: #000000; /* Default black background */
+            color: #FFFFFF; /* Default white text */
+            text-transform: uppercase; /* All caps for brutal impact */
+            line-height: 1; /* Tight line spacing */
+        }
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000; /* Main collage background */
+            overflow: hidden;
+            border: 15px solid #FF0000; /* Aggressive, thick red border */
+            box-sizing: border-box; /* Include padding/border in dimensions */
+        }
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            overflow: hidden; /* Hide overflowing text if block is too small */
+            font-weight: 900; /* Extra bold */
+            letter-spacing: 2px; /* Emphasize characters */
+        }
+
+        /* Individual brutalist blocks with varied sizes, positions, and styles */
+
+        /* Massive white primary text block */
+        .b1 {
+            width: 75%;
+            height: 35%;
+            top: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 8.5vw;
+            border-bottom: 25px solid #FF0000;
+            border-right: 25px solid #FF0000;
+            z-index: 50; /* High z-index to be on top */
+        }
+
+        /* Angled red block */
+        .b2 {
+            width: 45%;
+            height: 60%;
+            bottom: 0;
+            right: 0;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            font-size: 5vw;
+            border-top: 15px solid #000000;
+            border-left: 15px solid #000000;
+            z-index: 70;
+            transform: skewY(-8deg); /* Radical skew effect */
+            transform-origin: bottom right; /* Skew from bottom right */
+        }
+
+        /* Black text block with white border */
+        .b3 {
+            width: 30%;
+            height: 25%;
+            top: 10%;
+            right: 8%;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: 2.2vw;
+            border: 6px solid #FFFFFF;
+            z-index: 100; /* Highest z-index */
+            padding: 20px;
+        }
+
+        /* Rotated black block with red text */
+        .b4 {
+            width: 28%;
+            height: 40%;
+            top: 28%;
+            left: 3%;
+            background-color: #000000;
+            color: #FF0000;
+            font-size: 1.8vw;
+            border: 12px solid #FFFFFF;
+            z-index: 80;
+            padding: 15px;
+            line-height: 1.2;
+            transform: rotate(-6deg); /* Radical rotation */
+            transform-origin: top left;
+        }
+
+        /* White text block with red border, slightly offset */
+        .b5 {
+            width: 38%;
+            height: 18%;
+            bottom: 8%;
+            left: 7%;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 3.5vw;
+            border: 8px solid #FF0000;
+            z-index: 120;
+            transform: translateX(25px); /* Offset from its position */
+        }
+
+        /* Small red block with heavy shadow */
+        .b6 {
+            width: 16%;
+            height: 22%;
+            top: 3%;
+            right: 6%;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            font-size: 1.8vw;
+            z-index: 150;
+            box-shadow: 18px 18px 0 #000000; /* Brutalist strong shadow */
+            padding: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Black block, slightly scaled */
+        .b7 {
+            width: 22%;
+            height: 32%;
+            bottom: 22%;
+            left: 28%;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: 1.6vw;
+            border: 4px solid #FF0000;
+            z-index: 60;
+            transform: scale(0.92); /* Slightly smaller scale */
+        }
+
+        /* Small central rotated square */
+        .b8 {
+            width: 12%;
+            height: 12%;
+            top: 50%;
+            left: 50%;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            font-size: 1vw;
+            z-index: 180; /* Very high z-index */
+            transform: translate(-50%, -50%) rotate(45deg); /* Centered and rotated */
+            border: 3px solid #FFFFFF;
+        }
+
+        /* Large, subtle background text */
+        .b9 {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: none;
+            color: rgba(255, 255, 255, 0.08); /* Transparent white for background */
+            font-size: 18vw;
+            font-weight: 900;
+            z-index: 10; /* Lower z-index */
+            pointer-events: none; /* Allow clicks through this element */
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 6vh;
+            padding-left: 4vw;
+            line-height: 0.8;
+            letter-spacing: -5px; /* Tighter letter spacing for massive text */
+        }
+
+        /* Mid-sized white block with black text */
+        .b10 {
+            width: 20%;
+            height: 10%;
+            top: 48%;
+            left: 62%;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 1.4vw;
+            z-index: 110;
+            border: 4px solid #FF0000;
+            transform: translateX(-50%) translateY(-50%); /* Center on its spot */
+            letter-spacing: 1px;
+        }
+
+        /* Another small block, slightly rotated */
+        .b11 {
+            width: 19%;
+            height: 9%;
+            top: 68%;
+            right: 12%;
+            background-color: #000000;
+            color: #FF0000;
+            font-size: 1.2vw;
+            z-index: 130;
+            border: 3px solid #FFFFFF;
+            transform: rotate(4deg);
+            padding: 5px;
+        }
+
+        /* Deepest background text, very subtle */
+        .b12 {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: none;
+            color: rgba(255, 0, 0, 0.04); /* Very transparent red */
+            font-size: 22vw;
+            font-weight: 900;
+            z-index: 0; /* Lowest z-index */
+            pointer-events: none;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-bottom: 3vh;
+            padding-right: 3vw;
+            line-height: 0.7;
+            letter-spacing: -8px;
+        }
+
+        /* Small red square pattern */
+        .pattern-square {
+            width: 40px;
+            height: 40px;
+            background-color: #FF0000;
+            position: absolute;
+            z-index: 90;
+            transform: rotate(45deg); /* Diagonal pattern */
+        }
+        .ps1 { top: 45%; left: 15%; }
+        .ps2 { top: 40%; left: 20%; }
+        .ps3 { bottom: 10%; right: 40%; }
+        .ps4 { bottom: 15%; right: 35%; }
+    </style>
+
+    <div class="collage-container">
+        <!-- Deepest background text -->
+        <div class="block b12">RAW</div>
+
+        <!-- Slightly less deep background text -->
+        <div class="block b9">CONCRETE</div>
+
+        <!-- Primary central elements -->
+        <div class="block b1">BRUTALISM</div>
+        <div class="block b2">EXPOSED STRUCTURE</div>
+        <div class="block b3">
+            LE CORBUSIER<br>
+            PAUL RUDOLPH<br>
+            SMITHSONS
+        </div>
+        <div class="block b4">
+            MASSIVE FORMS.<br>
+            FUNCTION.<br>
+            HONESTY.
+        </div>
+        <div class="block b5">SOLID POWER</div>
+        <div class="block b6">
+            TRELLICK<br>
+            TOWER
+        </div>
+        <div class="block b7">
+            URBAN<br>
+            MONOLITH
+        </div>
+        <div class="block b8">
+            IMPACT
+        </div>
+        <div class="block b10">
+            ARCHITECTURE
+        </div>
+        <div class="block b11">
+            UNITÉ<br>
+            D'HABITATION
+        </div>
+
+        <!-- Small decorative pattern elements -->
+        <div class="pattern-square ps1"></div>
+        <div class="pattern-square ps2"></div>
+        <div class="pattern-square ps3"></div>
+        <div class="pattern-square ps4"></div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-22 21:53:53.766057</div>
         <style>
   body { margin: 0; overflow: hidden; background-color: #000; font-family: 'Helvetica Neue', Arial, sans-serif; }
