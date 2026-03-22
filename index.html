@@ -16,6 +16,289 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-22 15:53:38.302757</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brutalist HTML Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background */
+            font-family: 'Impact', 'Arial Black', Gadget, sans-serif; /* Strong sans-serif for brutalist feel */
+            overflow: hidden; /* Prevent scrollbars from absolute positioning */
+            height: 100vh; /* Full viewport height */
+            color: #FFFFFF; /* Default white text */
+            position: relative; /* For absolute positioning of inner elements */
+            cursor: default; /* Not interactive, static art */
+            -webkit-font-smoothing: antialiased; /* For sharper text rendering */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .brutal-block {
+            position: absolute;
+            box-sizing: border-box; /* Include padding/border in width/height */
+            color: #FFFFFF; /* Default text color, overridden by specific blocks */
+            background-color: transparent; /* Default background, overridden by specific blocks */
+            border: 4px solid #FFFFFF; /* Default white border, overridden by specific blocks */
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 1em;
+            font-weight: 900; /* Maximize boldness */
+            line-height: 1.1;
+            letter-spacing: 0.08em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10; /* Default z-index for layering */
+            word-break: break-word; /* Ensure text fits within block */
+            overflow: hidden; /* Clip content that overflows the block boundary */
+            transform-origin: center center; /* For consistent rotation */
+        }
+
+        /* Large, subtle background text for depth */
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15vw; /* Very large text, relative to viewport width */
+            color: rgba(255, 255, 255, 0.03); /* Very subtle white */
+            pointer-events: none; /* Allow clicks through */
+            z-index: 1; /* Lowest z-index */
+            white-space: nowrap;
+            letter-spacing: 0.1em;
+            font-weight: 900;
+        }
+        .text-overlay.red {
+            color: rgba(255, 0, 0, 0.05); /* Subtle red */
+            transform: translate(-52%, -52%) rotate(-3deg); /* Slightly offset and rotated */
+            z-index: 2; /* Slightly above white overlay */
+            font-size: 16vw;
+        }
+
+        /* Specific brutalist blocks */
+        .block-1 {
+            width: 45vw;
+            height: 20vh;
+            top: 8vh;
+            left: 3vw;
+            background-color: #FF0000; /* Solid Red */
+            border: none;
+            font-size: 4vw; /* Responsive font size */
+            z-index: 25; /* High z-index */
+            transform: rotate(-3deg);
+            color: #FFFFFF; /* White text on red */
+        }
+
+        .block-2 {
+            width: 35vw;
+            height: 30vh;
+            top: 15vh;
+            right: 5vw;
+            background-color: #FFFFFF; /* Solid White */
+            color: #000000; /* Black text on white */
+            border: none;
+            font-size: 2.5vw;
+            z-index: 20;
+            transform: rotate(7deg);
+            padding: 20px;
+        }
+
+        .block-3 {
+            width: 60vw;
+            height: 12vh;
+            bottom: 10vh;
+            left: -10vw; /* Partially off-screen */
+            border: 6px solid #FF0000; /* Red border */
+            color: #FF0000; /* Red text */
+            font-size: 2vw;
+            padding: 5px 20px;
+            z-index: 30; /* Very High z-index */
+            transform: rotate(-6deg);
+            background-color: #000000; /* Black background to make red stand out */
+            justify-content: flex-end; /* Align text to the right within the block */
+        }
+
+        .block-4 {
+            width: 20vw;
+            height: 50vh;
+            top: 30vh;
+            left: 45vw;
+            border: 4px solid #FFFFFF; /* White border */
+            font-size: 1.5vw;
+            z-index: 18;
+            background-color: transparent; /* See-through */
+            color: #FFFFFF;
+            transform: rotate(12deg);
+            padding: 0;
+            letter-spacing: 0.15em;
+            writing-mode: vertical-rl; /* Vertical text */
+            text-orientation: mixed;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block-5 {
+            width: 18vw;
+            height: 18vw; /* Square block */
+            top: 55vh;
+            left: 0vw; /* Flush left */
+            background-color: #FFFFFF;
+            color: #000000;
+            border: none;
+            font-size: 1.8vw;
+            z-index: 22;
+            transform: rotate(-15deg);
+            padding: 15px;
+        }
+
+        .block-6 {
+            width: 28vw;
+            height: 8vh;
+            bottom: 5vh;
+            right: 2vw;
+            border: 2px solid #FFFFFF;
+            font-size: 1.1vw;
+            color: #FFFFFF;
+            z-index: 12;
+            background-color: #000000; /* Black to overlay other elements */
+            justify-content: flex-start; /* Align text to the left */
+            padding-left: 20px;
+            transform: rotate(2deg);
+        }
+
+        .block-7 {
+            width: 8vw;
+            height: 35vh;
+            top: -5vh; /* Partially off screen */
+            right: 0vw; /* Flush right */
+            background-color: #FF0000;
+            border: none;
+            z-index: 35; /* Highest z-index */
+            font-size: 0.9vw;
+            letter-spacing: 0.1em;
+            line-height: 1.3;
+            padding: 8px;
+            writing-mode: vertical-rl; /* Vertical text */
+            text-orientation: mixed;
+            justify-content: flex-end; /* Align text to the bottom */
+            align-items: flex-start;
+            color: #FFFFFF;
+        }
+
+        .block-8 {
+            width: 12vw;
+            height: 12vh;
+            top: 40vh;
+            left: 55%;
+            transform: translateX(-50%) rotate(25deg);
+            background-color: #FFFFFF;
+            color: #FF0000; /* Red text on white */
+            font-size: 1.2vw;
+            border: none;
+            z-index: 28;
+            letter-spacing: 0.05em;
+            line-height: 1;
+        }
+
+        .block-9 {
+            width: 38vw;
+            height: 15vh;
+            top: 65vh;
+            right: -5vw; /* Partially off screen */
+            border: 6px solid #FFFFFF;
+            color: #FFFFFF;
+            font-size: 2.2vw;
+            z-index: 10;
+            transform: rotate(8deg);
+            background-color: #000000;
+            justify-content: center;
+            align-items: flex-end; /* Align text to bottom center */
+            padding-bottom: 10px;
+        }
+
+        .block-10 {
+            width: 25vw;
+            height: 20vh;
+            bottom: -8vh; /* Partially off screen */
+            left: 20vw;
+            background-color: #FF0000;
+            color: #000000; /* Black text on red */
+            border: none;
+            font-size: 1.4vw;
+            z-index: 3; /* Lower z-index for background element */
+            transform: skewX(-25deg) rotate(8deg); /* More skewed and rotated */
+            letter-spacing: 0.07em;
+            padding: 10px;
+        }
+
+        .block-11 {
+            width: 10vw;
+            height: 10vh;
+            top: 0;
+            left: 25vw;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            font-size: 0.8vw;
+            z-index: 15;
+            background-color: transparent;
+            transform: rotate(5deg);
+        }
+
+        .block-12 {
+            width: 15vw;
+            height: 15vh;
+            bottom: 0;
+            left: 45vw;
+            background-color: #FFFFFF;
+            color: #FF0000; /* Red text on white */
+            border: none;
+            font-size: 1.1vw;
+            z-index: 26;
+            transform: rotate(-10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+
+        <!-- Large, subtle background text for added depth and theme reinforcement -->
+        <div class="text-overlay">CONCRETE</div>
+        <div class="text-overlay red">BRUTALIST</div>
+
+        <!-- Brutalist Blocks with varied content, sizes, positions, and rotations -->
+        <div class="brutal-block block-1">BRUTALISM</div>
+        <div class="brutal-block block-2">RAW FORM</div>
+        <div class="brutal-block block-3">FUNCTION OVER DECORATION</div>
+        <div class="brutal-block block-4">ARCHITECTURAL HONESTY</div>
+        <div class="brutal-block block-5">TRELLICK TOWER</div>
+        <div class="brutal-block block-6">BETON BRUT</div>
+        <div class="brutal-block block-7">STRUCTURE EXPOSED</div>
+        <div class="brutal-block block-8">BARBICAN</div>
+        <div class="brutal-block block-9">MASSIVE IMPOSING GEOMETRY</div>
+        <div class="brutal-block block-10">MODERN MOVEMENT LEGACY</div>
+        <div class="brutal-block block-11">SMITHSONS</div>
+        <div class="brutal-block block-12">GREY SCALE</div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-22 14:58:14.211504</div>
         <div style="background-color: black; width: 100vw; height: 100vh; overflow: hidden; position: relative; font-family: 'Arial Black', sans-serif; line-height: 1; display: flex; flex-direction: column; justify-content: space-between;">
 
