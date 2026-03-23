@@ -16,6 +16,234 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-23 09:16:45.507652</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Brutalism Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from absolute positioning */
+            font-family: 'Arial Black', sans-serif;
+            background-color: #000;
+            color: #FFF;
+            cursor: crosshair; /* Brutalist cursor */
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* --- Brutalist/Glitch Base Elements --- */
+        .box {
+            position: absolute;
+            box-sizing: border-box;
+            line-height: 1; /* For compact text in boxes */
+            font-size: 1em;
+        }
+
+        .red { background-color: #FF0000; }
+        .black { background-color: #000000; }
+        .white { background-color: #FFFFFF; }
+
+        .border-red { border: 2px solid #FF0000; }
+        .border-white { border: 2px solid #FFFFFF; }
+        .border-black { border: 2px solid #000000; }
+
+        .text-white { color: #FFFFFF; }
+        .text-black { color: #000000; }
+        .text-red { color: #FF0000; }
+
+        .font-brutalist {
+            font-family: 'monospace', 'Courier New', monospace;
+            letter-spacing: -1px;
+            line-height: 0.9;
+            font-weight: 900;
+            text-transform: uppercase;
+            word-break: break-all;
+        }
+        
+        /* --- Glitch Specific Effects --- */
+        .glitch-text {
+            font-size: 8vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 10;
+            white-space: nowrap;
+        }
+        .glitch-text span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-shadow: none; /* Reset shadow for individual layers */
+        }
+        .glitch-text .offset-red {
+            color: #FF0000;
+            transform: translate(5px, 5px);
+            z-index: 1;
+        }
+        .glitch-text .offset-black {
+            color: #000000;
+            transform: translate(-3px, -3px);
+            z-index: 2;
+        }
+        .glitch-text .main-white {
+            color: #FFFFFF;
+            z-index: 3;
+        }
+        .glitch-text .main-red {
+            color: #FF0000;
+            z-index: 3;
+        }
+
+        .scanline {
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            width: 100%;
+            left: 0;
+            z-index: 50; /* Above most elements */
+        }
+        .scanline:nth-child(even) { background-color: rgba(0, 0, 0, 0.1); }
+
+        .error-block {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            overflow: hidden;
+            border: 2px solid #FF0000;
+            z-index: 20;
+            background-color: #000;
+        }
+        .error-block::before {
+            content: 'E_R';
+            display: block;
+            background-color: #FF0000;
+            color: #FFF;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            width: 120%; /* wider than block */
+            transform: rotate(-45deg) scale(0.8);
+            transform-origin: center center;
+            position: absolute;
+            top: 15px;
+            left: -10%;
+        }
+
+        .pixel-burst {
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            box-shadow: 
+                0 0 0 5px #FF0000, 
+                10px 0 0 5px #FFF, 
+                0 10px 0 5px #000,
+                15px 5px 0 5px #FF0000,
+                -5px 15px 0 5px #FFF;
+            z-index: 10;
+        }
+
+        .noise-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.08;
+            background-image: radial-gradient(circle at 1px 1px, #FFF 1px, transparent 0);
+            background-size: 2px 2px;
+            z-index: 99; /* Very top */
+            pointer-events: none; /* Allow interaction with elements below */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Noise overlay for overall static effect -->
+        <div class="noise-overlay"></div>
+
+        <!-- Horizontal Scanlines -->
+        <div class="scanline" style="top: 10%;"></div>
+        <div class="scanline" style="top: 25%;"></div>
+        <div class="scanline" style="top: 45%;"></div>
+        <div class="scanline" style="top: 60%;"></div>
+        <div class="scanline" style="top: 85%;"></div>
+
+        <!-- Large background blocks -->
+        <div class="box red" style="width: 45%; height: 35%; top: 0; left: 0%; z-index: 1;"></div>
+        <div class="box black border-white" style="width: 60%; height: 25%; top: 15%; right: 0%; transform: skewX(-5deg); z-index: 2;"></div>
+        <div class="box white" style="width: 35%; height: 55%; bottom: 0%; right: 5%; z-index: 1;"></div>
+        <div class="box black" style="width: 20%; height: 20%; top: 40%; left: 10%; z-index: 3; border: 4px solid #FF0000;"></div>
+
+        <!-- Glitch Text: "SYSTEM FAILURE" -->
+        <h1 class="glitch-text" style="top: 5%; left: 5%;">
+            <span class="main-white">SYSTEM</span>
+            <span class="offset-red">SYSTEM</span>
+            <span class="offset-black">SYSTEM</span>
+        </h1>
+        <h1 class="glitch-text" style="font-size: 7vw; top: 15%; left: 10%;">
+            <span class="main-white">FAILURE</span>
+            <span class="offset-red" style="transform: translate(7px, 7px);">FAILURE</span>
+            <span class="offset-black" style="transform: translate(-5px, -5px);">FAILURE</span>
+        </h1>
+
+        <!-- Mid-ground boxes and distorted text -->
+        <div class="box white border-black" style="width: 25%; height: 10%; top: 35%; left: 40%; transform: rotate(8deg); z-index: 4;">
+            <p class="text-black font-brutalist" style="margin: 5px; font-size: 1.5vw;">_ERROR_LOG_</p>
+        </div>
+        <div class="box red" style="width: 15%; height: 20%; top: 30%; left: 65%; transform: skewY(10deg); z-index: 5;">
+            <p class="text-white font-brutalist" style="margin: 10px; font-size: 1.8vw;">DATA<br>CORRUPT</p>
+        </div>
+
+        <!-- Error blocks and pixel bursts -->
+        <div class="error-block" style="top: 55%; left: 15%;"></div>
+        <div class="error-block black" style="width: 50px; height: 50px; top: 60%; left: 20%; border: 2px solid #FFF;"></div>
+        <div class="error-block white" style="width: 40px; height: 40px; top: 65%; left: 25%; border: 2px solid #000;"></div>
+
+        <div class="pixel-burst" style="top: 70%; left: 40%; transform: rotate(15deg);"></div>
+        <div class="pixel-burst red" style="top: 75%; left: 45%; transform: scale(0.8);"></div>
+        <div class="pixel-burst black" style="top: 80%; left: 50%; transform: rotate(-20deg) scale(1.2);"></div>
+
+        <!-- Smaller interactive and textual elements -->
+        <div class="box black border-red" style="width: 30%; height: 15%; top: 50%; left: 55%; z-index: 6;">
+            <p class="text-white font-brutalist" style="margin: 10px; font-size: 2vw;">[WARNING]<br>ACCESS DENIED</p>
+            <div class="box white" style="width: 70%; height: 3px; top: 70%; left: 15%; transform: skewX(25deg);"></div>
+        </div>
+
+        <span class="box text-red font-brutalist white" style="font-size: 1vw; top: 2%; right: 2%; padding: 3px 6px; transform: rotate(90deg); z-index: 7;">_OVERLOAD_</span>
+        <span class="box text-black font-brutalist white" style="font-size: 0.9vw; bottom: 2%; left: 2%; padding: 2px 5px; z-index: 7;">//LOG_01_FAIL</span>
+        <span class="box text-white font-brutalist red" style="font-size: 1.3vw; top: 40%; right: 10%; padding: 4px; transform: rotate(-5deg); z-index: 7;">GLITCH+AESTHETICS</span>
+        <span class="box text-white font-brutalist black" style="font-size: 0.7vw; bottom: 10%; right: 3%; padding: 2px; transform: skewX(10deg); z-index: 7;">VOID_SPACE_001</span>
+
+        <!-- More overlapping blocks -->
+        <div class="box black" style="width: 10%; height: 5%; top: 70%; left: 70%; border-bottom: 3px solid #FF0000; transform: skewX(15deg); z-index: 5;"></div>
+        <div class="box red" style="width: 5%; height: 15%; top: 75%; left: 80%; border-left: 3px solid #FFF; z-index: 6;"></div>
+        <div class="box white" style="width: 20%; height: 5%; bottom: 5%; left: 30%; transform: rotate(-3deg); border-top: 2px solid #000; z-index: 5;"></div>
+
+        <div class="box red border-white" style="width: 12%; height: 18%; top: 18%; left: 48%; transform: rotate(15deg); z-index: 3;"></div>
+        <div class="box white border-black" style="width: 8%; height: 25%; top: 22%; left: 52%; transform: skewY(-10deg); z-index: 4;"></div>
+
+        <!-- Final small details -->
+        <span class="box text-black font-brutalist red" style="font-size: 0.6vw; bottom: 5%; right: 25%; padding: 1px 3px; z-index: 7;">SCAN_FAULT</span>
+        <span class="box text-white font-brutalist" style="font-size: 0.9vw; top: 8%; left: 70%; transform: rotate(-10deg); z-index: 7;">BREAK_POINT</span>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-23 05:50:34.659540</div>
         <!DOCTYPE html>
 <html>
