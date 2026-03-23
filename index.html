@@ -16,6 +16,261 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-23 23:59:25.301963</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Brutalism</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars if content overflows */
+            font-family: 'Arial Black', sans-serif;
+            background-color: #000;
+            color: #FFF;
+        }
+
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+            height: 100vh;
+            width: 100vw;
+            gap: 0; /* No gaps between grid items for brutalist feel */
+        }
+
+        .collage-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(0.8rem, 2vw, 2rem); /* Responsive font size */
+            font-weight: 900;
+            text-align: center;
+            overflow: hidden; /* Prevent content from overflowing item boxes */
+            position: relative;
+            border: 1px solid rgba(255, 0, 0, 0.2); /* Subtle red border */
+        }
+
+        /* Color variations */
+        .bg-black { background-color: #000; color: #FFF; }
+        .bg-white { background-color: #FFF; color: #000; }
+        .bg-red { background-color: #F00; color: #000; }
+        .text-red { color: #F00; }
+        .text-white { color: #FFF; }
+        .text-black { color: #000; }
+
+        /* Brutalist / Glitch elements */
+        .static-text::before {
+            content: 'ERROR: DATA CORRUPT';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.7em;
+            opacity: 0.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .inverted-text {
+            filter: invert(100%);
+            mix-blend-mode: difference;
+        }
+
+        .stripes::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,0,0,0.1),
+                rgba(255,0,0,0.1) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            mix-blend-mode: overlay;
+        }
+
+        .solid-block {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Specific item styling for more controlled chaos */
+        .item-1 { grid-column: span 2; grid-row: span 1; }
+        .item-2 { grid-column: span 1; grid-row: span 2; }
+        .item-3 { grid-column: span 3; grid-row: span 1; font-size: 3vw; }
+        .item-4 { grid-column: span 1; grid-row: span 1; }
+        .item-5 { grid-column: span 2; grid-row: span 2; }
+        .item-6 { grid-column: span 1; grid-row: span 1; background-color: #F00; color: #000; }
+        .item-7 { grid-column: span 2; grid-row: span 1; }
+        .item-8 { grid-column: span 1; grid-row: span 1; }
+        .item-9 { grid-column: span 3; grid-row: span 2; font-size: 5vw; background-color: #FFF; color: #F00; }
+        .item-10 { grid-column: span 1; grid-row: span 1; }
+        .item-11 { grid-column: span 2; grid-row: span 1; background-color: #000; color: #F00; }
+        .item-12 { grid-column: span 1; grid-row: span 3; }
+        .item-13 { grid-column: span 2; grid-row: span 1; }
+        .item-14 { grid-column: span 1; grid-row: span 1; background-color: #F00; color: #FFF; }
+        .item-15 { grid-column: span 2; grid-row: span 1; }
+        .item-16 { grid-column: span 1; grid-row: span 1; }
+
+        /* Animation for glitch effect */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes shift {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-1px, 1px); }
+            80% { transform: translate(1px, -1px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .glitch-text {
+            animation: flicker 2s infinite alternate, shift 0.5s infinite step-end;
+            text-shadow:
+                1px 1px 0px rgba(255,0,0,0.7),
+                -1px -1px 0px rgba(0,0,0,0.7);
+        }
+
+        .glitch-bg {
+            animation: flicker 3s infinite alternate;
+            position: relative;
+        }
+        .glitch-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.1);
+            animation: flicker 1.5s infinite alternate;
+            z-index: 1;
+        }
+
+        .invert-on-hover:hover {
+            filter: invert(100%);
+            color: inherit !important; /* Keep original color */
+            background-color: inherit !important; /* Keep original background */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+        <div class="collage-item bg-black item-1 glitch-bg">
+            <span class="glitch-text text-red">DATA</span>
+        </div>
+        <div class="collage-item bg-red item-2 solid-block">
+            <span class="text-black">FAILURE</span>
+        </div>
+        <div class="collage-item bg-white item-3 static-text">
+            <span class="text-black glitch-text">CORRUPTION</span>
+        </div>
+        <div class="collage-item bg-black item-4 stripes">
+            <span class="text-white">ERROR_404</span>
+        </div>
+        <div class="collage-item bg-red item-5 solid-block invert-on-hover">
+            <span class="text-white glitch-text">SYSTEM.CRASH</span>
+        </div>
+        <div class="collage-item bg-white item-6 static-text">
+            <span class="text-red">SEGMENT FAULT</span>
+        </div>
+        <div class="collage-item bg-black item-7 stripes glitch-text">
+            <span class="text-white">//VOID</span>
+        </div>
+        <div class="collage-item bg-red item-8 solid-block">
+            <span class="text-black glitch-text">REDUNDANCY</span>
+        </div>
+        <div class="collage-item bg-white item-9 glitch-bg">
+            <span class="text-black glitch-text">GLITCH.AESTHETIC</span>
+        </div>
+        <div class="collage-item bg-black item-10 invert-on-hover">
+            <span class="text-red">NOISE</span>
+        </div>
+        <div class="collage-item bg-red item-11 static-text">
+            <span class="text-white glitch-text">DECOMPRESS</span>
+        </div>
+        <div class="collage-item bg-white item-12 stripes">
+            <span class="text-black">OUT_OF_SYNC</span>
+        </div>
+        <div class="collage-item bg-black item-13 glitch-bg">
+            <span class="text-white">BROKEN.CODE</span>
+        </div>
+        <div class="collage-item bg-red item-14 solid-block">
+            <span class="text-black glitch-text">DISTORT</span>
+        </div>
+        <div class="collage-item bg-white item-15 stripes invert-on-hover">
+            <span class="text-red">FRAGMENT</span>
+        </div>
+        <div class="collage-item bg-black item-16 static-text">
+            <span class="text-white">END_CYCLE</span>
+        </div>
+        <!-- More items for controlled chaos -->
+        <div class="collage-item bg-white solid-block glitch-text">
+            <span class="text-black">STATIC</span>
+        </div>
+        <div class="collage-item bg-red static-text">
+            <span class="text-black">ANOMALY</span>
+        </div>
+        <div class="collage-item bg-black stripes invert-on-hover">
+            <span class="text-red">SHIFT</span>
+        </div>
+        <div class="collage-item bg-white glitch-bg">
+            <span class="text-black">VOID</span>
+        </div>
+        <div class="collage-item bg-red solid-block">
+            <span class="text-white glitch-text">BREAK</span>
+        </div>
+        <div class="collage-item bg-black static-text">
+            <span class="text-white">DISRUPT</span>
+        </div>
+        <div class="collage-item bg-white stripes">
+            <span class="text-black glitch-text">CODE</span>
+        </div>
+        <div class="collage-item bg-red glitch-bg">
+            <span class="text-white">DATA</span>
+        </div>
+        <div class="collage-item bg-black solid-block invert-on-hover">
+            <span class="text-red">RAW</span>
+        </div>
+        <div class="collage-item bg-white static-text">
+            <span class="text-black glitch-text">FORM</span>
+        </div>
+        <div class="collage-item bg-red stripes">
+            <span class="text-white">ERROR</span>
+        </div>
+        <div class="collage-item bg-black glitch-bg">
+            <span class="text-red">SYSTEM</span>
+        </div>
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-23 22:01:59.067245</div>
         <!DOCTYPE html>
 <html>
