@@ -16,6 +16,431 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 17:08:32.334019</div>
+        <!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLITCH // AESTHETICS // BRUTALIST</title>
+    <style>
+        /* BASE STYLES & RESET */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            overflow: hidden; /* Hide scrollbars for the collage effect */
+            font-family: 'Arial Black', sans-serif; /* Strong, brutalist font */
+            color: #FFF; /* Default text color */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* COLLAGE CONTAINER */
+        .collage-container {
+            position: relative; /* Allows absolute positioning of children */
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            /* No flex centering for primary container, let elements dictate positions */
+        }
+
+        /* COMMON GLITCH ELEMENT STYLES */
+        .glitch-element {
+            position: absolute;
+            box-sizing: border-box;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1;
+            z-index: 10; /* Default z-index, overridden by specific elements */
+        }
+
+        /* MAIN TITLE GLITCH */
+        .glitch-title {
+            font-size: 15vw; /* Very large text */
+            color: #FFF;
+            top: 10%;
+            left: 5%;
+            z-index: 20; /* High z-index */
+            text-shadow:
+                -0.5vw -0.5vw 0 #F00, /* Red offset shadow */
+                0.5vw 0.5vw 0 #000;  /* Black offset shadow */
+        }
+        .glitch-title span {
+            display: block; /* Each part of the title on its own line */
+            transform: skewX(-15deg); /* Skew for a distorted look */
+        }
+        .glitch-title .part-a {
+            transform: skewX(10deg);
+            margin-left: -2vw;
+            color: #F00;
+        }
+        .glitch-title .part-b {
+            color: #FFF;
+            margin-left: 5vw;
+        }
+        .glitch-title .part-c {
+            color: transparent; /* Make fill transparent */
+            -webkit-text-stroke: 1px #F00; /* Red outline effect */
+            text-shadow: none; /* Remove shadows for outline effect */
+            transform: skewX(-20deg) translateX(-10vw);
+            z-index: 15; /* Slightly lower z-index to appear behind other title parts */
+        }
+
+        /* STATIC / NOISE BLOCKS (SOLID COLOR RECTANGLES) */
+        .static-block {
+            width: 10vw;
+            height: 10vw;
+            background-color: #F00; /* Default red */
+            opacity: 0.7;
+            border: 2px solid #FFF; /* White border */
+            z-index: 5; /* Lower z-index */
+        }
+        .static-block.a { top: 5%; right: 10%; background-color: #FFF; border-color: #000; }
+        .static-block.b { bottom: 15%; left: 8%; width: 15vw; height: 5vw; background-color: #000; border-color: #F00; opacity: 0.9; }
+        .static-block.c { top: 30%; left: 40%; width: 5vw; height: 12vw; background-color: #F00; opacity: 0.8; transform: rotate(10deg); }
+        .static-block.d { bottom: 5%; right: 2%; width: 20vw; height: 8vw; background-color: #FFF; border-color: #000; opacity: 0.6; transform: rotate(5deg); }
+        .static-block.e { top: 50%; left: 0%; width: 3vw; height: 20vw; background-color: #000; border-color: #FFF; opacity: 0.9; transform: skewY(15deg); }
+        .static-block.f { top: 0; left: 15%; width: 2vw; height: 50vw; background-color: #F00; opacity: 0.3; transform: skewX(-5deg); z-index: 1; } /* Large background stripe */
+        .static-block.g { bottom: 0; right: 18%; width: 3vw; height: 60vw; background-color: #FFF; opacity: 0.2; transform: skewX(8deg); z-index: 1; } /* Another large stripe */
+
+        /* TEXT FRAGMENTS (WITH BORDERS AND OFFSETS) */
+        .text-fragment {
+            font-size: 3vw;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Cut off overflowing text */
+            border: 1px solid #FFF;
+            padding: 0.5vw 1vw;
+            z-index: 12;
+            background-color: #000;
+        }
+        .text-fragment.frag1 {
+            top: 25%;
+            left: 60%;
+            background-color: #F00;
+            color: #000;
+            transform: rotate(-5deg);
+        }
+        .text-fragment.frag2 {
+            bottom: 30%;
+            right: 20%;
+            background-color: #000;
+            color: #F00;
+            border-color: #FFF;
+            font-size: 2vw;
+            transform: translateX(1vw) translateY(1vw);
+        }
+        .text-fragment.frag3 {
+            top: 55%;
+            left: 15%;
+            background-color: #FFF;
+            color: #000;
+            border-color: #F00;
+            font-size: 4vw;
+            transform: skewY(5deg) translateX(-2vw);
+            opacity: 0.9;
+            width: 30vw; /* Fixed width to show cutoff */
+            height: 5vw;
+        }
+        .text-fragment.frag4 {
+            bottom: 5%;
+            left: 50%;
+            background-color: #F00;
+            color: #FFF;
+            font-size: 1.5vw;
+            border-color: #000;
+            transform: rotate(10deg);
+        }
+        .text-fragment.frag5 {
+            top: 5%;
+            left: 45%;
+            background-color: #FFF;
+            color: #F00;
+            font-size: 2vw;
+            border-color: #000;
+            transform: rotate(-10deg) translateX(5vw);
+            opacity: 0.8;
+            width: 15vw;
+            overflow: visible; /* Intentional visual overflow for this element */
+        }
+        .text-fragment.frag6 {
+            top: 80%;
+            left: 40%;
+            background-color: #000;
+            color: #FFF;
+            border-color: #F00;
+            font-size: 2.5vw;
+            transform: skewX(-10deg) translateX(1vw);
+            opacity: 0.95;
+            padding: 0.2vw 0.8vw;
+        }
+
+        /* DISTORTED IMAGE PLACEHOLDER (USING DIVS & GRADIENTS) */
+        .image-glitch {
+            position: absolute;
+            width: 25vw;
+            height: 20vw;
+            top: 60%;
+            right: 5%;
+            background-color: #F00; /* Red base */
+            border: 3px solid #FFF; /* White border */
+            overflow: hidden;
+            z-index: 18;
+            transform: rotate(3deg);
+        }
+        .image-glitch::before {
+            content: '';
+            position: absolute;
+            top: -10%; left: -10%;
+            width: 120%; height: 120%;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #000,
+                    #000 5px,
+                    #FFF 5px,
+                    #FFF 10px
+                ); /* Repeating black & white lines */
+            mix-blend-mode: hard-light; /* For a more complex visual mix */
+            transform: skewX(-15deg) scale(1.1);
+            opacity: 0.8;
+        }
+        .image-glitch::after {
+            content: 'ERROR//404'; /* Error text overlay */
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(7deg);
+            font-size: 3vw;
+            color: #000;
+            background-color: #FFF;
+            padding: 0.5vw 1vw;
+            border: 1px solid #F00;
+            white-space: nowrap;
+        }
+
+        /* OVERLAPPING SOLID BLOCKS (BACKGROUND LAYERS) */
+        .solid-block {
+            position: absolute;
+            background-color: #F00; /* Default red */
+            z-index: 1; /* Lowest z-index */
+            opacity: 0.5;
+        }
+        .solid-block.s1 { width: 100%; height: 5vh; top: 30%; left: 0; background-color: #FFF; opacity: 0.6; transform: skewY(2deg); }
+        .solid-block.s2 { width: 100%; height: 3vh; top: 60%; left: 0; background-color: #000; opacity: 0.7; transform: skewY(-3deg); }
+        .solid-block.s3 { width: 20vw; height: 100%; top: 0; left: 20%; background-color: #F00; opacity: 0.4; transform: skewX(-1deg); }
+        .solid-block.s4 { width: 15vw; height: 100%; top: 0; right: 25%; background-color: #FFF; opacity: 0.5; transform: skewX(2deg); }
+
+        /* GEOMETRIC ACCENT LINES */
+        .accent-line {
+            position: absolute;
+            background-color: #F00;
+            height: 5px;
+            width: 100%;
+            z-index: 9;
+        }
+        .accent-line.line1 { top: 18%; background-color: #FFF; transform: skewY(1deg); }
+        .accent-line.line2 { top: 42%; background-color: #000; transform: skewY(-2deg); }
+        .accent-line.line3 { bottom: 10%; background-color: #F00; transform: skewY(3deg); }
+
+        /* LARGE BACKGROUND LAYER BOXES */
+        .bg-layer {
+            position: absolute;
+            width: 80%;
+            height: 70%;
+            top: 15%;
+            left: 10%;
+            border: 5px solid #FFF;
+            opacity: 0.2;
+            transform: rotate(-2deg);
+            z-index: 0; /* Deepest layer */
+            box-sizing: border-box;
+        }
+        .bg-layer::before {
+            content: '';
+            position: absolute;
+            top: 5%; left: 5%;
+            width: 90%; height: 90%;
+            border: 3px solid #F00;
+            transform: rotate(3deg);
+            opacity: 0.8;
+            box-sizing: border-box;
+        }
+
+        /* SMALL PIXEL STATIC / ARTIFACTS */
+        .pixel-static {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #FFF;
+            opacity: 0.5;
+            z-index: 25; /* Very high z-index to appear on top of everything */
+        }
+        /* Manually placed pixels */
+        .pixel-static.p1 { top: 10px; left: 100px; background-color: #F00; }
+        .pixel-static.p2 { top: 50px; left: 200px; }
+        .pixel-static.p3 { bottom: 20px; right: 50px; background-color: #F00; }
+        .pixel-static.p4 { top: 300px; left: 500px; background-color: #000; }
+        .pixel-static.p5 { top: 150px; right: 150px; }
+        .pixel-static.p6 { bottom: 100px; left: 10vw; background-color: #F00; }
+        .pixel-static.p7 { top: 50vh; left: 50vw; background-color: #000; }
+        .pixel-static.p8 { top: 12vh; right: 25vw; background-color: #FFF; opacity: 0.7; transform: scale(2); }
+        .pixel-static.p9 { bottom: 3vh; left: 60vw; background-color: #F00; opacity: 0.6; transform: rotate(45deg); }
+        .pixel-static.p10 { top: 70vh; left: 20vw; background-color: #000; opacity: 0.8; }
+
+        /* CORNER ACCENTS (FOR BRUTALIST FRAME) */
+        .corner-accent {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #F00; /* Red default border */
+            z-index: 22; /* High z-index */
+        }
+        .corner-accent.tl { top: 0; left: 0; border-width: 2px 0 0 2px; border-color: #FFF transparent transparent #FFF; }
+        .corner-accent.tr { top: 0; right: 0; border-width: 2px 2px 0 0; border-color: #FFF #FFF transparent transparent; }
+        .corner-accent.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; border-color: transparent transparent #FFF #FFF; }
+        .corner-accent.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; border-color: transparent #FFF #FFF transparent; }
+
+        /* MORE BROKEN TEXT ELEMENTS */
+        .broken-text {
+            position: absolute;
+            font-size: 2vw;
+            font-family: 'Courier New', monospace; /* Monospace for technical look */
+            color: #FFF;
+            z-index: 15;
+            opacity: 0.8;
+            background-color: #000;
+        }
+        .broken-text.bt1 {
+            top: 40%; left: 10%;
+            background-color: #F00;
+            padding: 0.2vw;
+            letter-spacing: 0.3vw; /* Spaced out letters */
+            transform: rotate(3deg);
+        }
+        .broken-text.bt2 {
+            bottom: 20%; right: 10%;
+            color: #000;
+            background-color: #FFF;
+            padding: 0.1vw 0.5vw;
+            line-height: 0.8; /* Condensed line height */
+            transform: skewX(-5deg);
+        }
+        .broken-text.bt3 {
+            top: 70%; left: 30%;
+            color: #F00;
+            background-color: #000;
+            padding: 0.3vw;
+            letter-spacing: 0.1vw;
+            font-size: 1.5vw;
+            width: 15vw;
+            overflow: hidden; /* Intentional cutoff */
+        }
+        .broken-text.bt4 {
+            top: 85%; left: 70%;
+            color: #FFF;
+            background-color: #F00;
+            padding: 0.1vw;
+            font-size: 1vw;
+            transform: rotate(-10deg) translateX(5vw);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip; /* Ensure no ellipsis, just cut off */
+        }
+        .broken-text.bt5 {
+            top: 1%; right: 1%;
+            color: #F00;
+            background-color: #000;
+            font-size: 1.2vw;
+            padding: 0.1vw 0.5vw;
+            border: 1px solid #FFF;
+            transform: skewX(2deg);
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <!-- Deepest Background Layers -->
+        <div class="bg-layer"></div>
+
+        <!-- Solid color blocks for brutalist base structure -->
+        <div class="solid-block s1"></div>
+        <div class="solid-block s2"></div>
+        <div class="solid-block s3"></div>
+        <div class="solid-block s4"></div>
+
+        <!-- Large vertical static blocks -->
+        <div class="glitch-element static-block f"></div>
+        <div class="glitch-element static-block g"></div>
+
+        <!-- Main Glitch Title -->
+        <div class="glitch-element glitch-title">
+            <span class="part-a">GLITCH</span>
+            <span class="part-b">AESTHETICS</span>
+            <span class="part-c">ERROR</span>
+        </div>
+
+        <!-- Smaller Static/Noise Blocks -->
+        <div class="glitch-element static-block a"></div>
+        <div class="glitch-element static-block b"></div>
+        <div class="glitch-element static-block c"></div>
+        <div class="glitch-element static-block d"></div>
+        <div class="glitch-element static-block e"></div>
+
+        <!-- Text Fragments -->
+        <div class="glitch-element text-fragment frag1">DATA CORRUPTION</div>
+        <div class="glitch-element text-fragment frag2">DISTORTED REALITY</div>
+        <div class="glitch-element text-fragment frag3">PIXELATED FUTURE</div>
+        <div class="glitch-element text-fragment frag4">SYSTEM FAILURE</div>
+        <div class="glitch-element text-fragment frag5">BROKEN SIGNAL</div>
+        <div class="glitch-element text-fragment frag6">STATIC ECHO</div>
+
+        <!-- Distorted Image Placeholder -->
+        <div class="glitch-element image-glitch"></div>
+
+        <!-- Accent Lines -->
+        <div class="accent-line line1"></div>
+        <div class="accent-line line2"></div>
+        <div class="accent-line line3"></div>
+
+        <!-- Pixel Static Artifacts -->
+        <div class="pixel-static p1"></div>
+        <div class="pixel-static p2"></div>
+        <div class="pixel-static p3"></div>
+        <div class="pixel-static p4"></div>
+        <div class="pixel-static p5"></div>
+        <div class="pixel-static p6"></div>
+        <div class="pixel-static p7"></div>
+        <div class="pixel-static p8"></div>
+        <div class="pixel-static p9"></div>
+        <div class="pixel-static p10"></div>
+
+        <!-- Corner Accents for the 'frame' -->
+        <div class="corner-accent tl"></div>
+        <div class="corner-accent tr"></div>
+        <div class="corner-accent bl"></div>
+        <div class="corner-accent br"></div>
+
+        <!-- More broken text elements for detail -->
+        <div class="broken-text bt1">FRAGMENT.01 // LO_RES</div>
+        <div class="broken-text bt2">NOISE_FIELD<br>CRITICAL</div>
+        <div class="broken-text bt3">VISUAL_ARTIFACTS</div>
+        <div class="broken-text bt4">UNEXPECTED_BEHAVIOR_REPORT</div>
+        <div class="broken-text bt5">V-1.0.1_DEBUG</div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 15:47:56.855983</div>
         <div style="
     width: 100%;
