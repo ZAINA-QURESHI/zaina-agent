@@ -16,6 +16,150 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 21:45:29.361498</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from static positioning */
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    overflow: hidden;
+    background-color: black;
+}
+
+.fragment {
+    position: absolute;
+    border: 2px solid white; /* Initial brutalist border */
+    background-color: rgba(255, 0, 0, 0.7); /* Red with transparency */
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    overflow: hidden;
+    mix-blend-mode: screen; /* Interesting visual effect for overlapping */
+    animation: flicker 1s infinite alternate; /* Subtle decay animation */
+    pointer-events: none; /* Allows clicking through elements */
+}
+
+.fragment:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.7); /* White with transparency */
+    color: black;
+    border-color: red;
+    mix-blend-mode: multiply;
+}
+
+.fragment:nth-child(odd) {
+    background-color: rgba(255, 0, 0, 0.7); /* Red with transparency */
+    color: white;
+    border-color: white;
+}
+
+/* Specific styling for brutalist blocks */
+.block-1 { top: 5%; left: 3%; width: 25%; height: 30%; border-left: 10px solid red; font-size: 2em; }
+.block-2 { top: 0%; right: 0%; width: 40%; height: 15%; background-color: white; color: black; border-bottom: 15px solid black; animation-delay: 0.2s; }
+.block-3 { bottom: 0%; left: 0%; width: 50%; height: 20%; background-color: red; border-right: 20px solid white; font-size: 3em; }
+.block-4 { top: 20%; right: 10%; width: 30%; height: 40%; background-color: black; color: white; border: 5px solid red; animation-delay: 0.4s; z-index: 10; font-size: 1em; }
+.block-5 { top: 40%; left: 20%; width: 20%; height: 25%; background-color: white; color: black; border-top: 8px solid black; animation-delay: 0.6s; }
+.block-6 { bottom: 10%; right: 5%; width: 35%; height: 30%; background-color: red; border: 3px dashed white; font-size: 1.8em; }
+.block-7 { top: 55%; left: 0%; width: 15%; height: 10%; background-color: black; color: red; border-bottom: 10px solid white; }
+.block-8 { top: 10%; left: 40%; width: 15%; height: 18%; background-color: white; color: black; border-right: 5px solid red; animation-delay: 0.8s; }
+.block-9 { bottom: 30%; right: 40%; width: 20%; height: 15%; background-color: black; color: white; border-top: 4px solid red; }
+.block-10 { top: 75%; left: 25%; width: 30%; height: 20%; background-color: red; color: white; border-left: 12px solid black; font-size: 2.5em;}
+.block-11 { top: 0; left: 30%; width: 5%; height: 50%; background-color: black; border-right: 2px solid white; }
+.block-12 { bottom: 0; right: 20%; width: 10%; height: 60%; background-color: white; border-left: 2px solid red; }
+.block-13 { top: 50%; right: 0%; width: 20%; height: 20%; background-color: red; border-bottom: 8px solid black; color: black; }
+
+
+/* Glitch/Decay Animations */
+@keyframes flicker {
+    0% { opacity: 1; transform: scale(1); }
+    5% { opacity: 0.8; transform: scale(1.005); }
+    10% { opacity: 1; transform: scale(1); }
+    20% { opacity: 0.9; transform: scale(0.99); }
+    25% { opacity: 1; transform: scale(1); }
+    30% { opacity: 0.7; transform: translateY(1px); }
+    35% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes static-noise {
+    0%, 100% { background-position: 0 0; }
+    10% { background-position: 5% 5%; }
+    20% { background-position: -5% -5%; }
+    30% { background-position: 10% 10%; }
+    40% { background-position: -10% -10%; }
+    50% { background-position: 15% 15%; }
+    60% { background-position: -15% -15%; }
+    70% { background-position: 20% 20%; }
+    80% { background-position: -20% -20%; }
+    90% { background-position: 25% 25%; }
+}
+
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEV/f3+BgYGhoaGcnJyampqbm5ufn5+goKChaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlp/f3+fn5+Hn49YAAAAHHRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobmK+qnwAAAFhJREFUWMdjYBgFBkYGCgaQhIAmFhaWAABh4GBgaIAAIICBgaGCAACBhYmFgYEAQQEDAwMDAAEBAwMDAwMADBgYGBgYAABJGBgYGBgABBYWBgYGBgAA5GBgYGAgAAAC6fH1Q7s3JAAAAABJRU5ErkJggg=='); /* Tiny static pattern */
+    background-repeat: repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    animation: static-noise 5s infinite linear;
+    z-index: 100; /* Always on top */
+    mix-blend-mode: overlay;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="noise-overlay"></div>
+
+    <div class="fragment block-1">DATA <br> ROT</div>
+    <div class="fragment block-2">FILE <br> CORRUPT</div>
+    <div class="fragment block-3">GLITCH <br> ERROR</div>
+    <div class="fragment block-4">SYSTEM <br> DECAY <br> OBSOLETE</div>
+    <div class="fragment block-5">LOST <br> SIGNAL</div>
+    <div class="fragment block-6">ANALOG <br> DEATH</div>
+    <div class="fragment block-7">VOID</div>
+    <div class="fragment block-8">CRUSH</div>
+    <div class="fragment block-9">NULL <br> BYTE</div>
+    <div class="fragment block-10">BROKEN <br> PIXEL</div>
+    <div class="fragment block-11"></div> <!-- Empty block for structure -->
+    <div class="fragment block-12"></div> <!-- Empty block for structure -->
+    <div class="fragment block-13">END <br> OF <br> LINE</div>
+
+    <!-- More fragmented pieces -->
+    <div class="fragment" style="top: 15%; left: 30%; width: 10%; height: 8%; background-color: red; border-bottom: 2px solid white;">FRAGMENT</div>
+    <div class="fragment" style="bottom: 25%; left: 10%; width: 8%; height: 12%; background-color: white; color: black; border-left: 2px solid red;">STATIC</div>
+    <div class="fragment" style="top: 30%; right: 2%; width: 5%; height: 10%; background-color: black; color: white; border-right: 2px solid red;">FAIL</div>
+    <div class="fragment" style="top: 60%; left: 45%; width: 12%; height: 7%; background-color: red; border-top: 2px solid black;">ERASED</div>
+    <div class="fragment" style="bottom: 5%; right: 40%; width: 7%; height: 15%; background-color: white; color: black; border: 1px dashed black;">REBOOT?</div>
+    <div class="fragment" style="top: 10%; left: 60%; width: 10%; height: 5%; background-color: black; color: red; border-top: 2px solid white;">//</div>
+    <div class="fragment" style="top: 45%; left: 5%; width: 7%; height: 7%; background-color: red; border-right: 3px solid white;">0101</div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 20:51:33.908861</div>
         <!DOCTYPE html>
 <html>
