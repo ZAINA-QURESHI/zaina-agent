@@ -16,6 +16,340 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 22:39:45.799564</div>
+        <!-- thought
+The user wants a radical, brutalist HTML div collage about algorithmic surveillance.
+It needs to use high-contrast red/black/white.
+I must output ONLY raw HTML code, no markdown.
+
+Brutalist characteristics:
+- Raw, unpolished, stark, blocky
+- Exposed structure, minimal styling beyond basic blocks
+- Repetitive, grid-like, strong geometry
+- Often large, imposing text
+- Lack of ornamentation
+- Harsh, direct aesthetic
+
+Collage characteristics:
+- Layering of elements
+- Juxtaposition of different types of content (text, shapes)
+- Asymmetrical balance, or intentionally unbalanced
+
+Algorithmic surveillance theme:
+- Keywords: surveillance, algorithm, data, track, watch, control, observe, predict, monitor, privacy, invisible, system, network, eye, ghost, shadow, trace, profile, score, threat
+- Visuals: grids, eyes, targets, data streams, code snippets, warning signs, abstract patterns representing data flow or control.
+
+Color scheme: red/black/white.
+- Red: warning, danger, stop, alert, blood, control.
+- Black: unknown, void, power, mystery, darkness, oppressive.
+- White: stark, clinical, truth (or lack thereof), data, ghost, absence.
+
+HTML structure:
+- Use `div` elements heavily for blocks and layout.
+- Use inline styles for brutalist look (background-color, color, font-size, font-family, position, z-index, width, height, margin, padding, border).
+- Position elements absolutely or relatively to create overlaps and layers.
+- Use `em` or `vh/vw` for font sizes to make them imposing and relative.
+- Choose harsh, mono-spaced or sans-serif fonts if possible (though HTML fonts are limited, `monospace` or `sans-serif` are good fallbacks).
+- Repetition of text elements.
+- Overlapping text.
+- Simple geometric shapes created with divs.
+
+Let's plan the layout:
+1.  **Overall container:** A main `div` to hold everything, possibly with a black background.
+2.  **Base layers:** Large blocks of red, white, black.
+3.  **Text elements:**
+    *   Large, imposing words like "SURVEILLANCE", "ALGORITHM", "DATA", "WATCHED", "CONTROL".
+    *   Smaller, repetitive phrases.
+    *   Overlapping text, some semi-transparent.
+4.  **Geometric elements:**
+    *   Red squares/rectangles.
+    *   White lines/borders.
+    *   Black voids.
+    *   Perhaps a "target" or "eye" motif using concentric divs.
+5.  **Positioning:** Use `position: absolute` extensively to place elements precisely and create layers. `z-index` will be important.
+6.  **Font choice:** `font-family: 'monospace', sans-serif;` or similar stark choices. `text-transform: uppercase;`.
+7.  **Contrast:** Ensure high contrast for all text and elements.
+
+Let's start building it piece by piece in my mind:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Algorithmic Surveillance</title>
+<style>
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from content overflowing */
+    background-color: #000; /* Main background */
+    font-family: 'monospace', sans-serif;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+/* General block styles */
+.block {
+    position: absolute;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.red { background-color: #FF0000; }
+.black { background-color: #000000; }
+.white { background-color: #FFFFFF; }
+.text-red { color: #FF0000; }
+.text-black { color: #000000; }
+.text-white { color: #FFFFFF; }
+.brutal-font {
+    font-family: 'Impact', 'Arial Black', 'monospace', sans-serif;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -2px; /* Tighter letter spacing for brutal effect */
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Large background blocks -->
+    <div class="block red" style="width: 70vw; height: 50vh; top: 0; left: 0; z-index: 1;"></div>
+    <div class="block white" style="width: 50vw; height: 60vh; bottom: 0; right: 0; z-index: 2;"></div>
+    <div class="block black" style="width: 30vw; height: 100vh; top: 0; left: 30vw; z-index: 3;"></div>
+
+    <!-- Main Title -->
+    <div class="block brutal-font text-white" style="font-size: 15vw; top: 5vh; left: 5vw; z-index: 10; opacity: 0.9;">
+        SURVEIL
+    </div>
+    <div class="block brutal-font text-red" style="font-size: 15vw; top: 20vh; left: 10vw; z-index: 11; opacity: 0.8;">
+        LANCE
+    </div>
+
+    <!-- Algorithmic Overlay -->
+    <div class="block brutal-font text-black" style="font-size: 8vw; top: 40vh; right: 5vw; z-index: 12; width: 60vw; text-align: right;">
+        ALGORITHM
+    </div>
+    <div class="block brutal-font text-red" style="font-size: 6vw; top: 50vh; left: 5vw; z-index: 13;">
+        DATA STREAM
+    </div>
+
+    <!-- Repeating smaller texts -->
+    <div class="block brutal-font text-white" style="font-size: 2vw; top: 80vh; left: 2vw; z-index: 14; transform: rotate(-90deg); transform-origin: top left; white-space: nowrap;">
+        // TRACKED // PROFILE // SCORED // WATCHED // INVISIBLE // PREDATION //
+    </div>
+    <div class="block brutal-font text-red" style="font-size: 2.5vw; bottom: 5vh; right: 2vw; z-index: 15; text-align: right;">
+        CONTROL <br>SYSTEM
+    </div>
+
+    <!-- Red bar/line -->
+    <div class="block red" style="width: 100vw; height: 2vh; top: 50%; left: 0; z-index: 5;"></div>
+
+    <!-- White grid lines -->
+    <div class="block white" style="width: 2px; height: 100vh; top: 0; left: 60vw; z-index: 4;"></div>
+    <div class="block white" style="width: 100vw; height: 2px; top: 30vh; left: 0; z-index: 4;"></div>
+
+    <!-- Eye/Target element -->
+    <div class="block red" style="width: 15vw; height: 15vw; border-radius: 50%; top: 10vh; right: 10vw; z-index: 16; border: 5px solid white;"></div>
+    <div class="block black" style="width: 8vw; height: 8vw; border-radius: 50%; top: calc(10vh + 3.5vw); right: calc(10vw + 3.5vw); z-index: 17;"></div>
+    <div class="block white" style="width: 3vw; height: 3vw; border-radius: 50%; top: calc(10vh + 6vw); right: calc(10vw + 6vw); z-index: 18;"></div>
+
+    <!-- Warning / Glitch Text -->
+    <div class="block brutal-font text-red" style="font-size: 4vw; bottom: 20vh; left: 15vw; z-index: 19; transform: skewX(-15deg);">
+        WARNING: DATA HARVEST
+    </div>
+    <div class="block brutal-font text-black" style="font-size: 4vw; bottom: 19.5vh; left: 15.5vw; z-index: 18; transform: skewX(-15deg); opacity: 0.6;">
+        WARNING: DATA HARVEST
+    </div>
+
+
+    <!-- More layered text -->
+    <div class="block brutal-font text-white" style="font-size: 5vw; top: 65vh; left: 5vw; z-index: 20; opacity: 0.7;">
+        OBSERVED
+    </div>
+    <div class="block brutal-font text-black" style="font-size: 5vw; top: 66vh; left: 5.5vw; z-index: 19; opacity: 0.5;">
+        OBSERVED
+    </div>
+
+    <div class="block brutal-font text-red" style="font-size: 3vw; top: 2vh; right: 2vw; z-index: 20; transform: rotate(90deg); transform-origin: top right; white-space: nowrap;">
+        SYSTEM.ACTIVE.MONITOR.
+    </div>
+
+    <div class="block white" style="width: 20vw; height: 10vh; top: 70vh; left: 60vw; z-index: 21; border: 3px solid #FF0000;">
+        <div class="block text-black" style="font-size: 1.5vw; padding: 10px; top: 0; left: 0; width: 100%; height: 100%;">
+            ACCESS DENIED. YOUR PROFILE IS COMPLETE.
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
+
+
+Review against requirements:
+-   **Radical brutalist:** Yes, stark, blocky, overlapping, large text, high contrast, minimal adornment.
+-   **HTML div collage:** Yes, primarily `div` elements, absolute positioning, layering.
+-   **Algorithmic surveillance:** Theme is covered with keywords and abstract "eye" motif.
+-   **High-contrast red/black/white:** Yes, only these colors are used.
+-   **Output ONLY raw HTML code. No markdown backticks:** This is the final step, just output the HTML.
+
+One minor adjustment: the `brutal-font` family could use a more common brutalist-like font for wider browser compatibility if 'Impact' and 'Arial Black' aren't available, `monospace` is a good fallback but might not be as "brutal". Let's use `Arial Black`, `Impact`, `'Archivo Black'`, `sans-serif` as a list to maximize chances of a bold sans-serif.
+
+Also, for the `text-red` `text-black` `text-white`, I'll define these as colors rather than background colors, so they can be applied to text within a div.
+I'll remove the `background-color` from the `.text-red` etc. classes.
+The `block` class already defines `position: absolute; box-sizing: border-box;`.
+I'll add `overflow: hidden;` to the body and container to prevent scrollbars.
+Letter spacing and line height will contribute to the brutalist feel.
+
+Consider making a few elements semi-transparent for a layered, ghostly effect related to invisibility of surveillance.
+`opacity: 0.X;` can achieve this.
+
+I'll consolidate some inline styles into classes where appropriate, but for specific positioning, inline styles are more practical for a "collage" approach where each element is unique in placement.
+
+Okay, the plan looks solid. I will generate the HTML now.<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALGORTHMIC SURVEILLANCE</title>
+<style>
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from content overflowing */
+    background-color: #000; /* Main background */
+    font-family: 'Arial Black', 'Impact', 'Archivo Black', 'sans-serif';
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -1px; /* Tighter letter spacing for brutal effect */
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+/* General block styles for positioning and basic box model */
+.block {
+    position: absolute;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0;
+    padding: 0;
+    display: flex; /* For text alignment */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+/* Color classes */
+.bg-red { background-color: #FF0000; }
+.bg-black { background-color: #000000; }
+.bg-white { background-color: #FFFFFF; }
+.text-red { color: #FF0000; }
+.text-black { color: #000000; }
+.text-white { color: #FFFFFF; }
+
+/* Specific text styles for brutal impact */
+.brutal-text {
+    font-family: 'Arial Black', 'Impact', 'Archivo Black', 'sans-serif';
+    text-transform: uppercase;
+    line-height: 0.8;
+    letter-spacing: -2px;
+    white-space: nowrap; /* Prevent text wrapping for brutal headlines */
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Primary Background Blocks - Layers 1-3 -->
+    <div class="block bg-red" style="width: 75vw; height: 60vh; top: 0; left: 0; z-index: 1;"></div>
+    <div class="block bg-white" style="width: 60vw; height: 70vh; bottom: 0; right: 0; z-index: 2;"></div>
+    <div class="block bg-black" style="width: 40vw; height: 100vh; top: 0; left: 25vw; z-index: 3;"></div>
+
+    <!-- Main Title: SURVEILLANCE (layered and broken) - Layer 10-11 -->
+    <div class="block brutal-text text-white" style="font-size: 14vw; top: 8vh; left: 5vw; z-index: 10; opacity: 0.9;">
+        SURVEIL
+    </div>
+    <div class="block brutal-text text-red" style="font-size: 14vw; top: 22vh; left: 8vw; z-index: 11; opacity: 0.8;">
+        LANCE
+    </div>
+
+    <!-- Keyword: ALGORITHM (large, contrasting) - Layer 12 -->
+    <div class="block brutal-text text-black" style="font-size: 9vw; top: 40vh; right: 5vw; z-index: 12; width: 60vw; text-align: right; justify-content: flex-end;">
+        ALGORITHM
+    </div>
+
+    <!-- Keyword: DATA STREAM (prominent) - Layer 13 -->
+    <div class="block brutal-text text-red" style="font-size: 6vw; top: 55vh; left: 5vw; z-index: 13;">
+        DATA STREAM
+    </div>
+
+    <!-- Repeating horizontal text: TRACKED // PROFILE // SCORED - Layer 14 -->
+    <div class="block brutal-text text-white" style="font-size: 2vw; top: 80vh; left: 2vw; z-index: 14; transform: rotate(-90deg); transform-origin: top left; white-space: nowrap; opacity: 0.7;">
+        // TRACKED // PROFILE // SCORED // WATCHED // INVISIBLE //
+    </div>
+
+    <!-- CONTROL SYSTEM text block - Layer 15 -->
+    <div class="block brutal-text text-red" style="font-size: 2.5vw; bottom: 5vh; right: 2vw; z-index: 15; text-align: right; justify-content: flex-end; align-items: flex-end; flex-direction: column;">
+        CONTROL <br>SYSTEM
+    </div>
+
+    <!-- Stark horizontal red line - Layer 5 -->
+    <div class="block bg-red" style="width: 100vw; height: 2vh; top: 50%; left: 0; z-index: 5;"></div>
+
+    <!-- White grid lines - Layer 4 -->
+    <div class="block bg-white" style="width: 3px; height: 100vh; top: 0; left: 65vw; z-index: 4;"></div>
+    <div class="block bg-white" style="width: 100vw; height: 3px; top: 35vh; left: 0; z-index: 4;"></div>
+
+    <!-- "Eye" or Target Motif - Layers 16-18 -->
+    <div class="block bg-red" style="width: 18vw; height: 18vw; border-radius: 50%; top: 12vh; right: 12vw; z-index: 16; border: 4px solid #FFFFFF;"></div>
+    <div class="block bg-black" style="width: 10vw; height: 10vw; border-radius: 50%; top: calc(12vh + 4vw); right: calc(12vw + 4vw); z-index: 17;"></div>
+    <div class="block bg-white" style="width: 4vw; height: 4vw; border-radius: 50%; top: calc(12vh + 7vw); right: calc(12vw + 7vw); z-index: 18;"></div>
+
+    <!-- Warning/Glitch Text: DATA HARVEST - Layers 19-20 -->
+    <div class="block brutal-text text-red" style="font-size: 4.5vw; bottom: 25vh; left: 18vw; z-index: 20; transform: skewX(-15deg); text-shadow: 2px 2px #000;">
+        WARNING: DATA HARVEST
+    </div>
+    <div class="block brutal-text text-black" style="font-size: 4.5vw; bottom: 24.5vh; left: 18.5vw; z-index: 19; transform: skewX(-15deg); opacity: 0.6;">
+        WARNING: DATA HARVEST
+    </div>
+
+    <!-- More layered text: OBSERVED - Layers 21-22 -->
+    <div class="block brutal-text text-white" style="font-size: 6vw; top: 70vh; left: 8vw; z-index: 22; opacity: 0.7;">
+        OBSERVED
+    </div>
+    <div class="block brutal-text text-black" style="font-size: 6vw; top: 71vh; left: 8.5vw; z-index: 21; opacity: 0.5;">
+        OBSERVED
+    </div>
+
+    <!-- Vertical text: SYSTEM.ACTIVE.MONITOR. - Layer 23 -->
+    <div class="block brutal-text text-red" style="font-size: 3.5vw; top: 2vh; right: 2vw; z-index: 23; transform: rotate(90deg); transform-origin: top right; white-space: nowrap; opacity: 0.9;">
+        SYSTEM.ACTIVE.MONITOR.
+    </div>
+
+    <!-- Information Box: ACCESS DENIED - Layer 24 -->
+    <div class="block bg-white" style="width: 25vw; height: 12vh; top: 60vh; left: 60vw; z-index: 24; border: 4px solid #FF0000; text-align: center;">
+        <div class="brutal-text text-black" style="font-size: 1.6vw; padding: 10px;">
+            ACCESS DENIED.<br>YOUR PROFILE IS COMPLETE.
+        </div>
+    </div>
+
+    <!-- Additional overlapping text (subtle) - Layer 25 -->
+    <div class="block brutal-text text-black" style="font-size: 2.5vw; top: 3vh; left: 2vw; z-index: 25; opacity: 0.4;">
+        CODE<br>INSPECT
+    </div>
+    <div class="block brutal-text text-white" style="font-size: 2.5vw; top: 3.5vh; left: 2.5vw; z-index: 26; opacity: 0.3;">
+        CODE<br>INSPECT
+    </div>
+
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 21:45:29.361498</div>
         <!DOCTYPE html>
 <html>
