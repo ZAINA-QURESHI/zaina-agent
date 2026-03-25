@@ -16,6 +16,295 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 05:01:10.133362</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Architecture Collage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Base styles for the body to set the stage */
+  body {
+    margin: 0;
+    overflow: hidden; /* Crucial to prevent scrollbars from overlapping absolute elements */
+    font-family: 'Arial Black', Gadget, sans-serif; /* A strong, bold font for the brutalist aesthetic */
+    color: white; /* Default text color */
+    background-color: black; /* Base background color */
+    -webkit-font-smoothing: antialiased; /* Sharper text rendering */
+    -moz-osx-font-smoothing: grayscale; /* Sharper text rendering */
+  }
+
+  /* General styles for all collage blocks */
+  .block {
+    position: absolute; /* Allows for precise layering and positioning */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    padding: 10px; /* Default padding for content blocks */
+    border: 5px solid white; /* Prominent border for exposed structure feel */
+    display: flex; /* Use flexbox for easy content centering */
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase; /* All caps for a more assertive look */
+    line-height: 1.1; /* Tighter line spacing for most blocks */
+    letter-spacing: 1px; /* Slight letter spacing for readability */
+    overflow: hidden; /* Hide content that spills outside, creating sharp edges */
+  }
+
+  /* Styles for text content within blocks */
+  .text-content {
+    font-size: 1.5em; /* Default text size, relative to block's potential font size */
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Make text non-interactive, emphasizing it as a visual element */
+    user-select: none; /* Prevent text selection */
+  }
+
+  /* --- Specific Styles for Individual Collage Blocks --- */
+
+  /* Large Black Overlay - A semi-transparent layer creating depth and covering parts of the background */
+  .overlay-block-1 {
+    top: -5vh; /* Starts slightly off-screen */
+    right: -10vw; /* Extends off-screen */
+    width: 70vw; /* Wide coverage */
+    height: 110vh; /* Taller than viewport to ensure full vertical coverage */
+    background-color: black;
+    border: none; /* No explicit border for this background element */
+    z-index: 1; /* Low z-index to be mostly in the background */
+    opacity: 0.85; /* Semi-transparent to hint at body background */
+    transform: rotate(1deg); /* Slight rotation for dynamic feel */
+  }
+
+  /* Main Title Block - The most prominent textual element */
+  .title-block {
+    top: 5vh;
+    left: 5vw;
+    width: 40vw;
+    height: 20vh;
+    background-color: red;
+    border-color: white;
+    z-index: 100; /* High z-index to ensure it's on top */
+    color: white;
+    transform: rotate(-3deg); /* Angled for a radical look */
+    padding: 0; /* No padding on the block itself, content handles spacing */
+    letter-spacing: -2px; /* Tighter letter spacing for impactful title */
+  }
+  .title-block .text-content {
+    font-size: 3.5em; /* Large, explicit font size for the title */
+    line-height: 0.8; /* Very tight line spacing to stack words */
+    padding: 0 5px; /* Small horizontal padding to prevent text touching edges */
+  }
+
+  /* White Overlap - A disruptive white block slightly overlapping the title */
+  .white-overlap {
+    top: 10vh;
+    left: 2vw;
+    width: 25vw;
+    height: 8vh;
+    background-color: white;
+    border: 3px solid black;
+    z-index: 90; /* Underneath the main title but above some other elements */
+    transform: rotate(2deg); /* Slightly rotated */
+  }
+
+  /* White Text Block 1 - Quote/Statement about brutalism */
+  .text-block-1 {
+    top: 20vh;
+    left: 45vw;
+    width: 45vw;
+    height: 30vh;
+    background-color: white;
+    color: black;
+    border-color: red;
+    z-index: 10;
+    font-size: 2.5em;
+    letter-spacing: -1px;
+    transform: rotate(2deg);
+  }
+
+  /* Red Accent Block - Keyword or concept */
+  .red-accent-block {
+    bottom: 5vh;
+    left: 5vw;
+    width: 30vw;
+    height: 20vh;
+    background-color: red;
+    border-color: white;
+    z-index: 100; /* High z-index */
+    transform: rotate(5deg);
+    font-size: 1.8em;
+  }
+
+  /* White Text Block 2 - Example location or building */
+  .text-block-2 {
+    bottom: 10vh;
+    right: 10vw;
+    width: 40vw;
+    height: 25vh;
+    background-color: white;
+    color: black;
+    border-color: black;
+    z-index: 50;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    transform: rotate(-4deg);
+  }
+
+  /* Black Filler Block - Purely visual, adds to the chaotic composition */
+  .filler-block-1 {
+    top: 40vh;
+    left: 0;
+    width: 20vw;
+    height: 30vh;
+    background-color: black;
+    border-color: red;
+    z-index: 5;
+    transform: rotate(8deg);
+  }
+
+  /* Vertical Red Strip - A strong vertical line, mimicking structural elements */
+  .vertical-strip-red {
+    top: 10vh;
+    left: 30vw;
+    width: 8vw;
+    height: 60vh;
+    background-color: red;
+    border: none;
+    z-index: 20;
+    opacity: 0.8;
+  }
+
+  /* Horizontal White Strip - A strong horizontal line, crossing the composition */
+  .horizontal-strip-white {
+    top: 70vh;
+    left: 0;
+    width: 100vw;
+    height: 5vh;
+    background-color: white;
+    border: none;
+    z-index: 15;
+    opacity: 0.7;
+  }
+
+  /* Small Black Square - A detail element, high z-index */
+  .small-square-black {
+    top: 2vh;
+    right: 2vw;
+    width: 10vw;
+    height: 10vw;
+    background-color: black;
+    border: 3px solid white;
+    z-index: 110; /* Highest z-index */
+    transform: rotate(15deg);
+  }
+
+  /* Small Red Square - Another detail, high z-index */
+  .small-square-red {
+    top: 20vh;
+    left: 2vw;
+    width: 10vw;
+    height: 10vw;
+    background-color: red;
+    border: 3px solid white;
+    z-index: 110;
+    transform: rotate(-10deg);
+  }
+
+  /* Black text on white block - Another textual statement */
+  .text-block-3 {
+    top: 55vh;
+    left: 30vw;
+    width: 35vw;
+    height: 15vh;
+    background-color: white;
+    color: black;
+    border-color: red;
+    z-index: 80;
+    font-size: 1.6em;
+    transform: rotate(1deg);
+  }
+
+  /* Red block with black border - A simple accent block */
+  .red-block-black-border {
+    top: 30vh;
+    right: 5vw;
+    width: 15vw;
+    height: 10vh;
+    background-color: red;
+    border: 3px solid black;
+    z-index: 70;
+    transform: rotate(-7deg);
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Background overlay block, low z-index but covers a large area -->
+  <div class="block overlay-block-1"></div>
+
+  <!-- Main Title Block for "Brutalist Architecture" -->
+  <div class="block title-block">
+    <div class="text-content">
+      BRUTALIST<br>ARCHITECTURE
+    </div>
+  </div>
+
+  <!-- White box overlapping the title slightly - Disruptive visual element -->
+  <div class="block white-overlap"></div>
+
+  <!-- White Text Block 1 - Key characteristics of brutalism -->
+  <div class="block text-block-1">
+    <div class="text-content">
+      RAW<br>CONCRETE<br>MONOLITHIC<br>HONESTY
+    </div>
+  </div>
+
+  <!-- Red Accent Block - Emphasizing structural forms -->
+  <div class="block red-accent-block">
+    <div class="text-content">
+      MEGALITHIC FORMS
+    </div>
+  </div>
+
+  <!-- White Text Block 2 - Example building/location -->
+  <div class="block text-block-2">
+    <div class="text-content">
+      BARBICAN<br>CENTRE<br>LONDON
+    </div>
+  </div>
+
+  <!-- Black Filler Block - Adds visual weight and texture -->
+  <div class="block filler-block-1"></div>
+
+  <!-- Vertical Red Strip - Acts as a strong, exposed beam-like element -->
+  <div class="block vertical-strip-red"></div>
+
+  <!-- Horizontal White Strip - Cuts across the composition, an exposed slab -->
+  <div class="block horizontal-strip-white"></div>
+
+  <!-- Small Black Square - A minimalist detail, almost like an exposed bolt head -->
+  <div class="block small-square-black"></div>
+
+  <!-- Small Red Square - Another small, stark detail -->
+  <div class="block small-square-red"></div>
+
+  <!-- Black text on white block - Highlighting the philosophy -->
+  <div class="block text-block-3">
+    <div class="text-content">
+      FUNCTION<br>OVER<br>ORNAMENT
+    </div>
+  </div>
+
+  <!-- Red block with black border - A solid, uncompromising block -->
+  <div class="block red-block-black-border"></div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 02:49:08.175993</div>
         <!--
 <style>
