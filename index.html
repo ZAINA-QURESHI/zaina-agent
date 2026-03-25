@@ -16,6 +16,167 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 07:15:55.557209</div>
+        <div style="background-color: black; color: white; font-family: 'Arial Black', sans-serif; min-height: 100vh; position: relative; overflow: hidden; font-size: 1.5vmin;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+        body { margin: 0; padding: 0; background-color: black; color: white; font-family: 'Roboto Mono', monospace; text-transform: uppercase; overflow: hidden; }
+        .brutal-block {
+            position: absolute;
+            font-weight: 900;
+            line-height: 0.9;
+            text-align: center;
+            padding: 1vw;
+            box-sizing: border-box;
+            z-index: 1;
+            border: 0.5vw solid white;
+            font-size: 3vw;
+            animation: flicker 0.2s infinite alternate;
+        }
+        .brutal-block.red { background-color: red; color: white; border-color: white; }
+        .brutal-block.black { background-color: black; color: white; border-color: red; }
+        .brutal-block.white { background-color: white; color: black; border-color: red; }
+        .brutal-block.text-red { color: red; background: none; border: none; }
+        .brutal-block.text-white { color: white; background: none; border: none; }
+
+        .overlay-text {
+            position: absolute;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03); /* Very faint white */
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            line-height: 0.8;
+            letter-spacing: -0.5vw;
+        }
+        .overlay-text.red-tint { color: rgba(255, 0, 0, 0.03); }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.95; }
+            100% { opacity: 1; }
+        }
+        @keyframes shift {
+            0% { transform: translate(0, 0); }
+            33% { transform: translate(-0.5vw, 0.5vw); }
+            66% { transform: translate(0.5vw, -0.5vw); }
+            100% { transform: translate(0, 0); }
+        }
+        .brutal-block.animate-shift { animation: shift 3s infinite alternate; }
+
+        /* Specific brutal elements */
+        #core-message {
+            top: 5%;
+            left: 5%;
+            width: 40vw;
+            font-size: 5vw;
+            transform: rotate(-3deg) translateX(-1vw);
+            z-index: 10;
+            animation: flicker 0.1s infinite alternate;
+        }
+        #data-points {
+            bottom: 8%;
+            right: 5%;
+            width: 35vw;
+            font-size: 3.5vw;
+            transform: rotate(5deg) translateY(1vw);
+            z-index: 9;
+        }
+        #eye-icon {
+            top: 30%;
+            left: 35%;
+            width: 30vw;
+            height: 30vw;
+            font-size: 10vw;
+            border-width: 0.8vw;
+            z-index: 12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transform: skewX(-10deg) scale(0.95);
+            animation: flicker 0.05s infinite alternate;
+        }
+        #eye-icon span {
+            display: block;
+            font-size: 1em;
+            color: black;
+            transform: rotate(15deg);
+        }
+        #control-grid-label {
+            top: 25%;
+            left: 50%;
+            width: 20vw;
+            font-size: 2.5vw;
+            transform: rotate(8deg);
+            z-index: 8;
+        }
+        #feedback-loop-label {
+            bottom: 15%;
+            left: 10%;
+            width: 28vw;
+            font-size: 3vw;
+            transform: rotate(-7deg);
+            z-index: 7;
+        }
+        #status-tracked {
+            top: 55%;
+            left: 15%;
+            width: 25vw;
+            font-size: 4vw;
+            transform: rotate(-12deg);
+            z-index: 11;
+        }
+        #identity-denied {
+            top: 10%;
+            right: 10%;
+            width: 25vw;
+            font-size: 2.8vw;
+            transform: rotate(2deg);
+            z-index: 6;
+            border-style: dashed;
+        }
+        #data-stream-overlay {
+            position: absolute;
+            top: -10vh;
+            left: 0;
+            width: 100vw;
+            height: 120vh;
+            overflow: hidden;
+            font-size: 1.5vw;
+            line-height: 0.8;
+            color: rgba(255, 0, 0, 0.08); /* Faint red 01s */
+            pointer-events: none;
+            z-index: 0;
+            word-wrap: break-word; /* Ensure it breaks */
+        }
+        #code-block {
+            bottom: 0%;
+            left: 40%;
+            width: 25vw;
+            font-size: 1.8vw;
+            padding: 0.8vw;
+            transform: rotate(10deg) skewY(-5deg);
+            z-index: 5;
+            overflow: hidden;
+            height: 15vw;
+            text-align: left;
+            border-bottom: none;
+            border-left: none;
+        }
+
+    </style>
+
+    <div id="data-stream-overlay">
+        0110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001010110101010010110101001
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 05:01:10.133362</div>
         <!DOCTYPE html>
 <html>
