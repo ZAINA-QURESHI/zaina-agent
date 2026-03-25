@@ -16,6 +16,495 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 02:49:08.175993</div>
+        <!--
+<style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from absolute positioning */
+    font-family: 'Arial Black', sans-serif;
+    background-color: black;
+  }
+  .brutal-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden; /* Keep elements within view */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+  /* Core Brutalist Elements */
+  .element {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Default text color */
+    border: 1px solid white; /* Default border */
+    font-size: 1em;
+    line-height: 1;
+    z-index: 1;
+    padding: 0.5vw; /* Add some padding by default */
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 0.1vw;
+  }
+
+  /* Color variations */
+  .red-bg { background-color: #E00000; color: white; }
+  .black-bg { background-color: black; color: white; }
+  .white-bg { background-color: white; color: black; }
+
+  /* Specific styles for collage elements */
+
+  /* Element 1: Large "DATA" block */
+  .e1 {
+    top: 5vh; left: -5vw;
+    width: 45vw; height: 30vh;
+    background-color: #E00000;
+    color: white;
+    font-size: 15vw;
+    font-weight: 900;
+    transform: rotate(-10deg);
+    z-index: 5;
+    border: none;
+    overflow: hidden;
+    line-height: 0.8;
+  }
+
+  /* Element 2: "ALGORITHM" with a thick border */
+  .e2 {
+    top: 20vh; left: 30vw;
+    width: 60vw; height: 20vh;
+    background-color: black;
+    color: white;
+    font-size: 7vw;
+    font-family: 'Monaco', monospace;
+    border: 8px solid white;
+    z-index: 10;
+    padding: 0 2vw;
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Subtle glow */
+  }
+
+  /* Element 3: "SURVEILLANCE" red bar */
+  .e3 {
+    top: 50vh; left: 0;
+    width: 100vw; height: 10vh;
+    background-color: #E00000;
+    color: black;
+    font-size: 6vw;
+    letter-spacing: 0.5vw;
+    z-index: 15;
+    white-space: nowrap; /* Keep text on one line */
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    border: none;
+  }
+
+  /* Element 4: "PRIVACY LOST" - rotated */
+  .e4 {
+    bottom: 5vh; right: 10vw;
+    width: 30vw; height: 15vh;
+    background-color: white;
+    color: #E00000;
+    font-size: 4vw;
+    transform: rotate(15deg);
+    border: 5px solid black;
+    z-index: 8;
+  }
+
+  /* Element 5: "WATCHED" - small, repeated, partially hidden */
+  .e5 {
+    top: 0; right: 0;
+    width: 25vw; height: 25vh;
+    background-color: black;
+    color: white;
+    font-size: 3vw;
+    border: 1px dashed #E00000;
+    z-index: 3;
+    overflow: hidden;
+    padding: 1vw;
+    line-height: 1.1;
+  }
+
+  /* Element 6: "SYSTEM" - overlapping with E1 */
+  .e6 {
+    top: 15vh; left: 0;
+    width: 35vw; height: 10vh;
+    background-color: white;
+    color: black;
+    font-size: 5vw;
+    transform: rotate(5deg);
+    z-index: 7;
+  }
+
+  /* Element 7: "CODE" - repeated grid-like pattern */
+  .e7 {
+    bottom: 0; left: 0;
+    width: 20vw; height: 30vh;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    border: 2px solid #E00000;
+    overflow: hidden;
+    padding: 1vw;
+    display: block; /* Allow block content inside */
+    z-index: 4;
+    line-height: 1.2;
+    font-family: 'Monaco', monospace;
+    text-align: left;
+    align-items: flex-start; /* Align content to top-left for code blocks */
+    justify-content: flex-start;
+  }
+  .e7 span { display: block; margin-bottom: 5px; }
+
+
+  /* Element 8: Redacted bar */
+  .e8 {
+    top: 40vh; left: 50vw;
+    width: 30vw; height: 5vh;
+    background-color: #E00000;
+    color: black;
+    font-size: 2.5vw;
+    transform: rotate(-5deg);
+    z-index: 12;
+    font-weight: bold;
+    letter-spacing: 0.2vw;
+  }
+
+  /* Element 9: Eye / Target icon */
+  .e9 {
+    bottom: 20vh; left: 20vw;
+    width: 15vw; height: 15vw; /* Square for circle */
+    border-radius: 50%; /* Make it a circle */
+    background-color: black;
+    border: 5px solid white;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .e9::before {
+    content: '';
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #E00000;
+    border: 2px solid white;
+  }
+
+  /* Element 10: "CONSENT?" - small, obscured */
+  .e10 {
+    top: 65vh; left: 40vw;
+    width: 20vw; height: 8vh;
+    background-color: white;
+    color: black;
+    font-size: 2vw;
+    transform: rotate(8deg);
+    z-index: 6;
+    border: 2px solid #E00000;
+    opacity: 0.8; /* Slightly transparent */
+  }
+
+  /* Element 11: Vertical line grid */
+  .e11 {
+    top: 0; left: 70vw;
+    width: 2vw; height: 100%;
+    background-color: white;
+    z-index: 2;
+    opacity: 0.1;
+    border: none;
+  }
+  .e12 {
+    top: 0; left: 75vw;
+    width: 1vw; height: 100%;
+    background-color: #E00000;
+    z-index: 2;
+    opacity: 0.15;
+    border: none;
+  }
+  .e13 {
+    top: 0; left: 85vw;
+    width: 0.5vw; height: 100%;
+    background-color: white;
+    z-index: 2;
+    opacity: 0.1;
+    border: none;
+  }
+
+  /* Element 14: Horizontal Red line */
+  .e14 {
+    top: 30vh; left: 0;
+    width: 100%; height: 2px;
+    background-color: #E00000;
+    z-index: 1;
+    border: none;
+  }
+
+  /* Element 15: Small "TRACED" */
+  .e15 {
+    top: 80vh; left: 60vw;
+    width: 15vw; height: 7vh;
+    background-color: black;
+    color: white;
+    font-size: 2.5vw;
+    border: 1px solid white;
+    transform: rotate(-3deg);
+    z-index: 9;
+  }
+
+  /* Element 16: "CONTROL" block */
+  .e16 {
+    top: 75vh; left: 70vw;
+    width: 25vw; height: 10vh;
+    background-color: #E00000;
+    color: black;
+    font-size: 4vw;
+    transform: rotate(5deg);
+    z-index: 11;
+  }
+
+  /* Element 17: "SHADOW" - very thin font, almost lost */
+  .e17 {
+    top: 5vh; left: 60vw;
+    width: 25vw; height: 5vh;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    font-weight: 100; /* Very thin */
+    font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5vw;
+    z-index: 2;
+    opacity: 0.7;
+    border: 1px dashed white;
+  }
+
+  /* Element 18: Binary/Hex block */
+  .e18 {
+    top: 45vh; left: 0;
+    width: 25vw; height: 15vh;
+    background-color: black;
+    color: #E00000;
+    font-size: 1.2vw;
+    font-family: 'Monaco', monospace;
+    line-height: 1.2;
+    padding: 1vw;
+    border: 1px solid white;
+    z-index: 5;
+    overflow: hidden;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* Element 19: Overlay warning strip */
+  .e19 {
+    top: 0; left: 40vw;
+    width: 15vw; height: 100vh;
+    background-color: #E00000;
+    color: white;
+    font-size: 2vw;
+    writing-mode: vertical-lr; /* Vertical text */
+    text-orientation: mixed;
+    transform: rotate(180deg); /* Flip vertical text */
+    z-index: 12;
+    opacity: 0.15;
+    display: flex; /* Centering for vertical text */
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.5vw;
+    border: none;
+    font-weight: bold;
+  }
+
+  /* Element 20: Large black square with white border, empty */
+  .e20 {
+    bottom: 10vh; right: 0;
+    width: 20vw; height: 20vw;
+    background-color: black;
+    border: 5px solid white;
+    z-index: 1;
+    opacity: 0.8;
+  }
+
+  /* Element 21: Small red square, partially hidden */
+  .e21 {
+    top: 60vh; left: 5vw;
+    width: 10vw; height: 10vw;
+    background-color: #E00000;
+    border: 2px solid white;
+    z-index: 3;
+    transform: rotate(10deg);
+  }
+
+  /* Element 22: Small white square, partially hidden */
+  .e22 {
+    top: 65vh; left: 10vw;
+    width: 8vw; height: 8vw;
+    background-color: white;
+    border: 2px solid black;
+    z-index: 4;
+    transform: rotate(-15deg);
+  }
+
+  /* Element 23: Thin white line, crossing */
+  .e23 {
+    top: 20vh; left: 0;
+    width: 100vw; height: 1px;
+    background-color: white;
+    z-index: 0;
+    opacity: 0.2;
+    border: none;
+  }
+
+  /* Element 24: Thin red line, crossing */
+  .e24 {
+    top: 80vh; left: 0;
+    width: 100vw; height: 1px;
+    background-color: #E00000;
+    z-index: 0;
+    opacity: 0.2;
+    border: none;
+  }
+
+  /* Element 25: Fragmented text "YOUR DATA" */
+  .e25 {
+    bottom: 30vh; right: 25vw;
+    width: 20vw; height: 10vh;
+    background-color: white;
+    color: black;
+    font-size: 2.5vw;
+    border: 1px solid black;
+    transform: rotate(5deg);
+    z-index: 7;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); /* trapezoid */
+  }
+
+  /* Element 26: "PATTERN" */
+  .e26 {
+    top: 10vh; left: 45vw;
+    width: 25vw; height: 10vh;
+    background-color: black;
+    color: #E00000;
+    font-size: 4vw;
+    border: 3px solid white;
+    transform: rotate(-7deg);
+    z-index: 9;
+  }
+
+  /* Element 27: Small "LOGGED" */
+  .e27 {
+    bottom: 50vh; left: 30vw;
+    width: 15vw; height: 5vh;
+    background-color: white;
+    color: black;
+    font-size: 1.8vw;
+    z-index: 6;
+    border: 1px solid #E00000;
+    transform: rotate(3deg);
+  }
+
+  /* Element 28: Small "CAPTURED" */
+  .e28 {
+    top: 30vh; right: 15vw;
+    width: 18vw; height: 6vh;
+    background-color: #E00000;
+    color: white;
+    font-size: 2vw;
+    z-index: 10;
+    border: 1px solid black;
+    transform: rotate(-8deg);
+  }
+
+  /* Element 29: Red grid overlay */
+  .e29-grid-h {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #E00000;
+    opacity: 0.1;
+    z-index: 0;
+    border: none;
+  }
+  .e29-grid-v {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #E00000;
+    opacity: 0.1;
+    z-index: 0;
+    border: none;
+  }
+
+</style>
+
+<div class="brutal-container">
+  <!-- Grid lines (background elements) -->
+  <div class="e29-grid-h" style="top: 10vh;"></div>
+  <div class="e29-grid-h" style="top: 30vh;"></div>
+  <div class="e29-grid-h" style="top: 50vh;"></div>
+  <div class="e29-grid-h" style="top: 70vh;"></div>
+  <div class="e29-grid-h" style="top: 90vh;"></div>
+  <div class="e29-grid-v" style="left: 10vw;"></div>
+  <div class="e29-grid-v" style="left: 30vw;"></div>
+  <div class="e29-grid-v" style="left: 50vw;"></div>
+  <div class="e29-grid-v" style="left: 70vw;"></div>
+  <div class="e29-grid-v" style="left: 90vw;"></div>
+
+  <!-- Main text blocks -->
+  <div class="element e1">DATA</div>
+  <div class="element e2">ALGORITHM</div>
+  <div class="element e3">SURVEILLANCE SURVEILLANCE SURVEILLANCE</div>
+  <div class="element e4">PRIVACY<br>LOST</div>
+  <div class="element e5">WATCHED<br>WATCHED<br>WATCHED</div>
+  <div class="element e6">SYSTEM</div>
+  <div class="element e7">
+    <span>CODE:10101</span>
+    <span>EXEC:01100</span>
+    <span>TRACED:FF0A</span>
+    <span>TARGET:0011</span>
+    <span>LOOP:01010</span>
+    <span>ERROR:0xEE</span>
+    <span>STATUS:OK_?</span>
+  </div>
+  <div class="element e8">██████ BLACKBOX ██████</div>
+  <div class="element e10">CONSENT?</div>
+  <div class="element e15">TRACED</div>
+  <div class="element e16">CONTROL</div>
+  <div class="element e17">SHADOW</div>
+  <div class="element e18">
+    0xAC 0x22 0xFB 0x01<br>
+    0x88 0xDD 0x1A 0x3C<br>
+    0x4F 0x0E 0x9B 0x77<br>
+    0x33 0x66 0xCC 0xAA<br>
+    0x00 0x11 0x22 0x33
+  </div>
+  <div class="element e25">YOUR DATA</div>
+  <div class="element e26">PATTERN</div>
+  <div class="element e27">LOGGED</div>
+  <div class="element e28">CAPTURED</div>
+
+  <!-- Visual elements / Shapes / Lines -->
+  <div class="element e9"></div> <!-- Eye/Target -->
+  <div class="element e11"></div> <!-- Vertical line 1 -->
+  <div class="element e12"></div> <!-- Vertical line 2 -->
+  <div class="element e13"></div> <!-- Vertical line 3 -->
+  <div class="element e14"></div> <!-- Horizontal line 1 -->
+  <div class="element e19">WARNING WARNING WARNING</div> <!-- Vertical warning strip -->
+  <div class="element e20"></div> <!-- Large empty black square -->
+  <div class="element e21"></div> <!-- Small red square -->
+  <div class="element e22"></div> <!-- Small white square -->
+  <div class="element e23"></div> <!-- Thin white line -->
+  <div class="element e24"></div> <!-- Thin red line -->
+
+</div>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-24 23:39:14.303531</div>
         <!DOCTYPE html>
 <html lang="en">
