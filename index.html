@@ -16,6 +16,192 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 08:59:49.565891</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow: hidden; background: #000; font-family: 'Arial Black', sans-serif; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+  }
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 900;
+    color: #FFF;
+    text-align: center;
+    line-height: 1;
+    overflow: hidden;
+    border: 0;
+  }
+  .red { background: #E00; color: #000; }
+  .white { background: #FFF; color: #000; }
+  .black { background: #000; color: #E00; }
+
+  .text-content {
+    mix-blend-mode: difference; /* For some interesting overlap effects */
+    padding: 5px;
+  }
+
+  /* Specific glitch effects for some elements */
+  .glitch-text {
+    font-family: 'monospace', 'Courier New', monospace;
+    font-size: 1.5em;
+    color: #FFF;
+    text-shadow: 2px 2px #E00, -2px -2px #000;
+    animation: glitch-anim 2s infinite alternate;
+  }
+
+  @keyframes glitch-anim {
+    0% { transform: translate(0, 0); text-shadow: 2px 2px #E00, -2px -2px #000; }
+    20% { transform: translate(-5px, 5px); text-shadow: -2px -2px #E00, 2px 2px #000; }
+    40% { transform: translate(5px, -5px); text-shadow: 2px -2px #E00, -2px 2px #000; }
+    60% { transform: translate(-3px, 3px); text-shadow: -3px 3px #E00, 3px -3px #000; }
+    80% { transform: translate(3px, -3px); text-shadow: 3px -3px #E00, -3px 3px #000; }
+    100% { transform: translate(0, 0); text-shadow: 2px 2px #E00, -2px -2px #000; }
+  }
+
+  .scanline {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: scanline-anim 4s infinite linear;
+    z-index: 100;
+    mix-blend-mode: overlay;
+  }
+
+  @keyframes scanline-anim {
+    0% { top: -3px; }
+    100% { top: 100%; }
+  }
+
+  .distorted {
+    transform: skewX(-5deg) scaleY(1.05);
+  }
+
+  .flicker {
+    animation: flicker-anim 0.2s infinite alternate;
+  }
+
+  @keyframes flicker-anim {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+
+  .layered-text {
+    position: relative;
+    display: inline-block;
+    color: #FFF;
+    font-size: 2.5em;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .layered-text::before,
+  .layered-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .layered-text::before {
+    color: #E00;
+    transform: translate(-2px, -2px);
+    mix-blend-mode: multiply;
+  }
+  .layered-text::after {
+    color: #000;
+    transform: translate(2px, 2px);
+    mix-blend-mode: screen;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Main brutal blocks -->
+  <div class="block black" style="width: 70%; height: 30%; top: 0; left: 0; transform: skewY(-5deg);">
+    <div class="layered-text" data-text="ERROR">ERROR</div>
+  </div>
+
+  <div class="block red" style="width: 35%; height: 40%; top: 25%; left: 60%; transform: rotate(8deg);">
+    <div class="text-content">
+      <span class="glitch-text">PIXELATED</span><br>
+      <span style="font-size: 0.5em; color: #000;">NOISE</span>
+    </div>
+  </div>
+
+  <div class="block white" style="width: 25%; height: 60%; top: 10%; left: 25%; transform: skewX(10deg);">
+    <div class="text-content" style="color: #000;">
+      <span class="distorted">GLITCH</span><br>
+      <span style="font-size: 0.8em; color: #E00;">DISTORT</span>
+    </div>
+  </div>
+
+  <div class="block black" style="width: 40%; height: 20%; bottom: 0; right: 0; transform: rotate(-3deg);">
+    <div class="text-content">
+      <div class="layered-text" data-text="STATIC">STATIC</div>
+    </div>
+  </div>
+
+  <div class="block white flicker" style="width: 15%; height: 15%; top: 55%; left: 0;">
+    <span style="color: #E00;">CRASH</span>
+  </div>
+
+  <div class="block red" style="width: 30%; height: 10%; top: 80%; left: 30%;">
+    <span class="glitch-text" style="font-size: 1.2em; color: #000;">CORRUPT DATA</span>
+  </div>
+
+  <div class="block black" style="width: 20%; height: 25%; top: 65%; left: 15%; border: 2px solid #E00;">
+    <span style="font-size: 1.2em;">SYSTEM_FAIL</span>
+  </div>
+
+  <div class="block white" style="width: 10%; height: 20%; top: 40%; left: 85%; transform: skewY(15deg) rotate(5deg);">
+    <span style="font-size: 1em;">LOOP</span>
+  </div>
+
+  <div class="block red" style="width: 18%; height: 12%; top: 0; right: 0; transform: skewX(-10deg);">
+    <span style="color: #000; font-size: 1.5em;">VOID</span>
+  </div>
+
+  <div class="block black" style="width: 22%; height: 15%; bottom: 10%; left: 0; transform: rotate(10deg);">
+    <span class="flicker" style="font-size: 1.3em;">BROKEN</span>
+  </div>
+
+  <!-- Small overlapping elements for complexity -->
+  <div class="block white" style="width: 8%; height: 8%; top: 15%; left: 70%; z-index: 1;"></div>
+  <div class="block red" style="width: 5%; height: 5%; top: 18%; left: 73%; z-index: 2;"></div>
+
+  <div class="block black" style="width: 12%; height: 10%; top: 60%; left: 50%;"></div>
+  <div class="block white" style="width: 7%; height: 7%; top: 62%; left: 52%; border: 1px solid #E00;"></div>
+
+  <div class="block red" style="width: 10%; height: 10%; bottom: 20%; right: 20%; transform: rotate(-15deg);"></div>
+  <div class="block black" style="width: 6%; height: 6%; bottom: 22%; right: 23%;"></div>
+
+  <!-- Scanline effect -->
+  <div class="scanline"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 07:15:55.557209</div>
         <div style="background-color: black; color: white; font-family: 'Arial Black', sans-serif; min-height: 100vh; position: relative; overflow: hidden; font-size: 1.5vmin;">
     <style>
