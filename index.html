@@ -16,6 +16,264 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 19:05:46.193182</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>DECOLONIZE THE CLOUD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
+
+        /* RESET & BASE */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Primary background: Black */
+            font-family: 'IBM Plex Mono', monospace; /* Brutalist font choice */
+            color: #FFFFFF; /* Default text: White */
+            overflow: hidden; /* Crucial for brutalist 'cut-off' look */
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* COLLAGE CONTAINER */
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Ensures elements outside aren't scrolled */
+            display: block; /* Ensure it takes full space */
+        }
+
+        /* GENERIC BOX STYLE */
+        .box {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            padding: 10px;
+            font-weight: bold;
+            z-index: 1; /* Default stacking order */
+            border: 2px solid; /* A harsh border for definition */
+            pointer-events: none; /* Ignore clicks on overlapping divs */
+        }
+
+        /* COLOR PALETTE STYLES */
+        .black-on-white { background-color: #FFFFFF; color: #000000; border-color: #000000; }
+        .white-on-black { background-color: #000000; color: #FFFFFF; border-color: #FF0000; }
+        .red-on-white { background-color: #FFFFFF; color: #FF0000; border-color: #000000; }
+        .white-on-red { background-color: #FF0000; color: #FFFFFF; border-color: #000000; }
+        .black-on-red { background-color: #FF0000; color: #000000; border-color: #FFFFFF; }
+
+        /* TEXT STYLES */
+        h1, h2, h3, p { margin: 0; padding: 0; }
+
+        /* SPECIFIC COLLAGE ELEMENTS */
+
+        /* MAIN TITLE */
+        .title-main {
+            font-size: 15vw; /* Extremely large */
+            left: -2vw;
+            top: 5vh;
+            width: 105vw; /* Bleed off screen */
+            text-align: center;
+            color: #FF0000; /* Striking red */
+            z-index: 10;
+            letter-spacing: -0.5vw; /* Tight letter spacing */
+            transform: skewY(-8deg); /* Aggressive slant */
+            text-shadow: 8px 8px #000000; /* Harsh shadow */
+            border: none;
+            background: none;
+        }
+
+        /* SUB-TITLE / CALL TO ACTION */
+        .sub-title {
+            font-size: 6vw;
+            right: -5vw; /* Partially off screen */
+            top: 28vh;
+            padding: 15px 30px;
+            z-index: 12;
+            transform: rotate(5deg);
+        }
+
+        /* CORE MESSAGES */
+        .message-block-1 {
+            width: 35vw;
+            height: 20vh;
+            left: 3vw;
+            top: 30vh;
+            font-size: 2.8vw;
+            padding: 25px;
+            z-index: 8;
+            transform: rotate(-3deg);
+            border-width: 4px;
+        }
+        .message-block-2 {
+            width: 45vw;
+            height: 25vh;
+            right: 8vw;
+            top: 40vh;
+            font-size: 3.5vw;
+            padding: 20px;
+            z-index: 7;
+            transform: rotate(7deg);
+            opacity: 0.9;
+        }
+        .message-block-3 {
+            width: 30vw;
+            height: 15vh;
+            left: 20vw;
+            bottom: 25vh;
+            font-size: 2.2vw;
+            padding: 15px;
+            z-index: 11;
+            transform: rotate(-10deg);
+            border-width: 3px;
+        }
+
+        /* SUPPORTING SLOGANS */
+        .slogan-1 {
+            left: -10vw; /* Far off screen */
+            top: 60vh;
+            font-size: 4vw;
+            padding: 10px 150px 10px 50px;
+            z-index: 5;
+            transform: rotate(2deg) translateX(15vw); /* Shifted and rotated */
+            border: none; /* No border for this one */
+        }
+        .slogan-2 {
+            right: 5vw;
+            bottom: 5vh;
+            font-size: 2vw;
+            padding: 8px;
+            z-index: 15;
+            transform: rotate(4deg);
+            border-width: 1px;
+        }
+        .slogan-3 {
+            left: 50%;
+            top: 15vh;
+            transform: translateX(-50%) rotate(10deg);
+            font-size: 2.5vw;
+            padding: 12px;
+            z-index: 6;
+            opacity: 0.8;
+            border-width: 2px;
+        }
+
+        /* OVERLAY GRAPHIC ELEMENTS */
+        .red-bar-overlay {
+            width: 120vw;
+            height: 4vh;
+            background-color: #FF0000;
+            left: -10vw;
+            top: 50vh;
+            z-index: 2;
+            transform: rotate(-12deg);
+            opacity: 0.6;
+            border: none;
+        }
+        .white-block-overlay {
+            width: 60vw;
+            height: 80vh;
+            background-color: #FFFFFF;
+            right: -20vw;
+            top: -10vh;
+            z-index: 0; /* Behind almost everything */
+            transform: rotate(20deg);
+            opacity: 0.15;
+            border: none;
+        }
+        .black-grid-bg {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1; /* Farthest back */
+            border: none;
+            opacity: 0.7;
+        }
+        .diag-slash {
+            width: 180vw;
+            height: 3vh;
+            background-color: #FFFFFF;
+            left: -40vw;
+            bottom: 10vh;
+            transform: rotate(25deg);
+            z-index: 1;
+            opacity: 0.2;
+            border: none;
+        }
+        .solid-red-block {
+            width: 25vw;
+            height: 40vh;
+            background-color: #FF0000;
+            left: 45vw;
+            top: 0;
+            z-index: 3;
+            opacity: 0.7;
+            transform: translateY(-50%) rotate(15deg);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <!-- BACKGROUND GRIDS & BLOCKS -->
+        <div class="box black-grid-bg"></div>
+        <div class="box white-block-overlay"></div>
+        <div class="box solid-red-block"></div>
+        <div class="box red-bar-overlay"></div>
+        <div class="box diag-slash"></div>
+
+        <!-- MAIN TITLE -->
+        <h1 class="box title-main">DECOLONIZE<br>THE CLOUD</h1>
+
+        <!-- SUB-TITLE / CALL TO ACTION -->
+        <div class="box sub-title white-on-red">RECLAIM <span style="color:#000;">YOUR</span> DATA</div>
+
+        <!-- CORE MESSAGES -->
+        <div class="box message-block-1 white-on-black">
+            <p>DATA SOVEREIGNTY</p>
+            <p style="font-size: 0.8em;">LOCAL INFRASTRUCTURE</p>
+        </div>
+        <div class="box message-block-2 black-on-red">
+            <p>BREAK THE MONOPOLY</p>
+            <p style="font-size: 0.75em;">OPEN SOURCE NOW</p>
+        </div>
+        <div class="box message-block-3 white-on-black">
+            <p>NO DIGITAL<br>COLONIALISM</p>
+        </div>
+
+        <!-- SUPPORTING SLOGANS -->
+        <div class="box slogan-1 white-on-black" style="opacity: 0.9;">
+            <p>INDIGENOUS KNOWLEDGE</p>
+        </div>
+        <div class="box slogan-2 red-on-white">
+            <p>RESIST. REBUILD. RECLAIM.</p>
+        </div>
+        <div class="box slogan-3 white-on-black">
+            <p>DIGITAL INDEPENDENCE</p>
+        </div>
+
+        <!-- MORE AGGRESSIVE TEXT BLOCKS -->
+        <div class="box white-on-red" style="left: 10vw; bottom: 5vh; font-size: 1.8vw; padding: 10px; z-index: 14; transform: rotate(-5deg);">
+            <p>POWER TO THE PERIPHERY</p>
+        </div>
+        <div class="box black-on-white" style="right: 2vw; top: 0; font-size: 2.5vw; padding: 15px; z-index: 9; transform: translateY(-50%) rotate(3deg);">
+            <p>OFF THE GRID</p>
+        </div>
+        <div class="box white-on-black" style="left: 70vw; bottom: 30vh; font-size: 1.5vw; padding: 5px; z-index: 13; transform: rotate(15deg); border-width: 1px;">
+            <p>YOUR CLOUD</p>
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">decolonizing the cloud</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-25 17:12:17.063098</div>
         <!DOCTYPE html>
 <html lang="en">
