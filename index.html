@@ -16,6 +16,266 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-26 19:18:18.302703</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Brutalist Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+            background-color: black; /* Overall dark base */
+            display: flex; /* Flexbox for central alignment */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw; /* Take full viewport width */
+            height: 100vh; /* Take full viewport height */
+            background-color: black; /* Base for the collage */
+            overflow: hidden;
+        }
+
+        /* Base styles for all elements in the collage */
+        .collage-item {
+            position: absolute;
+            box-sizing: border-box;
+            border: 2px solid white; /* Hard edges */
+            color: white;
+            padding: 5px;
+            overflow: hidden; /* Hide overflowing text/content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.1;
+            transform-origin: center center; /* For rotations */
+            mix-blend-mode: screen; /* For overlay effects */
+        }
+
+        /* Specific styles for different elements */
+        .block-red { background-color: #FF0000; color: white; border-color: black; }
+        .block-black { background-color: black; color: white; border-color: #FF0000; }
+        .block-white { background-color: white; color: black; border-color: black; }
+
+        .text-overlay {
+            font-size: 4vw; /* Large, responsive text */
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            mix-blend-mode: difference; /* Dramatic text effect */
+            pointer-events: none; /* Allow clicks through text */
+        }
+
+        /* Positioning and sizing for brutalist feel */
+
+        .item-1 { /* MAIN TITLE BLOCK - decay */
+            width: 70%;
+            height: 20%;
+            top: 5%;
+            left: 15%;
+            font-size: 5vw;
+            background-color: #FF0000;
+            border-width: 8px;
+            z-index: 5;
+            transform: skewX(-15deg);
+            mix-blend-mode: normal;
+        }
+        .item-2 { /* SUBTITLE BLOCK - obsolescence */
+            width: 40%;
+            height: 10%;
+            top: 25%;
+            left: 55%;
+            font-size: 2.5vw;
+            background-color: black;
+            border-color: #FF0000;
+            color: #FF0000;
+            transform: rotate(5deg);
+        }
+        .item-3 { /* DATA BLOCK 1 - corruption */
+            width: 25%;
+            height: 30%;
+            top: 35%;
+            left: 5%;
+            font-size: 1.8vw;
+            line-height: 1;
+            background-color: white;
+            color: black;
+            border-color: black;
+            transform: rotate(-10deg);
+        }
+        .item-4 { /* DATA BLOCK 2 - fragmentation */
+            width: 20%;
+            height: 20%;
+            top: 20%;
+            left: 75%;
+            font-size: 1.5vw;
+            background-color: #FF0000;
+            border-color: black;
+            transform: rotate(15deg);
+            mix-blend-mode: overlay;
+        }
+        .item-5 { /* ERROR BLOCK - void */
+            width: 30%;
+            height: 15%;
+            bottom: 5%;
+            left: 10%;
+            font-size: 2vw;
+            background-color: black;
+            border-color: white;
+            color: white;
+            transform: skewY(10deg);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing effect */
+        }
+        .item-6 { /* GRID/CODE SNIPPET - noise */
+            width: 35%;
+            height: 40%;
+            top: 45%;
+            left: 30%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #FF0000;
+            color: #FF0000;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9vw;
+            line-height: 1.2;
+            padding: 10px;
+            overflow: auto; /* Allow code to scroll */
+            mix-blend-mode: lighten;
+            transform: rotate(-5deg);
+            box-shadow: inset 0 0 10px #FF0000;
+        }
+        .item-7 { /* CRITICAL WARNING - SYSTEM FAILURE */
+            width: 20%;
+            height: 12%;
+            bottom: 20%;
+            right: 5%;
+            background-color: #FF0000;
+            border-color: black;
+            font-size: 1.8vw;
+            font-weight: 900;
+            transform: rotate(8deg);
+            animation: pulse 1.5s infinite alternate; /* Pulsing effect */
+            box-shadow: 0 0 15px #FF0000;
+            z-index: 6;
+        }
+        .item-8 { /* Fragmented data */
+            width: 15%;
+            height: 8%;
+            top: 50%;
+            left: 65%;
+            background-color: white;
+            border-color: black;
+            font-size: 1.1vw;
+            transform: rotate(25deg);
+        }
+        .item-9 { /* Ghostly overlay */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(45deg, rgba(255,0,0,0.1) 0%, transparent 25%, transparent 75%, rgba(255,0,0,0.1) 100%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            border: none;
+            padding: 0;
+            z-index: 0;
+            animation: glitch 0.5s infinite;
+        }
+        .item-10 { /* Small, urgent message */
+            width: 18%;
+            height: 7%;
+            top: 5%;
+            right: 5%;
+            background-color: black;
+            border-color: white;
+            color: white;
+            font-size: 1.3vw;
+            transform: rotate(-10deg);
+            z-index: 7;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.7; transform: scale(1) rotate(8deg); }
+            to { opacity: 1; transform: scale(1.05) rotate(8deg); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); opacity: 0.2; }
+            20% { transform: translate(-2px, 2px); opacity: 0.3; }
+            40% { transform: translate(1px, -1px); opacity: 0.2; }
+            60% { transform: translate(-3px, 0px); opacity: 0.4; }
+            80% { transform: translate(2px, 1px); opacity: 0.3; }
+            100% { transform: translate(0, 0); opacity: 0.2; }
+        }
+
+        /* Ensure text in code block is legible */
+        .item-6 code {
+            display: block;
+            white-space: pre-wrap; /* Wrap long lines of code */
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+
+        <div class="collage-item block-red item-1">DECAY</div>
+        <div class="collage-item block-black item-2">OBSOLESCENCE</div>
+        <div class="collage-item block-white item-3">
+            <p>DATA<br>CORRUPTION<br>ERROR 404<br>FILE LOST</p>
+        </div>
+        <div class="collage-item block-red item-4">
+            <p>FRAG<br>MENT<br>ATION</p>
+        </div>
+        <div class="collage-item block-black item-5">VOID_0XFF</div>
+        <div class="collage-item item-6">
+            <code>
+                <pre>
+                01010101
+                11100010
+                00101111
+                10101010
+                01110001
+                11010101
+                00011100
+                10101010
+                FILE_CRC_ERR
+                MEMORY_LEAK
+                KERNEL_PANIC
+                SYSTEM_HALT
+                BUFFER_OVERRUN
+                ACCESS_DENIED
+                RESOURCE_DEADLOCK
+                LOST_PACKETS
+                &lt;CRITICAL&gt;
+                </pre>
+            </code>
+        </div>
+        <div class="collage-item block-red item-7">SYSTEM FAILURE</div>
+        <div class="collage-item block-white item-8">
+            <p>FRAGMENT<br>001_A</p>
+        </div>
+        <div class="collage-item item-9"></div> <!-- Glitch overlay -->
+        <div class="collage-item block-black item-10">WARNING: UNSTABLE</div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-26 17:12:19.931145</div>
         <!DOCTYPE html>
 <html>
