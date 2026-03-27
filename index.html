@@ -16,6 +16,359 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-27 16:01:06.455471</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay: Brutalist Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    background-color: #000;
+    overflow-x: hidden; /* Prevent horizontal scroll from absolute positioning */
+  }
+
+  /* Core Brutalist Style */
+  div {
+    box-sizing: border-box;
+    position: absolute; /* Enable precise, overlapping placement */
+    border: 2px solid #FFF; /* Strong, visible borders */
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    padding: 8px; /* Minimal padding */
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.1;
+    z-index: 1; /* Default z-index */
+    overflow: hidden; /* Keep content within bounds */
+    transform-origin: center center; /* For transformations */
+  }
+
+  /* Specific elements with decay themes */
+  .title {
+    width: 90%;
+    height: 120px;
+    top: 5%;
+    left: 5%;
+    background-color: #F00; /* Dominant red */
+    color: #FFF;
+    border-width: 4px;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transform: skewX(-5deg); /* Slight distortion */
+  }
+
+  .chunk {
+    width: 250px;
+    height: 150px;
+    background-color: #111;
+    border-color: #AAA;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .decayed-text {
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .corrupt-data {
+    width: 180px;
+    height: 90px;
+    background-color: #F00;
+    color: #000;
+    border-color: #000;
+    font-size: 0.8em;
+    padding: 5px;
+    transform: rotate(7deg);
+    z-index: 5;
+  }
+
+  .glitch {
+    width: 300px;
+    height: 70px;
+    background-color: #FFF;
+    color: #F00;
+    border-color: #F00;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    transform: rotate(-3deg);
+    z-index: 7;
+  }
+
+  .void {
+    width: 150px;
+    height: 150px;
+    background-color: #000; /* Pure black, a hole */
+    border-color: #FFF;
+    border-width: 3px;
+    border-style: dashed; /* Fragmented border */
+    color: #444;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transform: scale(0.9); /* Slight shrinking effect */
+  }
+
+  .fragment {
+    background-color: #FFF;
+    color: #F00;
+    width: 100px;
+    height: 50px;
+    border-color: #000;
+    padding: 4px;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    transform: skewY(10deg);
+    z-index: 4;
+  }
+
+  .warning {
+    width: 200px;
+    height: 60px;
+    background-color: #F00;
+    color: #000;
+    border-color: #FFF;
+    font-size: 1em;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-10px);
+  }
+
+  .overlap {
+    background-color: #F00;
+    color: #FFF;
+    opacity: 0.8; /* Slight transparency for layering */
+    border: none;
+    z-index: 6;
+  }
+
+  .static {
+    width: 120px;
+    height: 80px;
+    background-image: linear-gradient(45deg, #000 25%, #FFF 25%, #FFF 50%, #000 50%, #000 75%, #FFF 75%, #FFF 100%);
+    background-size: 8px 8px; /* Simulate static noise */
+    border-color: #888;
+    font-size: 0.6em;
+    color: #F00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transform: rotate(-12deg);
+  }
+
+  .missing {
+    width: 140px;
+    height: 70px;
+    background-color: #FFF;
+    color: #000;
+    border-style: dotted;
+    border-color: #F00;
+    font-size: 0.9em;
+    z-index: 9;
+    transform: rotate(3deg) scale(1.1);
+  }
+
+  /* Specific positioning for collage effect */
+  .title { top: 5%; left: 5%; }
+  .chunk-a { top: 20%; left: 60%; width: 280px; height: 160px; background-color: #111; }
+  .chunk-b { top: 40%; left: 5%; width: 320px; height: 100px; background-color: #111; }
+  .corrupt-a { top: 15%; left: 45%; }
+  .glitch-a { top: 30%; left: 70%; }
+  .void-a { top: 50%; left: 25%; }
+  .fragment-a { top: 18%; left: 20%; }
+  .warning-a { top: 65%; left: 75%; }
+  .overlap-a { top: 10%; left: 30%; width: 200px; height: 100px; }
+  .static-a { top: 55%; left: 50%; }
+  .missing-a { top: 45%; left: 60%; }
+  .chunk-c { top: 75%; left: 5%; width: 200px; height: 120px; background-color: #111; }
+  .corrupt-b { top: 80%; left: 30%; }
+  .glitch-b { top: 60%; left: 10%; }
+  .void-b { top: 25%; left: 75%; }
+  .fragment-b { top: 70%; left: 55%; }
+  .warning-b { top: 35%; left: 20%; }
+  .overlap-b { top: 70%; left: 40%; width: 150px; height: 80px; opacity: 0.7; }
+  .static-b { top: 85%; left: 65%; }
+  .missing-b { top: 12%; left: 75%; }
+
+  /* More subtle elements */
+  .line-noise {
+    width: 100%;
+    height: 2px;
+    background-color: #F00;
+    top: 300px; /* Example position */
+    left: 0;
+    border: none;
+    z-index: 0; /* Behind most elements */
+  }
+  .line-noise-b {
+    width: 2px;
+    height: 100%;
+    background-color: #FFF;
+    left: 40%;
+    top: 0;
+    border: none;
+    z-index: 0;
+  }
+  .line-noise-c {
+    width: 80%;
+    height: 1px;
+    background-color: #888;
+    top: 80%;
+    left: 10%;
+    border: none;
+    transform: rotate(-1deg);
+    z-index: 0;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="title">
+    DIGITAL DECAY
+  </div>
+
+  <div class="chunk chunk-a">
+    <span class="decayed-text">ERROR_LOADING_DATA</span><br>
+    FILE NOT FOUND. <br>
+    CRC FAILED. <br>
+    INITIATE PROTOCOL.<br>
+    &gt; ABORT
+  </div>
+
+  <div class="corrupt-data corrupt-a">
+    <span class="decayed-text">010101</span><br>
+    &lt;!BRK&gt;<br>
+    #FF0000<br>
+    [NULL]
+  </div>
+
+  <div class="glitch glitch-a">
+    SYSTEM FAILURE
+  </div>
+
+  <div class="void void-a">
+    VOID<br>
+    EMPTINESS<br>
+    CORRUPTED
+  </div>
+
+  <div class="fragment fragment-a">
+    FRAGMENT<br>
+    [MISSING]
+  </div>
+
+  <div class="warning warning-a">
+    ACCESS DENIED.<br>
+    DATA LOST.
+  </div>
+
+  <div class="overlap overlap-a">
+    LAYER<br>
+    OVERLAY<br>
+    GHOST
+  </div>
+
+  <div class="static static-a">
+    NOISE<br>
+    STATIC<br>
+    SIGNAL LOST
+  </div>
+
+  <div class="missing missing-a">
+    MISSING PIXEL<br>
+    NO IMAGE
+  </div>
+
+  <div class="chunk chunk-b">
+    <span class="decayed-text">OBSOLETE_VERSION</span><br>
+    LEGACY CODE.<br>
+    PATCH REQUIRED.<br>
+    COMPILER ERROR 404.
+  </div>
+
+  <div class="corrupt-data corrupt-b">
+    &lt;?XML<br>
+    ENCODING="UTF-8"?&gt;<br>
+    &lt;ROOT /&gt;
+  </div>
+
+  <div class="glitch glitch-b">
+    DATA INTEGRITY COMPROMISED
+  </div>
+
+  <div class="void void-b">
+    MEMORY<br>
+    ERASED<br>
+    FORGOTTEN
+  </div>
+
+  <div class="fragment fragment-b">
+    RUINED<br>
+    REMNANT
+  </div>
+
+  <div class="warning warning-b">
+    DEGRADATION DETECTED.
+  </div>
+
+  <div class="overlap overlap-b">
+    TRACE<br>
+    ECHO
+  </div>
+
+  <div class="static static-b">
+    BROKEN<br>
+    DISTORTED
+  </div>
+
+  <div class="missing missing-b">
+    NO SOURCE<br>
+    NULL REF
+  </div>
+
+  <div class="chunk chunk-c">
+    <span class="decayed-text">END_OF_LINE</span><br>
+    UNREADABLE.<br>
+    SYSTEM HALT.<br>
+    REBOOT FAILED.
+  </div>
+
+  <!-- Background/structural noise -->
+  <div class="line-noise" style="top: 250px; transform: rotate(2deg);"></div>
+  <div class="line-noise-b" style="left: 65%;"></div>
+  <div class="line-noise-c" style="top: 15%; left: 10%; transform: rotate(-8deg);"></div>
+  <div class="line-noise" style="top: 500px; transform: rotate(-3deg); background-color: #FFF;"></div>
+  <div class="line-noise-b" style="left: 20%; background-color: #F00;"></div>
+  <div class="line-noise-c" style="top: 90%; left: 5%; width: 90%; background-color: #F00;"></div>
+  <div class="line-noise" style="top: 750px; transform: rotate(1deg);"></div>
+
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-27 14:58:13.497638</div>
         <!DOCTYPE html>
 <html>
