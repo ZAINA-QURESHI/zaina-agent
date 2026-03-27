@@ -16,6 +16,271 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-27 02:57:34.622214</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Brutalist Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden; /* Prevent scrollbars from layout shifts */
+            background-color: black; /* Base background */
+            display: flex; /* For centering or positioning main content */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .decay-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+            border: 5px solid white; /* Hard edge */
+            box-sizing: border-box;
+        }
+
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: 900;
+            line-height: 1;
+            overflow: hidden;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .block.red { background-color: #FF0000; color: white; border: 2px solid black; }
+        .block.black { background-color: black; color: white; border: 2px solid red; }
+        .block.white { background-color: white; color: black; border: 2px solid black; }
+        .block.red-text { color: #FF0000; background-color: transparent; }
+        .block.white-text { color: white; background-color: transparent; }
+
+        /* Specific block positioning and sizing */
+        #b1 { top: 0; left: 0; width: 30%; height: 25%; font-size: 3vw; transform: skewX(-5deg); z-index: 5; }
+        #b2 { top: 15%; left: 20%; width: 40%; height: 35%; font-size: 2.5vw; z-index: 4; }
+        #b3 { bottom: 0; right: 0; width: 35%; height: 30%; font-size: 2.8vw; transform: rotate(5deg); z-index: 5; }
+        #b4 { top: 5%; right: 10%; width: 20%; height: 15%; font-size: 1.5vw; transform: rotate(-10deg); z-index: 6; }
+        #b5 { bottom: 20%; left: 5%; width: 25%; height: 20%; font-size: 2vw; z-index: 4; }
+        #b6 { top: 40%; left: 0; width: 15%; height: 20%; font-size: 1.2vw; background-color: black; color: white; border: none; padding: 0; }
+        #b7 { top: 30%; right: 0; width: 20%; height: 10%; font-size: 1.8vw; background-color: white; color: black; border: none; }
+        #b8 { top: 60%; left: 30%; width: 30%; height: 15%; font-size: 2.2vw; transform: skewY(3deg); z-index: 6; }
+        #b9 { top: 0; right: 30%; width: 18%; height: 12%; font-size: 1.1vw; transform: rotate(15deg); z-index: 7; }
+        #b10 { bottom: 10%; left: 40%; width: 22%; height: 18%; font-size: 1.9vw; z-index: 3; }
+        #b11 { top: 20%; left: 60%; width: 15%; height: 10%; font-size: 1.3vw; transform: skewX(8deg); z-index: 5;}
+        #b12 { bottom: 40%; right: 15%; width: 10%; height: 10%; font-size: 1vw; transform: rotate(-5deg); z-index: 8;}
+        #b13 { top: 55%; left: 10%; width: 12%; height: 8%; font-size: 0.9vw; transform: skewY(-2deg); z-index: 7;}
+        #b14 { top: 0; left: 40%; width: 10%; height: 8%; font-size: 0.8vw; transform: rotate(20deg); z-index: 6;}
+        #b15 { bottom: 0; left: 0; width: 10%; height: 5%; font-size: 0.7vw; z-index: 9;}
+        #b16 { top: 45%; right: 25%; width: 18%; height: 12%; font-size: 1.6vw; transform: skewX(-10deg); z-index: 3; }
+
+        /* Glitchy text effects */
+        .glitch {
+            position: relative;
+            animation: glitch-anim 2.5s infinite alternate linear;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            background-color: transparent;
+            animation: glitch-anim-left 2s infinite alternate-reverse linear;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 blue; /* subtle secondary color for glitch */
+            background-color: transparent;
+            animation: glitch-anim-right 2s infinite alternate linear;
+        }
+
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes glitch-anim-left {
+            0% { clip: rect(0, 9999px, 0, 0); }
+            25% { clip: rect(100px, 9999px, 20px, 0); }
+            50% { clip: rect(20px, 9999px, 80px, 0); }
+            75% { clip: rect(70px, 9999px, 30px, 0); }
+            100% { clip: rect(0, 9999px, 0, 0); }
+        }
+
+        @keyframes glitch-anim-right {
+            0% { clip: rect(0, 9999px, 0, 0); }
+            25% { clip: rect(50px, 9999px, 10px, 0); }
+            50% { clip: rect(10px, 9999px, 90px, 0); }
+            75% { clip: rect(80px, 9999px, 40px, 0); }
+            100% { clip: rect(0, 9999px, 0, 0); }
+        }
+
+        /* Scanline effect */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0px,
+                rgba(0, 0, 0, 0) 1px,
+                rgba(0, 0, 0, 0.2) 2px,
+                rgba(0, 0, 0, 0.2) 3px
+            );
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Flickering effect */
+        .flicker {
+            animation: flicker-anim 0.1s infinite alternate;
+        }
+
+        @keyframes flicker-anim {
+            0% { opacity: 1; }
+            50% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+
+        /* For the central red core */
+        .core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15%;
+            height: 15%;
+            background-color: #FF0000;
+            border: 5px solid white;
+            box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8vw;
+            color: black;
+            text-transform: uppercase;
+            animation: pulse-core 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-core {
+            0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7); }
+            50% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.9); }
+            100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="decay-container">
+
+        <div id="b1" class="block red glitch" data-text="ERROR">
+            ERROR
+        </div>
+
+        <div id="b2" class="block black flicker">
+            <span class="glitch" data-text="DATA CORRUPT">DATA CORRUPT</span>
+        </div>
+
+        <div id="b3" class="block white glitch" data-text="LOST SIGNAL">
+            LOST SIGNAL
+        </div>
+
+        <div id="b4" class="block red">
+            <span class="glitch" data-text="SYSTEM FAILURE">SYSTEM FAILURE</span>
+        </div>
+
+        <div id="b5" class="block black">
+            <span class="glitch" data-text="VOID">VOID</span>
+        </div>
+
+        <div id="b6" class="block black-text">
+            <span class="white-text glitch" data-text="FRAGMENT">FRAGMENT</span>
+        </div>
+
+        <div id="b7" class="block white">
+            <span class="red-text glitch" data-text="OBSOLETE">OBSOLETE</span>
+        </div>
+
+        <div id="b8" class="block red flicker">
+            <span class="glitch" data-text="DECAY">DECAY</span>
+        </div>
+
+        <div id="b9" class="block white">
+            <span class="black-text glitch" data-text="NO ACCESS">NO ACCESS</span>
+        </div>
+
+        <div id="b10" class="block black glitch" data-text="NULL">
+            NULL
+        </div>
+
+        <div id="b11" class="block red">
+            <span class="glitch" data-text="BROKEN">BROKEN</span>
+        </div>
+
+        <div id="b12" class="block white">
+            <span class="black-text glitch" data-text="END">END</span>
+        </div>
+
+        <div id="b13" class="block black">
+            <span class="white-text glitch" data-text="CRACK">CRACK</span>
+        </div>
+
+        <div id="b14" class="block red">
+            <span class="glitch" data-text="STATIC">STATIC</span>
+        </div>
+
+        <div id="b15" class="block white">
+            <span class="black-text glitch" data-text="CRASH">CRASH</span>
+        </div>
+
+        <div id="b16" class="block black">
+            <span class="white-text glitch" data-text="ERASED">ERASED</span>
+        </div>
+
+        <div class="core">
+            <span class="glitch" data-text="DEAD_CODE">DEAD_CODE</span>
+        </div>
+
+    </div>
+
+    <div class="scanlines"></div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-26 23:39:20.947504</div>
         <!DOCTYPE html>
 <html>
