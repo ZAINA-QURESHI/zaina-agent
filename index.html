@@ -16,6 +16,156 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 15:38:03.139195</div>
+        <style>
+  body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+    font-family: monospace, sans-serif;
+  }
+  .glitch-collage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid white; /* Subtle border for brutalist feel */
+    background-color: black;
+    color: white;
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-shadow: 1px 1px 0px rgba(255,0,0,0.5), -1px -1px 0px rgba(0,0,255,0.5); /* RGB split */
+    font-weight: bold;
+    mix-blend-mode: screen; /* For overlapping text blocks */
+    text-transform: uppercase;
+  }
+  .red-bg { background-color: #FF0000; color: white; border-color: black; text-shadow: none;}
+  .white-bg { background-color: white; color: black; border-color: black; text-shadow: none;}
+  .black-bg { background-color: black; color: white; border-color: #FF0000; text-shadow: 1px 1px 0px white, -1px -1px 0px rgba(255,0,0,0.7); }
+
+  /* Glitch-like positioning for elements */
+  .block:nth-child(1) { top: 0; left: 0; width: 30%; height: 20%; z-index: 10; }
+  .block:nth-child(2) { top: 15%; left: 25%; width: 40%; height: 15%; z-index: 12; transform: rotate(-2deg); }
+  .block:nth-child(3) { bottom: 0; right: 0; width: 25%; height: 30%; z-index: 11; }
+  .block:nth-child(4) { top: 5%; right: 10%; width: 20%; height: 25%; z-index: 9; transform: skewY(5deg); }
+  .block:nth-child(5) { bottom: 20%; left: 5%; width: 35%; height: 10%; z-index: 13; transform: rotate(3deg); }
+  .block:nth-child(6) { top: 40%; left: 0; width: 20%; height: 18%; z-index: 8; }
+  .block:nth-child(7) { top: 30%; right: 0; width: 30%; height: 25%; z-index: 7; transform: skewX(-7deg); }
+  .block:nth-child(8) { bottom: 5%; left: 40%; width: 20%; height: 15%; z-index: 14; }
+  .block:nth-child(9) { top: 60%; left: 25%; width: 45%; height: 12%; z-index: 6; transform: rotate(1deg); }
+  .block:nth-child(10) { bottom: 10%; right: 30%; width: 15%; height: 8%; z-index: 15; }
+  .block:nth-child(11) { top: 0; right: 0; width: 10%; height: 10%; z-index: 16; transform: scaleX(1.1); }
+  .block:nth-child(12) { top: 50%; left: 60%; width: 25%; height: 10%; z-index: 17; transform: rotate(-5deg); }
+  .block:nth-child(13) { bottom: 30%; left: 20%; width: 18%; height: 8%; z-index: 18; }
+  .block:nth-child(14) { top: 10%; left: 70%; width: 15%; height: 12%; z-index: 19; }
+  .block:nth-child(15) { top: 70%; right: 5%; width: 22%; height: 15%; z-index: 20; transform: skewY(-3deg); }
+  .block:nth-child(16) { top: 25%; left: 10%; width: 15%; height: 8%; z-index: 21; }
+  .block:nth-child(17) { top: 45%; left: 35%; width: 10%; height: 20%; z-index: 22; transform: scaleY(0.8); }
+  .block:nth-child(18) { bottom: 15%; right: 50%; width: 12%; height: 10%; z-index: 23; }
+  .block:nth-child(19) { top: 5%; left: 50%; width: 10%; height: 5%; z-index: 24; transform: rotate(10deg); }
+  .block:nth-child(20) { top: 80%; left: 0; width: 100%; height: 5%; z-index: 25; background-color: #FF0000; border-color: black; color: white; text-align: center; font-size: 1.5em; text-shadow: 2px 2px 0px black; }
+
+  /* Flickering/shifting text for glitch */
+  .glitch-text {
+    animation: glitch 1.5s infinite alternate-reverse;
+  }
+  .glitch-text-alt {
+    animation: glitch-alt 2s infinite alternate;
+  }
+  @keyframes glitch {
+    0% { transform: translate(0, 0); text-shadow: 1px 1px 0px rgba(255,0,0,0.5), -1px -1px 0px rgba(0,0,255,0.5); }
+    20% { transform: translate(-2px, 2px); text-shadow: 1px 0px 0px rgba(0,255,0,0.5), -2px 1px 0px rgba(255,0,0,0.5); }
+    40% { transform: translate(1px, -1px); text-shadow: -1px 1px 0px rgba(0,0,255,0.5), 1px -2px 0px rgba(0,255,0,0.5); }
+    60% { transform: translate(-3px, 0px); text-shadow: 2px -1px 0px rgba(255,0,0,0.5), -1px 1px 0px rgba(0,255,0,0.5); }
+    80% { transform: translate(0px, 3px); text-shadow: -1px -1px 0px rgba(0,255,0,0.5), 1px 1px 0px rgba(0,0,255,0.5); }
+    100% { transform: translate(2px, -2px); text-shadow: 1px 1px 0px rgba(255,0,0,0.5), -1px -1px 0px rgba(0,0,255,0.5); }
+  }
+  @keyframes glitch-alt {
+    0% { clip-path: inset(0 0 0 0); }
+    10% { clip-path: inset(10% 0 80% 0); }
+    20% { clip-path: inset(30% 0 50% 0); }
+    30% { clip-path: inset(5% 0 90% 0); }
+    40% { clip-path: inset(0 0 0 0); }
+    50% { clip-path: inset(70% 0 10% 0); }
+    60% { clip-path: inset(20% 0 60% 0); }
+    70% { clip-path: inset(0 0 0 0); }
+    80% { clip-path: inset(40% 0 40% 0); }
+    90% { clip-path: inset(5% 0 85% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+  }
+
+  .scanline {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.2) 51%, transparent 52%);
+    animation: scanline-move 8s linear infinite;
+    mix-blend-mode: overlay;
+    z-index: 999;
+  }
+  @keyframes scanline-move {
+    0% { top: -10%; }
+    100% { top: 110%; }
+  }
+
+  .red-flash {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #FF0000;
+    opacity: 0;
+    animation: red-flash-effect 5s infinite step-end;
+    z-index: 998;
+    mix-blend-mode: screen;
+  }
+  @keyframes red-flash-effect {
+    0%, 98% { opacity: 0; }
+    99% { opacity: 0.1; }
+    100% { opacity: 0; }
+  }
+
+  .invisible-char {
+    color: rgba(0,0,0,0); /* Invisible, but occupies space */
+  }
+
+</style>
+
+<div class="glitch-collage">
+  <div class="block black-bg"><span class="glitch-text">DATA CORRUPTED</span><br>ERROR_404<br>SYSTEM OVERLOAD</div>
+  <div class="block red-bg"><span class="glitch-text-alt">SIGNAL LOST</span><br>NO INPUT FOUND<br>RECALIBRATING</div>
+  <div class="block white-bg"><span class="glitch-text">VOID STATIC</span><br>DIMENSIONAL TEAR<br>REBOOT SEQUENCE FAILED</div>
+  <div class="block black-bg"><span class="glitch-text-alt">PIXEL BURN</span><br>FRAGMENTED REALITY<br>DISORIENTED</div>
+  <div class="block red-bg"><span class="glitch-text">BROKEN LOOP</span><br>UNEXPECTED VALUES<br>ABORT_RETRY_FAIL</div>
+  <div class="block white-bg"><span class="glitch-text-alt">SYNTAX ERROR</span><br>BUFFER OVERFLOW<br>PROCESSING</div>
+  <div class="block black-bg"><span class="glitch-text">NO CARRIER</span><br>DECODING FAILURE<br>DISTORTION FIELD</div>
+  <div class="block red-bg"><span class="glitch-text-alt">STATIC BLAST</span><br>CHANNEL INTERFERENCE<br>FLUX CAPACITOR</div>
+  <div class="block white-bg"><span class="glitch-text">MEMORY LEAK</span><br>REDUNDANT_OUTPUT<br>NON-EXISTENT PATH</div>
+  <div class="block black-bg"><span class="glitch-text-alt">CODE BREAK</span><br>UNSTABLE_FRAME<br>BREAKPOINT</div>
+  <div class="block white-bg"><span class="glitch-text">RE-SYNCHRONIZE</span></div>
+  <div class="block red-bg"><span class="glitch-text-alt">VISUAL NOISE</span></div>
+  <div class="block black-bg"><span class="glitch-text">LOST FEED</span></div>
+  <div class="block white-bg"><span class="glitch-text-alt">INITIATE</span></div>
+  <div class="block red-bg"><span class="glitch-text">SYSTEM.HALT</span></div>
+  <div class="block black-bg"><span class="glitch-text-alt">VOID</span></div>
+  <div class="block white-bg"><span class="glitch-text">...</span></div>
+  <div class="block red-bg"><span class="glitch-text-alt">GLITCH</span></div>
+  <div class="block black-bg"><span class="glitch-text">ERROR</span></div>
+  <div class="block red-bg"><span class="glitch-text-alt">/// <span class="invisible-char">GLITCH</span> <span class="glitch-text">AESTHETICS</span> ///</span></div>
+
+  <div class="red-flash"></div>
+  <div class="scanline"></div>
+</div>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 14:42:36.819952</div>
         <style>
   /* Basic brutalist styling - all caps, tight spacing, bold, monospace */
