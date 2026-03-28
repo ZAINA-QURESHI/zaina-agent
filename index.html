@@ -16,6 +16,338 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 16:42:39.900290</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decolonizing the Cloud</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Black', sans-serif;
+    background-color: #000;
+    color: #FFF;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .block {
+    position: relative;
+    padding: 15px;
+    border: 1px solid #FFF; /* Subtle white border */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 2.5rem); /* Responsive font size */
+    line-height: 1.1;
+    font-weight: 900;
+    overflow: hidden;
+    word-break: break-word;
+    z-index: 1; /* Ensure blocks are above background elements */
+  }
+
+  .block:nth-child(3n+1) { background-color: #F00; color: #000; }
+  .block:nth-child(3n+2) { background-color: #000; color: #FFF; border-color: #F00; }
+  .block:nth-child(3n)   { background-color: #FFF; color: #F00; }
+
+  .block.full-width {
+    grid-column: 1 / -1; /* Spans all columns */
+    padding: 30px;
+    font-size: clamp(1.5rem, 4vw, 5rem);
+  }
+
+  .block.half-width {
+    grid-column: span 2; /* Spans two columns in larger grids */
+  }
+
+  .block.quarter-height {
+    min-height: 100px;
+    max-height: 150px;
+  }
+
+  .text-heavy {
+    font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+    padding: 10px;
+    line-height: 1.3;
+  }
+
+  .rotated {
+    transform: rotate(-5deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    white-space: nowrap;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: clamp(5rem, 15vw, 20rem);
+    color: rgba(255, 0, 0, 0.1); /* Transparent red */
+    z-index: 0;
+    line-height: 0.8;
+    pointer-events: none; /* Allow interaction with elements below */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  }
+
+  .overlay-text.bottom-right {
+    top: auto;
+    bottom: 10%;
+    left: auto;
+    right: 5%;
+    transform: rotate(5deg);
+    color: rgba(0, 0, 0, 0.1); /* Transparent black */
+  }
+
+  /* Specific element styling for more brutality */
+  #data-colonized {
+      background-color: #F00;
+      color: #000;
+      border: 5px solid #000;
+      grid-column: 1 / -1;
+      font-size: clamp(2rem, 6vw, 7rem);
+      padding: 40px;
+      text-transform: uppercase;
+      letter-spacing: -3px;
+  }
+
+  #power-unplug {
+      background-color: #000;
+      color: #FFF;
+      border: 5px solid #F00;
+      grid-column: span 2;
+      font-size: clamp(1.5rem, 4vw, 5rem);
+      padding: 30px;
+      position: relative;
+  }
+  #power-unplug::before {
+      content: "OFF";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.5em;
+      color: rgba(255,255,255,0.5);
+  }
+
+  #reclaim-infra {
+      background-color: #FFF;
+      color: #F00;
+      border: 5px solid #000;
+      grid-column: span 1;
+      font-size: clamp(1rem, 3vw, 4rem);
+      writing-mode: vertical-lr; /* Vertical text */
+      text-orientation: mixed;
+      padding: 20px 10px;
+  }
+
+  #server-farm-burnt {
+      background-color: #F00;
+      color: #000;
+      border: 5px solid #FFF;
+      grid-column: span 3; /* Spans 3 columns */
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      font-size: clamp(1.2rem, 3vw, 3.5rem);
+      line-height: 1.0;
+      text-transform: uppercase;
+      overflow: hidden;
+  }
+  #server-farm-burnt span {
+      display: block;
+      transform: rotate(-10deg);
+      text-shadow: 2px 2px #000;
+  }
+  #server-farm-burnt span:nth-child(even) { transform: rotate(5deg); }
+
+
+  #digital-sovereignty {
+      background-color: #000;
+      color: #FFF;
+      border: 5px solid #F00;
+      grid-column: 1 / -1;
+      padding: 50px;
+      font-size: clamp(2.5rem, 7vw, 8rem);
+      text-align: right;
+      letter-spacing: 5px;
+      text-shadow: 5px 5px #F00;
+  }
+
+  #network-mesh {
+      background-color: #FFF;
+      color: #000;
+      border: 5px solid #F00;
+      grid-column: span 2;
+      font-size: clamp(1rem, 2.5vw, 3rem);
+      padding: 20px;
+  }
+
+  #self-host {
+      background-color: #F00;
+      color: #FFF;
+      border: 5px solid #000;
+      grid-column: span 1;
+      height: 180px;
+      font-size: clamp(1.2rem, 3vw, 3.5rem);
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+  }
+
+  #global-north {
+      background-color: #000;
+      color: #F00;
+      border: 5px solid #FFF;
+      grid-column: span 2;
+      font-size: clamp(1rem, 2.8vw, 3.2rem);
+      padding: 25px;
+      text-align: left;
+  }
+
+  #data-centers {
+      background-color: #FFF;
+      color: #000;
+      border: 5px solid #F00;
+      grid-column: span 1;
+      font-size: clamp(0.9rem, 2vw, 2.5rem);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  #data-centers p:first-child { margin-top: 0; margin-bottom: auto; }
+  #data-centers p:last-child { margin-bottom: 0; margin-top: auto; text-align: right;}
+
+  #liberate-algorithms {
+      background-color: #F00;
+      color: #FFF;
+      border: 5px solid #000;
+      grid-column: 1 / -1;
+      padding: 60px;
+      font-size: clamp(2rem, 6vw, 7rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 0.9;
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+    .block, .block.full-width, .block.half-width, .block.quarter-height, #data-colonized, #power-unplug, #reclaim-infra, #server-farm-burnt, #digital-sovereignty, #network-mesh, #self-host, #global-north, #data-centers, #liberate-algorithms {
+      grid-column: 1 / -1 !important; /* All blocks become full width */
+      height: auto !important; /* Auto height for content */
+      min-height: 150px;
+      padding: 20px;
+    }
+    #reclaim-infra {
+      writing-mode: horizontal-tb; /* Horizontal text on small screens */
+      text-align: center;
+    }
+    .overlay-text {
+        font-size: clamp(3rem, 10vw, 15rem);
+    }
+  }
+
+  /* Ensure text is always readable within blocks */
+  .block > * {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+</style>
+</head>
+<body>
+
+  <div class="overlay-text">DECOLONIZE</div>
+  <div class="overlay-text bottom-right">CLOUD</div>
+
+  <div class="container">
+
+    <div id="data-colonized" class="block">
+      DATA IS COLONIZED
+    </div>
+
+    <div id="power-unplug" class="block">
+      UNPLUG POWER STRUCTURES
+    </div>
+
+    <div id="reclaim-infra" class="block">
+      RECLAIM INFRASTRUCTURE
+    </div>
+
+    <div id="server-farm-burnt" class="block">
+      <span>SERVER FARMS</span>
+      <span>BURNING BRIDGES</span>
+      <span>TO HEGEMONY</span>
+    </div>
+
+    <div id="digital-sovereignty" class="block">
+      DIGITAL SOVEREIGNTY NOW
+    </div>
+
+    <div id="network-mesh" class="block text-heavy">
+      BUILD PEER-TO-PEER MESH NETWORKS. DISTRIBUTE THE KNOWLEDGE.
+    </div>
+
+    <div id="self-host" class="block">
+      SELF-HOST EVERYTHING.
+    </div>
+
+    <div id="global-north" class="block text-heavy">
+      THE CLOUD IS A WEAPON OF THE GLOBAL NORTH.
+    </div>
+
+    <div id="data-centers" class="block">
+      <p>DATA CENTERS ARE EXTRACTIVE. RESOURCES EXPLOITED.</p>
+      <p>THE REAL COST IS HIDDEN.</p>
+    </div>
+
+    <div class="block quarter-height" style="background-color: #000; color: #F00; border: 5px solid #FFF;">
+      NO MORE SILOS.
+    </div>
+    <div class="block quarter-height" style="background-color: #F00; color: #000; border: 5px solid #FFF;">
+      COMMUNITY CODE.
+    </div>
+    <div class="block quarter-height" style="background-color: #FFF; color: #F00; border: 5px solid #000;">
+      OPEN SOURCE PROTOCOLS.
+    </div>
+    <div class="block quarter-height" style="background-color: #000; color: #FFF; border: 5px solid #F00;">
+      TRUST NO GIANTS.
+    </div>
+
+    <div id="liberate-algorithms" class="block">
+      LIBERATE ALGORITHMS.
+      <br>DECENTRALIZED FUTURE.
+    </div>
+
+  </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">decolonizing the cloud</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 15:38:03.139195</div>
         <style>
   body {
