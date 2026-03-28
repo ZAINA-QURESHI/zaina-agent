@@ -16,6 +16,439 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 05:00:18.262673</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithmic Surveillance: A Brutalist Collage</title>
+    <!-- Optional: Google Font for Brutalist Typography (can be removed for pure system fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Impact&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Body Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Deep Black Background */
+            font-family: 'IBM Plex Mono', 'Roboto Mono', 'Courier New', monospace; /* Brutalist Monospace */
+            overflow: hidden; /* Prevent scrollbars from overlapping elements */
+            height: 100vh;
+            width: 100vw;
+            display: flex; /* Center the collage container */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Collage Container */
+        .collage-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Max width for larger screens */
+            height: 100%;
+            max-height: 900px; /* Max height for larger screens */
+            overflow: hidden; /* Clip elements at container edges */
+            border: 15px solid #FF0000; /* Radical Red Border */
+            box-shadow: 0 0 70px rgba(255, 0, 0, 0.8); /* Intense Red Glow */
+            background-color: #000000; /* Ensure container is black */
+            box-sizing: border-box;
+        }
+
+        /* Base Element Styles for all collage pieces */
+        .element {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in sizing */
+            color: #FFFFFF; /* Default White Text */
+            padding: 15px;
+            text-align: center;
+            font-weight: 900; /* Extremely Bold */
+            line-height: 1.1;
+            transform-origin: center center; /* For rotations and skews */
+            text-shadow: 2px 2px 0 #000000; /* Subtle text shadow for contrast */
+        }
+
+        /* Specific Element Styles - Radical & Brutalist */
+
+        /* TOP LEFT - Data Feed Block */
+        .data-feed {
+            top: -40px;
+            left: -40px;
+            width: 380px;
+            height: 250px;
+            background-color: #FF0000;
+            border: 8px solid #FFFFFF;
+            font-size: 28px;
+            color: #000000;
+            padding: 25px;
+            transform: skew(-15deg) rotate(-5deg); /* Aggressive Skew & Rotate */
+            z-index: 10;
+            text-align: left;
+        }
+
+        /* CENTER - Eye of Surveillance */
+        .eye-of-surveillance {
+            top: 15%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+            background-color: rgba(0, 0, 0, 0.9); /* Dark, almost opaque */
+            border: 20px solid #FFFFFF;
+            font-size: 80px; /* Hidden text for structure */
+            color: #FF0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(7deg) scale(1.1); /* Slightly rotated and enlarged */
+            z-index: 20;
+            box-shadow: 0 0 50px #FF0000; /* Intense Red Shadow */
+        }
+        .eye-of-surveillance::before { /* Inner Iris */
+            content: '';
+            position: absolute;
+            width: 55%;
+            height: 55%;
+            border: 15px solid #FF0000;
+            border-radius: 50%;
+            background-color: rgba(255, 0, 0, 0.2);
+            box-shadow: inset 0 0 30px #FF0000;
+            z-index: 21;
+        }
+        .eye-of-surveillance::after { /* Pupil */
+            content: '';
+            position: absolute;
+            width: 25%;
+            height: 25%;
+            background-color: #FF0000;
+            border-radius: 50%;
+            z-index: 22;
+        }
+
+        /* BOTTOM RIGHT - Algorithmic Text Block */
+        .algorithmic-text {
+            bottom: -50px;
+            right: -50px;
+            width: 450px;
+            height: 300px;
+            background-color: #FFFFFF;
+            border: 8px solid #FF0000;
+            font-size: 40px;
+            color: #000000;
+            padding: 35px;
+            transform: rotate(10deg) skewY(7deg); /* Strong Rotation & Skew */
+            z-index: 15;
+            text-align: right;
+        }
+
+        /* MIDDLE RIGHT - Warning Bar (Vertical Text) */
+        .warning-bar {
+            top: 5%;
+            right: -80px;
+            width: 200px;
+            height: 700px;
+            background-color: #FF0000;
+            border: 10px solid #FFFFFF;
+            font-size: 32px;
+            color: #000000;
+            writing-mode: vertical-lr; /* Vertical Text */
+            text-orientation: upright;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(18deg); /* Aggressive Rotation */
+            z-index: 25;
+            box-shadow: -20px 20px 0 #000000; /* Brutalist 3D Shadow */
+        }
+
+        /* LEFT SIDE - Control Panel Display */
+        .control-panel {
+            top: 55%;
+            left: -100px;
+            width: 400px;
+            height: 220px;
+            background-color: #000000;
+            border: 10px solid #FF0000;
+            font-size: 22px;
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: left;
+            transform: translateY(-50%) rotate(-10deg); /* Shifted and Rotated */
+            z-index: 12;
+            box-shadow: 15px 15px 0 #FFFFFF; /* White 3D Shadow */
+            overflow: hidden; /* Hide overflowing text */
+        }
+        .control-panel span {
+            display: block;
+            margin-bottom: 7px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* ... for long lines */
+            border-bottom: 2px dashed #FF0000; /* Dashed Red Line */
+            padding-bottom: 5px;
+        }
+
+        /* OVERLAY TEXT - Large, bold, central message */
+        .overlay-message {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-3deg); /* Slightly off-kilter */
+            width: 90%;
+            height: auto;
+            max-width: 700px;
+            background-color: transparent;
+            border: none;
+            font-size: 90px;
+            color: #FF0000;
+            z-index: 30; /* Highest Z-index */
+            text-shadow: 8px 8px 0 #FFFFFF, -8px -8px 0 #000000; /* Brutal Text Shadow */
+            text-align: center;
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Impactful Font */
+            line-height: 0.8; /* Tight line spacing */
+            padding: 0;
+        }
+
+        /* GLITCH EFFECT TEXT */
+        .glitch-text {
+            top: 10%;
+            right: 0%;
+            width: 300px;
+            height: auto;
+            background-color: #000000;
+            border: 5px solid #FF0000;
+            font-size: 32px;
+            color: #FFFFFF;
+            padding: 15px;
+            z-index: 28;
+            text-align: center;
+            transform: rotate(12deg) skewX(7deg); /* Aggressive transform */
+            box-shadow: 10px 10px 0 #FF0000;
+            position: relative;
+        }
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text); /* Use data-text attribute for glitching content */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            overflow: hidden;
+            padding: 15px;
+            box-sizing: border-box;
+            line-height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glitch-text::before {
+            color: #FF0000; /* Red layer */
+            filter: blur(2px);
+            clip: rect(0, 9999px, 0, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            color: #FFFFFF; /* White layer */
+            clip: rect(0, 9999px, 0, 0);
+            animation: glitch-anim2 2.5s infinite linear alternate-reverse;
+        }
+
+        /* Glitch Animation Keyframes */
+        @keyframes glitch-anim {
+            0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.5deg); }
+            5% { clip: rect(122px, 9999px, 84px, 0); transform: skew(0.5deg); }
+            10% { clip: rect(121px, 9999px, 73px, 0); transform: skew(0.5deg); }
+            15% { clip: rect(156px, 9999px, 126px, 0); transform: skew(0.5deg); }
+            20% { clip: rect(98px, 9999px, 128px, 0); transform: skew(0.5deg); }
+            25% { clip: rect(89px, 9999px, 142px, 0); transform: skew(0.5deg); }
+            30% { clip: rect(41px, 9999px, 153px, 0); transform: skew(0.5deg); }
+            35% { clip: rect(117px, 9999px, 91px, 0); transform: skew(0.5deg); }
+            40% { clip: rect(107px, 9999px, 90px, 0); transform: skew(0.5deg); }
+            45% { clip: rect(42px, 9999px, 114px, 0); transform: skew(0.5deg); }
+            50% { clip: rect(45px, 9999px, 20px, 0); transform: skew(0.5deg); }
+            55% { clip: rect(100px, 9999px, 10px, 0); transform: skew(0.5deg); }
+            60% { clip: rect(80px, 9999px, 120px, 0); transform: skew(0.5deg); }
+            65% { clip: rect(110px, 9999px, 30px, 0); transform: skew(0.5deg); }
+            70% { clip: rect(130px, 9999px, 70px, 0); transform: skew(0.5deg); }
+            75% { clip: rect(50px, 9999px, 100px, 0); transform: skew(0.5deg); }
+            80% { clip: rect(90px, 9999px, 150px, 0); transform: skew(0.5deg); }
+            85% { clip: rect(20px, 9999px, 60px, 0); transform: skew(0.5deg); }
+            90% { clip: rect(140px, 9999px, 90px, 0); transform: skew(0.5deg); }
+            95% { clip: rect(70px, 9999px, 130px, 0); transform: skew(0.5deg); }
+            100% { clip: rect(10px, 9999px, 50px, 0); transform: skew(0.5deg); }
+        }
+        @keyframes glitch-anim2 {
+             0% { clip: rect(100px, 9999px, 10px, 0); transform: skew(-0.5deg); }
+            5% { clip: rect(80px, 9999px, 120px, 0); transform: skew(-0.5deg); }
+            10% { clip: rect(110px, 9999px, 30px, 0); transform: skew(-0.5deg); }
+            15% { clip: rect(130px, 9999px, 70px, 0); transform: skew(-0.5deg); }
+            20% { clip: rect(50px, 9999px, 100px, 0); transform: skew(-0.5deg); }
+            25% { clip: rect(90px, 9999px, 150px, 0); transform: skew(-0.5deg); }
+            30% { clip: rect(20px, 9999px, 60px, 0); transform: skew(-0.5deg); }
+            35% { clip: rect(140px, 9999px, 90px, 0); transform: skew(-0.5deg); }
+            40% { clip: rect(70px, 9999px, 130px, 0); transform: skew(-0.5deg); }
+            45% { clip: rect(10px, 9999px, 50px, 0); transform: skew(-0.5deg); }
+            50% { clip: rect(42px, 9999px, 44px, 0); transform: skew(-0.5deg); }
+            55% { clip: rect(122px, 9999px, 84px, 0); transform: skew(-0.5deg); }
+            60% { clip: rect(121px, 9999px, 73px, 0); transform: skew(-0.5deg); }
+            65% { clip: rect(156px, 9999px, 126px, 0); transform: skew(-0.5deg); }
+            70% { clip: rect(98px, 9999px, 128px, 0); transform: skew(-0.5deg); }
+            75% { clip: rect(89px, 9999px, 142px, 0); transform: skew(-0.5deg); }
+            80% { clip: rect(41px, 9999px, 153px, 0); transform: skew(-0.5deg); }
+            85% { clip: rect(117px, 9999px, 91px, 0); transform: skew(-0.5deg); }
+            90% { clip: rect(107px, 9999px, 90px, 0); transform: skew(-0.5deg); }
+            95% { clip: rect(42px, 9999px, 114px, 0); transform: skew(-0.5deg); }
+            100% { clip: rect(45px, 9999px, 20px, 0); transform: skew(-0.5deg); }
+        }
+
+        /* GRID OVERLAY - Subtle grid pattern */
+        .grid-overlay {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.15) 2px, transparent 2px), /* White vertical lines */
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 2px, transparent 2px); /* White horizontal lines */
+            background-size: 40px 40px; /* Grid cell size */
+            z-index: 5; /* Low Z-index */
+            pointer-events: none; /* Allows clicks to pass through */
+            transform: scale(1.05) rotate(2deg); /* Slightly enlarged and rotated */
+            opacity: 0.8; /* Slight transparency */
+        }
+
+        /* Bordered text block at the bottom */
+        .text-block-bottom {
+            bottom: 20px;
+            left: 20px;
+            width: 320px;
+            height: 120px;
+            background-color: #000000;
+            border: 6px solid #FFFFFF;
+            font-size: 20px;
+            color: #FFFFFF;
+            padding: 15px;
+            text-align: left;
+            z-index: 18;
+            transform: rotate(-6deg); /* Angled */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dynamic Red Line */
+        .dynamic-line {
+            position: absolute;
+            background-color: #FF0000;
+            height: 8px; /* Thicker line */
+            width: 90%;
+            top: 75%;
+            left: 5%;
+            transform: rotate(4deg); /* Rotated */
+            z-index: 2;
+            box-shadow: 0 0 15px #FF0000; /* Red glow */
+        }
+
+        /* Data Stream Strip (Scrolling Text) */
+        .data-stream-strip {
+            top: 35%;
+            left: -200px; /* Start off-screen */
+            width: 150%; /* Wider than container */
+            height: 40px;
+            background-color: #FFFFFF;
+            border: 3px solid #000000;
+            font-size: 20px;
+            color: #FF0000;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Start text from left */
+            overflow: hidden;
+            transform: rotate(5deg);
+            z-index: 1;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+        .data-stream-strip span {
+            display: inline-block; /* Essential for animation */
+            animation: scroll-text 20s linear infinite; /* Infinite scroll */
+            padding: 0 50px; /* Space between repeated text */
+        }
+        @keyframes scroll-text {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); } /* Scroll half the content width */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <!-- Top Left Data Feed Block -->
+        <div class="element data-feed">
+            <p>CRITICAL BREACH</p>
+            <p>GLOBAL ACCESS DENIED</p>
+            <p>IDENTITY NULLIFIED</p>
+        </div>
+
+        <!-- Center Eye of Surveillance -->
+        <div class="element eye-of-surveillance">
+            <!-- The 'eye' is created with CSS pseudo-elements -->
+            <span style="font-size: 0;">OBSERVE</span> <!-- Text hidden to let CSS create the eye, but there for semantics -->
+        </div>
+
+        <!-- Bottom Right Algorithmic Text Block -->
+        <div class="element algorithmic-text">
+            <p>PREDICTIVE<br>ALGORITHMS</p>
+            <p>BEHAVIORAL<br>PROFILING</p>
+            <p>TOTAL CONTROL</p>
+        </div>
+
+        <!-- Middle Right Warning Bar (Vertical Text) -->
+        <div class="element warning-bar">
+            SYSTEM UNDER SURVEILLANCE
+        </div>
+
+        <!-- Left Side Control Panel Display -->
+        <div class="element control-panel">
+            <span>// TRACKING: OMNIPRESENT</span>
+            <span>// SUBJECT: HUMAN_ENTITY_01</span>
+            <span>// LOCATION: GLOBAL GRID</span>
+            <span>// STATUS: COMPROMISED</span>
+            <span>// PRIVACY: ERASED</span>
+            <span>// CONSENT: IRRELEVANT</span>
+        </div>
+
+        <!-- OVERLAY TEXT - Large, bold, central message -->
+        <div class="element overlay-message">
+            <p>YOU ARE<br>BEING<br>PROCESSED</p>
+        </div>
+
+        <!-- GLITCH EFFECT TEXT -->
+        <div class="element glitch-text" data-text="SURVEILLANCE">
+            SURVEILLANCE
+        </div>
+
+        <!-- Grid Overlay (Background) -->
+        <div class="element grid-overlay"></div>
+
+        <!-- Bordered text block at the bottom -->
+        <div class="element text-block-bottom">
+            <span>DATA HARVESTED.<br>REALITY DISTORTED.</span>
+        </div>
+
+        <!-- Dynamic Red Line -->
+        <div class="element dynamic-line"></div>
+
+        <!-- Data Stream Strip (Scrolling Text) -->
+        <div class="element data-stream-strip">
+            <span>>>> RECORDING IN PROGRESS >>> PERSONAL DATA EXPOSED >>> THREAT LEVEL MAX >>> NO ESCAPE >>> RECORDING IN PROGRESS >>> PERSONAL DATA EXPOSED >>> THREAT LEVEL MAX >>> NO ESCAPE >>> </span>
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 02:46:55.380791</div>
         <!DOCTYPE html>
 <html>
