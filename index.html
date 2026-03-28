@@ -16,6 +16,252 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 20:40:06.664149</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Stark sans-serif */
+    overflow: hidden; /* Prevent scrollbars from absolute positioning */
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .collage-item {
+    position: absolute;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    display: flex; /* For vertical/horizontal centering of text */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1; /* Tight line spacing */
+    letter-spacing: -2px; /* Tight letter spacing for some elements */
+    overflow: hidden; /* To crop text that goes out of bounds */
+    text-transform: uppercase; /* All caps for brutalist feel */
+  }
+
+  /* Specific item styles */
+
+  /* Large main title */
+  .item-1 {
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 20vh;
+    background-color: #F00; /* Red */
+    color: #FFF; /* White */
+    font-size: 15vw; /* Extremely large */
+    font-weight: 900;
+    z-index: 10;
+  }
+
+  /* Subtitle/keyword block 1 */
+  .item-2 {
+    top: 25vh;
+    left: 10vw;
+    width: 40vw;
+    height: 10vh;
+    background-color: #FFF; /* White */
+    color: #000; /* Black */
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: 0;
+    border: 5px solid #F00; /* Red border */
+    z-index: 12; /* Overlapping item-1 slightly */
+    transform: rotate(-3deg);
+  }
+
+  /* Keyword block 2 */
+  .item-3 {
+    top: 38vh;
+    right: 5vw;
+    width: 30vw;
+    height: 15vh;
+    background-color: #000; /* Black */
+    color: #F00; /* Red */
+    font-size: 3.5vw;
+    font-weight: 700;
+    border: 3px solid #FFF; /* White border */
+    transform: rotate(5deg);
+    z-index: 11;
+  }
+
+  /* Monolithic visual block - white background */
+  .item-4 {
+    top: 60vh;
+    left: 0;
+    width: 50vw;
+    height: 40vh;
+    background-color: #FFF; /* White */
+    z-index: 5;
+  }
+
+  /* Text on top of item-4 */
+  .item-5 {
+    top: 65vh;
+    left: 5vw;
+    width: 40vw;
+    height: 20vh;
+    background-color: transparent; /* No background */
+    color: #000; /* Black */
+    font-size: 2.5vw;
+    font-weight: 700;
+    text-align: left;
+    justify-content: flex-start; /* Align text left */
+    align-items: flex-start; /* Align text top */
+    padding: 10px;
+    z-index: 6;
+  }
+
+  /* Skewed red background block */
+  .item-6 {
+    bottom: 0;
+    right: 0;
+    width: 60vw;
+    height: 30vh;
+    background-color: #F00; /* Red */
+    z-index: 7;
+    transform: skewX(-15deg); /* Skew for a dynamic look */
+    transform-origin: bottom right;
+  }
+
+  /* Text on item-6 */
+  .item-7 {
+    bottom: 5vh;
+    right: 5vw;
+    width: 45vw;
+    height: 20vh;
+    background-color: transparent;
+    color: #FFF; /* White */
+    font-size: 4vw;
+    font-weight: 900;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 8;
+  }
+
+  /* Smaller black block with white text, top right */
+  .item-8 {
+    top: 0;
+    right: 0;
+    width: 20vw;
+    height: 10vh;
+    background-color: #000; /* Black */
+    color: #FFF; /* White */
+    font-size: 2vw;
+    font-weight: 500;
+    letter-spacing: 0;
+    border-bottom: 5px solid #F00;
+    border-left: 5px solid #F00;
+    z-index: 10;
+    padding: 10px;
+  }
+
+  /* Empty white block, purely structural */
+  .item-9 {
+    top: 45vh;
+    left: 15vw;
+    width: 30vw;
+    height: 10vh;
+    background-color: #FFF; /* White */
+    border: 2px solid #000;
+    z-index: 9;
+    transform: rotate(8deg);
+  }
+
+  /* Empty red horizontal strip */
+  .item-10 {
+    top: 30vh;
+    left: 50vw;
+    width: 20vw;
+    height: 5vw; /* horizontal strip */
+    background-color: #F00; /* Red */
+    border: 2px solid #FFF;
+    z-index: 1; /* Pushed to back */
+  }
+
+  /* Another text block, mid-right */
+  .item-11 {
+    top: 55vh;
+    right: 20vw;
+    width: 30vw;
+    height: 10vh;
+    background-color: #000;
+    color: #FFF;
+    font-size: 2vw;
+    font-weight: 700;
+    border: 3px solid #F00;
+    z-index: 10;
+    transform: rotate(-7deg);
+  }
+
+  /* Red vertical line */
+  .item-12 {
+    top: 0;
+    left: 48vw;
+    width: 1vw;
+    height: 100vh;
+    background-color: #F00;
+    z-index: 1; /* Behind most elements */
+  }
+
+  /* White horizontal line */
+  .item-13 {
+    top: 50vh;
+    left: 0;
+    width: 100vw;
+    height: 1vh;
+    background-color: #FFF;
+    z-index: 2; /* Behind most elements but above item-12 */
+  }
+
+  /* Small red dot/square */
+  .item-14 {
+    bottom: 25vh;
+    left: 45vw;
+    width: 3vw;
+    height: 3vw;
+    background-color: #F00;
+    z-index: 15;
+  }
+
+</style>
+</head>
+<body>
+<div class="collage-container">
+  <div class="collage-item item-1">BRUTALISM</div>
+  <div class="collage-item item-2">RAW CONCRETE</div>
+  <div class="collage-item item-3">FORM FOLLOWS FUNCTION</div>
+  <div class="collage-item item-4"></div> <!-- Monolithic white block -->
+  <div class="collage-item item-5">MASSIVE<br>MONOLITHIC<br>EXPOSED<br>STRUCTURE</div>
+  <div class="collage-item item-6"></div> <!-- Skewed red block -->
+  <div class="collage-item item-7">LE CORBUSIER<br>BETON BRUT</div>
+  <div class="collage-item item-8">1950S - 1970S</div>
+  <div class="collage-item item-9"></div> <!-- Empty white block -->
+  <div class="collage-item item-10"></div> <!-- Empty red strip -->
+  <div class="collage-item item-11">UNCOMPROMISING<br>ARCHITECTURE</div>
+  <div class="collage-item item-12"></div> <!-- Red vertical line -->
+  <div class="collage-item item-13"></div> <!-- White horizontal line -->
+  <div class="collage-item item-14"></div> <!-- Small red dot -->
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-28 19:36:02.663073</div>
         <!DOCTYPE html>
 <html>
