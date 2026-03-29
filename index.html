@@ -16,6 +16,184 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 09:46:26.446251</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow: hidden; background-color: black; font-family: sans-serif; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .glitch-block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid white; /* Subtle border for some blocks */
+    outline: 2px solid transparent; /* To be overridden */
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    overflow: hidden;
+    text-shadow: 1px 1px 0px rgba(255,0,0,0.8), -1px -1px 0px rgba(0,0,0,0.8);
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+  }
+
+  /* Specific block styling with brutalist aesthetics */
+  .b1 { top: 0; left: 0; width: 30vw; height: 40vh; background-color: red; border-color: black; outline-color: white; z-index: 10; font-size: 1.5em; padding: 20px; }
+  .b2 { top: 10vh; left: 25vw; width: 50vw; height: 25vh; background-color: black; color: red; border-color: white; outline-color: red; z-index: 20; transform: skewX(-5deg); font-size: 2em; padding: 10px;}
+  .b3 { top: 30vh; left: 70vw; width: 30vw; height: 70vh; background-color: white; color: black; border-color: red; outline-color: black; z-index: 15; font-size: 1em; padding: 15px; }
+  .b4 { top: 45vh; left: 0; width: 60vw; height: 30vh; background-color: red; color: black; border-color: black; outline-color: white; z-index: 12; transform: skewY(3deg); font-size: 1.8em; padding: 25px; }
+  .b5 { top: 70vh; left: 50vw; width: 50vw; height: 30vh; background-color: black; color: white; border-color: red; outline-color: white; z-index: 18; font-size: 1.2em; padding: 10px; }
+  .b6 { top: 0; left: 80vw; width: 20vw; height: 20vh; background-color: white; color: red; border-color: black; outline-color: black; z-index: 25; font-size: 0.9em; padding: 5px; }
+  .b7 { top: 20vh; left: 0; width: 15vw; height: 70vh; background-color: black; color: white; border-color: white; outline-color: red; z-index: 11; font-size: 0.7em; padding: 8px; writing-mode: vertical-lr; text-orientation: mixed; }
+  .b8 { top: 80vh; left: 10vw; width: 40vw; height: 20vh; background-color: white; color: black; border-color: red; outline-color: black; z-index: 19; font-size: 1.1em; padding: 15px; }
+  .b9 { top: 5vh; left: 35vw; width: 20vw; height: 10vh; background-color: red; color: white; border-color: black; outline-color: white; z-index: 28; transform: rotate(-2deg); font-size: 1.3em; padding: 5px; }
+  .b10 { top: 60vh; left: 60vw; width: 10vw; height: 10vh; background-color: black; color: red; border-color: white; outline-color: white; z-index: 22; font-size: 0.6em; padding: 3px; }
+
+  /* Glitch text effects */
+  .glitch-text {
+    animation: glitch 1.5s linear infinite alternate;
+  }
+  @keyframes glitch {
+    0% {
+      transform: translate(0, 0);
+      text-shadow: 2px 0 red, -2px 0 blue;
+    }
+    20% {
+      transform: translate(-2px, 2px);
+      text-shadow: -2px 0 red, 2px 0 blue;
+    }
+    40% {
+      transform: translate(3px, -3px);
+      text-shadow: 2px 0 red, -2px 0 blue;
+    }
+    60% {
+      transform: translate(-1px, 1px);
+      text-shadow: -2px 0 red, 2px 0 blue;
+    }
+    80% {
+      transform: translate(2px, -2px);
+      text-shadow: 2px 0 red, -2px 0 blue;
+    }
+    100% {
+      transform: translate(0, 0);
+      text-shadow: -2px 0 red, 2px 0 blue;
+    }
+  }
+
+  /* Scanline effect */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    animation: scanlineShift 6s linear infinite;
+  }
+
+  @keyframes scanlineShift {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 0 100%, 0 0; }
+  }
+
+  /* Flickering effect */
+  .flicker {
+    animation: flicker 0.2s infinite alternate;
+  }
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+
+  /* Data moshing images (very basic, usually done with video) */
+  .datamosh-bg-1 {
+    background-image: url('https://via.placeholder.com/300x200/FF0000/000000?text=DATA');
+    background-blend-mode: multiply;
+  }
+  .datamosh-bg-2 {
+    background-image: url('https://via.placeholder.com/400x300/000000/FFFFFF?text=MOSH');
+    background-blend-mode: difference;
+  }
+  .datamosh-bg-3 {
+    background-image: url('https://via.placeholder.com/200x150/FFFFFF/FF0000?text=ERROR');
+    background-blend-mode: screen;
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container scanlines">
+
+  <div class="glitch-block b1 datamosh-bg-1">
+    <span class="glitch-text">SYSTEM FAILURE</span><br>
+    <span class="flicker">NO SIGNAL</span>
+  </div>
+
+  <div class="glitch-block b2">
+    <span class="glitch-text">DATA CORRUPTED</span><br>
+    <span class="flicker">BUFFER OVERFLOW</span>
+  </div>
+
+  <div class="glitch-block b3 datamosh-bg-2">
+    <span class="flicker">STATIC</span><br>
+    <span class="glitch-text">SEGMENTATION FAULT</span>
+  </div>
+
+  <div class="glitch-block b4">
+    <span class="glitch-text">///GLITCH///</span><br>
+    <span class="flicker">AESTHETICS</span>
+  </div>
+
+  <div class="glitch-block b5 datamosh-bg-3">
+    <span class="flicker">ERROR 404</span><br>
+    <span class="glitch-text">PIXEL SHIFT</span>
+  </div>
+
+  <div class="glitch-block b6">
+    <span class="glitch-text">NOISE</span>
+  </div>
+
+  <div class="glitch-block b7">
+    <span class="flicker">INTERRUPT</span><br>
+    <span class="glitch-text">BREAKDOWN</span>
+  </div>
+
+  <div class="glitch-block b8">
+    <span class="glitch-text">DISTORTION</span><br>
+    <span class="flicker">RECONSTRUCT</span>
+  </div>
+
+  <div class="glitch-block b9">
+    <span class="glitch-text">VOID</span>
+  </div>
+
+  <div class="glitch-block b10">
+    <span class="flicker">C.R.T.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 08:51:43.208744</div>
         <!DOCTYPE html>
 <html lang="en">
