@@ -16,6 +16,291 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 21:39:38.899366</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECOLONIZE THE CLOUD</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            font-family: 'Arial Black', sans-serif;
+            background-color: #000;
+            color: #FFF;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            border: 2px solid #F00; /* Brutalist strong red border */
+            background-color: #000;
+            color: #FFF;
+            padding: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 1; /* Default stack order */
+        }
+        /* Specific block styles */
+
+        /* TOP BANNER */
+        #banner-top {
+            width: 100%;
+            height: 8vh;
+            top: 0;
+            left: 0;
+            background-color: #F00;
+            color: #000;
+            font-size: 2.5em;
+            font-weight: 900;
+            border: none;
+            z-index: 10;
+        }
+
+        /* MAIN TITLE */
+        #title-main {
+            width: 70vw;
+            height: 25vh;
+            top: 15vh;
+            left: 15vw;
+            background-color: #FFF;
+            color: #F00;
+            font-size: 4.5em; /* Extremely large */
+            font-weight: 900;
+            border: 8px solid #000;
+            line-height: 0.9;
+            padding: 20px;
+            z-index: 5;
+            display: flex; /* Ensure content is centered vertically */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #title-main span {
+            display: block; /* Each word on its own line */
+        }
+
+        /* SIDE PANELS */
+        #panel-left {
+            width: 10vw;
+            height: 60vh;
+            top: 40vh;
+            left: 0;
+            background-color: #000;
+            color: #FFF;
+            border-left: none;
+            font-size: 0.8em;
+            writing-mode: vertical-lr; /* Vertical text */
+            text-orientation: upright;
+            transform: rotate(180deg);
+            justify-content: flex-end; /* Push text to the right when vertical */
+            padding-right: 5px;
+            border-right: 4px solid #F00;
+        }
+        #panel-right {
+            width: 10vw;
+            height: 60vh;
+            top: 40vh;
+            right: 0;
+            background-color: #000;
+            color: #FFF;
+            border-right: none;
+            font-size: 0.8em;
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            justify-content: flex-start; /* Push text to the left when vertical */
+            padding-left: 5px;
+            border-left: 4px solid #F00;
+        }
+
+        /* INTERSECTING BLOCKS */
+        #block-red-overlay-1 {
+            width: 35vw;
+            height: 20vh;
+            top: 40vh;
+            left: 10vw;
+            background-color: #F00;
+            color: #FFF;
+            font-size: 1.8em;
+            border: 4px solid #000;
+            z-index: 3; /* Overlaps some, under others */
+            transform: rotate(-3deg); /* Slight rotation */
+        }
+        #block-black-text-1 {
+            width: 40vw;
+            height: 18vh;
+            top: 50vh;
+            left: 40vw;
+            background-color: #000;
+            color: #FFF;
+            font-size: 1.5em;
+            border: 4px solid #F00;
+            z-index: 4;
+            transform: rotate(2deg);
+        }
+        #block-white-text-1 {
+            width: 25vw;
+            height: 15vh;
+            top: 65vh;
+            left: 15vw;
+            background-color: #FFF;
+            color: #000;
+            font-size: 1.3em;
+            border: 4px solid #F00;
+            z-index: 2;
+            transform: rotate(-1deg);
+        }
+
+        /* BOTTOM BARS */
+        #bar-bottom-left {
+            width: 50vw;
+            height: 10vh;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            color: #F00;
+            font-size: 1.2em;
+            border-top: 4px solid #F00;
+            border-right: 2px solid #F00;
+            z-index: 10;
+        }
+        #bar-bottom-right {
+            width: 50vw;
+            height: 10vh;
+            bottom: 0;
+            right: 0;
+            background-color: #F00;
+            color: #000;
+            font-size: 1.2em;
+            border-top: 4px solid #000;
+            border-left: 2px solid #000;
+            z-index: 10;
+        }
+
+        /* Smaller overlay blocks for more visual chaos */
+        .overlay-small {
+            width: 15vw;
+            height: 8vh;
+            background-color: #F00;
+            border: 2px solid #FFF;
+            color: #FFF;
+            font-size: 0.7em;
+            z-index: 6;
+            transform: rotate(5deg);
+        }
+        #overlay-1 { top: 10vh; left: 5vw; }
+        #overlay-2 { top: 20vh; right: 8vw; background-color: #FFF; color: #F00; border-color: #F00; transform: rotate(-7deg); }
+        #overlay-3 { top: 75vh; left: 40vw; background-color: #000; color: #FFF; border-color: #F00; transform: rotate(3deg); }
+        #overlay-4 { top: 5vh; left: 80vw; background-color: #000; color: #FFF; border-color: #F00; transform: rotate(-4deg); }
+
+
+        /* Dynamic text within blocks */
+        .dynamic-text {
+            animation: glitch 1s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #F00, -2px -2px #000;
+                transform: translate(0, 0);
+            }
+            25% {
+                text-shadow: -2px -2px #F00, 2px 2px #000;
+                transform: translate(1px, -1px);
+            }
+            50% {
+                text-shadow: 4px 4px #F00, -4px -4px #000;
+                transform: translate(-1px, 1px);
+            }
+            75% {
+                text-shadow: -4px 4px #F00, 4px -4px #000;
+                transform: translate(2px, 0);
+            }
+            100% {
+                text-shadow: 2px -2px #F00, -2px 2px #000;
+                transform: translate(0, 0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="banner-top" class="block">
+            <span class="dynamic-text">DATA. POWER. CONTROL.</span>
+        </div>
+
+        <div id="title-main" class="block">
+            <span>DECOLONIZE</span>
+            <span>THE</span>
+            <span>CLOUD</span>
+        </div>
+
+        <div id="panel-left" class="block">
+            INFRASTRUCTURE. EMPOWERMENT. SOVEREIGNTY.
+        </div>
+
+        <div id="panel-right" class="block">
+            RECLAIM. RESIST. REBUILD.
+        </div>
+
+        <div id="block-red-overlay-1" class="block">
+            <span class="dynamic-text">RE-IMAGINE DIGITAL FUTURES</span>
+        </div>
+
+        <div id="block-black-text-1" class="block">
+            <span class="dynamic-text">SMASH THE ALGORITHMIC COLONIALISM</span>
+        </div>
+
+        <div id="block-white-text-1" class="block">
+            <span class="dynamic-text">LOCAL SERVERS. GLOBAL JUSTICE.</span>
+        </div>
+
+        <div id="overlay-1" class="block overlay-small">
+            NETWORKS
+        </div>
+        <div id="overlay-2" class="block overlay-small">
+            CABLES
+        </div>
+        <div id="overlay-3" class="block overlay-small">
+            SERVERS
+        </div>
+        <div id="overlay-4" class="block overlay-small">
+            DATA MINING
+        </div>
+
+        <div id="bar-bottom-left" class="block">
+            <span class="dynamic-text">FIGHT FOR DIGITAL SELF-DETERMINATION</span>
+        </div>
+
+        <div id="bar-bottom-right" class="block">
+            <span class="dynamic-text">NO DATA COLONIALISM</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">decolonizing the cloud</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 20:41:18.365655</div>
         <!DOCTYPE html>
 <html lang="en">
