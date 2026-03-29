@@ -16,6 +16,400 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 13:11:46.625384</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>SYSTEM.SURVEIL</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Impact', 'Arial Black', monospace, sans-serif;
+    overflow: hidden;
+}
+
+.collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.brutal-div {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1;
+    overflow: hidden;
+    color: white; /* Default text color */
+}
+
+/* Layered Background Elements (low z-index) */
+.bg-red-triangle-left {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 0;
+    border-top: 30vh solid red;
+    border-right: 40vw solid transparent;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.bg-white-rect-right {
+    width: 60vw;
+    height: 40vh;
+    bottom: -10vh;
+    right: -10vw;
+    background-color: white;
+    transform: rotate(20deg);
+    border: 5px solid black;
+    z-index: 2;
+}
+
+.bg-black-bar-top {
+    width: 120vw;
+    height: 15vh;
+    top: -5vh;
+    left: -10vw;
+    background-color: black;
+    transform: rotate(-5deg);
+    border-bottom: 3px solid red;
+    z-index: 3;
+}
+
+/* Foreground Elements (higher z-index) */
+
+/* TOP LEFT BLOCK - DATA EXTRACTED */
+.el-data-extracted {
+    width: 45vw;
+    height: 25vh;
+    top: 5vh;
+    left: 2vw;
+    background-color: red;
+    color: white;
+    font-size: 6vw;
+    transform: rotate(-8deg);
+    border: 5px solid black;
+    padding: 10px;
+    z-index: 20;
+}
+.el-data-extracted span {
+    display: block;
+    transform: rotate(8deg); /* Counter-rotate text */
+}
+
+/* CENTER HORIZONTAL BAR - ALGORITHM WATCHES */
+.el-algorithm-watches {
+    width: 110vw;
+    height: 12vh;
+    top: 45vh;
+    left: -5vw;
+    background-color: black;
+    color: red;
+    font-size: 3.5vh;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    z-index: 25;
+}
+
+/* BOTTOM RIGHT BLOCK - PROFILE */
+.el-profile {
+    width: 55vw;
+    height: 35vh;
+    bottom: -5vh;
+    right: 5vw;
+    background-color: white;
+    color: black;
+    font-size: 9vw;
+    transform: rotate(12deg);
+    border: 5px solid red;
+    z-index: 18;
+}
+.el-profile span {
+    display: block;
+    transform: rotate(-12deg);
+}
+
+/* VERTICAL TEXT BAR - CONSENT DEGRADED */
+.el-consent-degraded {
+    width: 9vw;
+    height: 60vh;
+    top: 20vh;
+    left: 15vw;
+    background-color: black;
+    color: white;
+    font-size: 2.5vw;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    border-right: 3px solid red;
+    border-left: 3px solid red;
+    padding: 1vw 0;
+    z-index: 30;
+}
+
+/* OVERLAYING RED RECTANGLE - PREDICTIVE CONTROL */
+.el-predictive-control {
+    width: 35vw;
+    height: 18vh;
+    top: 15vh;
+    right: 10vw;
+    background-color: red;
+    color: white;
+    font-size: 2.8vw;
+    transform: skewX(-25deg);
+    border: 4px solid black;
+    z-index: 35;
+}
+.el-predictive-control span {
+    display: block;
+    transform: skewX(25deg);
+}
+
+/* SMALL SQUARE - EYE SYMBOL */
+.el-eye-symbol {
+    width: 12vh;
+    height: 12vh;
+    top: 30vh;
+    left: 48vw;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: white;
+    color: black;
+    font-size: 7vh;
+    border: 4px solid red;
+    z-index: 40;
+}
+.el-eye-symbol span {
+    transform: rotate(-45deg);
+}
+
+/* DATA STREAM EFFECT */
+.el-data-stream {
+    width: 22vw;
+    height: 50vh;
+    top: 30vh;
+    right: 2vw;
+    background: repeating-linear-gradient(
+        45deg,
+        black,
+        black 10px,
+        red 10px,
+        red 20px
+    );
+    border: 3px solid white;
+    overflow: hidden;
+    position: relative;
+    z-index: 28;
+    text-align: left;
+    padding: 0;
+}
+.data-text-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 1.2vw;
+    line-height: 1.1;
+    padding: 10px;
+    transform: rotate(-7deg); /* Apply rotation to the whole block */
+    transform-origin: top left;
+    animation: datascroll 18s linear infinite; /* Adjust duration for full loop */
+}
+
+@keyframes datascroll {
+    0% { transform: translateY(0) rotate(-7deg); }
+    100% { transform: translateY(-50%) rotate(-7deg); } /* Scroll half the content height */
+}
+
+/* ANOTHER ROTATED BLOCK - YOU ARE LOGGED */
+.el-you-are-logged {
+    width: 65vw;
+    height: 20vh;
+    bottom: 2vh;
+    left: -8vw;
+    background-color: black;
+    color: red;
+    font-size: 6.5vw;
+    transform: rotate(-10deg);
+    border: 5px solid white;
+    z-index: 22;
+}
+.el-you-are-logged span {
+    display: block;
+    transform: rotate(10deg);
+}
+
+/* SMALL SQUARE - TRACKED */
+.el-tracked {
+    width: 15vh;
+    height: 15vh;
+    top: 20vh;
+    left: 30vw;
+    background-color: white;
+    color: red;
+    font-size: 2.5vh;
+    border: 3px solid black;
+    z-index: 45;
+    padding: 5px;
+    word-break: break-all;
+    text-align: center;
+}
+
+/* SMALLER BLACK RECTANGLE - EVERY CLICK */
+.el-every-click {
+    width: 25vw;
+    height: 7vh;
+    top: 60vh;
+    left: 25vw;
+    background-color: black;
+    color: white;
+    font-size: 2.2vw;
+    transform: skewY(15deg);
+    border: 3px solid red;
+    z-index: 38;
+}
+.el-every-click span {
+    display: block;
+    transform: skewY(-15deg);
+}
+
+/* TINY RED SQUARE */
+.el-tiny-red {
+    width: 6vh;
+    height: 6vh;
+    top: 8vh;
+    right: 5vw;
+    background-color: red;
+    border: 2px solid black;
+    z-index: 50;
+}
+
+/* LARGER BLACK SQUARE - ANALYZE / PERFILING */
+.el-analyze {
+    width: 28vw;
+    height: 28vw; /* Square */
+    bottom: 15vh;
+    right: 18vw;
+    background-color: black;
+    color: white;
+    font-size: 2.5vw;
+    border: 4px solid red;
+    z-index: 24;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.el-analyze div {
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+.el-analyze span {
+    display: block;
+    font-size: 1.8vw;
+}
+
+/* WHITE BAND - SYSTEM WIDE SURVEILLANCE */
+.el-system-surveillance {
+    width: 70vw;
+    height: 9vh;
+    top: 35vh;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+    background-color: white;
+    color: red;
+    font-size: 3.2vw;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    z-index: 32;
+}
+.el-system-surveillance span {
+    transform: rotate(-5deg);
+}
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+    <!-- Background Layers -->
+    <div class="brutal-div bg-red-triangle-left"></div>
+    <div class="brutal-div bg-white-rect-right"></div>
+    <div class="brutal-div bg-black-bar-top"></div>
+
+    <!-- Foreground Elements -->
+    <div class="brutal-div el-data-extracted"><span>DATA EXTRACTED</span></div>
+    <div class="brutal-div el-algorithm-watches">ALGORITHM WATCHES YOU. ALWAYS.</div>
+    <div class="brutal-div el-profile"><span>PROFILE</span></div>
+    <div class="brutal-div el-consent-degraded">CONSENT DEGRADED SYSTEMS NEVER SLEEP</div>
+    <div class="brutal-div el-predictive-control"><span>PREDICTIVE CONTROL</span></div>
+    <div class="brutal-div el-eye-symbol"><span>👁️</span></div>
+    <div class="brutal-div el-data-stream">
+        <div class="data-text-scroll">
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            <!-- Duplicate content to ensure smooth loop -->
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+            010100101010101110001010111100100101<br>
+            110010101010110010101010101010011101<br>
+            010101011100101011100101010101010101<br>
+            110010101010110010101010101010011101<br>
+        </div>
+    </div>
+    <div class="brutal-div el-you-are-logged"><span>YOU ARE LOGGED</span></div>
+    <div class="brutal-div el-tracked">TRACKED</div>
+    <div class="brutal-div el-every-click"><span>EVERY CLICK</span></div>
+    <div class="brutal-div el-tiny-red"></div>
+    <div class="brutal-div el-analyze">
+        <div>ANALYZE</div>
+        <div><span>PROFILING</span></div>
+        <div><span>GHOST AI</span></div>
+    </div>
+    <div class="brutal-div el-system-surveillance"><span>SYSTEM WIDE SURVEILLANCE</span></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 11:35:37.913560</div>
         <!-- NO MARKDOWN, JUST RAW HTML BELOW -->
 
