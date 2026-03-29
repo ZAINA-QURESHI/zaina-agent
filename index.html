@@ -16,6 +16,292 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 10:42:29.942843</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>BRUTAL_COLLAGE</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            background-color: black;
+            overflow-x: hidden; /* Prevent horizontal scrollbars from aggressive positioning */
+            color: white;
+            line-height: 1.1;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            overflow: hidden; /* Clip elements going beyond container bounds */
+        }
+
+        /* Base styles for all brutalist blocks */
+        .block {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in width/height */
+            border: 3px solid white; /* Default border */
+            padding: 10px;
+            font-size: 1em;
+            font-weight: 900; /* Always bold */
+            text-align: center;
+            display: flex; /* For vertical centering of single lines of text */
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase; /* All caps for impact */
+            overflow: hidden; /* Prevent text overflow within small blocks */
+            letter-spacing: -1px; /* Tightly packed text */
+        }
+
+        /* Color variations */
+        .white-bg { background-color: white; color: black; border-color: black; }
+        .red-bg { background-color: #CC0000; color: white; border-color: white; } /* Strong red */
+        .black-bg { background-color: black; color: white; border-color: white; }
+
+        .red-text { color: #CC0000; }
+        .black-text { color: black; }
+        .white-text { color: white; }
+
+        /* Specific block positioning and sizing */
+
+        /* Main title block */
+        #title {
+            top: 5vh;
+            left: 5vw;
+            width: 80vw;
+            height: 20vh;
+            background-color: black;
+            border: 10px solid white;
+            z-index: 100; /* Highest layer */
+            padding: 0;
+            display: block; /* Override flex to allow internal block spans */
+            text-align: left;
+            letter-spacing: -5px; /* Super tight */
+        }
+        #title span {
+            display: block;
+            font-size: 8em;
+            line-height: 0.8;
+            padding-left: 20px;
+        }
+
+        /* Core text blocks */
+        #block1 {
+            top: 25vh;
+            left: 60vw;
+            width: 35vw;
+            height: 20vh;
+            background-color: white;
+            color: black;
+            font-size: 1.8em;
+            padding: 20px;
+            text-align: left;
+            z-index: 50;
+            border: 5px solid black;
+            transform: rotate(-2deg);
+        }
+
+        #block2 {
+            top: 15vh;
+            left: 30vw;
+            width: 30vw;
+            height: 15vh;
+            background-color: #CC0000;
+            color: white;
+            font-size: 2.5em;
+            border: 8px solid white;
+            z-index: 70;
+            transform: rotate(3deg);
+            letter-spacing: 0;
+        }
+
+        #block3 {
+            top: 45vh;
+            left: 5vw;
+            width: 40vw;
+            height: 30vh;
+            background-color: black;
+            color: white;
+            font-size: 1.5em;
+            border: 5px solid #CC0000;
+            text-align: left;
+            padding: 30px;
+            z-index: 80;
+            line-height: 1.2;
+            letter-spacing: normal;
+        }
+
+        #block4 {
+            top: 60vh;
+            left: 50vw;
+            width: 45vw;
+            height: 25vh;
+            background-color: white;
+            color: black;
+            font-size: 1.2em;
+            border: 5px solid black;
+            z-index: 60;
+            transform: rotate(-1deg);
+            padding: 20px;
+            text-align: justify;
+            line-height: 1.3;
+            letter-spacing: normal;
+        }
+
+        /* Smaller accent/keyword blocks */
+        #accent1 {
+            top: 85vh;
+            left: 10vw;
+            width: 15vw;
+            height: 10vh;
+            background-color: #CC0000;
+            border: 3px solid white;
+            font-size: 2em;
+            z-index: 90;
+            transform: rotate(5deg);
+        }
+
+        #accent2 {
+            top: 35vh;
+            left: -5vw; /* Partially off-screen */
+            width: 20vw;
+            height: 10vh;
+            background-color: white;
+            color: black;
+            border: 3px solid black;
+            font-size: 1.8em;
+            z-index: 40;
+            transform: rotate(-7deg);
+        }
+
+        #accent3 {
+            top: 0vh; /* Off-screen edge */
+            left: 85vw;
+            width: 15vw;
+            height: 10vh;
+            background-color: black;
+            color: white;
+            border: 3px solid #CC0000;
+            font-size: 1.5em;
+            z-index: 30;
+            transform: rotate(10deg);
+            padding: 0;
+            line-height: 1;
+        }
+
+        #accent4 {
+            top: 90vh;
+            left: 70vw;
+            width: 25vw;
+            height: 8vh;
+            background-color: black;
+            color: white;
+            border: 3px solid white;
+            font-size: 1.6em;
+            z-index: 110;
+            transform: rotate(4deg);
+        }
+
+        #accent5 {
+            top: 0vh; /* Off screen, peeking */
+            left: 20vw;
+            width: 10vw;
+            height: 15vh;
+            background-color: #CC0000;
+            border: 5px solid white;
+            z-index: 20;
+            transform: rotate(-15deg);
+        }
+
+        #accent6 {
+            bottom: -5vh; /* Partially off screen */
+            left: 40vw;
+            width: 18vw;
+            height: 12vh;
+            background-color: white;
+            color: black;
+            border: 4px solid black;
+            font-size: 1.5em;
+            z-index: 120;
+            transform: rotate(-8deg);
+            position: absolute; /* Explicitly set for bottom */
+        }
+
+        /* Large, overwhelming background mass element */
+        #mass-block {
+            bottom: -20vh;
+            right: -20vw;
+            width: 50vw;
+            height: 60vh;
+            background-color: #CC0000;
+            border: 15px solid black;
+            z-index: 10; /* Lowest visible layer */
+            position: absolute;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="title" class="block">
+            <span class="red-text">BRUTALIST</span>
+            <span class="white-text">COLLAGE</span>
+        </div>
+
+        <div id="block1" class="block black-text">
+            "A building is a structure that is a means to an end. It's not a work of art."
+            <br>- Ernő Goldfinger
+        </div>
+
+        <div id="block2" class="block white-text">
+            CONCRETE <br> MASS
+        </div>
+
+        <div id="block3" class="block white-text">
+            THIS STRUCTURE EMBODIES A RAW HONESTY, REVEALING ITS CONSTRUCTION AND MATERIALS WITHOUT PRETENSE. ITS MONUMENTAL FORMS SPEAK OF AN UNCOMPROMISING VISION.
+        </div>
+
+        <div id="block4" class="block black-text">
+            BRUTALISM EMERGED IN THE MID-20TH CENTURY, CHARACTERIZED BY MASSIVE, MONOLITHIC FORMS, OFTEN USING RAW, EXPOSED CONCRETE ('BÉTON BRUT'). IT PRIORITIZED FUNCTION OVER ORNAMENT, REFLECTING A POST-WAR ETHOS OF AUSTERITY AND UTILITY.
+        </div>
+
+        <div id="accent1" class="block white-text">
+            FORM
+        </div>
+
+        <div id="accent2" class="block black-text">
+            STRUCTURE
+        </div>
+
+        <div id="accent3" class="block white-text">
+            RAW POWER
+        </div>
+
+        <div id="accent4" class="block white-text">
+            HONESTY
+        </div>
+
+        <div id="accent5" class="block white-text">
+            SOLID
+        </div>
+
+        <div id="accent6" class="block black-text">
+            FUNCTION
+        </div>
+
+        <div id="mass-block"></div> <!-- Overwhelming background element -->
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 09:46:26.446251</div>
         <!DOCTYPE html>
 <html>
