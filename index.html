@@ -16,6 +16,157 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 19:38:00.350344</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; overflow: hidden; background-color: #000; font-family: 'Courier New', Courier, monospace; }
+.collage-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.block {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle grid lines */
+    box-sizing: border-box;
+}
+
+/* Base styles for all blocks */
+.black { background-color: #000; color: #F00; }
+.white { background-color: #FFF; color: #000; }
+.red { background-color: #F00; color: #FFF; }
+
+/* Text within blocks */
+.text-block {
+    padding: 5px;
+    font-size: 1.2vw; /* Responsive font size */
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-all; /* Allow breaking words */
+    overflow: hidden;
+}
+
+/* Specific block positioning and sizing */
+.block-1 { grid-area: 1 / 1 / 5 / 4; background-color: #000; color: #F00; border-right: 2px solid #F00; border-bottom: 2px solid #F00; display: flex; align-items: flex-start; justify-content: flex-start; padding: 10px; font-size: 2vw; line-height: 0.9; }
+.block-2 { grid-area: 1 / 4 / 3 / 7; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 3vw; border-bottom: 2px solid #FFF; }
+.block-3 { grid-area: 1 / 7 / 2 / 10; background-color: #FFF; color: #000; display: flex; align-items: center; justify-content: center; font-size: 1.5vw; text-transform: uppercase; border-bottom: 2px solid #000;}
+.block-4 { grid-area: 1 / 10 / 3 / 13; background-color: #000; color: #FFF; padding: 10px; font-size: 1vw; display: flex; align-items: flex-end; justify-content: flex-end; text-align: right; line-height: 1; border-left: 2px solid #FFF; border-bottom: 2px solid #FFF;}
+.block-5 { grid-area: 5 / 1 / 7 / 3; background-color: #FFF; color: #F00; display: flex; align-items: center; justify-content: center; font-size: 2.5vw; font-weight: bold; transform: rotate(-90deg); white-space: nowrap; transform-origin: top left; position: absolute; top: 100%; left: 0; width: 100%; height: 100%; box-sizing: border-box; }
+.block-6 { grid-area: 3 / 4 / 5 / 6; background-color: #FFF; color: #000; padding: 5px; font-size: 0.9vw; border: 2px solid #000; box-shadow: 5px 5px 0px #F00; z-index: 1;}
+.block-7 { grid-area: 2 / 7 / 5 / 9; background-color: #000; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 2vw; border-top: 2px solid #F00; border-right: 2px solid #F00; text-transform: uppercase;}
+.block-8 { grid-area: 3 / 10 / 5 / 13; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.8vw; text-shadow: 2px 2px 0px #000; }
+.block-9 { grid-area: 7 / 1 / 9 / 3; background-color: #000; color: #F00; padding: 10px; font-size: 1.5vw; text-align: left; line-height: 1.1; border-right: 2px solid #F00; border-top: 2px solid #F00;}
+.block-10 { grid-area: 5 / 3 / 7 / 7; background-color: #FFF; color: #000; display: flex; align-items: center; justify-content: center; font-size: 4vw; font-weight: bold; border-top: 2px solid #000; border-right: 2px solid #000; }
+.block-11 { grid-area: 5 / 7 / 7 / 10; background-color: #F00; color: #FFF; padding: 10px; font-size: 1.1vw; line-height: 1.2; text-align: left; }
+.block-12 { grid-area: 5 / 10 / 7 / 13; background-color: #000; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 2.2vw; border-left: 2px solid #FFF; border-bottom: 2px solid #FFF;}
+.block-13 { grid-area: 9 / 1 / 13 / 5; background-color: #FFF; color: #000; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 15px; font-size: 1.8vw; line-height: 1; border-right: 2px solid #000; border-top: 2px solid #000;}
+.block-14 { grid-area: 7 / 3 / 9 / 5; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 2.8vw; transform: rotate(90deg); white-space: nowrap; transform-origin: center center; z-index: 2; }
+.block-15 { grid-area: 7 / 5 / 9 / 7; background-color: #000; color: #F00; padding: 8px; font-size: 0.8vw; line-height: 1.2; text-align: right; border-top: 2px solid #F00; border-left: 2px solid #F00;}
+.block-16 { grid-area: 7 / 7 / 9 / 9; background-color: #FFF; color: #000; display: flex; align-items: center; justify-content: center; font-size: 1.7vw; text-transform: uppercase; border-top: 2px solid #000; border-bottom: 2px solid #000;}
+.block-17 { grid-area: 9 / 5 / 13 / 9; background-color: #000; color: #FFF; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 10px; font-size: 1.6vw; line-height: 1.1; border-top: 2px solid #FFF; border-left: 2px solid #FFF;}
+.block-18 { grid-area: 7 / 9 / 13 / 13; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 5vw; font-weight: bold; border-top: 2px solid #FFF; border-left: 2px solid #FFF; }
+.block-19 { grid-area: 9 / 9 / 13 / 13; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 5vw; font-weight: bold; grid-column: 9 / 13; grid-row: 9 / 13;}
+.block-20 { grid-area: 5 / 6 / 7 / 7; background-color: #000; color: #F00; display: flex; align-items: center; justify-content: center; font-size: 2vw; transform: rotate(-90deg); white-space: nowrap; transform-origin: top left; position: absolute; top: 100%; left: 0; width: 100%; height: 100%; box-sizing: border-box; z-index: 3;}
+.block-21 { grid-area: 3 / 6 / 5 / 7; background-color: #F00; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.5vw; transform: rotate(90deg); white-space: nowrap; transform-origin: center center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box; z-index: 4; }
+
+/* Overlap and Z-index for brutalist feel */
+.block:nth-child(even) { z-index: 2; }
+.block:nth-child(odd) { z-index: 1; }
+.block-6 { z-index: 10; } /* Example of specific z-index */
+.block-14 { z-index: 11; }
+.block-21 { z-index: 12; }
+.block-20 { z-index: 13; }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+    <div class="block block-1 black text-block">
+        <p>MEMORY<br>CORRUPT.<br>FILE<br>NOT<br>FOUND.</p>
+    </div>
+    <div class="block block-2 red text-block">
+        <p>VOID</p>
+    </div>
+    <div class="block block-3 white text-block">
+        <p>DECAY PROTOCOL</p>
+    </div>
+    <div class="block block-4 black text-block">
+        <p>DATA STREAM<br>INTERRUPTED.<br>SIGNAL LOST.</p>
+    </div>
+    <div class="block block-5 white text-block">
+        <p>TRANSMISSION<br>FAILURE</p>
+    </div>
+    <div class="block block-6 white text-block">
+        <p>01100100 01101001 01100111 01101001 01110100 01100001 01101100 00100000 01100100 01100101 01100011 01100001 01111001 00100000 01101001 01110011 00100000 01101001 01101110 01100101 01110110 01101001 01110100 01100001 01100010 01101100 01100101</p>
+    </div>
+    <div class="block block-7 black text-block">
+        <p>ERRO R</p>
+    </div>
+    <div class="block block-8 red text-block">
+        <p>SYSTEM<br>CRITICAL</p>
+    </div>
+    <div class="block block-9 black text-block">
+        <p>THE<br>GHOST<br>IN<br>THE<br>MACHINE<br>IS<br>STATIC</p>
+    </div>
+    <div class="block block-10 white text-block">
+        <p>NULL</p>
+    </div>
+    <div class="block block-11 red text-block">
+        <p>FORMAT C:<br>ALL IS LOST<br>FOREVER.<br>NO RECOVERY.</p>
+    </div>
+    <div class="block block-12 black text-block">
+        <p>GRID<br>UNSTABLE</p>
+    </div>
+    <div class="block block-13 white text-block">
+        <p>ANCIENT<br>CODE<br>FADES.</p>
+    </div>
+    <div class="block block-14 red text-block">
+        <p>404</p>
+    </div>
+    <div class="block block-15 black text-block">
+        <p>entropy<br>manifests<br>byte<br>by<br>byte</p>
+    </div>
+    <div class="block block-16 white text-block">
+        <p>FRAGMENTS</p>
+    </div>
+    <div class="block block-17 black text-block">
+        <p>THE PAST<br>DELETES<br>ITSELF.</p>
+        <p>NO BACKUP.</p>
+    </div>
+    <div class="block block-18 red text-block">
+        <p>NOISE</p>
+    </div>
+    <div class="block block-19 red text-block">
+        <p>STATIC</p>
+    </div>
+    <div class="block block-20 black text-block">
+        <p>END OF LINE</p>
+    </div>
+    <div class="block block-21 red text-block">
+        <p>OBSOLESCENCE</p>
+    </div>
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-29 18:54:52.819467</div>
         <!DOCTYPE html>
 <html>
