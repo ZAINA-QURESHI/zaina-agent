@@ -16,6 +16,297 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-30 15:14:25.802743</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Brutalist Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from collage elements */
+            background-color: black; /* Foundation */
+            font-family: 'Arial Black', sans-serif; /* Brutalist font */
+            color: white; /* Default text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            border: 5px solid red; /* Strong border */
+            box-sizing: border-box;
+            background-color: black;
+        }
+
+        .element {
+            position: absolute;
+            box-sizing: border-box;
+            font-size: clamp(0.8rem, 2vw, 2.5rem); /* Responsive font size */
+            line-height: 1;
+            padding: 5px 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            white-space: pre-wrap; /* For line breaks */
+            word-break: break-all; /* Brutal text breaking */
+            font-weight: 900;
+            user-select: none; /* Prevent selection */
+        }
+
+        /* Specific element styles */
+        .e1 {
+            width: 30%; height: 25%;
+            top: 5%; left: 5%;
+            background-color: red; color: black;
+            border: 2px solid white;
+            transform: rotate(-3deg);
+            z-index: 10;
+        }
+        .e2 {
+            width: 45%; height: 15%;
+            top: 0%; right: 0%;
+            background-color: white; color: red;
+            border-bottom: 5px solid black;
+            border-left: 5px solid black;
+            font-size: clamp(1.2rem, 3.5vw, 4rem);
+            transform: skewX(-10deg);
+            z-index: 8;
+        }
+        .e3 {
+            width: 20%; height: 40%;
+            bottom: 10%; left: 3%;
+            background-color: black; color: white;
+            border: 3px solid red;
+            z-index: 12;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px 5px;
+            font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+        }
+        .e4 {
+            width: 60%; height: 30%;
+            top: 20%; left: 20%;
+            background-color: white; color: black;
+            border: 4px solid red;
+            transform: rotate(2deg) scale(1.05);
+            z-index: 9;
+            opacity: 0.9;
+            font-size: clamp(0.9rem, 2.5vw, 3rem);
+        }
+        .e5 {
+            width: 35%; height: 20%;
+            bottom: 5%; right: 5%;
+            background-color: red; color: black;
+            border-top: 5px solid white;
+            border-right: 5px solid white;
+            transform: skewY(5deg);
+            z-index: 11;
+            font-size: clamp(1rem, 2.8vw, 3.2rem);
+        }
+        .e6 {
+            width: 25%; height: 10%;
+            top: 50%; right: 10%;
+            background-color: black; color: red;
+            border: 1px solid white;
+            transform: rotate(15deg) translateX(-20px);
+            z-index: 7;
+            font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .e7 {
+            width: 15%; height: 20%;
+            top: 40%; left: 50%;
+            background-color: white; color: black;
+            border: 2px solid red;
+            transform: rotate(-10deg);
+            z-index: 13;
+            font-size: clamp(0.7rem, 1.5vw, 1.8rem);
+            opacity: 0.7;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); /* Irregular shape */
+        }
+        .e8 {
+            width: 30%; height: 12%;
+            bottom: 30%; left: 40%;
+            background-color: red; color: white;
+            border: 3px solid black;
+            transform: skewX(20deg) scaleY(0.8);
+            z-index: 6;
+            font-size: clamp(0.8rem, 2vw, 2.2rem);
+            opacity: 0.85;
+        }
+        .e9 {
+            width: 10%; height: 10%;
+            top: 15%; left: 45%;
+            background-color: black; color: red;
+            border: 2px solid white;
+            transform: rotate(45deg);
+            z-index: 14;
+            font-size: clamp(0.5rem, 1vw, 1.2rem);
+        }
+        .e10 {
+            width: 22%; height: 35%;
+            top: 35%; right: 0%;
+            background-color: white; color: black;
+            border-left: 5px solid red;
+            z-index: 5;
+            font-size: clamp(0.8rem, 1.8vw, 2rem);
+            opacity: 0.95;
+            padding: 15px;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .e-glitch {
+            filter: grayscale(100%) brightness(1.2) contrast(1.5); /* Simulating glitch effect */
+            animation: glitch 0.5s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(2px, 2px); filter: saturate(2); }
+            50% { transform: translate(-2px, -2px); filter: contrast(1.8); }
+            100% { transform: translate(0px, 0px); filter: hue-rotate(10deg); }
+        }
+
+        /* Text effects for brutalism */
+        .text-overlay {
+            position: absolute;
+            font-size: clamp(8rem, 15vw, 18rem);
+            font-weight: 900;
+            color: rgba(255, 0, 0, 0.1); /* Faded red overlay */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            z-index: 1; /* Behind most elements */
+            white-space: nowrap;
+            letter-spacing: -0.05em;
+            text-shadow: 2px 2px 0 black;
+            pointer-events: none; /* Make it unclickable */
+        }
+        .text-overlay.right {
+            color: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%) rotate(5deg);
+            top: 45%;
+            left: 55%;
+            z-index: 0;
+            font-size: clamp(7rem, 14vw, 17rem);
+        }
+
+        .broken-grid-line {
+            position: absolute;
+            background-color: white;
+            opacity: 0.3;
+            z-index: 2;
+        }
+        .broken-grid-line.h1 { top: 18%; left: 0; width: 100%; height: 3px; transform: rotate(1deg); }
+        .broken-grid-line.h2 { bottom: 25%; left: 0; width: 100%; height: 2px; transform: rotate(-2deg); }
+        .broken-grid-line.v1 { left: 33%; top: 0; height: 100%; width: 4px; transform: rotate(-0.5deg); }
+        .broken-grid-line.v2 { right: 18%; top: 0; height: 100%; width: 3px; transform: rotate(1.5deg); }
+
+        .scanline {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: 100;
+            animation: scanline 5s infinite linear;
+        }
+        @keyframes scanline {
+            0% { top: -2px; }
+            100% { top: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <div class="broken-grid-line h1"></div>
+        <div class="broken-grid-line h2"></div>
+        <div class="broken-grid-line v1"></div>
+        <div class="broken-grid-line v2"></div>
+
+        <div class="text-overlay">ERROR</div>
+        <div class="text-overlay right">DECAY</div>
+
+        <div class="element e1">
+            DATA
+            CORRUPT
+            <br>
+            FILE NOT FOUND
+        </div>
+        <div class="element e2">
+            SYSTEM CRASH
+            <br>
+            ABORT RETRY FAIL
+        </div>
+        <div class="element e3">
+            01010100
+            01101000
+            01100101
+            00100000
+            01100101
+            01101110
+            01100100
+        </div>
+        <div class="element e4 e-glitch">
+            <span style="color: black;">OBSOLESCENCE</span>
+            <br>
+            <span style="color: red;">BIT ROT</span>
+            <br>
+            <span style="color: black;">FORGETTING</span>
+        </div>
+        <div class="element e5">
+            // TERMINAL
+            <br>
+            // FAILURE
+        </div>
+        <div class="element e6">
+            404 NOT FOUND
+            <br>
+            LOST FOREVER
+        </div>
+        <div class="element e7">
+            <span style="font-size: 0.8em;">MEMORIES</span>
+            <br>
+            <span style="color: red;">ERASED</span>
+        </div>
+        <div class="element e8">
+            DEAD LINK
+            <br>
+            EMPTY VOID
+        </div>
+        <div class="element e9">
+            VOID
+        </div>
+        <div class="element e10">
+            DIGITAL DUST
+            <br>
+            GHOSTS IN THE MACHINE
+        </div>
+
+        <div class="scanline"></div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-30 13:56:59.661323</div>
         <!DOCTYPE html>
 <html>
