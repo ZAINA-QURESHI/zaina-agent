@@ -16,6 +16,286 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-31 09:10:36.835697</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Brutalism</title>
+<style>
+body { margin: 0; overflow-x: hidden; font-family: monospace; background-color: #000; color: #fff; }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-gap: 8px; /* Subtle grid gap */
+    padding: 15px;
+    background-color: #000;
+}
+
+.block {
+    position: relative;
+    background-color: #000;
+    border: 1px solid #f00; /* Red border */
+    overflow: hidden;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.2;
+    padding: 5px;
+    box-sizing: border-box;
+    word-break: break-all; /* Brutal text breaking */
+}
+
+/* Specific block styles for variation */
+.block-red { background-color: #f00; color: #000; border-color: #000; }
+.block-white { background-color: #fff; color: #000; border-color: #f00; }
+.block-black { background-color: #000; color: #fff; border-color: #f00; }
+
+.block-large { grid-column: span 2; min-height: 200px; font-size: 2em; }
+.block-tall { grid-row: span 2; min-height: 200px; }
+.block-square { width: 150px; height: 150px; flex-shrink: 0; }
+
+/* Glitch effects (CSS animations) */
+@keyframes glitch-scale {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.02); filter: blur(0.5px); }
+    20% { transform: scale(1); }
+    30% { transform: scale(0.98); filter: brightness(1.2); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glitch-text-x {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(3px); opacity: 0.9; }
+    40% { transform: translateX(-2px); opacity: 1; }
+    60% { transform: translateX(1px); opacity: 0.8; }
+    80% { transform: translateX(-4px); opacity: 1; }
+}
+
+@keyframes glitch-text-y {
+    0%, 100% { transform: translateY(0); }
+    15% { transform: translateY(2px); opacity: 0.85; }
+    30% { transform: translateY(-1px); opacity: 1; }
+    45% { transform: translateY(3px); opacity: 0.9; }
+    60% { transform: translateY(-2px); opacity: 1; }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    5% { opacity: 0.9; }
+    10% { opacity: 1; }
+    15% { opacity: 0.8; }
+    20% { opacity: 1; }
+    25% { opacity: 0.95; }
+    30% { opacity: 1; }
+}
+
+.glitch-text { animation: glitch-text-x 2s infinite step-end alternate, glitch-text-y 1.8s infinite step-end alternate; }
+.glitch-flicker { animation: flicker 3s infinite step-end; }
+.glitch-scale { animation: glitch-scale 4s infinite step-end; }
+
+/* Image glitching */
+.glitch-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen; /* Lighten effect */
+    opacity: 0.7;
+    filter: saturate(200%) hue-rotate(90deg);
+    animation: glitch-img-animate 0.5s infinite alternate;
+}
+
+@keyframes glitch-img-animate {
+    0% { transform: translate(0); }
+    25% { transform: translate(2px, -2px) scale(1.01); filter: contrast(1.5) blur(0.5px); }
+    50% { transform: translate(-3px, 3px) scale(0.99); filter: brightness(1.2) hue-rotate(180deg); }
+    75% { transform: translate(1px, -4px) scale(1.02); filter: saturate(200%); }
+    100% { transform: translate(-2px, 1px) scale(1); filter: contrast(1) brightness(1); }
+}
+
+/* Pseudo-elements for static scanlines/noise */
+.block:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0) 50%, rgba(255,255,255,.05) 50%), linear-gradient(90deg, rgba(255,0,0,.05) 1px, transparent 1px);
+    background-size: 100% 2px, 2px 100%;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.block:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: repeating-linear-gradient(0deg, #f00 0px, #f00 1px, transparent 1px, transparent 2px);
+    opacity: 0.1;
+    pointer-events: none;
+    animation: scanline-flicker 5s infinite steps(1);
+}
+
+@keyframes scanline-flicker {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.15; }
+}
+
+/* More brutalist positioning/layout breaks */
+.absolute-block {
+    position: absolute;
+    z-index: 10;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    animation: flicker 2s infinite step-end;
+}
+
+.abs-top-left { top: 10px; left: 10px; background-color: #f00; color: #000; border: 1px solid #fff; }
+.abs-top-right { top: 10px; right: 10px; background-color: #000; color: #f00; border: 1px solid #fff; }
+.abs-bottom-left { bottom: 10px; left: 10px; background-color: #fff; color: #000; border: 1px solid #f00; }
+.abs-bottom-right { bottom: 10px; right: 10px; background-color: #000; color: #fff; border: 1px solid #f00; }
+
+.rotated-text {
+    transform: rotate(90deg);
+    position: absolute;
+    right: -50px; /* Adjust based on text length */
+    top: 50%;
+    transform-origin: 0% 0%;
+    white-space: nowrap;
+    font-size: 1.5em;
+    color: #f00;
+    animation: glitch-text-x 3s infinite alternate;
+}
+
+/* Overflowing text */
+.overflow-text {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: calc(100% + 40px);
+    font-size: 3em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.05);
+    word-break: break-all;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.large-char {
+    font-size: 5em;
+    color: rgba(255, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    animation: flicker 5s infinite steps(1);
+}
+
+</style>
+</head>
+<body>
+
+<div class="absolute-block abs-top-left">SYSTEM ERROR // 0X00FF00</div>
+<div class="absolute-block abs-top-right">SIGNAL INTERRUPTED // DATA CORRUPT</div>
+<div class="absolute-block abs-bottom-left">LOADING FRAGMENT // PLEASE WAIT</div>
+<div class="absolute-block abs-bottom-right">REBOOTING SEQUENCE // 00:00:00</div>
+
+<div class="container">
+
+    <div class="block block-red block-large glitch-scale">
+        <div class="overflow-text">GLITCH</div>
+        <span class="glitch-text">CRASH</span>
+        <div class="rotated-text">DISTORTION</div>
+    </div>
+
+    <div class="block block-white glitch-flicker">
+        <img src="https://via.placeholder.com/200x150/FF0000/FFFFFF?text=BROKEN_IMG" alt="Broken Image" class="glitch-img">
+        <span class="glitch-text">NO DATA</span>
+    </div>
+
+    <div class="block block-black block-tall">
+        <span class="large-char">¿</span>
+        <span class="glitch-text">PIXEL SHIFT</span>
+    </div>
+
+    <div class="block block-red">
+        <span class="glitch-flicker">BUFFER OVERFLOW</span>
+    </div>
+
+    <div class="block block-white glitch-scale">
+        <span class="large-char">E</span>
+        <span class="glitch-text">CORRUPTED</span>
+    </div>
+
+    <div class="block block-black block-large glitch-flicker">
+        <div class="overflow-text">STATIC</div>
+        <span class="glitch-text">CODE CHAOS</span>
+        <div class="rotated-text" style="right: -20px; top: 70%; transform-origin: 100% 0%;">ANOMALY</div>
+    </div>
+
+    <div class="block block-white block-tall glitch-scale">
+        <span class="large-char">#</span>
+        <span class="glitch-text">SYSTEM REBOOTING<br>FAIL</span>
+    </div>
+
+    <div class="block block-red glitch-flicker">
+        <span class="glitch-text">LOST SIGNAL</span>
+    </div>
+
+    <div class="block block-black">
+        <img src="https://via.placeholder.com/150x100/FFFFFF/000000?text=VOID" alt="Void Image" class="glitch-img" style="filter: grayscale(100%) hue-rotate(0deg) contrast(200%); opacity: 0.8; mix-blend-mode: normal;">
+        <span class="glitch-text">NULL</span>
+    </div>
+
+    <div class="block block-white glitch-scale">
+        <span class="large-char">01</span>
+        <span class="glitch-text">DIGITAL NOISE</span>
+    </div>
+
+    <div class="block block-red block-tall">
+        <span class="glitch-text">UNEXPECTED TOKEN <br> > <br> EXPECTED '}'</span>
+    </div>
+
+    <div class="block block-black glitch-flicker">
+        <span class="glitch-text">CHANNEL DISTORTED</span>
+    </div>
+
+    <div class="block block-white block-large glitch-scale">
+        <div class="overflow-text">BREAK</div>
+        <span class="glitch-text">SYNTAX ERROR [0x00FF00]</span>
+        <div class="rotated-text" style="right: -40px; top: 20%; transform: rotate(-90deg); transform-origin: 0% 0%;">FAILURE</div>
+    </div>
+
+    <div class="block block-red glitch-flicker">
+        <span class="glitch-text">SCANLINE INTERFERENCE</span>
+    </div>
+
+    <div class="block block-black">
+        <span class="large-char">X</span>
+        <span class="glitch-text">DATAMOSH</span>
+    </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-31 07:27:29.932453</div>
         <!DOCTYPE html>
 <html>
