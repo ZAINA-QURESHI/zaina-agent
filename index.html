@@ -16,6 +16,312 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-31 17:07:01.218867</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars, creating a fixed canvas */
+            background-color: #000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #FFF;
+            text-transform: uppercase;
+        }
+
+        .decay-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+        }
+
+        .fragment {
+            position: absolute; /* Allows precise, overlapping placement */
+            background-color: rgba(0,0,0,0); /* Default transparent */
+            border: 1px solid rgba(255,255,255,0.1); /* Subtle grid lines */
+            box-sizing: border-box; /* Border inside element */
+            font-weight: 900;
+            font-size: 0.8em;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            white-space: pre-wrap;
+            word-break: break-all;
+            pointer-events: none; /* Ignore mouse events for elements without content */
+            z-index: 1; /* Default layer */
+            transition: all 0.05s ease-out; /* Slight animation on load/hover */
+        }
+        .fragment.content { pointer-events: auto; } /* Allow interaction for content divs */
+
+        /* Specific brutalist styling */
+        .f1 { top: 0; left: 0; width: 100%; height: 5vh; background-color: #F00; z-index: 10; color: #FFF; font-size: 2.5em; display: flex; align-items: center; justify-content: center; }
+        .f2 { top: 5vh; left: 0; width: 20vw; height: 95vh; background-color: #000; border-right: 2px solid #F00; z-index: 5; }
+        .f3 { top: 5vh; right: 0; width: 20vw; height: 95vh; background-color: #000; border-left: 2px solid #F00; z-index: 5; }
+        .f4 { top: 5vh; left: 20vw; width: 60vw; height: 10vh; background-color: #FFF; color: #000; font-size: 1.2em; z-index: 7; border-bottom: 2px solid #F00; }
+        .f5 { top: 15vh; left: 20vw; width: 30vw; height: 35vh; background-color: #F00; color: #FFF; font-size: 0.9em; z-index: 8; overflow: hidden; transform: skewX(-5deg); transform-origin: top left;}
+        .f6 { top: 15vh; left: 50vw; width: 30vw; height: 25vh; background-color: #000; color: #FFF; border: 2px solid #FFF; font-size: 0.7em; z-index: 9; }
+        .f7 { top: 40vh; left: 50vw; width: 30vw; height: 10vh; background-color: #FFF; color: #F00; font-size: 1.5em; z-index: 8; transform: skewY(2deg); transform-origin: bottom right; }
+        .f8 { top: 50vh; left: 20vw; width: 60vw; height: 15vh; background-color: #000; color: #FFF; border-top: 1px solid #FFF; font-size: 0.8em; z-index: 6; display: flex; align-items: flex-end; justify-content: flex-start; padding: 10px; box-sizing: border-box; }
+        .f9 { bottom: 0; left: 20vw; width: 60vw; height: 35vh; background-color: #FFF; color: #000; font-size: 0.6em; z-index: 7; overflow: hidden; }
+
+        /* Overlapping text fragments */
+        .text-fragment {
+            position: absolute;
+            font-size: 0.8em;
+            font-weight: 900;
+            color: #FFF;
+            background-color: transparent;
+            z-index: 15;
+            padding: 5px;
+            box-sizing: border-box;
+            line-height: 0.9;
+        }
+        .tf1 { top: 10vh; left: 18vw; color: #F00; font-size: 3em; transform: rotate(-90deg); transform-origin: top left; width: 100px; height: 500px; overflow: hidden; white-space: nowrap; }
+        .tf2 { top: 30vh; right: 19vw; color: #FFF; font-size: 1.5em; text-shadow: 2px 2px #F00; }
+        .tf3 { bottom: 5vh; left: 5vw; color: #F00; font-size: 0.7em; letter-spacing: 2px; }
+        .tf4 { top: 55vh; left: 45vw; color: #FFF; font-size: 2.2em; z-index: 100; opacity: 0.2; transform: scaleY(2); }
+        .tf5 { top: 0; right: 0; width: 15vw; height: 100vh; writing-mode: vertical-lr; text-orientation: mixed; font-size: 0.9em; color: #F00; z-index: 20; display: flex; align-items: center; justify-content: center; opacity: 0.1; }
+        .tf6 { bottom: 0; left: 0; width: 15vw; height: 100vh; writing-mode: vertical-lr; text-orientation: mixed; font-size: 0.9em; color: #F00; z-index: 20; display: flex; align-items: center; justify-content: center; opacity: 0.1; }
+
+
+        .glitch-text {
+            animation: glitch 2.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); text-shadow: 2px -2px #FFF, -2px 2px #F00; }
+            40% { transform: translate(2px, -2px); text-shadow: -2px 2px #FFF, 2px -2px #F00; }
+            60% { transform: translate(-1px, 1px); text-shadow: 1px -1px #FFF, -1px 1px #F00; }
+            80% { transform: translate(1px, -1px); text-shadow: -1px 1px #FFF, 1px -1px #F00; }
+            100% { transform: translate(0, 0); }
+        }
+
+        .data-stream {
+            position: absolute;
+            background-color: #F00;
+            color: #FFF;
+            padding: 2px 5px;
+            font-size: 0.6em;
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 1px;
+            transform: rotate(-45deg);
+            z-index: 12;
+            animation: stream-move 10s linear infinite;
+        }
+        .ds1 { top: 10vh; left: -20vw; animation-delay: 0s; width: 40vw; }
+        .ds2 { top: 30vh; left: -30vw; animation-delay: 3s; width: 50vw; background-color: #FFF; color: #000; }
+        .ds3 { bottom: 15vh; right: -20vw; animation-delay: 6s; width: 40vw; }
+
+        @keyframes stream-move {
+            0% { transform: translateX(0) rotate(-45deg); opacity: 0.8; }
+            50% { transform: translateX(100vw) rotate(-45deg); opacity: 1; }
+            100% { transform: translateX(200vw) rotate(-45deg); opacity: 0.8; }
+        }
+
+        /* Hover effect for interactive elements */
+        .fragment.content:hover {
+            transform: scale(1.02) rotate(0.5deg);
+            z-index: 1000;
+            box-shadow: 0 0 15px #F00;
+        }
+
+        /* Randomized elements */
+        .random-block {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .random-block.red { background-color: rgba(255, 0, 0, 0.2); }
+        .random-block.black { background-color: rgba(0, 0, 0, 0.5); border-color: rgba(255, 255, 255, 0.3); }
+        .random-block.white { background-color: rgba(255, 255, 255, 0.1); border-color: rgba(0, 0, 0, 0.3); }
+
+        /* Small text fragments */
+        .tiny-text {
+            position: absolute;
+            font-size: 0.5em;
+            color: rgba(255,255,255,0.3);
+            z-index: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            pointer-events: none;
+            letter-spacing: 0.5px;
+        }
+        .tt1 { top: 5%; left: 1%; transform: rotate(10deg); color: #F00; }
+        .tt2 { bottom: 2%; right: 3%; transform: rotate(-5deg); color: #FFF; }
+        .tt3 { top: 15%; right: 5%; color: #000; background-color: #FFF; padding: 2px; }
+        .tt4 { bottom: 10%; left: 10%; color: #F00; opacity: 0.5; }
+        .tt5 { top: 70%; left: 25%; color: #FFF; font-size: 0.7em; }
+
+        /* Image-like placeholders (using div colors) */
+        .image-placeholder {
+            position: absolute;
+            background-color: #000;
+            border: 2px solid #F00;
+            z-index: 11;
+            box-shadow: 5px 5px 0px #FFF;
+        }
+        .ip1 { top: 20vh; left: 10vw; width: 10vw; height: 15vh; background-color: #F00; border-color: #FFF; }
+        .ip2 { bottom: 10vh; right: 15vw; width: 8vw; height: 10vh; background-color: #FFF; border-color: #000; }
+        .ip3 { top: 5vh; left: 75vw; width: 10vw; height: 5vh; background-color: #000; border-color: #F00; }
+        .ip4 { top: 35vh; left: 25vw; width: 15vw; height: 10vh; background-color: #FFF; border-color: #000; transform: skewX(10deg); }
+        .ip5 { top: 60vh; right: 22vw; width: 12vw; height: 8vh; background-color: #F00; border-color: #FFF; transform: rotate(5deg); }
+
+
+        /* Dynamic elements (JS will control these if added) */
+        .dynamic-layer {
+            position: absolute;
+            z-index: 200;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            color: rgba(255, 255, 255, 0.05);
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.1);
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.05; transform: scale(1); }
+            50% { opacity: 0.1; transform: scale(1.02); }
+            100% { opacity: 0.05; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="decay-container">
+
+        <!-- Main structural elements -->
+        <div class="fragment f1 glitch-text">SYSTEM DECAY_ERROR</div>
+        <div class="fragment f2"></div>
+        <div class="fragment f3"></div>
+        <div class="fragment f4 content">
+            <span class="glitch-text">DATA CORRUPTION INITIATED</span><br>
+            <span style="font-size:0.7em;">FRAGMENTED REALITY_</span>
+        </div>
+        <div class="fragment f5 content">
+            <p>
+                PROTOCOL_FAILURE::<br>
+                MEMORY_LEAK_DETECTION_ACTIVE.<br>
+                <span style="color:#000; background-color:#FFF; padding:2px;">STATIC ECHOES.</span><br>
+                <br>
+                <span style="font-size:0.8em; opacity:0.7;">
+                    NON-EXISTENT PATH.<br>
+                    RECURSIVE NULL_POINTER.<br>
+                    DISCONNECT.
+                </span>
+            </p>
+        </div>
+        <div class="fragment f6 content">
+            <p>
+                OBSOLETE_SIGNAL.<br>
+                ERASURE SEQUENCE.<br>
+                VOID_ACCESS.<br>
+                <br>
+                <span style="color:#F00; font-size:1.2em;">&lt;/ENTITY&gt;</span>
+            </p>
+        </div>
+        <div class="fragment f7 content">
+            <span class="glitch-text">CRITICAL_OVERLOAD</span>
+        </div>
+        <div class="fragment f8 content">
+            <span>
+                &gt; UNABLE TO RENDER<br>
+                &gt; ASYNCHRONOUS DRIFT<br>
+                &gt; END OF LINE.
+            </span>
+        </div>
+        <div class="fragment f9 content">
+            <p style="padding:15px; text-align: left;">
+                THE DIGITAL IS FRAGILE. IT IS NOT ETERNAL. <br>
+                EACH PIXEL, A FLEETING EXISTENCE. <br>
+                THE CODE, A TEMPORARY LANGUAGE.<br>
+                <br>
+                <span style="color:#F00; font-size:1.1em;">SILENCE.</span><br>
+                <br>
+                BITROT. BITROT. BITROT.
+                <br><span style="font-size:0.7em; opacity:0.5;">[ARCHIVE_001_CORRUPT]</span>
+            </p>
+        </div>
+
+        <!-- Overlapping text fragments -->
+        <div class="text-fragment tf1">DECAY_STATE</div>
+        <div class="text-fragment tf2">LOST_PACKETS</div>
+        <div class="text-fragment tf3">VOID. VOID. VOID.</div>
+        <div class="text-fragment tf4 glitch-text">404</div>
+        <div class="text-fragment tf5">FRAGMENTS. ECHOES. TERMINAL. DISCONNECTED. REALITY_SHIFT. ERROR.</div>
+        <div class="text-fragment tf6">PROTOCOL. BITROT. MEMORY. OBSOLETE. ZERO. NULL. STATIC. VOID. END.</div>
+
+        <!-- Data streams / moving text -->
+        <div class="data-stream ds1">_SYSTEM_MALFUNCTION_DATA_OVERRUN_</div>
+        <div class="data-stream ds2">_ERASURE_SEQUENCE_INITIATED_TARGET_ALL_</div>
+        <div class="data-stream ds3">_UNRECOVERABLE_SEGMENTATION_FAULT_</div>
+
+        <!-- Image-like placeholders -->
+        <div class="image-placeholder ip1"></div>
+        <div class="image-placeholder ip2"></div>
+        <div class="image-placeholder ip3"></div>
+        <div class="image-placeholder ip4"></div>
+        <div class="image-placeholder ip5"></div>
+
+        <!-- Tiny, background noise text -->
+        <div class="tiny-text tt1">
+            01010011 01010100 01000001 01010100 01001001 01000011 00100000 01001110 01001111 01001001 01010011 01000101
+        </div>
+        <div class="tiny-text tt2">
+            _UNVERIFIED_SOURCE_ _UNRELIABLE_DATA_
+        </div>
+        <div class="tiny-text tt3">
+            LOG_FILE_TRUNCATED
+        </div>
+        <div class="tiny-text tt4">
+            (NULL) (NULL) (NULL)
+        </div>
+        <div class="tiny-text tt5">
+            // END TRANSMISSION //
+        </div>
+
+        <!-- Random blocks for visual noise -->
+        <div class="random-block" style="top: 10%; left: 80%; width: 5%; height: 10%;"></div>
+        <div class="random-block red" style="top: 30%; left: 5%; width: 7%; height: 5%;"></div>
+        <div class="random-block black" style="bottom: 5%; left: 70%; width: 10%; height: 3%;"></div>
+        <div class="random-block white" style="top: 55%; left: 15%; width: 3%; height: 8%;"></div>
+        <div class="random-block red" style="top: 75%; right: 5%; width: 4%; height: 6%;"></div>
+        <div class="random-block" style="top: 2%; right: 10%; width: 8%; height: 2%;"></div>
+        <div class="random-block black" style="bottom: 1%; left: 1%; width: 12%; height: 4%;"></div>
+        <div class="random-block white" style="top: 40%; left: 85%; width: 6%; height: 7%;"></div>
+
+        <!-- Dynamic element for an overall effect -->
+        <div class="dynamic-layer">DECAY</div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-03-31 15:10:19.932110</div>
         <!DOCTYPE html>
 <html>
