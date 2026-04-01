@@ -16,6 +16,326 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-01 17:05:18.835842</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITHMIC SURVEILLANCE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', Gadget, sans-serif; /* A strong, blocky font for brutalism */
+            background-color: #000; /* Stark black background */
+            overflow: hidden; /* Prevent scrollbars, treat as a fixed canvas */
+            height: 100vh;
+            display: flex; /* Use flexbox to potentially center content, though .container is full-size */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000; /* Main collage background */
+            outline: 3px solid #F00; /* Strong red border for brutalist framing */
+            overflow: hidden; /* Ensure all elements stay within the view */
+        }
+
+        /* Base styles for brutalist background blocks (geometric shapes) */
+        .block {
+            position: absolute;
+            background-color: #FFF; /* Default, overridden by specific IDs for color */
+            border: 1px solid #F00; /* Default border, can be overridden */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            z-index: 1; /* Low z-index for background elements */
+        }
+
+        /* Base styles for text blocks */
+        .text-block {
+            position: absolute;
+            font-weight: 900; /* Extra bold */
+            text-transform: uppercase; /* All caps */
+            letter-spacing: 0.1em; /* Spaced out letters */
+            line-height: 1; /* Tight line height */
+            z-index: 5; /* Text usually layers above background blocks */
+            text-align: center; /* Center text within its own block */
+            display: flex; /* Flexbox for content alignment */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide any overflowing text */
+            padding: 0; /* No default padding */
+        }
+
+        /* Utility classes for high-contrast red/black/white palette */
+        .red-bg { background-color: #F00; color: #FFF; border: 1px solid #000; }
+        .black-bg { background-color: #000; color: #FFF; border: 1px solid #F00; }
+        .white-bg { background-color: #FFF; color: #000; border: 1px solid #F00; }
+        .red-text { color: #F00; }
+        .black-text { color: #000; }
+        .white-text { color: #FFF; }
+
+        /* Specific positioning and styling for background blocks to create an asymmetrical collage */
+        #block-1 { top: 5%; left: 5%; width: 40%; height: 20%; background-color: #FFF; z-index: 2; }
+        #block-2 { top: 15%; left: 40%; width: 55%; height: 30%; background-color: #000; z-index: 1; border: none; }
+        #block-3 { top: 30%; left: 2%; width: 35%; height: 15%; background-color: #F00; z-index: 3; }
+        #block-4 { bottom: 5%; right: 5%; width: 60%; height: 25%; background-color: #FFF; z-index: 2; border: 2px solid #000; }
+        #block-5 { bottom: 15%; left: 10%; width: 30%; height: 20%; background-color: #000; z-index: 3; transform: rotate(3deg); }
+        #block-6 { top: 45%; right: 10%; width: 25%; height: 15%; background-color: #FFF; z-index: 4; transform: rotate(5deg); border: 2px solid #F00; }
+        #block-7 { top: 55%; left: 40%; width: 20%; height: 20%; background-color: #F00; z-index: 4; transform: rotate(-7deg); border: 2px solid #FFF; }
+        #block-8 { top: 0; right: 0; width: 20%; height: 100%; background-color: #F00; opacity: 0.1; z-index: 0; } /* Subtle full-height red strip */
+        #block-9 { bottom: 0; left: 0; width: 100%; height: 10%; background-color: #FFF; opacity: 0.1; z-index: 0; } /* Subtle full-width white strip */
+
+        /* Main text overlays - prominent and impactful messages */
+        #text-alg-watch-you {
+            top: 10%; left: 15%; width: 70%; height: 40%; font-size: 8vw;
+            color: #FFF; /* Default color for the block, overridden by spans */
+            z-index: 10;
+            display: flex; /* Enable flexbox for this container */
+            flex-direction: column; /* Stack words vertically */
+            align-items: flex-start; /* Align words to the left within this block */
+            line-height: 0.8; /* Tighten line spacing for stacked words */
+            text-align: left; /* Ensure text within spans starts from left */
+        }
+        #text-alg-watch-you span {
+            white-space: nowrap; /* Prevent words from wrapping to next line */
+            padding: 0 0.05em; /* Small padding around word blocks */
+            margin-bottom: 0.05em; /* Small vertical space between lines */
+        }
+        #text-alg-watch-you .word-algo {
+            font-size: 0.9em;
+            color: #FFF;
+            background-color: #000;
+            border: 2px solid #F00;
+        }
+        #text-alg-watch-you .word-watch {
+            font-size: 1.1em;
+            color: #000;
+            background-color: #F00;
+            transform: rotate(-3deg); /* Slight rotation for brutalist feel */
+            margin-left: -0.1em; /* Offset for visual interest */
+        }
+        #text-alg-watch-you .word-you {
+            font-size: 0.8em;
+            color: #F00;
+            background-color: #FFF;
+            border: 1px solid #000;
+            margin-left: 0.2em;
+        }
+
+        #text-data-control {
+            top: 40%; left: 45%; width: 50%; height: 20%; font-size: 4vw;
+            color: #FFF; background-color: #000;
+            z-index: 11;
+            transform: rotate(-2deg);
+            padding: 10px; border: 2px solid #F00;
+        }
+
+        #text-surveillance {
+            bottom: 10%; left: 5%; width: 40%; height: 15%; font-size: 3.5vw;
+            color: #F00; background-color: #FFF;
+            z-index: 12;
+            transform: rotate(5deg);
+            padding: 5px; border: 2px solid #000;
+        }
+
+        #text-profiled {
+            top: 60%; right: 5%; width: 30%; height: 10%; font-size: 2.5vw;
+            color: #000; background-color: #F00;
+            z-index: 13;
+            transform: rotate(-8deg);
+            border: 2px solid #FFF;
+        }
+
+        /* Grid overlay for a technical, data-driven aesthetic */
+        #grid-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+            background-size: 50px 50px; /* Grid cell size */
+            opacity: 0.1; /* Subtle overlay */
+            z-index: 0; /* Behind all other elements */
+        }
+
+        /* Glitch/Error text elements - adding digital distortion and urgency */
+        .glitch {
+            position: absolute;
+            color: #F00;
+            font-size: 1.5vw;
+            letter-spacing: 0.2em;
+            background-color: #000;
+            padding: 5px;
+            z-index: 20; /* Highest z-index for visual impact */
+            animation: glitch 1s infinite alternate; /* Simple glitch animation */
+            opacity: 0.9;
+            transform: skew(-10deg); /* Skew for visual distortion */
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0) skew(0deg); opacity: 0.9; }
+            20% { transform: translate(-2px, 2px) skew(5deg); opacity: 0.8; }
+            40% { transform: translate(2px, -2px) skew(-5deg); opacity: 0.7; }
+            60% { transform: translate(-1px, 1px) skew(3deg); opacity: 0.9; }
+            80% { transform: translate(1px, -1px) skew(-3deg); opacity: 0.8; }
+            100% { transform: translate(0, 0) skew(0deg); opacity: 0.9; }
+        }
+
+        #glitch-1 { top: 8%; right: 10%; }
+        #glitch-2 { bottom: 20%; left: 20%; font-size: 1.8vw; }
+        #glitch-3 { top: 40%; left: 30%; transform: rotate(10deg); }
+        #glitch-4 { bottom: 5%; right: 25%; font-size: 1vw; opacity: 0.7; }
+
+        /* Eye icons representing constant observation and surveillance */
+        .eye-icon {
+            position: absolute;
+            width: 8vw;
+            height: 5vw;
+            background-color: #FFF;
+            border: 2px solid #F00;
+            border-radius: 50% / 30%; /* Creates an oval eye shape */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 15;
+            transform: rotate(-15deg); /* Angled for a more unsettling, brutalist feel */
+        }
+
+        .iris {
+            width: 3vw;
+            height: 3vw;
+            background-color: #000;
+            border-radius: 50%;
+            border: 1px solid #F00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pupil {
+            width: 1.5vw;
+            height: 1.5vw;
+            background-color: #F00;
+            border-radius: 50%;
+        }
+
+        #eye-1 { top: 30%; left: 60%; }
+        #eye-2 { bottom: 5%; right: 40%; transform: rotate(10deg); }
+        #eye-3 { top: 5%; right: 15%; transform: rotate(20deg); }
+        #eye-4 { top: 50%; left: 10%; transform: rotate(30deg); opacity: 0.7; }
+
+        /* Stark visual lines - breaking the space, adding tension and dynamic flow */
+        .line {
+            position: absolute;
+            background-color: #F00;
+            z-index: 1; /* Generally below text, possibly above some blocks */
+            transform-origin: 0 0; /* Rotate from one end */
+        }
+
+        #line-1 { top: 25%; left: 5%; width: 20%; height: 2px; transform: rotate(45deg); }
+        #line-2 { top: 50%; left: 70%; width: 15%; height: 3px; transform: rotate(-30deg); background-color: #FFF; border: 1px solid #000; }
+        #line-3 { bottom: 10%; right: 10%; width: 10%; height: 1px; background-color: #000; border: 1px solid #F00; }
+        #line-4 { top: 3%; left: 30%; width: 5%; height: 1px; background-color: #FFF; transform: rotate(90deg); }
+
+        /* Smaller, fragmented detail texts - reinforcing the theme in a less dominant way */
+        .detail-text {
+            position: absolute;
+            font-size: 1.2vw;
+            font-weight: normal;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            z-index: 10;
+            white-space: nowrap; /* Prevent wrapping for fragmented words/phrases */
+            padding: 3px 5px; /* Minimal padding */
+        }
+
+        #detail-1 { top: 3%; right: 5%; color: #FFF; background-color: #000; border: 1px solid #F00; transform: rotate(2deg); }
+        #detail-2 { bottom: 3%; left: 5%; color: #000; background-color: #FFF; border: 1px solid #F00; transform: rotate(-3deg); }
+        #detail-3 { top: 20%; left: 20%; color: #FFF; background-color: #F00; border: 1px solid #000; transform: rotate(7deg); }
+        #detail-4 { bottom: 40%; right: 2%; color: #F00; background-color: #000; border: 1px solid #FFF; transform: rotate(-5deg); }
+        #detail-5 { top: 70%; left: 60%; color: #000; background-color: #FFF; border: 1px solid #F00; transform: rotate(12deg); font-size: 1vw; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Subtle grid background for a technical, data feel -->
+        <div id="grid-overlay"></div>
+
+        <!-- Structural background blocks - arranged to create brutalist forms and layers -->
+        <div id="block-1" class="block"></div>
+        <div id="block-2" class="block"></div>
+        <div id="block-3" class="block"></div>
+        <div id="block-4" class="block"></div>
+        <div id="block-5" class="block"></div>
+        <div id="block-6" class="block"></div>
+        <div id="block-7" class="block"></div>
+        <div id="block-8" class="block"></div>
+        <div id="block-9" class="block"></div>
+
+        <!-- Main text overlays - high-impact messages about algorithmic surveillance -->
+        <div id="text-alg-watch-you" class="text-block">
+            <span class="word-algo">A L G O R I T H M</span>
+            <span class="word-watch">W A T C H E S</span>
+            <span class="word-you">Y O U</span>
+        </div>
+
+        <div id="text-data-control" class="text-block">
+            D A T A C O N T R O L
+        </div>
+
+        <div id="text-surveillance" class="text-block">
+            S U R V E I L L A N C E
+        </div>
+
+        <div id="text-profiled" class="text-block">
+            P R O F I L E D
+        </div>
+
+        <!-- Glitch/Error text elements - adding digital distortion and warning -->
+        <div id="glitch-1" class="glitch">ERROR // TRACE</div>
+        <div id="glitch-2" class="glitch">SYSTEM // GHOST</div>
+        <div id="glitch-3" class="glitch">WARNING // COMPLY</div>
+        <div id="glitch-4" class="glitch">DELETE // FALSE</div>
+
+        <!-- Eye icons representing constant observation -->
+        <div id="eye-1" class="eye-icon">
+            <div class="iris"><div class="pupil"></div></div>
+        </div>
+        <div id="eye-2" class="eye-icon">
+            <div class="iris"><div class="pupil"></div></div>
+        </div>
+        <div id="eye-3" class="eye-icon">
+            <div class="iris"><div class="pupil"></div></div>
+        </div>
+        <div id="eye-4" class="eye-icon">
+            <div class="iris"><div class="pupil"></div></div>
+        </div>
+
+        <!-- Stark visual lines - breaking the space and adding tension -->
+        <div id="line-1" class="line"></div>
+        <div id="line-2" class="line"></div>
+        <div id="line-3" class="line"></div>
+        <div id="line-4" class="line"></div>
+
+        <!-- Smaller, fragmented detail texts - reinforcing the theme -->
+        <div id="detail-1" class="detail-text">NETWORK SILENCE</div>
+        <div id="detail-2" class="detail-text">TRACKED.</div>
+        <div id="detail-3" class="detail-text">OBSERVED.</div>
+        <div id="detail-4" class="detail-text">PREDICT.</div>
+        <div id="detail-5" class="detail-text">COMPLY</div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-01 15:13:53.597004</div>
         <!DOCTYPE html>
 <html>
