@@ -16,6 +16,208 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-01 23:42:46.106569</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay</title>
+<style>
+  body {
+    margin: 0;
+    font-family: monospace, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #000;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0px; /* No gaps for brutalist feel */
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .block {
+    padding: 20px;
+    border: 1px solid #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFF;
+    animation: flicker 1.5s infinite alternate; /* Subtle flicker */
+  }
+
+  .block:nth-child(3n+1) { background-color: #FF0000; color: #000; }
+  .block:nth-child(3n+2) { background-color: #000; color: #FF0000; border-color: #FF0000; }
+  .block:nth-child(3n+3) { background-color: #FFF; color: #000; }
+
+  .block:nth-child(odd) { transform: skewX(-5deg); margin-left: -10px; }
+  .block:nth-child(even) { transform: skewX(5deg); margin-right: -10px; }
+
+  .block > div {
+    z-index: 2;
+    padding: 5px;
+  }
+
+  .glitch-text {
+    font-size: 2.5em;
+    line-height: 1;
+    position: relative;
+    animation: glitch 2s infinite alternate;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+
+  .glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    animation: glitch-anim-1 2s infinite alternate-reverse;
+  }
+
+  .glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    animation: glitch-anim-2 2s infinite alternate;
+  }
+
+  @keyframes glitch-anim-1 {
+    0% { clip: rect(24px, 350px, 86px, 0); transform: skewX(-10deg); }
+    20% { clip: rect(74px, 350px, 45px, 0); transform: skewX(0deg); }
+    40% { clip: rect(10px, 350px, 90px, 0); transform: skewX(10deg); }
+    60% { clip: rect(60px, 350px, 30px, 0); transform: skewX(-5deg); }
+    80% { clip: rect(30px, 350px, 70px, 0); transform: skewX(5deg); }
+    100% { clip: rect(50px, 350px, 100px, 0); transform: skewX(0deg); }
+  }
+
+  @keyframes glitch-anim-2 {
+    0% { clip: rect(10px, 350px, 40px, 0); transform: skewX(5deg); }
+    20% { clip: rect(80px, 350px, 20px, 0); transform: skewX(-10deg); }
+    40% { clip: rect(30px, 350px, 70px, 0); transform: skewX(0deg); }
+    60% { clip: rect(50px, 350px, 90px, 0); transform: skewX(10deg); }
+    80% { clip: rect(70px, 350px, 10px, 0); transform: skewX(-5deg); }
+    100% { clip: rect(40px, 350px, 80px, 0); transform: skewX(0deg); }
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.95; }
+    100% { opacity: 1; }
+  }
+
+  .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEX///9aWlpGRkZSUlJLS0tQUFBaWlpaWlpGRkZSUlJLS0tQUFBaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlqUv5+AAAAAGnRSTlMAYP/fEEAQD++gMNCPMECA8NAggHAAAAAGyUlEQVRIx+WUywrDIAwETX6xQ1dE8f/f9hC2B3hNlT5XJc05Q4y0BwBYKzXp/lM14l/L7P/60RzN39c/n/9+rDqTqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqVqHqXqXqVqXqXqVqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXq digital decay.
+Use high-contrast red/black/white. Output ONLY raw HTML code. No markdown backticks.
+*/
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="block">
+    <div class="noise"></div>
+    <span class="glitch-text" data-text="ERROR">ERROR</span>
+    <p>FRAGMENTED SIGNAL</p>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>DATA<br>CORRUPT</p>
+      <p>SYSTEM<br>FAILURE</p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <span class="glitch-text" data-text="LOST">LOST</span>
+    <p>MEMORY DUMP</p>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>DECAY RATE: CRITICAL</p>
+      <p>01010110</p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <p>UNDEFINED STATE</p>
+    <span class="glitch-text" data-text="VOID">VOID</span>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>STATIC</p>
+      <p>NOISE</p>
+      <p>SIGNAL LOST</p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <span class="glitch-text" data-text="END">END</span>
+    <p>PROTOCOL TERMINATED</p>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>BITROT</p>
+      <p>OBSOLESCENCE</p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <p>ERASED</p>
+    <span class="glitch-text" data-text="NULL">NULL</span>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>CACHE MISS</p>
+      <p>404 EXISTENCE</p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <span class="glitch-text" data-text="CRASH">CRASH</span>
+    <p>KERNEL PANIC</p>
+  </div>
+  <div class="block">
+    <div class="noise"></div>
+    <div>
+      <p>GHOST DATA</p>
+      <p>ECHOES</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-01 22:48:39.754267</div>
         <!DOCTYPE html>
 <html>
