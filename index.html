@@ -16,6 +16,159 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-02 02:52:54.526207</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow: hidden; background-color: black; font-family: sans-serif; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+  }
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 0, 0, 0.5); /* Subtle red border for structure */
+    background-color: black;
+    color: white;
+    font-size: 1vw;
+    line-height: 1.2;
+    overflow: hidden;
+    word-break: break-all;
+    user-select: none;
+    pointer-events: none; /* Make blocks unclickable for the collage effect */
+    z-index: 1;
+  }
+
+  /* Glitch Text Styles */
+  .glitch-text {
+    position: relative;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation: glitch 2.5s infinite alternate-reverse steps(1);
+    letter-spacing: -0.05em;
+    transform: rotateX(5deg) rotateY(5deg) scale(0.95); /* Slight distortion */
+    filter: blur(0.2px); /* Subtle blur */
+  }
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Mask background for color shifting */
+  }
+  .glitch-text::before {
+    left: -2px;
+    text-shadow: 1px 0 red;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-before 2s infinite alternate-reverse steps(1);
+  }
+  .glitch-text::after {
+    left: 2px;
+    text-shadow: -1px 0 blue;
+    clip: rect(85px, 450px, 100px, 0);
+    animation: glitch-after 1.8s infinite alternate-reverse steps(1);
+  }
+
+  /* Glitch Keyframes */
+  @keyframes glitch {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); filter: blur(0.2px); }
+    20% { transform: translate(-2px, 2px) scale(0.98) rotate(0.1deg); filter: blur(0.3px); }
+    40% { transform: translate(1px, -1px) scale(1.01) rotate(-0.1deg); filter: blur(0.1px); }
+    60% { transform: translate(-3px, 0px) scale(0.99) rotate(0.2deg); filter: blur(0.4px); }
+    80% { transform: translate(2px, 1px) scale(1.02) rotate(-0.2deg); filter: blur(0.2px); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); filter: blur(0.1px); }
+  }
+  @keyframes glitch-before {
+    0% { clip: rect(27px, 9999px, 83px, 0); }
+    15% { clip: rect(78px, 9999px, 49px, 0); }
+    30% { clip: rect(40px, 9999px, 29px, 0); }
+    45% { clip: rect(13px, 9999px, 66px, 0); }
+    60% { clip: rect(91px, 9999px, 10px, 0); }
+    75% { clip: rect(33px, 9999px, 73px, 0); }
+    90% { clip: rect(55px, 9999px, 21px, 0); }
+    100% { clip: rect(27px, 9999px, 83px, 0); }
+  }
+  @keyframes glitch-after {
+    0% { clip: rect(38px, 9999px, 62px, 0); }
+    10% { clip: rect(89px, 9999px, 18px, 0); }
+    20% { clip: rect(22px, 9999px, 77px, 0); }
+    30% { clip: rect(65px, 9999px, 9px, 0); }
+    40% { clip: rect(10px, 9999px, 50px, 0); }
+    50% { clip: rect(70px, 9999px, 30px, 0); }
+    60% { clip: rect(45px, 9999px, 85px, 0); }
+    70% { clip: rect(5px, 9999px, 95px, 0); }
+    80% { clip: rect(80px, 9999px, 15px, 0); }
+    90% { clip: rect(25px, 9999px, 70px, 0); }
+    100% { clip: rect(38px, 9999px, 62px, 0); }
+  }
+
+  /* Brutalist Elements */
+  .red-fill { background-color: red !important; }
+  .white-fill { background-color: white !important; color: black !important; }
+  .black-fill { background-color: black !important; }
+  .no-border { border: none !important; }
+  .heavy-border { border: 5px solid red !important; }
+  .thick-white-border { border: 5px solid white !important; }
+  .text-red { color: red !important; }
+  .text-white { color: white !important; }
+  .text-black { color: black !important; }
+  .text-center { text-align: center; }
+  .text-right { text-align: right; }
+  .font-mono { font-family: monospace; }
+  .font-impact { font-family: Impact, sans-serif; }
+  .large-text { font-size: 3vw; line-height: 0.9; }
+  .massive-text { font-size: 6vw; line-height: 0.8; }
+  .rotated-text { transform: rotate(-90deg) translate(-50%, -50%); transform-origin: top left; white-space: nowrap; }
+  .skewed { transform: skewX(-15deg); }
+  .distorted-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(200%) brightness(50%) saturate(200%) grayscale(100%);
+    mix-blend-mode: hard-light;
+    opacity: 0.7;
+  }
+  .scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.1),
+      rgba(0,0,0,0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Overlay for general grunge */
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWHsWwwh.
+
+</HTML>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-01 23:42:46.106569</div>
         <!DOCTYPE html>
 <html lang="en">
