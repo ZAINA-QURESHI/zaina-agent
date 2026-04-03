@@ -16,6 +16,301 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-03 07:20:23.153619</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUTALIST ARCHITECTURE COLLAGE</title>
+    <style>
+        /* BASE STYLES */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Stark, heavy font */
+            overflow: hidden; /* Prevent scrollbars from off-screen elements */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Centering the collage container */
+            justify-content: center;
+            align-items: center;
+            color: white; /* Default text color */
+        }
+
+        /* COLLAGE CONTAINER */
+        .collage-container {
+            width: 90vw; /* 90% of viewport width */
+            height: 90vh; /* 90% of viewport height */
+            position: relative; /* For absolute positioning of child elements */
+            border: 5px solid red; /* Strong red border */
+            background-color: black;
+            overflow: hidden; /* Hide any elements that intentionally go slightly off its edge */
+        }
+
+        /* GENERIC ELEMENT STYLES */
+        .element {
+            position: absolute; /* Enable precise positioning */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            padding: 10px 20px;
+            text-transform: uppercase; /* All caps */
+            font-weight: bold;
+            display: flex; /* For centering text vertically and horizontally */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.1; /* Tighter line spacing */
+            letter-spacing: -0.02em; /* Slightly tighter letter spacing */
+        }
+
+        /* BACKGROUND TEXT ELEMENTS - FOR DEPTH */
+        .background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-8deg); /* Centered and rotated */
+            font-size: 15vw; /* Very large, scales with viewport */
+            color: rgba(255, 255, 255, 0.08); /* Semi-transparent white */
+            z-index: 1; /* Lowest z-index to be behind other elements */
+            width: 100%;
+            text-align: center;
+            pointer-events: none; /* Allows clicks to pass through */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide if content overflows */
+            letter-spacing: -0.05em; /* Very tight letter spacing */
+        }
+        .background-text.red {
+            color: rgba(255, 0, 0, 0.08); /* Semi-transparent red */
+            transform: translate(-50%, -50%) rotate(12deg); /* Different rotation */
+            top: 40%;
+            left: 60%;
+        }
+
+        /* INDIVIDUAL COLLAGE ELEMENTS */
+
+        /* MAIN TITLE BLOCK */
+        .e1 {
+            background-color: red;
+            color: white;
+            font-size: 8vw;
+            width: 60%;
+            height: 30%;
+            top: 5%;
+            left: 5%;
+            border: 3px solid white;
+            z-index: 10;
+        }
+
+        /* "FORM FUNCTION HONESTY" BLOCK */
+        .e2 {
+            background-color: white;
+            color: black;
+            font-size: 3vw;
+            width: 40%;
+            height: 20%;
+            top: 25%;
+            right: 10%;
+            border: 3px solid red;
+            z-index: 11;
+            transform: rotate(5deg); /* Slight rotation */
+        }
+
+        /* "RAW MATERIAL" BLOCK */
+        .e3 {
+            background-color: black;
+            color: red;
+            font-size: 5vw;
+            width: 50%;
+            height: 25%;
+            bottom: 10%;
+            left: 15%;
+            border: 3px solid white;
+            z-index: 12;
+            transform: rotate(-3deg); /* Slight rotation */
+        }
+
+        /* "UNAPOLOGETIC STRUCTURE" BLOCK (partially off-screen) */
+        .e4 {
+            background-color: white;
+            color: red;
+            font-size: 2.5vw;
+            width: 30%;
+            height: 15%;
+            top: 0;
+            right: 0;
+            border: 3px solid black;
+            z-index: 13;
+            transform: translateX(10%) translateY(-10%) rotate(5deg); /* Shifted off-canvas and rotated */
+            transform-origin: top right; /* Rotation origin */
+            padding: 5px 10px;
+        }
+
+        /* "MASONRY SOUL" BLOCK (partially off-screen) */
+        .e5 {
+            background-color: red;
+            color: black;
+            font-size: 4vw;
+            width: 35%;
+            height: 18%;
+            bottom: 5%;
+            right: 0;
+            border: 3px solid white;
+            z-index: 14;
+            transform: translateX(20%); /* Shifted off-canvas */
+        }
+
+        /* "URBAN MONUMENT" BLOCK (partially off-screen) */
+        .e6 {
+            background-color: white;
+            color: black;
+            font-size: 2vw;
+            width: 25%;
+            height: 10%;
+            top: 45%;
+            left: -5%; /* Shifted off-canvas */
+            border: 3px solid red;
+            z-index: 15;
+            transform: rotate(-7deg); /* Slight rotation */
+        }
+
+        /* "MEGA STRUCTURE" BLOCK (large, base-like) */
+        .e7 {
+            background-color: black;
+            color: white;
+            font-size: 6vw;
+            width: 70%;
+            height: 40%;
+            bottom: 0;
+            left: 0;
+            border: 5px solid red;
+            z-index: 9; /* Lower z-index to appear behind some elements */
+            opacity: 0.7; /* Slightly transparent */
+            padding: 0; /* Remove padding for content to fill better */
+            display: flex; /* Use flex for internal text positioning */
+            align-items: flex-end; /* Align text to bottom */
+            justify-content: flex-end; /* Align text to right */
+            line-height: 0.8; /* Tighter line height for large text */
+            overflow: hidden; /* Hide overflow of text */
+        }
+        .e7-text-wrapper {
+            padding: 10px; /* Add padding to inner wrapper */
+            display: block; /* Ensure it takes up space */
+            transform: rotate(0deg); /* Counter-rotate if parent was rotated (not needed here but good practice) */
+        }
+
+        /* "BOLD VISION" BLOCK */
+        .e8 {
+            background-color: red;
+            color: white;
+            font-size: 1.5vw;
+            width: 15%;
+            height: 8%;
+            top: 65%;
+            left: 60%;
+            border: 2px solid white;
+            z-index: 16;
+            transform: rotate(10deg);
+        }
+
+        /* "FUNCTION FIRST" BLOCK */
+        .e9 {
+            background-color: white;
+            color: black;
+            font-size: 2vw;
+            width: 20%;
+            height: 12%;
+            top: 10%;
+            left: 55%;
+            border: 2px solid red;
+            z-index: 17;
+            transform: rotate(-15deg);
+        }
+
+        /* "SOLID MASS" BLOCK */
+        .e10 {
+            background-color: black;
+            color: red;
+            font-size: 1.8vw;
+            width: 22%;
+            height: 10%;
+            bottom: 20%;
+            right: 30%;
+            border: 2px solid white;
+            z-index: 18;
+        }
+
+        /* RESPONSIVE ADJUSTMENTS for smaller screens */
+        @media (max-width: 768px) {
+            .collage-container {
+                width: 95vw;
+                height: 95vh;
+                border-width: 3px;
+            }
+            .element {
+                padding: 5px 10px;
+            }
+            .e1 { font-size: 10vw; width: 70%; height: 25%; top: 3%; left: 3%; border-width: 2px; }
+            .e2 { font-size: 4vw; width: 50%; height: 18%; top: 20%; right: 5%; border-width: 2px; }
+            .e3 { font-size: 6vw; width: 60%; height: 20%; bottom: 15%; left: 10%; border-width: 2px; }
+            .e4 { font-size: 3.5vw; width: 40%; height: 12%; top: -2%; right: -2%; border-width: 2px; }
+            .e5 { font-size: 5vw; width: 45%; height: 15%; bottom: 3%; right: -10%; border-width: 2px; }
+            .e6 { font-size: 3vw; width: 35%; height: 8%; top: 40%; left: -10%; border-width: 2px; }
+            .e7 { font-size: 8vw; width: 80%; height: 35%; border-width: 3px; }
+            .e8 { font-size: 2vw; width: 20%; height: 7%; top: 60%; left: 55%; border-width: 1px; }
+            .e9 { font-size: 3vw; width: 25%; height: 10%; top: 8%; left: 50%; border-width: 1px; }
+            .e10 { font-size: 2.5vw; width: 28%; height: 8%; bottom: 18%; right: 25%; border-width: 1px; }
+            .background-text { font-size: 20vw; } /* Make background text larger for smaller screens */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <!-- Background text elements for added depth and brutal texture -->
+        <div class="background-text">BRUTALISM</div>
+        <div class="background-text red" style="top: 40%; left: 60%; transform: translate(-50%, -50%) rotate(5deg);">CONCRETE</div>
+
+        <!-- Collage Elements -->
+        <div class="element e1">
+            CONCRETE<br>POWER
+        </div>
+        <div class="element e2">
+            FORM<br>FUNCTION<br>HONESTY
+        </div>
+        <div class="element e3">
+            RAW<br>MATERIAL
+        </div>
+        <div class="element e4">
+            UNAPOLOGETIC<br>STRUCTURE
+        </div>
+        <div class="element e5">
+            MASONRY<br>SOUL
+        </div>
+        <div class="element e6">
+            URBAN<br>MONUMENT
+        </div>
+        <div class="element e7">
+            <div class="e7-text-wrapper">
+                <span>MEGA<br>STRUCTURE</span>
+            </div>
+        </div>
+        <div class="element e8">
+            BOLD<br>VISION
+        </div>
+        <div class="element e9">
+            FUNCTION<br>FIRST
+        </div>
+        <div class="element e10">
+            SOLID<br>MASS
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-03 05:11:34.196476</div>
         <!DOCTYPE html>
 <html>
