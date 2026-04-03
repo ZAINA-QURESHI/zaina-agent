@@ -16,6 +16,248 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-03 10:51:54.436875</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing due to large/offset elements */
+    font-family: monospace;
+    color: white;
+}
+
+.collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Clip anything that overflows the main container */
+}
+
+.block {
+    position: absolute;
+    background-color: rgba(0,0,0,0.8); /* Default for text blocks, slightly transparent black */
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.1;
+    overflow: hidden; /* Clip text that's too long */
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1); /* Reset filter for base */
+}
+
+.block.red {
+    background-color: red;
+    color: black;
+    border: none;
+}
+
+.block.white {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.block.black {
+    background-color: black;
+    color: white;
+    border: 1px solid red;
+}
+
+.block.glitch {
+    animation: glitchEffect 10s infinite alternate;
+}
+
+@keyframes glitchEffect {
+    0% { transform: translate(0, 0) skewX(0deg); }
+    10% { transform: translate(-2px, 2px) skewX(5deg); }
+    20% { transform: translate(-5px, -5px) skewX(0deg); }
+    30% { transform: translate(3px, 3px) skewX(-2deg); }
+    40% { transform: translate(0, 0) skewX(0deg); }
+    100% { transform: translate(0, 0) skewX(0deg); }
+}
+
+.block.text-left { text-align: left; justify-content: flex-start; }
+.block.text-right { text-align: right; justify-content: flex-end; }
+.block.text-center { text-align: center; justify-content: center; }
+.block.vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    white-space: nowrap;
+    overflow: visible; /* Allow overflow for vertical text to prevent clipping */
+}
+
+.block.overlay {
+    background-color: rgba(255, 0, 0, 0.1); /* Semi-transparent red overlay */
+    border: none;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 100; /* Ensure it's on top */
+}
+
+/* Specific elements for visual chaos */
+.fragment {
+    position: absolute;
+    background-color: red;
+    opacity: 0.7;
+    border: none;
+    z-index: 50;
+    pointer-events: none;
+    transform-origin: center center;
+    animation: pulseFragment 5s infinite alternate;
+}
+
+@keyframes pulseFragment {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.02); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+.scanline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    top: 0;
+    left: 0;
+    animation: scanlineMove 8s infinite linear;
+    z-index: 200;
+    pointer-events: none;
+}
+
+@keyframes scanlineMove {
+    0% { top: 0%; opacity: 0.1; }
+    50% { top: 100%; opacity: 0.2; }
+    100% { top: 0%; opacity: 0.1; }
+}
+
+/* Flicker effect for selected blocks */
+.flicker {
+    animation: flickerEffect 0.5s infinite alternate;
+}
+
+@keyframes flickerEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.static {
+    animation: staticNoise 0.1s infinite;
+}
+
+@keyframes staticNoise {
+    0% { filter: contrast(100%) brightness(100%); }
+    25% { filter: contrast(105%) brightness(95%); }
+    50% { filter: contrast(95%) brightness(105%); }
+    75% { filter: contrast(102%) brightness(98%); }
+    100% { filter: contrast(100%) brightness(100%); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+    <!-- Background fragments/shapes -->
+    <div class="fragment" style="width: 30%; height: 15%; top: 5%; left: -10%; transform: rotate(-15deg);"></div>
+    <div class="fragment" style="width: 15%; height: 40%; top: 30%; right: -5%; background-color: white; opacity: 0.8; transform: rotate(10deg);"></div>
+    <div class="fragment" style="width: 50px; height: 50px; bottom: 10%; left: 20%; background-color: white; opacity: 0.9;"></div>
+    <div class="fragment" style="width: 20%; height: 5px; top: 60%; left: 70%; background-color: red; opacity: 1;"></div>
+    <div class="fragment" style="width: 10%; height: 10%; bottom: -5%; right: 15%; background-color: red; opacity: 0.6; transform: rotate(45deg);"></div>
+    <div class="fragment" style="width: 8%; height: 2%; top: 40%; left: 10%; background-color: white; opacity: 0.7;"></div>
+
+    <!-- Main Content Blocks -->
+
+    <div class="block red glitch" style="width: 40%; height: 15%; top: 10%; left: 15%; font-size: 2.5em;">
+        SYSTEM FAILURE
+    </div>
+
+    <div class="block white flicker" style="width: 25%; height: 10%; top: 3%; right: 5%; font-size: 1.5em; text-align: right;">
+        DATA CORRUPT <br>
+        10101010
+    </div>
+
+    <div class="block black static" style="width: 20%; height: 30%; bottom: 5%; left: 5%;">
+        <span style="font-size: 0.8em;">
+            FILE NOT FOUND<br>
+            MEMORY WIPE<br>
+            SEGFAULT<br>
+            LOST SIGNAL<br>
+            VOID
+        </span>
+    </div>
+
+    <div class="block red text-left" style="width: 30%; height: 8%; top: 28%; left: 5%; font-size: 1.8em;">
+        END OF CYCLE
+    </div>
+
+    <div class="block white" style="width: 15%; height: 20%; top: 40%; left: 30%; text-align: left; padding: 10px;">
+        DECAY<br>
+        BITROT<br>
+        OBSOLETE<br>
+        ARCHIVE
+    </div>
+
+    <div class="block black vertical-text" style="width: 5%; height: 60%; top: 15%; right: 2%; font-size: 1.5em;">
+        <span style="display: block; transform: rotate(180deg);">UNRECOVERABLE</span>
+    </div>
+
+    <div class="block red" style="width: 20%; height: 12%; top: 55%; left: 50%; font-size: 1.em;">
+        ERASURE PROTOCOL INITIATED
+    </div>
+
+    <div class="block white glitch" style="width: 10%; height: 8%; top: 70%; left: 25%; font-size: 1.2em;">
+        VOID()
+    </div>
+
+    <div class="block black" style="width: 35%; height: 15%; bottom: 10%; right: 10%; text-align: center; font-size: 1.1em; line-height: 1.3;">
+        THE DIGITAL GHOST LINGERS<br>
+        A FRAGMENTED REALITY<br>
+        ETERNAL SILENCE
+    </div>
+
+    <div class="block red" style="width: 15%; height: 5%; top: 45%; right: 25%; font-size: 1.1em;">
+        ERROR_404
+    </div>
+
+    <div class="block white" style="width: 10%; height: 10%; top: 60%; left: 65%; font-size: 0.9em; transform: rotate(5deg);">
+        NULL<br>
+        TERMINATE
+    </div>
+
+    <div class="block black" style="width: 20%; height: 10%; top: 20%; left: 60%; font-size: 1em; transform: rotate(-3deg);">
+        STATIC NOISE <br>
+        BROKEN CODE
+    </div>
+
+    <div class="block red flicker" style="width: 8%; height: 4%; bottom: 3%; left: 45%; font-size: 0.8em;">
+        END.
+    </div>
+
+    <!-- Overlay elements for visual noise -->
+    <div class="block overlay" style="width: 100%; height: 10%; top: 20%; left: 0%;"></div>
+    <div class="block overlay" style="width: 10%; height: 100%; top: 0%; left: 70%;"></div>
+    <div class="scanline"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-03 09:03:25.200896</div>
         <!DOCTYPE html>
 <html>
