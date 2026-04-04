@@ -16,6 +16,218 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 09:47:52.196606</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; padding: 0; overflow: hidden; background-color: #000; font-family: 'Arial Black', sans-serif; }
+  .collage-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+  }
+  .glitch-block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 0px solid #F00; /* Initial placeholder, overridden */
+    font-size: 0.8em; /* Base font size, overridden */
+    line-height: 1;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    cursor: default;
+    word-break: break-all;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+  }
+
+  /* Specific block styles */
+  .block-1 {
+    top: -5vh; left: -5vw; width: 60vw; height: 30vh; background-color: #F00; color: #FFF; font-size: 5vw; z-index: 10;
+    border-right: 15px solid #FFF; border-bottom: 15px solid #FFF;
+    transform: rotate(-3deg);
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .block-2 {
+    top: 20vh; left: 45vw; width: 60vw; height: 25vh; background-color: #FFF; color: #000; font-size: 3vw; z-index: 20;
+    border-left: 10px solid #F00; border-top: 10px solid #F00;
+    transform: rotate(2deg);
+    padding: 15px;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .block-3 {
+    top: 40vh; left: -10vw; width: 40vw; height: 50vh; background-color: #000; color: #F00; font-size: 2vw; z-index: 15;
+    border: 5px solid #FFF;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .block-4 {
+    top: 50vh; left: 30vw; width: 75vw; height: 40vh; background-color: #F00; color: #000; font-size: 4vw; z-index: 25;
+    border-left: 20px solid #FFF;
+    transform: rotate(-1deg);
+    padding: 25px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .block-5 {
+    top: 80vh; left: 5vw; width: 30vw; height: 20vh; background-color: #FFF; color: #F00; font-size: 1.5vw; z-index: 18;
+    border-top: 8px solid #000; border-right: 8px solid #000;
+    transform: rotate(4deg);
+    padding: 8px;
+  }
+  .block-6 {
+    top: 0vh; left: 70vw; width: 35vw; height: 15vh; background-color: #000; color: #FFF; font-size: 2vw; z-index: 12;
+    border-bottom: 5px solid #F00;
+    padding: 10px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .block-7 {
+    top: 35vh; left: 20vw; width: 20vw; height: 10vh; background-color: #FFF; color: #F00; font-size: 1.8vw; z-index: 28;
+    border: 3px solid #000;
+    transform: rotate(-5deg);
+    padding: 5px;
+  }
+  .block-8 {
+    top: 15vh; left: 25vw; width: 10vw; height: 60vh; background-color: #000; color: #FFF; font-size: 1.2vw; z-index: 5;
+    border-right: 4px solid #F00;
+    padding: 5px;
+    display: block; /* Allow text flow */
+  }
+  .block-9 {
+    top: 70vh; left: 70vw; width: 30vw; height: 25vh; background-color: #F00; color: #FFF; font-size: 2.5vw; z-index: 30;
+    border-top: 12px solid #000; border-left: 12px solid #000;
+    transform: rotate(1deg);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .block-10 {
+    top: 10vh; left: 35vw; width: 25vw; height: 50vh; background-color: #FFF; color: #000; font-size: 1.5vw; z-index: 22;
+    border: 7px solid #F00;
+    padding: 15px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .block-11 {
+    top: 5vh; left: 60vw; width: 10vw; height: 5vh; background-color: #F00; color: #FFF; font-size: 1vw; z-index: 35;
+    border-bottom: 2px solid #FFF;
+  }
+  .block-12 {
+    top: 45vh; left: 55vw; width: 10vw; height: 5vh; background-color: #000; color: #F00; font-size: 1vw; z-index: 32;
+    border-top: 2px solid #FFF;
+  }
+
+  /* Text inside blocks */
+  .block-1 span { text-decoration: line-through; }
+  .block-2 span { text-decoration: underline; }
+  .block-3 span { font-style: italic; }
+  .block-4 span { font-weight: bold; }
+  .block-5 span { letter-spacing: -2px; }
+  .block-8 p { margin: 0; padding: 0; transform: rotate(90deg) translateX(-50%); transform-origin: top left; white-space: nowrap; }
+
+  /* Glitch animations (optional, adds dynamic feel) */
+  @keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 69.9%, 71%, 100% { opacity: 1; }
+    20%, 21.9%, 63%, 63.9%, 70%, 70.9% { opacity: 0.8; }
+  }
+  @keyframes shiftX {
+    0%, 100% { transform: translateX(0px); }
+    20% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+  }
+  @keyframes shiftY {
+    0%, 100% { transform: translateY(0px); }
+    15% { transform: translateY(-2px); }
+    30% { transform: translateY(2px); }
+    45% { transform: translateY(-1px); }
+    60% { transform: translateY(1px); }
+  }
+  .glitch-text {
+    animation: flicker 4s infinite step-end;
+  }
+  .glitch-block:nth-child(even) .glitch-text {
+    animation: shiftX 0.5s infinite alternate, flicker 3s infinite step-end;
+  }
+  .glitch-block:nth-child(odd) .glitch-text {
+    animation: shiftY 0.7s infinite alternate, flicker 5s infinite step-end;
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="glitch-block block-1">
+    <div class="glitch-text">DATA<br>CORRUPT</div>
+  </div>
+
+  <div class="glitch-block block-2">
+    <div class="glitch-text">STATIC<br>ERROR_404</div>
+  </div>
+
+  <div class="glitch-block block-3">
+    <div class="glitch-text">SIGNAL<br>NOISE<br>BROKEN</div>
+  </div>
+
+  <div class="glitch-block block-4">
+    <div class="glitch-text">PIXEL<br>BLEED<br>DISTORT</div>
+  </div>
+
+  <div class="glitch-block block-5">
+    <div class="glitch-text">//VOID\\</div>
+  </div>
+
+  <div class="glitch-block block-6">
+    <div class="glitch-text">OVERLOAD: REBOOT</div>
+  </div>
+
+  <div class="glitch-block block-7">
+    <div class="glitch-text">SYNC-FAIL</div>
+  </div>
+
+  <div class="glitch-block block-8">
+    <div class="glitch-text"><p>ARTIFACT</p><p>CHANNEL</p><p>DISRUPT</p></div>
+  </div>
+
+  <div class="glitch-block block-9">
+    <div class="glitch-text">SYSTEM<br>CRASH</div>
+  </div>
+
+  <div class="glitch-block block-10">
+    <div class="glitch-text">UNEXPECTED<br>HALT.<br>PRESS ANY KEY<br>TO CONTINUE.</div>
+  </div>
+
+  <div class="glitch-block block-11">
+    <div class="glitch-text">SCANLINES</div>
+  </div>
+
+  <div class="glitch-block block-12">
+    <div class="glitch-text">GLITCH</div>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 08:55:57.400169</div>
         <!DOCTYPE html>
 <html>
