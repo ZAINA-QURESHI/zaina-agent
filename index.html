@@ -16,6 +16,270 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 19:37:29.307203</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Brutalist Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black */
+            color: #FFF; /* White */
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Strong, blocky font */
+            overflow: hidden; /* Prevent scrollbars and keep elements within view */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-color: #000; /* Main background */
+            overflow: hidden;
+        }
+
+        /* --- Base style for all collage blocks --- */
+        .block {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in element dimensions */
+            text-transform: uppercase;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            overflow: hidden; /* Hide overflowing text if block is too small */
+        }
+
+        /* --- Specific Block Configurations (Z-index determines stacking order) --- */
+
+        /* Large background blocks */
+        .bg-white-large {
+            background-color: #FFF;
+            color: #000;
+            width: 90%;
+            height: 80%;
+            top: 5%;
+            left: 5%;
+            border: 15px solid #F00; /* Red border */
+            z-index: 1;
+            font-size: 5vw;
+            letter-spacing: -0.05em;
+            transform: rotate(-2deg);
+        }
+
+        .bg-red-vertical {
+            background-color: #F00;
+            color: #FFF;
+            width: 15%;
+            height: 95%;
+            top: 2.5%;
+            right: 10%;
+            border: 10px solid #000;
+            z-index: 2;
+            font-size: 3.5vw;
+            writing-mode: vertical-rl; /* Vertical text */
+            text-orientation: mixed;
+            transform: rotate(180deg) translateX(10%); /* Rotate and shift to face correctly */
+        }
+
+        /* Mid-ground overlapping blocks */
+        .mid-black-square {
+            background-color: #000;
+            color: #FFF;
+            width: 45%;
+            height: 35%;
+            top: 20%;
+            left: 40%;
+            border: 10px solid #FFF;
+            z-index: 3;
+            font-size: 3vw;
+            transform: rotate(5deg) skewX(-10deg);
+        }
+
+        .mid-white-rectangle {
+            background-color: #FFF;
+            color: #000;
+            width: 30%;
+            height: 20%;
+            bottom: 15%;
+            left: 10%;
+            border: 8px solid #F00;
+            z-index: 4;
+            font-size: 2.5vw;
+            transform: rotate(-7deg);
+        }
+
+        /* Prominent text overlays */
+        .text-overlay-brutal {
+            font-size: 12vw;
+            color: #FFF;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%) rotate(3deg);
+            z-index: 6;
+            white-space: nowrap;
+            letter-spacing: -0.07em;
+            text-shadow: 8px 8px 0px #F00; /* Red shadow for depth */
+        }
+
+        .text-overlay-arch {
+            font-size: 10vw;
+            color: #F00;
+            bottom: 5%;
+            left: 5%;
+            z-index: 7;
+            white-space: nowrap;
+            letter-spacing: -0.05em;
+            text-shadow: 6px 6px 0px #000;
+            transform: rotate(-10deg);
+        }
+
+        .text-overlay-concrete {
+            font-size: 7vw;
+            color: #000;
+            top: 45%;
+            right: 3%;
+            z-index: 8;
+            background-color: #FFF; /* Background for text to pop */
+            padding: 15px 25px;
+            border: 6px solid #F00;
+            transform: rotate(8deg);
+            white-space: nowrap;
+        }
+
+        .text-overlay-form {
+            font-size: 4vw;
+            color: #FFF;
+            background-color: #F00;
+            padding: 10px 20px;
+            border: 4px solid #000;
+            top: 70%;
+            left: 30%;
+            z-index: 9;
+            transform: rotate(12deg) skewY(5deg);
+            white-space: nowrap;
+        }
+
+        .text-overlay-exposed {
+            font-size: 3vw;
+            color: #000;
+            background-color: #FFF;
+            padding: 8px 15px;
+            border: 3px solid #F00;
+            top: 3%;
+            right: 30%;
+            z-index: 10;
+            transform: rotate(-15deg);
+            white-space: nowrap;
+        }
+
+        /* Fixed element - always visible, like a stamp or mark */
+        .fixed-stamp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #F00;
+            color: #000;
+            padding: 20px 30px;
+            border: 6px solid #FFF;
+            font-size: 2vw;
+            z-index: 100;
+            transform: rotate(-7deg);
+            white-space: nowrap;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        /* Additional raw lines/blocks for texture */
+        .line-red-1 {
+            background-color: #F00;
+            width: 100%;
+            height: 15px;
+            top: 30%;
+            left: 0;
+            z-index: 0; /* Behind everything */
+        }
+
+        .line-black-1 {
+            background-color: #000;
+            width: 100%;
+            height: 25px;
+            bottom: 20%;
+            left: 0;
+            z-index: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Background structural elements -->
+        <div class="block line-red-1"></div>
+        <div class="block line-black-1"></div>
+
+        <!-- Large, foundational blocks -->
+        <div class="block bg-white-large">
+            MASSIVE SCALE
+        </div>
+
+        <div class="block bg-red-vertical">
+            CONCRETE FORMS
+        </div>
+
+        <!-- Mid-ground overlapping content blocks -->
+        <div class="block mid-black-square">
+            RAW POWER
+        </div>
+
+        <div class="block mid-white-rectangle">
+            UNYIELDING
+        </div>
+
+        <!-- Bold, central text elements -->
+        <div class="block text-overlay-brutal">
+            BRUTALISM
+        </div>
+
+        <div class="block text-overlay-arch">
+            ARCHITECTURE
+        </div>
+
+        <!-- Peripheral text elements with angular placement -->
+        <div class="block text-overlay-concrete">
+            EXPOSED MATERIALS
+        </div>
+
+        <div class="block text-overlay-form">
+            FUNCTIONAL FORM
+        </div>
+
+        <div class="block text-overlay-exposed">
+            GEOMETRIC STRENGTH
+        </div>
+
+    </div>
+
+    <!-- Fixed "stamp" element -->
+    <div class="fixed-stamp">
+        RADICAL DESIGN
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 18:54:22.756080</div>
         <!DOCTYPE html>
 <html lang="en">
