@@ -16,6 +16,148 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 18:54:22.756080</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveillance Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden; /* Prevent scrollbars from appearing due to absolute positioning */
+            background-color: #000;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .block {
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border for separation */
+            color: #FFF;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5vmin; /* Responsive font size */
+            line-height: 1;
+            overflow: hidden;
+            word-break: break-all;
+            padding: 5px;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For readability against red/white */
+        }
+
+        /* Color Schemes */
+        .red-bg { background-color: #E60000; color: #FFF; }
+        .black-bg { background-color: #000; color: #E60000; border-color: #E60000; }
+        .white-bg { background-color: #FFF; color: #000; border-color: #000; }
+        .red-text { color: #E60000; }
+        .white-text { color: #FFF; }
+        .black-text { color: #000; }
+
+        /* Overlapping/Z-index layers */
+        .layer-1 { z-index: 10; }
+        .layer-2 { z-index: 20; }
+        .layer-3 { z-index: 30; }
+
+        /* Specific block styling for brutalist effect */
+        .block-1 { top: 0; left: 0; width: 40vw; height: 30vh; background-color: #E60000; color: #FFF; font-size: 8vmin; padding: 20px; }
+        .block-2 { top: 25vh; left: 35vw; width: 65vw; height: 15vh; background-color: #FFF; color: #E60000; font-size: 4vmin; }
+        .block-3 { bottom: 0; left: 0; width: 20vw; height: 50vh; background-color: #000; color: #FFF; border-color: #E60000; font-size: 2vmin; writing-mode: vertical-lr; text-orientation: mixed; }
+        .block-4 { top: 0; right: 0; width: 25vw; height: 20vh; background-color: #000; color: #FFF; border-color: #E60000; font-size: 2.5vmin; }
+        .block-5 { top: 40vh; left: 0; width: 50vw; height: 10vh; background-color: #FFF; color: #000; font-size: 3vmin; }
+        .block-6 { bottom: 0; right: 0; width: 30vw; height: 70vh; background-color: #E60000; color: #FFF; font-size: 6vmin; writing-mode: vertical-rl; text-orientation: mixed; padding: 10px; }
+        .block-7 { top: 15vh; left: 15vw; width: 70vw; height: 5vh; background-color: #000; color: #FFF; border-color: #E60000; font-size: 1.8vmin; }
+        .block-8 { top: 55vh; left: 25vw; width: 40vw; height: 40vh; background-color: #FFF; color: #000; font-size: 10vmin; z-index: 15; border: 5px solid #E60000; }
+        .block-9 { top: 10vh; left: 20vw; width: 10vw; height: 50vh; background-color: #FFF; color: #000; font-size: 1vmin; z-index: 5; }
+        .block-10 { top: 30vh; left: 5vw; width: 30vw; height: 25vh; background-color: #000; color: #E60000; border-color: #FFF; z-index: 25; font-size: 3.5vmin; }
+        .block-11 { top: 60vh; left: 5vw; width: 15vw; height: 30vh; background-color: #E60000; color: #FFF; z-index: 28; font-size: 2vmin; transform: rotate(-5deg); left: 10vw;}
+        .block-12 { top: 50vh; left: 70vw; width: 25vw; height: 20vh; background-color: #FFF; color: #000; z-index: 30; font-size: 3vmin; transform: rotate(8deg); }
+        .block-13 { top: 70vh; left: 30vw; width: 20vw; height: 10vh; background-color: #E60000; color: #FFF; z-index: 35; font-size: 1.5vmin; }
+        .block-14 { top: 0; left: 45vw; width: 15vw; height: 100vh; background-color: #000; color: #E60000; border-color: #FFF; z-index: 5; opacity: 0.7; font-size: 1.2vmin; writing-mode: vertical-rl; text-orientation: mixed; padding: 5px; }
+        .block-15 { top: 10vh; left: 60vw; width: 30vw; height: 10vh; background-color: #FFF; color: #000; z-index: 22; font-size: 2.2vmin; }
+        .block-16 { top: 80vh; left: 0vw; width: 20vw; height: 20vh; background-color: #FFF; color: #E60000; z-index: 40; font-size: 3vmin; }
+        .block-17 { top: 40vh; left: 80vw; width: 10vw; height: 10vh; background-color: #E60000; color: #FFF; z-index: 38; font-size: 1.8vmin; }
+        .block-18 { top: 20vh; left: 55vw; width: 20vw; height: 10vh; background-color: #FFF; color: #000; z-index: 27; font-size: 2vmin; }
+        .block-19 { top: 70vh; left: 60vw; width: 30vw; height: 10vh; background-color: #000; color: #FFF; border-color: #E60000; z-index: 32; font-size: 1.5vmin; }
+        .block-20 { top: 20vh; left: 0vw; width: 10vw; height: 10vh; background-color: #E60000; color: #FFF; z-index: 18; font-size: 1vmin; }
+
+        /* Dynamic text styling */
+        .glitch-text {
+            animation: glitch-anim 2.5s infinite alternate-reverse linear;
+            position: relative;
+            display: inline-block;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                transform: translate(0, 0);
+                text-shadow: 2px 2px #E60000, -2px -2px #000;
+            }
+            20% {
+                transform: translate(-5px, 5px);
+                text-shadow: -2px 0 #E60000, 2px 0 #000;
+            }
+            40% {
+                transform: translate(5px, -5px);
+                text-shadow: 0 2px #E60000, 0 -2px #000;
+            }
+            60% {
+                transform: translate(-3px, -3px);
+                text-shadow: 2px -2px #E60000, -2px 2px #000;
+            }
+            80% {
+                transform: translate(3px, 3px);
+                text-shadow: -2px 2px #E60000, 2px -2px #000;
+            }
+            100% {
+                transform: translate(0, 0);
+                text-shadow: 2px 2px #E60000, -2px -2px #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="block block-1">DATA HARVEST</div>
+        <div class="block block-2 white-bg">EYES EVERYWHERE</div>
+        <div class="block block-3 black-bg">YOU ARE THE PRODUCT. ALWAYS WATCHING. BEHAVIORAL ANALYSIS. PATTERN RECOGNITION. PREDICTIVE POLICING.</div>
+        <div class="block block-4 black-bg white-text">SYSTEM SURVEILLANCE</div>
+        <div class="block block-5 white-bg black-text"><span class="glitch-text">ANALYTICS ALGORITHM</span></div>
+        <div class="block block-6 red-bg">CONFORM CONTROL</div>
+        <div class="block block-7 black-bg">DIGITAL FOOTPRINT TRACKED. EVERY CLICK. EVERY PURCHASE. EVERY CONVERSATION.</div>
+        <div class="block block-8 white-bg"><span class="glitch-text">ACCESS DENIED</span></div>
+        <div class="block block-9 white-bg">PRIVACY OBSOLETE</div>
+        <div class="block block-10 black-bg">ALGORITHMIC BIAS</div>
+        <div class="block block-11 red-bg">FACIAL RECOGNITION</div>
+        <div class="block block-12 white-bg">DATA POINTS</div>
+        <div class="block block-13 red-bg">YOUR IDENTITY</div>
+        <div class="block block-14 black-bg">PROFILING. PREDICTING. DECIDING. WITHOUT YOUR CONSENT. WITHOUT YOUR KNOWLEDGE. THE INVISIBLE HAND.</div>
+        <div class="block block-15 white-bg">THEY KNOW YOU</div>
+        <div class="block block-16 white-bg red-text">CONSENT?</div>
+        <div class="block block-17 red-bg">TARGETED ADS</div>
+        <div class="block block-18 white-bg">SENTIMENT ANALYSIS</div>
+        <div class="block block-19 black-bg">CODE IS LAW. POWER. CONTROL.</div>
+        <div class="block block-20 red-bg">TRUST NO ONE</div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 17:38:38.042578</div>
         <!DOCTYPE html>
 <html>
