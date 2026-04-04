@@ -16,6 +16,295 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 11:35:28.939056</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>ALGORITHMIC SURVEILLANCE</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: white;
+    overflow: hidden; /* Crucial for brutalist fixed layout */
+    height: 100vh; /* Ensure body takes full viewport height */
+    width: 100vw;  /* Ensure body takes full viewport width */
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border: 5px solid red; /* Outer harsh border */
+    box-sizing: border-box;
+}
+
+.block {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    overflow: hidden; /* For nested text that might exceed */
+    padding: 0.5vw; /* Small padding for text inside blocks */
+}
+
+/* Specific Blocks */
+
+.block-title {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 20%;
+    background-color: red;
+    color: white;
+    font-size: 8vw;
+    border: 3px solid white;
+    z-index: 10;
+}
+
+.block-data {
+    top: 28%;
+    left: 0;
+    width: 30%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    font-size: 3vw;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    z-index: 5;
+    transform: rotate(-5deg);
+    transform-origin: top left;
+}
+.block-data-alt {
+    top: 35%;
+    right: 5%;
+    width: 25%;
+    height: 10%;
+    background-color: white;
+    color: black;
+    font-size: 2.5vw;
+    border: 2px solid red;
+    z-index: 6;
+    transform: rotate(3deg);
+    transform-origin: top right;
+}
+
+.block-eye {
+    top: 45%;
+    left: 30%;
+    width: 25vw;
+    height: 25vw; /* Make it a square for brutalist shape */
+    background-color: black;
+    border: 5px solid white;
+    z-index: 8;
+    transform: rotate(15deg);
+}
+.block-eye::before {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    background-color: red;
+    border: 2px solid white;
+    z-index: 9; /* Pupil is above the eye container */
+}
+
+.block-watched {
+    bottom: 5%;
+    left: 2%;
+    width: 45%;
+    height: 15%;
+    background-color: white;
+    color: red;
+    font-size: 5vw;
+    border: 4px solid black;
+    z-index: 11;
+    transform: rotate(-3deg);
+}
+
+.block-system {
+    bottom: 15%;
+    right: 0;
+    width: 35%;
+    height: 20%;
+    background-color: red;
+    color: black;
+    font-size: 4vw;
+    border-left: 5px solid white;
+    border-top: 2px solid white;
+    z-index: 7;
+    text-align: right;
+    padding-right: 1vw;
+    align-items: flex-end; /* Align text to bottom right */
+}
+
+.block-control {
+    top: 25%;
+    right: 0;
+    width: 15%;
+    height: 40%;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    writing-mode: vertical-lr; /* Vertical text */
+    text-orientation: upright;
+    border-left: 3px solid red;
+    border-bottom: 3px solid red;
+    z-index: 4;
+    padding-top: 1vw;
+    align-items: flex-start;
+}
+
+.block-grid {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with blocks below */
+    z-index: 1; /* Lowest z-index */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    opacity: 0.15; /* Subtle grid */
+    font-size: 1vw;
+    color: white;
+}
+.grid-cell {
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace; /* For a code-like feel */
+}
+.grid-cell:nth-child(odd) { background-color: rgba(255,0,0,0.05); }
+.grid-cell:nth-child(even) { background-color: rgba(0,0,0,0.05); }
+
+.block-trace {
+    top: 60%;
+    left: 5%;
+    width: 20%;
+    height: 8%;
+    background-color: black;
+    color: red;
+    font-size: 2vw;
+    border: 2px dashed white; /* Dashed for "trace" */
+    z-index: 3;
+    transform: rotate(7deg);
+}
+
+.block-profile {
+    top: 55%;
+    right: 25%;
+    width: 20%;
+    height: 15%;
+    background-color: white;
+    color: black;
+    font-size: 2.5vw;
+    border: 3px solid red;
+    z-index: 6;
+    transform: skewY(-10deg);
+}
+
+.block-silence {
+    top: 70%;
+    right: 5%;
+    width: 15%;
+    height: 8%;
+    background-color: black;
+    color: white;
+    font-size: 1.8vw;
+    border-right: 4px solid red;
+    border-bottom: 2px solid red;
+    z-index: 12;
+    transform: rotate(4deg);
+    padding-left: 0.5vw;
+    justify-content: flex-start;
+}
+
+.block-alert-flash {
+    top: 10%;
+    right: 1%;
+    width: 5%;
+    height: 5%;
+    background-color: black;
+    color: red;
+    font-size: 2vw;
+    border: 1px solid red;
+    z-index: 13;
+    transform: rotate(20deg);
+}
+
+.block-pattern {
+    bottom: 2%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) rotate(-8deg); /* Center and rotate */
+    width: 30%;
+    height: 8%;
+    background-color: white;
+    color: black;
+    font-size: 2vw;
+    border: 2px solid black;
+    z-index: 9;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="block block-grid">
+        <!-- Subtle grid overlay with dynamic data words -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const grid = document.querySelector('.block-grid');
+                const words = ['DATA', 'SCAN', 'TRACE', 'CODE', 'EYE', 'LOG', 'GEO', 'BIO', 'SYS', 'PAT', 'REC', 'NODE', 'LINK'];
+                for (let i = 0; i < 100; i++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('grid-cell');
+                    cell.textContent = words[Math.floor(Math.random() * words.length)];
+                    grid.appendChild(cell);
+                }
+            });
+        </script>
+    </div>
+
+    <div class="block block-title">ALGORITHMIC SURVEILLANCE</div>
+
+    <div class="block block-data">DATA // TRACKED</div>
+    <div class="block block-data-alt">PROFILED</div>
+
+    <div class="block block-eye"></div> <!-- Eye block has pseudo-element for pupil -->
+
+    <div class="block block-watched">YOU ARE WATCHED</div>
+
+    <div class="block block-system">SYSTEM.</div>
+
+    <div class="block block-control">CONTROL</div>
+
+    <div class="block block-trace">DIGITAL TRACE</div>
+
+    <div class="block block-profile">PROFILE</div>
+
+    <div class="block block-silence">SILENCE</div>
+
+    <div class="block block-alert-flash">! ! !</div>
+
+    <div class="block block-pattern">PATTERN RECOGNITION</div>
+
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 10:41:40.275793</div>
         <!DOCTYPE html>
 <html>
