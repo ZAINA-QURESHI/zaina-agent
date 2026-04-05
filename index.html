@@ -16,6 +16,288 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 07:17:24.379369</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Decolonizing the Cloud</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Impact', 'Arial Black', monospace; /* Brutalist fonts */
+    overflow-x: hidden; /* Prevent horizontal scroll from rotated elements */
+    color: white; /* Default text color */
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden; /* Contains absolutely positioned elements, crops overflows */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .element {
+    position: absolute;
+    padding: 10px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-break: break-all; /* Aggressive word breaking */
+    font-weight: bold;
+    line-height: 0.9; /* Tightly packed text */
+  }
+
+  /* Color utility classes (though overridden by specific IDs) */
+  .text-white { color: white; }
+  .text-red { color: red; }
+  .bg-black { background-color: black; }
+  .bg-red { background-color: red; }
+  .bg-white { background-color: white; }
+
+  /* Specific styles for different elements creating the collage */
+  #main-title {
+    font-size: 15vw; /* Very large, responsive text */
+    top: 5vh;
+    left: -2vw;
+    width: 110vw; /* Wider than viewport to emphasize overflow/cropping */
+    height: auto;
+    z-index: 10;
+    color: white;
+    transform: rotate(-5deg); /* Angled for dynamic feel */
+    border: 5px solid red; /* Strong border */
+    padding: 30px 0;
+    box-shadow: 10px 10px 0px red; /* Brutalist shadow, like an offset block */
+  }
+
+  #subtitle-uncloud {
+    font-size: 8vw;
+    top: 30vh;
+    left: 40vw;
+    width: 60vw;
+    height: auto;
+    z-index: 12;
+    background-color: red;
+    color: black;
+    transform: rotate(10deg);
+    border-right: 15px solid white; /* Asymmetrical border */
+    border-bottom: 15px solid white;
+    padding: 10px;
+    box-shadow: -15px -15px 0px black; /* Offset shadow */
+  }
+
+  #reclaim {
+    font-size: 6vw;
+    bottom: 10vh;
+    left: -10vw;
+    width: 70vw;
+    height: auto;
+    z-index: 11;
+    color: red;
+    transform: rotate(3deg);
+    border: 3px dashed white; /* Dashed border for a raw edge */
+    text-shadow: 5px 5px 0px black; /* Heavy, offset text shadow */
+    padding: 20px 0;
+  }
+
+  #sovereign-data {
+    font-size: 5vw;
+    top: 0;
+    right: -5vw;
+    width: 40vw;
+    height: 20vh;
+    z-index: 8;
+    background-color: black;
+    color: white;
+    transform: rotate(15deg);
+    border-left: 5px solid red;
+    border-bottom: 5px solid red;
+    overflow: hidden; /* Text might be cropped, intentional */
+    padding: 0;
+    line-height: 0.8;
+  }
+
+  #fragment {
+    font-size: 7vw;
+    top: 60vh;
+    left: 5vw;
+    width: 50vw;
+    height: auto;
+    z-index: 13;
+    background-color: white;
+    color: red;
+    transform: rotate(-12deg);
+    border: 8px solid black;
+    box-shadow: 10px 10px 0px black;
+  }
+
+  #power {
+    font-size: 4vw;
+    bottom: 5vh;
+    right: 5vw;
+    width: 30vw;
+    height: 20vh;
+    z-index: 14;
+    background-color: black;
+    color: white;
+    border-top: 5px solid red;
+    border-left: 5px solid red;
+    overflow: hidden;
+    line-height: 1;
+    transform: skewX(-15deg); /* Skewed shape */
+  }
+
+  #decentralize {
+      font-size: 4.5vw;
+      top: 80vh;
+      left: 60vw;
+      width: 40vw;
+      height: auto;
+      z-index: 15;
+      color: black;
+      background-color: white;
+      transform: rotate(8deg);
+      border: 5px solid red;
+      padding: 15px;
+  }
+
+  /* Simple geometric blocks/strips */
+  #strip-red-1 {
+    width: 100vw;
+    height: 30px;
+    background-color: red;
+    top: 20vh;
+    left: 0;
+    z-index: 9;
+    transform: rotate(2deg);
+  }
+
+  #strip-white-1 {
+    width: 120vw; /* Overlapping, extending beyond viewport */
+    height: 50px;
+    background-color: white;
+    top: 50vh;
+    left: -10vw;
+    z-index: 7;
+    transform: rotate(-8deg);
+    border-bottom: 5px solid black;
+  }
+
+  #small-text-1 {
+    font-size: 2vw;
+    top: 15vh;
+    left: 5vw;
+    z-index: 15;
+    color: red;
+    border: 1px solid white;
+    padding: 5px 10px;
+    background-color: black;
+    transform: rotate(5deg);
+  }
+
+  #small-text-2 {
+    font-size: 2.5vw;
+    bottom: 30vh;
+    right: 15vw;
+    z-index: 16;
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    transform: rotate(-7deg);
+  }
+
+  #vertical-bar-white {
+    width: 30px;
+    height: 80vh;
+    background-color: white;
+    top: 10vh;
+    left: 20vw;
+    z-index: 6;
+    transform: rotate(15deg);
+    box-shadow: 5px 5px 0px black;
+  }
+
+  /* Responsive adjustments for smaller screens (mobile brutalism) */
+  @media (max-width: 768px) {
+    #main-title { font-size: 18vw; top: 2vh; left: -5vw; padding: 20px 0; }
+    #subtitle-uncloud { font-size: 10vw; top: 25vh; left: 30vw; width: 70vw; border-right: 10px solid white; border-bottom: 10px solid white;}
+    #reclaim { font-size: 8vw; bottom: 5vh; left: -15vw; width: 90vw; padding: 15px 0; }
+    #sovereign-data { font-size: 7vw; top: -2vh; right: -10vw; width: 60vw; height: 15vh;}
+    #fragment { font-size: 9vw; top: 55vh; left: 2vw; width: 70vw; border: 6px solid black;}
+    #power { font-size: 6vw; bottom: 0vh; right: 0vw; width: 50vw; height: 15vh; border-top: 3px solid red; border-left: 3px solid red;}
+    #decentralize { font-size: 6vw; top: 75vh; left: 40vw; width: 55vw; padding: 10px;}
+    #strip-red-1 { top: 15vh; height: 20px; }
+    #strip-white-1 { top: 40vh; height: 40px; border-bottom: 3px solid black;}
+    #small-text-1 { font-size: 3vw; top: 10vh; left: 2vw; padding: 3px 5px; }
+    #small-text-2 { font-size: 4vw; bottom: 20vh; right: 5vw; padding: 3px 5px; }
+    #vertical-bar-white { display: none; } /* Hide on small screens for less clutter */
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div id="main-title" class="element bg-black text-white">
+    DECOLONIZE<br>THE CLOUD
+  </div>
+
+  <div id="subtitle-uncloud" class="element">
+    UNCLOUD<br>CONTROL
+  </div>
+
+  <div id="reclaim" class="element bg-black">
+    RECLAIM<br>DATA LANDS
+  </div>
+
+  <div id="sovereign-data" class="element">
+    SOVEREIGNTY<br>NOW
+  </div>
+
+  <div id="fragment" class="element">
+    FRACTURE<br>MONOPOLY
+  </div>
+
+  <div id="power" class="element">
+    DISMANTLE<br>THE<br>ARCHIVE
+  </div>
+
+  <div id="decentralize" class="element">
+      DECENTRALIZE<br>EVERYTHING
+  </div>
+
+  <!-- Geometric block elements -->
+  <div id="strip-red-1" class="element"></div>
+  <div id="strip-white-1" class="element"></div>
+
+  <!-- Smaller text elements -->
+  <div id="small-text-1" class="element">
+    INDIGENOUS<br>BYTES
+  </div>
+
+  <div id="small-text-2" class="element">
+    NO MASTERS
+  </div>
+
+  <!-- A raw, vertical bar element -->
+  <div id="vertical-bar-white" class="element"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">decolonizing the cloud</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 05:48:18.586241</div>
         <div style="
     background-color: black;
