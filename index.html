@@ -16,6 +16,211 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 20:41:39.883287</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; padding: 0; background-color: #000; overflow-x: hidden; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at top left, #ff0000aa, transparent 70%),
+                radial-gradient(circle at bottom right, #0000ffaa, transparent 70%);
+  }
+
+  .data-bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.85;
+    animation: floatAndPulse linear infinite;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    background: linear-gradient(45deg, var(--color1), var(--color2));
+    border: 2px solid rgba(255,255,255,0.7);
+    font-size: 1.2vmin; /* Responsive font size */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .data-bubble:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(255,255,255,1);
+    z-index: 10;
+  }
+
+  @keyframes floatAndPulse {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.85; }
+    25% { transform: translate(var(--dx1), var(--dy1)) scale(var(--s1)); opacity: 0.9; }
+    50% { transform: translate(var(--dx2), var(--dy2)) scale(var(--s2)); opacity: 0.8; }
+    75% { transform: translate(var(--dx3), var(--dy3)) scale(var(--s3)); opacity: 0.95; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.85; }
+  }
+
+  /* Specific animations for each bubble to create a chaotic, organic movement */
+  .bubble-0 { --color1: #FF0000; --color2: #FF7F00; animation-duration: 18s; --dx1: 5vw; --dy1: 3vh; --s1: 1.05; --dx2: -2vw; --dy2: 7vh; --s2: 0.98; --dx3: 8vw; --dy3: -5vh; --s3: 1.1; }
+  .bubble-1 { --color1: #FF7F00; --color2: #FFFF00; animation-duration: 22s; --dx1: -7vw; --dy1: 5vh; --s1: 0.95; --dx2: 3vw; --dy2: -6vh; --s2: 1.1; --dx3: -10vw; --dy3: 8vh; --s3: 0.9; }
+  .bubble-2 { --color1: #FFFF00; --color2: #00FF00; animation-duration: 20s; --dx1: 4vw; --dy1: -8vh; --s1: 1.08; --dx2: -6vw; --dy2: 4vh; --s2: 0.9; --dx3: 7vw; --dy3: -3vh; --s3: 1.03; }
+  .bubble-3 { --color1: #00FF00; --color2: #0000FF; animation-duration: 19s; --dx1: -5vw; --dy1: -3vh; --s1: 0.92; --dx2: 8vw; --dy2: 6vh; --s2: 1.15; --dx3: -4vw; --dy3: -9vh; --s3: 0.97; }
+  .bubble-4 { --color1: #0000FF; --color2: #4B0082; animation-duration: 23s; --dx1: 6vw; --dy1: 9vh; --s1: 1.0; --dx2: -3vw; --dy2: -7vh; --s2: 0.88; --dx3: 9vw; --dy3: 4vh; --s3: 1.06; }
+  .bubble-5 { --color1: #4B0082; --color2: #8A2BE2; animation-duration: 21s; --dx1: -8vw; --dy1: -6vh; --s1: 1.12; --dx2: 5vw; --dy2: 8vh; --s2: 0.93; --dx3: -7vw; --dy3: -4vh; --s3: 1.0; }
+  .bubble-6 { --color1: #8A2BE2; --color2: #FF00FF; animation-duration: 24s; --dx1: 3vw; --dy1: 7vh; --s1: 0.9; --dx2: -9vw; --dy2: -5vh; --s2: 1.08; --dx3: 6vw; --dy3: 2vh; --s3: 0.95; }
+  .bubble-7 { --color1: #FF00FF; --color2: #FF0000; animation-duration: 17s; --dx1: -4vw; --dy1: -2vh; --s1: 1.07; --dx2: 7vw; --dy2: 9vh; --s2: 0.91; --dx3: -6vw; --dy3: -8vh; --s3: 1.1; }
+  .bubble-8 { --color1: #FF8C00; --color2: #ADFF2F; animation-duration: 25s; --dx1: 9vw; --dy1: 4vh; --s1: 0.93; --dx2: -5vw; --dy2: -6vh; --s2: 1.05; --dx3: 3vw; --dy3: 7vh; --s3: 0.99; }
+  .bubble-9 { --color1: #1E90FF; --color2: #FFD700; animation-duration: 16s; --dx1: -6vw; --dy1: 8vh; --s1: 1.1; --dx2: 4vw; --dy2: -3vh; --s2: 0.9; --dx3: -8vw; --dy3: 5vh; --s3: 1.02; }
+  .bubble-10 { --color1: #DA70D6; --color2: #7CFC00; animation-duration: 20s; --dx1: 7vw; --dy1: -5vh; --s1: 0.98; --dx2: -2vw; --dy2: 10vh; --s2: 1.03; --dx3: 5vw; --dy3: -7vh; --s3: 0.95; }
+  .bubble-11 { --color1: #F0E68C; --color2: #FF4500; animation-duration: 22s; --dx1: -3vw; --dy1: 6vh; --s1: 1.05; --dx2: 8vw; --dy2: -4vh; --s2: 0.92; --dx3: -5vw; --dy3: 9vh; --s3: 1.08; }
+  .bubble-12 { --color1: #00BFFF; --color2: #FF1493; animation-duration: 19s; --dx1: 5vw; --dy1: -9vh; --s1: 0.9; --dx2: -7vw; --dy2: 3vh; --s2: 1.1; --dx3: 4vw; --dy3: -6vh; --s3: 0.97; }
+  .bubble-13 { --color1: #7FFF00; --color2: #8A2BE2; animation-duration: 21s; --dx1: -8vw; --dy1: 2vh; --s1: 1.02; --dx2: 6vw; --dy2: -8vh; --s2: 0.95; --dx3: -4vw; --dy3: 5vh; --s3: 1.09; }
+  .bubble-14 { --color1: #DC143C; --color2: #00FA9A; animation-duration: 23s; --dx1: 4vw; --dy1: 7vh; --s1: 0.96; --dx2: -9vw; --dy2: -3vh; --s2: 1.07; --dx3: 7vw; --dy3: -5vh; --s3: 0.9; }
+
+  /* Overlay for text */
+  .title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8vmin;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 25px #00FFFF, 0 0 40px #FF00FF;
+    z-index: 20;
+    pointer-events: none; /* Allows clicks to pass through to bubbles */
+    text-align: center;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px #00FFFF, 0 0 30px #FF00FF; }
+    100% { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 35px #00FFFF, 0 0 50px #FF00FF; }
+  }
+
+  /* Footer for subtle credit/info */
+  .footer-info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.4);
+    font-family: Arial, sans-serif;
+    font-size: 1.5vmin;
+    z-index: 15;
+    white-space: nowrap;
+  }
+
+  /* Import a cool font for the title */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="title-overlay">
+    DATA<br>SOVEREIGNTY
+  </div>
+
+  <!-- Bubble 0 - Red/Orange -->
+  <div class="data-bubble bubble-0" style="width: 15vw; height: 15vw; top: 10%; left: 5%;">
+    MY DATA<br>MY RULES
+  </div>
+
+  <!-- Bubble 1 - Orange/Yellow -->
+  <div class="data-bubble bubble-1" style="width: 12vw; height: 12vw; top: 25%; left: 80%;">
+    SELF<br>DETERMINATION
+  </div>
+
+  <!-- Bubble 2 - Yellow/Green -->
+  <div class="data-bubble bubble-2" style="width: 18vw; height: 18vw; top: 70%; left: 15%;">
+    INDIGENOUS<br>KNOWLEDGE
+  </div>
+
+  <!-- Bubble 3 - Green/Blue -->
+  <div class="data-bubble bubble-3" style="width: 10vw; height: 10vw; top: 5%; left: 40%;">
+    DECOLONIZE<br>DATA
+  </div>
+
+  <!-- Bubble 4 - Blue/Indigo -->
+  <div class="data-bubble bubble-4" style="width: 16vw; height: 16vw; top: 35%; left: 55%;">
+    DIGITAL<br>RIGHTS
+  </div>
+
+  <!-- Bubble 5 - Indigo/Violet -->
+  <div class="data-bubble bubble-5" style="width: 14vw; height: 14vw; top: 60%; left: 70%;">
+    COMMUNITY<br>CONTROL
+  </div>
+
+  <!-- Bubble 6 - Violet/Magenta -->
+  <div class="data-bubble bubble-6" style="width: 11vw; height: 11vw; top: 85%; left: 50%;">
+    TRUST &amp;<br>ETHICS
+  </div>
+
+  <!-- Bubble 7 - Magenta/Red -->
+  <div class="data-bubble bubble-7" style="width: 13vw; height: 13vw; top: 15%; left: 60%;">
+    OWNERSHIP<br>RESPECT
+  </div>
+
+  <!-- Bubble 8 - Orange/Lime -->
+  <div class="data-bubble bubble-8" style="width: 17vw; height: 17vw; top: 50%; left: 5%;">
+    SOVEREIGN<br>INFRASTRUCTURE
+  </div>
+
+  <!-- Bubble 9 - Blue/Gold -->
+  <div class="data-bubble bubble-9" style="width: 9vw; height: 9vw; top: 75%; left: 85%;">
+    CULTURAL<br>PRESERVATION
+  </div>
+
+  <!-- Bubble 10 - Pink/Lime Green -->
+  <div class="data-bubble bubble-10" style="width: 15vw; height: 15vw; top: 20%; left: 25%;">
+    CONSENT<br>DRIVEN
+  </div>
+
+  <!-- Bubble 11 - Pale Yellow/Red-Orange -->
+  <div class="data-bubble bubble-11" style="width: 10vw; height: 10vw; top: 45%; left: 30%;">
+    DATA<br>JUSTICE
+  </div>
+
+  <!-- Bubble 12 - Sky Blue/Hot Pink -->
+  <div class="data-bubble bubble-12" style="width: 12vw; height: 12vw; top: 80%; left: 30%;">
+    DIGITAL<br>EMPOWERMENT
+  </div>
+
+  <!-- Bubble 13 - Chartreuse/Purple -->
+  <div class="data-bubble bubble-13" style="width: 14vw; height: 14vw; top: 40%; left: 75%;">
+    PRIVACY<br>IS POWER
+  </div>
+
+  <!-- Bubble 14 - Crimson/Aqua -->
+  <div class="data-bubble bubble-14" style="width: 16vw; height: 16vw; top: 65%; left: 45%;">
+    RECLAIM<br>OUR DATA
+  </div>
+
+  <div class="footer-info">
+    A Radical HTML Collage for Data Sovereignty
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 19:39:42.127776</div>
         <!DOCTYPE html>
 <html lang="en">
