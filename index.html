@@ -16,6 +16,480 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 14:42:21.820666</div>
+        <!--
+<!DOCTYPE html>
+<html>
+<head>
+<title>GLITCH COLLAGE</title>
+<style>
+  /* GLOBAL BRUTALIST RESET & BASE STYLES */
+  body {
+    background-color: #000; /* Dominant black background */
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from absolute positioning */
+    font-family: 'Courier New', Courier, monospace; /* Classic brutalist mono font */
+    color: #FFF; /* Default white text */
+    -webkit-font-smoothing: none; /* Pixelated font rendering if supported */
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: pixelated; /* For any potential image use (not used here but good practice) */
+  }
+
+  /* Universal box-sizing for predictable layouts */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Crucial to contain absolute children */
+    border: 5px solid #F00; /* Main framing border */
+  }
+
+  /* Base style for all 'block' elements in the collage */
+  .block {
+    position: absolute;
+    border: 1px solid; /* Default border */
+    padding: 5px;
+    font-size: 1em;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Clip content if it exceeds block bounds */
+    word-break: break-word; /* For long strings like binary */
+  }
+
+  /* Color Utility Classes for High Contrast */
+  .bg-black { background-color: #000; }
+  .bg-white { background-color: #FFF; }
+  .bg-red { background-color: #F00; }
+
+  .text-white { color: #FFF; }
+  .text-black { color: #000; }
+  .text-red { color: #F00; }
+
+  .border-white { border-color: #FFF; }
+  .border-black { border-color: #000; }
+  .border-red { border-color: #F00; }
+
+  /* Glitch-specific typography & effects */
+  .glitch-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    word-break: break-all;
+    text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #F00; /* Simple text ghosting */
+  }
+
+  .binary-stream {
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    line-height: 0.9;
+    white-space: pre-wrap; /* Preserve whitespace in content */
+  }
+
+  .error-code {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  /* Visual glitch patterns */
+  .static-pattern {
+    background-image: repeating-linear-gradient(
+      0deg,
+      #F00 0px,
+      #F00 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    opacity: 0.7;
+  }
+
+  .scanline-pattern {
+    background-image:
+      linear-gradient(rgba(255, 0, 0, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.2) 1px, transparent 1px);
+    background-size: 2px 2px;
+  }
+
+  /* INDIVIDUAL BLOCK STYLES (POSITIONING, SIZING, Z-INDEX, ROTATION) */
+
+  /* B1: Main Title Block - Large and impactful */
+  .b1 {
+    width: 60vw;
+    height: 15vh;
+    top: 5vh;
+    left: 20vw;
+    background-color: #F00;
+    color: #FFF;
+    border: 3px solid #000;
+    font-size: 4em;
+    z-index: 10;
+  }
+
+  /* B2: Tall Binary Stream - Vertical data corruption */
+  .b2 {
+    width: 30vw;
+    height: 80vh;
+    top: 0vh;
+    left: 0vw;
+    background-color: #000;
+    color: #FFF;
+    border: 2px solid #F00;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 1; /* Low z-index to be mostly underneath */
+  }
+
+  /* B3: Prominent Error Message - Central and stark */
+  .b3 {
+    width: 45vw;
+    height: 10vh;
+    top: 25vh;
+    left: 40vw;
+    background-color: #FFF;
+    color: #F00;
+    border: 4px solid #000;
+    font-size: 2.2em;
+    z-index: 15;
+  }
+
+  /* B4: Block of Broken Text - Fragmented system messages */
+  .b4 {
+    width: 25vw;
+    height: 30vh;
+    top: 45vh;
+    left: 10vw;
+    background-color: #000;
+    color: #FFF;
+    border: 2px solid #FFF;
+    font-size: 1.1em;
+    padding: 15px;
+    z-index: 5;
+    transform: rotate(-3deg); /* Slight chaotic rotation */
+  }
+
+  /* B5: Red Overlay Strip - Slicing through the view */
+  .b5 {
+    width: 100vw;
+    height: 5vh;
+    top: 35vh;
+    left: 0;
+    background-color: #F00;
+    opacity: 0.8;
+    z-index: 20; /* High z-index to cut prominently */
+  }
+
+  /* B6: ASCII Art / Static Block - Patterned noise */
+  .b6 {
+    width: 30vw;
+    height: 20vh;
+    top: 70vh;
+    left: 65vw;
+    background-color: #000;
+    color: #FFF;
+    border: 2px solid #F00;
+    font-size: 0.9em;
+    padding: 10px;
+    z-index: 12;
+    transform: rotate(2deg); /* Another rotation */
+    overflow: hidden;
+  }
+
+  /* B7: Small Red Artifact - Random color block */
+  .b7 {
+    width: 10vw;
+    height: 10vh;
+    top: 80vh;
+    left: 40vw;
+    background-color: #F00;
+    border: 1px solid #FFF;
+    z-index: 18;
+  }
+
+  /* B8: White Block with Error Codes - More technical glitches */
+  .b8 {
+    width: 20vw;
+    height: 18vh;
+    top: 60vh;
+    left: 45vw;
+    background-color: #FFF;
+    color: #000;
+    border: 3px solid #F00;
+    font-size: 0.9em;
+    padding: 10px;
+    z-index: 16;
+  }
+
+  /* B9: Empty Border Frame - Visual distortion artifact */
+  .b9 {
+    width: 5vw;
+    height: 5vh;
+    top: 10vh;
+    left: 10vw;
+    background-color: transparent;
+    border: 5px solid #F00;
+    z-index: 2;
+  }
+
+  /* B10: Invalid Index Message - Image placeholder-like */
+  .b10 {
+    width: 25vw;
+    height: 20vh;
+    top: 15vh;
+    left: 70vw;
+    background-color: #000;
+    color: #F00;
+    border: 2px solid #FFF;
+    font-size: 1.8em;
+    z-index: 11;
+    overflow: hidden;
+  }
+
+  /* B11: System Log Fragment - Displaced info */
+  .b11 {
+    width: 30vw;
+    height: 10vh;
+    top: 0vh;
+    left: 50vw;
+    background-color: #FFF;
+    color: #000;
+    border: 2px solid #000;
+    font-size: 1.1em;
+    z-index: 8;
+  }
+
+  /* B12: Log Failed Message - Rotated textual element */
+  .b12 {
+    width: 20vw;
+    height: 10vh;
+    top: 55vh;
+    left: 70vw;
+    background-color: #FFF;
+    color: #F00;
+    border: 3px solid #000;
+    font-size: 1.5em;
+    z-index: 17;
+    transform: rotate(-5deg);
+  }
+
+  /* B13: Red Static Pattern - Pure visual noise */
+  .b13 {
+    width: 15vw;
+    height: 15vh;
+    top: 80vh;
+    left: 10vw;
+    z-index: 19;
+    opacity: 0.9;
+    border: 3px solid #FFF;
+    background-color: #F00;
+  }
+
+  /* B14: No Signal Block - Text with a scanline effect */
+  .b14 {
+    width: 22vw;
+    height: 12vh;
+    top: 30vh;
+    left: 2vw;
+    background-color: #000;
+    color: #F00;
+    border: 2px solid #FFF;
+    font-size: 1.2em;
+    z-index: 9;
+    padding: 8px;
+  }
+
+  /* B15: Data Block Lost - Small textual fragment */
+  .b15 {
+    width: 18vw;
+    height: 8vh;
+    top: 40vh;
+    left: 78vw;
+    background-color: #FFF;
+    color: #000;
+    border: 2px solid #F00;
+    font-size: 1.1em;
+    z-index: 14;
+    padding: 5px;
+  }
+
+  /* B16: Vertical Corruption Detected - Rotated text strip */
+  .b16 {
+    width: 10vw;
+    height: 25vh;
+    top: 5vh;
+    left: 30vw;
+    background-color: #000;
+    color: #FFF;
+    border: 2px solid #F00;
+    z-index: 1;
+    overflow: hidden;
+    font-size: 0.8em;
+  }
+  .b16 p { /* Inner text rotation to make it vertical */
+    transform: rotate(90deg);
+    white-space: nowrap;
+  }
+
+  /* B17: Another Small Red Artifact */
+  .b17 {
+    width: 8vw;
+    height: 8vh;
+    top: 90vh;
+    left: 80vw;
+    background-color: #F00;
+    border: 2px solid #000;
+    z-index: 22;
+  }
+
+  /* B18: Critical Error Footer - Bottom-aligned important message */
+  .b18 {
+    width: 25vw;
+    height: 6vh;
+    top: 90vh;
+    left: 50vw;
+    background-color: #FFF;
+    color: #F00;
+    border: 2px solid #000;
+    font-size: 1.2em;
+    z-index: 21;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="block b1 text-white border-black">
+    GLITCH_ _CRITICAL
+  </div>
+
+  <div class="block b2 text-white bg-black border-red">
+    <p class="binary-stream">
+      01010011 01011001 01010011 01010100 01000101 01001101 00100000 01000101 01010010 01010010 01001111 01010010 00100000 01000011 01001111 01010010 01010010 01010101 01010000 01010100 01000101 01000100 00001010
+      0x46 0x41 0x49 0x4C 0x55 0x52 0x45 0x0A 0xDE 0xAD 0xBE 0xEF 0xDE 0xAD 0xBE 0xEF 0x0A
+      01101100 01101111 01100001 01100100 01101001 01101110 01100111 00100000 01100100 01100001 01110100 01100001 00101110 00101110 00101110 00001010
+      01000101 01010010 01010010 01001111 01010010 00100000 01010100 01011001 01010000 01000101 00111010 00100000 01000011 01001111 01001101 01001101 01000001 01001110 01000100 00100000 01001110 01001111 01010100 00100000 01000110 01001111 01010101 01001110 01000100 00001010
+      0xDE 0xAD 0xBE 0xEF 0xDE 0xAD 0xBE 0xEF 0xDE 0xAD 0xBE 0xEF 0xDE 0xAD 0xBE 0xEF 0x0A
+      01010011 01001001 01000111 01001110 01000001 01001100 00100000 01001100 01001111 01010011 01010100 00001010
+      01000100 01000001 01010100 01000001 00100000 01000011 01001111 01010010 01010010 01010101 01010000 01010100 01001001 01001111 01001110 00001010
+      01010100 01001000 01001001 01010011 00100000 01001001 01010011 00100000 01001110 01001111 01010100 00100000 01000001 00100000 01010100 01000101 01010011 01010100 00001010
+      01000101 01010010 01010010 01001111 01010010 00100000 00110011 00110001 00110010 00110000 00001010
+      0xAB 0xCD 0xEF 0x01 0x23 0x45 0x67 0x89 0xAB 0xCD 0xEF 0x01 0x23 0x45 0x67 0x89
+      01000011 01001111 01001101 01001101 01000001 01001110 01000100 00100000 01001110 01001111 01010100 00100000 01000110 01001111 01010101 01001110 01000100 00001010
+      01010010 01000101 01000100 00100000 01000110 01001100 01000001 01010011 01001000 00001010
+      01000101 01010010 01010010 01001111 01010010 00100000 01000001 01000011 01000011 01000101 01010011 01010011 00100000 01000100 01000101 01001110 01001001 01000101 01000100 00001010
+      0xCA 0xFE 0xBA 0xBE 0xCA 0xFE 0xBA 0xBE 0xCA 0xFE 0xBA 0xBE 0xCA 0xFE 0xBA 0xBE
+    </p>
+  </div>
+
+  <div class="block b3 text-red bg-white border-black glitch-text">
+    EЯЯ0Я: DДTД C0ЯЯЦРТI0N
+  </div>
+
+  <div class="block b4 text-white bg-black border-white">
+    <p>
+      ///_UNEXPECTED_EOF_///<br>
+      [NULL PTR EXCEPTION]<br>
+      SEGMENTATION FAULT<br>
+      //_REBOOT_REQUIRED_//<br>
+      ---FILE NOT FOUND---<br>
+      &gt;&gt;&gt;ACCESS DENIED&lt;&lt;&lt;
+    </p>
+  </div>
+
+  <div class="block b5 bg-red border-white"></div>
+
+  <div class="block b6 text-white bg-black border-red">
+    <pre>
+      _--_|_--_|_--_
+      /  \_/  \_/  \
+      \  / \  / \  /
+      --_|_--_|_--_|_
+      ERROR ERROR ERROR
+      _|_--_|_--_|_--
+    </pre>
+  </div>
+
+  <div class="block b7 bg-red border-white"></div>
+
+  <div class="block b8 text-black bg-white border-red">
+    <p class="error-code">
+      STATUS: OFFLINE<br>
+      CODE: 0x80070005<br>
+      CRC: 0xDEADBEEF<br>
+      [REDACTED]
+    </p>
+  </div>
+
+  <div class="block b9 border-red"></div>
+
+  <div class="block b10 text-red bg-black border-white">
+    <span class="glitch-text">
+      IИVДLID
+      <br>
+      IИDEX
+    </span>
+  </div>
+
+  <div class="block b11 text-black bg-white border-black">
+    <p>
+      SYSTEM.LOG: INJECT.FAILURE
+    </p>
+  </div>
+
+  <div class="block b12 bg-white text-red border-black">
+    <p>
+      L0G<br>
+      FДILED
+    </p>
+  </div>
+
+  <div class="block b13 bg-red static-pattern"></div>
+
+  <div class="block b14 bg-black text-red border-white scanline-pattern">
+    <p>
+      NO SIGИДL
+    </p>
+  </div>
+
+  <div class="block b15 bg-white text-black border-red">
+    <p>
+      DATA BLOCK [LOST]
+    </p>
+  </div>
+
+  <div class="block b16 bg-black text-white border-red">
+    <p>
+      _C0RRЦPTION_ _DETECTED_
+    </p>
+  </div>
+
+  <div class="block b17 bg-red border-black"></div>
+
+  <div class="block b18 bg-white text-red border-black">
+    <p>
+      CRITICAL_ERROR(0x_F00)
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 13:16:37.035480</div>
         <style>
   body { margin: 0; overflow: hidden; background-color: #000; font-family: 'Arial Black', sans-serif; }
