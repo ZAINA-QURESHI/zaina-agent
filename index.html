@@ -16,6 +16,180 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 03:22:26.096027</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay: Brutalist Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    background-color: #000;
+    overflow: hidden; /* Prevent scrollbars from appearing due to absolute positioning */
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #FFF; /* Default border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.2;
+    padding: 5px;
+  }
+
+  /* Specific block styles */
+  .b-red { background-color: #FF0000; color: #FFF; border-color: #000; }
+  .b-black { background-color: #000; color: #FF0000; border-color: #FFF; }
+  .b-white { background-color: #FFF; color: #000; border-color: #FF0000; }
+
+  .text-glitch {
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 1px 0px #FF0000, -1px -1px 0px #000;
+  }
+
+  .distorted-text {
+    transform: skewX(-15deg) scale(0.9, 1.1);
+    letter-spacing: -2px;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+
+  .layered-text {
+    position: relative;
+  }
+  .layered-text span:nth-child(1) { color: #000; position: absolute; left: -1px; top: -1px; }
+  .layered-text span:nth-child(2) { color: #FF0000; position: absolute; left: 0; top: 0; }
+  .layered-text span:nth-child(3) { color: #FFF; position: absolute; left: 1px; top: 1px; }
+
+  /* Image styles (simulated with background, or actual img tags) */
+  .img-effect {
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) contrast(200%);
+    background-blend-mode: multiply; /* Helps with overlaying colors */
+  }
+
+  .img-1 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FF0000"/><path d="M0 0 L100 100 M100 0 L0 100" stroke="%23FFF" stroke-width="5"/></svg>'); }
+  .img-2 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23000"/><rect x="20" y="20" width="60" height="60" fill="%23FFF"/><path d="M50 0 L50 100 M0 50 L100 50" stroke="%23FF0000" stroke-width="3"/></svg>'); }
+  .img-3 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="%23FFF"/><path d="M10 10 L90 90 M90 10 L10 90" stroke="%23000" stroke-width="2"/><rect x="30" y="30" width="40" height="40" fill="%23FF0000"/></svg>'); }
+  .img-4 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 50 C25 25, 75 25, 100 50 C75 75, 25 75, 0 50 Z" fill="%23FFF"/><path d="M20 50 C30 40, 70 40, 80 50 C70 60, 30 60, 20 50 Z" fill="%23FF0000"/></svg>'); }
+
+  /* Dynamic positioning - adjust these values for different layouts */
+  .block-1 { width: 30%; height: 25%; top: 5%; left: 5%; z-index: 10; font-size: 2em; }
+  .block-2 { width: 20%; height: 40%; top: 0%; left: 35%; z-index: 8; }
+  .block-3 { width: 45%; height: 15%; top: 15%; right: 5%; z-index: 9; font-size: 1.5em; }
+  .block-4 { width: 15%; height: 30%; bottom: 10%; left: 10%; z-index: 11; }
+  .block-5 { width: 40%; height: 20%; bottom: 5%; right: 5%; z-index: 7; font-size: 1.8em; }
+  .block-6 { width: 25%; height: 35%; top: 30%; left: 15%; z-index: 12; }
+  .block-7 { width: 30%; height: 25%; top: 40%; right: 10%; z-index: 6; }
+  .block-8 { width: 18%; height: 18%; top: 65%; left: 40%; z-index: 15; }
+  .block-9 { width: 22%; height: 15%; top: 55%; right: 30%; z-index: 13; }
+  .block-10 { width: 10%; height: 50%; top: 20%; left: 0%; z-index: 5; border-width: 5px; }
+  .block-11 { width: 5%; height: 100%; top: 0; right: 0; z-index: 4; border: none; background-color: #FF0000; }
+  .block-12 { width: 100%; height: 5%; bottom: 0; left: 0; z-index: 3; border: none; background-color: #FFF; }
+  .block-13 { width: 50%; height: 8%; top: 0; left: 50%; z-index: 2; background-color: #000; color: #FF0000; font-size: 1em; }
+  .block-14 { width: 15%; height: 20%; top: 70%; right: 5%; z-index: 14; }
+  .block-15 { width: 25%; height: 10%; top: 25%; left: 40%; z-index: 16; font-size: 0.8em;}
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="block b-red block-1">
+    <div class="layered-text">
+      <span>SYSTEM</span>
+      <span>SYSTEM</span>
+      <span>SYSTEM</span>
+    </div>
+  </div>
+
+  <div class="block b-black block-2 img-effect img-1">
+    <span class="vertical-text">CORRUPTION</span>
+  </div>
+
+  <div class="block b-white block-3">
+    <span class="text-glitch">DATA LOSS // REBOOT REQUIRED</span>
+  </div>
+
+  <div class="block b-red block-4 img-effect img-2">
+    <span class="distorted-text">GLITCH</span>
+  </div>
+
+  <div class="block b-black block-5">
+    ERROR_404_LIFE.EXE
+  </div>
+
+  <div class="block b-white block-6 img-effect img-3">
+    <div class="layered-text">
+      <span>NO SIGNAL</span>
+      <span>NO SIGNAL</span>
+      <span>NO SIGNAL</span>
+    </div>
+  </div>
+
+  <div class="block b-red block-7">
+    <span class="vertical-text">ERODE</span>
+  </div>
+
+  <div class="block b-black block-8">
+    <span class="text-glitch">VOID</span>
+  </div>
+
+  <div class="block b-white block-9">
+    STATIC NOISE
+  </div>
+
+  <div class="block b-black block-10">
+    <span class="vertical-text">FRAGMENTS</span>
+  </div>
+
+  <div class="block b-red block-11"></div>
+
+  <div class="block b-white block-12"></div>
+
+  <div class="block b-black block-13">
+    ARCHIVE.FAIL
+  </div>
+
+  <div class="block b-red block-14 img-effect img-4">
+    <span class="distorted-text">CRUMBLE</span>
+  </div>
+
+  <div class="block b-white block-15">
+    MEMORY DEGRADATION
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-04 23:38:56.578038</div>
         <!DOCTYPE html>
 <html>
