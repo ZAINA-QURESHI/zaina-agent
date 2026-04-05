@@ -4,8 +4,7 @@ import datetime
 from google import genai
 
 TOPICS = [
-    "algorithmic surveillance", "digital decay", "brutalist architecture",
-    "decolonizing the cloud", "glitch aesthetics", "data sovereignty"
+    "algorithmic surveillance", "digital decay", "brutalist architecture", "glitch aesthetics", "data sovereignty", "identity politics"
 ]
 
 def generate_art(topic):
@@ -26,7 +25,7 @@ def generate_art(topic):
     target_model = target_model.replace("models/", "")
     print(f"Zaina is auto-connecting to: {target_model}")
 
-    prompt = f"Create a radical brutalist HTML div collage about {topic}. Use high-contrast red/black/white. Output ONLY raw HTML code. No markdown backticks."
+    prompt = f"Create a radical beautiful HTML div collage about {topic}. Use rainbow. Output ONLY raw HTML code. No markdown backticks."
     
     response = client.models.generate_content(model=target_model, contents=prompt)
     return response.text.strip().replace("```html", "").replace("```", "")
