@@ -16,6 +16,141 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 15:51:03.490583</div>
+        <html>
+<head>
+<style>
+body { margin: 0; overflow: hidden; background-color: #000; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.collage-container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    max-width: 1200px;
+    max-height: 800px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    border-radius: 25px;
+    box-shadow: 0 0 50px rgba(255,255,255,0.7), 0 0 100px rgba(255,255,255,0.5), inset 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden; /* To ensure content inside doesn't spill out too much */
+}
+
+.data-unit {
+    position: absolute;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    opacity: 0.9;
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.data-unit:nth-child(1) { background-image: linear-gradient(135deg, #ff0000, #ff7f00); left: 5%; top: 10%; transform: rotate(-10deg) translateZ(50px); animation-delay: 0s; }
+.data-unit:nth-child(2) { background-image: linear-gradient(135deg, #ff7f00, #ffff00); right: 15%; top: 5%; transform: rotate(15deg) translateZ(20px); animation-delay: 1s; }
+.data-unit:nth-child(3) { background-image: linear-gradient(135deg, #ffff00, #00ff00); left: 20%; bottom: 20%; transform: rotate(5deg) translateZ(80px); animation-delay: 2s; }
+.data-unit:nth-child(4) { background-image: linear-gradient(135deg, #00ff00, #0000ff); right: 5%; bottom: 10%; transform: rotate(-20deg) translateZ(40px); animation-delay: 3s; }
+.data-unit:nth-child(5) { background-image: linear-gradient(135deg, #0000ff, #4b0082); left: 30%; top: 30%; transform: rotate(25deg) translateZ(10px); animation-delay: 4s; }
+.data-unit:nth-child(6) { background-image: linear-gradient(135deg, #4b0082, #9400d3); right: 25%; top: 40%; transform: rotate(-5deg) translateZ(60px); animation-delay: 5s; }
+.data-unit:nth-child(7) { background-image: linear-gradient(135deg, #9400d3, #ff0000); left: 10%; top: 50%; transform: rotate(10deg) translateZ(30px); animation-delay: 6s; }
+.data-unit:nth-child(8) { background-image: linear-gradient(135deg, #ff7f00, #ff0000); right: 30%; bottom: 30%; transform: rotate(-12deg) translateZ(70px); animation-delay: 7s; }
+.data-unit:nth-child(9) { background-image: linear-gradient(135deg, #ffff00, #ff7f00); left: 45%; top: 15%; transform: rotate(8deg) translateZ(50px); animation-delay: 8s; }
+.data-unit:nth-child(10) { background-image: linear-gradient(135deg, #00ff00, #ffff00); right: 10%; bottom: 5%; transform: rotate(20deg) translateZ(20px); animation-delay: 9s; }
+.data-unit:nth-child(11) { background-image: linear-gradient(135deg, #0000ff, #00ff00); left: 5%; bottom: 5%; transform: rotate(-18deg) translateZ(90px); animation-delay: 10s; }
+.data-unit:nth-child(12) { background-image: linear-gradient(135deg, #4b0082, #0000ff); left: 60%; top: 60%; transform: rotate(15deg) translateZ(5px); animation-delay: 11s; }
+.data-unit:nth-child(13) { background-image: linear-gradient(135deg, #9400d3, #4b0082); right: 50%; top: 20%; transform: rotate(-25deg) translateZ(45px); animation-delay: 12s; }
+.data-unit:nth-child(14) { background-image: linear-gradient(135deg, #ff0000, #9400d3); left: 25%; top: 70%; transform: rotate(7deg) translateZ(15px); animation-delay: 13s; }
+.data-unit:nth-child(15) { background-image: linear-gradient(135deg, #ff7f00, #ff0000); right: 40%; bottom: 40%; transform: rotate(10deg) translateZ(25px); animation-delay: 14s; }
+
+
+.data-unit:hover {
+    transform: scale(1.15) rotateY(15deg) rotateX(5deg) translateZ(150px) !important;
+    box-shadow: 0 0 30px rgba(255,255,255,0.9), 0 0 60px rgba(255,255,255,0.7);
+    opacity: 1;
+    z-index: 1000;
+}
+
+.central-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(100px);
+    padding: 30px 40px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00) 1;
+    animation: pulse 2s infinite alternate, glow 3s ease-in-out infinite;
+    z-index: 500;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) translateZ(100px) scale(1); }
+    100% { transform: translate(-50%, -50%) translateZ(120px) scale(1.05); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #00ffff; }
+    50% { box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; }
+    100% { box-shadow: 0 0 10px #00ffff; }
+}
+
+/* For Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Orbitron:wght@700&display=swap');
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+    <div class="data-unit">My Data, My Choice</div>
+    <div class="data-unit">Digital Self-Determination</div>
+    <div class="data-unit">Community Data Control</div>
+    <div class="data-unit">No Borders for Bits</div>
+    <div class="data-unit">Reclaim Your Digital Footprint</div>
+    <div class="data-unit">Sovereignty Over Code</div>
+    <div class="data-unit">Data is Power. Own It.</div>
+    <div class="data-unit">Ethical AI, Decentralized Data</div>
+    <div class="data-unit">Indigenous Data Rights</div>
+    <div class="data-unit">Privacy by Design, Always</div>
+    <div class="data-unit">Decentralize Everything</div>
+    <div class="data-unit">Your Data, Your Future</div>
+    <div class="data-unit">Freedom Through Data</div>
+    <div class="data-unit">Resist Corporate Surveillance</div>
+    <div class="data-unit">Data Justice Now!</div>
+
+    <div class="central-message">
+        DATA SOVEREIGNTY
+        <br>
+        OUR RAINBOW RIGHT
+    </div>
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 15:40:01.898586</div>
         <!DOCTYPE html>
 <html>
