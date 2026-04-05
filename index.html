@@ -16,6 +16,325 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 16:45:41.106712</div>
+        <div class="collage-container">
+  <style>
+    /* Basic Reset & Container Styling */
+    .collage-container {
+      position: relative;
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hide anything outside the collage */
+      background: radial-gradient(circle at top left, #2a003f 0%, #000000 100%); /* Deep, dramatic background */
+      font-family: 'Montserrat', 'Arial Black', sans-serif; /* A bold and modern font choice */
+      color: white; /* Default text color */
+      display: block; /* Ensure it takes up space */
+    }
+
+    /* General Element Styling for Collage Pieces */
+    .collage-container .element {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0.5em;
+      box-sizing: border-box;
+      /* Default shadows and transforms for depth */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+      cursor: default; /* Not interactive, but for visual clarity */
+    }
+    .collage-container .element:hover {
+      transform: scale(1.03) rotate(calc(var(--base-rotation, 0deg) + 2deg)); /* Subtle hover effect */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+      filter: brightness(1.1); /* Slightly brighter on hover */
+    }
+
+    /* --- SPECIFIC ELEMENTS & THEIR STYLES --- */
+
+    /* "IDENTITY" Text */
+    .identity-text {
+      --base-rotation: -10deg;
+      font-size: 10vw;
+      font-weight: 900;
+      text-transform: uppercase;
+      top: 5vh;
+      left: -5vw; /* Starts partially off-screen */
+      width: 60vw;
+      height: 20vh;
+      background: linear-gradient(90deg, #ff007f, #ff8c00, #ffff00); /* Hot pink to yellow */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: rotate(var(--base-rotation));
+      z-index: 10;
+      text-shadow: 3px 3px 10px rgba(255, 0, 127, 0.7);
+    }
+
+    /* "POLITICS" Text */
+    .politics-text {
+      --base-rotation: 5deg;
+      font-size: 8vw;
+      font-weight: 900;
+      text-transform: uppercase;
+      bottom: 10vh;
+      right: -8vw; /* Starts partially off-screen */
+      width: 70vw;
+      height: 15vh;
+      background: linear-gradient(-90deg, #00ffff, #007fff, #8a2be2); /* Cyan to deep purple */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: rotate(var(--base-rotation));
+      z-index: 10;
+      text-shadow: -3px -3px 10px rgba(0, 255, 255, 0.7);
+    }
+
+    /* Intersectionality Circles (Rainbow) */
+    .intersectional-circle {
+      width: 25vw;
+      height: 25vw;
+      border-radius: 50%;
+      opacity: 0.7;
+      mix-blend-mode: screen; /* For beautiful color blending */
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      z-index: 5;
+    }
+    .intersectional-circle.red { background-color: #ff0000; top: 15vh; left: 10vw; transform: rotate(15deg); }
+    .intersectional-circle.orange { background-color: #ff8c00; top: 20vh; left: 25vw; transform: rotate(-5deg); }
+    .intersectional-circle.yellow { background-color: #ffff00; top: 30vh; left: 15vw; transform: rotate(25deg); }
+    .intersectional-circle.green { background-color: #008000; top: 25vh; left: 40vw; transform: rotate(-10deg); }
+    .intersectional-circle.blue { background-color: #0000ff; top: 35vh; left: 30vw; transform: rotate(8deg); }
+    .intersectional-circle.violet { background-color: #8a2be2; top: 40vh; left: 45vw; transform: rotate(-20deg); }
+
+    /* Fragmented System Box */
+    .broken-system {
+      --base-rotation: -7deg;
+      top: 55vh;
+      left: 10vw;
+      width: 30vw;
+      height: 20vh;
+      background: repeating-linear-gradient(
+        45deg,
+        #333 0%, #333 10px,
+        #555 10px, #555 20px
+      );
+      border: 5px dashed #ff0000; /* Red dashed border for "broken" effect */
+      transform: rotate(var(--base-rotation));
+      font-size: 3vw;
+      font-weight: bold;
+      color: #eee;
+      line-height: 1.2;
+      text-transform: uppercase;
+      z-index: 8;
+      overflow: hidden; /* Contains fragments */
+    }
+    .broken-system .fragment {
+      display: block;
+      padding: 0.1em;
+      transform: translateX(var(--x, 0)) translateY(var(--y, 0)) rotate(var(--r, 0deg));
+      position: relative;
+    }
+    .broken-system .fragment:nth-child(1) { --x: -10%; --y: 5%; --r: 3deg; color: #ffeb3b; } /* Yellow fragment */
+    .broken-system .fragment:nth-child(2) { --x: 15%; --y: -5%; --r: -5deg; color: #f44336; } /* Red fragment */
+
+    /* Voices / Message Boxes */
+    .message-box {
+      width: 20vw;
+      height: 10vh;
+      border-radius: 15px;
+      padding: 1em;
+      font-size: 2vw;
+      font-weight: bold;
+      color: #fff;
+      transform: rotate(var(--base-rotation));
+      z-index: 12;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+    .voice-1 {
+      --base-rotation: 5deg;
+      top: 10vh;
+      right: 10vw;
+      background-color: #f44336; /* Red */
+    }
+    .voice-2 {
+      --base-rotation: -8deg;
+      top: 25vh;
+      right: 5vw;
+      background-color: #2196f3; /* Blue */
+    }
+    .voice-3 {
+      --base-rotation: 12deg;
+      top: 40vh;
+      right: 15vw;
+      background-color: #4caf50; /* Green */
+    }
+
+    /* Solidarity Bar */
+    .solidarity-gradient {
+      --base-rotation: 2deg;
+      bottom: 5vh;
+      left: 20vw;
+      width: 60vw;
+      height: 8vh;
+      background: linear-gradient(90deg, #ff007f, #8a2be2, #00ffff); /* Pink to Purple to Cyan */
+      color: white;
+      font-size: 3vw;
+      font-weight: bold;
+      border-radius: 10px;
+      letter-spacing: 0.1em;
+      transform: rotate(var(--base-rotation)) skewX(-5deg);
+      z-index: 15;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    /* Question Mark */
+    .question-mark {
+      --base-rotation: -25deg;
+      top: 20vh;
+      left: 70vw;
+      font-size: 15vw;
+      color: #ffeb3b; /* Bright Yellow */
+      font-weight: 900;
+      transform: rotate(var(--base-rotation));
+      z-index: 20;
+      text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffeb3b, 0 0 60px #ffeb3b; /* Intense glow */
+      mix-blend-mode: lighten; /* Blend with background for a glowing effect */
+    }
+
+    /* Progress Arrow */
+    .progress-arrow {
+      --base-rotation: 45deg;
+      bottom: 18vh;
+      left: 5vw;
+      font-size: 10vw;
+      color: #4CAF50; /* Green */
+      transform: rotate(var(--base-rotation)); /* Pointing up and right */
+      z-index: 18;
+      text-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+    }
+
+    /* Queer Stripe (Full rainbow flag) */
+    .queer-stripe {
+      top: 0;
+      right: 0;
+      width: 10vw;
+      height: 100vh;
+      background: linear-gradient(to bottom,
+        #E40303 0%, #E40303 16.66%, /* Red */
+        #FF8C00 16.66%, #FF8C00 33.32%, /* Orange */
+        #FFED00 33.32%, #FFED00 49.98%, /* Yellow */
+        #008026 49.98%, #008026 66.64%, /* Green */
+        #004dff 66.64%, #004dff 83.3%, /* Blue */
+        #750787 83.3%, #750787 100% /* Violet */
+      );
+      z-index: 0; /* Background element */
+      box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Black Lives Matter Box */
+    .BLM-box {
+      --base-rotation: 3deg;
+      top: 65vh;
+      right: 15vw;
+      width: 30vw;
+      height: 15vh;
+      background-color: black;
+      color: white;
+      font-size: 3.5vw;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      border: 5px solid #FF0000; /* Red border for urgency */
+      transform: rotate(var(--base-rotation)) scale(1.1); /* Slightly larger and rotated */
+      z-index: 16;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); /* Red glow */
+    }
+
+    /* Empowerment Text */
+    .empowerment-text {
+      --base-rotation: 15deg;
+      bottom: 25vh;
+      right: 25vw;
+      font-size: 6vw;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #00ff00, #00ffff); /* Green to Cyan */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: rotate(var(--base-rotation));
+      z-index: 11;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      white-space: nowrap; /* Prevent line breaks for single word */
+    }
+
+    /* A swirling background element for added depth and movement */
+    .swirl {
+        position: absolute;
+        top: -10vh;
+        left: -10vw;
+        width: 120vw;
+        height: 120vh;
+        background: radial-gradient(circle at 60% 70%, rgba(255,0,255,0.1) 0%, rgba(0,255,255,0.1) 30%, transparent 70%);
+        transform: rotate(30deg);
+        z-index: 1; /* Below most elements */
+        animation: swirlRotate 30s linear infinite alternate; /* Continuous subtle animation */
+    }
+
+    @keyframes swirlRotate {
+        from { transform: rotate(0deg) scale(1); }
+        to { transform: rotate(360deg) scale(1.1); }
+    }
+  </style>
+
+  <!-- Swirling background element -->
+  <div class="swirl"></div>
+
+  <!-- Main text elements for "IDENTITY POLITICS" -->
+  <div class="element identity-text">IDENTITY</div>
+  <div class="element politics-text">POLITICS</div>
+
+  <!-- Intersectionality circles with rainbow colors -->
+  <div class="element intersectional-circle red"></div>
+  <div class="element intersectional-circle orange"></div>
+  <div class="element intersectional-circle yellow"></div>
+  <div class="element intersectional-circle green"></div>
+  <div class="element intersectional-circle blue"></div>
+  <div class="element intersectional-circle violet"></div>
+
+  <!-- Diverse voices / message boxes -->
+  <div class="element message-box voice-1">My Truth</div>
+  <div class="element message-box voice-2">Your Story</div>
+  <div class="element message-box voice-3">Our Future</div>
+
+  <!-- "Broken System" element -->
+  <div class="element broken-system">
+    <span class="fragment">SYSTEM</span>
+    <span class="fragment">CRACKED</span>
+  </div>
+
+  <!-- Question mark for complexity/debate -->
+  <div class="element question-mark">?</div>
+
+  <!-- Solidarity banner -->
+  <div class="element solidarity-gradient">🤝 SOLIDARITY 🤝</div>
+
+  <!-- Progress arrow -->
+  <div class="element progress-arrow">➡️</div>
+
+  <!-- Queer stripe (rainbow flag) -->
+  <div class="element queer-stripe"></div>
+
+  <!-- Black Lives Matter box -->
+  <div class="element BLM-box">BLACK LIVES MATTER</div>
+
+  <!-- Empowerment text -->
+  <div class="element empowerment-text">EMPOWER</div>
+</div>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">identity politics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 15:51:03.490583</div>
         <html>
 <head>
