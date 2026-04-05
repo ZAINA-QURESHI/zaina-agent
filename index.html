@@ -16,6 +16,301 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 21:40:08.737409</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Rainbow Collage</title>
+<style>
+  body {
+    background-color: #0a0a0a;
+    overflow: hidden; /* Hide scrollbars if content overflows */
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* A pixel-art font, optional but cool */
+    color: #fff;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0.1) 1px, transparent 1px, transparent 2px),
+      repeating-linear-gradient(-45deg, rgba(0,255,0,0.1) 0%, rgba(0,255,0,0.1) 1px, transparent 1px, transparent 2px);
+    background-size: 8px 8px;
+    animation: backgroundGlitch 10s infinite alternate;
+  }
+
+  @keyframes backgroundGlitch {
+    0% { background-position: 0 0, 0 0; }
+    25% { background-position: 5px 5px, -5px -5px; }
+    50% { background-position: 10px 0, 0 10px; }
+    75% { background-position: -5px 5px, 5px -5px; }
+    100% { background-position: 0 0, 0 0; }
+  }
+
+  .glitch-item {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    filter: saturate(1.5) contrast(1.2);
+    overflow: hidden;
+  }
+
+  .glitch-item:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    z-index: 100;
+  }
+
+  .glitch-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow:
+      1px 1px 0px #ff00ff,
+      -1px -1px 0px #00ffff;
+    animation: textGlitch 0.5s infinite alternate;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    padding: 5px;
+  }
+
+  @keyframes textGlitch {
+    0% {
+      transform: translateX(0);
+      text-shadow: 1px 1px 0px #ff00ff, -1px -1px 0px #00ffff;
+    }
+    33% {
+      transform: translateX(-2px);
+      text-shadow: 2px 0px 0px #00ff00, -2px 0px 0px #ff0000;
+    }
+    66% {
+      transform: translateX(2px);
+      text-shadow: 0px 2px 0px #0000ff, 0px -2px 0px #ffff00;
+    }
+    100% {
+      transform: translateX(0);
+      text-shadow: 1px 1px 0px #ff00ff, -1px -1px 0px #00ffff;
+    }
+  }
+
+  .glitch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: imgGlitch 2s infinite linear;
+    image-rendering: pixelated; /* For a sharper pixel look */
+  }
+
+  @keyframes imgGlitch {
+    0% {
+      filter: hue-rotate(0deg) saturate(1) blur(0);
+      transform: translate(0, 0);
+    }
+    10% {
+      filter: hue-rotate(10deg) saturate(1.2) blur(0.5px);
+      transform: translate(2px, -2px);
+    }
+    20% {
+      filter: hue-rotate(20deg) saturate(1) blur(0);
+      transform: translate(-1px, 1px);
+    }
+    30% {
+      filter: hue-rotate(30deg) saturate(1.3) blur(0.8px);
+      transform: translate(3px, 0);
+    }
+    40% {
+      filter: hue-rotate(40deg) saturate(1) blur(0);
+      transform: translate(0, 3px);
+    }
+    50% {
+      filter: hue-rotate(50deg) saturate(1.1) blur(0.3px);
+      transform: translate(-2px, -1px);
+    }
+    60% {
+      filter: hue-rotate(60deg) saturate(1) blur(0);
+      transform: translate(1px, 2px);
+    }
+    70% {
+      filter: hue-rotate(70deg) saturate(1.4) blur(1px);
+      transform: translate(-3px, 0);
+    }
+    80% {
+      filter: hue-rotate(80deg) saturate(1) blur(0);
+      transform: translate(0, -3px);
+    }
+    90% {
+      filter: hue-rotate(90deg) saturate(1.2) blur(0.6px);
+      transform: translate(2px, 1px);
+    }
+    100% {
+      filter: hue-rotate(0deg) saturate(1) blur(0);
+      transform: translate(0, 0);
+    }
+  }
+
+  /* Specific color themes for some glitch items */
+  .color-red {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+  }
+  .color-orange {
+    background-color: rgba(255, 165, 0, 0.2);
+    border-color: #ffa500;
+  }
+  .color-yellow {
+    background-color: rgba(255, 255, 0, 0.2);
+    border-color: #ffff00;
+  }
+  .color-green {
+    background-color: rgba(0, 255, 0, 0.2);
+    border-color: #00ff00;
+  }
+  .color-blue {
+    background-color: rgba(0, 0, 255, 0.2);
+    border-color: #0000ff;
+  }
+  .color-purple {
+    background-color: rgba(128, 0, 128, 0.2);
+    border-color: #800080;
+  }
+  .color-pink {
+    background-color: rgba(255, 105, 180, 0.2);
+    border-color: #ff69b4;
+  }
+  .color-cyan {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+  }
+
+  /* Overlay effects */
+  .scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(10, 10, 10, 0.1) 1px,
+      transparent 2px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWHsWFBG952wAAAABJRU5YSFhY');
+    background-repeat: repeat;
+    opacity: 0.1; /* Adjust noise visibility */
+    pointer-events: none;
+    z-index: 9998;
+    animation: noiseAnimation 1s infinite alternate;
+  }
+
+  @keyframes noiseAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- ROW 1 -->
+  <div class="glitch-item color-red" style="width: 150px; height: 100px; top: 5%; left: 5%; transform: rotate(-3deg);">
+    <div class="glitch-text">GLITCH</div>
+  </div>
+  <div class="glitch-item color-orange" style="width: 200px; height: 150px; top: 2%; left: 20%; transform: rotate(5deg);">
+    <img src="https://via.placeholder.com/200x150/ff0000/ffffff?text=ERROR" alt="Error Glitch Art" class="glitch-img">
+  </div>
+  <div class="glitch-item color-yellow" style="width: 120px; height: 80px; top: 8%; left: 45%; transform: rotate(-8deg);">
+    <div class="glitch-text">PIXEL</div>
+  </div>
+  <div class="glitch-item color-green" style="width: 180px; height: 120px; top: 4%; left: 60%; transform: rotate(2deg);">
+    <img src="https://via.placeholder.com/180x120/00ff00/000000?text=DATA" alt="Data Corruption" class="glitch-img">
+  </div>
+  <div class="glitch-item color-blue" style="width: 100px; height: 100px; top: 6%; left: 80%; transform: rotate(-10deg);">
+    <div class="glitch-text">BROKEN</div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="glitch-item color-purple" style="width: 250px; height: 180px; top: 20%; left: 15%; transform: rotate(10deg);">
+    <img src="https://via.placeholder.com/250x180/800080/ffffff?text=AESTHETICS" alt="Aesthetic Glitch" class="glitch-img">
+  </div>
+  <div class="glitch-item color-pink" style="width: 160px; height: 110px; top: 25%; left: 40%; transform: rotate(-5deg);">
+    <div class="glitch-text">RAINBOW WAVE</div>
+  </div>
+  <div class="glitch-item color-cyan" style="width: 220px; height: 160px; top: 22%; left: 65%; transform: rotate(7deg);">
+    <img src="https://via.placeholder.com/220x160/00ffff/000000?text=SIGNAL" alt="Signal Interference" class="glitch-img">
+  </div>
+
+  <!-- ROW 3 -->
+  <div class="glitch-item color-red" style="width: 190px; height: 130px; top: 45%; left: 8%; transform: rotate(-12deg);">
+    <div class="glitch-text">DISTORT</div>
+  </div>
+  <div class="glitch-item color-orange" style="width: 280px; height: 200px; top: 40%; left: 30%; transform: rotate(4deg);">
+    <img src="https://via.placeholder.com/280x200/ffa500/000000?text=VAPORWAVE" alt="Vaporwave Glitch" class="glitch-img">
+  </div>
+  <div class="glitch-item color-yellow" style="width: 140px; height: 90px; top: 48%; left: 65%; transform: rotate(-6deg);">
+    <div class="glitch-text">STATIC</div>
+  </div>
+  <div class="glitch-item color-green" style="width: 170px; height: 115px; top: 43%; left: 80%; transform: rotate(1deg);">
+    <img src="https://via.placeholder.com/170x115/00ff00/000000?text=CODE" alt="Code Glitch" class="glitch-img">
+  </div>
+
+  <!-- ROW 4 -->
+  <div class="glitch-item color-blue" style="width: 210px; height: 150px; top: 60%; left: 20%; transform: rotate(8deg);">
+    <div class="glitch-text">ABSTRACT</div>
+  </div>
+  <div class="glitch-item color-purple" style="width: 300px; height: 220px; top: 65%; left: 45%; transform: rotate(-3deg);">
+    <img src="https://via.placeholder.com/300x220/800080/ffffff?text=REIMAGINE" alt="Reimagine Glitch" class="glitch-img">
+  </div>
+  <div class="glitch-item color-pink" style="width: 130px; height: 100px; top: 62%; left: 78%; transform: rotate(11deg);">
+    <div class="glitch-text">NOISE</div>
+  </div>
+
+  <!-- ROW 5 (overlapping) -->
+  <div class="glitch-item color-cyan" style="width: 180px; height: 120px; top: 75%; left: 5%; transform: rotate(-7deg);">
+    <img src="https://via.placeholder.com/180x120/00ffff/000000?text=SYNTAX" alt="Syntax Error" class="glitch-img">
+  </div>
+  <div class="glitch-item color-red" style="width: 260px; height: 170px; top: 80%; left: 28%; transform: rotate(6deg);">
+    <div class="glitch-text" style="font-size: 1.8em;">COLLAGE_ERROR_404</div>
+  </div>
+  <div class="glitch-item color-orange" style="width: 150px; height: 100px; top: 70%; left: 58%; transform: rotate(-4deg);">
+    <div class="glitch-text">RADICAL</div>
+  </div>
+  <div class="glitch-item color-yellow" style="width: 230px; height: 160px; top: 85%; left: 70%; transform: rotate(9deg);">
+    <img src="https://via.placeholder.com/230x160/ffff00/000000?text=BEAUTY" alt="Glitch Beauty" class="glitch-img">
+  </div>
+
+</div>
+
+<div class="scanline-overlay"></div>
+<div class="noise-overlay"></div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 20:41:39.883287</div>
         <!DOCTYPE html>
 <html>
