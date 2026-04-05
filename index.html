@@ -16,6 +16,205 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 15:40:01.898586</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Collage</title>
+<style>
+  body { margin: 0; padding: 0; background-color: black; overflow: hidden; font-family: 'Arial Black', sans-serif; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+  }
+  .block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white borders */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0.5em;
+    cursor: grab; /* For a more interactive feel */
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; /* Slight hover effect */
+  }
+  .block:active {
+    cursor: grabbing;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+
+  /* Color Palette */
+  .red { background-color: #D60000; color: white; }
+  .black { background-color: black; color: white; }
+  .white { background-color: white; color: black; }
+
+  /* Specific Styling for text/images */
+  .text-content {
+    font-size: 1.8vw;
+    padding: 0.5em;
+    text-transform: uppercase;
+    word-break: break-all;
+  }
+  .image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(200%); /* Brutalist image effect */
+  }
+  .image-content.red-tint {
+    filter: grayscale(100%) contrast(200%) sepia(100%) saturate(300%) hue-rotate(330deg);
+  }
+  .image-content.invert {
+    filter: invert(100%) contrast(200%);
+  }
+  .image-content.red-invert {
+    filter: invert(100%) grayscale(100%) contrast(200%) sepia(100%) saturate(300%) hue-rotate(330deg);
+  }
+
+  /* Overlays for brutal text */
+  .overlay-text {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    pointer-events: none; /* Allows interaction with elements underneath */
+    z-index: 10;
+    mix-blend-mode: difference; /* A radical blending mode */
+  }
+  .overlay-text.red-glow {
+    color: #FF0000;
+    text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000;
+  }
+  .overlay-text.white-glow {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
+  }
+  .overlay-text.black-glow {
+    color: #000000;
+    text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+  }
+
+  /* Specific text styles */
+  .strike-through {
+    text-decoration: line-through;
+  }
+  .heavy-shadow {
+    text-shadow: 4px 4px 0px black, 8px 8px 0px red;
+    color: white;
+  }
+  .red-outline {
+    -webkit-text-stroke: 1px red;
+    color: transparent;
+  }
+
+  /* Z-index management for layering */
+  .z-front { z-index: 5; }
+  .z-mid { z-index: 3; }
+  .z-back { z-index: 1; }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Main Title Block - prominent -->
+  <div class="block black z-front" style="width: 60%; height: 20%; top: 5%; left: 20%;">
+    <span class="text-content" style="font-size: 4vw; color: #D60000; text-shadow: 4px 4px 0px white, 8px 8px 0px black;">BRUTALIST ARCHITECTURE</span>
+  </div>
+
+  <!-- Image Blocks (Conceptual placeholders) -->
+  <div class="block z-mid" style="width: 30%; height: 40%; top: 15%; left: 0%;">
+    <img src="https://via.placeholder.com/600x800/D60000/FFFFFF?text=CONCRETE+MASS" alt="Brutalist Building Image" class="image-content">
+  </div>
+  <div class="block z-back" style="width: 25%; height: 30%; top: 0%; left: 65%;">
+    <img src="https://via.placeholder.com/500x700/000000/D60000?text=RAW+FORM" alt="Brutalist Building Image 2" class="image-content invert">
+  </div>
+  <div class="block z-front" style="width: 40%; height: 25%; top: 40%; left: 30%;">
+    <img src="https://via.placeholder.com/800x500/FFFFFF/D60000?text=FUNCTION+OVER+FORM" alt="Brutalist Building Image 3" class="image-content red-tint">
+  </div>
+  <div class="block z-mid" style="width: 20%; height: 20%; top: 75%; left: 10%;">
+    <img src="https://via.placeholder.com/400x400/D60000/000000?text=EXPOSED" alt="Brutalist Detail" class="image-content red-invert">
+  </div>
+  <div class="block z-back" style="width: 35%; height: 35%; top: 60%; left: 60%;">
+    <img src="https://via.placeholder.com/700x700/000000/FFFFFF?text=MONOLITH" alt="Brutalist Structure" class="image-content grayscale">
+  </div>
+  <div class="block black z-front" style="width: 15%; height: 10%; top: 85%; left: 45%;">
+    <img src="https://via.placeholder.com/300x200/FFFFFF/D60000?text=BOLD" alt="Small Brutalist Element" class="image-content invert">
+  </div>
+
+  <!-- Text Blocks - varied sizes and styles -->
+  <div class="block red z-front" style="width: 15%; height: 10%; top: 30%; left: 80%;">
+    <span class="text-content">MASSIVE</span>
+  </div>
+  <div class="block white z-mid" style="width: 20%; height: 10%; top: 50%; left: 5%;">
+    <span class="text-content black">NOSTALGIA</span>
+  </div>
+  <div class="block black z-front" style="width: 25%; height: 15%; top: 60%; left: 25%;">
+    <span class="text-content white strike-through" style="font-size: 2vw;">ORNAMENTATION IS A CRIME</span>
+  </div>
+  <div class="block white z-mid" style="width: 10%; height: 10%; top: 25%; left: 40%;">
+    <span class="text-content red" style="font-size: 1.5vw;">RAW</span>
+  </div>
+  <div class="block black z-back" style="width: 18%; height: 8%; top: 10%; left: 40%;">
+    <span class="text-content red-outline" style="font-size: 1.8vw;">CONCRETE</span>
+  </div>
+  <div class="block red z-front" style="width: 12%; height: 12%; top: 70%; left: 85%;">
+    <span class="text-content white heavy-shadow">FORM</span>
+  </div>
+  <div class="block white z-mid" style="width: 20%; height: 15%; top: 80%; left: 70%;">
+    <span class="text-content black" style="font-size: 2.2vw;">DECONSTRUCT</span>
+  </div>
+  <div class="block black z-front" style="width: 22%; height: 10%; top: 55%; left: 70%;">
+    <span class="text-content red" style="font-size: 1.7vw; transform: rotate(-5deg);">UTILITY</span>
+  </div>
+  <div class="block red z-back" style="width: 15%; height: 10%; top: 45%; left: 80%;">
+    <span class="text-content white" style="font-size: 1.6vw;">HONESTY</span>
+  </div>
+  <div class="block black z-mid" style="width: 15%; height: 10%; top: 5%; left: 0%;">
+    <span class="text-content white" style="font-size: 1.2vw; text-decoration: underline;">BARE ESSENTIALS</span>
+  </div>
+  <div class="block white z-front" style="width: 10%; height: 10%; top: 35%; left: 50%;">
+    <span class="text-content black" style="font-size: 1vw;">BRICK</span>
+  </div>
+  <div class="block red z-back" style="width: 10%; height: 10%; top: 15%; left: 55%;">
+    <span class="text-content white" style="font-size: 1.3vw;">STEEL</span>
+  </div>
+  <div class="block black z-front" style="width: 20%; height: 12%; top: 25%; left: 20%;">
+    <span class="text-content white" style="font-size: 2.5vw; text-shadow: 2px 2px 0 red;">POWER</span>
+  </div>
+  <div class="block white z-mid" style="width: 18%; height: 10%; top: 68%; left: 40%;">
+    <span class="text-content black" style="font-size: 1.4vw;">URBAN GRIT</span>
+  </div>
+
+  <!-- Overlays for additional Brutalism -->
+  <div class="overlay-text red-glow" style="top: 10%; left: 50%; transform: translate(-50%, 0); font-size: 6vw;">STRUCTURE</div>
+  <div class="overlay-text white-glow" style="bottom: 5%; right: 5%; transform: rotate(10deg); font-size: 4vw;">EXPOSED!</div>
+  <div class="overlay-text black-glow" style="top: 40%; left: 10%; transform: rotate(-8deg); font-size: 5vw;">REJECT</div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-05 14:42:21.820666</div>
         <!--
 <!DOCTYPE html>
