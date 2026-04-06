@@ -16,6 +16,313 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 06:03:07.440851</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars if content overflows due to positioning */
+            background-color: #000; /* Dark background for contrast */
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            position: relative;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        .collage-container {
+            position: absolute; /* Allow precise positioning of children */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            perspective: 1000px; /* For 3D effects */
+        }
+
+        .decay-element {
+            position: absolute;
+            box-sizing: border-box;
+            background: linear-gradient(45deg,
+                red 0%,
+                orange 15%,
+                yellow 30%,
+                lime 45%,
+                blue 60%,
+                indigo 75%,
+                violet 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            text-align: center;
+            padding: 5px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            mix-blend-mode: screen; /* For vibrant overlays */
+            filter: blur(0.5px) contrast(150%);
+            animation: glitchEffect 10s infinite alternate-reverse,
+                       fadeAndShift 15s infinite alternate-reverse;
+            transform-origin: center center;
+            opacity: 0.8;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .decay-element:hover {
+            opacity: 1;
+            transform: scale(1.05) rotateZ(3deg) skewX(2deg);
+            z-index: 100;
+            filter: blur(0px) contrast(200%);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        /* Specific styles for different elements */
+        .bit-rot {
+            width: 80px; height: 80px;
+            top: 10%; left: 5%;
+            transform: rotateZ(15deg) scale(0.9);
+            animation-delay: 0s;
+            background: linear-gradient(to right, red, orange);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        .data-fragment {
+            width: 120px; height: 60px;
+            top: 25%; left: 15%;
+            transform: rotateY(30deg);
+            animation-delay: 1s;
+            background: linear-gradient(to bottom, orange, yellow);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+        }
+        .pixel-dust {
+            width: 60px; height: 100px;
+            top: 5%; right: 10%;
+            transform: rotateX(45deg) scale(0.8);
+            animation-delay: 2s;
+            background: linear-gradient(to left, yellow, lime);
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+        .corrupted-byte {
+            width: 90px; height: 90px;
+            top: 40%; left: 30%;
+            transform: rotateZ(-20deg) skewX(10deg);
+            animation-delay: 3s;
+            background: linear-gradient(to top, lime, blue);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+        .lost-packet {
+            width: 150px; height: 70px;
+            top: 15%; left: 40%;
+            transform: rotateY(-30deg) translateZ(-50px);
+            animation-delay: 4s;
+            background: linear-gradient(to right, blue, indigo);
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 100%, 0% 100%);
+        }
+        .ghost-signal {
+            width: 70px; height: 120px;
+            top: 60%; left: 5%;
+            transform: rotateX(-20deg) scale(1.1);
+            animation-delay: 5s;
+            background: linear-gradient(to bottom, indigo, violet);
+            box-shadow: 0 0 15px rgba(75, 0, 130, 0.5);
+            border-radius: 20px;
+        }
+        .phantom-cache {
+            width: 110px; height: 110px;
+            bottom: 10%; right: 5%;
+            transform: rotateZ(30deg) translateZ(30px);
+            animation-delay: 6s;
+            background: linear-gradient(to top left, violet, red);
+            border-radius: 50% 20% 50% 20%;
+            box-shadow: 0 0 15px rgba(148, 0, 211, 0.5);
+        }
+        .void-loop {
+            width: 100px; height: 50px;
+            top: 50%; right: 20%;
+            transform: rotateX(60deg) scale(0.7);
+            animation-delay: 7s;
+            background: linear-gradient(to right, red, yellow);
+            clip-path: circle(50% at 50% 50%);
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+        }
+        .entropic-data {
+            width: 180px; height: 80px;
+            bottom: 5%; left: 20%;
+            transform: rotateY(45deg);
+            animation-delay: 8s;
+            background: linear-gradient(to bottom right, orange, blue);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+            clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%);
+        }
+        .shattered-display {
+            width: 160px; height: 100px;
+            top: 55%; left: 50%; /* Center-ish */
+            transform: rotateZ(10deg) skewY(5deg);
+            animation-delay: 9s;
+            background: linear-gradient(to right, yellow, indigo);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            clip-path: polygon(
+                5% 5%, 95% 0%, 100% 95%, 0% 100%
+            ); /* Irregular shape */
+            font-size: 1.2em;
+        }
+        .glitch-text {
+            width: 200px; height: 30px;
+            top: 80%; left: 60%;
+            transform: rotateZ(-5deg) scaleX(1.2);
+            animation-delay: 10s;
+            background: linear-gradient(to right, lime, violet);
+            text-shadow: 2px 2px 0 red, -2px -2px 0 blue;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-bottom: 2px dashed rgba(255,255,255,0.5);
+        }
+        .forgotten-file {
+            width: 90px; height: 140px;
+            top: 10%; left: 60%;
+            transform: rotateY(15deg) translateX(20px);
+            animation-delay: 11s;
+            background: linear-gradient(to top, blue, orange);
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+            border-left: 5px solid rgba(255,255,255,0.3);
+            border-bottom: 5px solid rgba(255,255,255,0.3);
+        }
+        .echo-fragment {
+            width: 70px; height: 70px;
+            top: 70%; left: 35%;
+            transform: rotateZ(45deg);
+            animation-delay: 12s;
+            background: linear-gradient(to right, indigo, lime);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(75, 0, 130, 0.7);
+            opacity: 0.6;
+            animation-duration: 8s;
+        }
+
+        /* Keyframe animations for dynamic effects */
+        @keyframes glitchEffect {
+            0% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-2px, 2px); filter: hue-rotate(30deg); }
+            40% { transform: translate(3px, -3px); filter: hue-rotate(60deg); }
+            60% { transform: translate(-1px, 1px); filter: hue-rotate(90deg); }
+            80% { transform: translate(2px, -2px); filter: hue-rotate(120deg); }
+            100% { transform: translate(0, 0); filter: hue-rotate(150deg); }
+        }
+
+        @keyframes fadeAndShift {
+            0% { opacity: 0.8; transform: translateY(0) scale(1) rotate(0deg); }
+            25% { opacity: 0.7; transform: translateY(5px) scale(1.01) rotate(2deg); }
+            50% { opacity: 0.9; transform: translateY(-5px) scale(0.99) rotate(-2deg); }
+            75% { opacity: 0.6; transform: translateY(2px) scale(1.02) rotate(1deg); }
+            100% { opacity: 0.8; transform: translateY(0) scale(1) rotate(0deg); }
+        }
+
+        /* Title/main text styling */
+        .main-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            font-weight: bold;
+            color: transparent; /* Make text color transparent */
+            background: linear-gradient(45deg,
+                red, orange, yellow, lime, blue, indigo, violet
+            );
+            -webkit-background-clip: text; /* Clip background to text shape */
+            background-clip: text; /* Standard */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            z-index: 1000;
+            white-space: nowrap;
+            letter-spacing: 3px;
+            animation: textGlitch 5s infinite alternate-reverse,
+                       pulseShadow 3s infinite alternate;
+            padding: 10px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0 30px rgba(255,255,255,0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        @keyframes textGlitch {
+            0% { transform: translate(-50%, -50%) skewX(0deg); }
+            20% { transform: translate(-49%, -51%) skewX(2deg); }
+            40% { transform: translate(-51%, -49%) skewX(-3deg); }
+            60% { transform: translate(-50.5%, -50.5%) skewX(1deg); }
+            80% { transform: translate(-49.5%, -49.5%) skewX(-1deg); }
+            100% { transform: translate(-50%, -50%) skewX(0deg); }
+        }
+
+        @keyframes pulseShadow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.7); }
+            100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); }
+        }
+
+        .subtitle {
+            position: absolute;
+            top: calc(50% + 60px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.6);
+            z-index: 1001;
+            animation: fadeIn 8s ease-out forwards;
+            opacity: 0;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="decay-element bit-rot">BYTE</div>
+        <div class="decay-element data-fragment">FILE NOT FOUND</div>
+        <div class="decay-element pixel-dust">GLITCH</div>
+        <div class="decay-element corrupted-byte">ERROR 404</div>
+        <div class="decay-element lost-packet">LOST</div>
+        <div class="decay-element ghost-signal">NO SIGNAL</div>
+        <div class="decay-element phantom-cache">VOID</div>
+        <div class="decay-element void-loop">LOOP</div>
+        <div class="decay-element entropic-data">ENTROPY</div>
+        <div class="decay-element shattered-display">
+            SCREEN <br> FRACTURED
+        </div>
+        <div class="decay-element glitch-text">DATA<span style="color: blue;">_</span>CRUMBLE</div>
+        <div class="decay-element forgotten-file">MEMORIES_01.DAT</div>
+        <div class="decay-element echo-fragment">ECHO</div>
+
+        <div class="main-title">
+            DIGITAL DECAY
+        </div>
+        <div class="subtitle">
+            A Rainbow Erosion
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 03:25:57.365571</div>
         <!DOCTYPE html>
 <html lang="en">
