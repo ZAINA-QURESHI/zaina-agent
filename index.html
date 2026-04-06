@@ -16,6 +16,245 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 22:44:52.973505</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow-x: hidden; background-color: #000; font-family: 'Courier New', monospace; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,1) 70%);
+  }
+
+  /* Glitch Text Style */
+  .glitch {
+    position: absolute;
+    font-size: 5vw;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+      -1px -1px 0px #FF00FF,
+      1px 1px 0px #00FFFF;
+    animation: glitch-animation 2.5s infinite;
+    z-index: 100;
+    pointer-events: none;
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
+  @keyframes glitch-animation {
+    0% { transform: translate(0); text-shadow: -1px -1px 0px #FF00FF, 1px 1px 0px #00FFFF; }
+    20% { transform: translate(-2px, 2px); text-shadow: 1px 1px 0px #00FF00, -1px -1px 0px #FF0000; }
+    40% { transform: translate(2px, -2px); text-shadow: -1px 1px 0px #FFFF00, 1px -1px 0px #0000FF; }
+    60% { transform: translate(-1px, -1px); text-shadow: 1px -1px 0px #FF00FF, -1px 1px 0px #00FFFF; }
+    80% { transform: translate(1px, 1px); text-shadow: -1px -1px 0px #FF0000, 1px 1px 0px #00FF00; }
+    100% { transform: translate(0); text-shadow: -1px -1px 0px #FF00FF, 1px 1px 0px #00FFFF; }
+  }
+
+  /* Rainbow Static Divs */
+  .static-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right,
+      #FF0000 0%, #FF7F00 14%, #FFFF00 28%, #00FF00 42%,
+      #0000FF 57%, #4B0082 71%, #9400D3 85%, #FF0000 100%);
+    animation: static-shift 0.5s infinite alternate;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes static-shift {
+    from { transform: translateX(0px); }
+    to { transform: translateX(5px); }
+  }
+
+  /* Corrupted Image Effect */
+  .corrupted-img {
+    position: absolute;
+    width: 25vw;
+    height: 25vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    filter: saturate(200%) brightness(150%) contrast(180%);
+    opacity: 0.4;
+    mix-blend-mode: screen; /* Or difference, overlay, lighten */
+    animation: image-glitch 4s infinite alternate;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), inset 0 0 5px rgba(255, 0, 255, 0.5);
+    z-index: 5;
+  }
+
+  @keyframes image-glitch {
+    0% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg) saturate(200%) brightness(150%) contrast(180%); }
+    25% { transform: translate(5px, -3px) scale(1.02); filter: hue-rotate(30deg) saturate(220%) brightness(160%) contrast(190%); }
+    50% { transform: translate(-7px, 5px) scale(0.98); filter: hue-rotate(60deg) saturate(180%) brightness(140%) contrast(170%); }
+    75% { transform: translate(3px, -2px) scale(1.01); filter: hue-rotate(90deg) saturate(210%) brightness(155%) contrast(185%); }
+    100% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg) saturate(200%) brightness(150%) contrast(180%); }
+  }
+
+  /* Pixelated Rainbow Blocks */
+  .pixel-block {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 0 5px rgba(0,255,255,0.2);
+    animation: pixel-fade 3s infinite alternate;
+    opacity: 0.3;
+    z-index: 2;
+  }
+
+  @keyframes pixel-fade {
+    0% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(1); }
+  }
+
+  /* Animated Rainbow Gradient Overlay */
+  .rainbow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+      #FF0000, #FF7F00, #FFFF00, #00FF00,
+      #0000FF, #4B0082, #9400D3, #FF0000);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    opacity: 0.1;
+    mix-blend-mode: screen;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ASCII Art like text blocks */
+  .ascii-block {
+    position: absolute;
+    font-size: 1vw;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    white-space: pre;
+    text-shadow: 0 0 5px rgba(0,255,255,0.2);
+    animation: text-scramble 10s infinite steps(10);
+    z-index: 3;
+    font-weight: bold;
+    transform: rotateZ(var(--rotation, 0deg));
+  }
+
+  @keyframes text-scramble {
+    0%, 100% { content: attr(data-text-1); }
+    25% { content: attr(data-text-2); }
+    50% { content: attr(data-text-3); }
+    75% { content: attr(data-text-4); }
+  }
+
+  /* Dynamic CSS for random positioning and colors */
+  :root {
+    --color-red: #FF0000;
+    --color-orange: #FF7F00;
+    --color-yellow: #FFFF00;
+    --color-green: #00FF00;
+    --color-blue: #0000FF;
+    --color-indigo: #4B0082;
+    --color-violet: #9400D3;
+  }
+</style>
+</head>
+<body>
+<div class="collage-container">
+
+  <div class="rainbow-overlay"></div>
+
+  <div class="glitch" style="top: 10%; left: 5%; font-size: 8vw; animation-delay: 0s;">DECAY</div>
+  <div class="glitch" style="top: 30%; right: 10%; font-size: 6vw; animation-delay: 0.5s; transform: rotate(-5deg);">GLITCH</div>
+  <div class="glitch" style="bottom: 15%; left: 20%; font-size: 7vw; animation-delay: 1s; transform: rotate(8deg);">STATIC</div>
+  <div class="glitch" style="bottom: 5%; right: 5%; font-size: 5vw; animation-delay: 1.5s; opacity: 0.6;">CORRUPT</div>
+  <div class="glitch" style="top: 5%; left: 50%; transform: translateX(-50%) rotate(3deg); font-size: 4vw; animation-delay: 2s; opacity: 0.5;">010101</div>
+
+  <!-- Static Lines -->
+  <div class="static-line" style="top: 15%;"></div>
+  <div class="static-line" style="top: 35%; animation-delay: 0.2s;"></div>
+  <div class="static-line" style="top: 55%; animation-delay: 0.4s;"></div>
+  <div class="static-line" style="top: 75%; animation-delay: 0.6s;"></div>
+  <div class="static-line" style="top: 90%; animation-delay: 0.8s;"></div>
+
+  <!-- Corrupted Image Effects -->
+  <div class="corrupted-img" style="top: 20%; left: 60%; background-image: url('https://picsum.photos/id/1015/800/600'); animation-delay: 0.1s;"></div>
+  <div class="corrupted-img" style="top: 55%; left: 10%; width: 30vw; height: 35vh; background-image: url('https://picsum.photos/id/1040/800/600'); animation-delay: 0.4s; filter: grayscale(100%) sepia(50%) saturate(300%) hue-rotate(180deg) brightness(130%) contrast(200%);"></div>
+  <div class="corrupted-img" style="bottom: 10%; right: 20%; width: 20vw; height: 20vh; background-image: url('https://picsum.photos/id/1020/800/600'); animation-delay: 0.7s; filter: blur(2px) saturate(250%) brightness(180%) hue-rotate(270deg);"></div>
+  <div class="corrupted-img" style="top: 5%; right: 5%; width: 15vw; height: 18vh; background-image: url('https://picsum.photos/id/1050/800/600'); animation-delay: 0.9s; filter: invert(100%) saturate(200%) brightness(160%) contrast(190%);"></div>
+
+  <!-- Pixel Blocks -->
+  <script>
+    const collageContainer = document.querySelector('.collage-container');
+    const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+    for (let i = 0; i < 50; i++) {
+      const pixelBlock = document.createElement('div');
+      pixelBlock.className = 'pixel-block';
+      pixelBlock.style.top = Math.random() * 100 + '%';
+      pixelBlock.style.left = Math.random() * 100 + '%';
+      pixelBlock.style.width = (Math.random() * 30 + 10) + 'px';
+      pixelBlock.style.height = (Math.random() * 30 + 10) + 'px';
+      pixelBlock.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      pixelBlock.style.animationDelay = Math.random() * 5 + 's';
+      pixelBlock.style.opacity = Math.random() * 0.4 + 0.1;
+      pixelBlock.style.transform = `scale(${Math.random() * 0.5 + 0.8})`;
+      collageContainer.appendChild(pixelBlock);
+    }
+
+    const asciiTexts = [
+      "ERROR_404_NOT_FOUND\nSYSTEM_FAILURE\nMEMORY_CORRUPTION",
+      "DATA_FRAGMENTED\nSIGNAL_LOST\nREBOOT_REQUIRED",
+      "VOID_FILL_BUFFER\nMATRIX_DEGRADE\nCODE_OVERFLOW",
+      "GHOST_IN_MACHINE\nECHO_OF_PAST\nSILENCE_FALLS"
+    ];
+    for (let i = 0; i < 15; i++) {
+        const asciiBlock = document.createElement('div');
+        asciiBlock.className = 'ascii-block';
+        asciiBlock.style.top = Math.random() * 90 + '%';
+        asciiBlock.style.left = Math.random() * 90 + '%';
+        asciiBlock.style.fontSize = (Math.random() * 1.5 + 0.7) + 'vw';
+        asciiBlock.style.animationDelay = Math.random() * 8 + 's';
+        asciiBlock.style.opacity = Math.random() * 0.3 + 0.2;
+        asciiBlock.style.setProperty('--rotation', `${Math.random() * 20 - 10}deg`);
+        const textChoice1 = asciiTexts[Math.floor(Math.random() * asciiTexts.length)];
+        const textChoice2 = asciiTexts[Math.floor(Math.random() * asciiTexts.length)];
+        const textChoice3 = asciiTexts[Math.floor(Math.random() * asciiTexts.length)];
+        const textChoice4 = asciiTexts[Math.floor(Math.random() * asciiTexts.length)];
+        asciiBlock.setAttribute('data-text-1', textChoice1);
+        asciiBlock.setAttribute('data-text-2', textChoice2);
+        asciiBlock.setAttribute('data-text-3', textChoice3);
+        asciiBlock.setAttribute('data-text-4', textChoice4);
+        asciiBlock.innerHTML = textChoice1; // Initial text
+        collageContainer.appendChild(asciiBlock);
+    }
+  </script>
+
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 21:45:21.690374</div>
         <!DOCTYPE html>
 <html>
