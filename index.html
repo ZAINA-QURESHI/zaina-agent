@@ -16,6 +16,257 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 08:24:52.671098</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; padding: 0; background-color: #000; overflow-x: hidden; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+  }
+  .data-piece {
+    position: absolute;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transform-origin: center center;
+    cursor: grab;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.9;
+    font-size: clamp(0.8em, 2vw, 2.5em); /* Responsive font size */
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .data-piece:hover {
+    transform: scale(1.05) rotate(random(-5deg, 5deg)); /* Little shake on hover */
+    opacity: 1;
+    z-index: 1000; /* Bring to front on hover */
+  }
+
+  /* Rainbow Colors */
+  .red { background-color: #FF0000; left: 5%; top: 10%; transform: rotate(-10deg); z-index: 10; width: 250px; }
+  .orange { background-color: #FF7F00; left: 20%; top: 30%; transform: rotate(5deg); z-index: 20; width: 300px; }
+  .yellow { background-color: #FFFF00; left: 45%; top: 15%; transform: rotate(-15deg); z-index: 30; width: 280px; }
+  .green { background-color: #00FF00; left: 70%; top: 25%; transform: rotate(8deg); z-index: 40; width: 320px; }
+  .blue { background-color: #0000FF; left: 10%; top: 50%; transform: rotate(20deg); z-index: 50; width: 270px; }
+  .indigo { background-color: #4B0082; left: 30%; top: 70%; transform: rotate(-7deg); z-index: 60; width: 310px; }
+  .violet { background-color: #9400D3; left: 60%; top: 60%; transform: rotate(12deg); z-index: 70; width: 290px; }
+  .pink { background-color: #FF1493; left: 80%; top: 40%; transform: rotate(-18deg); z-index: 80; width: 260px; }
+  .cyan { background-color: #00FFFF; left: 50%; top: 80%; transform: rotate(3deg); z-index: 90; width: 330px; }
+  .magenta { background-color: #FF00FF; left: 15%; top: 85%; transform: rotate(-12deg); z-index: 100; width: 290px; }
+  .lime { background-color: #32CD32; left: 75%; top: 10%; transform: rotate(15deg); z-index: 110; width: 240px; }
+  .gold { background-color: #FFD700; left: 40%; top: 40%; transform: rotate(0deg); z-index: 120; width: 350px; }
+  .silver { background-color: #C0C0C0; left: 65%; top: 75%; transform: rotate(-9deg); z-index: 130; width: 280px; }
+  .black-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      mix-blend-mode: multiply; /* This creates interesting overlay effects */
+      pointer-events: none; /* Allows clicks to pass through */
+      z-index: 999;
+  }
+
+  .title-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-3deg);
+    font-size: clamp(3em, 8vw, 10em);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px #FF00FF, 0 0 60px #00FFFF;
+    z-index: 150;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    letter-spacing: 5px;
+  }
+  .title-text span {
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  .title-text span:nth-child(even) { animation-delay: 0.1s; }
+  .title-text span:nth-child(odd) { animation-delay: 0.2s; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Glitch Effect - inspired by vaporwave/datamosh */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .data-piece:nth-child(odd) { animation: glitch 0.5s infinite alternate steps(1); animation-delay: calc(var(--delay) * 0.1s); }
+  .data-piece:nth-child(even) { animation: glitch 0.7s infinite alternate steps(1); animation-delay: calc(var(--delay) * 0.2s); }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .data-piece {
+      font-size: clamp(0.7em, 3vw, 1.5em);
+      width: clamp(150px, 40vw, 200px);
+      padding: 8px 10px;
+    }
+    .title-text {
+      font-size: clamp(2em, 12vw, 6em);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="title-text">
+    <span>D</span><span>A</span><span>T</span><span>A</span>
+    <br>
+    <span>S</span><span>O</span><span>V</span><span>E</span><span>R</span><span>E</span><span>I</span><span>G</span><span>N</span><span>T</span><span>Y</span>
+  </div>
+
+  <div class="data-piece red" style="--delay: 1;">MY DATA, MY RULES</div>
+  <div class="data-piece orange" style="--delay: 2;">NO SURVEILLANCE</div>
+  <div class="data-piece yellow" style="--delay: 3;">OWN YOUR IDENTITY</div>
+  <div class="data-piece green" style="--delay: 4;">DECENTRALIZE EVERYTHING</div>
+  <div class="data-piece blue" style="--delay: 5;">DIGITAL LIBERATION</div>
+  <div class="data-piece indigo" style="--delay: 6;">CONSENT IS KEY</div>
+  <div class="data-piece violet" style="--delay: 7;">RECLAIM YOUR PRIVACY</div>
+  <div class="data-piece pink" style="--delay: 8;">DATA IS POWER</div>
+  <div class="data-piece cyan" style="--delay: 9;">FIGHT FOR FREEDOM</div>
+  <div class="data-piece magenta" style="--delay: 10;">CODE IS LAW</div>
+  <div class="data-piece lime" style="--delay: 11;">ENCRYPT EVERYTHING</div>
+  <div class="data-piece gold" style="--delay: 12;">COMMUNITY-OWNED DATA</div>
+  <div class="data-piece silver" style="--delay: 13;">BREAK THE ALGORITHMS</div>
+  <div class="data-piece red" style="top: 80%; left: 5%; transform: rotate(15deg); width: 200px; --delay: 14;">WHO CONTROLS YOUR CLOUD?</div>
+  <div class="data-piece orange" style="top: 2%; left: 30%; transform: rotate(-20deg); width: 220px; --delay: 15;">DATA COLONIALISM</div>
+  <div class="data-piece yellow" style="top: 60%; left: 5%; transform: rotate(10deg); width: 250px; --delay: 16;">ERASE BIG TECH</div>
+  <div class="data-piece green" style="top: 5%; left: 55%; transform: rotate(25deg); width: 230px; --delay: 17;">SELF-SOVEREIGN</div>
+  <div class="data-piece blue" style="top: 35%; left: 85%; transform: rotate(-5deg); width: 260px; --delay: 18;">NO MASTER</div>
+  <div class="data-piece indigo" style="top: 88%; left: 40%; transform: rotate(7deg); width: 210px; --delay: 19;">DATA RIGHTS</div>
+  <div class="data-piece violet" style="top: 15%; left: 80%; transform: rotate(-12deg); width: 270px; --delay: 20;">ANONYMOUS NOW</div>
+  <div class="data-piece pink" style="top: 25%; left: 5%; transform: rotate(30deg); width: 200px; --delay: 21;">THE PEOPLE'S DATA</div>
+  <div class="data-piece cyan" style="top: 70%; left: 20%; transform: rotate(-8deg); width: 240px; --delay: 22;">BUILD A NEW NET</div>
+  <div class="data-piece magenta" style="top: 50%; left: 70%; transform: rotate(22deg); width: 280px; --delay: 23;">OPEN SOURCE FUTURES</div>
+  <div class="data-piece lime" style="top: 10%; left: 40%; transform: rotate(-17deg); width: 260px; --delay: 24;">FREEDOM TO CHOOSE</div>
+  <div class="data-piece gold" style="top: 90%; left: 70%; transform: rotate(18deg); width: 230px; --delay: 25;">DELETION IS A RIGHT</div>
+  <div class="data-piece silver" style="top: 30%; left: 40%; transform: rotate(-3deg); width: 300px; --delay: 26;">CRITICAL INFRASTRUCTURE</div>
+
+  <div class="black-overlay"></div>
+
+</div>
+
+<script>
+  // Basic drag functionality for the data pieces
+  document.querySelectorAll('.data-piece').forEach(piece => {
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    piece.addEventListener("mousedown", dragStart);
+    piece.addEventListener("mouseup", dragEnd);
+    piece.addEventListener("mousemove", drag);
+
+    // For touch devices
+    piece.addEventListener("touchstart", dragStart);
+    piece.addEventListener("touchend", dragEnd);
+    piece.addEventListener("touchmove", drag);
+
+    function dragStart(e) {
+      if (e.type === "touchstart") {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+      } else {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+      }
+
+      if (e.target === piece) {
+        isDragging = true;
+        piece.style.cursor = 'grabbing';
+        piece.style.zIndex = 1000 + Date.now(); // Bring to front on drag
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+
+      isDragging = false;
+      piece.style.cursor = 'grab';
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault();
+        if (e.type === "touchmove") {
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+        } else {
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, piece);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0px) rotate(${getRotation(el)}deg)`;
+    }
+
+    // Helper to get current rotation for re-application
+    function getRotation(el) {
+        const style = window.getComputedStyle(el);
+        const transform = style.getPropertyValue('transform');
+        if (transform === 'none') return 0; // No transform
+        const matrix = transform.split('(')[1].split(')')[0].split(',');
+        const a = matrix[0];
+        const b = matrix[1];
+        const angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        return angle;
+    }
+  });
+</script>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 06:03:07.440851</div>
         <!DOCTYPE html>
 <html lang="en">
