@@ -16,6 +16,229 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 19:15:28.518200</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brutalist Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from absolute positioned elements */
+            background-color: #1a1a1a;
+            font-family: 'Arial Black', Gadget, sans-serif; /* A bold, unornamented font for brutalist feel */
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px; /* Enable 3D transformations for depth */
+            background: linear-gradient(45deg, #111 0%, #333 50%, #111 100%);
+            /* A subtle dark gradient for the background */
+        }
+
+        .collage-item {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            border: 5px solid; /* Placeholder for rainbow borders */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.1) inset;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            font-size: clamp(0.8rem, 2vw, 2.2rem); /* Responsive font size */
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), /* Springy transition */
+                        box-shadow 0.4s ease-out,
+                        border-color 0.4s ease-out;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply; /* Blend background-color with background-image */
+            z-index: 1; /* Default stacking order */
+            overflow: hidden;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.08) rotate(0deg) translateZ(80px) !important; /* Emphasize hover, bring to front, remove rotation */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.3) inset;
+            z-index: 10; /* Bring to front on hover */
+            text-shadow: 0 0 15px rgba(255,255,255,0.7); /* Subtle text glow on hover */
+        }
+
+        /* Specific item styling for position, size, and rainbow colors */
+        .item-1 { /* Red */
+            width: 32vw; height: 48vh;
+            top: 5vh; left: 5vw;
+            background-image: url('https://source.unsplash.com/random/400x600?brutalism,concrete,architecture');
+            background-color: #FF0000; /* Red */
+            border-color: #FF0000;
+            transform: rotate(-10deg) translateZ(0);
+            z-index: 3;
+        }
+        .item-1:hover { border-color: #FFA500; } /* Red to Orange */
+
+        .item-2 { /* Orange */
+            width: 28vw; height: 40vh;
+            top: 10vh; left: 35vw;
+            background-image: url('https://source.unsplash.com/random/500x350?brutalist-building,geometric,stark');
+            background-color: #FFA500; /* Orange */
+            border-color: #FFA500;
+            transform: rotate(7deg) translateZ(10px);
+            z-index: 4;
+        }
+        .item-2:hover { border-color: #FFFF00; } /* Orange to Yellow */
+
+        .item-3 { /* Yellow */
+            width: 25vw; height: 35vh;
+            top: 15vh; right: 8vw;
+            background-image: url('https://source.unsplash.com/random/300x450?brutalism-design,massive,urban');
+            background-color: #FFFF00; /* Yellow */
+            border-color: #FFFF00;
+            transform: rotate(-15deg) translateZ(-5px);
+            z-index: 2;
+        }
+        .item-3:hover { border-color: #008000; } /* Yellow to Green */
+
+        .item-4 { /* Green */
+            width: 38vw; height: 45vh;
+            bottom: 8vh; left: 10vw;
+            background-image: url('https://source.unsplash.com/random/600x400?brutalism,texture,imposing');
+            background-color: #008000; /* Green */
+            border-color: #008000;
+            transform: rotate(4deg) translateZ(15px);
+            z-index: 5;
+        }
+        .item-4:hover { border-color: #0000FF; } /* Green to Blue */
+
+        .item-5 { /* Blue */
+            width: 30vw; height: 42vh;
+            bottom: 15vh; right: 22vw;
+            background-image: url('https://source.unsplash.com/random/450x550?concrete-architecture,geometric-forms');
+            background-color: #0000FF; /* Blue */
+            border-color: #0000FF;
+            transform: rotate(-8deg) translateZ(5px);
+            z-index: 4;
+        }
+        .item-5:hover { border-color: #4B0082; } /* Blue to Indigo */
+
+        .item-6 { /* Indigo */
+            width: 26vw; height: 38vh;
+            bottom: 5vh; right: 5vw;
+            background-image: url('https://source.unsplash.com/random/350x400?brutalism,form,expression');
+            background-color: #4B0082; /* Indigo */
+            border-color: #4B0082;
+            transform: rotate(12deg) translateZ(-10px);
+            z-index: 2;
+        }
+        .item-6:hover { border-color: #EE82EE; } /* Indigo to Violet */
+
+        .item-7 { /* Violet */
+            width: 22vw; height: 30vh;
+            top: 30vh; left: 60vw;
+            background-image: url('https://source.unsplash.com/random/300x350?brutalist-urban,cityscape,hard');
+            background-color: #EE82EE; /* Violet */
+            border-color: #EE82EE;
+            transform: rotate(-5deg) translateZ(20px);
+            z-index: 6;
+        }
+        .item-7:hover { border-color: #FF0000; } /* Violet to Red (completing the rainbow cycle) */
+
+        /* Text styling for the brutalist descriptions */
+        .collage-item h2 {
+            margin: 0;
+            font-size: 1.1em; /* Relative to parent font size */
+        }
+        .collage-item p {
+            margin-top: 8px;
+            font-size: 0.7em;
+            opacity: 0.9;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .collage-item {
+                width: 85vw !important;
+                height: 20vh !important;
+                position: static !important; /* Stack items vertically for mobile */
+                margin-bottom: 20px;
+                transform: none !important; /* Remove rotations and 3D transforms */
+                font-size: 1.2rem;
+            }
+            .collage-container {
+                flex-direction: column;
+                height: auto; /* Allow container to grow based on content */
+                padding: 20px 0;
+                overflow-y: auto; /* Enable vertical scrolling */
+            }
+            .collage-item:hover {
+                transform: scale(1.02) !important; /* Simpler hover effect for mobile */
+                box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <div class="collage-item item-1">
+            <h2>RAW CONCRETE</h2>
+            <p>Monolithic forms reaching for the sky. Unyielding truth.</p>
+        </div>
+
+        <div class="collage-item item-2">
+            <h2>GEOMETRIC MIGHT</h2>
+            <p>Functionality cast in colossal, brutal blocks. Bold structures.</p>
+        </div>
+
+        <div class="collage-item item-3">
+            <h2>UNAPOLOGETIC PRESENCE</h2>
+            <p>A defiant testament to structural honesty. No adornment needed.</p>
+        </div>
+
+        <div class="collage-item item-4">
+            <h2>BRUTAL BEAUTY</h2>
+            <p>Raw aesthetics, stark and profoundly beautiful. A concrete dream.</p>
+        </div>
+
+        <div class="collage-item item-5">
+            <h2>EXPOSED STRUCTURE</h2>
+            <p>The skeleton celebrated, not hidden. An architectural declaration.</p>
+        </div>
+
+        <div class="collage-item item-6">
+            <h2>URBAN SCULPTURE</h2>
+            <p>Buildings as art, unyielding and bold. A silent, grand statement.</p>
+        </div>
+
+        <div class="collage-item item-7">
+            <h2>CONCRETE VISION</h2>
+            <p>A future past, built with purpose. Strong, enduring, vibrant today.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 17:59:41.584730</div>
         <!DOCTYPE html>
 <html>
