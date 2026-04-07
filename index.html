@@ -16,6 +16,155 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 03:16:42.694193</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Algorithmic Surveillance Rainbow Collage</title>
+<style>
+body {
+    background-color: #0a0a0a; /* Dark background for stark contrast */
+    font-family: 'Courier New', Courier, monospace; /* Techy, digital font */
+    overflow: hidden; /* Hide scrollbars, keep content within view */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Center the collage on the page */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+#collage-container {
+    position: relative;
+    width: 90vw; /* Responsive width */
+    height: 90vh; /* Responsive height */
+    border: 2px solid #333; /* Subtle border for container */
+    overflow: hidden; /* Elements should not escape the container */
+    background: linear-gradient(45deg, #1a1a1a, #000000); /* Dark, subtle gradient */
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.3), 0 0 100px rgba(255, 0, 255, 0.2); /* Cyan/Magenta neon glow */
+}
+
+.collage-item {
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Depth effect */
+    transition: all 0.5s ease-in-out; /* Smooth transitions for hover */
+    cursor: default; /* Not interactive, just for viewing */
+    user-select: none; /* Prevent text selection */
+    animation: pulse 3s infinite alternate ease-in-out; /* Subtle breathing animation */
+    transform: rotate(var(--rotation, 0deg)); /* Apply initial rotation from custom property */
+}
+
+.collage-item:hover {
+    transform: rotate(var(--rotation, 0deg)) scale(1.05); /* Maintain rotation, add slight scale on hover */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7); /* Brighter shadow on hover */
+    z-index: 1000; /* Bring hovered item to front */
+}
+
+@keyframes pulse {
+    0% { transform: rotate(var(--rotation, 0deg)) scale(1); opacity: 0.9; }
+    100% { transform: rotate(var(--rotation, 0deg)) scale(1.01); opacity: 1; }
+}
+
+/* --- Rainbow Color Classes --- */
+.c1 { background-color: rgba(255, 0, 0, 0.7); color: #FFF; border: 1px solid #FF3333; text-shadow: 0 0 5px #FF0000; } /* Red */
+.c2 { background-color: rgba(255, 165, 0, 0.7); color: #FFF; border: 1px solid #FFB733; text-shadow: 0 0 5px #FFA500; } /* Orange */
+.c3 { background-color: rgba(255, 255, 0, 0.7); color: #333; border: 1px solid #FFFF33; text-shadow: 0 0 5px #FFFF00; } /* Yellow */
+.c4 { background-color: rgba(0, 128, 0, 0.7); color: #FFF; border: 1px solid #33CC33; text-shadow: 0 0 5px #008000; } /* Green */
+.c5 { background-color: rgba(0, 0, 255, 0.7); color: #FFF; border: 1px solid #3333FF; text-shadow: 0 0 5px #0000FF; } /* Blue */
+.c6 { background-color: rgba(75, 0, 130, 0.7); color: #FFF; border: 1px solid #6A0DAD; text-shadow: 0 0 5px #4B0082; } /* Indigo */
+.c7 { background-color: rgba(238, 130, 238, 0.7); color: #FFF; border: 1px solid #FF99FF; text-shadow: 0 0 5px #EE82EE; } /* Violet */
+
+/* --- Thematic Style Classes --- */
+.dark-overlay { background-color: rgba(0,0,0,0.8); color: #00FF00; border: 1px solid #00AA00; font-size: 0.8em; opacity: 0.6; }
+.light-overlay { background-color: rgba(255,255,255,0.1); color: #FFF; border: 1px solid rgba(255,255,255,0.3); font-size: 0.9em; opacity: 0.7; }
+.danger-tag { background-color: rgba(200, 0, 0, 0.9); color: #FFF; border: 1px solid #FF0000; font-family: 'Impact', sans-serif; }
+.ghost-text { background: none; color: rgba(255,255,255,0.3); border: none; font-size: 0.7em; opacity: 0.4; }
+.neon-glow { text-shadow: 0 0 5px #0FF, 0 0 10px #0FF, 0 0 20px #0FF, 0 0 40px #0FF; color: #FFF; background: none; border: none; }
+.glitch {
+    position: relative;
+    font-weight: bold;
+    text-shadow: 0.05em 0 0 #0FF, -0.025em -0.05em 0 #F0F, 0.025em 0.05em 0 #FF0; /* Cyan, Magenta, Yellow */
+    animation: glitch-anim 2s infinite alternate-reverse;
+}
+/* Glitch animation that respects the base rotation */
+@keyframes glitch-anim {
+    0% {
+        text-shadow: 0.05em 0 0 #0FF, -0.025em -0.05em 0 #F0F, 0.025em 0.05em 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(0);
+    }
+    20% {
+        text-shadow: -0.05em 0.025em 0 #0FF, 0.025em 0.05em 0 #F0F, -0.05em -0.05em 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(-0.05em, -0.05em);
+    }
+    40% {
+        text-shadow: 0 0.05em 0 #0FF, 0.05em 0 0 #F0F, -0.025em 0 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(0.05em, 0.05em);
+    }
+    60% {
+        text-shadow: -0.025em -0.025em 0 #0FF, 0.05em -0.05em 0 #F0F, -0.025em 0.05em 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(-0.025em, 0.025em);
+    }
+    80% {
+        text-shadow: 0.05em 0 0 #0FF, -0.025em -0.05em 0 #F0F, 0.025em 0.05em 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(0);
+    }
+    100% {
+        text-shadow: -0.05em 0.025em 0 #0FF, 0.025em 0.05em 0 #F0F, -0.05em -0.05em 0 #FF0;
+        transform: rotate(var(--rotation, 0deg)) translate(-0.05em, -0.05em);
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="collage-container">
+
+    <div class="collage-item c1" style="--rotation: -5deg; top: 5%; left: 10%; font-size: 2.5em; z-index: 10;">DATA MINING</div>
+    <div class="collage-item c2" style="--rotation: 10deg; top: 15%; left: 5%; font-size: 1.8em; opacity: 0.9; z-index: 15;">PROFILE</div>
+    <div class="collage-item c3" style="--rotation: 2deg; top: 2%; left: 40%; font-size: 3em; z-index: 5;">WATCHING YOU</div>
+    <div class="collage-item c4" style="--rotation: -15deg; top: 25%; left: 20%; font-size: 1.5em; opacity: 0.8; z-index: 12;">SURVEILLANCE</div>
+    <div class="collage-item c5" style="--rotation: 5deg; top: 40%; left: 5%; font-size: 2em; z-index: 20;">ALGORITHM</div>
+    <div class="collage-item c6" style="--rotation: -8deg; top: 10%; left: 70%; font-size: 2.2em; z-index: 8;">TRACKED</div>
+    <div class="collage-item c7" style="--rotation: 12deg; top: 20%; left: 80%; font-size: 1.7em; opacity: 0.7; z-index: 18;">PREDICTED</div>
+
+    <div class="collage-item dark-overlay" style="--rotation: 3deg; top: 30%; left: 55%; font-size: 1.2em; z-index: 7;">BIG DATA</div>
+    <div class="collage-item light-overlay" style="--rotation: -7deg; top: 50%; left: 20%; font-size: 1.1em; z-index: 9;">INVISIBLE CAGE</div>
+    <div class="collage-item c1 danger-tag" style="--rotation: 0deg; top: 55%; left: 40%; font-size: 2.8em; z-index: 25;">PRIVACY LOST</div>
+    <div class="collage-item ghost-text" style="--rotation: 18deg; top: 65%; left: 10%; font-size: 1.3em; z-index: 6;">DIGITAL SHADOW</div>
+    <div class="collage-item c2" style="--rotation: -10deg; top: 70%; left: 30%; font-size: 2.1em; z-index: 11;">CODE</div>
+    <div class="collage-item c3" style="--rotation: 7deg; top: 80%; left: 5%; font-size: 1.6em; opacity: 0.85; z-index: 14;">MONITOR</div>
+    <div class="collage-item c4" style="--rotation: 15deg; top: 45%; left: 70%; font-size: 1.9em; z-index: 16;">THE EYE</div>
+    <div class="collage-item c5" style="--rotation: -3deg; top: 60%; left: 60%; font-size: 2.3em; z-index: 22;">CONTROL</div>
+    <div class="collage-item c6" style="--rotation: -12deg; top: 75%; left: 75%; font-size: 1.4em; opacity: 0.95; z-index: 13;">FILTER BUBBLE</div>
+    <div class="collage-item c7" style="--rotation: 6deg; top: 85%; left: 45%; font-size: 2em; z-index: 17;">PREJUDICE</div>
+    <div class="collage-item dark-overlay" style="--rotation: 20deg; top: 10%; left: 25%; font-size: 1.1em; opacity: 0.5; z-index: 4;">METADATA</div>
+    <div class="collage-item light-overlay" style="--rotation: -22deg; top: 35%; left: 45%; font-size: 0.9em; z-index: 3;">CLASSIFY</div>
+    <div class="collage-item ghost-text" style="--rotation: 30deg; top: 5%; left: 55%; font-size: 1.0em; opacity: 0.3; z-index: 2;">INVISIBLE</div>
+    <div class="collage-item c1" style="--rotation: -9deg; top: 25%; left: 35%; font-size: 1.3em; z-index: 19;">SCORE</div>
+    <div class="collage-item c2" style="--rotation: 4deg; top: 90%; left: 65%; font-size: 1.5em; opacity: 0.8; z-index: 21;">BIAS</div>
+    <div class="collage-item neon-glow" style="--rotation: 1deg; top: 40%; left: 30%; font-size: 3.5em; z-index: 26;">EYE</div>
+    <div class="collage-item glitch" style="--rotation: -4deg; top: 80%; left: 25%; font-size: 2.2em; z-index: 23; color: #FFF;">FREEDOM?</div>
+    <div class="collage-item dark-overlay" style="--rotation: 8deg; top: 60%; left: 15%; font-size: 1.0em; opacity: 0.7; z-index: 10;">PROFILING</div>
+    <div class="collage-item c3" style="--rotation: -6deg; top: 18%; left: 60%; font-size: 1.6em; z-index: 17;">DATA TRAILS</div>
+    <div class="collage-item c4" style="--rotation: 10deg; top: 70%; left: 50%; font-size: 1.8em; z-index: 19;">GHOST IN THE MACHINE</div>
+    <div class="collage-item c5" style="--rotation: -14deg; top: 30%; left: 75%; font-size: 1.4em; z-index: 15;">PREDICTIVE</div>
+    <div class="collage-item c6" style="--rotation: 9deg; top: 50%; left: 80%; font-size: 1.3em; z-index: 12;">ECHO CHAMBER</div>
+    <div class="collage-item c7" style="--rotation: -2deg; top: 95%; left: 15%; font-size: 1.7em; z-index: 20;">OPPRESSION</div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-06 23:42:36.084939</div>
         <!DOCTYPE html>
 <html>
