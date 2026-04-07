@@ -16,6 +16,205 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 09:13:06.192945</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll from absolute positioning */
+  }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    min-height: 150vh; /* Make it tall enough for vertical spread */
+    overflow: hidden; /* Clip anything outside */
+    background: radial-gradient(circle at top left, #ff0000 0%, transparent 20%),
+                radial-gradient(circle at bottom right, #0000ff 0%, transparent 20%),
+                linear-gradient(135deg, #FF69B4 0%, #8A2BE2 100%);
+    background-blend-mode: overlay;
+  }
+  .collage-item {
+    position: absolute;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    color: white;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: float 20s infinite ease-in-out alternate;
+    border: 2px solid;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: grab;
+    user-select: none;
+    line-height: 1.2;
+    z-index: 10;
+  }
+  .collage-item:hover {
+    transform: scale(1.05) rotate(2deg) !important;
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+    z-index: 20;
+  }
+
+  /* Rainbow colors for individual items */
+  .red { background-color: rgba(255, 0, 0, 0.7); border-color: #FFD700; left: 5%; top: 5%; transform: rotate(-8deg); font-size: 2.2em; }
+  .orange { background-color: rgba(255, 165, 0, 0.7); border-color: #90EE90; left: 30%; top: 15%; transform: rotate(5deg); font-size: 1.5em; }
+  .yellow { background-color: rgba(255, 255, 0, 0.7); border-color: #87CEEB; right: 10%; top: 8%; transform: rotate(-15deg); font-size: 2em; }
+  .green { background-color: rgba(0, 128, 0, 0.7); border-color: #FF6347; left: 15%; top: 35%; transform: rotate(10deg); font-size: 2.5em; }
+  .blue { background-color: rgba(0, 0, 255, 0.7); border-color: #FFD700; right: 20%; top: 25%; transform: rotate(-3deg); font-size: 1.8em; }
+  .indigo { background-color: rgba(75, 0, 130, 0.7); border-color: #8A2BE2; left: 40%; top: 50%; transform: rotate(18deg); font-size: 1.6em; }
+  .violet { background-color: rgba(238, 130, 238, 0.7); border-color: #00FFFF; right: 5%; top: 40%; transform: rotate(-12deg); font-size: 2.3em; }
+  .magenta { background-color: rgba(255, 0, 255, 0.7); border-color: #ADFF2F; left: 25%; top: 60%; transform: rotate(7deg); font-size: 1.9em; }
+  .cyan { background-color: rgba(0, 255, 255, 0.7); border-color: #FF4500; right: 30%; top: 55%; transform: rotate(-10deg); font-size: 2.1em; }
+  .pink { background-color: rgba(255, 192, 203, 0.7); border-color: #BA55D3; left: 10%; top: 75%; transform: rotate(3deg); font-size: 2.4em; }
+  .lime { background-color: rgba(0, 255, 0, 0.7); border-color: #FF1493; right: 15%; top: 70%; transform: rotate(-18deg); font-size: 1.7em; }
+  .teal { background-color: rgba(0, 128, 128, 0.7); border-color: #FFD700; left: 45%; top: 85%; transform: rotate(12deg); font-size: 2em; }
+  .gold { background-color: rgba(255, 215, 0, 0.7); border-color: #6A5ACD; right: 40%; top: 80%; transform: rotate(-5deg); font-size: 2.2em; }
+  .silver { background-color: rgba(192, 192, 192, 0.7); border-color: #FF4500; left: 20%; top: 90%; transform: rotate(15deg); font-size: 1.9em; }
+  .purple { background-color: rgba(128, 0, 128, 0.7); border-color: #32CD32; right: 5%; top: 95%; transform: rotate(-8deg); font-size: 2.3em; }
+
+  /* Keyframe animation for floating effect */
+  @keyframes float {
+    0% { transform: translateY(0px) translateX(0px) rotate(var(--initial-rotation)); }
+    25% { transform: translateY(10px) translateX(15px) rotate(calc(var(--initial-rotation) + 3deg)); }
+    50% { transform: translateY(-10px) translateX(-5px) rotate(var(--initial-rotation)); }
+    75% { transform: translateY(5px) translateX(-10px) rotate(calc(var(--initial-rotation) - 3deg)); }
+    100% { transform: translateY(0px) translateX(0px) rotate(var(--initial-rotation)); }
+  }
+
+  /* Specific animation delays and durations for variety */
+  .collage-item:nth-child(1) { --initial-rotation: -8deg; animation-duration: 22s; animation-delay: 0s; }
+  .collage-item:nth-child(2) { --initial-rotation: 5deg; animation-duration: 18s; animation-delay: -2s; }
+  .collage-item:nth-child(3) { --initial-rotation: -15deg; animation-duration: 25s; animation-delay: -5s; }
+  .collage-item:nth-child(4) { --initial-rotation: 10deg; animation-duration: 20s; animation-delay: -3s; }
+  .collage-item:nth-child(5) { --initial-rotation: -3deg; animation-duration: 23s; animation-delay: -7s; }
+  .collage-item:nth-child(6) { --initial-rotation: 18deg; animation-duration: 19s; animation-delay: -1s; }
+  .collage-item:nth-child(7) { --initial-rotation: -12deg; animation-duration: 21s; animation-delay: -4s; }
+  .collage-item:nth-child(8) { --initial-rotation: 7deg; animation-duration: 24s; animation-delay: -6s; }
+  .collage-item:nth-child(9) { --initial-rotation: -10deg; animation-duration: 17s; animation-delay: -0.5s; }
+  .collage-item:nth-child(10) { --initial-rotation: 3deg; animation-duration: 26s; animation-delay: -8s; }
+  .collage-item:nth-child(11) { --initial-rotation: -18deg; animation-duration: 20s; animation-delay: -2.5s; }
+  .collage-item:nth-child(12) { --initial-rotation: 12deg; animation-duration: 22s; animation-delay: -5.5s; }
+  .collage-item:nth-child(13) { --initial-rotation: -5deg; animation-duration: 19s; animation-delay: -1.5s; }
+  .collage-item:nth-child(14) { --initial-rotation: 15deg; animation-duration: 23s; animation-delay: -4.5s; }
+  .collage-item:nth-child(15) { --initial-rotation: -8deg; animation-duration: 21s; animation-delay: -6.5s; }
+
+  /* Overlay gradient for extra rainbow effect */
+  .rainbow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 0, 0, 0.1) 0%,      /* Red */
+      rgba(255, 165, 0, 0.1) 14%,    /* Orange */
+      rgba(255, 255, 0, 0.1) 28%,    /* Yellow */
+      rgba(0, 128, 0, 0.1) 42%,      /* Green */
+      rgba(0, 0, 255, 0.1) 56%,      /* Blue */
+      rgba(75, 0, 130, 0.1) 70%,     /* Indigo */
+      rgba(238, 130, 238, 0.1) 84%,  /* Violet */
+      rgba(255, 0, 0, 0.1) 100%
+    );
+    mix-blend-mode: screen; /* or overlay, lighten, color-dodge */
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 5;
+    animation: rainbowShift 60s linear infinite;
+  }
+
+  @keyframes rainbowShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+
+  /* Text glow effect */
+  .collage-item span {
+    text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.5), 0 0 15px currentColor;
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  .collage-item:hover span {
+    text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px currentColor;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .collage-item {
+      padding: 10px 15px;
+      font-size: 1.2em;
+      border-radius: 15px;
+    }
+    .red { left: 2%; top: 3%; font-size: 1.8em; }
+    .orange { left: 25%; top: 10%; font-size: 1.1em; }
+    .yellow { right: 5%; top: 5%; font-size: 1.6em; }
+    .green { left: 10%; top: 25%; font-size: 2em; }
+    .blue { right: 10%; top: 20%; font-size: 1.4em; }
+    .indigo { left: 30%; top: 40%; font-size: 1.2em; }
+    .violet { right: 2%; top: 35%; font-size: 1.9em; }
+    .magenta { left: 15%; top: 50%; font-size: 1.5em; }
+    .cyan { right: 15%; top: 45%; font-size: 1.7em; }
+    .pink { left: 5%; top: 65%; font-size: 2em; }
+    .lime { right: 10%; top: 60%; font-size: 1.3em; }
+    .teal { left: 35%; top: 75%; font-size: 1.6em; }
+    .gold { right: 25%; top: 70%; font-size: 1.8em; }
+    .silver { left: 10%; top: 85%; font-size: 1.5em; }
+    .purple { right: 2%; top: 90%; font-size: 1.9em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+  <div class="rainbow-overlay"></div>
+
+  <div class="collage-item red"><span>My Data, My Rules</span></div>
+  <div class="collage-item orange"><span>Decentralize Power</span></div>
+  <div class="collage-item yellow"><span>Reclaim Autonomy</span></div>
+  <div class="collage-item green"><span>Indigenous Data</span></div>
+  <div class="collage-item blue"><span>Digital Self-Determination</span></div>
+  <div class="collage-item indigo"><span>Community Control</span></div>
+  <div class="collage-item violet"><span>No More Surveillance</span></div>
+  <div class="collage-item magenta"><span>Own Your Narrative</span></div>
+  <div class="collage-item cyan"><span>Sovereign Futures</span></div>
+  <div class="collage-item pink"><span>Data Justice Now</span></div>
+  <div class="collage-item lime"><span>Privacy Is Power</span></div>
+  <div class="collage-item teal"><span>Break the Chains</span></div>
+  <div class="collage-item gold"><span>Ethical Algorithms</span></div>
+  <div class="collage-item silver"><span>Human-Centric Tech</span></div>
+  <div class="collage-item purple"><span>Future is Yours</span></div>
+
+  <!-- More items for a richer collage -->
+  <div class="collage-item red" style="left: 60%; top: 10%; transform: rotate(15deg); font-size: 1.7em; animation-duration: 28s; animation-delay: -9s;"><span>DATA DECOLONIZATION</span></div>
+  <div class="collage-item orange" style="left: 5%; top: 20%; transform: rotate(-10deg); font-size: 2em; animation-duration: 16s; animation-delay: -3s;"><span>RESIST EXPLOITATION</span></div>
+  <div class="collage-item yellow" style="right: 5%; top: 65%; transform: rotate(8deg); font-size: 1.9em; animation-duration: 20s; animation-delay: -11s;"><span>TRUE OWNERSHIP</span></div>
+  <div class="collage-item green" style="left: 70%; top: 30%; transform: rotate(-6deg); font-size: 2.1em; animation-duration: 24s; animation-delay: -1.5s;"><span>SECURE YOUR TRUTH</span></div>
+  <div class="collage-item blue" style="left: 3%; top: 55%; transform: rotate(14deg); font-size: 1.6em; animation-duration: 21s; animation-delay: -10s;"><span>FREEDOM FROM PLATFORMS</span></div>
+  <div class="collage-item indigo" style="right: 25%; top: 90%; transform: rotate(-13deg); font-size: 2.5em; animation-duration: 18s; animation-delay: -7.5s;"><span>REBUILDING TRUST</span></div>
+  <div class="collage-item violet" style="left: 50%; top: 70%; transform: rotate(9deg); font-size: 1.8em; animation-duration: 26s; animation-delay: -13s;"><span>DATA IS SACRED</span></div>
+  <div class="collage-item magenta" style="left: 1%; top: 40%; transform: rotate(-7deg); font-size: 2.2em; animation-duration: 23s; animation-delay: -6.5s;"><span>YOUR VOICE AMPLIFIED</span></div>
+  <div class="collage-item cyan" style="right: 18%; top: 15%; transform: rotate(11deg); font-size: 1.5em; animation-duration: 17s; animation-delay: -2.5s;"><span>COLLECTIVE DATA CARE</span></div>
+  <div class="collage-item pink" style="left: 40%; top: 5%; transform: rotate(-4deg); font-size: 2.3em; animation-duration: 25s; animation-delay: -8.5s;"><span>EMPOWERMENT</span></div>
+  <div class="collage-item lime" style="right: 35%; top: 45%; transform: rotate(16deg); font-size: 1.7em; animation-duration: 19s; animation-delay: -4.5s;"><span>DIGITAL RIGHTS</span></div>
+  <div class="collage-item teal" style="left: 75%; top: 50%; transform: rotate(-9deg); font-size: 2em; animation-duration: 22s; animation-delay: -12s;"><span>SELF-GOVERNANCE</span></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 07:42:46.693659</div>
         <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #0d0d0d; font-family: 'Impact', sans-serif; color: white; display: block;">
 
