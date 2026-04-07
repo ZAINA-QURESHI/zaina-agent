@@ -16,6 +16,243 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 15:17:51.097411</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay: A Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars for full canvas effect */
+            background-color: #000; /* Dark background for contrast */
+        }
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            perspective: 1000px; /* For 3D effects */
+        }
+
+        .decay-element {
+            position: absolute;
+            box-sizing: border-box;
+            opacity: 0.9;
+            transition: all 1s ease-out; /* Smooth transitions for potential interactivity or animations */
+            transform-style: preserve-3d;
+            animation: glitch 5s infinite alternate; /* General glitch effect */
+            overflow: hidden; /* For containing text/images that might overflow their div */
+        }
+
+        /* Rainbow Colors */
+        .red { background-color: rgba(255, 0, 0, 0.6); border: 1px solid rgba(255, 0, 0, 0.8); color: white; text-shadow: 0 0 5px red; }
+        .orange { background-color: rgba(255, 127, 0, 0.6); border: 1px solid rgba(255, 127, 0, 0.8); color: black; text-shadow: 0 0 5px orange; }
+        .yellow { background-color: rgba(255, 255, 0, 0.6); border: 1px solid rgba(255, 255, 0, 0.8); color: black; text-shadow: 0 0 5px yellow; }
+        .green { background-color: rgba(0, 255, 0, 0.6); border: 1px solid rgba(0, 255, 0, 0.8); color: white; text-shadow: 0 0 5px green; }
+        .blue { background-color: rgba(0, 0, 255, 0.6); border: 1px solid rgba(0, 0, 255, 0.8); color: white; text-shadow: 0 0 5px blue; }
+        .indigo { background-color: rgba(75, 0, 130, 0.6); border: 1px solid rgba(75, 0, 130, 0.8); color: white; text-shadow: 0 0 5px indigo; }
+        .violet { background-color: rgba(148, 0, 211, 0.6); border: 1px solid rgba(148, 0, 211, 0.8); color: white; text-shadow: 0 0 5px violet; }
+
+        /* Specific styles for elements to create the collage effect */
+        .element-1 { top: 5%; left: 5%; width: 25%; height: 20%; font-size: 1.5em; transform: rotate(-5deg) translateZ(50px); }
+        .element-2 { top: 15%; left: 30%; width: 30%; height: 15%; font-size: 1.2em; transform: rotate(10deg) translateZ(20px); }
+        .element-3 { top: 35%; left: 10%; width: 20%; height: 25%; font-size: 1em; transform: rotate(2deg) translateZ(0px); }
+        .element-4 { top: 40%; left: 50%; width: 35%; height: 18%; font-size: 1.8em; transform: rotate(-15deg) translateZ(40px); }
+        .element-5 { top: 60%; left: 5%; width: 40%; height: 20%; font-size: 1.1em; transform: rotate(8deg) translateZ(10px); }
+        .element-6 { top: 70%; left: 45%; width: 28%; height: 15%; font-size: 0.9em; transform: rotate(-7deg) translateZ(30px); }
+        .element-7 { top: 5%; left: 70%; width: 20%; height: 30%; font-size: 1.3em; transform: rotate(20deg) translateZ(60px); }
+        .element-8 { top: 85%; left: 15%; width: 30%; height: 10%; font-size: 0.8em; transform: rotate(3deg) translateZ(0px); }
+        .element-9 { top: 25%; left: 60%; width: 15%; height: 20%; font-size: 0.9em; transform: rotate(-10deg) translateZ(25px); }
+        .element-10 { top: 80%; left: 65%; width: 25%; height: 15%; font-size: 1.6em; transform: rotate(12deg) translateZ(45px); }
+        .element-11 { top: 50%; left: 30%; width: 20%; height: 10%; font-size: 0.7em; transform: rotate(-3deg) translateZ(-10px); }
+        .element-12 { top: 2%; left: 40%; width: 15%; height: 10%; font-size: 0.7em; transform: rotate(15deg) translateZ(10px); }
+        .element-13 { top: 30%; left: 0%; width: 10%; height: 15%; font-size: 0.6em; transform: rotate(-8deg) translateZ(5px); }
+        .element-14 { top: 70%; left: 0%; width: 15%; height: 10%; font-size: 0.8em; transform: rotate(5deg) translateZ(-5px); }
+        .element-15 { top: 45%; left: 80%; width: 18%; height: 12%; font-size: 1em; transform: rotate(7deg) translateZ(35px); }
+        .element-16 { top: 0%; left: 0%; width: 100%; height: 100%; opacity: 0.05; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100" stroke="white" stroke-width="0.5"/><line x1="0" y1="100" x2="100" y2="0" stroke="white" stroke-width="0.5"/></svg>'); background-repeat: repeat; background-size: 20% 20%; pointer-events: none;} /* Static grid overlay */
+        .element-17 { top: 10%; left: 10%; width: 80%; height: 80%; border: 1px dashed rgba(255,255,255,0.2); pointer-events: none; } /* Subtle frame */
+
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.9; }
+            20% { transform: translate(-2px, 2px) scale(1.01) rotate(0.5deg); opacity: 0.85; }
+            40% { transform: translate(3px, -3px) scale(0.99) rotate(-0.5deg); opacity: 0.92; }
+            60% { transform: translate(-1px, 1px) scale(1) rotate(0.2deg); opacity: 0.88; }
+            80% { transform: translate(2px, -2px) scale(1.005) rotate(-0.2deg); opacity: 0.95; }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.9; }
+        }
+
+        /* Scanline effect */
+        .scanlines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.2) 51%);
+            background-size: 100% 4px; /* Adjust for scanline thickness */
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Text specific styles */
+        .decay-element p {
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+            line-height: 1.2;
+            overflow: hidden; /* Ensure text doesn't burst */
+            white-space: normal; /* Allow text to wrap */
+        }
+
+        /* Image specific styles - for placeholder or base64 embedded images */
+        .decay-element img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the div, cropping if necessary */
+            filter: grayscale(50%) contrast(1.2) sepia(20%); /* Decaying image effect */
+            mix-blend-mode: screen; /* Interesting blend with background */
+            opacity: 0.7;
+            animation: image-flicker 3s infinite alternate;
+        }
+
+        @keyframes image-flicker {
+            0% { filter: grayscale(50%) contrast(1.2) sepia(20%); opacity: 0.7; }
+            50% { filter: grayscale(60%) contrast(1.3) sepia(25%) blur(0.5px); opacity: 0.65; }
+            100% { filter: grayscale(50%) contrast(1.2) sepia(20%); opacity: 0.7; }
+        }
+
+        .code-block {
+            font-size: 0.8em;
+            text-align: left;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.3);
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid currentColor;
+            line-height: 1.1;
+        }
+
+        .visual-static {
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(0,0,0,0.2) 0px,
+                rgba(0,0,0,0.2) 1px,
+                transparent 1px,
+                transparent 5px
+            ), repeating-linear-gradient(
+                -45deg,
+                rgba(0,0,0,0.2) 0px,
+                rgba(0,0,0,0.2) 1px,
+                transparent 1px,
+                transparent 5px
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container scanlines">
+
+        <div class="decay-element element-1 red visual-static">
+            <p>DATA CORRUPTED.</p>
+            <p style="font-size: 0.7em;">BYTE SEQUENCE LOST</p>
+        </div>
+
+        <div class="decay-element element-2 orange">
+            <div class="code-block">
+                ERROR 404: FILE NOT FOUND.<br>
+                <span style="color: yellow;">Memory address 0xDEADBEEF unreadable.</span><br>
+                Segmentation fault (core dumped)
+            </div>
+        </div>
+
+        <div class="decay-element element-3 yellow">
+            <p style="font-size: 0.9em;">SYSTEM_HALT<br>PROTOCOL_FAILED</p>
+            <p style="font-size: 0.6em; margin-top: 5px;">Reboot sequence initiated...</p>
+        </div>
+
+        <div class="decay-element element-4 green visual-static">
+            <p><code>[FRAGMENTATION_DETECTED]</code></p>
+            <p style="font-size: 1.2em;">PIXELS SCATTER</p>
+        </div>
+
+        <div class="decay-element element-5 blue">
+            <!-- Placeholder for an abstract glitched image data URI -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><rect width='100' height='100' fill='%230000FF'/><path d='M0,0 L100,100 M100,0 L0,100' stroke='white' stroke-width='2'/><path d='M0,50 L100,50 M50,0 L50,100' stroke='cyan' stroke-width='1'/></svg>" alt="Glitched Blue Pattern">
+        </div>
+
+        <div class="decay-element element-6 indigo">
+            <p>LOST SIGNAL...</p>
+            <p style="font-size: 0.7em;">...reconnecting attempt 1 of 99</p>
+        </div>
+
+        <div class="decay-element element-7 violet visual-static">
+            <div class="code-block" style="color: pink;">
+                <span style="color: lightblue;">&lt;div class="glitch"&gt;</span><br>
+                &nbsp;&nbsp;&lt;span&gt;DECAY&lt;/span&gt;<br>
+                <span style="color: lightblue;">&lt;/div&gt;</span><br>
+                <span style="color: red;">[CRITICAL ERROR]</span>
+            </div>
+        </div>
+
+        <div class="decay-element element-8 red">
+            <p>VOID</p>
+        </div>
+
+        <div class="decay-element element-9 orange visual-static">
+            <p style="font-size: 0.8em;">ERASING HISTORY...</p>
+        </div>
+
+        <div class="decay-element element-10 yellow">
+            <p>SILENCE</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">(NO INPUT)</p>
+        </div>
+
+        <div class="decay-element element-11 green">
+            <div class="code-block" style="color: lightgreen;">
+                &lt;!-- comment --&gt;<br>
+                &lt;span style="color: gray;"&gt;void func()&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;span style="color: red;"&gt;{&lt;/span&gt;...<br>
+            </div>
+        </div>
+
+        <div class="decay-element element-12 blue visual-static">
+            <p style="font-size: 0.6em;">BUFFER OVERFLOW</p>
+        </div>
+
+        <div class="decay-element element-13 indigo">
+            <p style="font-size: 0.7em;">BITROT</p>
+        </div>
+
+        <div class="decay-element element-14 violet visual-static">
+            <p style="font-size: 0.9em;">THE END IS NEAR</p>
+        </div>
+
+        <div class="decay-element element-15 red">
+            <!-- Another abstract glitched image -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='40' fill='%23FF0000'/><rect x='0' y='45' width='100' height='10' fill='white' transform='rotate(45 50 50)'/><rect x='0' y='45' width='100' height='10' fill='white' transform='rotate(-45 50 50)'/></svg>" alt="Glitched Red Circle">
+        </div>
+
+        <!-- Static overlay elements for overall effect -->
+        <div class="decay-element element-16"></div>
+        <div class="decay-element element-17"></div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 13:47:05.654742</div>
         <div style="width: 100vw; height: 100vh; overflow: hidden; background-color: #0a0a0a; position: relative; font-family: 'Courier New', monospace; color: #fff; line-height: 1; user-select: none; box-sizing: border-box;">
 
