@@ -16,6 +16,245 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 17:10:33.418424</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars if elements go out of bounds */
+    font-family: 'Impact', 'Arial Black', sans-serif; /* A bold, stark font for brutalism */
+    background-color: #1a1a1a; /* Dark background to make rainbow pop */
+    color: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .collage-item {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.4s ease-in-out; /* Bouncy transition */
+    overflow: hidden; /* Keep background images within bounds */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Slight roundness for beauty */
+  }
+
+  .collage-item:hover {
+    transform: scale(1.1) rotateZ(0deg) !important; /* Emphasize and straighten on hover */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.4); /* Stronger glow */
+    z-index: 1000 !important; /* Bring to very front */
+  }
+
+  /* Red element */
+  .item-1 {
+    width: 400px;
+    height: 280px;
+    top: 5%;
+    left: 7%;
+    background-color: #FF0000; /* Red */
+    background-image: url('https://images.unsplash.com/photo-1577907579998-90f757f5c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: rotate(-18deg);
+    z-index: 7;
+    border: 6px solid #FF0000;
+  }
+  .item-1::before { content: "STRUCTURE"; color: #fff; background: rgba(0,0,0,0.6); padding: 8px 12px; font-size: 0.6em; }
+
+  /* Orange element */
+  .item-2 {
+    width: 450px;
+    height: 320px;
+    top: 10%;
+    right: 5%;
+    background-color: #FFA500; /* Orange */
+    background-image: url('https://images.unsplash.com/photo-1548684277-bf37b0d77123?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: rotate(12deg);
+    z-index: 6;
+    border: 6px solid #FFA500;
+  }
+  .item-2::before { content: "RAW FORM"; color: #1a1a1a; background: rgba(255,255,255,0.7); padding: 8px 12px; font-size: 0.6em; }
+
+  /* Yellow element */
+  .item-3 {
+    width: 300px;
+    height: 200px;
+    bottom: 8%;
+    left: 4%;
+    background-color: #FFFF00; /* Yellow */
+    background-image: url('https://images.unsplash.com/photo-1627993430514-6338b5550a1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: rotate(-8deg);
+    z-index: 5;
+    border: 6px solid #FFFF00;
+  }
+  .item-3::before { content: "MONOLITH"; color: #1a1a1a; background: rgba(255,255,255,0.7); padding: 8px 12px; font-size: 0.6em; }
+
+  /* Green element */
+  .item-4 {
+    width: 350px;
+    height: 250px;
+    top: 35%;
+    left: 20%;
+    background-color: #008000; /* Green */
+    background-image: url('https://images.unsplash.com/photo-1629859239845-f0b4d4b1f6f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: rotate(22deg);
+    z-index: 8; /* Overlaps some others */
+    border: 6px solid #008000;
+  }
+  .item-4::before { content: "GEOMETRY"; color: #fff; background: rgba(0,0,0,0.6); padding: 8px 12px; font-size: 0.6em; }
+
+  /* Blue element */
+  .item-5 {
+    width: 420px;
+    height: 300px;
+    bottom: 15%;
+    right: 10%;
+    background-color: #0000FF; /* Blue */
+    background-image: url('https://images.unsplash.com/photo-1563853105345-42023d8c1c2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: rotate(-12deg);
+    z-index: 4;
+    border: 6px solid #0000FF;
+  }
+  .item-5::before { content: "UTILITY"; color: #fff; background: rgba(0,0,0,0.6); padding: 8px 12px; font-size: 0.6em; }
+
+  /* Indigo element (text-only) */
+  .item-6 {
+    width: 280px;
+    height: 180px;
+    top: 55%;
+    right: 8%;
+    background-color: #4B0082; /* Indigo */
+    color: #f0f0f0;
+    transform: rotate(7deg);
+    font-size: 1.8em;
+    z-index: 9;
+    border: 6px solid #4B0082;
+  }
+  .item-6::before { content: "PURPOSE"; }
+
+  /* Violet element (text-only) */
+  .item-7 {
+    width: 220px;
+    height: 120px;
+    top: 15%;
+    left: 40%;
+    background-color: #EE82EE; /* Violet */
+    color: #1a1a1a; /* Dark text for light background */
+    transform: rotate(28deg);
+    font-size: 1.5em;
+    z-index: 3;
+    border: 6px solid #EE82EE;
+  }
+  .item-7::before { content: "POWER"; }
+
+  /* Additional textual overlay elements */
+  .item-8 {
+    width: 320px;
+    height: 110px;
+    bottom: 2%;
+    left: 35%;
+    background-color: rgba(255, 255, 255, 0.95); /* Near white for strong contrast */
+    color: #1a1a1a;
+    transform: rotate(3deg) scale(1.05);
+    font-size: 2em;
+    z-index: 10;
+    border: 6px solid #FF0000; /* Red border to cycle rainbow */
+  }
+  .item-8::before { content: "CONCRETE DREAMS"; }
+
+  .item-9 {
+    width: 240px;
+    height: 90px;
+    top: 70%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark background */
+    color: #f0f0f0;
+    transform: rotate(-10deg);
+    font-size: 1.7em;
+    z-index: 11;
+    border: 6px solid #0000FF; /* Blue border */
+  }
+  .item-9::before { content: "BRUTAL BEAUTY"; }
+
+  .item-10 {
+    width: 200px;
+    height: 140px;
+    top: 25%;
+    left: 65%;
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+    border: 4px solid #FFFF00; /* Yellow border */
+    transform: rotate(18deg);
+    z-index: 2;
+    font-size: 1.2em;
+    color: #FFFF00;
+  }
+  .item-10::before { content: "FORM FOLLOWS FUNCTION"; }
+
+  .item-11 {
+    width: 260px;
+    height: 100px;
+    bottom: 30%;
+    left: 55%;
+    background-color: #008000; /* Green */
+    color: #f0f0f0;
+    transform: rotate(-5deg);
+    font-size: 1.6em;
+    z-index: 12; /* On top */
+    border: 6px solid #008000;
+  }
+  .item-11::before { content: "BOLD."; }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+    <div class="collage-item item-1"></div>
+    <div class="collage-item item-2"></div>
+    <div class="collage-item item-3"></div>
+    <div class="collage-item item-4"></div>
+    <div class="collage-item item-5"></div>
+    <div class="collage-item item-6"></div>
+    <div class="collage-item item-7"></div>
+    <div class="collage-item item-8"></div>
+    <div class="collage-item item-9"></div>
+    <div class="collage-item item-10"></div>
+    <div class="collage-item item-11"></div>
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 15:17:51.097411</div>
         <!DOCTYPE html>
 <html lang="en">
