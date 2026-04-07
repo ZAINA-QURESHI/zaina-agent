@@ -16,6 +16,216 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 21:52:33.883144</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brutalist Rainbow Dream</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap'); /* Using Google Fonts for bold, blocky text */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Bebas Neue', sans-serif; /* Strong, condensed font */
+            overflow: hidden; /* Prevent scrollbars from absolute positioning */
+        }
+
+        #brutalist-rainbow-collage {
+            position: relative;
+            width: 1100px; /* Canvas width */
+            height: 750px; /* Canvas height */
+            background-color: #3d3d3d; /* Concrete-like base */
+            border: 8px solid #5a5a5a;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden; /* Crucial for containing absolute children */
+            transform: scale(0.95) rotate(-1deg); /* Slight rotation and scale for radical feel */
+            perspective: 1000px; /* For 3D transforms */
+        }
+
+        .collage-item {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in sizing */
+            font-size: 1.2em;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow: hidden; /* Ensures content stays within its div */
+            transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+        }
+
+        /* Concrete texture background layer */
+        .concrete-texture {
+            background-image: url('https://via.placeholder.com/1200x800/666666/333333?text=SUBTLE_CONCRETE_PATTERN');
+            background-size: cover;
+            opacity: 0.1;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            z-index: 0; /* Always at the back */
+            pointer-events: none; /* Make it non-interactive */
+            mix-blend-mode: multiply; /* Blends with the background color */
+        }
+
+        /* Brutalist Image Blocks */
+        .img-block {
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #777;
+            filter: grayscale(90%) brightness(0.7) contrast(1.2); /* Desaturated, dark, high contrast */
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
+        .img-block:hover {
+            filter: grayscale(0%) brightness(1) contrast(1); /* Reveal full color on hover */
+            z-index: 100; /* Bring to front */
+            transform: scale(1.05) rotate(0deg) translateZ(50px) !important; /* Pop out and straighten */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-color: white;
+        }
+
+        /* Text Blocks */
+        .text-block {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid; /* Border color will be set per element */
+            font-family: 'Anton', sans-serif; /* Even bolder for text */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            mix-blend-mode: overlay; /* Creates interesting color interactions */
+            backdrop-filter: blur(2px); /* Subtle blur behind text */
+            border-image-slice: 1; /* For gradient borders */
+            border-width: 3px;
+        }
+
+        /* Rainbow Blocks */
+        .rainbow-block {
+            opacity: 0.7;
+            border: 1px solid rgba(255,255,255,0.3);
+            mix-blend-mode: screen; /* Lightens and blends with layers below */
+            transform-style: preserve-3d; /* For child 3D transforms */
+            box-shadow: 0 0 20px rgba(255,255,255,0.2) inset;
+        }
+
+        /* Main Title */
+        .title-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(3deg); /* Centered and slightly rotated */
+            font-size: 5em;
+            line-height: 0.9em;
+            font-family: 'Anton', sans-serif;
+            color: white; /* Fallback color */
+            z-index: 150; /* Bring to very front */
+            background: linear-gradient(45deg, #ff0000, #ff8c00, #ffd700, #008000, #0000ff, #4b0082, #ee82ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(0,255,255,0.8), 0 0 30px rgba(255,0,255,0.8);
+            padding: 20px 30px;
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #ff0000, #ff8c00, #ffd700, #008000, #0000ff, #4b0082, #ee82ee) 1;
+            box-shadow: 0 0 25px rgba(0,0,0,0.9), 0 0 50px rgba(255,255,255,0.3) inset;
+            text-align: center;
+            white-space: nowrap; /* Prevent title from breaking into multiple lines unless explicitly <br> */
+            animation: pulse-border 3s infinite alternate; /* Animates border glow */
+        }
+
+        @keyframes pulse-border {
+            from { border-image-slice: 1; border-image-source: linear-gradient(45deg, #ff0000, #ff8c00, #ffd700, #008000, #0000ff, #4b0082, #ee82ee); }
+            to { border-image-slice: 1; border-image-source: linear-gradient(-45deg, #ee82ee, #4b0082, #0000ff, #008000, #ffd700, #ff8c00, #ff0000); }
+        }
+
+        /* Specific Item Positioning and Styling */
+
+        /* Images (Brutalist Buildings) */
+        #img1 { width: 350px; height: 230px; top: 70px; left: 100px; transform: rotate(-10deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/TrellickTower_2004_edit.jpg/800px-TrellickTower_2004_edit.jpg'); z-index: 10; }
+        #img2 { width: 400px; height: 280px; top: 300px; left: 650px; transform: rotate(18deg) skewY(-5deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Barbican_Estate_%2810%29.jpg/800px-Barbican_Estate_%2810%29.jpg'); z-index: 12; }
+        #img3 { width: 300px; height: 200px; top: 150px; left: 450px; transform: rotate(5deg) scale(0.9); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Boston_City_Hall_detail.jpg/800px-Boston_City_Hall_detail.jpg'); z-index: 11; }
+        #img4 { width: 280px; height: 180px; top: 520px; left: 80px; transform: rotate(-15deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Habitat_67_2016.jpg/800px-Habitat_67_2016.jpg'); z-index: 13; }
+        #img5 { width: 320px; height: 210px; top: 0px; left: 700px; transform: rotate(-25deg) skewX(10deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/PRESTIGIOUS_BUILDING.jpg/800px-PRESTIGIOUS_BUILDING.jpg'); z-index: 9; }
+        #img6 { width: 200px; height: 140px; top: 400px; left: 350px; transform: rotate(8deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/National_Theatre_-_south_side_from_Waterloo_Bridge.jpg/800px-National_Theatre_-_south_side_from_Waterloo_Bridge.jpg'); z-index: 14; }
+
+        /* Text Snippets (Rainbow bordered) */
+        #text1 { width: 220px; height: 90px; top: 30px; left: 500px; transform: rotate(12deg); color: #ff0000; border-color: #ff0000; z-index: 20; } /* Red */
+        #text2 { width: 260px; height: 70px; top: 270px; left: 30px; transform: rotate(-8deg); color: #ff8c00; border-color: #ff8c00; z-index: 21; } /* Orange */
+        #text3 { width: 180px; height: 80px; top: 450px; left: 280px; transform: rotate(5deg); color: #ffd700; border-color: #ffd700; z-index: 22; } /* Yellow */
+        #text4 { width: 240px; height: 100px; top: 620px; left: 500px; transform: rotate(15deg); color: #008000; border-color: #008000; z-index: 23; } /* Green */
+        #text5 { width: 200px; height: 60px; top: 180px; left: 320px; transform: rotate(-18deg); color: #0000ff; border-color: #0000ff; z-index: 24; } /* Blue */
+        #text6 { width: 280px; height: 95px; top: 480px; left: 750px; transform: rotate(-10deg); color: #4b0082; border-color: #4b0082; z-index: 25; } /* Indigo */
+        #text7 { width: 220px; height: 85px; top: 380px; left: 520px; transform: rotate(22deg); color: #ee82ee; border-color: #ee82ee; z-index: 26; } /* Violet */
+
+        /* Rainbow Elements */
+        #rainbow1 { width: 120px; height: 600px; top: 0; left: -30px; transform: rotate(30deg) translateZ(10px); background: linear-gradient(to bottom, #ff0000, #ff8c00); z-index: 5; }
+        #rainbow2 { width: 150px; height: 500px; top: 50px; left: 950px; transform: rotate(-20deg) translateZ(15px); background: linear-gradient(to top, #008000, #0000ff); z-index: 6; }
+        #rainbow3 { width: 900px; height: 80px; top: 680px; left: 100px; transform: rotate(3deg) skewX(10deg); background: linear-gradient(to right, #ffd700, #ff8c00); z-index: 7; }
+        #rainbow4 { width: 70px; height: 400px; top: 200px; left: 0px; background-color: #4b0082; transform: rotate(-35deg) translateZ(5px); z-index: 8; }
+        #rainbow5 { width: 180px; height: 100px; top: 200px; left: 850px; background-color: #ff0000; transform: skewX(-25deg) rotate(10deg); z-index: 15; }
+        #rainbow6 { width: 90px; height: 200px; top: 450px; left: 10px; background-color: #ffd700; transform: skewY(20deg) rotate(-5deg); z-index: 14; }
+        #rainbow7 { width: 300px; height: 40px; top: -10px; left: 250px; background: linear-gradient(to right, #008000, #0000ff); transform: rotate(8deg); z-index: 4; }
+        #rainbow8 { width: 60px; height: 150px; top: 10px; left: 880px; background-color: #ee82ee; transform: rotate(45deg); z-index: 16; }
+        #rainbow9 { width: 250px; height: 20px; top: 600px; left: 200px; background-color: #4b0082; transform: rotate(-20deg); z-index: 17; }
+
+    </style>
+</head>
+<body>
+    <div id="brutalist-rainbow-collage">
+        <div class="collage-item concrete-texture"></div>
+
+        <!-- Brutalist Images -->
+        <div id="img1" class="collage-item img-block"></div>
+        <div id="img2" class="collage-item img-block"></div>
+        <div id="img3" class="collage-item img-block"></div>
+        <div id="img4" class="collage-item img-block"></div>
+        <div id="img5" class="collage-item img-block"></div>
+        <div id="img6" class="collage-item img-block"></div>
+
+        <!-- Rainbow Blocks -->
+        <div id="rainbow1" class="collage-item rainbow-block"></div>
+        <div id="rainbow2" class="collage-item rainbow-block"></div>
+        <div id="rainbow3" class="collage-item rainbow-block"></div>
+        <div id="rainbow4" class="collage-item rainbow-block"></div>
+        <div id="rainbow5" class="collage-item rainbow-block"></div>
+        <div id="rainbow6" class="collage-item rainbow-block"></div>
+        <div id="rainbow7" class="collage-item rainbow-block"></div>
+        <div id="rainbow8" class="collage-item rainbow-block"></div>
+        <div id="rainbow9" class="collage-item rainbow-block"></div>
+
+        <!-- Text Blocks -->
+        <div id="text1" class="collage-item text-block">BRUTALIST POWER</div>
+        <div id="text2" class="collage-item text-block">RAW CONCRETE DREAM</div>
+        <div id="text3" class="collage-item text-block">MASSIVE FORMS</div>
+        <div id="text4" class="collage-item text-block">UTOPIAN BLOCK</div>
+        <div id="text5" class="collage-item text-block">BOLD & UNAPOLOGETIC</div>
+        <div id="text6" class="collage-item text-block">FUNCTIONAL MONUMENT</div>
+        <div id="text7" class="collage-item text-block">AESTHETICS OF STEEL & STONE</div>
+
+        <!-- Main Title -->
+        <div class="title-text">
+            BRUTALIST<br>RAINBOW<br>COLLAGE
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 20:56:40.472784</div>
         <!DOCTYPE html>
 <html lang="en">
