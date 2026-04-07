@@ -16,6 +16,304 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 20:56:40.472784</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algorithmic Surveillance Rainbow Collage</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Courier New', monospace; background-color: #0a0a0a; overflow: hidden; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .collage-container {
+    position: relative;
+    width: 90vw; /* Responsive width */
+    height: 90vh; /* Responsive height */
+    max-width: 1200px;
+    max-height: 800px;
+    overflow: hidden;
+    border: 5px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    box-shadow: 0 0 50px rgba(255, 0, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.7);
+  }
+
+  .rainbow-div {
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: grab;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 10; /* Default z-index */
+    white-space: nowrap; /* Prevent text wrapping for short phrases */
+  }
+
+  /* Specific rainbow colors with subtle gradients/patterns */
+  .red { background: linear-gradient(45deg, #FF0000, #CC0000); transform: rotate(-5deg); top: 10%; left: 5%; width: 180px; height: 60px; font-size: 1.1em; z-index: 15; }
+  .orange { background: linear-gradient(45deg, #FFA500, #CC8400); transform: rotate(8deg); top: 20%; left: 20%; width: 220px; height: 70px; font-size: 1.2em; z-index: 12; }
+  .yellow { background: linear-gradient(45deg, #FFFF00, #CCCC00); transform: rotate(-12deg); top: 5%; left: 45%; width: 160px; height: 50px; font-size: 0.9em; }
+  .green { background: linear-gradient(45deg, #00FF00, #00CC00); transform: rotate(3deg); top: 35%; left: 5%; width: 200px; height: 65px; font-size: 1.1em; z-index: 11; }
+  .blue { background: linear-gradient(45deg, #0000FF, #0000CC); transform: rotate(-7deg); top: 25%; left: 60%; width: 250px; height: 80px; font-size: 1.3em; z-index: 14; }
+  .indigo { background: linear-gradient(45deg, #4B0082, #3B0067); transform: rotate(10deg); top: 50%; left: 15%; width: 190px; height: 60px; font-size: 1em; }
+  .violet { background: linear-gradient(45deg, #EE82EE, #BB66BB); transform: rotate(-4deg); top: 60%; left: 40%; width: 230px; height: 75px; font-size: 1.2em; z-index: 13; }
+
+  /* More abstract/overlapping elements */
+  .data-stream {
+    background: repeating-linear-gradient(45deg, #ff00ff, #00ffff 10px, #ff00ff 20px);
+    opacity: 0.7;
+    width: 100px; height: 300px;
+    transform: rotate(20deg);
+    top: -50px; left: 80%;
+    z-index: 5;
+    position: absolute;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  }
+  .data-stream.two {
+    background: repeating-linear-gradient(-45deg, #00ff00, #ff00ff 10px, #00ff00 20px);
+    opacity: 0.6;
+    width: 80px; height: 250px;
+    transform: rotate(-10deg);
+    top: 60%; left: -20px;
+    z-index: 4;
+    position: absolute;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+
+  .eye-icon {
+    position: absolute;
+    background: radial-gradient(circle at center, white 5%, black 10%, #4B0082 20%, #EE82EE 40%, #FF00FF 60%, transparent 80%);
+    border-radius: 50%;
+    width: 150px; height: 150px;
+    top: 65%; left: 70%;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.9);
+    z-index: 20;
+    animation: pulse 2s infinite alternate ease-in-out;
+  }
+  .eye-pupil {
+    position: absolute;
+    width: 30px; height: 30px;
+    background: black;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  }
+
+  .question-mark {
+    position: absolute;
+    font-size: 5em;
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+    top: 40%; left: 40%;
+    transform: rotate(15deg);
+    z-index: 18;
+    animation: float 3s infinite ease-in-out;
+  }
+
+  .glitch-text {
+    position: absolute;
+    font-size: 0.7em;
+    color: #ff00ff; /* Magenta */
+    text-shadow: 1px 1px 0 #00ffff, -1px -1px 0 #ffff00; /* Cyan & Yellow glitch effect */
+    top: 85%; left: 5%;
+    transform: rotate(-3deg);
+    z-index: 16;
+    animation: glitch 1.5s infinite linear alternate;
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+
+  .glitch-text.two {
+    color: #00ffff;
+    text-shadow: 1px 1px 0 #ff00ff, -1px -1px 0 #00ff00;
+    top: 15%; right: 5%;
+    left: auto; /* Override left */
+    transform: rotate(7deg);
+    opacity: 0.8;
+  }
+
+  /* Animations */
+  @keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 255, 0.9); }
+    to { transform: scale(1.05); box-shadow: 0 0 45px rgba(255, 0, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.7); }
+  }
+
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(15deg); }
+    50% { transform: translate(10px, -10px) rotate(18deg); }
+    100% { transform: translate(0, 0) rotate(15deg); }
+  }
+
+  @keyframes glitch {
+    0% {
+      text-shadow: 2px 0 0 #00ffff, -2px 0 0 #ff00ff;
+      transform: translate(0px, 0px) scale(1) rotate(-3deg);
+    }
+    25% {
+      text-shadow: -2px 2px 0 #ffff00, 2px -2px 0 #00ff00;
+      transform: translate(1px, -1px) scale(1.01) rotate(-4deg);
+    }
+    50% {
+      text-shadow: 3px 0 0 #ff00ff, -3px 0 0 #00ffff;
+      transform: translate(-1px, 1px) scale(0.99) rotate(-2deg);
+    }
+    75% {
+      text-shadow: -1px -1px 0 #00ff00, 1px 1px 0 #ffff00;
+      transform: translate(0.5px, 0.5px) scale(1.005) rotate(-3.5deg);
+    }
+    100% {
+      text-shadow: 2px 0 0 #00ffff, -2px 0 0 #ff00ff;
+      transform: translate(0px, 0px) scale(1) rotate(-3deg);
+    }
+  }
+
+  /* Interactive element - can be dragged */
+  .draggable {
+    cursor: grab;
+    user-select: none;
+  }
+  .draggable:active {
+    cursor: grabbing;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="rainbow-div red draggable" style="top: 10%; left: 5%; width: 180px; height: 60px;">
+    DATA HARVEST
+  </div>
+
+  <div class="rainbow-div orange draggable" style="top: 20%; left: 20%; width: 220px; height: 70px;">
+    PRIVATE LIVES FOR SALE
+  </div>
+
+  <div class="rainbow-div yellow draggable" style="top: 5%; left: 45%; width: 160px; height: 50px;">
+    ALGORITHMIC BIAS
+  </div>
+
+  <div class="rainbow-div green draggable" style="top: 35%; left: 5%; width: 200px; height: 65px;">
+    INVISIBLE FENCES
+  </div>
+
+  <div class="rainbow-div blue draggable" style="top: 25%; left: 60%; width: 250px; height: 80px;">
+    WHO IS WATCHING YOU?
+  </div>
+
+  <div class="rainbow-div indigo draggable" style="top: 50%; left: 15%; width: 190px; height: 60px;">
+    PREDICTIVE PROFILING
+  </div>
+
+  <div class="rainbow-div violet draggable" style="top: 60%; left: 40%; width: 230px; height: 75px;">
+    THE PANOPTICON IS REAL
+  </div>
+
+  <div class="rainbow-div red draggable" style="top: 75%; left: 5%; width: 150px; height: 50px; transform: rotate(15deg);">
+    DIGITAL FOOTPRINTS
+  </div>
+
+  <div class="rainbow-div orange draggable" style="top: 80%; left: 25%; width: 180px; height: 60px; transform: rotate(-8deg);">
+    CONTROL
+  </div>
+
+  <div class="rainbow-div yellow draggable" style="top: 65%; left: 65%; width: 120px; height: 40px; transform: rotate(20deg);">
+    TRUTH?
+  </div>
+
+  <div class="rainbow-div green draggable" style="top: 18%; left: 40%; width: 100px; height: 35px; transform: rotate(-20deg);">
+    CONSENT?
+  </div>
+
+  <div class="data-stream"></div>
+  <div class="data-stream two"></div>
+
+  <div class="eye-icon">
+    <div class="eye-pupil"></div>
+  </div>
+
+  <div class="question-mark">?</div>
+
+  <div class="glitch-text">
+    <span style="color: #ff00ff;">ERROR</span>::<span style="color: #00ffff;">DATA</span>::BREACH<br>
+    PERSISTENCE_VECTOR_ACTIVE
+  </div>
+
+  <div class="glitch-text two">
+    <span style="color: #00ffff;">SYSTEM</span>::<span style="color: #ff00ff;">MONITORING</span>::ACTIVE<br>
+    YOUR_BEHAVIOR_ANALYZED
+  </div>
+
+</div>
+
+<script>
+  // Basic drag functionality for .draggable elements
+  document.querySelectorAll('.draggable').forEach(item => {
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    item.addEventListener("mousedown", dragStart);
+    item.addEventListener("mouseup", dragEnd);
+    item.addEventListener("mousemove", drag);
+
+    function dragStart(e) {
+      initialX = e.clientX - xOffset;
+      initialY = e.clientY - yOffset;
+      if (e.target === item) {
+        isDragging = true;
+        // Bring dragged element to the front
+        item.style.zIndex = 1000;
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+      isDragging = false;
+      // Reset z-index after dragging, or set to a high but not maximum value
+      item.style.zIndex = ''; // Let CSS define z-index or set to a specific lower value
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+
+      e.preventDefault();
+      currentX = e.clientX - initialX;
+      currentY = e.clientY - initialY;
+
+      xOffset = currentX;
+      yOffset = currentY;
+
+      setTranslate(currentX, currentY, item);
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) ${el.style.transform.match(/rotate\((.*?)\)/)?.[0] || ''}`;
+    }
+  });
+</script>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 19:16:07.110924</div>
         <style>
     /* Basic reset and full-page setup for the collage container */
