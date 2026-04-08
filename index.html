@@ -16,6 +16,236 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-08 03:18:20.507826</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Brutalist Rainbow Collage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars if elements go slightly off-screen */
+            font-family: 'IBM Plex Mono', monospace;
+            background: linear-gradient(135deg, #0d0d0d, #2a2a2a, #0d0d0d); /* Dark, stark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 1000px; /* For 3D transformations */
+        }
+
+        .collage-container {
+            position: relative;
+            width: 1000px; /* Fixed size for the collage area */
+            height: 700px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Keep collage elements within container */
+            background-color: #1c1c1c; /* Dark background for the collage itself */
+            transform: rotateX(5deg) rotateY(-5deg) rotateZ(2deg); /* Slight initial 3D tilt */
+            transition: transform 1s ease-in-out;
+        }
+
+        .collage-container:hover {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* Straighten on hover */
+        }
+
+        .collage-piece {
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            mix-blend-mode: screen; /* Interesting blend mode for rainbow effect over dark */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth hover transition */
+            cursor: default;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            transform-style: preserve-3d; /* For child 3D transforms */
+            backface-visibility: hidden;
+        }
+
+        .collage-piece:hover {
+            transform: scale(1.08) rotate(var(--hover-rotate, 0deg)) translateZ(50px) !important; /* Lift and slight rotation on hover */
+            z-index: 1000; /* Bring to very front on hover */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 100px rgba(var(--color-rgb), 0.8); /* Glow effect */
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Brutalist image/texture placeholders */
+        .concrete-texture {
+            background-image: url('https://source.unsplash.com/random/400x300/?concrete,texture,brutalist');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(90%) brightness(120%) contrast(150%);
+            mix-blend-mode: luminosity; /* More stark contrast */
+        }
+        .brutalist-image {
+            background-size: cover;
+            background-position: center;
+            filter: contrast(120%) brightness(90%);
+        }
+
+        /* Rainbow Colors & Positions */
+        /* Red */
+        .c1 { width: 300px; height: 180px; top: 50px; left: 30px; background-color: #FF0000; transform: rotate(-8deg); z-index: 10; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -10deg; --color-rgb: 255,0,0; }
+        /* Orange */
+        .c2 { width: 200px; height: 250px; top: 150px; left: 250px; background-color: #FFA500; transform: rotate(12deg); z-index: 12; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 14deg; --color-rgb: 255,165,0; }
+        /* Yellow */
+        .c3 { width: 150px; height: 350px; top: 10px; left: 500px; background-color: #FFFF00; transform: rotate(-18deg); z-index: 8; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -20deg; --color-rgb: 255,255,0; }
+        /* Green */
+        .c4 { width: 400px; height: 100px; top: 350px; left: 10px; background-color: #00FF00; transform: rotate(5deg); z-index: 15; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 7deg; --color-rgb: 0,255,0; }
+        /* Blue */
+        .c5 { width: 250px; height: 200px; top: 280px; left: 400px; background-color: #0000FF; transform: rotate(-10deg); z-index: 11; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -12deg; --color-rgb: 0,0,255; }
+        /* Indigo */
+        .c6 { width: 180px; height: 180px; top: 500px; left: 180px; background-color: #4B0082; transform: rotate(22deg); z-index: 9; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 24deg; --color-rgb: 75,0,130; }
+        /* Violet */
+        .c7 { width: 350px; height: 150px; top: 450px; left: 550px; background-color: #EE82EE; transform: rotate(-15deg); z-index: 13; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -17deg; --color-rgb: 238,130,238; }
+        /* Red-Orange overlay text */
+        .c8 { width: 120px; height: 280px; top: 200px; left: 700px; background-color: #FF4500; transform: rotate(9deg); z-index: 14; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 11deg; --color-rgb: 255,69,0; }
+        /* Blue-Violet small text */
+        .c9 { width: 100px; height: 80px; top: 60px; left: 750px; background-color: #8A2BE2; transform: rotate(27deg); z-index: 16; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 29deg; font-size: 0.9em; color: #ccc; text-shadow: 1px 1px 3px black; --color-rgb: 138,43,226; }
+        /* Full Rainbow Gradient Strip */
+        .c10 {
+            width: 600px; height: 50px; top: 620px; left: 50px;
+            background: linear-gradient(90deg, #FF0000, #FFA500, #FFFF00, #00FF00, #0000FF, #4B0082, #EE82EE);
+            transform: rotate(-4deg); z-index: 17; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -6deg;
+            font-size: 1.6em; color: black; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            mix-blend-mode: normal; /* Don't blend the gradient text */
+            --color-rgb: 255,255,255; /* Default glow for gradient */
+        }
+        /* Brutalist building image 1 */
+        .c11 {
+            width: 250px; height: 150px; top: 100px; left: 100px;
+            background-image: url('https://source.unsplash.com/random/250x150/?brutalist,architecture,building');
+            border: 5px solid rgba(255, 255, 255, 0.5); /* Stronger frame */
+            transform: rotate(4deg); z-index: 18; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 6deg;
+            mix-blend-mode: hard-light; /* Stronger blend */
+            --color-rgb: 200,200,200;
+        }
+        /* Transparent text box */
+        .c12 {
+            width: 200px; height: 100px; top: 500px; left: 400px;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(3px) brightness(1.2); /* Enhanced frosted glass effect */
+            transform: rotate(-12deg); z-index: 19; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -14deg;
+            color: #dddddd; font-size: 1.1em; text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            border: 2px dashed #999;
+            --color-rgb: 255,255,255;
+        }
+        /* Brutalist building image 2 */
+        .c13 {
+            width: 180px; height: 220px; top: 20px; left: 800px;
+            background-image: url('https://source.unsplash.com/random/180x220/?brutalism,concrete,structure');
+            border: 3px solid #ffcc00; /* Yellow accent border */
+            transform: rotate(18deg); z-index: 20; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 20deg;
+            mix-blend-mode: overlay; /* Different blend mode */
+            --color-rgb: 255,204,0;
+        }
+        /* Thin Rainbow Gradient Overlay */
+        .c14 {
+            width: 700px; height: 30px; top: 300px; left: 150px;
+            background: linear-gradient(90deg, transparent, #FF0000, #FFA500, #FFFF00, #00FF00, #0000FF, #4B0082, #EE82EE, transparent);
+            transform: rotate(-6deg); z-index: 21; opacity: 0.7; --hover-rotate: -8deg;
+            pointer-events: none; /* Make it unclickable */
+            box-shadow: none; /* No shadow for this element */
+            mix-blend-mode: lighten;
+            --color-rgb: 255,255,255;
+        }
+        /* Large 'BRUTALIST' text overlay */
+        .c15 {
+            width: 400px; height: 80px; top: 180px; left: 600px;
+            background-color: transparent;
+            color: #eee;
+            font-size: 2.8em;
+            letter-spacing: 6px;
+            text-shadow: 3px 3px 7px black;
+            transform: rotate(10deg); z-index: 22; --hover-rotate: 12deg;
+            pointer-events: none; /* Make it unclickable */
+            box-shadow: none;
+            mix-blend-mode: normal;
+            --color-rgb: 255,255,255;
+        }
+        /* Small concrete block */
+        .c16 {
+            width: 80px; height: 150px; top: 600px; left: 850px;
+            background-image: url('https://source.unsplash.com/random/80x150/?concrete,wall,texture');
+            border: 2px solid #aaaaaa;
+            transform: rotate(-25deg); z-index: 23; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -27deg;
+            mix-blend-mode: hard-light;
+            --color-rgb: 180,180,180;
+        }
+        /* Extra elements for more density and layers */
+        .c17 { /* Red-Purple blend */
+            width: 150px; height: 100px; top: 30px; left: 350px;
+            background: linear-gradient(45deg, #FF0000, #8A2BE2);
+            transform: rotate(3deg) scaleX(0.8); z-index: 16; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 5deg;
+            font-size: 0.9em;
+            --color-rgb: 255,0,255;
+        }
+        .c18 { /* Abstract brutalist image */
+            width: 220px; height: 120px; top: 220px; left: 50px;
+            background-image: url('https://source.unsplash.com/random/220x120/?brutalist,abstract,art');
+            border: 4px solid #00ffff; /* Cyan accent */
+            transform: rotate(-15deg); z-index: 24; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -17deg;
+            mix-blend-mode: screen;
+            --color-rgb: 0,255,255;
+        }
+        .c19 { /* Yellow-Green strip */
+            width: 100px; height: 300px; top: 380px; left: 780px;
+            background: linear-gradient(180deg, #FFFF00, #00FF00);
+            transform: rotate(10deg); z-index: 10; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: 12deg;
+            --color-rgb: 255,255,0;
+        }
+        .c20 { /* Cyan square */
+            width: 90px; height: 90px; top: 570px; left: 50px;
+            background-color: #00FFFF;
+            transform: rotate(-7deg); z-index: 25; box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); --hover-rotate: -9deg;
+            --color-rgb: 0,255,255;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="collage-piece c1">RAW <br> CONCRETE</div>
+        <div class="collage-piece c2 concrete-texture"></div>
+        <div class="collage-piece c3">MASSIVE <br> FORMS</div>
+        <div class="collage-piece c4">UTILITARIAN <br> AESTHETICS</div>
+        <div class="collage-piece c5">STRUCTURE <br> REVEALED</div>
+        <div class="collage-piece c6 concrete-texture"></div>
+        <div class="collage-piece c7">BRUTALIST <br> FUTURE</div>
+        <div class="collage-piece c8">POWERFUL<br>GEOMETRY</div>
+        <div class="collage-piece c9">STARK</div>
+        <div class="collage-piece c10">DECONSTRUCTED RAINBOW</div>
+        <div class="collage-piece c11 brutalist-image"></div>
+        <div class="collage-piece c12">EXPOSED <br> TRUTH</div>
+        <div class="collage-piece c13 brutalist-image"></div>
+        <div class="collage-piece c14"></div>
+        <div class="collage-piece c15">BRUTALIST</div>
+        <div class="collage-piece c16 concrete-texture"></div>
+        <div class="collage-piece c17">FORM <br> FUNCTION</div>
+        <div class="collage-piece c18 brutalist-image"></div>
+        <div class="collage-piece c19"></div>
+        <div class="collage-piece c20">SOLID</div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-07 23:49:22.901622</div>
         <!DOCTYPE html>
 <html lang="en">
