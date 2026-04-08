@@ -16,6 +16,301 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-08 23:46:49.908804</div>
+        <style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars due to absolute positioning */
+    font-family: 'Arial Black', sans-serif;
+    background-color: #1a1a1a; /* Dark background to make rainbow colors pop */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1500px; /* For 3D transformations */
+    overflow: hidden;
+  }
+
+  /* Base style for all collage items */
+  .collage-item {
+    position: absolute;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease, z-index 0.1s ease;
+    cursor: pointer;
+  }
+
+  .collage-item:hover {
+    transform: scale(1.05) rotate(var(--hover-rotate, 0deg)) translateZ(50px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+    z-index: 100; /* Bring hovered item to front */
+  }
+
+  /* Specific text items with rainbow colors */
+  /* Red */
+  .item-text-1 {
+    width: 300px; height: 180px;
+    top: 5%; left: 5%;
+    background-color: #ff0000;
+    border-color: #ff4500;
+    transform: rotate(-8deg);
+    z-index: 10;
+    font-size: 2.5em;
+    padding: 10px;
+  }
+  .item-text-1::before { content: "BRUTAL FORMS"; }
+
+  /* Orange */
+  .item-text-2 {
+    width: 250px; height: 150px;
+    top: 15%; left: 25%;
+    background-color: #ff8c00;
+    border-color: #ffa500;
+    transform: rotate(5deg);
+    z-index: 20;
+    font-size: 2.2em;
+  }
+  .item-text-2::before { content: "CONCRETE DREAM"; }
+
+  /* Yellow */
+  .item-text-3 {
+    width: 200px; height: 120px;
+    top: 30%; left: 10%;
+    background-color: #ffd700;
+    border-color: #ffff00;
+    transform: rotate(12deg);
+    z-index: 15;
+    color: #333; /* Darker text for yellow */
+  }
+  .item-text-3::before { content: "MONOLITHIC"; }
+
+  /* Green */
+  .item-text-4 {
+    width: 400px; height: 250px;
+    bottom: 5%; right: 5%;
+    background-color: #008000;
+    border-color: #32cd32;
+    transform: rotate(-10deg);
+    z-index: 30;
+    font-size: 3em;
+  }
+  .item-text-4::before { content: "RAW HONESTY"; }
+
+  /* Blue */
+  .item-text-5 {
+    width: 350px; height: 200px;
+    top: 20%; right: 15%;
+    background-color: #0000ff;
+    border-color: #00bfff;
+    transform: rotate(3deg);
+    z-index: 25;
+    font-size: 2.8em;
+    line-height: 1.2;
+  }
+  .item-text-5::before { content: "URBAN BEAST"; }
+
+  /* Indigo */
+  .item-text-6 {
+    width: 280px; height: 160px;
+    bottom: 15%; left: 20%;
+    background-color: #4b0082;
+    border-color: #8a2be2;
+    transform: rotate(7deg);
+    z-index: 18;
+  }
+  .item-text-6::before { content: "FUNCTIONAL GRANDEUR"; }
+
+  /* Violet */
+  .item-text-7 {
+    width: 220px; height: 130px;
+    top: 45%; left: 40%;
+    background-color: #ee82ee;
+    border-color: #da70d6;
+    transform: rotate(-4deg);
+    z-index: 12;
+    color: #333;
+  }
+  .item-text-7::before { content: "BOLD ARCHITECTURE"; }
+
+  /* Image Items */
+  .item-image {
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Blend image with background color */
+    color: rgba(255, 255, 255, 0); /* Hide default text */
+    text-shadow: none;
+    overflow: hidden; /* Hide any overflow from content */
+    border-width: 5px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .item-image:hover {
+    transform: scale(1.03) rotate(var(--hover-rotate, 0deg)) translateZ(60px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+  }
+
+  .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.75; /* Make images slightly transparent to blend with background color */
+    transition: opacity 0.3s ease;
+  }
+  .item-image:hover img {
+    opacity: 1;
+  }
+
+  /* Specific Image items */
+  .item-img-1 {
+    width: 380px; height: 220px;
+    top: 10%; left: 55%;
+    background-color: #ff4500; /* Darker orange-red */
+    border-color: #fff;
+    transform: rotate(10deg);
+    z-index: 28;
+  }
+  .item-img-2 {
+    width: 320px; height: 190px;
+    bottom: 10%; right: 25%;
+    background-color: #00CED1; /* Turquoise */
+    border-color: #fff;
+    transform: rotate(-6deg);
+    z-index: 35;
+  }
+  .item-img-3 {
+    width: 280px; height: 170px;
+    top: 50%; left: 2%;
+    background-color: #8A2BE2; /* Blue-violet */
+    border-color: #fff;
+    transform: rotate(15deg);
+    z-index: 40;
+  }
+  .item-img-4 {
+    width: 300px; height: 180px;
+    top: 40%; right: 5%;
+    background-color: #FFD700; /* Gold */
+    border-color: #fff;
+    transform: rotate(-12deg);
+    z-index: 22;
+  }
+  .item-img-5 {
+    width: 250px; height: 150px;
+    bottom: 30%; left: 45%;
+    background-color: #DC143C; /* Crimson */
+    border-color: #fff;
+    transform: rotate(8deg);
+    z-index: 32;
+  }
+
+  /* Pseudo-elements for large, subtle rainbow background washes */
+  .collage-container::before, .collage-container::after {
+    content: '';
+    position: absolute;
+    width: 150vw; /* Larger than viewport to cover */
+    height: 150vh;
+    opacity: 0.08;
+    pointer-events: none; /* Don't interfere with clicks on items */
+    z-index: 0;
+  }
+  .collage-container::before {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00);
+    top: -50%; left: -50%;
+    transform: rotate(20deg);
+  }
+  .collage-container::after {
+    background: linear-gradient(-45deg, #0000ff, #4b0082, #9400d3);
+    bottom: -50%; right: -50%;
+    transform: rotate(-30deg);
+  }
+
+  /* Main title styling */
+  .main-title {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    font-size: 6.5em; /* Large title */
+    color: #fff;
+    background: linear-gradient(90deg, #ff0000, #ff8c00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    -webkit-background-clip: text; /* Apply gradient to text fill */
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    white-space: nowrap;
+    animation: pulseText 3s infinite alternate ease-in-out;
+  }
+
+  @keyframes pulseText {
+    0% { transform: translate(-50%, -50%) scale(1); text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7); }
+    100% { transform: translate(-50%, -50%) scale(1.05); text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9); }
+  }
+
+  /* Hover rotation variables for individual items */
+  .item-text-1:hover { --hover-rotate: -10deg; }
+  .item-text-2:hover { --hover-rotate: 7deg; }
+  .item-text-3:hover { --hover-rotate: 15deg; }
+  .item-text-4:hover { --hover-rotate: -12deg; }
+  .item-text-5:hover { --hover-rotate: 5deg; }
+  .item-text-6:hover { --hover-rotate: 9deg; }
+  .item-text-7:hover { --hover-rotate: -6deg; }
+  .item-img-1:hover { --hover-rotate: 12deg; }
+  .item-img-2:hover { --hover-rotate: -8deg; }
+  .item-img-3:hover { --hover-rotate: 18deg; }
+  .item-img-4:hover { --hover-rotate: -15deg; }
+  .item-img-5:hover { --hover-rotate: 10deg; }
+
+</style>
+
+<div class="collage-container">
+  <div class="main-title">BRUTALIST RAINBOW</div>
+
+  <div class="collage-item item-text-1"></div>
+  <div class="collage-item item-text-2"></div>
+  <div class="collage-item item-text-3"></div>
+  <div class="collage-item item-text-4"></div>
+  <div class="collage-item item-text-5"></div>
+  <div class="collage-item item-text-6"></div>
+  <div class="collage-item item-text-7"></div>
+
+  <div class="collage-item item-image item-img-1">
+    <img src="https://images.unsplash.com/photo-1549429158-b0d5c3f9a777?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brutalist concrete exterior, Barbican Estate, London">
+  </div>
+  <div class="collage-item item-image item-img-2">
+    <img src="https://images.unsplash.com/photo-1598688220801-1b1574a61427?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brutalist concrete architecture with strong lines and shadows">
+  </div>
+  <div class="collage-item item-image item-img-3">
+    <img src="https://images.unsplash.com/photo-1614766023363-272e50529124?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brutalist building interior structure, exposed concrete">
+  </div>
+  <div class="collage-item item-image item-img-4">
+    <img src="https://images.unsplash.com/photo-1628173429815-467823f60578?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Geometric brutalist facade, sunlight and shadows">
+  </div>
+  <div class="collage-item item-image item-img-5">
+    <img src="https://images.unsplash.com/photo-1619553641214-38c642e5ee6b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brutalist apartment building with repetitive concrete elements">
+  </div>
+
+</div>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-08 22:51:40.701270</div>
         <!DOCTYPE html>
 <html lang="en">
