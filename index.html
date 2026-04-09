@@ -16,6 +16,145 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 13:59:45.056705</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sovereignty Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+            background-color: #0a0a0a; /* Dark background */
+            font-family: 'Arial Black', Gadget, sans-serif;
+            color: white;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            perspective: 1000px; /* For 3D effects */
+        }
+
+        .data-fragment {
+            position: absolute;
+            padding: 10px 15px;
+            border: 2px solid;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            font-size: clamp(0.8em, 2vw, 1.8em); /* Responsive font size */
+            line-height: 1.2;
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.5s ease-out, box-shadow 0.3s ease-in-out;
+            transform-style: preserve-3d;
+            animation: float 10s infinite ease-in-out; /* Gentle floating animation */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+
+        .data-fragment:hover {
+            z-index: 100;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 40px var(--hover-color);
+            transform: scale(1.05) translateZ(50px) rotateY(5deg) rotateX(-5deg); /* Lift and rotate on hover */
+        }
+
+        /* Rainbow Colors */
+        .red { background-color: #FF0000; border-color: #FFAAAA; --hover-color: #FF0000; }
+        .orange { background-color: #FF7F00; border-color: #FFD4AA; --hover-color: #FF7F00; }
+        .yellow { background-color: #FFFF00; border-color: #FFFFCC; --hover-color: #FFFF00; }
+        .green { background-color: #00FF00; border-color: #AAFFAA; --hover-color: #00FF00; }
+        .blue { background-color: #0000FF; border-color: #AAAAFF; --hover-color: #0000FF; }
+        .indigo { background-color: #4B0082; border-color: #D3AFFF; --hover-color: #4B0082; }
+        .violet { background-color: #EE82EE; border-color: #FFDFFF; --hover-color: #EE82EE; }
+        .magenta { background-color: #FF00FF; border-color: #FFCCFF; --hover-color: #FF00FF; }
+        .cyan { background-color: #00FFFF; border-color: #CCFFFF; --hover-color: #00FFFF; }
+
+        /* Positioning and rotations - randomized for chaos */
+        .fragment-1 { top: 5%; left: 8%; transform: rotateZ(-10deg) translateZ(10px); width: 20%; height: 15%; }
+        .fragment-2 { top: 20%; left: 30%; transform: rotateZ(15deg) translateZ(20px); width: 18%; height: 12%; }
+        .fragment-3 { top: 10%; right: 5%; transform: rotateZ(-20deg) translateZ(15px); width: 22%; height: 18%; }
+        .fragment-4 { bottom: 15%; left: 5%; transform: rotateZ(5deg) translateZ(25px); width: 25%; height: 15%; }
+        .fragment-5 { bottom: 5%; right: 20%; transform: rotateZ(25deg) translateZ(30px); width: 15%; height: 10%; }
+        .fragment-6 { top: 40%; left: 15%; transform: rotateZ(-5deg) translateZ(5px); width: 17%; height: 14%; }
+        .fragment-7 { top: 30%; right: 10%; transform: rotateZ(10deg) translateZ(18px); width: 20%; height: 11%; }
+        .fragment-8 { bottom: 30%; left: 35%; transform: rotateZ(-12deg) translateZ(22px); width: 23%; height: 16%; }
+        .fragment-9 { top: 55%; right: 30%; transform: rotateZ(8deg) translateZ(7px); width: 19%; height: 13%; }
+        .fragment-10 { top: 45%; left: 45%; transform: rotateZ(0deg) translateZ(0px); width: 15%; height: 10%; }
+        .fragment-11 { bottom: 25%; right: 5%; transform: rotateZ(-18deg) translateZ(12px); width: 20%; height: 14%; }
+        .fragment-12 { top: 65%; left: 5%; transform: rotateZ(22deg) translateZ(28px); width: 18%; height: 11%; }
+        .fragment-13 { top: 75%; right: 15%; transform: rotateZ(-7deg) translateZ(17px); width: 21%; height: 16%; }
+        .fragment-14 { bottom: 5%; left: 50%; transform: rotateZ(13deg) translateZ(9px); width: 16%; height: 12%; }
+        .fragment-15 { top: 2%; left: 50%; transform: rotateZ(-15deg) translateZ(23px); width: 19%; height: 14%; }
+        .fragment-16 { top: 70%; left: 25%; transform: rotateZ(3deg) translateZ(11px); width: 17%; height: 10%; }
+        .fragment-17 { bottom: 40%; right: 40%; transform: rotateZ(-9deg) translateZ(6px); width: 20%; height: 15%; }
+        .fragment-18 { top: 35%; left: 55%; transform: rotateZ(18deg) translateZ(19px); width: 16%; height: 13%; }
+        .fragment-19 { bottom: 10%; left: 25%; transform: rotateZ(-22deg) translateZ(26px); width: 22%; height: 17%; }
+        .fragment-20 { top: 50%; right: 5%; transform: rotateZ(11deg) translateZ(14px); width: 15%; height: 10%; }
+
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotateZ(0deg) translateZ(0px); }
+            25% { transform: translateY(-5px) rotateZ(1deg) translateZ(2px); }
+            50% { transform: translateY(0px) rotateZ(0deg) translateZ(0px); }
+            75% { transform: translateY(5px) rotateZ(-1deg) translateZ(-2px); }
+            100% { transform: translateY(0px) rotateZ(0deg) translateZ(0px); }
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .data-fragment {
+                font-size: clamp(0.7em, 3vw, 1.5em);
+                padding: 5px 8px;
+                border-width: 1px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+
+            .data-fragment:hover {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px var(--hover-color);
+                transform: scale(1.03) translateZ(30px) rotateY(3deg) rotateX(-3deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="data-fragment red fragment-1">YOUR DATA</div>
+        <div class="data-fragment orange fragment-2">YOUR RULES</div>
+        <div class="data-fragment yellow fragment-3">OWN YOUR DIGITAL SELF</div>
+        <div class="data-fragment green fragment-4">DECENTRALIZE POWER</div>
+        <div class="data-fragment blue fragment-5">PRIVACY IS A RIGHT</div>
+        <div class="data-fragment indigo fragment-6">DATA COLONIALISM ENDS</div>
+        <div class="data-fragment violet fragment-7">COMMUNITY CONTROL</div>
+        <div class="data-fragment magenta fragment-8">NO SURVEILLANCE CAPITALISM</div>
+        <div class="data-fragment cyan fragment-9">SELF-DETERMINATION</div>
+        <div class="data-fragment red fragment-10">INDIGENOUS DATA</div>
+        <div class="data-fragment orange fragment-11">DIGITAL NATIVES DEMAND</div>
+        <div class="data-fragment yellow fragment-12">RECLAIM YOUR AGENCY</div>
+        <div class="data-fragment green fragment-13">FEDERATED FUTURES</div>
+        <div class="data-fragment blue fragment-14">TRUSTLESS SYSTEMS</div>
+        <div class="data-fragment indigo fragment-15">SOVEREIGN IDENTITIES</div>
+        <div class="data-fragment violet fragment-16">OPEN PROTOCOLS</div>
+        <div class="data-fragment magenta fragment-17">SHIELD YOUR INFO</div>
+        <div class="data-fragment cyan fragment-18">INTEROPERABILITY</div>
+        <div class="data-fragment red fragment-19">DATA IS LAND</div>
+        <div class="data-fragment orange fragment-20">FREEDOM TO CHOOSE</div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 11:09:36.672286</div>
         <!DOCTYPE html>
 <html>
