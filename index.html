@@ -16,6 +16,365 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 19:19:15.600961</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algorithmic Surveillance Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+    background-color: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px; /* For 3D effects */
+    transform-style: preserve-3d;
+  }
+
+  .div-piece {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transition: all 0.5s ease-out; /* Smooth transitions for hover/animations */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(2px); /* Subtle blur effect */
+  }
+
+  /* Rainbow colors for the div pieces */
+  .red { background-color: rgba(255, 0, 0, 0.7); border-color: rgba(255, 0, 0, 0.9); }
+  .orange { background-color: rgba(255, 128, 0, 0.7); border-color: rgba(255, 128, 0, 0.9); }
+  .yellow { background-color: rgba(255, 255, 0, 0.7); border-color: rgba(255, 255, 0, 0.9); }
+  .green { background-color: rgba(0, 255, 0, 0.7); border-color: rgba(0, 255, 0, 0.9); }
+  .blue { background-color: rgba(0, 0, 255, 0.7); border-color: rgba(0, 0, 255, 0.9); }
+  .indigo { background-color: rgba(75, 0, 130, 0.7); border-color: rgba(75, 0, 130, 0.9); }
+  .violet { background-color: rgba(143, 0, 255, 0.7); border-color: rgba(143, 0, 255, 0.9); }
+
+  /* Specific styles for different pieces */
+  .title-piece {
+    font-size: 3em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    width: 60%;
+    height: 15%;
+    left: 20%;
+    top: 5%;
+    transform: rotateX(10deg) rotateY(-5deg);
+    z-index: 100;
+  }
+
+  .data-stream {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px dashed rgba(0, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7em;
+    overflow: hidden;
+    color: rgba(0, 255, 255, 0.8);
+    text-shadow: none;
+    letter-spacing: 0.5px;
+    animation: dataflow 10s linear infinite;
+  }
+
+  @keyframes dataflow {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+  }
+
+  .eye-icon {
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.9);
+    animation: pulse 2s infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+  }
+
+  .code-block {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.6em;
+    text-align: left;
+    white-space: pre-wrap;
+    background-color: rgba(20, 20, 30, 0.8);
+    color: #00ffcc;
+    border-color: rgba(0, 255, 204, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  }
+
+  .profile-silhouette {
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    text-shadow: none;
+  }
+
+  .glitch-text {
+    font-family: 'Press Start 2P', cursive; /* A pixel-art font would be great if loaded */
+    font-size: 1.2em;
+    text-transform: uppercase;
+    animation: glitch 1s infinite;
+    position: relative;
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0); text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; }
+    25% { transform: translate(-2px, 2px); text-shadow: -2px 2px #ff0000, 2px -2px #0000ff; }
+    50% { transform: translate(2px, -2px); text-shadow: 2px -2px #ff0000, -2px 2px #0000ff; }
+    75% { transform: translate(-2px, -2px); text-shadow: -2px -2px #ff0000, 2px 2px #0000ff; }
+    100% { transform: translate(0); text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; }
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    transform: scale(1.05) rotateZ(2deg) translateZ(10px) !important;
+    z-index: 10;
+  }
+
+  .pulsing-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff00ff;
+    animation: pulse-dot 1.5s infinite alternate;
+  }
+
+  @keyframes pulse-dot {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+  }
+
+  /* Distribute pieces randomly */
+  .p1 { top: 10%; left: 70%; width: 250px; height: 100px; transform: rotateZ(5deg) rotateY(15deg); }
+  .p2 { top: 25%; left: 5%; width: 180px; height: 80px; transform: rotateZ(-8deg) rotateX(10deg); }
+  .p3 { top: 40%; left: 80%; width: 150px; height: 60px; transform: rotateZ(12deg); }
+  .p4 { top: 60%; left: 15%; width: 220px; height: 120px; transform: rotateZ(-15deg) rotateX(-5deg); }
+  .p5 { top: 75%; left: 60%; width: 190px; height: 90px; transform: rotateZ(20deg) rotateY(-10deg); }
+  .p6 { top: 5%; left: 40%; width: 100px; height: 40px; transform: rotateZ(-3deg); }
+  .p7 { top: 20%; left: 25%; width: 300px; height: 150px; transform: rotateZ(10deg) rotateY(5deg); }
+  .p8 { top: 85%; left: 5%; width: 160px; height: 70px; transform: rotateZ(5deg); }
+  .p9 { top: 30%; left: 50%; width: 120px; height: 50px; transform: rotateZ(-7deg) rotateX(15deg); }
+  .p10 { top: 50%; left: 30%; width: 280px; height: 140px; transform: rotateZ(18deg) rotateY(-8deg); }
+  .p11 { top: 15%; left: 10%; width: 170px; height: 75px; transform: rotateZ(-10deg); }
+  .p12 { top: 65%; left: 70%; width: 200px; height: 110px; transform: rotateZ(25deg); }
+  .p13 { top: 45%; left: 1%; width: 140px; height: 65px; transform: rotateZ(3deg) rotateY(20deg); }
+  .p14 { top: 80%; left: 35%; width: 230px; height: 100px; transform: rotateZ(-12deg); }
+  .p15 { top: 2%; left: 85%; width: 90px; height: 35px; transform: rotateZ(15deg) rotateX(5deg); }
+  .p16 { top: 55%; left: 48%; width: 110px; height: 50px; transform: rotateZ(8deg); }
+  .p17 { top: 35%; left: 65%; width: 260px; height: 130px; transform: rotateZ(-20deg) rotateY(-15deg); }
+  .p18 { top: 90%; left: 80%; width: 130px; height: 60px; transform: rotateZ(7deg); }
+  .p19 { top: 18%; left: 55%; width: 160px; height: 70px; transform: rotateZ(-5deg); }
+  .p20 { top: 70%; left: 25%; width: 180px; height: 95px; transform: rotateZ(10deg) rotateX(8deg); }
+  .p21 { top: 22%; left: 85%; width: 110px; height: 50px; transform: rotateZ(0deg) rotateY(25deg); }
+  .p22 { top: 8%; left: 5%; width: 200px; height: 90px; transform: rotateZ(-15deg); }
+  .p23 { top: 48%; left: 75%; width: 150px; height: 80px; transform: rotateZ(22deg) rotateX(-10deg); }
+  .p24 { top: 62%; left: 10%; width: 190px; height: 100px; transform: rotateZ(-18deg); }
+  .p25 { top: 90%; left: 50%; width: 120px; height: 55px; transform: rotateZ(13deg); }
+  .p26 { top: 3%; left: 20%; width: 170px; height: 85px; transform: rotateZ(-7deg) rotateY(-5deg); }
+  .p27 { top: 78%; left: 18%; width: 140px; height: 70px; transform: rotateZ(9deg); }
+  .p28 { top: 38%; left: 20%; width: 250px; height: 120px; transform: rotateZ(-25deg) rotateX(12deg); }
+  .p29 { top: 58%; left: 85%; width: 100px; height: 45px; transform: rotateZ(17deg); }
+  .p30 { top: 10%; left: 30%; width: 220px; height: 110px; transform: rotateZ(-10deg) rotateY(8deg); }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="div-piece title-piece">ALGORITHMIC SURVEILLANCE</div>
+
+  <div class="div-piece red p1 hover-glow">
+    <span style="font-size:1.5em; text-shadow: 0 0 5px red;">YOU ARE BEING PROFILED</span>
+  </div>
+
+  <div class="div-piece orange p2 hover-glow">
+    <span class="eye-icon">&#128065;</span><span class="eye-icon">&#xFE0F;</span>
+    <br>ALWAYS WATCHING
+  </div>
+
+  <div class="div-piece yellow p3 hover-glow">
+    <span class="glitch-text">DATA<br>MINE</span>
+  </div>
+
+  <div class="div-piece green p4 hover-glow data-stream" style="width:300px; height:100px;">
+    <span>
+      01001101 01100101 00100000 01000100 01100001 01110100 <br>
+      01000001 01000001 01000001 01000001 01000001 01000001 <br>
+      01000001 01000001 01000001 01000001 01000001 01000001 <br>
+      01000001 01000001 01000001 01000001 01000001 01000001 <br>
+      01000001 01000001 01000001 01000001 01000001 01000001
+    </span>
+  </div>
+
+  <div class="div-piece blue p5 hover-glow">
+    "Our privacy is the cost of convenience."
+  </div>
+
+  <div class="div-piece indigo p6 hover-glow">
+    <span class="pulsing-dot"></span>
+  </div>
+
+  <div class="div-piece violet p7 hover-glow code-block">
+    <code>
+      function analyze(user) { <br>
+      &nbsp;&nbsp;if (user.activity > threshold) { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;log(user.id, "flagged"); <br>
+      &nbsp;&nbsp;} <br>
+      &nbsp;&nbsp;return user.profile; <br>
+      }
+    </code>
+  </div>
+
+  <div class="div-piece red p8 hover-glow">
+    <span class="profile-silhouette">&#128100;</span>
+  </div>
+
+  <div class="div-piece orange p9 hover-glow">
+    <span style="font-size:1.2em;">PREDICTIVE <br>ANALYTICS</span>
+  </div>
+
+  <div class="div-piece yellow p10 hover-glow">
+    Are you in the matrix?
+  </div>
+
+  <div class="div-piece green p11 hover-glow data-stream">
+    <span style="font-family:'Courier New', monospace;">
+      <br>IP: 192.168.1.1<br>
+      GEO: LAT 34.05<br>
+      LON -118.25<br>
+      BROWSER: Chrome<br>
+      OS: Mac
+    </span>
+  </div>
+
+  <div class="div-piece blue p12 hover-glow">
+    <span style="font-size:2em;">CONTROL</span>
+  </div>
+
+  <div class="div-piece indigo p13 hover-glow">
+    <span class="glitch-text">CONSENT?</span>
+  </div>
+
+  <div class="div-piece violet p14 hover-glow">
+    <span style="font-size:1.8em;">FILTER BUBBLE</span>
+  </div>
+
+  <div class="div-piece red p15 hover-glow">
+    <span style="font-size:0.9em;">#BigTech</span>
+  </div>
+
+  <div class="div-piece orange p16 hover-glow">
+    <span style="font-size:0.9em;">#PrivacyRights</span>
+  </div>
+
+  <div class="div-piece yellow p17 hover-glow code-block">
+    <code>
+      const history = getUserHistory(); <br>
+      const preferences = inferPrefs(history); <br>
+      serveAds(preferences); <br>
+      report(preferences);
+    </code>
+  </div>
+
+  <div class="div-piece green p18 hover-glow">
+    <span style="font-size:1.5em; color:lime;">&#x2713; TRACKED</span>
+  </div>
+
+  <div class="div-piece blue p19 hover-glow">
+    <span style="font-size:1.1em;">"If you're not paying, you're the product."</span>
+  </div>
+
+  <div class="div-piece indigo p20 hover-glow data-stream">
+    <span style="font-size:0.8em; line-height:1.2;">
+      DEVICE ID: XYZ789<br>
+      APP USAGE: 120min<br>
+      LOCATION: Home<br>
+      PURCHASES: Yes<br>
+      SEARCH: "how to resist"
+    </span>
+  </div>
+
+  <div class="div-piece violet p21 hover-glow">
+    <span class="pulsing-dot" style="background-color:purple;"></span>
+  </div>
+
+  <div class="div-piece red p22 hover-glow">
+    <span style="font-size:2em;">PANOPTICON</span>
+  </div>
+
+  <div class="div-piece orange p23 hover-glow">
+    <span style="font-size:1.3em;">NO ESCAPE?</span>
+  </div>
+
+  <div class="div-piece yellow p24 hover-glow">
+    <span class="eye-icon" style="font-size:3em;">&#128065;</span>
+  </div>
+
+  <div class="div-piece green p25 hover-glow">
+    <span style="font-size:0.8em;">SOCIAL CREDIT</span>
+  </div>
+
+  <div class="div-piece blue p26 hover-glow">
+    <span style="font-size:1.2em;">YOUR DIGITAL SHADOW</span>
+  </div>
+
+  <div class="div-piece indigo p27 hover-glow">
+    <span class="glitch-text" style="font-size:0.9em;">RESIST!</span>
+  </div>
+
+  <div class="div-piece violet p28 hover-glow data-stream">
+    <span style="font-size:0.7em;">
+      ACCESS GRANTED: User_007<br>
+      LOGGED IN: 2023-10-27 14:35:01<br>
+      DATA UPLOADED: 5.2GB<br>
+      SENTIMENT: Neutral<br>
+      RISK SCORE: 3.7/10
+    </span>
+  </div>
+
+  <div class="div-piece red p29 hover-glow">
+    <span style="font-size:0.9em;">#Surveillance</span>
+  </div>
+
+  <div class="div-piece orange p30 hover-glow">
+    <span style="font-size:1.1em;">FREE WILL?</span>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 17:16:00.859399</div>
         <!DOCTYPE html>
 <html lang="en">
