@@ -16,6 +16,251 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 05:19:07.660622</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Rainbow Collage</title>
+<style>
+  body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing due to absolute positioning */
+    font-family: 'Press Start 2P', cursive, monospace; /* Example retro font */
+    color: #fff;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  .glitch-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .glitch-item {
+    position: absolute;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated; /* For a sharper, pixelated look */
+    z-index: 1;
+    transform-origin: center center;
+    transition: transform 0.3s ease-out, filter 0.3s ease-out, opacity 0.3s ease-out, background-color 0.3s ease-out;
+  }
+
+  .glitch-item:hover {
+    transform: scale(1.05) rotateZ(2deg);
+    filter: brightness(1.2) contrast(1.1);
+    z-index: 100;
+  }
+
+  /* Glitch Text Effect */
+  .glitch-text {
+    position: relative;
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    animation: text-flicker 1.5s infinite alternate;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 10;
+  }
+
+  .glitch-text:before,
+  .glitch-text:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-text:before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    animation: glitch-left 2s infinite alternate-reverse;
+  }
+
+  .glitch-text:after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    animation: glitch-right 2s infinite alternate;
+  }
+
+  /* Rainbow Glitch Colors */
+  .color-red { background-color: #FF0000; }
+  .color-orange { background-color: #FF7F00; }
+  .color-yellow { background-color: #FFFF00; }
+  .color-green { background-color: #00FF00; }
+  .color-blue { background-color: #0000FF; }
+  .color-indigo { background-color: #4B0082; }
+  .color-violet { background-color: #8A2BE2; }
+
+  /* Animated Glitch Backgrounds */
+  .glitch-bg-1 {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Glitch_Art.jpg/640px-Glitch_Art.jpg'); /* Example Glitch Art */
+    filter: hue-rotate(0deg);
+    animation: hue-shift 10s infinite linear;
+  }
+
+  .glitch-bg-2 {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Video_Glitch_Art_2017.jpg/640px-Video_Glitch_Art_2017.jpg'); /* Another Glitch Art */
+    filter: saturate(1.5) contrast(1.2);
+    animation: saturation-pulse 5s infinite alternate;
+  }
+
+  .glitch-bg-3 {
+    background-image: url('https://images.unsplash.com/photo-1594732168923-d652750e0474?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2xpdGNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'); /* Abstract Glitch */
+    filter: sepia(0.5);
+    animation: sepia-flicker 7s infinite alternate;
+  }
+
+  .glitch-bg-4 {
+    background-image: url('https://images.unsplash.com/photo-1594732168923-d652750e0474?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2xpdGNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'); /* Abstract Glitch, re-used */
+    filter: invert(0);
+    animation: invert-pulse 8s infinite alternate;
+  }
+
+  /* Keyframe Animations */
+  @keyframes text-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: -0.2rem -0.2rem 1rem rgba(0, 255, 0, 0.7), 0.2rem 0.2rem 1rem rgba(255, 0, 0, 0.7);
+    }
+    20%, 24%, 55% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes glitch-left {
+    0% { transform: translate(0); }
+    10% { transform: translate(-5px, 0); }
+    20% { transform: translate(5px, 0); }
+    30% { transform: translate(-3px, 0); }
+    40% { transform: translate(3px, 0); }
+    50% { transform: translate(-1px, 0); }
+    60% { transform: translate(1px, 0); }
+    70% { transform: translate(-5px, 0); }
+    80% { transform: translate(5px, 0); }
+    90% { transform: translate(-3px, 0); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes glitch-right {
+    0% { transform: translate(0); }
+    10% { transform: translate(5px, 0); }
+    20% { transform: translate(-5px, 0); }
+    30% { transform: translate(3px, 0); }
+    40% { transform: translate(-3px, 0); }
+    50% { transform: translate(1px, 0); }
+    60% { transform: translate(-1px, 0); }
+    70% { transform: translate(5px, 0); }
+    80% { transform: translate(-5px, 0); }
+    90% { transform: translate(3px, 0); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes hue-shift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+  @keyframes saturation-pulse {
+    0% { filter: saturate(1.5) contrast(1.2); }
+    50% { filter: saturate(2.5) contrast(1.5); }
+    100% { filter: saturate(1.5) contrast(1.2); }
+  }
+
+  @keyframes sepia-flicker {
+    0% { filter: sepia(0.5); }
+    50% { filter: sepia(0.8) brightness(1.1); }
+    100% { filter: sepia(0.5); }
+  }
+
+  @keyframes invert-pulse {
+    0% { filter: invert(0); }
+    50% { filter: invert(0.8) hue-rotate(180deg); }
+    100% { filter: invert(0); }
+  }
+
+  .rainbow-strip {
+    position: absolute;
+    opacity: 0.7;
+    animation: rainbow-shift 15s infinite linear;
+    z-index: 2;
+  }
+
+  @keyframes rainbow-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  .rainbow-strip-h {
+    height: 20px;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8A2BE2);
+    background-size: 200% 100%;
+  }
+
+  .rainbow-strip-v {
+    width: 20px;
+    background: linear-gradient(180deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8A2BE2);
+    background-size: 100% 200%;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="glitch-container">
+
+  <!-- Main Glitch Text -->
+  <div class="glitch-text" data-text="Glitched Rainbow" style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); font-size: 4em;">Glitched Rainbow</div>
+  <div class="glitch-text" data-text="AESTHETICS" style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); font-size: 3em; animation-delay: 0.5s;">AESTHETICS</div>
+
+  <!-- Glitch Rainbow Elements -->
+  <div class="glitch-item color-red" style="width: 150px; height: 100px; top: 5%; left: 10%; transform: rotate(-10deg);"></div>
+  <div class="glitch-item color-orange" style="width: 200px; height: 120px; top: 15%; left: 20%; transform: rotate(5deg);"></div>
+  <div class="glitch-item color-yellow" style="width: 100px; height: 150px; top: 8%; right: 15%; transform: rotate(15deg);"></div>
+  <div class="glitch-item color-green" style="width: 180px; height: 90px; bottom: 10%; left: 5%; transform: rotate(20deg);"></div>
+  <div class="glitch-item color-blue" style="width: 130px; height: 110px; bottom: 20%; right: 8%; transform: rotate(-8deg);"></div>
+  <div class="glitch-item color-indigo" style="width: 220px; height: 80px; top: 30%; left: 40%; transform: rotate(25deg);"></div>
+  <div class="glitch-item color-violet" style="width: 160px; height: 140px; bottom: 5%; left: 30%; transform: rotate(-12deg);"></div>
+
+  <!-- Image-based Glitch Elements -->
+  <div class="glitch-item glitch-bg-1" style="width: 300px; height: 200px; top: 40%; left: 5%; transform: rotate(3deg);"></div>
+  <div class="glitch-item glitch-bg-2" style="width: 250px; height: 180px; top: 25%; right: 10%; transform: rotate(-7deg);"></div>
+  <div class="glitch-item glitch-bg-3" style="width: 180px; height: 250px; bottom: 30%; left: 20%; transform: rotate(10deg);"></div>
+  <div class="glitch-item glitch-bg-4" style="width: 350px; height: 150px; top: 60%; right: 5%; transform: rotate(-15deg);"></div>
+
+  <!-- Smaller, more abstract glitch fragments -->
+  <div class="glitch-item color-red" style="width: 50px; height: 30px; top: 70%; left: 60%; transform: rotate(45deg); opacity: 0.8;"></div>
+  <div class="glitch-item color-blue" style="width: 70px; height: 40px; top: 15%; left: 45%; transform: rotate(-25deg); opacity: 0.8;"></div>
+  <div class="glitch-item color-green" style="width: 40px; height: 60px; bottom: 40%; right: 30%; transform: rotate(60deg); opacity: 0.8;"></div>
+  <div class="glitch-item color-yellow" style="width: 80px; height: 20px; top: 55%; left: 25%; transform: rotate(-10deg); opacity: 0.8;"></div>
+
+  <!-- Rainbow Strips -->
+  <div class="rainbow-strip rainbow-strip-h" style="top: 0; left: 0; width: 100%; animation-delay: 0s;"></div>
+  <div class="rainbow-strip rainbow-strip-h" style="bottom: 0; left: 0; width: 100%; animation-delay: 1s;"></div>
+  <div class="rainbow-strip rainbow-strip-v" style="top: 0; left: 0; height: 100%; animation-delay: 0.5s;"></div>
+  <div class="rainbow-strip rainbow-strip-v" style="top: 0; right: 0; height: 100%; animation-delay: 1.5s;"></div>
+  <div class="rainbow-strip rainbow-strip-h" style="top: 30%; left: 0; width: 80%; transform: rotate(2deg); animation-delay: 2s;"></div>
+  <div class="rainbow-strip rainbow-strip-v" style="bottom: 10%; right: 20%; height: 50%; transform: rotate(-5deg); animation-delay: 2.5s;"></div>
+
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 02:54:02.647825</div>
         <!DOCTYPE html>
 <html lang="en">
