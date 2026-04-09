@@ -16,6 +16,257 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 02:54:02.647825</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay: Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .decay-element {
+            position: absolute;
+            opacity: 0.8;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out, filter 0.5s ease-out;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 10px rgba(255,255,255,0.05);
+            padding: 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: center;
+            font-size: 0.8em;
+            line-height: 1.2;
+            cursor: pointer;
+            word-wrap: break-word; /* Ensure text wraps */
+        }
+
+        .decay-element:hover {
+            opacity: 1;
+            transform: scale(1.05) rotate(2deg);
+            z-index: 100;
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        /* Rainbow Colors & Glitch Effects */
+        .color-0 { background: linear-gradient(45deg, #ff0000, #ff8c00); filter: saturate(1.5) blur(0.5px); } /* Red */
+        .color-1 { background: linear-gradient(45deg, #ff8c00, #ffff00); filter: hue-rotate(20deg) contrast(1.3); } /* Orange */
+        .color-2 { background: linear-gradient(45deg, #ffff00, #00ff00); filter: brightness(1.4) saturate(1.2); } /* Yellow */
+        .color-3 { background: linear-gradient(45deg, #00ff00, #00ffff); filter: invert(0.1) saturate(1.8); } /* Green */
+        .color-4 { background: linear-gradient(45deg, #00ffff, #0000ff); filter: sepia(0.2) hue-rotate(180deg); } /* Cyan */
+        .color-5 { background: linear-gradient(45deg, #0000ff, #8a2be2); filter: blur(0.8px) contrast(1.1); } /* Blue */
+        .color-6 { background: linear-gradient(45deg, #8a2be2, #ff00ff); filter: saturate(1.6) brightness(1.3); } /* Indigo/Violet */
+        .color-7 { background: linear-gradient(45deg, #ff00ff, #ff0000); filter: hue-rotate(-90deg) contrast(1.5); } /* Magenta/Red cycle */
+
+        /* Text Effects for Decay */
+        .corrupted {
+            text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3);
+            letter-spacing: -0.05em;
+            font-weight: bold;
+            color: rgba(255,255,255,0.9);
+        }
+        .fragmented {
+            word-spacing: 0.2em;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.7);
+            font-style: italic;
+        }
+        .static {
+            font-family: 'VT323', monospace; /* If loaded, otherwise 'Courier New' */
+            letter-spacing: 0.05em;
+            color: rgba(255,255,255,0.6);
+            background: repeating-linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 3px);
+        }
+        .broken {
+            text-decoration: line-through;
+            text-decoration-color: rgba(255,0,0,0.5);
+            color: rgba(255,255,255,0.8);
+        }
+        .flicker {
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 5px rgba(255,255,255,0.7); }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+            57% { opacity: 0.8; text-shadow: 0 0 2px rgba(255,255,255,0.5); }
+        }
+
+        /* Image elements */
+        .image-decay {
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            filter: grayscale(80%) blur(1px) brightness(0.8);
+            border: none;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-decay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Hidden by default, background-image takes over */
+        }
+        .image-decay::before {
+            content: '404 IMAGE NOT FOUND';
+            color: rgba(255,255,255,0.4);
+            font-size: 0.7em;
+            text-align: center;
+            word-break: break-all;
+            display: block;
+            position: absolute;
+            padding: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .image-decay:hover {
+            filter: grayscale(0%) blur(0px) brightness(1);
+            opacity: 0.9;
+        }
+        .image-decay.no-placeholder::before {
+            content: none;
+        }
+
+        /* Glitch overlay */
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.1;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 0, 0, 0.1) 0%,
+                rgba(0, 255, 0, 0.1) 33%,
+                rgba(0, 0, 255, 0.1) 66%,
+                rgba(255, 0, 255, 0.1) 100%
+            );
+            mix-blend-mode: overlay;
+            animation: subtle-glitch 5s infinite alternate;
+        }
+        @keyframes subtle-glitch {
+            0% { transform: translate(0, 0); opacity: 0.1; }
+            20% { transform: translate(-1px, 1px); opacity: 0.15; }
+            40% { transform: translate(1px, -2px); opacity: 0.1; }
+            60% { transform: translate(-2px, 1px); opacity: 0.12; }
+            80% { transform: translate(1px, -1px); opacity: 0.1; }
+            100% { transform: translate(0, 0); opacity: 0.1; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="glitch-overlay"></div>
+    <div class="collage-container">
+
+        <div class="decay-element color-0 corrupted" style="width: 180px; height: 100px; top: 10%; left: 5%; transform: rotate(-5deg);">
+            DATA <span class="flicker">CORRUPTED</span><br>FILE NOT FOUND
+        </div>
+
+        <div class="decay-element color-1 fragmented" style="width: 250px; height: 120px; top: 5%; left: 20%; transform: rotate(8deg);">
+            MEMORIES FRAGMENTED<br>A GHOST IN THE MACHINE<br><span>404: REALITY</span>
+        </div>
+
+        <div class="decay-element image-decay color-2 no-placeholder" style="width: 200px; height: 150px; top: 20%; left: 35%; transform: rotate(-10deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/White_noise_texture.jpg/1200px-White_noise_texture.jpg');">
+        </div>
+
+        <div class="decay-element color-3 static" style="width: 300px; height: 80px; top: 15%; left: 60%; transform: rotate(3deg);">
+            <p>SYSTEM.ERROR.CRITICAL<br>REBOOT FAILED<br>PIXELATED EXISTENCE</p>
+        </div>
+
+        <div class="decay-element color-4 broken" style="width: 160px; height: 90px; top: 35%; left: 10%; transform: rotate(15deg);">
+            BROKEN <span class="flicker">CODE</span><br>LOST SIGNAL
+        </div>
+
+        <div class="decay-element color-5 corrupted" style="width: 220px; height: 110px; top: 40%; left: 25%; transform: rotate(-7deg);">
+            <p>digital dust<br>echoes of bytes</p>
+            <p class="fragmented">vanishing <span class="flicker">light</span></p>
+        </div>
+
+        <div class="decay-element image-decay color-6 no-placeholder" style="width: 180px; height: 130px; top: 50%; left: 5%; transform: rotate(20deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Glitch-art-image.jpg');">
+        </div>
+
+        <div class="decay-element color-7 static" style="width: 280px; height: 100px; top: 30%; left: 70%; transform: rotate(-4deg);">
+            <span class="flicker">███████████</span><br><span>FILE DELETE? Y/N _</span><br><span class="corrupted">OVERWRITE.</span>
+        </div>
+
+        <div class="decay-element color-0 fragmented" style="width: 200px; height: 120px; top: 60%; left: 30%; transform: rotate(-12deg);">
+            <p>THE INTERNET<br>IS DYING</p>
+            <p>SLOWLY, BEAUTIFULLY</p>
+        </div>
+
+        <div class="decay-element image-decay color-1 no-placeholder" style="width: 250px; height: 160px; top: 45%; left: 50%; transform: rotate(6deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Data_corruption_glitch_abstract_wallpaper.png/1024px-Data_corruption_glitch_abstract_wallpaper.png');">
+        </div>
+
+        <div class="decay-element color-2 broken" style="width: 190px; height: 80px; top: 70%; left: 18%; transform: rotate(5deg);">
+            <p>END OF LINE</p>
+            <p class="corrupted">SEGMENT FAULT</p>
+        </div>
+
+        <div class="decay-element color-3 static" style="width: 240px; height: 100px; top: 75%; left: 40%; transform: rotate(-8deg);">
+            <p class="flicker">01010101010101</p>
+            <p>ENTROPY ASCENDING</p>
+        </div>
+
+        <div class="decay-element image-decay color-4 no-placeholder" style="width: 200px; height: 140px; top: 60%; left: 70%; transform: rotate(10deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Abstract_glitch_art.jpg/1024px-Abstract_glitch_art.jpg');">
+        </div>
+
+        <div class="decay-element color-5 corrupted" style="width: 170px; height: 90px; top: 85%; left: 60%; transform: rotate(2deg);">
+            <p>CACHE CLEARED</p>
+            <p class="fragmented">HISTORY ERASED</p>
+        </div>
+
+        <div class="decay-element color-6 fragmented" style="width: 150px; height: 70px; top: 80%; left: 80%; transform: rotate(-15deg);">
+            <p>VOID</p>
+            <p>NULL</p>
+        </div>
+
+        <div class="decay-element color-7 broken" style="width: 180px; height: 100px; top: 0%; left: 85%; transform: rotate(25deg);">
+            <p>ERROR: UNKNOWN</p>
+            <p class="flicker">DECAY COMPLETE</p>
+        </div>
+
+        <div class="decay-element color-0 static" style="width: 200px; height: 120px; top: 65%; left: 85%; transform: rotate(-5deg); font-size: 0.6em;">
+            <p>LOGS LOST<br>BACKUPS FAILED<br>THE ETHER FORGETS</p>
+        </div>
+
+        <div class="decay-element image-decay color-1 no-placeholder" style="width: 160px; height: 100px; top: 0%; left: 50%; transform: rotate(-20deg); background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Static.jpg/640px-Static.jpg');">
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-08 23:46:49.908804</div>
         <style>
   body {
