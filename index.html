@@ -16,6 +16,272 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 22:51:31.259713</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay: Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from appearing due to positioned elements */
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decay-element {
+            position: absolute;
+            opacity: 0.8;
+            transform-origin: center center;
+            animation: glitchFade 10s infinite alternate, rotateSkew 15s infinite linear;
+            backdrop-filter: blur(2px);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+            padding: 5px;
+            box-sizing: border-box;
+            word-break: break-all;
+            hyphens: auto;
+        }
+
+        .decay-element:hover {
+            opacity: 1;
+            transform: scale(1.05) rotate(0deg) skew(0deg) !important;
+            box-shadow: 0 0 20px currentColor;
+            z-index: 100;
+            animation-play-state: paused;
+            filter: brightness(1.2);
+        }
+
+        .text-content {
+            font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+            color: inherit;
+            pointer-events: none; /* Allow clicks to pass through to the parent div */
+        }
+
+        /* Rainbow Colors - applying with CSS variables for easier manipulation */
+        .color-red { background-color: rgba(255, 0, 0, 0.3); border: 1px solid rgba(255, 0, 0, 0.5); color: #FFDCDC; }
+        .color-orange { background-color: rgba(255, 165, 0, 0.3); border: 1px solid rgba(255, 165, 0, 0.5); color: #FFECD2; }
+        .color-yellow { background-color: rgba(255, 255, 0, 0.3); border: 1px solid rgba(255, 255, 0, 0.5); color: #FFFFD9; }
+        .color-green { background-color: rgba(0, 128, 0, 0.3); border: 1px solid rgba(0, 128, 0, 0.5); color: #D9FFD9; }
+        .color-blue { background-color: rgba(0, 0, 255, 0.3); border: 1px solid rgba(0, 0, 255, 0.5); color: #DCDCFF; }
+        .color-indigo { background-color: rgba(75, 0, 130, 0.3); border: 1px solid rgba(75, 0, 130, 0.5); color: #E7D2FF; }
+        .color-violet { background-color: rgba(238, 130, 238, 0.3); border: 1px solid rgba(238, 130, 238, 0.5); color: #FFD9FF; }
+
+        /* Animation Keyframes */
+        @keyframes glitchFade {
+            0% { opacity: 0.8; transform: scale(1); }
+            10% { opacity: 0.7; transform: scale(1.02); }
+            20% { opacity: 0.9; transform: scale(0.98); }
+            30% { opacity: 0.75; transform: scale(1.01); }
+            40% { opacity: 0.85; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.99); }
+            60% { opacity: 0.95; transform: scale(1.03); }
+            70% { opacity: 0.8; transform: scale(1); }
+            80% { opacity: 0.6; transform: scale(0.97); }
+            90% { opacity: 0.88; transform: scale(1.01); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+
+        @keyframes rotateSkew {
+            0% { transform: rotate(0deg) skew(0deg); }
+            25% { transform: rotate(5deg) skew(-2deg); }
+            50% { transform: rotate(-3deg) skew(3deg); }
+            75% { transform: rotate(7deg) skew(-1deg); }
+            100% { transform: rotate(0deg) skew(0deg); }
+        }
+
+        @keyframes pulseBorder {
+            0% { border-color: currentColor; box-shadow: 0 0 10px currentColor; }
+            50% { border-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
+            100% { border-color: currentColor; box-shadow: 0 0 10px currentColor; }
+        }
+
+        /* Specific positioning and styling for each element */
+        /* Red */
+        .e1 { top: 10%; left: 5%; width: 20%; height: 15%; z-index: 10; transform: rotate(-5deg) skewY(2deg); }
+        /* Orange */
+        .e2 { top: 5%; left: 25%; width: 15%; height: 10%; z-index: 12; transform: rotate(8deg) skewX(-3deg); }
+        /* Yellow */
+        .e3 { top: 20%; left: 35%; width: 25%; height: 18%; z-index: 8; transform: rotate(-10deg) skewY(-1deg); }
+        /* Green */
+        .e4 { top: 30%; left: 5%; width: 18%; height: 12%; z-index: 11; transform: rotate(3deg) skewX(2deg); }
+        /* Blue */
+        .e5 { top: 40%; left: 20%; width: 30%; height: 20%; z-index: 15; transform: rotate(12deg) skewY(4deg); }
+        /* Indigo */
+        .e6 { top: 15%; left: 60%; width: 22%; height: 14%; z-index: 9; transform: rotate(-7deg) skewX(-2deg); }
+        /* Violet */
+        .e7 { top: 35%; left: 55%; width: 28%; height: 16%; z-index: 13; transform: rotate(4deg) skewY(1deg); }
+        /* Red 2 */
+        .e8 { top: 50%; left: 75%; width: 15%; height: 10%; z-index: 7; transform: rotate(-15deg) skewX(5deg); }
+        /* Orange 2 */
+        .e9 { top: 60%; left: 60%; width: 20%; height: 15%; z-index: 14; transform: rotate(6deg) skewY(-3deg); }
+        /* Yellow 2 */
+        .e10 { top: 70%; left: 40%; width: 25%; height: 18%; z-index: 10; transform: rotate(-8deg) skewX(1deg); }
+        /* Green 2 */
+        .e11 { top: 75%; left: 10%; width: 18%; height: 12%; z-index: 12; transform: rotate(10deg) skewY(2deg); }
+        /* Blue 2 */
+        .e12 { top: 85%; left: 25%; width: 22%; height: 14%; z-index: 9; transform: rotate(-3deg) skewX(-4deg); }
+        /* Indigo 2 */
+        .e13 { top: 65%; left: 5%; width: 15%; height: 10%; z-index: 8; transform: rotate(14deg) skewY(0deg); }
+        /* Violet 2 */
+        .e14 { top: 80%; left: 65%; width: 18%; height: 12%; z-index: 11; transform: rotate(-6deg) skewX(3deg); }
+        /* Red 3 (Central/larger) */
+        .e15 { top: 45%; left: 40%; width: 35%; height: 25%; z-index: 16; transform: rotate(0deg) skew(0deg); opacity: 0.9; }
+        /* Orange 3 */
+        .e16 { top: 55%; left: 30%; width: 20%; height: 15%; z-index: 13; transform: rotate(-10deg) skewY(1deg); }
+        /* Yellow 3 */
+        .e17 { top: 25%; left: 80%; width: 10%; height: 8%; z-index: 10; transform: rotate(5deg) skewX(-1deg); }
+        /* Green 3 */
+        .e18 { top: 0%; left: 70%; width: 12%; height: 10%; z-index: 10; transform: rotate(-15deg) skewY(3deg); }
+        /* Blue 3 */
+        .e19 { top: 10%; left: 85%; width: 10%; height: 7%; z-index: 12; transform: rotate(8deg) skewX(-2deg); }
+        /* Indigo 3 */
+        .e20 { top: 90%; left: 80%; width: 15%; height: 10%; z-index: 14; transform: rotate(-5deg) skewY(4deg); }
+
+        /* More subtle, abstract decay elements */
+        .e21 { top: 2%; left: 50%; width: 8%; height: 5%; z-index: 6; background-color: rgba(255, 0, 0, 0.1); border: 1px dashed rgba(255, 0, 0, 0.3); animation: glitchFade 7s infinite reverse, rotateSkew 20s infinite linear; }
+        .e22 { top: 95%; left: 5%; width: 6%; height: 4%; z-index: 5; background-color: rgba(0, 0, 255, 0.1); border: 1px dashed rgba(0, 0, 255, 0.3); animation: glitchFade 8s infinite, rotateSkew 18s infinite reverse; }
+        .e23 { top: 30%; left: 90%; width: 7%; height: 6%; z-index: 7; background-color: rgba(0, 128, 0, 0.1); border: 1px dashed rgba(0, 128, 0, 0.3); animation: glitchFade 9s infinite alternate, rotateSkew 16s infinite linear; }
+        .e24 { top: 60%; left: 0%; width: 9%; height: 7%; z-index: 4; background-color: rgba(255, 165, 0, 0.1); border: 1px dashed rgba(255, 165, 0, 0.3); animation: glitchFade 6s infinite reverse, rotateSkew 22s infinite reverse; }
+        .e25 { top: 80%; left: 50%; width: 10%; height: 8%; z-index: 1; background-color: rgba(75, 0, 130, 0.1); border: 1px dashed rgba(75, 0, 130, 0.3); animation: glitchFade 11s infinite alternate, rotateSkew 13s infinite linear; }
+
+        /* More intense glitch effect for some elements on hover, or for key elements */
+        .e15:hover { animation: intenseGlitch 0.5s infinite; filter: none; }
+        @keyframes intenseGlitch {
+            0% { transform: translate(2px, 2px) rotate(0deg); opacity: 0.9; box-shadow: 0 0 20px #f00; }
+            20% { transform: translate(-2px, -2px) rotate(1deg); opacity: 0.8; box-shadow: 0 0 20px #0f0; }
+            40% { transform: translate(3px, -1px) rotate(-1deg); opacity: 0.95; box-shadow: 0 0 20px #00f; }
+            60% { transform: translate(-1px, 3px) rotate(2deg); opacity: 0.85; box-shadow: 0 0 20px #ff0; }
+            80% { transform: translate(2px, -3px) rotate(-2deg); opacity: 0.92; box-shadow: 0 0 20px #0ff; }
+            100% { transform: translate(-3px, 1px) rotate(0deg); opacity: 0.88; box-shadow: 0 0 20px #f0f; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .decay-element {
+                font-size: 0.8rem;
+                padding: 3px;
+            }
+            .text-content {
+                font-size: clamp(0.5rem, 2vw, 1rem);
+            }
+            /* Adjust positions to be less spread out on smaller screens */
+            .e1 { top: 5%; left: 2%; width: 40%; height: 10%; }
+            .e2 { top: 15%; left: 50%; width: 35%; height: 8%; }
+            .e3 { top: 25%; left: 5%; width: 50%; height: 12%; }
+            .e4 { top: 40%; left: 45%; width: 40%; height: 10%; }
+            .e5 { top: 50%; left: 10%; width: 60%; height: 15%; }
+            .e6 { top: 68%; left: 30%; width: 45%; height: 10%; }
+            .e7 { top: 80%; left: 5%; width: 70%; height: 12%; }
+            .e8 { top: 90%; left: 60%; width: 30%; height: 8%; }
+            .e15 { top: 35%; left: 20%; width: 60%; height: 20%; z-index: 16; } /* Maintain central element */
+            /* Smaller abstract elements might need to be hidden or simplified */
+            .e21, .e22, .e23, .e24, .e25 { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+
+        <div class="decay-element e1 color-red">
+            <span class="text-content">DATA ROT</span>
+        </div>
+        <div class="decay-element e2 color-orange">
+            <span class="text-content">BIT FLIP</span>
+        </div>
+        <div class="decay-element e3 color-yellow">
+            <span class="text-content">LOST SIGNAL</span>
+        </div>
+        <div class="decay-element e4 color-green">
+            <span class="text-content">404 NOT FOUND</span>
+        </div>
+        <div class="decay-element e5 color-blue">
+            <span class="text-content">OBSOLETE PROTOCOL</span>
+        </div>
+        <div class="decay-element e6 color-indigo">
+            <span class="text-content">GLITCHING REALITY</span>
+        </div>
+        <div class="decay-element e7 color-violet">
+            <span class="text-content">MEMORY LEAK</span>
+        </div>
+        <div class="decay-element e8 color-red">
+            <span class="text-content">BROKEN LINK</span>
+        </div>
+        <div class="decay-element e9 color-orange">
+            <span class="text-content">PIXEL DECAY</span>
+        </div>
+        <div class="decay-element e10 color-yellow">
+            <span class="text-content">CORRUPT FILE</span>
+        </div>
+        <div class="decay-element e11 color-green">
+            <span class="text-content">SYSTEM ERROR</span>
+        </div>
+        <div class="decay-element e12 color-blue">
+            <span class="text-content">ECHOES OF CODE</span>
+        </div>
+        <div class="decay-element e13 color-indigo">
+            <span class="text-content">GHOST IN THE MACHINE</span>
+        </div>
+        <div class="decay-element e14 color-violet">
+            <span class="text-content">DISCONNECTED</span>
+        </div>
+        <div class="decay-element e15 color-red">
+            <span class="text-content">THE DIGITAL RUINS <br> OF TOMORROW</span>
+        </div>
+        <div class="decay-element e16 color-orange">
+            <span class="text-content">FRAGMENTED</span>
+        </div>
+        <div class="decay-element e17 color-yellow">
+            <span class="text-content">STATIC</span>
+        </div>
+        <div class="decay-element e18 color-green">
+            <span class="text-content">DELETING...</span>
+        </div>
+        <div class="decay-element e19 color-blue">
+            <span class="text-content">REBOOT?</span>
+        </div>
+        <div class="decay-element e20 color-indigo">
+            <span class="text-content">END OF LINE</span>
+        </div>
+
+        <!-- More abstract / subtle decay elements -->
+        <div class="decay-element e21"></div>
+        <div class="decay-element e22"></div>
+        <div class="decay-element e23"></div>
+        <div class="decay-element e24"></div>
+        <div class="decay-element e25"></div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 21:55:20.268650</div>
         <!DOCTYPE html>
 <html>
