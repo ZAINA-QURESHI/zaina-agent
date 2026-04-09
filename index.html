@@ -16,6 +16,328 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 11:09:36.672286</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Radical Identity Politics Collage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden; /* Prevent scrollbars from absolute positioning */
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px; /* For 3D transforms */
+        }
+
+        /* Base style for elements in the collage */
+        .collage-element {
+            position: absolute;
+            padding: 15px 25px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 2em;
+            text-align: center;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, z-index 0s ease 0.2s; /* Delay z-index change */
+            cursor: default;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            backface-visibility: hidden; /* Fix for flickering in some browsers */
+        }
+        .collage-element:hover {
+            transform: scale(1.08) rotate(var(--hover-rotate, 0deg)) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            z-index: 1000; /* Bring to front on hover */
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, z-index 0s; /* Instant z-index change */
+        }
+
+        /* Specific styles for rainbow colors and text */
+        .identity-text {
+            font-size: clamp(2em, 5vw, 4.5em); /* Responsive font size */
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 20px 40px;
+            border-radius: 50px;
+            white-space: nowrap;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Individual identity elements with specific positions and rotations */
+        .gender { background-color: #FF0000; left: 5%; top: 8%; transform: rotate(-10deg); z-index: 10; --hover-rotate: -12deg; }
+        .race { background-color: #FF7F00; right: 8%; top: 12%; transform: rotate(15deg); z-index: 12; --hover-rotate: 18deg; }
+        .class { background-color: #FFFF00; left: 15%; bottom: 10%; transform: rotate(5deg); z-index: 11; color: #333; text-shadow: none; --hover-rotate: 7deg; }
+        .ability { background-color: #00FF00; right: 10%; bottom: 8%; transform: rotate(-20deg); z-index: 13; --hover-rotate: -22deg; }
+        .sexuality { background-color: #0000FF; left: 25%; top: 25%; transform: rotate(8deg); z-index: 14; --hover-rotate: 10deg; }
+        .belief { background-color: #4B0082; right: 20%; top: 30%; transform: rotate(-12deg); z-index: 15; --hover-rotate: -14deg; }
+        .nationality { background-color: #9400D3; left: 30%; bottom: 20%; transform: rotate(22deg); z-index: 16; --hover-rotate: 25deg; }
+
+        /* Central INTERSECTIONALITY text */
+        .intersection {
+            background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #00BFFF, #4B0082, #9400D3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: clamp(3em, 8vw, 6em);
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(3deg);
+            z-index: 50;
+            text-shadow: none;
+            padding: 0;
+            box-shadow: none;
+            border-radius: 0;
+            animation: pulse 2s infinite alternate;
+            white-space: nowrap;
+        }
+
+        /* Quote box */
+        .quote-box {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: clamp(1em, 2.5vw, 1.8em);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 12px;
+            width: clamp(250px, 30vw, 400px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 20;
+            top: 15%;
+            left: 40%;
+            transform: rotate(-5deg);
+            text-align: left;
+            line-height: 1.4;
+            --hover-rotate: -7deg;
+        }
+
+        /* Smaller concept boxes */
+        .concept-box {
+            font-size: clamp(1.2em, 2.8vw, 2em);
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 25;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, z-index 0s ease 0.15s;
+        }
+
+        .privilege { background-color: #FF1493; top: 50%; left: 15%; transform: rotate(-20deg); --hover-rotate: -22deg; }
+        .allyship { background-color: #1E90FF; bottom: 40%; right: 10%; transform: rotate(25deg); --hover-rotate: 27deg; }
+        .empathy { background-color: #DAA520; top: 20%; right: 30%; transform: rotate(-5deg); --hover-rotate: -7deg; }
+        .justice { background-color: #8A2BE2; bottom: 20%; left: 25%; transform: rotate(10deg); --hover-rotate: 12deg; }
+        .dialogue { background-color: rgba(255,255,255,0.9); color: #333; top: 60%; left: 55%; transform: rotate(15deg); --hover-rotate: 17deg; }
+        .power-structures { background-color: rgba(0,0,0,0.8); color: #FFD700; top: 35%; left: 10%; transform: rotate(-18deg); --hover-rotate: -20deg; }
+
+        /* Abstract shapes */
+        .question-mark {
+            font-size: clamp(5em, 15vw, 10em);
+            color: rgba(255, 255, 255, 0.6);
+            position: absolute;
+            top: 5%;
+            left: 45%;
+            transform: rotate(10deg);
+            z-index: 5;
+            opacity: 0.4;
+            pointer-events: none;
+            text-shadow: 4px 4px 10px rgba(0,0,0,0.8);
+            font-weight: 900;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid #FFD700; /* Gold color */
+            top: 70%;
+            left: 60%;
+            transform: rotate(135deg);
+            z-index: 40;
+            box-shadow: 0 0 15px rgba(255,215,0,0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .arrow:hover {
+             transform: scale(1.1) rotate(135deg) translateX(-5px);
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background-color: #FFD700;
+            left: -5px;
+            top: 35px;
+            transform: rotate(-90deg);
+            transform-origin: top center;
+        }
+
+        .unity-circle, .conflict-circle {
+            border-radius: 50%;
+            width: clamp(80px, 10vw, 150px);
+            height: clamp(80px, 10vw, 150px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1em, 2vw, 1.8em);
+            font-weight: 800;
+            z-index: 30;
+            padding: 0;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+        }
+
+        .conflict-circle {
+            background-color: #B22222;
+            color: white;
+            top: 80%;
+            left: 50%;
+            transform: rotate(0deg) scale(0.8);
+            box-shadow: 0 5px 20px rgba(178,34,34,0.4);
+        }
+        .unity-circle {
+            background-color: #228B22;
+            color: white;
+            top: 5%;
+            left: 60%;
+            transform: rotate(0deg) scale(0.9);
+            box-shadow: 0 5px 20px rgba(34,139,34,0.4);
+        }
+        .conflict-circle:hover {
+            transform: scale(0.9);
+            background-color: #DC143C;
+            box-shadow: 0 8px 25px rgba(220,20,60,0.6);
+            z-index: 1001;
+        }
+        .unity-circle:hover {
+            transform: scale(1.0);
+            background-color: #3CB371;
+            box-shadow: 0 8px 25px rgba(60,179,113,0.6);
+            z-index: 1001;
+        }
+
+        /* Background splashes of color for atmosphere */
+        .splash {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(8px);
+            animation: float 10s infinite ease-in-out alternate;
+            pointer-events: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .splash-1 { background-color: #FF00FF; width: 100px; height: 100px; top: 15%; left: 3%; z-index: 1; transform: rotate(10deg); animation-delay: 0s; }
+        .splash-2 { background-color: #00FFFF; width: 150px; height: 150px; bottom: 8%; right: 5%; z-index: 1; transform: rotate(-25deg); animation-delay: 2s; }
+        .splash-3 { background-color: #FFD700; width: 80px; height: 80px; top: 60%; left: 10%; z-index: 1; transform: rotate(30deg); animation-delay: 4s; }
+        .splash-4 { background-color: #7FFF00; width: 90px; height: 90px; top: 30%; right: 3%; z-index: 1; transform: rotate(40deg); animation-delay: 6s; }
+
+        /* Keyframes for animations */
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) rotate(3deg) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) rotate(3deg) scale(1.03); opacity: 0.95; }
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 30px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .identity-text {
+                font-size: clamp(1.5em, 4vw, 3em);
+                padding: 15px 25px;
+                border-radius: 30px;
+            }
+            .intersection {
+                font-size: clamp(2.5em, 7vw, 4.5em);
+            }
+            .quote-box {
+                font-size: clamp(0.9em, 2.5vw, 1.5em);
+                width: clamp(200px, 60vw, 300px);
+                padding: 15px;
+            }
+            .concept-box {
+                font-size: clamp(1em, 2.5vw, 1.5em);
+                padding: 10px 15px;
+            }
+            .question-mark {
+                font-size: clamp(4em, 12vw, 8em);
+            }
+            .unity-circle, .conflict-circle {
+                width: clamp(60px, 8vw, 100px);
+                height: clamp(60px, 8vw, 100px);
+                font-size: clamp(0.9em, 1.5vw, 1.2em);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <!-- Background splashes of color -->
+        <div class="splash splash-1"></div>
+        <div class="splash splash-2"></div>
+        <div class="splash splash-3"></div>
+        <div class="splash splash-4"></div>
+
+        <!-- Main identity politics terms -->
+        <div class="collage-element identity-text gender">GENDER</div>
+        <div class="collage-element identity-text race">RACE</div>
+        <div class="collage-element identity-text class">CLASS</div>
+        <div class="collage-element identity-text ability">ABILITY</div>
+        <div class="collage-element identity-text sexuality">SEXUALITY</div>
+        <div class="collage-element identity-text belief">BELIEF</div>
+        <div class="collage-element identity-text nationality">NATIONALITY</div>
+
+        <!-- Central theme / Intersectionality -->
+        <div class="intersection">INTERSECTIONALITY</div>
+
+        <!-- Smaller, more nuanced terms/concepts -->
+        <div class="collage-element concept-box privilege">PRIVILEGE</div>
+        <div class="collage-element concept-box allyship">ALLYSHIP</div>
+        <div class="collage-element concept-box empathy">EMPATHY</div>
+        <div class="collage-element concept-box justice">JUSTICE</div>
+
+        <!-- Quote/Question/Dialogue -->
+        <div class="collage-element quote-box">
+            "The master's tools will never dismantle the master's house."<br>— Audre Lorde
+        </div>
+
+        <div class="collage-element concept-box dialogue">DIALOGUE?</div>
+        <div class="collage-element concept-box power-structures">POWER STRUCTURES</div>
+
+        <!-- Abstract shapes/visuals -->
+        <div class="question-mark">?</div>
+        <div class="arrow"></div>
+        <div class="collage-element conflict-circle">CONFLICT</div>
+        <div class="collage-element unity-circle">UNITY</div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">identity politics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 09:18:22.910162</div>
         <div style="
     font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
