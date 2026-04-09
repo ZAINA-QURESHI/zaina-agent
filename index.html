@@ -16,6 +16,211 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 17:16:00.859399</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Spectrum Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars from absolute positioning */
+            font-family: 'Arial Black', sans-serif;
+            background-color: #000; /* Dark background to make the rainbow pop */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px; /* For 3D transforms */
+        }
+        .collage-container {
+            width: 950px;
+            height: 650px;
+            position: relative;
+            background: linear-gradient(45deg, #FF0000 0%, #FF7F00 15%, #FFFF00 30%, #00FF00 45%, #0000FF 60%, #4B0082 75%, #9400D3 100%);
+            border-radius: 25px;
+            box-shadow: 0 0 70px rgba(255, 255, 255, 0.6), 0 0 30px rgba(0, 0, 0, 0.5) inset;
+            overflow: hidden; /* Clip collage pieces at container edges */
+            border: 8px solid rgba(255,255,255,0.8);
+            transform: rotateX(5deg) rotateY(-5deg) rotateZ(2deg); /* Slight 3D tilt */
+            transition: transform 0.5s ease-out;
+        }
+        .collage-container:hover {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        .collage-piece {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            border-radius: 15px;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, z-index 0.1s;
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .collage-piece:hover {
+            transform: scale(1.1) rotate(0deg) translateX(0) translateY(0); /* Straighten and enlarge on hover */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 15px rgba(0,0,0,0.6);
+            z-index: 100; /* Bring to front on hover */
+            filter: brightness(1.2);
+        }
+
+        /* Specific styles for each piece */
+        .piece-1 { /* VOICE */
+            width: 220px; height: 110px;
+            background-color: rgba(255, 0, 0, 0.85); /* Red */
+            top: 70px; left: 100px;
+            transform: rotate(-10deg) translateX(-10px);
+            z-index: 10;
+            font-size: 1.4em;
+            letter-spacing: 2px;
+        }
+        .piece-2 { /* BELONGING */
+            width: 180px; height: 180px;
+            background-color: rgba(255, 127, 0, 0.85); /* Orange */
+            top: 30px; right: 120px;
+            transform: rotate(8deg) translateY(10px);
+            z-index: 12;
+            font-size: 2em;
+            border-radius: 50%; /* Circle shape */
+        }
+        .piece-3 { /* SPECTRUM */
+            width: 280px; height: 90px;
+            background-color: rgba(255, 255, 0, 0.85); /* Yellow */
+            bottom: 100px; left: 80px;
+            transform: rotate(3deg) translateX(15px);
+            z-index: 11;
+            color: #444; /* Darker text for yellow */
+            text-shadow: none;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+        }
+        .piece-4 { /* INTERSECTION */
+            width: 200px; height: 130px;
+            background-color: rgba(0, 255, 0, 0.85); /* Green */
+            top: 180px; left: 320px;
+            transform: rotate(-15deg) translateY(-5px);
+            z-index: 15;
+            font-size: 1.6em;
+        }
+        .piece-5 { /* DIVERSITY */
+            width: 240px; height: 100px;
+            background-color: rgba(0, 0, 255, 0.85); /* Blue */
+            bottom: 60px; right: 100px;
+            transform: rotate(12deg) translateX(5px);
+            z-index: 13;
+            font-size: 1.5em;
+            letter-spacing: 1.5px;
+        }
+        .piece-6 { /* EMBRACE */
+            width: 260px; height: 120px;
+            background-color: rgba(75, 0, 130, 0.85); /* Indigo */
+            top: 300px; left: 200px;
+            transform: rotate(20deg) translateY(10px);
+            z-index: 16;
+            font-size: 1.8em;
+            padding-top: 20px;
+        }
+        .piece-7 { /* IDENTITY */
+            width: 190px; height: 190px;
+            background-color: rgba(148, 0, 211, 0.85); /* Violet */
+            top: 120px; right: 60px;
+            transform: rotate(-7deg) translateX(10px);
+            z-index: 14;
+            font-size: 1.9em;
+            border-radius: 50% 20% 50% 20%; /* Irregular shape */
+        }
+        .piece-8 { /* SELF */
+            width: 150px; height: 80px;
+            background-color: rgba(255, 105, 180, 0.85); /* Hot Pink */
+            top: 400px; left: 470px;
+            transform: rotate(-5deg) translateY(15px);
+            z-index: 17;
+            font-size: 1.2em;
+        }
+        .piece-9 { /* COMMUNITY */
+            width: 210px; height: 110px;
+            background-color: rgba(0, 255, 255, 0.85); /* Cyan */
+            bottom: 180px; left: 380px;
+            transform: rotate(10deg) translateX(-5px);
+            z-index: 18;
+            font-size: 1.4em;
+            color: #333;
+            text-shadow: none;
+        }
+        .piece-10 { /* STORIES */
+            width: 120px; height: 120px;
+            background-color: rgba(255, 255, 255, 0.75); /* White/light */
+            top: 250px; right: 280px;
+            transform: rotate(25deg) translateX(20px);
+            z-index: 19;
+            color: #333;
+            text-shadow: none;
+            font-size: 1.1em;
+            border-radius: 50%;
+        }
+        .piece-11 { /* QUEER */
+            width: 160px; height: 70px;
+            background-color: rgba(255, 192, 203, 0.85); /* Light Pink - as a nod to some flag colors */
+            top: 50px; left: 400px;
+            transform: rotate(5deg);
+            z-index: 13;
+            font-size: 1.3em;
+            color: #555;
+            text-shadow: none;
+        }
+         .piece-12 { /* POWER */
+            width: 170px; height: 90px;
+            background-color: rgba(128, 0, 0, 0.85); /* Maroon - strong, deep color */
+            bottom: 20px; left: 280px;
+            transform: rotate(-8deg);
+            z-index: 15;
+            font-size: 1.5em;
+        }
+        .piece-13 { /* EVOLVE */
+            width: 140px; height: 140px;
+            background-color: rgba(50, 205, 50, 0.85); /* Lime Green */
+            top: 350px; right: 80px;
+            transform: rotate(18deg);
+            z-index: 11;
+            font-size: 1.6em;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic blob shape */
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="collage-piece piece-1">VOICE</div>
+        <div class="collage-piece piece-2">BELONGING</div>
+        <div class="collage-piece piece-3">SPECTRUM</div>
+        <div class="collage-piece piece-4">INTERSECTION</div>
+        <div class="collage-piece piece-5">DIVERSITY</div>
+        <div class="collage-piece piece-6">EMBRACE</div>
+        <div class="collage-piece piece-7">IDENTITY</div>
+        <div class="collage-piece piece-8">SELF</div>
+        <div class="collage-piece piece-9">COMMUNITY</div>
+        <div class="collage-piece piece-10">STORIES</div>
+        <div class="collage-piece piece-11">QUEER</div>
+        <div class="collage-piece piece-12">POWER</div>
+        <div class="collage-piece piece-13">EVOLVE</div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">identity politics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 15:47:50.326699</div>
         <div style="width: 100%; height: auto; overflow: hidden; background: linear-gradient(135deg, #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #4B0082, #EE82EE); font-family: 'Press Start 2P', cursive, monospace; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); padding: 20px; box-sizing: border-box; border: 5px dashed #FFFF00; position: relative;">
 
