@@ -16,6 +16,206 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 03:25:55.495873</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Decay Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Hide potential scrollbars */
+    background-color: #000; /* Dark background for contrast */
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* For 3D effects */
+  }
+
+  .decay-element {
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    animation: glitch 2s infinite alternate, fadeOut 5s forwards; /* Glitch and then fade */
+    opacity: 0.9;
+    font-size: 0.8em;
+    padding: 5px 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-break: break-all;
+    user-select: none; /* Prevent text selection */
+  }
+
+  /* Specific rainbow colors and random positions/sizes/rotations */
+  .red { background-color: rgba(255, 0, 0, 0.7); color: #000; left: 5%; top: 10%; width: 150px; height: 80px; transform: rotate(-10deg) translateZ(20px); animation-delay: 0s; }
+  .orange { background-color: rgba(255, 128, 0, 0.7); color: #000; right: 10%; top: 20%; width: 120px; height: 60px; transform: rotate(15deg) translateZ(0px); animation-delay: 0.5s; }
+  .yellow { background-color: rgba(255, 255, 0, 0.7); color: #000; left: 20%; bottom: 15%; width: 180px; height: 90px; transform: rotate(5deg) translateZ(-10px); animation-delay: 1s; }
+  .green { background-color: rgba(0, 255, 0, 0.7); color: #000; right: 5%; bottom: 30%; width: 100px; height: 50px; transform: rotate(-20deg) translateZ(30px); animation-delay: 1.5s; }
+  .blue { background-color: rgba(0, 0, 255, 0.7); color: #fff; left: 40%; top: 5%; width: 160px; height: 70px; transform: rotate(25deg) translateZ(10px); animation-delay: 2s; }
+  .indigo { background-color: rgba(75, 0, 130, 0.7); color: #fff; right: 25%; top: 40%; width: 140px; height: 80px; transform: rotate(-12deg) translateZ(0px); animation-delay: 2.5s; }
+  .violet { background-color: rgba(143, 0, 255, 0.7); color: #fff; left: 10%; top: 60%; width: 130px; height: 70px; transform: rotate(30deg) translateZ(20px); animation-delay: 3s; }
+
+  /* More diverse elements */
+  .decay-element:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    font-family: 'Press Start 2P', cursive; /* If loaded, otherwise fallback */
+    font-size: 0.7em;
+    box-shadow: none;
+    animation-delay: calc(var(--delay) * 0.1s); /* Use CSS custom property for varying delays */
+  }
+
+  .decay-element:nth-child(odd) {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+  }
+
+  .corruption-block {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #0f0; /* Glitch green */
+    border: 1px solid #0f0;
+    transform: rotate(var(--rotate)) translateZ(var(--depth));
+    animation: scanline 3s infinite alternate, flicker 0.5s infinite alternate;
+    font-size: 0.9em;
+  }
+
+  .static-noise {
+    background: repeating-linear-gradient(
+      transparent,
+      rgba(0,0,0,0.1) 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.05) 1px,
+      rgba(0,0,0,0.05) 2px
+    );
+    animation: staticPulse 1s infinite alternate;
+  }
+
+  .fragment {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(var(--rotate)) translateZ(var(--depth)) scale(var(--scale));
+    animation: drift 10s infinite linear alternate;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Glitch animation */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px) skewX(5deg); }
+    40% { transform: translate(-3px, -3px) skewX(-10deg); }
+    60% { transform: translate(4px, 4px) skewX(15deg); }
+    80% { transform: translate(-5px, 5px) skewX(-20deg); }
+    100% { transform: translate(0); }
+  }
+
+  /* Fade out animation */
+  @keyframes fadeOut {
+    0% { opacity: 0.9; transform: scale(1) rotate(var(--initial-rotate, 0deg)); }
+    50% { opacity: 0.7; transform: scale(0.9) rotate(var(--initial-rotate, 0deg)); }
+    100% { opacity: 0; transform: scale(0.5) rotate(var(--initial-rotate, 0deg)) translateZ(-100px); }
+  }
+
+  /* Corruption block animations */
+  @keyframes scanline {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+
+  /* Static noise animation */
+  @keyframes staticPulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.7; }
+  }
+
+  /* Drift for fragments */
+  @keyframes drift {
+    0% { transform: translateX(0) translateY(0) rotate(var(--initial-rotate)); }
+    25% { transform: translateX(5vw) translateY(-5vh) rotate(calc(var(--initial-rotate) + 10deg)); }
+    50% { transform: translateX(0) translateY(10vh) rotate(calc(var(--initial-rotate) - 5deg)); }
+    75% { transform: translateX(-5vw) translateY(-10vh) rotate(calc(var(--initial-rotate) + 15deg)); }
+    100% { transform: translateX(0) translateY(0) rotate(var(--initial-rotate)); }
+  }
+
+  /* Core Message */
+  .core-message {
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(0,255,255,0.7);
+    animation: textGlitch 3s infinite alternate;
+    z-index: 100;
+    pointer-events: none; /* Allows clicks to pass through */
+  }
+
+  @keyframes textGlitch {
+    0% { text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(0,255,255,0.7); transform: skew(0); }
+    20% { text-shadow: 0 0 12px rgba(255,0,0,0.8), 0 0 25px rgba(0,255,255,0.5); transform: skew(2deg, -2deg); }
+    40% { text-shadow: 0 0 8px rgba(0,255,0,0.8), 0 0 15px rgba(255,0,255,0.5); transform: skew(-3deg, 3deg); }
+    60% { text-shadow: 0 0 10px rgba(0,0,255,0.8), 0 0 20px rgba(255,255,0,0.5); transform: skew(1deg, 1deg); }
+    80% { text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 30px rgba(0,255,0,0.8); transform: skew(-1deg, -1deg); }
+    100% { text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(0,255,255,0.7); transform: skew(0); }
+  }
+</style>
+</head>
+<body>
+<div class="collage-container">
+
+  <div class="decay-element red" style="--initial-rotate: -10deg; left: 5%; top: 10%; width: 150px; height: 80px;">ERROR 404: REALITY NOT FOUND</div>
+  <div class="decay-element orange" style="--initial-rotate: 15deg; right: 10%; top: 20%; width: 120px; height: 60px;">[DATA CORRUPTED]</div>
+  <div class="decay-element yellow" style="--initial-rotate: 5deg; left: 20%; bottom: 15%; width: 180px; height: 90px;">SYSTEM.EXIT(0)</div>
+  <div class="decay-element green" style="--initial-rotate: -20deg; right: 5%; bottom: 30%; width: 100px; height: 50px;">VOID* PTR</div>
+  <div class="decay-element blue" style="--initial-rotate: 25deg; left: 40%; top: 5%; width: 160px; height: 70px;">FRAGMENTED MEMORY</div>
+  <div class="decay-element indigo" style="--initial-rotate: -12deg; right: 25%; top: 40%; width: 140px; height: 80px;">CACHE MISS</div>
+  <div class="decay-element violet" style="--initial-rotate: 30deg; left: 10%; top: 60%; width: 130px; height: 70px;">//DEAD_CODE</div>
+
+  <div class="decay-element static-noise" style="--initial-rotate: 5deg; left: 70%; top: 55%; width: 180px; height: 100px; animation-delay: 4s;">SIGNAL LOST</div>
+  <div class="decay-element corruption-block" style="--initial-rotate: -8deg; right: 15%; bottom: 5%; width: 200px; height: 120px; animation-delay: 5s;">INITIATING PROTOCOL DUST</div>
+  <div class="decay-element fragment" style="--initial-rotate: 45deg; --scale: 0.8; --depth: 50px; left: 30%; top: 70%; width: 90px; height: 40px; animation-delay: 6s;">BIT ROT</div>
+  <div class="decay-element" style="--initial-rotate: -3deg; --delay: 7; left: 50%; top: 25%; width: 110px; height: 50px; background-color: rgba(255, 165, 0, 0.6); animation-delay: 7s;">LOST PACKET</div>
+  <div class="decay-element static-noise" style="--initial-rotate: 10deg; right: 30%; top: 10%; width: 160px; height: 90px; animation-delay: 8s;">ECHOES</div>
+  <div class="decay-element corruption-block" style="--initial-rotate: -18deg; left: 15%; top: 30%; width: 170px; height: 80px; animation-delay: 9s;">FORGOTTEN_URL</div>
+  <div class="decay-element fragment" style="--initial-rotate: 20deg; --scale: 0.7; --depth: 30px; right: 40%; bottom: 20%; width: 100px; height: 60px; animation-delay: 10s;">END OF LINE</div>
+  <div class="decay-element" style="--initial-rotate: -25deg; --delay: 11; left: 5%; bottom: 5%; width: 190px; height: 110px; background-color: rgba(0, 255, 255, 0.6); animation-delay: 11s;">418 I'm a Teapot</div>
+
+  <div class="core-message">
+    DECAY IS THE ONLY CONSTANT
+  </div>
+
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-09 23:43:10.249372</div>
         <!DOCTYPE html>
 <html>
