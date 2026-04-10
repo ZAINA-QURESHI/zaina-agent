@@ -16,6 +16,226 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 19:04:37.023674</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars if elements go out of bounds */
+    font-family: 'Arial Black', sans-serif; /* Bold, stark font for impact */
+    background-color: #1a1a1a; /* Dark background to make rainbow colors pop */
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px; /* For subtle 3D transforms */
+    overflow: hidden; /* Ensure content stays within viewport */
+  }
+
+  /* Base style for each piece of the collage */
+  .collage-piece {
+    position: absolute;
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle concrete-like edge */
+    box-sizing: border-box;
+    overflow: hidden; /* For containing images */
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease, z-index 0s 0.3s; /* Smooth transitions */
+    cursor: pointer;
+    display: flex; /* For text alignment */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.6); /* Stronger shadow for depth */
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .collage-piece:hover {
+    transform: scale(1.03) rotateZ(0deg) translateZ(50px); /* Lift and straighten slightly */
+    box-shadow: 15px 15px 35px rgba(0,0,0,0.8); /* More pronounced shadow */
+    z-index: 1000; /* Bring to front on hover */
+    transition: transform 0.3s ease-out, box-shadow 0.2s ease, z-index 0s; /* Faster hover transition */
+  }
+
+  .collage-piece img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fill their containers */
+    display: block;
+    filter: grayscale(0.2) contrast(1.1) saturate(1.2); /* Enhance brutalist feel, slightly less color */
+  }
+
+  /* Rainbow colors - vibrant, yet slightly muted for brutalist feel */
+  .color-red { background-color: #C0392B; color: #f2f2f2; }
+  .color-orange { background-color: #E67E22; color: #f2f2f2; }
+  .color-yellow { background-color: #F1C40F; color: #333; }
+  .color-green { background-color: #27AE60; color: #f2f2f2; }
+  .color-blue { background-color: #2980B9; color: #f2f2f2; }
+  .color-indigo { background-color: #8E44AD; color: #f2f2f2; } /* Deeper purple */
+  .color-violet { background-color: #9B59B6; color: #f2f2f2; } /* Lighter purple */
+  .color-concrete-light { background-color: #BDC3C7; color: #333; } /* Light concrete */
+  .color-concrete-dark { background-color: #7F8C8D; color: #f2f2f2; } /* Dark concrete */
+
+  /* Specific positioning, sizing, and rotation for each piece */
+  .piece-1 { /* Title */
+    width: 500px; height: 150px;
+    top: 5%; left: 30%;
+    transform: rotate(-3deg);
+    z-index: 50;
+    font-size: 3.5em;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+  }
+  .piece-2 { /* Image - Barbican */
+    width: 350px; height: 250px;
+    top: 15%; left: 5%;
+    transform: rotate(7deg);
+    z-index: 40;
+  }
+  .piece-3 { /* Text - Raw Power */
+    width: 280px; height: 180px;
+    top: 10%; left: 65%;
+    transform: rotate(-10deg);
+    z-index: 45;
+    font-size: 2.2em;
+  }
+  .piece-4 { /* Image - Habitat 67 */
+    width: 400px; height: 300px;
+    top: 35%; left: 45%;
+    transform: rotate(5deg);
+    z-index: 30;
+  }
+  .piece-5 { /* Text - Form Follows Brutality */
+    width: 200px; height: 200px;
+    top: 30%; left: 15%;
+    transform: rotate(-15deg);
+    z-index: 35;
+    font-size: 1.6em;
+    opacity: 0.9;
+  }
+  .piece-6 { /* Image - Boston City Hall */
+    width: 300px; height: 400px;
+    top: 40%; left: 70%;
+    transform: rotate(12deg);
+    z-index: 25;
+  }
+  .piece-7 { /* Text - Concrete Dreams */
+    width: 450px; height: 100px;
+    top: 60%; left: 5%;
+    transform: rotate(3deg);
+    z-index: 20;
+    font-size: 2.5em;
+  }
+  .piece-8 { /* Image - Trellick Tower */
+    width: 250px; height: 350px;
+    top: 55%; left: 30%;
+    transform: rotate(-8deg);
+    z-index: 15;
+  }
+  .piece-9 { /* Text - Unapologetic Grandeur */
+    width: 220px; height: 150px;
+    top: 80%; left: 45%;
+    transform: rotate(18deg);
+    z-index: 10;
+    font-size: 1.5em;
+    opacity: 0.8;
+  }
+  .piece-10 { /* Image - Geisel Library */
+    width: 320px; height: 200px;
+    top: 75%; left: 70%;
+    transform: rotate(-5deg);
+    z-index: 5;
+  }
+  .piece-11 { /* Small accent text */
+    width: 150px; height: 80px;
+    top: 90%; left: 5%;
+    transform: rotate(25deg);
+    z-index: 8;
+    font-size: 0.9em;
+    padding: 5px;
+  }
+  .piece-12 { /* Small accent text */
+    width: 120px; height: 120px;
+    top: 2%; left: 85%;
+    transform: rotate(30deg);
+    z-index: 1;
+    font-size: 1em;
+    opacity: 0.6;
+  }
+
+  /* Image URLs using Unsplash Source for relevant random images */
+  /* Keywords try to evoke specific brutalist structures or themes */
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="collage-piece color-red piece-1">
+    BRUTALIST <br> SPECTRUM
+  </div>
+
+  <div class="collage-piece color-orange piece-2">
+    <img src="https://source.unsplash.com/random/400x300/?brutalism,concrete,barbican-estate" alt="Abstract Brutalist Architecture - Barbican Estate Inspired">
+  </div>
+
+  <div class="collage-piece color-yellow piece-3">
+    RAW <br> POWER. <br> PURE <br> FORM.
+  </div>
+
+  <div class="collage-piece color-green piece-4">
+    <img src="https://source.unsplash.com/random/500x350/?brutalism,habitat67,geometric" alt="Modernist Concrete Blocks - Habitat 67 Inspired">
+  </div>
+
+  <div class="collage-piece color-blue piece-5">
+    FORM <br> FOLLOWS <br> BRUTALITY.
+  </div>
+
+  <div class="collage-piece color-indigo piece-6">
+    <img src="https://source.unsplash.com/random/350x450/?brutalism,city-hall,massive" alt="Imposing Government Building - Boston City Hall Inspired">
+  </div>
+
+  <div class="collage-piece color-violet piece-7">
+    CONCRETE <br> DREAMS.
+  </div>
+
+  <div class="collage-piece color-red piece-8">
+    <img src="https://source.unsplash.com/random/300x400/?brutalism,trellick-tower,housing" alt="Tall Concrete Residential Tower - Trellick Tower Inspired">
+  </div>
+
+  <div class="collage-piece color-orange piece-9">
+    UNAPOLOGETIC <br> GRANDEUR.
+  </div>
+
+  <div class="collage-piece color-yellow piece-10">
+    <img src="https://source.unsplash.com/random/380x250/?brutalism,library,geometric-shapes" alt="Intricate Brutalist Library - Geisel Library Inspired">
+  </div>
+
+  <div class="collage-piece color-concrete-light piece-11">
+    BOLD. TRUE.
+  </div>
+
+  <div class="collage-piece color-concrete-dark piece-12">
+    ELEGANTLY <br> HARSH.
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 17:53:02.494556</div>
         <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; font-family: 'Montserrat', sans-serif; background-color: #1a1a1a; color: white;">
 
