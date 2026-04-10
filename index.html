@@ -16,6 +16,155 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 14:56:25.356519</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identity & Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* A modern, strong font */
+    background-color: #f0f0f0;
+    overflow: hidden; /* Hide scrollbars if elements go out of bounds */
+  }
+
+  /* Import a font for better aesthetics */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+  .collage-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); /* Soft, warm initial background */
+    display: block; /* Ensure it takes up space */
+  }
+
+  .collage-element {
+    position: absolute;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
+    cursor: default;
+  }
+
+  .collage-element:hover {
+    transform: scale(1.05) rotate(var(--hover-rotate, 0deg)); /* Slightly larger and maybe rotate more */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  }
+
+  /* Specific elements with rainbow colors and varied positioning/sizes */
+  .el-1 { background-color: #FF0000; top: 10%; left: 5%; width: 160px; height: 80px; font-size: 1.8em; z-index: 10; transform: rotate(-8deg); --hover-rotate: -10deg; }
+  .el-2 { background-color: #FF8C00; top: 20%; left: 18%; width: 190px; height: 100px; font-size: 1.6em; z-index: 12; transform: rotate(5deg); --hover-rotate: 7deg; }
+  .el-3 { background-color: #FFD700; top: 5%; left: 28%; width: 130px; height: 60px; font-size: 1.2em; z-index: 9; transform: rotate(-15deg); color: #333; --hover-rotate: -17deg;} /* Darker text for light background */
+  .el-4 { background-color: #008000; top: 30%; left: 0%; width: 230px; height: 120px; font-size: 2.2em; z-index: 15; transform: rotate(2deg); --hover-rotate: 4deg; }
+  .el-5 { background-color: #0000FF; top: 40%; left: 12%; width: 170px; height: 90px; font-size: 1.7em; z-index: 11; transform: rotate(-6deg); --hover-rotate: -8deg; }
+  .el-6 { background-color: #4B0082; top: 50%; left: 22%; width: 210px; height: 110px; font-size: 2em; z-index: 13; transform: rotate(10deg); --hover-rotate: 12deg; }
+  .el-7 { background-color: #EE82EE; top: 60%; left: 5%; width: 150px; height: 70px; font-size: 1.3em; z-index: 8; transform: rotate(-12deg); --hover-rotate: -14deg; }
+  .el-8 { background-color: #FF69B4; top: 70%; left: 15%; width: 260px; height: 130px; font-size: 2.5em; z-index: 16; transform: rotate(0deg); --hover-rotate: 2deg; }
+  .el-9 { background-color: #FF4500; top: 15%; left: 40%; width: 110px; height: 50px; font-size: 1em; z-index: 7; transform: rotate(18deg); --hover-rotate: 20deg; }
+  .el-10 { background-color: #DAA520; top: 25%; left: 35%; width: 200px; height: 100px; font-size: 1.6em; z-index: 14; transform: rotate(-5deg); color: #333; --hover-rotate: -7deg;}
+  .el-11 { background-color: #32CD32; top: 5%; left: 55%; width: 140px; height: 70px; font-size: 1.1em; z-index: 6; transform: rotate(13deg); --hover-rotate: 15deg; }
+  .el-12 { background-color: #1E90FF; top: 35%; left: 45%; width: 220px; height: 110px; font-size: 2.1em; z-index: 17; transform: rotate(-3deg); --hover-rotate: -5deg; }
+  .el-13 { background-color: #8A2BE2; top: 55%; left: 40%; width: 180px; height: 90px; font-size: 1.4em; z-index: 10; transform: rotate(7deg); --hover-rotate: 9deg; }
+  .el-14 { background-color: #FF1493; top: 75%; left: 30%; width: 190px; height: 100px; font-size: 1.9em; z-index: 12; transform: rotate(-10deg); --hover-rotate: -12deg; }
+  .el-15 { background-color: #FFD700; top: 65%; left: 50%; width: 160px; height: 80px; font-size: 1.2em; z-index: 9; transform: rotate(4deg); color: #333; --hover-rotate: 6deg; }
+  .el-16 { background-color: #00CED1; top: 45%; left: 60%; width: 240px; height: 120px; font-size: 2.3em; z-index: 18; transform: rotate(-1deg); --hover-rotate: -3deg; }
+  .el-17 { background-color: #9932CC; top: 85%; left: 5%; width: 170px; height: 80px; font-size: 1.5em; z-index: 11; transform: rotate(8deg); --hover-rotate: 10deg; }
+  .el-18 { background-color: #FF6347; top: 80%; left: 50%; width: 210px; height: 110px; font-size: 2em; z-index: 13; transform: rotate(-7deg); --hover-rotate: -9deg; }
+  .el-19 { background-color: #FFA07A; top: 20%; left: 70%; width: 120px; height: 60px; font-size: 1.1em; z-index: 7; transform: rotate(5deg); color: #333; --hover-rotate: 7deg; }
+  .el-20 { background-color: #ADFF2F; top: 0%; left: 75%; width: 150px; height: 70px; font-size: 1.3em; z-index: 8; transform: rotate(-16deg); color: #333; --hover-rotate: -18deg; }
+  .el-21 { background-color: #4682B4; top: 10%; left: 85%; width: 190px; height: 90px; font-size: 1.7em; z-index: 10; transform: rotate(9deg); --hover-rotate: 11deg; }
+  .el-22 { background-color: #DDA0DD; top: 30%; left: 80%; width: 170px; height: 80px; font-size: 1.4em; z-index: 9; transform: rotate(-4deg); --hover-rotate: -6deg; }
+  .el-23 { background-color: #8B0000; top: 40%; left: 70%; width: 230px; height: 120px; font-size: 2.2em; z-index: 15; transform: rotate(2deg); --hover-rotate: 4deg; }
+  .el-24 { background-color: #FFD700; top: 50%; left: 80%; width: 160px; height: 80px; font-size: 1.2em; z-index: 11; transform: rotate(-8deg); color: #333; --hover-rotate: -10deg; }
+  .el-25 { background-color: #FF69B4; top: 60%; left: 75%; width: 210px; height: 100px; font-size: 1.8em; z-index: 14; transform: rotate(7deg); --hover-rotate: 9deg; }
+  .el-26 { background-color: #7B68EE; top: 70%; left: 65%; width: 200px; height: 90px; font-size: 1.6em; z-index: 12; transform: rotate(-1deg); --hover-rotate: -3deg; }
+  .el-27 { background-color: #00FA9A; top: 80%; left: 80%; width: 180px; height: 80px; font-size: 1.5em; z-index: 13; transform: rotate(11deg); color: #333; --hover-rotate: 13deg; }
+  .el-28 { background-color: #FF4500; top: 90%; left: 25%; width: 140px; height: 60px; font-size: 1.1em; z-index: 8; transform: rotate(-5deg); --hover-rotate: -7deg; }
+  .el-29 { background-color: #00BFFF; top: 90%; left: 45%; width: 170px; height: 70px; font-size: 1.3em; z-index: 9; transform: rotate(3deg); --hover-rotate: 5deg; }
+  .el-30 { background-color: #8A2BE2; top: 90%; left: 65%; width: 190px; height: 80px; font-size: 1.4em; z-index: 10; transform: rotate(-13deg); --hover-rotate: -15deg; }
+
+  /* Larger, semi-transparent elements for a "wash" effect */
+  .wash-1 { background: linear-gradient(to right, rgba(255,0,0,0.2), rgba(255,165,0,0.2)); top: 0; left: 0; width: 30%; height: 100%; z-index: 1; transform: skewX(-15deg); transform-origin: top left; }
+  .wash-2 { background: linear-gradient(to bottom, rgba(255,255,0,0.2), rgba(0,128,0,0.2)); top: 0; left: 20%; width: 60%; height: 40%; z-index: 1; transform: skewY(10deg); transform-origin: top left; }
+  .wash-3 { background: linear-gradient(to left, rgba(0,0,255,0.2), rgba(75,0,130,0.2)); bottom: 0; right: 0; width: 35%; height: 100%; z-index: 1; transform: skewX(-10deg); transform-origin: bottom right; }
+  .wash-4 { background: linear-gradient(to top, rgba(238,130,238,0.2), rgba(255,105,180,0.2)); bottom: 0; left: 10%; width: 80%; height: 30%; z-index: 1; transform: skewY(-8deg); transform-origin: bottom right; }
+
+  /* More abstract shapes */
+  .shape-1 { background-color: rgba(255,255,255,0.2); border-radius: 50%; width: 200px; height: 200px; top: 10%; right: 10%; z-index: 5; }
+  .shape-2 { background-color: rgba(0,0,0,0.1); border-radius: 50%; width: 150px; height: 150px; bottom: 5%; left: 5%; z-index: 5; }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Layered semi-transparent washes for a vibrant background -->
+  <div class="collage-element wash-1"></div>
+  <div class="collage-element wash-2"></div>
+  <div class="collage-element wash-3"></div>
+  <div class="collage-element wash-4"></div>
+
+  <!-- Abstract shapes -->
+  <div class="collage-element shape-1"></div>
+  <div class="collage-element shape-2"></div>
+
+  <!-- Main identity politics themed div elements -->
+  <div class="collage-element el-1">Intersectionality</div>
+  <div class="collage-element el-2">Privilege</div>
+  <div class="collage-element el-3">Allyship</div>
+  <div class="collage-element el-4">Systemic Bias</div>
+  <div class="collage-element el-5">Representation</div>
+  <div class="collage-element el-6">Diversity</div>
+  <div class="collage-element el-7">Inclusion</div>
+  <div class="collage-element el-8">Equity</div>
+  <div class="collage-element el-9">Voice</div>
+  <div class="collage-element el-10">Oppression</div>
+  <div class="collage-element el-11">Culture</div>
+  <div class="collage-element el-12">Empathy</div>
+  <div class="collage-element el-13">Solidarity</div>
+  <div class="collage-element el-14">Identity</div>
+  <div class="collage-element el-15">Belonging</div>
+  <div class="collage-element el-16">Narrative</div>
+  <div class="collage-element el-17">Power</div>
+  <div class="collage-element el-18">Justice</div>
+  <div class="collage-element el-19">Safe Space</div>
+  <div class="collage-element el-20">Awareness</div>
+  <div class="collage-element el-21">Experience</div>
+  <div class="collage-element el-22">Dialogue</div>
+  <div class="collage-element el-23">Reconciliation</div>
+  <div class="collage-element el-24">Community</div>
+  <div class="collage-element el-25">Difference</div>
+  <div class="collage-element el-26">Context</div>
+  <div class="collage-element el-27">Understanding</div>
+  <div class="collage-element el-28">Action</div>
+  <div class="collage-element el-29">Growth</div>
+  <div class="collage-element el-30">Future</div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">identity politics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 13:26:52.146383</div>
         <div id="glitch-collage">
   <style>
