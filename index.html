@@ -16,6 +16,272 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 21:47:54.591990</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+  }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .decay-element {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive, monospace; /* Example retro font */
+    font-size: 1.5vmin; /* Responsive font size */
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease-out; /* Smooth transitions for movement/fade */
+    transform-origin: center center; /* For rotation */
+    z-index: 1;
+    pointer-events: none; /* Allow clicking through */
+    white-space: nowrap; /* Keep text on one line */
+  }
+
+  /* Specific decay styles and rainbow palette */
+  .glitch {
+    animation: glitch-anim 2.5s infinite alternate linear;
+  }
+  .flicker {
+    animation: flicker-anim 1s infinite alternate step-end;
+  }
+  .fade-out {
+    animation: fade-out-anim 3s forwards ease-in-out;
+  }
+  .corrupt-text {
+    letter-spacing: -0.1em;
+    font-weight: bold;
+    text-shadow:
+      1px 1px 0px rgba(255, 0, 0, 0.7),
+      -1px -1px 0px rgba(0, 255, 0, 0.7),
+      2px -2px 0px rgba(0, 0, 255, 0.7);
+    filter: blur(0.5px);
+  }
+
+  /* Rainbow colors */
+  .red { color: #ff0000; text-shadow: 0 0 8px #ff0000; }
+  .orange { color: #ff8c00; text-shadow: 0 0 8px #ff8c00; }
+  .yellow { color: #ffff00; text-shadow: 0 0 8px #ffff00; }
+  .green { color: #00ff00; text-shadow: 0 0 8px #00ff00; }
+  .blue { color: #0000ff; text-shadow: 0 0 8px #0000ff; }
+  .indigo { color: #4b0082; text-shadow: 0 0 8px #4b0082; }
+  .violet { color: #ee82ee; text-shadow: 0 0 8px #ee82ee; }
+  .rainbow-text {
+    background: linear-gradient(to right, #ff0000, #ff8c00, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Animated background squares/pixels */
+  .pixel {
+    position: absolute;
+    width: 2vmin;
+    height: 2vmin;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: pixel-fade 5s infinite ease-in-out;
+    z-index: 0;
+  }
+  .pixel-red { background-color: rgba(255, 0, 0, 0.2); }
+  .pixel-orange { background-color: rgba(255, 140, 0, 0.2); }
+  .pixel-yellow { background-color: rgba(255, 255, 0, 0.2); }
+  .pixel-green { background-color: rgba(0, 255, 0, 0.2); }
+  .pixel-blue { background-color: rgba(0, 0, 255, 0.2); }
+  .pixel-indigo { background-color: rgba(75, 0, 130, 0.2); }
+  .pixel-violet { background-color: rgba(238, 130, 238, 0.2); }
+
+  /* Keyframe animations */
+  @keyframes glitch-anim {
+    0% { transform: translate(0, 0); opacity: 1; }
+    20% { transform: translate(-2px, 2px); opacity: 0.8; filter: blur(0.5px); }
+    40% { transform: translate(3px, -3px); opacity: 1; }
+    60% { transform: translate(-1px, 1px); opacity: 0.9; filter: blur(0.2px); }
+    80% { transform: translate(2px, -2px); opacity: 0.85; }
+    100% { transform: translate(0, 0); opacity: 1; filter: blur(0); }
+  }
+
+  @keyframes flicker-anim {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fade-out-anim {
+    0% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.5; transform: scale(1.05) rotate(2deg); filter: blur(1px); }
+    100% { opacity: 0; transform: scale(0.9) rotate(-5deg); filter: blur(2px); }
+  }
+
+  @keyframes pixel-fade {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+  }
+
+  /* Specific element styles for diversity */
+  .static-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="2" height="2" fill="rgba(0,0,0,0.1)" /><rect x="2" y="2" width="2" height="2" fill="rgba(0,0,0,0.1)" /></svg>');
+    background-size: 4px 4px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .corrupted-image {
+    position: absolute;
+    width: 15vmin;
+    height: 15vmin;
+    background-image: url('https://picsum.photos/200?random=1'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+    filter: hue-rotate(var(--hue)) saturate(var(--saturate)) contrast(var(--contrast)) blur(var(--blur));
+    animation: image-decay 5s infinite alternate ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  @keyframes image-decay {
+    0% { filter: hue-rotate(0deg) saturate(100%) contrast(100%) blur(0px); opacity: 1; transform: scale(1) rotate(0deg); }
+    25% { filter: hue-rotate(90deg) saturate(150%) contrast(120%) blur(0.5px); opacity: 0.9; transform: scale(1.02) rotate(1deg); }
+    50% { filter: hue-rotate(180deg) saturate(50%) contrast(80%) blur(1px); opacity: 0.8; transform: scale(0.98) rotate(-1deg); }
+    75% { filter: hue-rotate(270deg) saturate(120%) contrast(110%) blur(0.7px); opacity: 0.95; transform: scale(1.01) rotate(0.5deg); }
+    100% { filter: hue-rotate(360deg) saturate(100%) contrast(100%) blur(0px); opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+
+  .scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0,0,0,0.1) 50%,
+      rgba(255,255,255,0.1) 50%
+    );
+    background-size: 100% 2px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .ascii-art {
+    position: absolute;
+    font-family: monospace;
+    font-size: 0.8vmin;
+    line-height: 0.8vmin;
+    white-space: pre;
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+    opacity: 0.7;
+    animation: ascii-fade 7s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 3;
+  }
+  @keyframes ascii-fade {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.02); }
+    100% { opacity: 0.7; transform: scale(1); }
+  }
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Static overlay for subtle effect -->
+  <div class="static-overlay"></div>
+  <div class="scanline"></div>
+
+  <!-- Background pixel animations -->
+  <div class="pixel pixel-red" style="top: 5%; left: 10%; animation-delay: 0s;"></div>
+  <div class="pixel pixel-orange" style="top: 15%; left: 20%; animation-delay: 0.5s;"></div>
+  <div class="pixel pixel-yellow" style="top: 25%; left: 5%; animation-delay: 1s;"></div>
+  <div class="pixel pixel-green" style="top: 35%; left: 30%; animation-delay: 1.5s;"></div>
+  <div class="pixel pixel-blue" style="top: 45%; left: 15%; animation-delay: 2s;"></div>
+  <div class="pixel pixel-indigo" style="top: 55%; left: 25%; animation-delay: 2.5s;"></div>
+  <div class="pixel pixel-violet" style="top: 65%; left: 10%; animation-delay: 3s;"></div>
+
+  <div class="pixel pixel-red" style="top: 75%; left: 50%; animation-delay: 0s;"></div>
+  <div class="pixel pixel-orange" style="top: 65%; left: 60%; animation-delay: 0.5s;"></div>
+  <div class="pixel pixel-yellow" style="top: 55%; left: 70%; animation-delay: 1s;"></div>
+  <div class="pixel pixel-green" style="top: 45%; left: 80%; animation-delay: 1.5s;"></div>
+  <div class="pixel pixel-blue" style="top: 35%; left: 90%; animation-delay: 2s;"></div>
+  <div class="pixel pixel-indigo" style="top: 25%; left: 75%; animation-delay: 2.5s;"></div>
+  <div class="pixel pixel-violet" style="top: 15%; left: 85%; animation-delay: 3s;"></div>
+
+  <!-- Text elements representing digital decay -->
+  <div class="decay-element red glitch" style="top: 10%; left: 10%; transform: rotate(-5deg);">[ERROR 404] DATA NOT FOUND</div>
+  <div class="decay-element orange flicker" style="top: 20%; left: 70%; transform: rotate(10deg);">FRAGMENTED MEMORY</div>
+  <div class="decay-element yellow corrupt-text" style="top: 30%; left: 25%; font-size: 2vmin; transform: scale(1.1);">LOST.PACKET</div>
+  <div class="decay-element green fade-out" style="top: 40%; left: 50%; transform: rotate(2deg);">SYSTEM OVERLOAD</div>
+  <div class="decay-element blue glitch" style="top: 50%; left: 5%; transform: rotate(-12deg);">BITROT WARNING</div>
+  <div class="decay-element indigo flicker" style="top: 60%; left: 80%; font-size: 1.2vmin; transform: rotate(7deg);">DEGRADATION PROCESS</div>
+  <div class="decay-element violet corrupt-text" style="top: 70%; left: 15%; transform: scale(0.95);">_NULL POINTER_</div>
+  <div class="decay-element rainbow-text glitch" style="top: 80%; left: 40%; font-size: 3vmin; transform: rotate(-3deg);">VANISHING DIGITAL</div>
+  <div class="decay-element red fade-out" style="top: 5%; left: 45%;">FILE CORRUPTED</div>
+  <div class="decay-element yellow glitch" style="top: 85%; left: 70%; transform: rotate(15deg); font-size: 1.8vmin;">END OF CYCLE</div>
+  <div class="decay-element green flicker" style="top: 15%; left: 50%; transform: rotate(-8deg);">DISCONNECT</div>
+  <div class="decay-element blue corrupt-text" style="top: 90%; left: 10%; font-size: 1vmin;">//void</div>
+  <div class="decay-element violet" style="top: 25%; left: 85%; opacity: 0.6; transform: rotate(20deg);">SYNTAX ERROR</div>
+  <div class="decay-element orange" style="top: 75%; left: 30%; font-size: 2.5vmin; transform: scale(1.05);">GHOST IN THE SHELL</div>
+
+  <!-- Corrupted image element -->
+  <div class="corrupted-image" style="top: 20%; left: 40%; --hue: 0deg; --saturate: 100%; --contrast: 100%; --blur: 0px;"></div>
+  <div class="corrupted-image" style="top: 60%; left: 50%; width: 10vmin; height: 10vmin; animation-delay: 1.5s; --hue: 90deg; --saturate: 80%; --contrast: 120%; --blur: 0.5px;"></div>
+  <div class="corrupted-image" style="top: 40%; left: 80%; width: 12vmin; height: 12vmin; animation-delay: 3s; --hue: 180deg; --saturate: 120%; --contrast: 90%; --blur: 0.2px;"></div>
+
+  <!-- ASCII Art elements -->
+  <div class="ascii-art red" style="top: 30%; left: 60%; transform: rotate(-10deg);">
+    .____.
+    / __ \
+    | (__) |
+    \____/
+    D!GI7@L
+    D_C@Y
+  </div>
+  <div class="ascii-art blue" style="top: 50%; left: 20%; transform: rotate(8deg);">
+    _   _
+   | | | |
+   | |_| |
+   \_____/
+    @B Y 55
+     T R 0 N
+  </div>
+  <div class="ascii-art green" style="top: 10%; left: 80%; transform: rotate(15deg);">
+    +-+-+-+
+    |B|Y|T|E|
+    +-+-+-+
+    C0R_UPT
+  </div>
+  <div class="ascii-art yellow" style="top: 80%; left: 5%; transform: rotate(-20deg);">
+    >>>ERR<<<
+    #G#L#I#T#C#H#
+    _DELETE_
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-10 20:49:51.943491</div>
         <!DOCTYPE html>
 <html lang="en">
