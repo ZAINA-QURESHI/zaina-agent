@@ -16,6 +16,251 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 13:14:38.854730</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Algorithmic Rainbow Surveillance Collage</title>
+<style>
+  /* Import a pixel-art style font for a radical, digital aesthetic */
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from absolute positioning */
+    background: #000; /* Dark background to make rainbow and effects pop */
+    font-family: 'Press Start 2P', cursive, monospace; /* Pixel art font, falls back to monospace */
+    color: white; /* Default text color for general elements */
+    perspective: 1000px; /* Establishes a 3D perspective for potential transforms */
+  }
+
+  .collage-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Primary rainbow background gradient */
+    background: linear-gradient(
+      -45deg,
+      #FF0077, /* Vibrant Red-Pink */
+      #FF7700, /* Bright Orange */
+      #FFFF00, /* Pure Yellow */
+      #00FF00, /* Electric Green */
+      #00FFFF, /* Cyan */
+      #0077FF, /* Deep Blue */
+      #7700FF  /* Electric Purple */
+    );
+    background-size: 400% 400%; /* Allows the gradient to shift smoothly */
+    animation: gradientShift 15s ease infinite; /* Animates the background gradient */
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .element {
+    position: absolute;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    text-shadow: 0 0 5px rgba(0,255,255,0.7), 0 0 10px rgba(255,0,255,0.7); /* Dual-color glow */
+    mix-blend-mode: screen; /* Lightens and blends colors underneath */
+    user-select: none; /* Prevents text selection for a static, image-like feel */
+    box-sizing: border-box; /* Ensures padding and border are included in element's total dimensions */
+  }
+
+  .text-glitch {
+    font-family: 'Press Start 2P', cursive, monospace;
+    font-size: 3em;
+    color: #fff;
+    text-shadow:
+      -1px -1px 0 #FF00FF, /* Magenta shadow for glitch */
+      1px 1px 0 #00FFFF,  /* Cyan shadow for glitch */
+      2px 2px 0 #FF0077; /* Red-Pink shadow for perceived depth */
+    animation: glitchText 0.5s infinite alternate; /* Rapid, alternating glitch effect */
+    z-index: 100; /* High z-index to bring main text elements to the foreground */
+  }
+
+  @keyframes glitchText {
+    0% { transform: translate(0, 0) skewX(0deg); }
+    20% { transform: translate(-2px, 2px) skewX(-5deg); }
+    40% { transform: translate(1px, -1px) skewX(10deg); }
+    60% { transform: translate(-3px, 3px) skewX(-2deg); }
+    80% { transform: translate(2px, -2px) skewX(7deg); }
+    100% { transform: translate(0, 0) skewX(0deg); }
+  }
+
+  .data-grid {
+    background: rgba(255, 255, 255, 0.05); /* Very subtle transparent white background */
+    border: 1px solid rgba(0, 255, 255, 0.3); /* Cyan border */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3); /* Dual-color glow effect */
+    transform: rotate(45deg); /* Rotated for a dynamic, angular look */
+    pointer-events: none; /* Prevents interaction with these background elements */
+    z-index: 10; /* Placed behind most text elements */
+  }
+
+  .eye-icon {
+    font-size: 15em; /* Large eye icon */
+    color: #fff;
+    opacity: 0.4; /* Partially transparent */
+    text-shadow: 0 0 15px #FF0077, 0 0 30px #00FFFF, 0 0 60px #FF0077; /* Multi-layered, vibrant glow */
+    animation: pulse 3s infinite alternate; /* Subtle pulsing animation */
+    mix-blend-mode: overlay; /* Creates interesting color interactions with background */
+    z-index: 50; /* Positioned above data grids, below main text */
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.03); opacity: 0.5; } /* Slight scale and opacity change */
+    100% { transform: scale(1); opacity: 0.4; }
+  }
+
+  .lens-flare {
+    background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    filter: blur(40px); /* Blurry, ethereal glow */
+    opacity: 0.6;
+    animation: floaty 10s infinite ease-in-out; /* Slow, undulating movement */
+    mix-blend-mode: lighten; /* Brightens areas it overlaps */
+    z-index: 20; /* Between background and main elements */
+  }
+
+  @keyframes floaty {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, 30px) scale(1.05); }
+    50% { transform: translate(-10px, -20px) scale(0.95); }
+    75% { transform: translate(15px, 10px) scale(1.02); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  /* Transparent, blurred, rotating rainbow blobs */
+  .rainbow-layer {
+    width: 150px;
+    height: 150px;
+    opacity: 0.2; /* Very subtle transparency */
+    filter: blur(30px); /* Strong blur for an ethereal, glowing effect */
+    border-radius: 50%; /* Circular shape */
+    animation: rotateHue 20s linear infinite; /* Continuous hue rotation */
+    mix-blend-mode: screen; /* Lightens and blends with elements underneath */
+    z-index: 1; /* Furthest back, creating a deep background layer */
+  }
+
+  @keyframes rotateHue {
+    0% { filter: hue-rotate(0deg) blur(30px); }
+    100% { filter: hue-rotate(360deg) blur(30px); }
+  }
+
+  /* Text element with individual rainbow characters and animations */
+  .rainbow-text {
+      font-size: 1.8em;
+      font-family: 'Press Start 2P', cursive, monospace;
+      mix-blend-mode: screen;
+      z-index: 110; /* Highest z-index for these special text elements */
+      animation: rainbowTextGlow 2s infinite alternate; /* Pulsing glow for the whole word */
+  }
+  .rainbow-text span {
+      display: inline-block; /* Allows individual character transformation */
+      animation: waveText 1s infinite alternate; /* Up-and-down waving effect for each character */
+      text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Subtle white glow for readability */
+  }
+  /* Assigning specific rainbow colors and staggered animation delays to each character */
+  .rainbow-text .char1 { color: #FF0077; animation-delay: 0s; } /* Red-Pink */
+  .rainbow-text .char2 { color: #FF7700; animation-delay: 0.1s; } /* Orange */
+  .rainbow-text .char3 { color: #FFFF00; animation-delay: 0.2s; } /* Yellow */
+  .rainbow-text .char4 { color: #00FF00; animation-delay: 0.3s; } /* Green */
+  .rainbow-text .char5 { color: #00FFFF; animation-delay: 0.4s; } /* Cyan */
+  .rainbow-text .char6 { color: #0077FF; animation-delay: 0.5s; } /* Blue */
+  .rainbow-text .char7 { color: #7700FF; animation-delay: 0.6s; } /* Purple */
+  .rainbow-text .char8 { color: #FF0077; animation-delay: 0.7s; }
+  .rainbow-text .char9 { color: #FF7700; animation-delay: 0.8s; }
+  .rainbow-text .char10 { color: #FFFF00; animation-delay: 0.9s; }
+  .rainbow-text .char11 { color: #00FF00; animation-delay: 1.0s; }
+  .rainbow-text .char12 { color: #00FFFF; animation-delay: 1.1s; }
+
+
+  @keyframes waveText {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+  }
+
+  @keyframes rainbowTextGlow {
+      0% { text-shadow: 0 0 5px currentColor; }
+      100% { text-shadow: 0 0 15px currentColor, 0 0 30px currentColor; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Floating, blurred rainbow elements as background depth -->
+  <div class="element rainbow-layer" style="top: 10%; left: 5%; background-color: #FF0077;"></div>
+  <div class="element rainbow-layer" style="top: 20%; left: 15%; background-color: #FF7700; transform: rotate(20deg);"></div>
+  <div class="element rainbow-layer" style="top: 5%; right: 10%; background-color: #FFFF00; transform: rotate(-30deg);"></div>
+  <div class="element rainbow-layer" style="bottom: 10%; left: 20%; background-color: #00FF00; transform: scale(1.2);"></div>
+  <div class="element rainbow-layer" style="bottom: 5%; right: 5%; background-color: #00FFFF; transform: rotate(15deg);"></div>
+  <div class="element rainbow-layer" style="top: 40%; left: 30%; background-color: #0077FF; transform: scale(0.8);"></div>
+  <div class="element rainbow-layer" style="bottom: 20%; right: 20%; background-color: #7700FF; transform: rotate(-45deg);"></div>
+
+  <!-- Primary textual messages with glitch effect -->
+  <div class="element text-glitch" style="top: 10%; left: 50%; transform: translate(-50%, 0) rotate(-5deg);">YOU ARE DATA</div>
+  <div class="element text-glitch" style="top: 30%; left: 10%; font-size: 2em; transform: rotate(10deg); animation-delay: 0.1s;">ALGORITHM WATCHES</div>
+  <div class="element text-glitch" style="top: 55%; right: 5%; font-size: 2.5em; transform: rotate(-15deg); animation-delay: 0.2s;">THE EYE</div>
+  <div class="element text-glitch" style="top: 65%; right: 15%; font-size: 2.5em; transform: rotate(-10deg); animation-delay: 0.3s;">OF THE MACHINE</div>
+  <div class="element text-glitch" style="bottom: 10%; left: 50%; transform: translate(-50%, 0) rotate(5deg); font-size: 1.8em; animation-delay: 0.4s;">PRIVACY IS AN ECHO</div>
+
+  <!-- Abstract data grid elements, partially obscured -->
+  <div class="element data-grid" style="width: 300px; height: 300px; top: -50px; left: -50px;"></div>
+  <div class="element data-grid" style="width: 200px; height: 200px; bottom: -80px; right: -80px; transform: rotate(-30deg) scale(0.8);"></div>
+  <div class="element data-grid" style="width: 150px; height: 150px; top: 30%; left: 60%; transform: rotate(60deg) scale(0.6);"></div>
+
+  <!-- Central "eye" icon, symbolising surveillance -->
+  <div class="element eye-icon" style="top: 40%; left: 50%; transform: translate(-50%, -50%);">👁️</div>
+
+  <!-- Smaller data points / code fragments scattered around -->
+  <div class="element" style="top: 25%; left: 70%; font-size: 1.2em; opacity: 0.8; transform: rotate(20deg); z-index: 105;">01010101</div>
+  <div class="element" style="bottom: 30%; left: 5%; font-size: 1.2em; opacity: 0.7; transform: rotate(-10deg); z-index: 105;">FRAGMENT_X</div>
+  <div class="element" style="top: 5%; right: 40%; font-size: 1.5em; opacity: 0.9; transform: rotate(5deg); z-index: 105;">SYSTEM_LOG</div>
+
+  <!-- Lens flares for a camera/glowing effect -->
+  <div class="element lens-flare" style="top: 15%; left: 20%; animation-delay: 0.5s;"></div>
+  <div class="element lens-flare" style="bottom: 10%; right: 30%; width: 150px; height: 150px; animation-delay: 1.5s;"></div>
+
+  <!-- More subtle, smaller textual warnings -->
+  <div class="element" style="bottom: 50%; left: 25%; font-size: 0.9em; opacity: 0.6; transform: rotate(30deg); z-index: 105;">TRACKED</div>
+  <div class="element" style="top: 20%; right: 25%; font-size: 0.9em; opacity: 0.6; transform: rotate(-25deg); z-index: 105;">PROFILED</div>
+  <div class="element" style="bottom: 5%; left: 5%; font-size: 0.9em; opacity: 0.6; transform: rotate(10deg); z-index: 105;">MONITORED</div>
+
+  <!-- Dynamic rainbow-colored text elements -->
+  <div class="element rainbow-text" style="top: 45%; left: 15%; transform: rotate(15deg) scale(1.1); font-size: 2.2em;">
+    <span class="char1">D</span><span class="char2">A</span><span class="char3">T</span><span class="char4">A</span><span class="char5">G</span><span class="char6">H</span><span class="char7">O</span><span class="char8">S</span><span class="char9">T</span><span class="char10">S</span>
+  </div>
+
+  <div class="element rainbow-text" style="bottom: 25%; right: 10%; transform: rotate(-20deg) scale(0.9); font-size: 1.8em; animation-delay: 0.5s;">
+    <span class="char1">C</span><span class="char2">O</span><span class="char3">D</span><span class="char4">E</span><span class="char5">&nbsp;</span><span class="char6">E</span><span class="char7">Y</span><span class="char8">E</span>
+  </div>
+
+  <div class="element rainbow-text" style="top: 70%; left: 50%; transform: translate(-50%, 0) rotate(20deg) scale(0.8); font-size: 1.5em; animation-delay: 1s;">
+    <span class="char1">F</span><span class="char2">E</span><span class="char3">E</span><span class="char4">D</span><span class="char5">&nbsp;</span><span class="char6">T</span><span class="char7">H</span><span class="char8">E</span><span class="char9">&nbsp;</span><span class="char10">M</span><span class="char11">A</span><span class="char12">C</span><span class="char13">H</span><span class="char14">I</span><span class="char15">N</span><span class="char16">E</span>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 11:38:00.696870</div>
         <!DOCTYPE html>
 <html lang="en">
