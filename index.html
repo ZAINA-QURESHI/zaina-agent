@@ -16,6 +16,216 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 09:51:11.112760</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Rainbow Collage</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    overflow: hidden; /* Prevent scrollbars from overlapping elements */
+    background-color: #1a1a1a; /* Dark background */
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333; /* Dark concrete base */
+    overflow: hidden;
+    perspective: 1000px; /* For potential 3D effects, though not heavily used here */
+  }
+
+  .brutal-block {
+    position: absolute;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0.2); /* Darker, more pronounced border */
+    outline: 1px solid rgba(255, 255, 255, 0.1); /* Inner concrete-like line */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Stronger shadow */
+    line-height: 1.3;
+    padding: 15px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5); /* Depth */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smooth hover effect */
+  }
+
+  .brutal-block:hover {
+    transform: scale(1.02) rotate(0deg) !important; /* Straighten and slightly enlarge on hover */
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.7);
+    z-index: 101 !important; /* Bring to front on hover */
+  }
+
+  .brutal-text {
+    position: absolute;
+    font-size: 3.5em; /* Larger for impact */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8); /* Stronger shadow */
+    z-index: 100; /* Ensure text is on top */
+  }
+
+  /* Rainbow Colors */
+  .red { background-color: #FF0000; }
+  .orange { background-color: #FFA500; }
+  .yellow { background-color: #FFFF00; color: #222; } /* Darker text for yellow */
+  .green { background-color: #008000; }
+  .blue { background-color: #0000FF; }
+  .indigo { background-color: #4B0082; }
+  .violet { background-color: #EE82EE; }
+  .concrete { background-color: #777; color: #eee; }
+  .dark-concrete { background-color: #444; color: #ccc; }
+
+  /* Specific block styling for brutalist effect */
+  #block1 {
+    width: 300px; height: 400px;
+    top: 5%; left: 10%;
+    transform: rotate(-5deg);
+    z-index: 2;
+  }
+  #block2 {
+    width: 450px; height: 200px;
+    top: 15%; left: 30%;
+    z-index: 3;
+    transform: rotate(3deg);
+  }
+  #block3 {
+    width: 200px; height: 500px;
+    top: 10%; right: 5%;
+    transform: rotate(10deg) skewX(-15deg);
+    z-index: 4;
+  }
+  #block4 {
+    width: 600px; height: 150px;
+    bottom: 10%; left: 5%;
+    transform: rotate(-2deg);
+    z-index: 5;
+  }
+  #block5 {
+    width: 300px; height: 300px;
+    bottom: 5%; right: 15%;
+    transform: rotate(7deg) scale(0.9);
+    z-index: 6;
+  }
+  #block6 {
+    width: 150px; height: 600px;
+    top: -5%; left: 40%;
+    transform: rotate(15deg) skewY(5deg);
+    z-index: 1; /* Behind some others */
+  }
+  #block7 {
+    width: 250px; height: 250px;
+    top: 40%; left: 2%;
+    transform: rotate(-12deg);
+    z-index: 7;
+  }
+  #block8 {
+    width: 200px; height: 100px;
+    top: 60%; right: 5%;
+    transform: rotate(8deg);
+    z-index: 8;
+  }
+  #block9 {
+    width: 100px; height: 400px;
+    top: 20%; left: 60%;
+    transform: rotate(-7deg);
+    z-index: 9;
+  }
+  #block10 {
+    width: 350px; height: 120px;
+    top: 75%; left: 25%;
+    transform: rotate(12deg);
+    z-index: 10;
+  }
+
+  /* Specific text styling */
+  #text1 {
+    top: 50px; left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    color: #FFD700; /* Goldish for impact */
+    font-size: 5em;
+  }
+  #text2 {
+    bottom: 80px; left: 10%;
+    transform: rotate(5deg);
+    color: #00FFFF; /* Cyan */
+    font-size: 2.5em;
+  }
+  #text3 {
+    top: 25%; right: 10%;
+    transform: rotate(15deg);
+    color: #FF69B4; /* Hot Pink */
+    font-size: 1.8em;
+  }
+  #text4 {
+    top: 70%; left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    color: #ADFF2F; /* GreenYellow */
+    font-size: 3.5em;
+  }
+
+  /* Some smaller concrete elements for deeper brutalist texture */
+  .concrete-slab {
+    position: absolute;
+    background-color: #555;
+    border: 1px solid #888;
+    box-shadow: inset 0 0 7px rgba(0,0,0,0.4);
+    z-index: 0; /* Ensures they are in the background */
+  }
+  #slab1 { width: 800px; height: 100px; top: 70vh; left: -100px; transform: rotate(-10deg); }
+  #slab2 { width: 300px; height: 50px; top: 20vh; right: -50px; transform: rotate(20deg); }
+  #slab3 { width: 150px; height: 300px; bottom: -50px; left: 40%; transform: rotate(5deg); }
+  #slab4 { width: 400px; height: 80px; top: 5%; right: 20%; transform: rotate(-15deg); }
+
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Background Concrete Slabs (lower z-index) -->
+  <div id="slab1" class="concrete-slab"></div>
+  <div id="slab2" class="concrete-slab"></div>
+  <div id="slab3" class="concrete-slab"></div>
+  <div id="slab4" class="concrete-slab"></div>
+
+  <!-- Brutalist Blocks - Rainbow Spectrum -->
+  <div id="block1" class="brutal-block red">CONCRETE DREAMS</div>
+  <div id="block2" class="brutal-block orange">URBAN MONOLITHS</div>
+  <div id="block3" class="brutal-block yellow">EXPOSED AGGREGATE</div>
+  <div id="block4" class="brutal-block green">RAW ARCHITECTURE</div>
+  <div id="block5" class="brutal-block blue">MASSIVE FORMS</div>
+  <div id="block6" class="brutal-block indigo">POWERFUL PRESENCE</div>
+  <div id="block7" class="brutal-block violet">UNAPOLOGETIC</div>
+  <div id="block8" class="brutal-block dark-concrete">BRUTAL BEAUTY</div>
+  <div id="block9" class="brutal-block concrete">GEOMETRIC TRUTH</div>
+  <div id="block10" class="brutal-block red">STRUCTURAL HONESTY</div>
+
+  <!-- Overlapping text elements -->
+  <div id="text1" class="brutal-text">BRUTALIST</div>
+  <div id="text2" class="brutal-text">STRUCTURE</div>
+  <div id="text3" class="brutal-text">REINFORCED</div>
+  <div id="text4" class="brutal-text">UTILITY</div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 08:54:37.290701</div>
         <div style="width: 100vw; height: 100vh; background-color: #1a1a1a; overflow: hidden; position: relative; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center;">
 
