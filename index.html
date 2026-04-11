@@ -16,6 +16,263 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 05:02:19.376947</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Brutalist Rainbow Collage</title>
+</head>
+<body>
+
+<div id="brutalist-rainbow-collage">
+    <style>
+        /* Import Google Fonts for a bold, architectural look */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@400;700&display=swap');
+
+        /* Basic reset for the body */
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars from absolute positioning */
+            background-color: #1a1a1a; /* Dark background for stark contrast */
+            font-family: 'Oswald', sans-serif; /* Default bold font */
+            color: #ffffff; /* Default text color */
+        }
+
+        /* Main collage container */
+        #brutalist-rainbow-collage {
+            position: relative;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Helps in centering or aligning elements */
+            justify-content: center;
+            align-items: center;
+            perspective: 1500px; /* Adds a 3D perspective for transforms */
+            background: linear-gradient(135deg, #0d0d0d, #2f2f2f); /* Subtle dark gradient */
+            overflow: hidden; /* Ensures elements don't spill outside */
+        }
+
+        /* Styling for individual collage items */
+        .collage-item {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in sizing */
+            padding: 20px;
+            border: 4px solid rgba(255, 255, 255, 0.15); /* Subtle white border */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.3;
+            cursor: default;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease-in-out, z-index 0s linear 0.3s; /* Smooth transitions */
+        }
+
+        /* Hover effect for interactive elements */
+        .collage-item:hover {
+            transform: scale(1.03) rotateY(7deg) rotateX(3deg) translateX(10px) translateY(-10px) translateZ(50px) !important; /* Emphasized 3D movement */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.3);
+            z-index: 100; /* Bring hovered item significantly to front */
+            border-color: rgba(255, 255, 255, 0.5); /* Brighter border on hover */
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s ease-in-out, z-index 0s linear 0s;
+        }
+
+        .collage-item h2 {
+            margin: 0;
+            font-size: 1em; /* Relative to parent font-size */
+            color: inherit; /* Inherits color from parent */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+        }
+
+        /* Individual item styling - Rainbow colors and Brutalist images/text */
+
+        /* Red */
+        .item-1 {
+            background-color: #ff0000;
+            top: 10%; left: 8%;
+            width: 320px; height: 210px;
+            transform: rotate(-10deg) translateX(-30px) translateY(15px) translateZ(10px);
+            z-index: 5;
+            background-image: url('https://images.unsplash.com/photo-1579621379374-90f77271cf5a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #ffe0e0; /* Light red text */
+            mix-blend-mode: multiply; /* Radical blend mode */
+        }
+
+        /* Orange */
+        .item-2 {
+            background-color: #ff7f00;
+            top: 25%; left: 35%;
+            width: 280px; height: 190px;
+            transform: rotate(7deg) scale(1.05) translateX(20px) translateZ(20px);
+            z-index: 8;
+            background-image: url('https://images.unsplash.com/photo-1616422369619-86925fb26075?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #331a00; /* Dark orange text */
+            mix-blend-mode: overlay;
+        }
+
+        /* Yellow */
+        .item-3 {
+            background-color: #ffff00;
+            top: 15%; right: 10%;
+            width: 380px; height: 160px;
+            transform: rotate(12deg) translateY(-15px) translateZ(15px);
+            z-index: 7;
+            background-image: url('https://images.unsplash.com/photo-1596739818820-2c77d4c2069b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #444400; /* Dark yellow text */
+            mix-blend-mode: screen;
+        }
+
+        /* Green */
+        .item-4 {
+            background-color: #00ff00;
+            bottom: 10%; left: 15%;
+            width: 300px; height: 230px;
+            transform: rotate(-15deg) translateX(10px) translateY(-10px) translateZ(5px);
+            z-index: 6;
+            color: #e0ffe0; /* Light green text */
+            font-family: 'Roboto Mono', monospace; /* Different font for contrast */
+            font-size: 1.6em;
+            background: linear-gradient(45deg, #009900, #00cc00); /* Green gradient */
+            mix-blend-mode: hard-light;
+        }
+
+        /* Blue */
+        .item-5 {
+            background-color: #0000ff;
+            bottom: 25%; right: 30%;
+            width: 350px; height: 200px;
+            transform: rotate(5deg) translateX(-15px) translateZ(25px);
+            z-index: 9;
+            background-image: url('https://images.unsplash.com/photo-1621376678799-a6813b2e5926?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #e0e0ff; /* Light blue text */
+            mix-blend-mode: lighten;
+        }
+
+        /* Indigo */
+        .item-6 {
+            background-color: #4b0082;
+            bottom: 5%; right: 8%;
+            width: 240px; height: 260px;
+            transform: rotate(-8deg) translateY(25px) translateZ(0px);
+            z-index: 4;
+            color: #ffe0ff; /* Light purple text */
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #3a006a, #6a00b0); /* Indigo gradient */
+            mix-blend-mode: color-burn;
+        }
+
+        /* Violet - Central and most radical text element */
+        .item-7 {
+            background-color: #ee82ee;
+            top: 50%; left: 50%;
+            width: 450px; height: 120px;
+            transform: translate(-50%, -50%) rotate(3deg) skewX(-20deg) translateZ(30px); /* Skewed and central */
+            z-index: 10; /* Highest z-index for prominence */
+            color: #330033; /* Dark violet text */
+            font-size: 2.8em;
+            font-weight: 900;
+            border: 6px dashed #fff; /* Dashed border for extra flair */
+            background: linear-gradient(90deg, #dd66dd, #9933cc); /* Violet gradient */
+            mix-blend-mode: luminosity;
+        }
+
+        /* A more subtle grey/concrete texture block */
+        .item-8 {
+            background-color: #808080;
+            top: 55%; left: 10%;
+            width: 220px; height: 130px;
+            transform: rotate(18deg) translateX(-15px) translateZ(-5px);
+            z-index: 3;
+            color: #eeeeee;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.3em;
+            background: radial-gradient(#999, #666);
+            opacity: 0.8; /* Slightly transparent */
+            mix-blend-mode: soft-light;
+        }
+
+        /* Background text overlays for a deeper "brutalist" feel */
+        .text-overlay {
+            position: absolute;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.04); /* Very subtle, almost transparent */
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+            pointer-events: none; /* Allows clicks to pass through to items below */
+            z-index: 2; /* Behind most collage items */
+            user-select: none; /* Prevent text selection */
+        }
+        .text-overlay-1 { 
+            top: 5%; left: -2%; 
+            font-size: 8em; 
+            transform: rotate(-12deg); 
+        }
+        .text-overlay-2 { 
+            bottom: 0%; right: -2%; 
+            font-size: 7em; 
+            transform: rotate(18deg); 
+        }
+        .text-overlay-3 { 
+            top: 30%; left: 40%; 
+            font-size: 6em; 
+            transform: rotate(5deg); 
+            opacity: 0.03; 
+        }
+    </style>
+
+    <!-- Subtle, large background text elements -->
+    <div class="text-overlay text-overlay-1">BRUTALIST</div>
+    <div class="text-overlay text-overlay-2">ARCH</div>
+    <div class="text-overlay text-overlay-3">CONCRETE</div>
+
+    <!-- The Rainbow Brutalist Collage Items -->
+    <div class="collage-item item-1">
+        <h2>Monolithic Grandeur</h2>
+    </div>
+    <div class="collage-item item-2">
+        <h2>Raw Textures, Bold Forms</h2>
+    </div>
+    <div class="collage-item item-3">
+        <h2>Geometric Purity</h2>
+    </div>
+    <div class="collage-item item-4">
+        <h2>Utility Transformed</h2>
+    </div>
+    <div class="collage-item item-5">
+        <h2>Brutal Honesty</h2>
+    </div>
+    <div class="collage-item item-6">
+        <h2>Unapologetic Scale</h2>
+    </div>
+    <div class="collage-item item-7">
+        <h2>RADICAL RAINBOW BRUTALISM</h2>
+    </div>
+    <div class="collage-item item-8">
+        <h2>Urban Symphony</h2>
+    </div>
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 02:50:08.497534</div>
         <!DOCTYPE html>
 <html lang="en">
