@@ -16,6 +16,302 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 23:42:51.897670</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Identity & Rainbow Politics Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; /* Poppins is a good modern font, but let's stick to standard if no external resources */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0d0d0d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            perspective: 1000px; /* For potential 3D effects, even if subtle */
+        }
+
+        .collage-container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 70px rgba(255, 255, 255, 0.4);
+            background-color: #1a1a1a;
+            overflow: hidden;
+            transform: rotateX(5deg) rotateY(-5deg) rotateZ(2deg); /* Subtle initial 3D tilt */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .collage-container:hover {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* Straighten on hover */
+        }
+
+        .collage-element {
+            position: absolute;
+            padding: 10px 18px;
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px) saturate(1.5);
+            -webkit-backdrop-filter: blur(3px) saturate(1.5);
+            opacity: 0.9;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease, box-shadow 0.4s ease, z-index 0s linear 0.2s; /* Z-index transition delay */
+            cursor: default;
+            user-select: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .collage-element:hover {
+            transform: scale(1.1) rotate(0deg) translateZ(50px) !important; /* Pop out and straighten */
+            opacity: 1;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.6);
+            z-index: 999; /* Bring to front on hover */
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease, box-shadow 0.4s ease, z-index 0s linear;
+        }
+
+        /* Rainbow color palette for text/backgrounds */
+        .color-red { background-color: rgba(230, 0, 0, 0.75); }
+        .color-orange { background-color: rgba(255, 140, 0, 0.75); }
+        .color-yellow { background-color: rgba(255, 215, 0, 0.75); }
+        .color-green { background-color: rgba(0, 128, 0, 0.75); }
+        .color-blue { background-color: rgba(0, 0, 255, 0.75); }
+        .color-indigo { background-color: rgba(75, 0, 130, 0.75); }
+        .color-violet { background-color: rgba(238, 130, 238, 0.75); }
+
+        .rainbow-bg-gradient {
+            background: linear-gradient(145deg,
+                #e60000 0%,
+                #ff8c00 16%,
+                #ffd700 33%,
+                #008000 50%,
+                #0000ff 66%,
+                #4b0082 83%,
+                #ee82ee 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .rainbow-text {
+            background-image: linear-gradient(to right,
+                #e60000, #ff8c00, #ffd700, #008000, #0000ff, #4b0082, #ee82ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            display: inline-block;
+            text-shadow: none; /* Remove default text shadow when using background-clip */
+        }
+
+        /* Specific elements positioning and styling */
+        .el1 { top: 5%; left: 3%; transform: rotate(-8deg); font-size: 2em; z-index: 10; padding: 15px 25px; background-color: rgba(230, 0, 0, 0.8); }
+        .el2 { top: 12%; left: 20%; transform: rotate(5deg); font-size: 1.3em; z-index: 12; width: 200px; background-color: rgba(255, 140, 0, 0.8); }
+        .el3 { top: 8%; right: 5%; transform: rotate(12deg); font-size: 2.5em; z-index: 15; padding: 18px 30px; background-color: rgba(255, 215, 0, 0.8); }
+        .el4 { top: 25%; left: 8%; transform: rotate(3deg); font-size: 1.6em; z-index: 11; width: 240px; background-color: rgba(0, 128, 0, 0.8); }
+        .el5 { top: 30%; right: 10%; transform: rotate(-10deg); font-size: 2em; z-index: 13; padding: 12px 20px; background-color: rgba(0, 0, 255, 0.8); }
+        .el6 { top: 40%; left: 2%; transform: rotate(-15deg); font-size: 1.2em; z-index: 10; width: 180px; background-color: rgba(75, 0, 130, 0.8); }
+        .el7 { top: 45%; right: 25%; transform: rotate(7deg); font-size: 1.8em; z-index: 14; padding: 10px 18px; background-color: rgba(238, 130, 238, 0.8); }
+        .el8 { top: 55%; left: 15%; transform: rotate(18deg); font-size: 1.4em; z-index: 11; width: 220px; background-color: rgba(255, 0, 0, 0.8); }
+        .el9 { top: 60%; right: 5%; transform: rotate(-5deg); font-size: 2.8em; z-index: 16; padding: 20px 35px; background-color: rgba(0, 128, 0, 0.8); }
+        .el10 { top: 70%; left: 25%; transform: rotate(-7deg); font-size: 1.7em; z-index: 12; width: 260px; background-color: rgba(255, 140, 0, 0.8); }
+        .el11 { top: 75%; right: 30%; transform: rotate(10deg); font-size: 1.1em; z-index: 10; width: 190px; background-color: rgba(91, 206, 250, 0.8); /* Transgender flag light blue */ }
+        .el12 { bottom: 3%; left: 5%; transform: rotate(-3deg); font-size: 2em; z-index: 17; padding: 15px 25px; background-color: rgba(215, 0, 0, 0.8); /* Pan-African flag red */ }
+        .el13 { bottom: 10%; right: 15%; transform: rotate(8deg); font-size: 1.5em; z-index: 13; width: 210px; background-color: rgba(147, 112, 219, 0.8); /* Neurodiversity purple */ }
+        .el14 { top: 50%; left: 45%; transform: rotate(2deg); background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px) brightness(1.2); -webkit-backdrop-filter: blur(12px) brightness(1.2); color: black; font-size: 3.5em; font-weight: 900; z-index: 20; padding: 25px 40px; border-radius: 15px; border: 2px solid rgba(255,255,255,0.5); }
+
+        .el15 { top: 20%; left: 45%; transform: rotate(-12deg); background-color: rgba(0, 0, 0, 0.7); color: #fff; font-size: 1.2em; z-index: 18; padding: 10px 15px; width: 220px; }
+        .el16 { bottom: 20%; left: 40%; transform: rotate(15deg); background-color: rgba(255, 255, 255, 0.7); color: #000; font-size: 1.4em; z-index: 19; padding: 12px 20px; width: 240px; }
+        .el17 { top: 65%; left: 60%; transform: rotate(-9deg); background-color: rgba(153, 0, 76, 0.8); font-size: 1.6em; z-index: 14; padding: 10px 18px; /* Bi-sexual flag pink */ }
+        .el18 { top: 35%; left: 35%; transform: rotate(6deg); background-color: rgba(0, 115, 0, 0.8); font-size: 1.3em; z-index: 16; padding: 8px 15px; /* Agender flag green */ }
+        .el19 { bottom: 25%; right: 3%; transform: rotate(4deg); background-color: rgba(255, 210, 0, 0.8); font-size: 1.7em; z-index: 15; padding: 12px 20px; /* Non-binary flag yellow */ }
+        .el20 { top: 15%; left: 60%; transform: rotate(14deg); background-color: rgba(118, 0, 168, 0.8); font-size: 1.4em; z-index: 17; padding: 10px 18px; /* Asexual flag purple */ }
+        .el21 { top: 78%; left: 55%; transform: rotate(22deg); background-color: rgba(255, 255, 255, 0.8); color: black; font-size: 1em; z-index: 10; width: 150px; }
+        .el22 { top: 3%; left: 65%; transform: rotate(-18deg); background-color: rgba(0,0,0,0.8); font-size: 1.1em; z-index: 11; width: 170px; }
+        .el23 { bottom: 1%; right: 40%; transform: rotate(-13deg); background-color: rgba(255,192,203,0.8); color: black; font-size: 1.5em; z-index: 12; width: 190px; }
+
+
+        /* Flag-like elements */
+        .flag-gay {
+            width: 160px;
+            height: 96px;
+            background: linear-gradient(to bottom,
+                #E40303 0%, #E40303 16.6%,
+                #FF8C00 16.6%, #FF8C00 33.2%,
+                #FFED00 33.2%, #FFED00 49.8%,
+                #008026 49.8%, #008026 66.4%,
+                #004dff 66.4%, #004dff 83%,
+                #750787 83%, #750787 100%);
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            top: 2%; left: 35%;
+            transform: rotate(-10deg);
+            z-index: 19;
+            opacity: 0.95;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .flag-trans {
+            width: 130px;
+            height: 78px;
+            background: linear-gradient(to bottom,
+                #5BCEFA 0%, #5BCEFA 20%,
+                #F5A9B8 20%, #F5A9B8 40%,
+                #FFFFFF 40%, #FFFFFF 60%,
+                #F5A9B8 60%, #F5A9B8 80%,
+                #5BCEFA 80%, #5BCEFA 100%);
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            top: 50%; right: 1%;
+            transform: rotate(15deg);
+            z-index: 18;
+            opacity: 0.95;
+            padding: 0;
+        }
+
+        .flag-blm {
+            width: 110px;
+            height: 110px;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            top: 80%; left: 70%;
+            transform: rotate(-20deg);
+            z-index: 20;
+            opacity: 0.98;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+            padding: 0;
+            overflow: hidden;
+        }
+        .flag-blm::before {
+            content: '✊🏽'; /* Raised Fist, Medium Skin Tone */
+            font-size: 3em;
+            line-height: 1;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* Subtle glow */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .collage-container {
+                width: 98vw;
+                height: 98vh;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* No initial 3D on small screens */
+            }
+            .collage-element {
+                padding: 6px 10px;
+                font-size: 0.7em !important;
+                border-radius: 5px;
+            }
+            .collage-element:hover {
+                transform: scale(1.08) rotate(0deg) translateZ(20px) !important;
+            }
+            .el1, .el3, .el9, .el14 { font-size: 1.2em !important; padding: 8px 12px !important;}
+            .el14 { font-size: 2em !important; padding: 15px 20px !important;}
+            .flag-gay, .flag-trans {
+                width: 100px;
+                height: 60px;
+            }
+            .flag-blm {
+                width: 70px;
+                height: 70px;
+                font-size: 0.7em;
+            }
+            .flag-blm::before {
+                font-size: 2em;
+            }
+            /* Adjust positions for smaller screens to avoid too much overlap */
+            .el1 { top: 2%; left: 2%; }
+            .el2 { top: 10%; left: 25%; }
+            .el3 { top: 5%; right: 2%; }
+            .el4 { top: 20%; left: 5%; }
+            .el5 { top: 25%; right: 5%; }
+            .el6 { top: 35%; left: 0%; }
+            .el7 { top: 40%; right: 15%; }
+            .el8 { top: 50%; left: 8%; }
+            .el9 { top: 55%; right: 2%; }
+            .el10 { top: 65%; left: 20%; }
+            .el11 { top: 70%; right: 20%; }
+            .el12 { bottom: 2%; left: 2%; }
+            .el13 { bottom: 5%; right: 8%; }
+            .el14 { top: 45%; left: 30%; font-size: 2em !important; padding: 15px !important; }
+            .el15 { top: 15%; left: 40%; }
+            .el16 { bottom: 15%; left: 30%; }
+            .el17 { top: 60%; left: 55%; }
+            .el18 { top: 30%; left: 30%; }
+            .el19 { bottom: 20%; right: 2%; }
+            .el20 { top: 10%; left: 55%; }
+            .el21 { top: 70%; left: 45%; }
+            .el22 { top: 0%; left: 60%; }
+            .el23 { bottom: 0%; right: 30%; }
+            .flag-gay { top: 0%; left: 30%; }
+            .flag-trans { top: 45%; right: 0%; }
+            .flag-blm { top: 75%; left: 65%; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="collage-container">
+
+    <div class="collage-element el1">Identity is Power.</div>
+    <div class="collage-element el2">OUR VOICES MATTER.</div>
+    <div class="collage-element el3">LISTEN & LEARN.</div>
+    <div class="collage-element el4">Intersectionality: See the Whole.</div>
+    <div class="collage-element el5">My Pronouns, My Truth.</div>
+    <div class="collage-element el6">Solidarity Across Differences.</div>
+    <div class="collage-element el7">Black Lives Always Matter.</div>
+    <div class="collage-element el8">Queer Joy is Resistance.</div>
+    <div class="collage-element el9">BELONGING FOR ALL.</div>
+    <div class="collage-element el10">Embrace Every Unique Story.</div>
+    <div class="collage-element el11">Neurodivergent Pride.</div>
+    <div class="collage-element el12">Feminism Means Liberation.</div>
+    <div class="collage-element el13">Access for Everyone.</div>
+    <div class="collage-element el14"><span class="rainbow-text">EQUITY.</span></div>
+    <div class="collage-element el15">"None of us are free until all of us are free."</div>
+    <div class="collage-element el16">The Personal is Deeply Political.</div>
+    <div class="collage-element el17">Love Knows No Bounds.</div>
+    <div class="collage-element el18">Defend Trans Youth!</div>
+    <div class="collage-element el19">OUR SHARED FUTURE.</div>
+    <div class="collage-element el20">No Human is Illegal.</div>
+    <div class="collage-element el21">DECOLONIZE.</div>
+    <div class="collage-element el22">Question Norms.</div>
+    <div class="collage-element el23">Radical Empathy.</div>
+
+
+    <div class="collage-element flag-gay" title="Gay Pride Flag"></div>
+    <div class="collage-element flag-trans" title="Transgender Pride Flag"></div>
+    <div class="collage-element flag-blm" title="Black Lives Matter"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">identity politics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 22:43:54.774333</div>
         @#$
 
