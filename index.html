@@ -16,6 +16,167 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 16:47:22.504226</div>
+        <div style="width: 100%; height: 100vh; overflow: hidden; position: relative; font-family: 'Press Start 2P', cursive, sans-serif; background: black;">
+
+    <!-- Background pulsing rainbow gradient -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+                background-size: 400% 400%;
+                animation: gradientShift 15s ease infinite alternate;
+                opacity: 0.2;"></div>
+
+    <style>
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-2px, 2px); opacity: 0.8; }
+            40% { transform: translate(2px, -2px); opacity: 0.6; }
+            60% { transform: translate(-1px, 1px); opacity: 0.9; }
+            80% { transform: translate(1px, -1px); opacity: 0.7; }
+            100% { transform: translate(0); opacity: 1; }
+        }
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px #0fa,
+                    0 0 80px #0fa,
+                    0 0 90px #0fa,
+                    0 0 100px #0fa,
+                    0 0 150px #0fa;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 5px rgba(255,255,255,0.7); }
+            50% { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.8); }
+            100% { text-shadow: 0 0 5px rgba(255,255,255,0.7); }
+        }
+        @keyframes codeRain {
+            0% { transform: translateY(-100%); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+
+    <!-- Glitching Title -->
+    <h1 style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); color: white; font-size: 3.5em; text-align: center;
+               text-shadow: 0 0 10px #f0f, 0 0 20px #0ff; z-index: 10;
+               animation: glitch 0.8s infinite alternate, flicker 4s infinite;">
+        THE ALL-SEEING RAINBOW EYE
+    </h1>
+
+    <!-- Algorithmic Eye/Lens -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg);
+                width: 250px; height: 250px; border-radius: 50%;
+                background: radial-gradient(circle at center, #fff 0%, #ff00ff 10%, #00ffff 20%, #00ff00 30%, #ffff00 40%, #ff7f00 50%, #ff0000 60%, #4b0082 70%, black 100%);
+                box-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.6), 0 0 120px rgba(255, 0, 255, 0.4);
+                animation: pulseGlow 3s infinite alternate;
+                z-index: 5;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                    width: 80px; height: 80px; border-radius: 50%; background: #000;
+                    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.7);
+                    animation: glitch 2s infinite alternate;"></div>
+    </div>
+
+    <!-- Data Streams / Code Rain -->
+    <div style="position: absolute; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 3;">
+        <script>
+            function createCodeRain(count) {
+                const container = document.querySelector('.data-rain-container'); // Need a container
+                const characters = '01#$!@%&*()_+-=[]{}|;:,.<>?/ABCDEF';
+                for (let i = 0; i < count; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = characters[Math.floor(Math.random() * characters.length)];
+                    span.style.position = 'absolute';
+                    span.style.left = `${Math.random() * 100}%`;
+                    span.style.top = `${-Math.random() * 20}%`; // Start slightly off-screen
+                    span.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                    span.style.fontSize = `${10 + Math.random() * 15}px`;
+                    span.style.opacity = '0';
+                    span.style.animation = `codeRain ${5 + Math.random() * 10}s linear infinite ${-Math.random() * 5}s`;
+                    span.style.whiteSpace = 'nowrap';
+                    // container.appendChild(span); // This needs a container
+                    document.body.appendChild(span); // For standalone output, append to body or main div
+                }
+            }
+            // createCodeRain(100); // This won't run in pure HTML unless put in a script tag within the HTML
+        </script>
+        <!-- Manually inject a few for static HTML, or rely on JS above in a full browser -->
+        <span style="position: absolute; top: 5%; left: 10%; color: #ff00ff; font-size: 1.2em; animation: codeRain 8s linear infinite -1s;">[TRACE_INIT]</span>
+        <span style="position: absolute; top: 15%; left: 80%; color: #00ffff; font-size: 1em; animation: codeRain 10s linear infinite -3s;">{PROFILE_DATA}</span>
+        <span style="position: absolute; top: 30%; left: 30%; color: #ffff00; font-size: 1.5em; animation: codeRain 7s linear infinite -2s;">ACCESS_GRANTED_ID:0xFA3C</span>
+        <span style="position: absolute; top: 60%; left: 5%; color: #ff0000; font-size: 0.9em; animation: codeRain 9s linear infinite -5s;">USER_ACTIVITY_LOG</span>
+        <span style="position: absolute; top: 70%; left: 70%; color: #00ff00; font-size: 1.1em; animation: codeRain 6s linear infinite -4s;">DATA_MINING_COMPLETE</span>
+        <span style="position: absolute; top: 20%; left: 55%; color: #4b0082; font-size: 1.3em; animation: codeRain 11s linear infinite -0.5s;">[BEHAVIORAL_PREDICTION]</span>
+        <span style="position: absolute; top: 85%; left: 20%; color: #9400d3; font-size: 0.8em; animation: codeRain 7.5s linear infinite -6s;">~ENCRYPTED_SIGNAL~</span>
+    </div>
+
+    <!-- Data Fragments / Pop-ups -->
+    <div style="position: absolute; top: 25%; left: 15%; width: 150px; height: 80px; background: rgba(0, 0, 0, 0.7); border: 2px solid #ff00ff; padding: 10px; color: #ff00ff; font-size: 0.8em; text-align: center;
+                box-shadow: 0 0 15px #ff00ff; animation: glitch 3s infinite alternate; z-index: 6;">
+        FACE_RECOGNIZED: 98.7%
+        <div style="position: absolute; bottom: -5px; right: -5px; width: 15px; height: 15px; background: #ff00ff; transform: rotate(45deg);"></div>
+    </div>
+
+    <div style="position: absolute; bottom: 10%; right: 10%; width: 180px; height: 100px; background: rgba(0, 0, 0, 0.7); border: 2px solid #00ffff; padding: 10px; color: #00ffff; font-size: 0.75em; text-align: center;
+                box-shadow: 0 0 15px #00ffff; transform: rotate(-5deg); animation: glitch 2.5s infinite alternate 0.5s; z-index: 7;">
+        LOCATION_TRACK:
+        LAT: 34.0522° N
+        LON: 118.2437° W
+        <div style="position: absolute; top: -5px; left: -5px; width: 15px; height: 15px; background: #00ffff; transform: rotate(45deg);"></div>
+    </div>
+
+    <div style="position: absolute; top: 70%; left: 25%; width: 160px; height: 70px; background: rgba(0, 0, 0, 0.7); border: 2px solid #ffff00; padding: 10px; color: #ffff00; font-size: 0.85em; text-align: center;
+                box-shadow: 0 0 15px #ffff00; transform: rotate(8deg); animation: glitch 3.5s infinite alternate 1s; z-index: 8;">
+        PURCHASE_HISTORY:
+        ITEM: "Coffee Mug"
+        <div style="position: absolute; top: -5px; right: -5px; width: 15px; height: 15px; background: #ffff00; transform: rotate(45deg);"></div>
+    </div>
+
+    <div style="position: absolute; top: 18%; right: 20%; width: 200px; height: 90px; background: rgba(0, 0, 0, 0.7); border: 2px solid #ff0000; padding: 10px; color: #ff0000; font-size: 0.9em; text-align: center;
+                box-shadow: 0 0 15px #ff0000; transform: rotate(-12deg); animation: glitch 4s infinite alternate 1.5s; z-index: 9;">
+        SENTIMENT_ANALYSIS:
+        MOOD: "Neutral/Happy"
+        <div style="position: absolute; bottom: -5px; left: -5px; width: 15px; height: 15px; background: #ff0000; transform: rotate(45deg);"></div>
+    </div>
+
+    <!-- Scanline effect for retro feel -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.1) 0px,
+                    rgba(0, 0, 0, 0.1) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+                pointer-events: none;
+                z-index: 100;
+                opacity: 0.5;
+                animation: scanline 0.3s linear infinite;
+                background-size: 100% 100px;"></div>
+
+</div>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 15:40:28.939080</div>
         <!DOCTYPE html>
 <html lang="en">
