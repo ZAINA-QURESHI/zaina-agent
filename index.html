@@ -16,6 +16,338 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 18:57:05.869794</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Brutalist Rainbow Collage</title>
+    <style>
+        /* Import Google Fonts for a brutalist-friendly aesthetic */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Mono', monospace; /* Default stark font */
+            background-color: #111; /* Dark background for contrast */
+            overflow-x: hidden; /* Prevent horizontal scroll due to rotated elements */
+            color: #eee;
+            line-height: 1.5;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            min-height: 250vh; /* Ample vertical space for collage elements */
+            overflow: hidden; /* Contain absolutely positioned children */
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); /* Subtle dark gradient */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Base style for all collage elements */
+        .collage-item {
+            position: absolute;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+            transition: all 0.5s ease-in-out; /* Smooth hover transitions */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            cursor: default;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.02) rotate(2deg) !important; /* Slight lift and rotation */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            z-index: 100; /* Bring hovered item to front */
+        }
+
+        /* Rainbow Color Palette */
+        .red { background-color: #E74C3C; color: #fff; } /* Alizarin Crimson */
+        .orange { background-color: #E67E22; color: #fff; } /* Carrot Orange */
+        .yellow { background-color: #F1C40F; color: #333; } /* Sunglow Yellow */
+        .green { background-color: #2ECC71; color: #111; } /* Emerald Green */
+        .blue { background-color: #3498DB; color: #fff; } /* Peter River Blue */
+        .indigo { background-color: #8E44AD; color: #fff; } /* Wisteria Purple */
+        .violet { background-color: #9B59B6; color: #333; } /* Amethyst Purple */
+        .cyan { background-color: #1ABC9C; color: #111; } /* Turquoise */
+        .magenta { background-color: #FF00FF; color: #fff; } /* Pure Magenta */
+        .dark-blue { background-color: #2C3E50; color: #fff; } /* Midnight Blue */
+
+        /* Title Element Styling */
+        .item-title {
+            top: 5vh; left: 5vw;
+            width: 80vw;
+            padding: 30px;
+            font-family: 'Oswald', sans-serif; /* Bold, impactful font for title */
+            font-size: 6vw;
+            line-height: 1.1;
+            z-index: 50;
+            background: linear-gradient(45deg, #FF00FF, #1ABC9C, #F1C40F, #E74C3C); /* Rainbow gradient text */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            border: none; /* No border for the title */
+            box-shadow: none; /* No shadow for the title */
+            pointer-events: none; /* Make text non-interactive to prevent hover interference */
+        }
+        .item-title:hover { transform: none !important; box-shadow: none; } /* Disable hover for title */
+
+        /* Individual Collage Item Positioning, Sizing, and Rotation */
+        .item-1 { /* Red */
+            top: 25vh; left: 60vw;
+            width: 350px; height: 220px;
+            transform: rotate(-7deg);
+            z-index: 10;
+            font-size: 0.9em;
+        }
+
+        .item-2 { /* Orange */
+            top: 38vh; left: 10vw;
+            width: 420px; height: 180px;
+            transform: rotate(4deg);
+            z-index: 15;
+            font-size: 1.1em;
+            text-align: right;
+            border-left: 8px solid #F1C40F; /* Accent border */
+        }
+
+        .item-3 { /* Yellow - Image */
+            top: 50vh; left: 45vw;
+            width: 380px; height: 250px;
+            transform: rotate(9deg);
+            z-index: 12;
+            overflow: hidden;
+        }
+        .item-3 img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%); transition: filter 0.4s; }
+        .item-3 img:hover { filter: grayscale(0%); }
+
+        .item-4 { /* Green */
+            top: 68vh; left: 5vw;
+            width: 480px; height: 160px;
+            transform: rotate(-3deg);
+            z-index: 20;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .item-5 { /* Blue - Image */
+            top: 85vh; left: 70vw;
+            width: 300px; height: 380px;
+            transform: rotate(11deg);
+            z-index: 18;
+            overflow: hidden;
+            border-bottom: 8px solid #E74C3C; /* Accent border */
+        }
+        .item-5 img { width: 100%; height: 100%; object-fit: cover; }
+
+        .item-6 { /* Indigo */
+            top: 105vh; left: 20vw;
+            width: 400px; height: 120px;
+            transform: rotate(-6deg);
+            z-index: 25;
+            font-size: 1.2em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-7 { /* Violet - Image */
+            top: 120vh; left: 50vw;
+            width: 340px; height: 280px;
+            transform: rotate(6deg);
+            z-index: 22;
+            overflow: hidden;
+        }
+        .item-7 img { width: 100%; height: 100%; object-fit: cover; filter: sepia(30%); transition: filter 0.4s; }
+        .item-7 img:hover { filter: sepia(0%); }
+
+        .item-8 { /* Cyan */
+            top: 140vh; left: 8vw;
+            width: 520px; height: 200px;
+            transform: rotate(-5deg);
+            z-index: 28;
+            font-size: 1.4em;
+            line-height: 1.3;
+        }
+
+        .item-9 { /* Magenta - Image */
+            top: 158vh; left: 68vw;
+            width: 280px; height: 320px;
+            transform: rotate(13deg);
+            z-index: 21;
+            overflow: hidden;
+            border-top: 8px solid #2ECC71; /* Accent border */
+        }
+        .item-9 img { width: 100%; height: 100%; object-fit: cover; }
+
+        .item-10 { /* Dark Blue */
+            top: 175vh; left: 30vw;
+            width: 320px; height: 150px;
+            transform: rotate(-9deg);
+            z-index: 19;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .item-11 { /* Green-ish */
+            top: 190vh; left: 5vw;
+            width: 450px; height: 200px;
+            transform: rotate(7deg);
+            z-index: 26;
+            background-color: #27AE60; /* Another shade of green */
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+        }
+
+        .item-12 { /* Final Accent */
+            top: 210vh; left: 50vw;
+            width: 400px; height: 100px;
+            transform: rotate(-4deg);
+            z-index: 30;
+            background-color: #E67E22; /* Orange for emphasis */
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .collage-container {
+                min-height: auto; /* Allow height to adjust dynamically */
+                height: auto;
+                padding: 10px;
+            }
+
+            .collage-item {
+                position: relative; /* Stack elements naturally */
+                width: 90% !important; /* Make items wider */
+                left: 5% !important; /* Center them */
+                top: auto !important; /* Remove absolute top positioning */
+                transform: none !important; /* Remove rotation */
+                margin-bottom: 25px; /* Add vertical spacing between stacked items */
+                height: auto !important; /* Allow height to adjust to content */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+                padding: 15px;
+                text-shadow: none;
+            }
+
+            .item-title {
+                position: relative; /* Title also stacks */
+                font-size: 10vw;
+                width: 90%;
+                left: 5%;
+                margin-bottom: 30px;
+                padding: 15px;
+                text-align: center;
+            }
+            .item-title:hover { transform: none !important; box-shadow: none; } /* Ensure no hover on title */
+
+            /* Specific image item adjustments for mobile */
+            .collage-item img {
+                height: 200px; /* Constrain image height on mobile */
+                width: 100%;
+                object-fit: cover;
+                display: block; /* Remove extra space below images */
+            }
+
+            /* Adjust text item font sizes for mobile readability */
+            .item-1, .item-2, .item-6, .item-10 { font-size: 0.8em; text-align: left; }
+            .item-4 { font-size: 1.2em; }
+            .item-8 { font-size: 1em; }
+            .item-11 { font-size: 0.9em; }
+            .item-12 { font-size: 1.5em; }
+
+            /* Remove specific accent borders that might look odd when stacked */
+            .item-2, .item-5, .item-9 { border: 1px solid rgba(255, 255, 255, 0.1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <div class="collage-item item-title">
+            BRUTAL<br>RAINBOW
+        </div>
+
+        <div class="collage-item item-1 red">
+            <p><strong>Concrete Poetry.</strong> Raw, honest, unadorned. Brutalism is more than just concrete; it's a philosophy of permanence and truth.</p>
+        </div>
+
+        <div class="collage-item item-2 orange">
+            <p>Monolithic forms, powerful presence. A stark beauty often misunderstood by many. Functionality expressed with audacious honesty.</p>
+        </div>
+
+        <div class="collage-item item-3 yellow">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Barbican_Estate_%28169904328%29.jpeg" alt="Barbican Estate, London. A celebrated example of Brutalist residential complex.">
+        </div>
+
+        <div class="collage-item item-4 green">
+            <p>FORM FOLLOWS<br>UNADORNED FUNCTION</p>
+        </div>
+
+        <div class="collage-item item-5 blue">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Trellick_Tower_crop.jpg" alt="Trellick Tower, London. Erno Goldfinger's iconic Brutalist residential tower.">
+        </div>
+
+        <div class="collage-item item-6 indigo">
+            <p>A reaction to superficial ornamentation, a statement of enduring purpose. The profound beauty of exposed structure and raw materials.</p>
+        </div>
+
+        <div class="collage-item item-7 violet">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Geisel_Library%2C_UC_San_Diego.jpg" alt="Geisel Library, UC San Diego. Designed by William Pereira, a futuristic Brutalist landmark.">
+        </div>
+
+        <div class="collage-item item-8 cyan">
+            <p>Buildings designed to last, to serve, to command attention. A robust testament to post-war ambition and urban renewal.</p>
+        </div>
+
+        <div class="collage-item item-9 magenta">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Habitat_67.jpg" alt="Habitat 67, Montreal. Moshe Safdie's experimental Brutalist housing complex.">
+        </div>
+
+        <div class="collage-item item-10 dark-blue">
+            <p>Embracing the inherent qualities of materials. A monument to the monumental possibilities of the everyday, built to resist time.</p>
+        </div>
+
+        <div class="collage-item item-11 green">
+            <p>Bold lines. Strong shadows. A visual dialogue with light and mass, creating dramatic spatial experiences.</p>
+        </div>
+
+        <div class="collage-item item-12 orange">
+            <p>ARCHITECTURAL TRUTH</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-11 17:39:35.353664</div>
         <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #0a0a0a; font-family: 'monospace', 'Courier New', monospace; color: #fff; transform-style: preserve-3d; perspective: 1000px;">
     <style>
