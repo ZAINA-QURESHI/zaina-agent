@@ -16,6 +16,132 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 23:42:58.250284</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow: hidden; background-color: #000; font-family: 'Courier New', monospace; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .decay-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: glitchEffect 10s infinite alternate, moveAndFade 15s infinite linear;
+    text-shadow: 0 0 5px currentColor;
+    font-size: 0.8em;
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    transform: rotateZ(var(--rotation, 0deg));
+    filter: blur(var(--blur, 0px));
+  }
+  .static-text {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 0.7em;
+    pointer-events: none;
+    user-select: none;
+    animation: textFlicker 20s infinite alternate;
+    z-index: 0;
+  }
+  @keyframes textFlicker {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.05; }
+    100% { opacity: 0.1; }
+  }
+  @keyframes glitchEffect {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); filter: brightness(1.2); }
+    40% { transform: translate(3px, -3px); filter: brightness(0.8); }
+    60% { transform: translate(-1px, 1px); filter: brightness(1.1); }
+    80% { transform: translate(2px, -2px); filter: brightness(0.9); }
+    100% { transform: translate(0, 0); filter: brightness(1); }
+  }
+  @keyframes moveAndFade {
+    0% { transform: translate(var(--startX), var(--startY)) scale(1) rotate(0deg); opacity: 0.8; }
+    25% { transform: translate(var(--midX1), var(--midY1)) scale(0.9) rotate(45deg); opacity: 0.6; }
+    50% { transform: translate(var(--midX2), var(--midY2)) scale(0.7) rotate(90deg); opacity: 0.4; }
+    75% { transform: translate(var(--midX3), var(--midY3)) scale(0.5) rotate(135deg); opacity: 0.2; }
+    100% { transform: translate(var(--endX), var(--endY)) scale(0.3) rotate(180deg); opacity: 0; }
+  }
+
+  /* Rainbow colors */
+  .red { background-color: #FF0000; color: #FFF; }
+  .orange { background-color: #FF7F00; color: #FFF; }
+  .yellow { background-color: #FFFF00; color: #000; }
+  .green { background-color: #00FF00; color: #000; }
+  .blue { background-color: #0000FF; color: #FFF; }
+  .indigo { background-color: #4B0082; color: #FFF; }
+  .violet { background-color: #9400D3; color: #FFF; }
+
+  /* Gradient-like elements for deeper decay */
+  .gradient-fade {
+    background: linear-gradient(45deg, var(--start-color), var(--end-color));
+    animation: glitchEffect 8s infinite alternate, moveAndFade 20s infinite linear;
+    border-radius: 0;
+    opacity: 0.6;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <!-- Static background noise -->
+  <div class="static-text" style="top: 10%; left: 5%;">DATA LOST</div>
+  <div class="static-text" style="top: 80%; left: 15%;">CORRUPTED BYTES</div>
+  <div class="static-text" style="top: 30%; left: 40%;">SIGNAL INTERRUPTED</div>
+  <div class="static-text" style="top: 50%; left: 70%;">VOID_PTR</div>
+  <div class="static-text" style="top: 65%; left: 5%;">MEMORY LEAK</div>
+  <div class="static-text" style="top: 20%; left: 85%;">NULL_REFERENCE</div>
+  <div class="static-text" style="top: 90%; left: 60%;">ERROR 404</div>
+  <div class="static-text" style="top: 45%; left: 20%;">END_OF_LINE</div>
+
+  <!-- Rainbow decay elements -->
+  <div class="decay-element red" style="top: 10%; left: 5%; width: 80px; height: 80px; --startX: 5vw; --startY: 10vh; --midX1: 15vw; --midY1: 20vh; --midX2: 25vw; --midY2: 5vh; --midX3: 35vw; --midY3: 15vh; --endX: 45vw; --endY: 0vh; --rotation: 15deg;">0xDEADBEEF</div>
+  <div class="decay-element orange" style="top: 25%; left: 15%; width: 60px; height: 60px; --startX: 15vw; --startY: 25vh; --midX1: 5vw; --midY1: 30vh; --midX2: 20vw; --midY2: 40vh; --midX3: 10vw; --midY3: 50vh; --endX: 0vw; --endY: 60vh; --rotation: -10deg;">GLITCH</div>
+  <div class="decay-element yellow" style="top: 40%; left: 30%; width: 100px; height: 100px; --startX: 30vw; --startY: 40vh; --midX1: 40vw; --midY1: 35vh; --midX2: 50vw; --midY2: 45vh; --midX3: 60vw; --midY3: 40vh; --endX: 70vw; --endY: 50vh; --rotation: 5deg;">DATA_ROT</div>
+  <div class="decay-element green" style="top: 55%; left: 5%; width: 70px; height: 70px; --startX: 5vw; --startY: 55vh; --midX1: 15vw; --midY1: 60vh; --midX2: 0vw; --midY2: 70vh; --midX3: 20vw; --midY3: 80vh; --endX: 10vw; --endY: 90vh; --rotation: 20deg;">VOID</div>
+  <div class="decay-element blue" style="top: 70%; left: 40%; width: 90px; height: 90px; --startX: 40vw; --startY: 70vh; --midX1: 50vw; --midY1: 65vh; --midX2: 60vw; --midY2: 75vh; --midX3: 70vw; --midY3: 70vh; --endX: 80vw; --endY: 80vh; --rotation: -15deg;">BROKEN_LINK</div>
+  <div class="decay-element indigo" style="top: 15%; left: 60%; width: 85px; height: 85px; --startX: 60vw; --startY: 15vh; --midX1: 70vw; --midY1: 25vh; --midX2: 80vw; --midY2: 10vh; --midX3: 90vw; --midY3: 20vh; --endX: 100vw; --endY: 5vh; --rotation: 10deg;">FRAGMENT</div>
+  <div class="decay-element violet" style="top: 80%; left: 20%; width: 50px; height: 50px; --startX: 20vw; --startY: 80vh; --midX1: 10vw; --midY1: 85vh; --midX2: 30vw; --midY2: 90vh; --midX3: 20vw; --midY3: 95vh; --endX: 0vw; --endY: 100vh; --rotation: 25deg;">ERROR</div>
+
+  <!-- More diverse shapes and sizes, overlapping and fading -->
+  <div class="decay-element red" style="top: 50%; left: 50%; width: 120px; height: 120px; --startX: 50vw; --startY: 50vh; --midX1: 45vw; --midY1: 55vh; --midX2: 55vw; --midY2: 45vh; --midX3: 40vw; --midY3: 60vh; --endX: 30vw; --endY: 70vh; --rotation: 30deg; font-size: 1.2em;">LOST</div>
+  <div class="decay-element green" style="top: 5%; left: 75%; width: 40px; height: 40px; --startX: 75vw; --startY: 5vh; --midX1: 80vw; --midY1: 10vh; --midX2: 70vw; --midY2: 15vh; --midX3: 85vw; --midY3: 20vh; --endX: 90vw; --endY: 25vh; --rotation: -5deg;">~</div>
+  <div class="decay-element blue" style="top: 90%; left: 70%; width: 75px; height: 75px; --startX: 70vw; --startY: 90vh; --midX1: 75vw; --midY1: 85vh; --midX2: 80vw; --midY2: 95vh; --midX3: 85vw; --midY3: 90vh; --endX: 90vw; --endY: 80vh; --rotation: 40deg;">[X]</div>
+  <div class="decay-element yellow" style="top: 20%; left: 20%; width: 150px; height: 150px; border-radius: 10%; --startX: 20vw; --startY: 20vh; --midX1: 10vw; --midY1: 25vh; --midX2: 30vw; --midY2: 15vh; --midX3: 5vw; --midY3: 30vh; --endX: 0vw; --endY: 10vh; --rotation: -20deg; font-size: 1.5em; opacity: 0.6; filter: blur(2px);">MEMORY_DUMP</div>
+  <div class="decay-element violet" style="top: 60%; left: 80%; width: 95px; height: 95px; border-radius: 20%; --startX: 80vw; --startY: 60vh; --midX1: 75vw; --midY1: 65vh; --midX2: 85vw; --midY2: 55vh; --midX3: 90vw; --midY3: 70vh; --endX: 100vw; --endY: 80vh; --rotation: 12deg; opacity: 0.7;">_NULL_</div>
+  <div class="decay-element orange" style="top: 35%; left: 70%; width: 110px; height: 110px; border-radius: 5%; --startX: 70vw; --startY: 35vh; --midX1: 65vw; --midY1: 40vh; --midX2: 75vw; --midY2: 30vh; --midX3: 80vw; --midY3: 45vh; --endX: 90vw; --endY: 25vh; --rotation: -25deg; font-size: 1.1em; opacity: 0.5; filter: blur(1px);">SEG_FAULT</div>
+  <div class="decay-element indigo" style="top: 10%; left: 30%; width: 65px; height: 65px; border-radius: 50%; --startX: 30vw; --startY: 10vh; --midX1: 25vw; --midY1: 15vh; --midX2: 35vw; --midY2: 5vh; --midX3: 40vw; --midY3: 20vh; --endX: 50vw; --endY: 0vh; --rotation: 8deg; opacity: 0.9;">?</div>
+
+  <!-- Gradient elements for a deeper sense of decay and disintegration -->
+  <div class="decay-element gradient-fade" style="top: 5%; left: 45%; width: 100px; height: 200px; --start-color: #FF0000; --end-color: #0000FF; --startX: 45vw; --startY: 5vh; --midX1: 50vw; --midY1: 15vh; --midX2: 40vw; --midY2: 25vh; --midX3: 55vw; --midY3: 35vh; --endX: 60vw; --endY: 45vh; --rotation: 60deg;"></div>
+  <div class="decay-element gradient-fade" style="top: 70%; left: 50%; width: 200px; height: 100px; --start-color: #00FF00; --end-color: #9400D3; --startX: 50vw; --startY: 70vh; --midX1: 40vw; --midY1: 60vh; --midX2: 60vw; --midY2: 80vh; --midX3: 30vw; --midY3: 90vh; --endX: 20vw; --endY: 100vh; --rotation: -30deg;"></div>
+  <div class="decay-element gradient-fade" style="top: 25%; left: 80%; width: 50px; height: 50px; border-radius: 50%; --start-color: #FF7F00; --end-color: #FFFF00; --startX: 80vw; --startY: 25vh; --midX1: 85vw; --midY1: 30vh; --midX2: 75vw; --midY2: 35vh; --midX3: 90vw; --midY3: 40vh; --endX: 95vw; --endY: 45vh; --rotation: 90deg;"></div>
+  <div class="decay-element gradient-fade" style="top: 0%; left: 0%; width: 300px; height: 100px; --start-color: #4B0082; --end-color: #FF0000; --startX: 0vw; --startY: 0vh; --midX1: 10vw; --midY1: 10vh; --midX2: 20vw; --midY2: 0vh; --midX3: 30vw; --midY3: 10vh; --endX: 40vw; --endY: 0vh; --rotation: 180deg; opacity: 0.4;"></div>
+  <div class="decay-element gradient-fade" style="top: 90%; left: 40%; width: 150px; height: 50px; --start-color: #00FFFF; --end-color: #FF00FF; --startX: 40vw; --startY: 90vh; --midX1: 50vw; --midY1: 85vh; --midX2: 60vw; --midY2: 95vh; --midX3: 70vw; --midY3: 90vh; --endX: 80vw; --endY: 85vh; --rotation: -45deg;"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 22:42:52.293938</div>
         <!DOCTYPE html>
 <html>
