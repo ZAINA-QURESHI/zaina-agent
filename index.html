@@ -16,6 +16,190 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 22:42:52.293938</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Radical Glitch Rainbow Collage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from absolute positioning */
+            background-color: #000; /* Dark background for contrast */
+            font-family: 'IBM Plex Mono', monospace; /* Glitchy, monospace font */
+            color: #fff; /* Default text color */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Clip elements going beyond viewport */
+            background-color: #000;
+        }
+
+        /* Base styles for all glitch elements */
+        .glitch-element {
+            position: absolute;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            pointer-events: none; /* Allow interaction with elements beneath the collage */
+            z-index: 1; /* Default stacking order */
+        }
+
+        /* Styles for distorted text elements */
+        .text-glitch {
+            font-size: 8vmin; /* Responsive font size */
+            font-weight: bold;
+            color: #fff; /* Default text color, overridden by inline styles for rainbow effect */
+            text-shadow:
+                -2px 0 0 hsl(0, 100%, 50%), /* Red shift */
+                2px 0 0 hsl(240, 100%, 50%); /* Blue shift for chromatic aberration */
+            line-height: 0.9; /* Tighter line spacing */
+            letter-spacing: -0.05em; /* Compressed letter spacing */
+            mix-blend-mode: screen; /* Lightens colors and blends with background */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        /* Subtle text glitch variant */
+        .text-glitch.subtle {
+            font-size: 3vmin;
+            font-weight: normal;
+            text-shadow:
+                -1px 0 0 hsl(120, 100%, 50%), /* Green shift */
+                1px 0 0 hsl(60, 100%, 50%); /* Yellow shift */
+            mix-blend-mode: difference; /* Subtracts colors, creating inverted or bright effects */
+            opacity: 0.8;
+        }
+
+        /* Styles for colored block elements */
+        .block-glitch {
+            background-color: currentColor; /* Inherits color from parent or specific inline style */
+            opacity: 0.7;
+            mix-blend-mode: lighten; /* Shows the lighter of the two colors */
+            border: 1px solid rgba(255,255,255,0.2); /* Subtle white border */
+        }
+
+        /* Overlay for scanline effect */
+        .scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99; /* On top of most elements */
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 3px
+            ); /* Creates thin horizontal lines */
+            mix-blend-mode: overlay; /* Enhances contrast and saturates colors */
+        }
+
+        /* Overlay for static noise effect */
+        .static-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 98; /* Just below scanlines */
+            background: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 3px 3px; /* Small repeating pattern of dots */
+            mix-blend-mode: overlay;
+        }
+
+        /* Specific positioning and transform for each glitch element to create a collage */
+        .glitch-01 { top: 10%; left: 5%; transform: rotate(-5deg); z-index: 10; }
+        .glitch-02 { top: 25%; left: 60%; transform: skewX(-15deg) scaleY(1.1); font-size: 6vmin; mix-blend-mode: hard-light; }
+        .glitch-03 { bottom: 15%; left: 10%; transform: rotate(8deg); }
+        .glitch-04 { top: 5%; right: 5%; font-size: 10vmin; text-shadow: -4px 0 0 hsl(300,100%,50%), 4px 0 0 hsl(120,100%,50%); transform: skewY(5deg); mix-blend-mode: screen;}
+        .glitch-05 { top: 70%; left: 50%; transform: translateX(-50%) skewX(10deg); color: hsl(60, 100%, 70%); }
+        .glitch-06 { top: 40%; left: 15%; font-size: 4vmin; color: hsl(180, 100%, 70%); transform: rotate(3deg); }
+        .glitch-07 { bottom: 5%; right: 5%; font-size: 2vmin; color: hsl(210, 100%, 70%); transform: translateX(-20%) translateY(10%); letter-spacing: 0.1em; }
+        .glitch-08 { top: 20%; left: 20%; font-size: 2.5vmin; color: hsl(0, 100%, 70%); transform: skewX(-5deg); opacity: 0.7;}
+        .glitch-09 { top: 55%; right: 10%; font-size: 3vmin; color: hsl(270, 100%, 70%); transform: rotate(-10deg); text-shadow: 2px 2px 0 hsl(90,100%,50%);}
+        .glitch-10 { top: 15%; left: 30%; transform: scale(1.2) rotate(2deg); opacity: 0.9; mix-blend-mode: difference;}
+        .glitch-11 { top: 80%; left: 70%; transform: rotate(15deg) skewX(5deg); font-size: 2.2vmin; opacity: 0.9; color: hsl(30, 100%, 70%); }
+        .glitch-12 { top: 30%; left: 35%; width: 100px; height: 10px; transform: rotate(20deg); mix-blend-mode: color-dodge;}
+        .glitch-13 { top: 50%; left: 5%; width: 50px; height: 100px; transform: skewY(15deg) rotate(5deg); opacity: 0.6;}
+        .glitch-14 { bottom: 20%; right: 20%; width: 80px; height: 20px; transform: rotate(-10deg); opacity: 0.8; mix-blend-mode: screen;}
+        .glitch-15 { top: 60%; left: 40%; width: 120px; height: 15px; transform: skewX(10deg); opacity: 0.7; mix-blend-mode: hard-light;}
+        .glitch-16 { top: 45%; right: 5%; width: 3px; height: 150px; transform: rotate(70deg); opacity: 0.9;}
+        .glitch-17 { top: 10%; left: 70%; width: 20px; height: 20px; transform: rotate(45deg); opacity: 0.5; mix-blend-mode: difference;}
+        .glitch-18 { bottom: 10%; left: 40%; width: 150px; height: 5px; transform: skewX(-20deg); opacity: 0.8; }
+        /* Full-width rainbow gradient strips */
+        .glitch-19 {
+            top: 0; left: 0; width: 100%; height: 50px;
+            background: linear-gradient(90deg, hsl(0, 100%, 50%) 0%, hsl(60, 100%, 50%) 16%, hsl(120, 100%, 50%) 33%, hsl(180, 100%, 50%) 50%, hsl(240, 100%, 50%) 66%, hsl(270, 100%, 50%) 83%, hsl(300, 100%, 50%) 100%);
+            transform: translateY(-50%) rotate(3deg); /* Off-screen start, rotated */
+            opacity: 0.4; mix-blend-mode: screen; z-index: 5;
+        }
+        .glitch-20 {
+            bottom: 0; right: 0; width: 100%; height: 30px;
+            background: linear-gradient(90deg, hsl(300, 100%, 50%) 0%, hsl(270, 100%, 50%) 16%, hsl(240, 100%, 50%) 33%, hsl(180, 100%, 50%) 50%, hsl(120, 100%, 50%) 66%, hsl(60, 100%, 50%) 83%, hsl(0, 100%, 50%) 100%);
+            transform: translateY(50%) rotate(-2deg); /* Off-screen end, rotated */
+            opacity: 0.3; mix-blend-mode: overlay; z-index: 5;
+        }
+        .glitch-21 { top: 20%; left: 40%; width: 8px; height: 200px; transform: rotate(80deg); opacity: 0.7; mix-blend-mode: hard-light;}
+        .glitch-22 { bottom: 30%; left: 55%; width: 100px; height: 40px; transform: skewY(5deg); opacity: 0.6; mix-blend-mode: difference;}
+        .glitch-23 { top: 5%; left: 50%; transform: translateX(-50%) rotate(-3deg); font-size: 7vmin; color: hsl(270, 100%, 70%); text-shadow: -3px 0 0 hsl(30,100%,50%), 3px 0 0 hsl(180,100%,50%); }
+        .glitch-24 { top: 85%; left: 15%; transform: rotate(10deg); font-size: 3.5vmin; color: hsl(0, 100%, 70%); letter-spacing: 0.08em; }
+        .glitch-25 { top: 35%; left: 80%; transform: rotate(12deg) skewY(-8deg); font-size: 5vmin; color: hsl(180, 100%, 70%); text-shadow: -2px 0 0 hsl(240,100%,50%); }
+
+    </style>
+</head>
+<body>
+    <div id="collage-container">
+        <!-- Rainbow background overlays -->
+        <div class="glitch-element glitch-19"></div>
+        <div class="glitch-element glitch-20"></div>
+
+        <!-- Text Glitches with varying positions, transforms, and colors (using HSL for rainbow) -->
+        <div class="glitch-element text-glitch glitch-01">GLITCH</div>
+        <div class="glitch-element text-glitch subtle glitch-02" style="color: hsl(30, 100%, 70%);">AESTHETIC</div>
+        <div class="glitch-element text-glitch glitch-03" style="color: hsl(60, 100%, 70%);">RAINBOW</div>
+        <div class="glitch-element text-glitch glitch-04">ERROR</div>
+        <div class="glitch-element text-glitch subtle glitch-05" style="color: hsl(90, 100%, 70%);">CORRUPTED DATA</div>
+        <div class="glitch-element text-glitch glitch-06" style="color: hsl(150, 100%, 70%);">DISTORT</div>
+        <div class="glitch-element text-glitch subtle glitch-07" style="color: hsl(210, 100%, 70%);">BROKEN</div>
+        <div class="glitch-element text-glitch glitch-08" style="color: hsl(240, 100%, 70%);">CODE</div>
+        <div class="glitch-element text-glitch subtle glitch-09" style="color: hsl(270, 100%, 70%);">STATIC</div>
+        <div class="glitch-element text-glitch glitch-10" style="color: hsl(300, 100%, 70%);">PIXEL</div>
+        <div class="glitch-element text-glitch subtle glitch-11" style="color: hsl(330, 100%, 70%);">FRAGMENT</div>
+        <div class="glitch-element text-glitch glitch-23">CASCADING</div>
+        <div class="glitch-element text-glitch subtle glitch-24" style="color: hsl(120, 100%, 70%);">VAPORWAVE</div>
+        <div class="glitch-element text-glitch glitch-25" style="color: hsl(0, 100%, 70%);">DIGITAL</div>
+
+        <!-- Block & Line Glitches with distinct rainbow colors -->
+        <div class="glitch-element block-glitch glitch-12" style="background-color: hsl(0, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-13" style="background-color: hsl(60, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-14" style="background-color: hsl(120, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-15" style="background-color: hsl(180, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-16" style="background-color: hsl(240, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-17" style="background-color: hsl(270, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-18" style="background-color: hsl(300, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-21" style="background-color: hsl(30, 100%, 50%);"></div>
+        <div class="glitch-element block-glitch glitch-22" style="background-color: hsl(210, 100%, 50%);"></div>
+
+        <!-- Overlays for extra glitch effect -->
+        <div class="scanlines"></div>
+        <div class="static-noise"></div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 21:42:14.405151</div>
         <!DOCTYPE html>
 <html>
