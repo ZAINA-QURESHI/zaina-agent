@@ -16,6 +16,228 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 07:40:02.389311</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Rainbow Collage</title>
+    <style>
+        body {
+            background-color: #000;
+            overflow: hidden;
+            margin: 0;
+            font-family: 'Press Start 2P', cursive; /* A common retro/glitch font */
+            color: #fff;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        .glitch-collage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            box-sizing: border-box;
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #f06, #ff0, #0f0, #0ff, #00f, #a0f, #f06) 1;
+            animation: border-glitch 5s infinite linear;
+        }
+
+        @keyframes border-glitch {
+            0% { border-image: linear-gradient(45deg, #f06, #ff0, #0f0, #0ff, #00f, #a0f, #f06) 1; }
+            25% { border-image: linear-gradient(90deg, #ff0, #0f0, #0ff, #00f, #a0f, #f06, #ff0) 1; }
+            50% { border-image: linear-gradient(135deg, #0f0, #0ff, #00f, #a0f, #f06, #ff0, #0f0) 1; }
+            75% { border-image: linear-gradient(180deg, #0ff, #00f, #a0f, #f06, #ff0, #0f0, #0ff) 1; }
+            100% { border-image: linear-gradient(45deg, #f06, #ff0, #0f0, #0ff, #00f, #a0f, #f06) 1; }
+        }
+
+        .glitch-item {
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: pulse 3s infinite alternate, move-scatter 10s infinite alternate-reverse;
+            filter: saturate(1.5) contrast(1.2);
+            mix-blend-mode: screen;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .glitch-item:hover {
+            z-index: 100;
+            transform: scale(1.05) rotate(0deg) !important;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6);
+            animation: none;
+            filter: saturate(2) contrast(1.5);
+        }
+
+        .glitch-text {
+            position: absolute;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 
+                3px 3px 0px #f0f, 
+                -3px -3px 0px #0ff, 
+                6px 6px 0px rgba(255,255,255,0.1);
+            animation: text-glitch 2s infinite linear;
+            mix-blend-mode: hard-light;
+            color: #fff;
+            padding: 5px 10px;
+            background: rgba(0,0,0,0.5);
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #f0f, #0ff) 1;
+        }
+
+        @keyframes text-glitch {
+            0% { transform: translate(0, 0); text-shadow: 3px 3px 0px #f0f, -3px -3px 0px #0ff; }
+            20% { transform: translate(-2px, 2px); text-shadow: -2px -2px 0px #ff0, 2px 2px 0px #00f; }
+            40% { transform: translate(1px, -1px); text-shadow: 1px 1px 0px #f00, -1px -1px 0px #0f0; }
+            60% { transform: translate(-3px, -3px); text-shadow: -3px -3px 0px #00f, 3px 3px 0px #ff0; }
+            80% { transform: translate(2px, 1px); text-shadow: 2px 1px 0px #0ff, -2px -1px 0px #f0f; }
+            100% { transform: translate(0, 0); text-shadow: 3px 3px 0px #f0f, -3px -3px 0px #0ff; }
+        }
+
+        .glitch-line {
+            position: absolute;
+            background: linear-gradient(90deg, #f06, #ff0, #0f0, #0ff, #00f, #a0f);
+            opacity: 0.7;
+            animation: line-scan 5s infinite linear;
+            mix-blend-mode: screen;
+            filter: blur(1px);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.9; filter: hue-rotate(0deg); }
+            50% { transform: scale(1.02) rotate(1deg); opacity: 1; filter: hue-rotate(180deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 0.9; filter: hue-rotate(360deg); }
+        }
+
+        @keyframes move-scatter {
+            0% { transform: translate(0,0) rotate(0deg); }
+            25% { transform: translate(5px,-5px) rotate(2deg); }
+            50% { transform: translate(-5px,5px) rotate(-2deg); }
+            75% { transform: translate(5px,5px) rotate(2deg); }
+            100% { transform: translate(0,0) rotate(0deg); }
+        }
+
+        @keyframes line-scan {
+            0% { width: 0; left: 0; }
+            50% { width: 100%; left: 0; }
+            51% { width: 100%; left: 0; }
+            100% { width: 0; left: 100%; }
+        }
+
+        .chromatic-aberration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            animation: chromatic-shift 0.5s infinite alternate;
+            mix-blend-mode: hard-light;
+            z-index: 999;
+        }
+
+        @keyframes chromatic-shift {
+            0% { filter: contrast(1) hue-rotate(0deg); transform: translate(0,0); }
+            25% { filter: contrast(1.1) hue-rotate(10deg); transform: translate(-1px, 1px); }
+            50% { filter: contrast(1.2) hue-rotate(20deg); transform: translate(1px, -1px); }
+            75% { filter: contrast(1.1) hue-rotate(10deg); transform: translate(-1px, -1px); }
+            100% { filter: contrast(1) hue-rotate(0deg); transform: translate(0,0); }
+        }
+
+        .rainbow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 0, 0, 0.1),
+                rgba(255, 165, 0, 0.1),
+                rgba(255, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1),
+                rgba(0, 0, 255, 0.1),
+                rgba(75, 0, 130, 0.1),
+                rgba(128, 0, 128, 0.1)
+            );
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            animation: rainbow-shift 10s infinite linear;
+        }
+
+        @keyframes rainbow-shift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); } /* Simulate movement */
+        }
+
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 1px,
+                rgba(0,0,0,0.1) 1px,
+                rgba(0,0,0,0.1) 2px
+            );
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch-collage">
+        <div class="chromatic-aberration"></div>
+        <div class="rainbow-overlay"></div>
+        <div class="scanline"></div>
+
+        <!-- Glitched Image Items - Rainbow Themed -->
+        <div class="glitch-item" style="width: 200px; height: 150px; top: 10%; left: 5%; background-image: url('https://via.placeholder.com/400x300/FF0000/FFFFFF?text=GLITCH_RED'); transform: rotate(-5deg);"></div>
+        <div class="glitch-item" style="width: 250px; height: 180px; top: 30%; left: 20%; background-image: url('https://via.placeholder.com/500x350/FF8C00/000000?text=GLITCH_ORANGE'); transform: rotate(3deg);"></div>
+        <div class="glitch-item" style="width: 180px; height: 120px; top: 15%; left: 70%; background-image: url('https://via.placeholder.com/350x250/FFFF00/000000?text=GLITCH_YELLOW'); transform: rotate(8deg);"></div>
+        <div class="glitch-item" style="width: 300px; height: 200px; top: 50%; left: 5%; background-image: url('https://via.placeholder.com/600x400/00FF00/000000?text=GLITCH_GREEN'); transform: rotate(-10deg);"></div>
+        <div class="glitch-item" style="width: 220px; height: 160px; top: 65%; left: 30%; background-image: url('https://via.placeholder.com/450x300/0000FF/FFFFFF?text=GLITCH_BLUE'); transform: rotate(4deg);"></div>
+        <div class="glitch-item" style="width: 280px; height: 190px; top: 40%; left: 60%; background-image: url('https://via.placeholder.com/550x380/4B0082/FFFFFF?text=GLITCH_INDIGO'); transform: rotate(-7deg);"></div>
+        <div class="glitch-item" style="width: 190px; height: 130px; top: 75%; left: 75%; background-image: url('https://via.placeholder.com/380x260/EE82EE/000000?text=GLITCH_VIOLET'); transform: rotate(12deg);"></div>
+        <div class="glitch-item" style="width: 230px; height: 170px; top: 5%; left: 40%; background-image: url('https://via.placeholder.com/460x340/FFFFFF/000000?text=GLITCH_WHITE'); transform: rotate(1deg);"></div>
+        <div class="glitch-item" style="width: 160px; height: 100px; top: 85%; left: 15%; background-image: url('https://via.placeholder.com/320x200/00FFFF/000000?text=GLITCH_CYAN'); transform: rotate(-3deg);"></div>
+
+        <!-- Glitched Text Elements -->
+        <div class="glitch-text" style="top: 25%; left: 50%; transform: translateX(-50%) rotate(2deg);">ERROR 404</div>
+        <div class="glitch-text" style="top: 55%; left: 25%; font-size: 1.5em; transform: translateX(-50%) rotate(-4deg);">DATA CORRUPT</div>
+        <div class="glitch-text" style="top: 70%; left: 60%; font-size: 2.5em; transform: translateX(-50%) rotate(5deg);">REBOOT</div>
+        <div class="glitch-text" style="top: 10%; left: 80%; font-size: 1.8em; transform: translateX(-50%) rotate(-8deg);">RAINBOW.SYS</div>
+        <div class="glitch-text" style="top: 90%; left: 50%; font-size: 1.2em; transform: translateX(-50%) rotate(1deg);">VISUAL ANOMALY</div>
+
+        <!-- Glitched Lines / Scanlines -->
+        <div class="glitch-line" style="top: 20%; height: 5px; animation-delay: 0s;"></div>
+        <div class="glitch-line" style="top: 45%; height: 8px; animation-delay: 1.5s;"></div>
+        <div class="glitch-line" style="top: 70%; height: 3px; animation-delay: 3s;"></div>
+        <div class="glitch-line" style="top: 95%; height: 6px; animation-delay: 4.5s;"></div>
+        <div class="glitch-line" style="left: 0; top: 0; width: 3px; height: 100%; transform: rotate(90deg) translateY(-100%); transform-origin: top left; animation: line-scan-vertical 7s infinite linear; animation-delay: 1s;"></div>
+
+        @keyframes line-scan-vertical {
+            0% { height: 0; top: 0; }
+            50% { height: 100%; top: 0; }
+            51% { height: 100%; top: 0; }
+            100% { height: 0; top: 100%; }
+        }
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 05:59:15.395428</div>
         <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Arial Black', Gadget, sans-serif;">
 
