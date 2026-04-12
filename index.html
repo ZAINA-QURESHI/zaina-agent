@@ -16,6 +16,256 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 10:48:52.573112</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive; /* A pixelated font often used for retro themes */
+    font-size: 10px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  .collage-container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    border: 3px dashed rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.4), inset 0 0 50px rgba(255, 0, 255, 0.4);
+    overflow: hidden;
+    transform: rotateX(20deg) rotateY(-20deg) rotateZ(10deg); /* Skewed perspective */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .decay-div {
+    position: absolute;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    overflow: hidden;
+    mix-blend-mode: screen; /* For interesting color overlaps */
+    filter: saturate(150%) contrast(120%);
+    animation: flicker 1s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; filter: brightness(100%); }
+    50% { opacity: 0.95; filter: brightness(110%); }
+    100% { opacity: 1; filter: brightness(100%); }
+  }
+
+  .glitch-text {
+    animation: glitch 2.5s infinite;
+    text-shadow: 2px 2px 0px rgba(255, 0, 255, 0.7), -2px -2px 0px rgba(0, 255, 255, 0.7);
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* Rainbow colors for the borders/backgrounds of the decay divs */
+  .red { background: linear-gradient(45deg, rgba(255, 0, 0, 0.4), rgba(255, 100, 0, 0.2)); border-color: rgba(255, 0, 0, 0.7); animation-delay: 0s; }
+  .orange { background: linear-gradient(45deg, rgba(255, 128, 0, 0.4), rgba(255, 200, 0, 0.2)); border-color: rgba(255, 128, 0, 0.7); animation-delay: 0.1s; }
+  .yellow { background: linear-gradient(45deg, rgba(255, 255, 0, 0.4), rgba(200, 255, 0, 0.2)); border-color: rgba(255, 255, 0, 0.7); animation-delay: 0.2s; }
+  .green { background: linear-gradient(45deg, rgba(0, 255, 0, 0.4), rgba(0, 255, 100, 0.2)); border-color: rgba(0, 255, 0, 0.7); animation-delay: 0.3s; }
+  .blue { background: linear-gradient(45deg, rgba(0, 0, 255, 0.4), rgba(0, 100, 255, 0.2)); border-color: rgba(0, 0, 255, 0.7); animation-delay: 0.4s; }
+  .indigo { background: linear-gradient(45deg, rgba(75, 0, 130, 0.4), rgba(100, 0, 200, 0.2)); border-color: rgba(75, 0, 130, 0.7); animation-delay: 0.5s; }
+  .violet { background: linear-gradient(45deg, rgba(148, 0, 211, 0.4), rgba(200, 0, 255, 0.2)); border-color: rgba(148, 0, 211, 0.7); animation-delay: 0.6s; }
+
+  /* Specific styles for different "decay" elements */
+  .static {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(255, 255, 255, 0.1) 2px
+    );
+    animation: static-shift 0.2s infinite steps(2);
+  }
+  @keyframes static-shift {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 5px; }
+  }
+
+  .corrupted {
+    transform: skewX(5deg) scale(1.05);
+    filter: hue-rotate(90deg) blur(1px);
+    animation: corruption 3s infinite ease-in-out;
+  }
+  @keyframes corruption {
+    0% { transform: skewX(5deg) scale(1.05); }
+    50% { transform: skewX(-5deg) scale(0.95); }
+    100% { transform: skewX(5deg) scale(1.05); }
+  }
+
+  .fragmented {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    opacity: 0.8;
+  }
+
+  .lost-packet {
+    opacity: 0;
+    animation: appear-fade 5s infinite;
+  }
+  @keyframes appear-fade {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0px); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+
+  .data-stream {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.05) 5px,
+      rgba(255, 255, 255, 0.05) 10px
+    );
+    overflow: hidden;
+  }
+  .data-stream::before {
+    content: "01010100100111010101001010011101010100101001110101010010100111010101001010011101010100101001110101010010100111010101001010011101010100101001110101010010100111010101001010011101010100101001110";
+    position: absolute;
+    white-space: nowrap;
+    animation: stream-scroll 15s linear infinite;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.7em;
+  }
+  @keyframes stream-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .memory-leak {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), inset 0 0 10px rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.1);
+    animation: leak-pulse 2s infinite alternate;
+  }
+  @keyframes leak-pulse {
+    0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), inset 0 0 10px rgba(255, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(255, 0, 0, 0.8); }
+  }
+
+  .ghost {
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(2px) opacity(0.6);
+    transform: translateZ(-10px); /* Pushing it back in 3D space */
+  }
+
+  /* Specific positioning for the "collage" effect */
+  #div1 { top: 5%; left: 5%; width: 25%; height: 20%; transform: rotate(-5deg) translateZ(10px); }
+  #div2 { top: 0%; left: 30%; width: 35%; height: 15%; transform: rotate(8deg); }
+  #div3 { top: 15%; left: 60%; width: 30%; height: 25%; transform: rotate(2deg) translateZ(-5px); }
+  #div4 { top: 25%; left: 0%; width: 20%; height: 30%; transform: rotate(-12deg) translateZ(15px); }
+  #div5 { top: 20%; left: 20%; width: 40%; height: 35%; transform: rotate(3deg); border-left: 5px solid rgba(0,255,255,0.7); }
+  #div6 { top: 45%; left: 50%; width: 45%; height: 20%; transform: rotate(10deg) translateZ(20px); }
+  #div7 { top: 60%; left: 5%; width: 30%; height: 30%; transform: rotate(-7deg) translateZ(5px); border-bottom: 5px solid rgba(255,0,255,0.7); }
+  #div8 { top: 70%; left: 35%; width: 25%; height: 25%; transform: rotate(15deg); }
+  #div9 { top: 50%; left: 20%; width: 20%; height: 10%; transform: rotate(-3deg); }
+  #div10 { top: 10%; left: 70%; width: 20%; height: 10%; transform: rotate(15deg); }
+  #div11 { top: 80%; left: 65%; width: 30%; height: 15%; transform: rotate(-8deg) translateZ(-10px); }
+  #div12 { top: 30%; left: 40%; width: 15%; height: 15%; transform: rotate(20deg); }
+  #div13 { top: 55%; left: 0%; width: 10%; height: 10%; transform: rotate(30deg); }
+  #div14 { top: 0%; left: 80%; width: 15%; height: 10%; transform: rotate(-20deg); }
+  #div15 { top: 35%; left: 80%; width: 18%; height: 25%; transform: rotate(5deg) scale(0.9); }
+  #div16 { top: 0%; left: 0%; width: 100%; height: 100%; opacity: 0.05; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0, rgba(0,0,0,0.02) 5px, rgba(255,255,255,0.02) 10px); z-index: -1; } /* Overall static */
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+  <div id="div16" class="decay-div"></div> <!-- Overall static layer -->
+
+  <div id="div1" class="decay-div red static">
+    <span class="glitch-text">DATA LOST</span>
+  </div>
+
+  <div id="div2" class="decay-div orange corrupted">
+    <span class="glitch-text">BYTE ROT</span>
+  </div>
+
+  <div id="div3" class="decay-div yellow fragmented">
+    <span class="glitch-text">PIXELATED</span>
+  </div>
+
+  <div id="div4" class="decay-div green lost-packet">
+    <span class="glitch-text">SIGNAL FADE</span>
+  </div>
+
+  <div id="div5" class="decay-div blue data-stream">
+    <span class="glitch-text">MEMORIES CRUMBLE</span>
+  </div>
+
+  <div id="div6" class="decay-div indigo memory-leak">
+    <span class="glitch-text">VOID GROWING</span>
+  </div>
+
+  <div id="div7" class="decay-div violet ghost">
+    <span class="glitch-text">ECHOES</span>
+  </div>
+
+  <div id="div8" class="decay-div red static fragmented">
+    <span class="glitch-text">ERROR 404</span>
+  </div>
+
+  <div id="div9" class="decay-div orange lost-packet">
+    <span class="glitch-text">FRAGMENT</span>
+  </div>
+
+  <div id="div10" class="decay-div yellow corrupted">
+    <span class="glitch-text">DEFRAGMENT</span>
+  </div>
+
+  <div id="div11" class="decay-div green data-stream fragmented">
+    <span class="glitch-text">ARCHIVE BROKEN</span>
+  </div>
+
+  <div id="div12" class="decay-div blue memory-leak static">
+    <span class="glitch-text">SYSTEM FAILURE</span>
+  </div>
+
+  <div id="div13" class="decay-div indigo ghost">
+    <span class="glitch-text">TRACE GONE</span>
+  </div>
+
+  <div id="div14" class="decay-div violet corrupted lost-packet">
+    <span class="glitch-text">NO INPUT</span>
+  </div>
+
+  <div id="div15" class="decay-div red fragmented data-stream">
+    <span class="glitch-text">END OF LINE</span>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 09:55:00.843965</div>
         <div style="position: relative; width: 950px; height: 750px; border: 8px solid #333; overflow: hidden; background-color: #ecf0f1; font-family: 'Impact', sans-serif; box-shadow: 10px 10px 30px rgba(0,0,0,0.5);">
 
