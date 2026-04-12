@@ -16,6 +16,228 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 14:49:24.094874</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Glitch Rainbow Collage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Dark background for contrast */
+            overflow: hidden; /* Prevent scrollbars */
+            font-family: 'monospace', sans-serif;
+            color: #fff; /* Default text color */
+        }
+
+        .glitch-collage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #1a1a1a; /* Slightly off-black */
+            border: 2px solid #333; /* subtle border */
+            box-sizing: border-box;
+        }
+
+        .glitch-element {
+            position: absolute;
+            box-sizing: border-box;
+            font-family: 'monospace', 'Courier New', monospace;
+            color: #fff;
+            text-shadow: 1px 1px 0px rgba(255, 0, 0, 0.4), -1px -1px 0px rgba(0, 255, 255, 0.4); /* Chromatic aberration */
+            opacity: 0.9;
+        }
+
+        .glitch-text {
+            font-size: 3em;
+            font-weight: bold;
+            white-space: pre; /* Preserve spaces in text */
+            pointer-events: none; /* Make text not interfere with mouse events */
+            animation: glitch-flicker 2s infinite alternate, text-shift 1s infinite alternate;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            line-height: 1; /* Tighter line spacing */
+        }
+
+        .glitch-block {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: block-flicker 3s infinite ease-in-out alternate;
+        }
+
+        .rainbow-text {
+            background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback */
+            filter: saturate(1.5) contrast(1.2);
+        }
+
+        .rainbow-gradient {
+            background-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            filter: blur(0.5px);
+            opacity: 0.6;
+        }
+
+        .animated-scanline {
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+            animation: scanline 4s linear infinite;
+            opacity: 0.3;
+            top: 0;
+            left: 0;
+            transform-origin: top; /* Ensures scanline starts from top */
+        }
+
+        @keyframes glitch-flicker {
+            0% { opacity: 1; transform: translate(0, 0); }
+            20% { opacity: 0.8; transform: translate(-1px, 1px); }
+            40% { opacity: 1; transform: translate(1px, -1px); }
+            60% { opacity: 0.9; transform: translate(-2px, 0); }
+            80% { opacity: 1; transform: translate(0, 2px); }
+            100% { opacity: 0.7; transform: translate(2px, -2px); }
+        }
+
+        @keyframes block-flicker {
+            0% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.9; transform: scale(1.01) rotate(0.5deg); }
+            100% { opacity: 0.6; transform: scale(0.99) rotate(-0.5deg); }
+        }
+
+        @keyframes text-shift {
+            0% { text-shadow: 1px 1px 0px rgba(255, 0, 0, 0.5), -1px -1px 0px rgba(0, 255, 255, 0.5); }
+            25% { text-shadow: 2px 0px 0px rgba(255, 0, 0, 0.6), -2px 0px 0px rgba(0, 255, 255, 0.4); }
+            50% { text-shadow: 0px 2px 0px rgba(255, 0, 0, 0.4), 0px -2px 0px rgba(0, 255, 255, 0.6); }
+            75% { text-shadow: -1px -1px 0px rgba(255, 0, 0, 0.5), 1px 1px 0px rgba(0, 255, 255, 0.5); }
+            100% { text-shadow: 1px 1px 0px rgba(255, 0, 0, 0.5), -1px -1px 0px rgba(0, 255, 255, 0.5); }
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); opacity: 0.3; } /* Start above viewport */
+            50% { opacity: 0.5; }
+            100% { transform: translateY(100vh); opacity: 0.3; } /* End below viewport */
+        }
+
+        .glitch-fragment {
+            animation: fragment-shift 3s infinite alternate;
+            font-size: 1.2em;
+            color: #aaa;
+        }
+
+        @keyframes fragment-shift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2px, -1px) rotate(1deg); opacity: 0.95; }
+            66% { transform: translate(-1px, 2px) rotate(-1deg); opacity: 0.9; }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .rainbow-line {
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            opacity: 0.7;
+            filter: blur(1px);
+        }
+        
+        .static-noise {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8ZmlsdGVlciBpZD0ibiI+CiAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC43IiBudW1PY3RhdmVzPSIxIiBzZWFtVHlwZT0ibm9Ob25lIiAvPgogICAgPGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIgLz4KICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJyZXN1bHQiIG9wZXJhdG9yPSJpbiIgLz4KICA8L2ZpbHRlcj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuMDUiIC8+Cjwvc3ZnPg==');
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 100; /* Ensure it's on top */
+            animation: noise-anim 1s steps(10) infinite;
+        }
+
+        @keyframes noise-anim {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); } /* Move noise vertically */
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch-collage">
+        <!-- Static TV noise overlay -->
+        <div class="static-noise"></div>
+
+        <!-- Animated scanline effects -->
+        <div class="glitch-element animated-scanline" style="top: 0; animation-duration: 6s; animation-delay: 0s;"></div>
+        <div class="glitch-element animated-scanline" style="top: 0; animation-duration: 5s; animation-delay: -2s; transform: scaleY(0.5);"></div>
+
+        <!-- Main Title -->
+        <div class="glitch-element glitch-text rainbow-text" style="top: 10%; left: 5%; font-size: 4em; transform: skewX(-5deg); z-index: 10;">
+            G L I T C H
+        </div>
+        <div class="glitch-element glitch-text rainbow-text" style="top: 13%; left: 7%; font-size: 4em; opacity: 0.7; transform: skewX(5deg); z-index: 9;">
+            G L I T C H
+        </div>
+
+        <!-- Subtitle/Keywords -->
+        <div class="glitch-element glitch-text" style="top: 25%; left: 20%; font-size: 2.5em; color: #f0f; z-index: 10;">
+            R A I N B O W <span style="color: #0ff;">A E S T H E T I C S</span>
+        </div>
+        <div class="glitch-element glitch-text" style="top: 25.5%; left: 20.5%; font-size: 2.5em; opacity: 0.6; color: #ff0; z-index: 9;">
+            R A I N B O W <span style="color: #f0f;">A E S T H E T I C S</span>
+        </div>
+
+        <!-- Data corruption snippets -->
+        <div class="glitch-element glitch-text" style="top: 40%; left: 10%; font-size: 1.5em; color: #00ff00; z-index: 10;">
+            ERROR_404_DATA_CORRUPTED [0xDEADBEEF]
+        </div>
+        <div class="glitch-element glitch-text" style="top: 42%; left: 12%; font-size: 1.5em; color: #ff00ff; opacity: 0.5; z-index: 9;">
+            ERROR_404_DATA_CORRUPTED [0xDEADBEEF]
+        </div>
+
+        <div class="glitch-element glitch-text" style="top: 55%; right: 5%; font-size: 1.8em; color: #00ffff; z-index: 10;">
+            PIXEL_DRIFT // OVERLOAD
+        </div>
+        <div class="glitch-element glitch-text" style="top: 55.5%; right: 5.5%; font-size: 1.8em; color: #ffff00; opacity: 0.6; z-index: 9;">
+            PIXEL_DRIFT // OVERLOAD
+        </div>
+
+        <!-- Random colorful blocks -->
+        <div class="glitch-element glitch-block" style="width: 80px; height: 30px; top: 5%; left: 80%; background-color: #f00; transform: rotate(10deg); animation-delay: -1s;"></div>
+        <div class="glitch-element glitch-block" style="width: 60px; height: 120px; top: 15%; left: 85%; background-color: #0f0; opacity: 0.8; transform: rotate(-5deg); animation-delay: -2s;"></div>
+        <div class="glitch-element glitch-block" style="width: 40px; height: 80px; top: 25%; left: 75%; background-color: #00f; transform: skewY(15deg); opacity: 0.7; animation-delay: -0.5s;"></div>
+        <div class="glitch-element glitch-block rainbow-gradient" style="width: 100px; height: 50px; top: 35%; left: 82%; transform: rotate(20deg); opacity: 0.9; animation-delay: -1.5s;"></div>
+        <div class="glitch-element glitch-block" style="width: 70px; height: 70px; top: 45%; left: 5%; background-color: #ff0; opacity: 0.6; transform: rotate(45deg); animation-delay: -2.5s;"></div>
+        <div class="glitch-element glitch-block rainbow-gradient" style="width: 150px; height: 20px; top: 60%; left: 15%; transform: skewX(-20deg); opacity: 0.8; animation-delay: -0.8s;"></div>
+        <div class="glitch-element glitch-block" style="width: 30px; height: 100px; top: 70%; left: 70%; background-color: #f0f; opacity: 0.5; transform: rotate(15deg); animation-delay: -1.8s;"></div>
+        <div class="glitch-element glitch-block" style="width: 90px; height: 40px; top: 80%; left: 50%; background-color: #0ff; opacity: 0.7; transform: skewY(-10deg); animation-delay: -0.3s;"></div>
+
+        <!-- Thin rainbow lines/bars -->
+        <div class="glitch-element rainbow-line" style="width: 100%; height: 3px; top: 20%; left: 0; animation: glitch-flicker 1.5s infinite alternate; animation-delay: -0.1s;"></div>
+        <div class="glitch-element rainbow-line" style="width: 80%; height: 5px; top: 48%; left: 10%; transform: rotate(2deg); animation: glitch-flicker 2s infinite alternate; animation-delay: -0.7s;"></div>
+        <div class="glitch-element rainbow-line" style="width: 60%; height: 2px; top: 70%; left: 30%; transform: rotate(-3deg); animation: glitch-flicker 1.8s infinite alternate; animation-delay: -0.4s;"></div>
+
+        <!-- Smaller text fragments -->
+        <div class="glitch-element glitch-fragment" style="top: 75%; left: 5%; color: #fff;">
+            <span class="rainbow-text" style="font-size: 1.5em;">[SYSTEM]</span> OVERLOAD_01
+        </div>
+        <div class="glitch-element glitch-fragment" style="top: 80%; left: 7%; color: #ff0;">
+            <span style="font-size: 1.2em;">PIXEL</span>_SHIFT_X
+        </div>
+        <div class="glitch-element glitch-fragment" style="top: 85%; right: 10%; color: #0f0;">
+            FRAGMENT_Y <span class="rainbow-text">LOAD</span>
+        </div>
+        <div class="glitch-element glitch-fragment" style="top: 90%; right: 8%; color: #0ff;">
+            <span class="rainbow-text">COLLAGE</span>_COMPLETE
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 13:16:23.058903</div>
         <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; font-family: 'Open Sans', Arial, sans-serif; background-color: #1a1a1a;">
 
