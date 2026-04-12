@@ -16,6 +16,233 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 20:46:01.354552</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Radical Beautiful Brutalist Rainbow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* Reset basic browser styles */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrollbars from elements going off-screen */
+        background-color: #1a1a1a; /* Dark background to make the rainbow colors pop */
+        font-family: 'Impact', 'Arial Black', Gadget, sans-serif;
+        color: white;
+    }
+
+    /* Main container for the collage */
+    .collage-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        perspective: 1200px; /* Add some 3D perspective */
+    }
+
+    /* Base style for brutalist blocks */
+    .brutalist-block {
+        position: absolute;
+        box-sizing: border-box; /* Include padding and border in element's total width/height */
+        border: 4px solid rgba(0, 0, 0, 0.2); /* Subtle dark border for definition */
+        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4), inset 2px 2px 5px rgba(255, 255, 255, 0.1); /* Deep shadow for depth */
+        transition: transform 0.5s ease-out, background-color 0.3s ease-out; /* Smooth transitions */
+    }
+
+    /* Text elements styling */
+    .collage-text {
+        position: absolute;
+        font-size: 5em;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 0.9;
+        text-shadow: 6px 6px 15px rgba(0,0,0,0.7);
+        z-index: 1000; /* Ensure text is always on top */
+        pointer-events: none; /* Allow mouse events to pass through text to elements beneath */
+        white-space: nowrap;
+    }
+
+    /* Rainbow Gradient for Text (Webkit specific for now) */
+    .text-rainbow-full {
+        background: linear-gradient(90deg, #ff0000, #ff8c00, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-rainbow-warm {
+        background: linear-gradient(90deg, #ff0000, #ff8c00, #ffff00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .text-rainbow-cool {
+        background: linear-gradient(90deg, #0000ff, #4b0082, #ee82ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Specific element styles for brutalist blocks */
+
+    /* Red */
+    .block-red {
+        background: linear-gradient(45deg, #ff0000, #cc0000);
+        width: 350px; height: 180px;
+        top: 8%; left: 5%;
+        transform: rotateZ(7deg) rotateY(10deg);
+        z-index: 10;
+    }
+    /* Orange */
+    .block-orange {
+        background: linear-gradient(135deg, #ff8c00, #e67300);
+        width: 280px; height: 120px;
+        top: 20%; right: 12%;
+        transform: rotateZ(-12deg) rotateX(5deg);
+        z-index: 15;
+    }
+    /* Yellow */
+    .block-yellow {
+        background: linear-gradient(90deg, #ffff00, #e6e600);
+        width: 200px; height: 300px;
+        bottom: 10%; left: 18%;
+        transform: rotateZ(18deg) rotateY(-8deg) scale(0.95);
+        z-index: 8;
+    }
+    /* Green */
+    .block-green {
+        background: linear-gradient(225deg, #008000, #006600);
+        width: 450px; height: 90px;
+        top: 45%; left: 50%;
+        transform: translate(-50%, -50%) rotateZ(3deg) rotateX(15deg);
+        z-index: 20;
+    }
+    /* Blue */
+    .block-blue {
+        background: linear-gradient(0deg, #0000ff, #0000cc);
+        width: 220px; height: 320px;
+        bottom: 5%; right: 20%;
+        transform: rotateZ(-25deg) rotateY(10deg) scale(1.1);
+        z-index: 12;
+    }
+    /* Indigo (Purple-ish) */
+    .block-indigo {
+        background: linear-gradient(60deg, #4b0082, #3a0066);
+        width: 150px; height: 380px;
+        top: 3%; right: 5%;
+        transform: rotateZ(30deg) rotateX(-10deg);
+        z-index: 18;
+    }
+    /* Violet (Pink-ish) */
+    .block-violet {
+        background: linear-gradient(180deg, #ee82ee, #cc66cc);
+        width: 380px; height: 110px;
+        bottom: 15%; left: 2%;
+        transform: rotateZ(-8deg) rotateY(5deg);
+        z-index: 11;
+    }
+
+    /* Additional brutalist-inspired blocks (more monochromatic/concrete-like) */
+    .block-concrete-1 {
+        background-color: #666; /* Grey */
+        width: 100px; height: 450px;
+        top: 0; left: 38%;
+        transform: rotateY(20deg) rotateX(5deg);
+        z-index: 5;
+        opacity: 0.85;
+    }
+    .block-concrete-2 {
+        background-color: #888;
+        width: 500px; height: 70px;
+        top: 75%; left: 8%;
+        transform: rotateX(10deg) rotateZ(3deg);
+        z-index: 7;
+        opacity: 0.9;
+    }
+    .block-concrete-3 {
+        background-color: #444;
+        width: 180px; height: 180px;
+        top: 25%; left: 65%;
+        transform: rotateY(-30deg) rotateZ(15deg);
+        z-index: 16;
+        opacity: 0.7;
+    }
+    .block-concrete-4 {
+        background: linear-gradient(135deg, #333, #000);
+        width: 120px; height: 120px;
+        top: 60%; right: 3%;
+        transform: rotateX(45deg) rotateZ(-20deg);
+        z-index: 9;
+    }
+    .block-concrete-5 {
+        background: linear-gradient(45deg, #ccc, #aaa);
+        width: 250px; height: 60px;
+        bottom: 30%; left: 45%;
+        transform: rotateZ(10deg) rotateX(-5deg);
+        z-index: 14;
+        opacity: 0.95;
+    }
+
+    /* Specific text positioning and styling */
+    .text-brutal {
+        top: 15%; left: 50%;
+        transform: translate(-50%, -50%) rotateZ(-5deg);
+        font-size: 8em;
+    }
+    .text-architecture {
+        bottom: 15%; right: 50%;
+        transform: translate(50%, 50%) rotateZ(8deg);
+        font-size: 6em;
+    }
+    .text-radical {
+        top: 50%; left: 2%;
+        transform: translateY(-50%) rotateZ(-90deg);
+        font-size: 4em;
+    }
+    .text-beautiful {
+        top: 50%; right: 2%;
+        transform: translateY(-50%) rotateZ(90deg);
+        font-size: 4em;
+    }
+
+</style>
+</head>
+<body>
+<div class="collage-container">
+
+    <!-- Brutalist Blocks - Rainbow spectrum -->
+    <div class="brutalist-block block-red"></div>
+    <div class="brutalist-block block-orange"></div>
+    <div class="brutalist-block block-yellow"></div>
+    <div class="brutalist-block block-green"></div>
+    <div class="brutalist-block block-blue"></div>
+    <div class="brutalist-block block-indigo"></div>
+    <div class="brutalist-block block-violet"></div>
+
+    <!-- Additional concrete-like blocks for brutalist feel -->
+    <div class="brutalist-block block-concrete-1"></div>
+    <div class="brutalist-block block-concrete-2"></div>
+    <div class="brutalist-block block-concrete-3"></div>
+    <div class="brutalist-block block-concrete-4"></div>
+    <div class="brutalist-block block-concrete-5"></div>
+    <div class="brutalist-block" style="background-color: #555; width: 80px; height: 200px; top: 10%; left: 25%; transform: rotateY(-20deg) rotateZ(10deg); z-index: 6; opacity: 0.8;"></div>
+    <div class="brutalist-block" style="background-color: #777; width: 150px; height: 90px; bottom: 5%; right: 35%; transform: rotateX(15deg) rotateZ(-5deg); z-index: 10; opacity: 0.95;"></div>
+    <div class="brutalist-block" style="background: linear-gradient(0deg, #222, #444); width: 60px; height: 280px; top: 30%; right: 40%; transform: rotateY(30deg) rotateZ(20deg); z-index: 17;"></div>
+    <div class="brutalist-block" style="background: linear-gradient(180deg, #999, #bbb); width: 300px; height: 50px; top: 5%; right: 45%; transform: rotateZ(2deg) rotateX(10deg); z-index: 13;"></div>
+
+    <!-- Text elements with rainbow gradients -->
+    <div class="collage-text text-brutal text-rainbow-full">Brutal</div>
+    <div class="collage-text text-architecture text-rainbow-full">Architecture</div>
+    <div class="collage-text text-radical text-rainbow-warm">Radical</div>
+    <div class="collage-text text-beautiful text-rainbow-cool">Beautiful</div>
+
+</div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 19:00:30.568664</div>
         <!DOCTYPE html>
 <html lang="en">
