@@ -16,6 +16,324 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 11:39:42.758926</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Brutalist Rainbow Collage</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden; /* Prevent horizontal scroll from rotated elements */
+    background-color: #111; /* Dark background for contrast */
+    color: #eee;
+    perspective: 1000px; /* For potential future 3D effects, adds depth */
+  }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    min-height: 150vh; /* Make it taller to allow more vertical spread */
+    overflow: hidden; /* Hide anything that spills out, maintaining collage bounds */
+  }
+
+  .item {
+    position: absolute;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s cubic-bezier(.25,.8,.25,1), filter 0.4s ease;
+    cursor: default;
+    border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle white border for brutalist edge */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    overflow: hidden;
+    filter: brightness(1) saturate(1);
+  }
+
+  .item:hover {
+    transform: scale(1.03) rotate(var(--rotate, 0deg)) !important; /* Slightly larger on hover, keeps rotation */
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
+    z-index: 1000; /* Bring to front on hover */
+    filter: brightness(1.1) saturate(1.1); /* Slightly brighter and more saturated */
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover their containers */
+    display: block;
+    filter: grayscale(15%) contrast(115%); /* Brutalist texture for images */
+  }
+
+  .text-block {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.2;
+    font-size: clamp(0.8rem, 2vw, 2rem); /* Responsive font size */
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); /* Stronger text shadow */
+    word-break: break-word;
+    letter-spacing: 0.03em;
+  }
+
+  /* Rainbow colors HSL (Hue, Saturation, Lightness) */
+  /* Using 80% saturation and 50% lightness for vibrant, consistent colors */
+  .color-0 { background-color: hsl(0, 80%, 50%); }   /* Red */
+  .color-1 { background-color: hsl(30, 80%, 50%); }  /* Orange */
+  .color-2 { background-color: hsl(60, 80%, 50%); }  /* Yellow */
+  .color-3 { background-color: hsl(120, 80%, 40%); } /* Green (slightly darker for contrast) */
+  .color-4 { background-color: hsl(240, 80%, 50%); } /* Blue */
+  .color-5 { background-color: hsl(270, 80%, 50%); } /* Indigo/Purple */
+  .color-6 { background-color: hsl(300, 80%, 50%); } /* Violet */
+  .color-7 { background-color: hsl(330, 80%, 50%); } /* Magenta (extra color for richness) */
+
+
+  /* Specific item styles for positioning, dimensions, and rotation */
+  /* Using CSS variables for rotation (--rotate) for hover effect */
+
+  /* Title: "BRUTALIST RAINBOW" */
+  .item:nth-child(1) {
+    width: 70vw; height: 18vh;
+    top: 5vh; left: 15vw;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    z-index: 50;
+    --rotate: -3deg; transform: rotate(-3deg);
+    padding: 0;
+  }
+  .item:nth-child(1) .text-block {
+    font-size: clamp(2.5rem, 10vw, 7rem); /* Large, impactful title */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9), 0 0 20px hsl(240, 80%, 70%); /* Blue glow for brutalist contrast */
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Image 1 (Orange container) */
+  .item:nth-child(2) {
+    width: 38vw; height: 48vh;
+    top: 15vh; left: 5vw;
+    --rotate: 5deg; transform: rotate(5deg);
+    z-index: 10;
+    background-color: hsl(30, 80%, 50%);
+  }
+
+  /* Text Block 1 (Blue container) */
+  .item:nth-child(3) {
+    width: 28vw; height: 22vh;
+    top: 10vh; left: 60vw;
+    --rotate: -8deg; transform: rotate(-8deg);
+    z-index: 20;
+    background-color: hsl(240, 80%, 50%);
+    opacity: 0.95;
+    border-radius: 5px; /* Slightly rounded for contrast */
+  }
+
+  /* Image 2 (Red container) */
+  .item:nth-child(4) {
+    width: 32vw; height: 38vh;
+    top: 30vh; left: 40vw;
+    --rotate: -2deg; transform: rotate(-2deg);
+    z-index: 15;
+    background-color: hsl(0, 80%, 50%);
+  }
+
+  /* Text Block 2 (Green container) */
+  .item:nth-child(5) {
+    width: 24vw; height: 18vh;
+    top: 55vh; left: 65vw;
+    --rotate: 10deg; transform: rotate(10deg);
+    z-index: 25;
+    background-color: hsl(120, 80%, 40%);
+    opacity: 0.9;
+  }
+
+  /* Color Block 1 (Yellow) - pure block */
+  .item:nth-child(6) {
+    width: 18vw; height: 18vw; /* Square */
+    top: 50vh; left: 25vw;
+    --rotate: 20deg; transform: rotate(20deg);
+    z-index: 5;
+    background-color: hsl(60, 80%, 50%);
+    opacity: 0.75;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%; /* Circle for visual variety */
+  }
+
+  /* Image 3 (Indigo/Purple container) */
+  .item:nth-child(7) {
+    width: 42vw; height: 32vh;
+    top: 70vh; left: 8vw;
+    --rotate: -7deg; transform: rotate(-7deg);
+    z-index: 18;
+    background-color: hsl(270, 80%, 50%);
+  }
+
+  /* Text Block 3 (Red container) */
+  .item:nth-child(8) {
+    width: 35vw; height: 25vh;
+    top: 75vh; left: 45vw;
+    --rotate: 3deg; transform: rotate(3deg);
+    z-index: 22;
+    background-color: hsl(0, 80%, 50%);
+    opacity: 0.98;
+  }
+
+  /* Color Block 2 (Violet) - pure block */
+  .item:nth-child(9) {
+    width: 25vw; height: 12vh;
+    top: 90vh; left: 18vw;
+    --rotate: 15deg; transform: rotate(15deg);
+    z-index: 8;
+    background-color: hsl(300, 80%, 50%);
+    opacity: 0.65;
+    border-top-left-radius: 30px; /* Asymmetric radius */
+    border-bottom-right-radius: 30px;
+  }
+
+  /* Text Block 4 (Orange container) */
+  .item:nth-child(10) {
+    width: 26vw; height: 28vh;
+    top: 100vh; left: 65vw;
+    --rotate: -5deg; transform: rotate(-5deg);
+    z-index: 28;
+    background-color: hsl(30, 80%, 50%);
+    opacity: 0.92;
+  }
+
+  /* Image 4 (Green container) */
+  .item:nth-child(11) {
+    width: 34vw; height: 42vh;
+    top: 95vh; left: 30vw;
+    --rotate: 8deg; transform: rotate(8deg);
+    z-index: 12;
+    background-color: hsl(120, 80%, 40%);
+  }
+
+  /* Color Block 3 (Magenta) - pure block */
+  .item:nth-child(12) {
+    width: 15vw; height: 15vh;
+    top: 115vh; left: 5vw;
+    --rotate: -12deg; transform: rotate(-12deg);
+    z-index: 7;
+    background-color: hsl(330, 80%, 50%);
+    opacity: 0.7;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Subtitle/Quote (Roboto Mono) */
+  .item:nth-child(13) {
+    width: 45vw; height: 12vh;
+    top: 130vh; left: 20vw;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    z-index: 30;
+    --rotate: 1deg; transform: rotate(1deg);
+    padding: 0;
+  }
+  .item:nth-child(13) .text-block {
+    font-size: clamp(1rem, 2.8vw, 2.2rem);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    color: #bbb;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Helper for text to look more brutalist-like */
+  .brutalist-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Subtle animations for background blocks */
+  @keyframes pulseColor {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+    100% { filter: brightness(1); }
+  }
+
+  .item:nth-child(6), .item:nth-child(9), .item:nth-child(12) {
+    animation: pulseColor 6s infinite ease-in-out;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div class="item">
+    <div class="text-block brutalist-text">BRUTALIST RAINBOW</div>
+  </div>
+
+  <div class="item color-1">
+    <img src="https://picsum.photos/id/1018/800/600" alt="Brutalist concrete building facade, geometric shapes">
+  </div>
+
+  <div class="item color-4">
+    <div class="text-block">"Architecture must be honest, direct, and unadorned."</div>
+  </div>
+
+  <div class="item color-0">
+    <img src="https://picsum.photos/id/1015/800/600" alt="Brutalist high-rise residential building, strong shadows">
+  </div>
+
+  <div class="item color-3">
+    <div class="text-block brutalist-text">Concrete Dreams. Raw Beauty. Monumental.</div>
+  </div>
+
+  <div class="item color-2">
+    <!-- Pure yellow color block -->
+  </div>
+
+  <div class="item color-5">
+    <img src="https://picsum.photos/id/1016/800/600" alt="Brutalist university building, textured concrete walls">
+  </div>
+
+  <div class="item color-0">
+    <div class="text-block">Béton Brut. Imposing Scale. Uncompromising Form. POWER.</div>
+  </div>
+
+  <div class="item color-6">
+    <!-- Pure violet color block -->
+  </div>
+
+  <div class="item color-1">
+    <div class="text-block brutalist-text">The Barbican. Trellick Tower. Geisel Library. Iconic Forms.</div>
+  </div>
+
+  <div class="item color-3">
+    <img src="https://picsum.photos/id/1019/800/600" alt="Brutalist public building, geometric windows">
+  </div>
+
+  <div class="item color-7">
+    <!-- Pure magenta color block -->
+  </div>
+
+  <div class="item">
+    <div class="text-block">A powerful aesthetic, redefined by vibrant hues. Radical structure, vivid soul.</div>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-12 10:48:52.573112</div>
         <!DOCTYPE html>
 <html>
