@@ -16,6 +16,233 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 09:05:12.688019</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+            background-color: #000; /* Black background for contrast */
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .decay-element {
+            position: absolute;
+            opacity: 0.9;
+            animation: glitch 3s infinite alternate, fadeOut 10s ease-out forwards;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Clip content if it overflows its own box */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            backdrop-filter: blur(2px); /* Slight blur for atmospheric effect */
+            background-blend-mode: screen; /* For interesting color interactions */
+        }
+
+        .text-element {
+            font-size: clamp(0.8em, 3vw, 2em);
+            line-height: 1.2;
+            padding: 5px;
+            color: #fff; /* Default white text */
+            text-shadow: 0 0 5px currentColor;
+            word-break: break-all;
+            hyphens: auto;
+        }
+
+        /* Rainbow Colors */
+        .red { background-color: rgba(255, 0, 0, 0.3); border: 1px solid rgba(255, 0, 0, 0.8); color: #fff; }
+        .orange { background-color: rgba(255, 165, 0, 0.3); border: 1px solid rgba(255, 165, 0, 0.8); color: #fff; }
+        .yellow { background-color: rgba(255, 255, 0, 0.3); border: 1px solid rgba(255, 255, 0, 0.8); color: #000; }
+        .green { background-color: rgba(0, 128, 0, 0.3); border: 1px solid rgba(0, 128, 0, 0.8); color: #fff; }
+        .blue { background-color: rgba(0, 0, 255, 0.3); border: 1px solid rgba(0, 0, 255, 0.8); color: #fff; }
+        .indigo { background-color: rgba(75, 0, 130, 0.3); border: 1px solid rgba(75, 0, 130, 0.8); color: #fff; }
+        .violet { background-color: rgba(238, 130, 238, 0.3); border: 1px solid rgba(238, 130, 238, 0.8); color: #fff; }
+        .pink { background-color: rgba(255, 192, 203, 0.3); border: 1px solid rgba(255, 192, 203, 0.8); color: #000; }
+        .cyan { background-color: rgba(0, 255, 255, 0.3); border: 1px solid rgba(0, 255, 255, 0.8); color: #000; }
+        .magenta { background-color: rgba(255, 0, 255, 0.3); border: 1px solid rgba(255, 0, 255, 0.8); color: #fff; }
+
+        /* Positioning and Sizing */
+        .element-1 { top: 5%; left: 10%; width: 25%; height: 20%; transform: rotate(-5deg); animation-delay: 0.1s; }
+        .element-2 { top: 15%; left: 40%; width: 30%; height: 15%; transform: rotate(10deg); animation-delay: 0.5s; }
+        .element-3 { top: 30%; left: 5%; width: 20%; height: 25%; transform: rotate(3deg); animation-delay: 1s; }
+        .element-4 { top: 40%; left: 70%; width: 20%; height: 18%; transform: rotate(-8deg); animation-delay: 1.5s; }
+        .element-5 { top: 55%; left: 25%; width: 35%; height: 10%; transform: rotate(7deg); animation-delay: 2s; }
+        .element-6 { top: 70%; left: 5%; width: 15%; height: 12%; transform: rotate(-12deg); animation-delay: 2.5s; }
+        .element-7 { top: 80%; left: 50%; width: 28%; height: 18%; transform: rotate(4deg); animation-delay: 3s; }
+        .element-8 { top: 2%; left: 75%; width: 15%; height: 10%; transform: rotate(15deg); animation-delay: 0.3s; }
+        .element-9 { top: 20%; left: 60%; width: 18%; height: 22%; transform: rotate(-2deg); animation-delay: 0.8s; }
+        .element-10 { top: 45%; left: 45%; width: 12%; height: 15%; transform: rotate(9deg); animation-delay: 1.2s; }
+        .element-11 { top: 65%; left: 35%; width: 20%; height: 10%; transform: rotate(-6deg); animation-delay: 1.8s; }
+        .element-12 { top: 85%; left: 80%; width: 10%; height: 8%; transform: rotate(20deg); animation-delay: 2.2s; }
+        .element-13 { top: 5%; left: 50%; width: 10%; height: 10%; transform: rotate(0deg); animation-delay: 0.7s; }
+        .element-14 { top: 25%; left: 5%; width: 10%; height: 8%; transform: rotate(-20deg); animation-delay: 1.3s; }
+        .element-15 { top: 75%; left: 20%; width: 10%; height: 10%; transform: rotate(18deg); animation-delay: 1.7s; }
+        .element-16 { top: 10%; left: 2%; width: 8%; height: 15%; transform: rotate(-10deg); animation-delay: 2.1s; }
+        .element-17 { top: 60%; left: 80%; width: 10%; height: 10%; transform: rotate(5deg); animation-delay: 2.6s; }
+        .element-18 { top: 30%; left: 30%; width: 10%; height: 10%; transform: rotate(-15deg); animation-delay: 0.4s; }
+        .element-19 { top: 50%; left: 10%; width: 10%; height: 10%; transform: rotate(25deg); animation-delay: 0.9s; }
+        .element-20 { top: 80%; left: 35%; width: 10%; height: 10%; transform: rotate(-7deg); animation-delay: 1.6s; }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0) scale(1) rotate(var(--initial-rotation)); opacity: 0.9; }
+            20% { transform: translate(calc(var(--rand-x-1) * 1px), calc(var(--rand-y-1) * 1px)) scale(1.01) rotate(calc(var(--initial-rotation) + var(--rand-rot-1) * 1deg)); opacity: 0.8; }
+            40% { transform: translate(calc(var(--rand-x-2) * 1px), calc(var(--rand-y-2) * 1px)) scale(0.99) rotate(calc(var(--initial-rotation) + var(--rand-rot-2) * 1deg)); opacity: 0.7; }
+            60% { transform: translate(calc(var(--rand-x-3) * 1px), calc(var(--rand-y-3) * 1px)) scale(1.02) rotate(calc(var(--initial-rotation) + var(--rand-rot-3) * 1deg)); opacity: 0.9; }
+            80% { transform: translate(calc(var(--rand-x-4) * 1px), calc(var(--rand-y-4) * 1px)) scale(0.98) rotate(calc(var(--initial-rotation) + var(--rand-rot-4) * 1deg)); opacity: 0.85; }
+            100% { transform: translate(0, 0) scale(1) rotate(var(--initial-rotation)); opacity: 0.9; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 0.9; filter: blur(0px) brightness(1); }
+            50% { opacity: 0.7; filter: blur(1px) brightness(0.9); }
+            100% { opacity: 0; filter: blur(5px) brightness(0.5); transform: scale(0.8) translateY(10%); pointer-events: none; }
+        }
+
+        /* Initial random variables for glitch */
+        .decay-element:nth-child(even) {
+            --rand-x-1: 5; --rand-y-1: -3; --rand-rot-1: 1;
+            --rand-x-2: -8; --rand-y-2: 6; --rand-rot-2: -2;
+            --rand-x-3: 3; --rand-y-3: -5; --rand-rot-3: 0.5;
+            --rand-x-4: -6; --rand-y-4: 4; --rand-rot-4: -1.5;
+        }
+
+        .decay-element:nth-child(odd) {
+            --rand-x-1: -4; --rand-y-1: 7; --rand-rot-1: -1;
+            --rand-x-2: 9; --rand-y-2: -2; --rand-rot-2: 2;
+            --rand-x-3: -7; --rand-y-3: 8; --rand-rot-3: -0.5;
+            --rand-x-4: 2; --rand-y-4: -9; --rand-rot-4: 1.5;
+        }
+
+        /* Set initial rotations as CSS variables */
+        .element-1 { --initial-rotation: -5deg; }
+        .element-2 { --initial-rotation: 10deg; }
+        .element-3 { --initial-rotation: 3deg; }
+        .element-4 { --initial-rotation: -8deg; }
+        .element-5 { --initial-rotation: 7deg; }
+        .element-6 { --initial-rotation: -12deg; }
+        .element-7 { --initial-rotation: 4deg; }
+        .element-8 { --initial-rotation: 15deg; }
+        .element-9 { --initial-rotation: -2deg; }
+        .element-10 { --initial-rotation: 9deg; }
+        .element-11 { --initial-rotation: -6deg; }
+        .element-12 { --initial-rotation: 20deg; }
+        .element-13 { --initial-rotation: 0deg; }
+        .element-14 { --initial-rotation: -20deg; }
+        .element-15 { --initial-rotation: 18deg; }
+        .element-16 { --initial-rotation: -10deg; }
+        .element-17 { --initial-rotation: 5deg; }
+        .element-18 { --initial-rotation: -15deg; }
+        .element-19 { --initial-rotation: 25deg; }
+        .element-20 { --initial-rotation: -7deg; }
+
+        /* Different fadeOut delays for more dynamic effect */
+        .element-1 { animation-delay: 0.1s; animation-duration: 12s; }
+        .element-2 { animation-delay: 0.5s; animation-duration: 10s; }
+        .element-3 { animation-delay: 1s; animation-duration: 15s; }
+        .element-4 { animation-delay: 1.5s; animation-duration: 11s; }
+        .element-5 { animation-delay: 2s; animation-duration: 13s; }
+        .element-6 { animation-delay: 2.5s; animation-duration: 9s; }
+        .element-7 { animation-delay: 3s; animation-duration: 14s; }
+        .element-8 { animation-delay: 0.3s; animation-duration: 10s; }
+        .element-9 { animation-delay: 0.8s; animation-duration: 12s; }
+        .element-10 { animation-delay: 1.2s; animation-duration: 16s; }
+        .element-11 { animation-delay: 1.8s; animation-duration: 9s; }
+        .element-12 { animation-delay: 2.2s; animation-duration: 11s; }
+        .element-13 { animation-delay: 0.7s; animation-duration: 13s; }
+        .element-14 { animation-delay: 1.3s; animation-duration: 10s; }
+        .element-15 { animation-delay: 1.7s; animation-duration: 15s; }
+        .element-16 { animation-delay: 2.1s; animation-duration: 12s; }
+        .element-17 { animation-delay: 2.6s; animation-duration: 14s; }
+        .element-18 { animation-delay: 0.4s; animation-duration: 11s; }
+        .element-19 { animation-delay: 0.9s; animation-duration: 13s; }
+        .element-20 { animation-delay: 1.6s; animation-duration: 10s; }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="decay-element element-1 red">
+            <div class="text-element">CACHE MISS<br>ERROR 404<br>DATA CORRUPTED</div>
+        </div>
+        <div class="decay-element element-2 orange">
+            <div class="text-element">BIT ROT<br>MEMORY LEAK<br>FRAGMENTATION</div>
+        </div>
+        <div class="decay-element element-3 yellow">
+            <div class="text-element">LOST PACKET<br>SIGNAL DECAY<br>VOID</div>
+        </div>
+        <div class="decay-element element-4 green">
+            <div class="text-element">FILE NOT FOUND<br>ACCESS DENIED<br>ERASED</div>
+        </div>
+        <div class="decay-element element-5 blue">
+            <div class="text-element">SYSTEM CRASH<br>KERNEL PANIC<br>Z E R O</div>
+        </div>
+        <div class="decay-element element-6 indigo">
+            <div class="text-element">BROKEN LINK<br>DEAD CODE<br>SILENCE</div>
+        </div>
+        <div class="decay-element element-7 violet">
+            <div class="text-element">DIGITAL DUST<br>GHOST IN THE MACHINE<br>ECHO</div>
+        </div>
+        <div class="decay-element element-8 pink">
+            <div class="text-element">DISCONNECTED<br>OUT OF SYNC<br>GLITCH</div>
+        </div>
+        <div class="decay-element element-9 cyan">
+            <div class="text-element">OBSOLETE<br>LEGACY CODE<br>FORGOTTEN</div>
+        </div>
+        <div class="decay-element element-10 magenta">
+            <div class="text-element">VOID POINTER<br>SEG FAULT<br>END</div>
+        </div>
+        <div class="decay-element element-11 red">
+            <div class="text-element">STATIC<br>NOISE<br>entropy</div>
+        </div>
+        <div class="decay-element element-12 orange">
+            <div class="text-element">UNREADABLE<br>CRYPTIC<br>decay</div>
+        </div>
+        <div class="decay-element element-13 yellow">
+            <div class="text-element">DEGRADATION<br>TRANSIENT<br>loss</div>
+        </div>
+        <div class="decay-element element-14 green">
+            <div class="text-element">UNRECOVERABLE<br>DELETED<br>gone</div>
+        </div>
+        <div class="decay-element element-15 blue">
+            <div class="text-element">FADING<br>ERASURE<br>ghost</div>
+        </div>
+        <div class="decay-element element-16 indigo">
+            <div class="text-element">NONEXISTENT<br>BLANK<br>nothing</div>
+        </div>
+        <div class="decay-element element-17 violet">
+            <div class="text-element">PIXELATION<br>ARTIFACTS<br>ruin</div>
+        </div>
+        <div class="decay-element element-18 pink">
+            <div class="text-element">CORRUPTED<br>DECOMPOSE<br>waste</div>
+        </div>
+        <div class="decay-element element-19 cyan">
+            <div class="text-element">NULL<br>UNREGISTERED<br>fade</div>
+        </div>
+        <div class="decay-element element-20 magenta">
+            <div class="text-element">ABANDONED<br>OBLIVION<br>silence</div>
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 06:22:20.111838</div>
         <!DOCTYPE html>
 <html>
