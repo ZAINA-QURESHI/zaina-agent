@@ -16,6 +16,295 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 13:57:23.673976</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+  body { margin: 0; overflow-x: hidden; font-family: 'Montserrat', sans-serif; background-color: #0d1117; color: #e6e6e6; }
+
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Dark cosmic background */
+  }
+
+  .collage-item {
+    position: absolute;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  /* Rainbow Gradient Backgrounds */
+  .rainbow-1 { background: linear-gradient(45deg, #ff0000, #ff8c00, #ffd700); }
+  .rainbow-2 { background: linear-gradient(45deg, #ffd700, #008000, #0000ff); }
+  .rainbow-3 { background: linear-gradient(45deg, #0000ff, #4b0082, #ee82ee); }
+  .rainbow-4 { background: linear-gradient(45deg, #ff0000, #ee82ee, #4b0082); }
+  .rainbow-5 { background: linear-gradient(45deg, #008000, #ff0000, #ffd700); }
+  .rainbow-6 { background: linear-gradient(45deg, #0000ff, #ffd700, #ff8c00); }
+  .rainbow-7 { background: linear-gradient(45deg, #ff8c00, #4b0082, #008000); }
+  .rainbow-8 { background: linear-gradient(45deg, #ee82ee, #0000ff, #ff0000); }
+  .rainbow-9 { background: linear-gradient(45deg, #ffd700, #ff8c00, #008000); }
+  .rainbow-10 { background: linear-gradient(45deg, #4b0082, #ee82ee, #0000ff); }
+
+  .collage-item:hover {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg) translateZ(50px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    z-index: 100;
+  }
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(138, 43, 226, 0.7);
+    z-index: 5;
+    position: relative;
+    padding: 30px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    margin: 5vh auto 0 auto;
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+  }
+
+  .text-highlight {
+    font-weight: bold;
+    color: #e0f2f1;
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  }
+
+  .code-snippet {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      background-color: rgba(0,0,0,0.2);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      color: #76ff03;
+      text-align: left;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin-top: 10px;
+      border: 1px solid rgba(118,255,3,0.3);
+      box-shadow: 0 0 8px rgba(118,255,3,0.3);
+  }
+
+  /* Specific positioning and sizing for collage items */
+  #title-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px;
+    padding: 40px;
+    z-index: 10;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,0,0,0.8), rgba(255,140,0,0.8), rgba(255,215,0,0.8), rgba(0,128,0,0.8), rgba(0,0,255,0.8), rgba(75,0,130,0.8), rgba(238,130,238,0.8));
+    border-radius: 25px;
+    box-shadow: 0 0 60px rgba(255,255,255,0.9), inset 0 0 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+    border: 5px solid white;
+    animation: pulseGlow 3s infinite alternate;
+  }
+
+  #title-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4em;
+      color: white;
+      text-shadow: 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #f0f;
+      margin-bottom: 20px;
+      line-height: 1.1;
+  }
+
+  #title-card p {
+      font-size: 1.8em;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  }
+
+
+  @keyframes pulseGlow {
+      0% { box-shadow: 0 0 60px rgba(255,255,255,0.9), inset 0 0 30px rgba(0,0,0,0.5); }
+      50% { box-shadow: 0 0 80px rgba(255,255,255,1), inset 0 0 40px rgba(0,0,0,0.7); }
+      100% { box-shadow: 0 0 60px rgba(255,255,255,0.9), inset 0 0 30px rgba(0,0,0,0.5); }
+  }
+
+
+  /* Dynamic positioning for the other elements */
+  #item1 { top: 10%; left: 5%; width: 28%; z-index: 2; transform: rotate(-8deg); }
+  #item2 { top: 15%; right: 7%; width: 25%; z-index: 3; transform: rotate(12deg); }
+  #item3 { bottom: 10%; left: 12%; width: 22%; z-index: 4; transform: rotate(5deg); }
+  #item4 { bottom: 20%; right: 10%; width: 30%; z-index: 3; transform: rotate(-15deg); }
+  #item5 { top: 35%; left: 35%; width: 20%; z-index: 1; transform: rotate(20deg); opacity: 0.8; }
+  #item6 { top: 5%; left: 40%; width: 25%; z-index: 4; transform: rotate(3deg); }
+  #item7 { bottom: 5%; right: 30%; width: 28%; z-index: 2; transform: rotate(-7deg); }
+  #item8 { top: 60%; left: 8%; width: 23%; z-index: 3; transform: rotate(-20deg); }
+  #item9 { top: 70%; right: 5%; width: 26%; z-index: 1; transform: rotate(10deg); opacity: 0.7; }
+  #item10 { top: 25%; left: 20%; width: 20%; z-index: 5; transform: rotate(-10deg); }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 2em; padding: 20px; width: 90%; }
+    .collage-item { font-size: 0.9em; padding: 10px; border-radius: 10px; }
+    #title-card {
+        width: 90%;
+        padding: 20px;
+        top: 50%; /* Center vertically on smaller screens too */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #title-card h2 { font-size: 2.5em; }
+    #title-card p { font-size: 1.2em; }
+
+    /* Adjust positions for smaller screens to prevent overlap */
+    #item1 { top: 2%; left: 2%; width: 45%; transform: rotate(-5deg); }
+    #item2 { top: 2%; right: 2%; width: 45%; transform: rotate(5deg); }
+    #item3 { bottom: 2%; left: 2%; width: 45%; transform: rotate(3deg); }
+    #item4 { bottom: 2%; right: 2%; width: 45%; transform: rotate(-3deg); }
+    #item5, #item6, #item7, #item8, #item9, #item10 { display: none; /* Hide some items to simplify for mobile */ }
+  }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+
+  <div id="title-card">
+    <h2>DATA SOVEREIGNTY</h2>
+    <p>Reclaiming the Digital Self. Your Data, Your Rules, Your Freedom.</p>
+  </div>
+
+  <div id="item1" class="collage-item rainbow-1">
+    <span class="icon">&#x1F512;</span> <!-- Lock icon -->
+    <h3>Encryption & Control</h3>
+    <p>Your data, <span class="text-highlight">securely encrypted</span> at every layer. Only you hold the keys. No backdoors, no compromises.</p>
+    <div class="code-snippet">
+      <pre>
+      cipher.encrypt(myPrivateData, myPublicKey);
+      decrypt(ciphertext, myPrivateKey); // Only I can.
+      </pre>
+    </div>
+  </div>
+
+  <div id="item2" class="collage-item rainbow-2">
+    <span class="icon">&#x1F30D;</span> <!-- Globe icon -->
+    <h3>Local-First Paradigm</h3>
+    <p>Data stored <span class="text-highlight">on your devices first</span>. Cloud synchronization is an option, not a mandate.</p>
+    <div class="code-snippet">
+      <pre>
+      // Local storage
+      localStorage.setItem('myDoc', JSON.stringify(data));
+      // Optional sync to trusted node
+      syncTo(trustedPeerNode);
+      </pre>
+    </div>
+  </div>
+
+  <div id="item3" class="collage-item rainbow-3">
+    <span class="icon">&#x2696;&#xFE0F;</span> <!-- Scales of Justice icon -->
+    <h3>Algorithmic Transparency</h3>
+    <p>Demand to know how algorithms <span class="text-highlight">process your information</span>. No black boxes. Open source, auditable code.</p>
+    <div class="code-snippet">
+      <pre>
+      function decisionLogic(user_profile) {
+        // Source code revealed!
+        if (user_profile.dataScore > threshold) {
+          return "approved";
+        } else {
+          return "review";
+        }
+      }
+      </pre>
+    </div>
+  </div>
+
+  <div id="item4" class="collage-item rainbow-4">
+    <span class="icon">&#x1F4BE;</span> <!-- Floppy disk / Save icon -->
+    <h3>Right to Delete & Migrate</h3>
+    <p>Your power to <span class="text-highlight">erase and export</span> your digital footprint, anytime, anywhere. True data portability.</p>
+    <div class="code-snippet">
+      <pre>
+      // DELETE request to your data custodian
+      DELETE /mydata/all HTTP/1.1
+      Authorization: Bearer myAuthToken
+
+      // EXPORT request
+      GET /mydata/export?format=json HTTP/1.1
+      </pre>
+    </div>
+  </div>
+
+  <div id="item5" class="collage-item rainbow-5">
+    <span class="icon">&#x1F4B0;</span> <!-- Money bag icon -->
+    <h3>Data as Personal Asset</h3>
+    <p>Recognize your data as <span class="text-highlight">valuable property</span>. Monetize it directly, or choose privacy over profit.</p>
+  </div>
+
+  <div id="item6" class="collage-item rainbow-6">
+    <span class="icon">&#x1F47A;</span> <!-- Ogre/Mask icon -->
+    <h3>Identity Obfuscation</h3>
+    <p>Tools for <span class="text-highlight">anonymous interaction</span>. Pseudonymity as a powerful shield against pervasive tracking.</p>
+  </div>
+
+  <div id="item7" class="collage-item rainbow-7">
+    <span class="icon">&#x26A1;</span> <!-- High voltage / Energy icon -->
+    <h3>Decentralized Architectures</h3>
+    <p>Move beyond centralized silos. Embrace <span class="text-highlight">blockchain, IPFS, and peer-to-peer</span> networks for storage and communication.</p>
+  </div>
+
+  <div id="item8" class="collage-item rainbow-8">
+    <span class="icon">&#x1F468;&#x200D;&#x1F4BB;</span> <!-- Man with computer icon -->
+    <h3>Empowered Users</h3>
+    <p>From passive consumers to <span class="text-highlight">active participants</span> in the digital realm. Understand and manage your digital rights.</p>
+  </div>
+
+  <div id="item9" class="collage-item rainbow-9">
+    <span class="icon">&#x1F308;</span> <!-- Rainbow icon -->
+    <h3>Diversity in Design</h3>
+    <p>A future where <span class="text-highlight">diverse voices and cultures</span> shape data systems, not just a dominant few.</p>
+  </div>
+
+  <div id="item10" class="collage-item rainbow-10">
+    <span class="icon">&#x212B;</span> <!-- Angstrom sign (symbol for power) -->
+    <h3>Radical Ownership</h3>
+    <p>It's not just about privacy, it's about <span class="text-highlight">unconditional ownership</span>. Your data, your rules, your digital destiny.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">data sovereignty</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 11:22:34.754706</div>
         <!DOCTYPE html>
 <html lang="en">
