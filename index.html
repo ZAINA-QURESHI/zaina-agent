@@ -16,6 +16,294 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 21:03:15.605062</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Brutalist Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll from rotated elements */
+            background-color: #1a1a1a; /* Dark, brutalist background */
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Strong, stark fonts */
+            color: #ffffff; /* Default text color */
+        }
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 120vh; /* Allow for elements to be slightly off-screen */
+            background-color: #2c2c2c; /* Deeper concrete grey */
+            overflow: hidden; /* Keep elements within container, even with transforms */
+            perspective: 1000px; /* For 3D transforms */
+        }
+        .brutal-block {
+            position: absolute;
+            box-sizing: border-box; /* Border and padding included in width/height */
+            border: 8px solid; /* Thick, pronounced borders */
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            line-height: 1.1;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Subtle interaction */
+            cursor: default;
+        }
+        .brutal-block:hover {
+            transform: scale(1.02) rotateZ(var(--rotate-z, 0deg)) rotateX(var(--rotate-x, 0deg));
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* Rainbow Color Palette & Positioning */
+        /* Red */
+        .block-1 {
+            background-color: #FF0000;
+            border-color: #FFA500;
+            width: 350px;
+            height: 200px;
+            top: 5%;
+            left: 5%;
+            font-size: 3.2em;
+            transform: rotateZ(-8deg) rotateX(10deg);
+            z-index: 10;
+            --rotate-z: -8deg; --rotate-x: 10deg;
+        }
+        /* Orange */
+        .block-2 {
+            background-color: #FFA500;
+            border-color: #FFFF00;
+            width: 450px;
+            height: 180px;
+            top: 18%;
+            left: 28%;
+            font-size: 2.8em;
+            transform: rotateZ(3deg) rotateY(-5deg);
+            z-index: 12;
+            --rotate-z: 3deg; --rotate-y: -5deg;
+        }
+        /* Yellow */
+        .block-3 {
+            background-color: #FFFF00;
+            color: #333; /* Contrast for yellow */
+            border-color: #008000;
+            width: 280px;
+            height: 280px;
+            top: 30%;
+            right: 8%;
+            font-size: 2.5em;
+            transform: rotateZ(12deg) rotateX(-8deg);
+            z-index: 11;
+            --rotate-z: 12deg; --rotate-x: -8deg;
+        }
+        /* Green */
+        .block-4 {
+            background-color: #008000;
+            border-color: #0000FF;
+            width: 600px;
+            height: 120px;
+            top: 45%;
+            left: 0%;
+            font-size: 3.8em;
+            letter-spacing: -2px;
+            transform: rotateZ(-2deg);
+            z-index: 15; /* Highest z-index for this section */
+            --rotate-z: -2deg;
+        }
+        /* Blue */
+        .block-5 {
+            background-color: #0000FF;
+            border-color: #4B0082;
+            width: 380px;
+            height: 250px;
+            bottom: 25%;
+            left: 15%;
+            font-size: 2em;
+            transform: rotateZ(6deg) rotateY(10deg);
+            z-index: 9;
+            --rotate-z: 6deg; --rotate-y: 10deg;
+        }
+        /* Indigo */
+        .block-6 {
+            background-color: #4B0082;
+            border-color: #EE82EE;
+            width: 220px;
+            height: 320px;
+            bottom: 10%;
+            right: 5%;
+            font-size: 2.3em;
+            transform: rotateZ(-15deg) rotateX(5deg);
+            z-index: 13;
+            --rotate-z: -15deg; --rotate-x: 5deg;
+        }
+        /* Violet */
+        .block-7 {
+            background-color: #EE82EE;
+            color: #333; /* Contrast for violet */
+            border-color: #FF0000; /* Completing the rainbow loop */
+            width: 520px;
+            height: 200px;
+            top: 68%;
+            left: 20%;
+            font-size: 3em;
+            transform: rotateZ(4deg) rotateY(-3deg);
+            z-index: 14;
+            --rotate-z: 4deg; --rotate-y: -3deg;
+        }
+
+        /* Additional Brutalist-themed blocks (not strictly rainbow, but tonal) */
+        .block-8-concrete {
+            background-color: #606060;
+            border-color: #A0A0A0;
+            width: 180px;
+            height: 120px;
+            top: 0%;
+            right: 25%;
+            font-size: 1.5em;
+            color: #e0e0e0;
+            transform: rotateZ(18deg) rotateX(15deg);
+            z-index: 8;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><rect width="10" height="10" fill="%23606060"/><path d="M0 0L10 10M10 0L0 10" stroke="%23A0A0A0" stroke-width="1"/></svg>'); /* Crosshatch concrete texture */
+            --rotate-z: 18deg; --rotate-x: 15deg;
+        }
+        .block-9-utilitarian {
+            background-color: #8b4513; /* Earthy industrial brown */
+            border-color: #a0522d;
+            width: 280px;
+            height: 100px;
+            bottom: 0%;
+            left: 0%;
+            font-size: 1.8em;
+            color: #fff;
+            transform: rotateZ(-5deg);
+            z-index: 7;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><rect width="10" height="10" fill="%238b4513"/><path d="M0 5L10 5M5 0L5 10" stroke="%23a0522d" stroke-width="1"/></svg>'); /* Grid concrete texture */
+            --rotate-z: -5deg;
+        }
+
+        /* Massive, subtle background text */
+        .background-text-overlay {
+            position: absolute;
+            width: 100%;
+            top: 10%;
+            left: 0%;
+            font-size: 12em; /* Extremely large */
+            font-weight: bolder;
+            color: rgba(255,255,255,0.03); /* Barely visible */
+            text-align: center;
+            line-height: 0.7;
+            letter-spacing: -5px;
+            pointer-events: none; /* Allows interaction with elements beneath */
+            z-index: 1; /* Low z-index */
+            word-break: break-all;
+            transform: rotateZ(-3deg);
+        }
+        .background-text-overlay span {
+             display: inline-block;
+             transform: rotateY(var(--y-rot, 0deg));
+        }
+
+        /* Image for context */
+        .brutal-image-frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateZ(-7deg) rotateX(15deg);
+            width: 450px;
+            height: auto;
+            border: 15px solid #444; /* Thick frame */
+            box-shadow: 15px 15px 30px rgba(0,0,0,0.7);
+            z-index: 5; /* Behind most blocks */
+            opacity: 0.7;
+            overflow: hidden;
+        }
+        .brutal-image-frame img {
+            width: 100%;
+            display: block;
+            filter: grayscale(80%) contrast(120%); /* Brutalist photo effect */
+        }
+
+        /* Smaller, impactful detail texts */
+        .detail-tag {
+            position: absolute;
+            font-size: 0.9em;
+            font-weight: normal;
+            color: #ddd;
+            background-color: rgba(0,0,0,0.6);
+            padding: 8px 15px;
+            border: 2px solid #999;
+            z-index: 20; /* Always on top */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        .detail-1 { top: 12%; right: 2%; transform: rotateZ(10deg); }
+        .detail-2 { bottom: 8%; left: 35%; transform: rotateZ(-12deg) rotateY(10deg); }
+        .detail-3 { top: 5%; left: 60%; transform: rotateZ(5deg); }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+
+        <div class="background-text-overlay">
+            <span>B</span><span>R</span><span>U</span><span>T</span><span>A</span><span>L</span><span>I</span><span>S</span><span>M</span> <span style="--y-rot: 10deg;">C</span><span>O</span><span>N</span><span>C</span><span>R</span><span>E</span><span>T</span><span>E</span> <span style="--y-rot: -15deg;">M</span><span>A</span><span>S</span><span>S</span><span>I</span><span>V</span><span>E</span> <span>S</span><span>T</span><span>R</span><span>U</span><span>C</span><span>T</span><span>U</span><span>R</span><span>E</span>
+        </div>
+
+        <div class="brutal-image-frame">
+            <img src="https://via.placeholder.com/600x400/3a3a3a/c0c0c0?text=BRUTALIST+CONCRETE+MASS" alt="Placeholder Brutalist Structure">
+        </div>
+
+        <div class="brutal-block block-1">
+            CONCRETE. RAW. HONEST.
+        </div>
+        <div class="brutal-block block-2">
+            UTILITY MEETS MONUMENTALITY
+        </div>
+        <div class="brutal-block block-3">
+            BLOCKY FORMS, BOLD STATEMENTS
+        </div>
+        <div class="brutal-block block-4">
+            A RADICAL AESTHETIC REVOLUTION
+        </div>
+        <div class="brutal-block block-5">
+            EXPOSED AGGREGATE. BRUT FROID.
+        </div>
+        <div class="brutal-block block-6">
+            FUNCTIONAL SCULPTURE. URBAN BEAST.
+        </div>
+        <div class="brutal-block block-7">
+            BARBICAN. TRELLICK. HABITAT 67.
+        </div>
+        <div class="brutal-block block-8-concrete">
+            STRENGTH. DURABILITY.
+        </div>
+        <div class="brutal-block block-9-utilitarian">
+            ARCHITECTURE OF CONVICTION
+        </div>
+
+        <div class="detail-tag detail-1">
+            "AS FOUND" MATERIALS
+        </div>
+        <div class="detail-tag detail-2">
+            1950S-1970S REIMAGINED
+        </div>
+        <div class="detail-tag detail-3">
+            SOCIAL IDEALISM IN CONCRETE
+        </div>
+
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 19:23:08.100835</div>
         <!DOCTYPE html>
 <html lang="en">
