@@ -16,6 +16,281 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 11:22:34.754706</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithmic Surveillance: A Rainbow Collage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            --color-red: #ff0000;
+            --color-orange: #ff7f00;
+            --color-yellow: #ffff00;
+            --color-green: #00ff00;
+            --color-blue: #0000ff;
+            --color-indigo: #4b0082;
+            --color-violet: #9400d3;
+            --dark-bg: #0a0a0f;
+            --light-text: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 1000px; /* For 3D effects */
+            background-image: radial-gradient(circle at 50% 50%, rgba(20, 20, 30, 1) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .collage-container {
+            position: relative;
+            width: 1200px;
+            height: 700px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 100px rgba(0, 255, 255, 0.2), 0 0 50px rgba(255, 0, 255, 0.2);
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
+            transform-style: preserve-3d;
+            overflow: hidden; /* Elements can extend beyond, but main container is clean */
+        }
+
+        .collage-element {
+            position: absolute;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            letter-spacing: 0.1em;
+            font-family: 'Share Tech Mono', monospace;
+            line-height: 1.2;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px) saturate(150%); /* Modern effect */
+            -webkit-backdrop-filter: blur(2px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rainbow-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4em;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--color-red), var(--color-orange), var(--color-yellow), var(--color-green), var(--color-blue), var(--color-indigo), var(--color-violet));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Specific element styling */
+
+        .el-1 {
+            top: 5%; left: 8%;
+            transform: rotate(-10deg) translateZ(20px);
+            background-color: rgba(255, 0, 0, 0.7); /* Red with transparency */
+            color: white;
+            z-index: 10;
+            box-shadow: 0 0 20px var(--color-red);
+        }
+        .el-1 span {
+            display: block;
+            font-size: 0.8em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .el-2 {
+            top: 15%; right: 10%;
+            transform: rotate(5deg) scale(1.1) translateZ(30px);
+            background: linear-gradient(45deg, var(--color-orange), var(--color-yellow));
+            color: var(--dark-bg);
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            padding: 15px 30px;
+            z-index: 12;
+            box-shadow: 0 0 30px rgba(255, 165, 0, 0.8);
+            letter-spacing: 0.2em;
+        }
+
+        .el-3 {
+            bottom: 10%; left: 5%;
+            transform: rotate(15deg) translateZ(10px);
+            background-color: rgba(0, 255, 0, 0.6); /* Green with transparency */
+            color: white;
+            font-size: 1.1em;
+            z-index: 8;
+            border-bottom: 3px solid var(--color-blue);
+            box-shadow: 0 0 15px var(--color-green);
+        }
+
+        .el-4 {
+            top: 30%; left: 30%;
+            transform: rotate(3deg) translateZ(40px);
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--color-yellow);
+            font-size: 1.8em;
+            z-index: 15;
+            padding: 20px;
+            border: 2px solid var(--color-blue);
+            box-shadow: 0 0 40px var(--color-violet), inset 0 0 10px var(--color-blue);
+            backdrop-filter: blur(8px) brightness(1.2);
+            -webkit-backdrop-filter: blur(8px) brightness(1.2);
+        }
+        .el-4 .rainbow-text {
+            font-size: 1.2em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .el-5 {
+            bottom: 20%; right: 15%;
+            transform: rotate(-7deg) scale(0.9) translateZ(25px);
+            background: linear-gradient(135deg, var(--color-indigo), var(--color-violet));
+            color: white;
+            font-size: 1.5em;
+            font-family: 'Orbitron', sans-serif;
+            padding: 10px 25px;
+            z-index: 11;
+            box-shadow: 0 0 25px var(--color-violet);
+            border-radius: 50%; /* Circle */
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.85;
+            text-shadow: 0 0 8px black;
+        }
+
+        .el-6 {
+            top: 50%; left: 5%;
+            transform: rotate(20deg) translateX(-50%) translateZ(15px); /* partly off-screen */
+            background-color: rgba(0, 0, 255, 0.5); /* Blue with transparency */
+            color: var(--light-text);
+            font-size: 1.3em;
+            z-index: 9;
+            padding: 15px;
+            border-left: 5px solid var(--color-green);
+            box-shadow: 0 0 20px var(--color-blue);
+        }
+
+        .el-7 {
+            top: 0%; right: 0%;
+            transform: translate(20%, -20%) rotate(45deg) translateZ(5px); /* partly off-screen */
+            background: linear-gradient(to bottom right, var(--color-yellow), var(--color-green));
+            color: var(--dark-bg);
+            font-size: 0.9em;
+            padding: 8px 15px;
+            z-index: 7;
+            opacity: 0.7;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .el-8 {
+            bottom: 0%; left: 30%;
+            transform: translateY(50%) rotate(-25deg) translateZ(18px); /* partly off-screen */
+            background: linear-gradient(to top left, var(--color-red), var(--color-orange));
+            color: var(--dark-bg);
+            font-size: 1.6em;
+            padding: 12px 25px;
+            z-index: 13;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .el-9 {
+            top: 40%; right: 0%;
+            transform: translateX(30%) rotate(-15deg) translateZ(22px); /* partly off-screen */
+            background: rgba(148, 0, 211, 0.6); /* Violet with transparency */
+            color: white;
+            font-size: 1.em;
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 10;
+            box-shadow: 0 0 25px var(--color-indigo);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+        .el-9::before {
+            content: "👁️";
+            display: block;
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+        }
+
+        .el-10 {
+            bottom: 5%; left: 60%;
+            transform: rotate(8deg) translateZ(35px);
+            background: rgba(0, 0, 0, 0.9);
+            color: var(--color-yellow);
+            font-size: 1.4em;
+            padding: 15px;
+            border: 2px solid var(--color-orange);
+            z-index: 14;
+            box-shadow: 0 0 35px var(--color-yellow), inset 0 0 10px var(--color-orange);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .el-10 .rainbow-text {
+            font-size: 0.8em;
+            display: block;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="collage-element el-1">
+            DATA IS THE NEW OIL <br> <span>...and you're the well.</span>
+        </div>
+        <div class="collage-element el-2">
+            WATCHED
+        </div>
+        <div class="collage-element el-3">
+            Your Digital Shadow Extends Forever
+        </div>
+        <div class="collage-element el-4">
+            <span class="rainbow-text">ALGORITHM</span>
+            <br>Predicting Your Next Move
+        </div>
+        <div class="collage-element el-5">
+            NO <br> PRIVACY
+        </div>
+        <div class="collage-element el-6">
+            CONSENT? <br> Did You Read The Terms?
+        </div>
+        <div class="collage-element el-7">
+            Every Click. Every Like. Every Breath.
+        </div>
+        <div class="collage-element el-8">
+            PATTERN <br> RECOGNITION
+        </div>
+        <div class="collage-element el-9">
+            THE EYE <br> NEVER BLINKS
+        </div>
+        <div class="collage-element el-10">
+            <span class="rainbow-text">CLASSIFIED</span>
+            <br>By the Machine
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-13 09:05:12.688019</div>
         <!DOCTYPE html>
 <html lang="en">
