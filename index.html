@@ -16,6 +16,251 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 08:47:59.762071</div>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Brutalist Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #1a1a1a; /* Dark background for contrast */
+            font-family: 'Arial Black', sans-serif;
+            color: #ffffff;
+            cursor: crosshair; /* A nod to industrial design */
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px; /* For subtle 3D effects */
+            overflow: hidden; /* Ensure nothing spills out */
+        }
+
+        .brutal-block {
+            position: absolute;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(0.7em, 2vw, 2.5em); /* Responsive font size */
+            line-height: 1.2;
+            word-break: break-word;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            border: 3px solid rgba(255,255,255,0.2); /* Stark border */
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s ease-in-out;
+            transform-style: preserve-3d;
+            background-blend-mode: overlay; /* Combine texture with color */
+        }
+
+        .brutal-block:hover {
+            z-index: 100; /* Bring to front on hover */
+            transform: scale(1.05) rotate(0deg) !important; /* Emphasize and straighten */
+            box-shadow: 0 0 30px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4);
+            cursor: pointer;
+        }
+
+        /* Rainbow Gradient Classes */
+        .grad-1 { background: linear-gradient(135deg, #FF0000 0%, #8B0000 100%); } /* Red */
+        .grad-2 { background: linear-gradient(135deg, #FF7F00 0%, #CC6600 100%); } /* Orange */
+        .grad-3 { background: linear-gradient(135deg, #FFFF00 0%, #CCCC00 100%); } /* Yellow */
+        .grad-4 { background: linear-gradient(135deg, #00FF00 0%, #008000 100%); } /* Green */
+        .grad-5 { background: linear-gradient(135deg, #00FFFF 0%, #008080 100%); } /* Cyan (lighter blue) */
+        .grad-6 { background: linear-gradient(135deg, #0000FF 0%, #0000A0 100%); } /* Blue */
+        .grad-7 { background: linear-gradient(135deg, #4B0082 0%, #2F0050 100%); } /* Indigo */
+        .grad-8 { background: linear-gradient(135deg, #EE82EE 0%, #B060B0 100%); } /* Violet */
+
+        /* Concrete texture simulation with SVG data URL */
+        .concrete-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+        }
+
+        /* Specific block positioning and rotation for collage effect */
+        .block-1 { width: 350px; height: 200px; top: 8%; left: 5%; transform: rotateX(10deg) rotateY(-5deg) rotateZ(-12deg); z-index: 10; }
+        .block-2 { width: 280px; height: 380px; top: 25%; left: 22%; transform: rotateX(-5deg) rotateY(10deg) rotateZ(8deg); z-index: 20; }
+        .block-3 { width: 420px; height: 150px; top: 10%; right: 10%; transform: rotateX(15deg) rotateY(5deg) rotateZ(18deg); z-index: 15; }
+        .block-4 { width: 200px; height: 300px; bottom: 10%; left: 8%; transform: rotateX(-10deg) rotateY(-8deg) rotateZ(-10deg); z-index: 25; }
+        .block-5 { width: 340px; height: 220px; bottom: 8%; right: 8%; transform: rotateX(8deg) rotateY(12deg) rotateZ(15deg); z-index: 30; }
+        .block-6 { width: 250px; height: 250px; top: 35%; right: 20%; transform: rotateX(-7deg) rotateY(-10deg) rotateZ(-8deg); z-index: 35; }
+        .block-7 { width: 180px; height: 450px; top: 20%; left: 50%; margin-left: -90px; transform: rotateX(2deg) rotateY(5deg) rotateZ(3deg); z-index: 40; } /* Central column */
+        .block-8 { width: 300px; height: 180px; bottom: 25%; left: 30%; transform: rotateX(12deg) rotateY(8deg) rotateZ(20deg); z-index: 45; }
+        .block-9 { width: 120px; height: 120px; top: 2%; right: 2%; transform: rotateX(20deg) rotateY(15deg) rotateZ(28deg); z-index: 50; }
+        .block-10 { width: 100vw; height: 60px; bottom: 0; left: 0; transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); z-index: 5;} /* Base horizon */
+        .block-11 { width: 160px; height: 160px; top: 60%; left: 15%; transform: rotateX(5deg) rotateY(15deg) rotateZ(30deg); z-index: 55;}
+        .block-12 { width: 120px; height: 220px; top: 70%; left: 40%; transform: rotateX(10deg) rotateY(-10deg) rotateZ(-20deg); z-index: 60;}
+        .block-13 { width: 220px; height: 90px; top: 80%; right: 15%; transform: rotateX(-5deg) rotateY(5deg) rotateZ(5deg); z-index: 65;}
+        .block-14 { width: 130px; height: 130px; top: 18%; left: 70%; transform: rotateX(-12deg) rotateY(-8deg) rotateZ(-15deg); z-index: 70;}
+        .block-15 { width: 100px; height: 300px; top: 5%; left: 45%; transform: rotateX(7deg) rotateY(3deg) rotateZ(10deg); z-index: 75;}
+        .block-16 { width: 280px; height: 100px; bottom: 5%; left: 50%; margin-left: -140px; transform: rotateX(-3deg) rotateY(0deg) rotateZ(-5deg); z-index: 80;}
+
+        /* Large, faded text overlay for ambiance */
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(15deg) rotateX(5deg); /* Slight 3D tilt */
+            font-size: clamp(3em, 8vw, 12em);
+            color: rgba(255, 255, 255, 0.07); /* Very subtle */
+            z-index: 0;
+            pointer-events: none; /* Allows interaction with blocks behind it */
+            white-space: nowrap;
+            text-shadow: 0 0 15px rgba(0,0,0,0.8);
+            letter-spacing: 5px;
+        }
+
+        /* Pseudo-elements for angular background accents */
+        .collage-container::before,
+        .collage-container::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            z-index: 0;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
+        }
+
+        .collage-container::before {
+            width: 180px;
+            height: 120%; /* Extend slightly to create depth */
+            left: -90px;
+            top: -10%;
+            transform: skewY(-40deg) rotateY(-20deg); /* Aggressive angle */
+        }
+
+        .collage-container::after {
+            width: 120%;
+            height: 180px;
+            bottom: -90px;
+            left: -10%;
+            transform: skewX(-40deg) rotateX(-20deg); /* Aggressive angle */
+        }
+
+        /* Animation for a few blocks */
+        .animated-block {
+            animation: floatAndRotate 6s infinite ease-in-out alternate;
+        }
+
+        @keyframes floatAndRotate {
+            0% { transform: translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            50% { transform: translateZ(10px) rotateX(2deg) rotateY(3deg) rotateZ(1deg); }
+            100% { transform: translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        }
+
+        .rotated-text {
+            writing-mode: vertical-lr; /* Vertical text */
+            text-orientation: mixed;
+            transform: rotate(180deg); /* Flipped for more brutalist feel */
+        }
+
+        /* Media queries for smaller screens */
+        @media (max-width: 768px) {
+            .brutal-block {
+                font-size: 0.6em;
+                padding: 7px;
+                border-width: 2px;
+            }
+            .block-1 { width: 180px; height: 100px; top: 5%; left: 3%; transform: rotateX(5deg) rotateY(-3deg) rotateZ(-7deg); }
+            .block-2 { width: 140px; height: 200px; top: 15%; left: 15%; transform: rotateX(-3deg) rotateY(5deg) rotateZ(4deg); }
+            .block-3 { width: 220px; height: 80px; top: 7%; right: 5%; transform: rotateX(8deg) rotateY(2deg) rotateZ(10deg); }
+            .block-4 { width: 120px; height: 160px; bottom: 8%; left: 4%; transform: rotateX(-5deg) rotateY(-4deg) rotateZ(-5deg); }
+            .block-5 { width: 190px; height: 130px; bottom: 5%; right: 5%; transform: rotateX(4deg) rotateY(6deg) rotateZ(8deg); }
+            .block-6 { width: 130px; height: 130px; top: 28%; right: 12%; transform: rotateX(-4deg) rotateY(-5deg) rotateZ(-4deg); }
+            .block-7 { width: 90px; height: 280px; top: 18%; left: 50%; margin-left: -45px; transform: rotateX(1deg) rotateY(2deg) rotateZ(2deg); }
+            .block-8 { width: 170px; height: 100px; bottom: 18%; left: 20%; transform: rotateX(6deg) rotateY(4deg) rotateZ(10deg); }
+            .block-9 { width: 80px; height: 80px; top: 1%; right: 1%; transform: rotateX(10deg) rotateY(8deg) rotateZ(14deg); }
+            .block-10 { height: 40px; }
+            .block-11 { width: 90px; height: 90px; top: 55%; left: 8%; transform: rotateX(3deg) rotateY(7deg) rotateZ(15deg); }
+            .block-12 { width: 70px; height: 140px; top: 65%; left: 30%; transform: rotateX(5deg) rotateY(-5deg) rotateZ(-10deg); }
+            .block-13 { width: 130px; height: 60px; top: 75%; right: 8%; transform: rotateX(-2deg) rotateY(3deg) rotateZ(3deg); }
+            .block-14 { width: 80px; height: 80px; top: 10%; left: 65%; transform: rotateX(-6deg) rotateY(-4deg) rotateZ(-8deg); }
+            .block-15 { width: 60px; height: 180px; top: 2%; left: 40%; transform: rotateX(4deg) rotateY(2deg) rotateZ(5deg); }
+            .block-16 { width: 160px; height: 70px; bottom: 3%; left: 50%; margin-left: -80px; transform: rotateX(-1deg) rotateY(0deg) rotateZ(-3deg); }
+
+            .text-overlay {
+                font-size: clamp(2.5em, 10vw, 8em);
+                letter-spacing: 2px;
+            }
+
+            .collage-container::before {
+                width: 100px; left: -50px; transform: skewY(-30deg) rotateY(-15deg);
+            }
+            .collage-container::after {
+                height: 100px; bottom: -50px; transform: skewX(-30deg) rotateX(-15deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="text-overlay">Brutalism Reimagined</div>
+
+        <div class="brutal-block grad-1 concrete-texture block-1 animated-block">
+            Le Corbusier Legacy
+        </div>
+        <div class="brutal-block grad-2 concrete-texture block-2">
+            Unité d'Habitation
+        </div>
+        <div class="brutal-block grad-3 concrete-texture block-3 animated-block">
+            Raw Concrete Spirit
+        </div>
+        <div class="brutal-block grad-4 concrete-texture block-4">
+            Bold Geometry
+        </div>
+        <div class="brutal-block grad-5 concrete-texture block-5 animated-block">
+            Architectural Honesty
+        </div>
+        <div class="brutal-block grad-6 concrete-texture block-6">
+            Monumental Forms
+        </div>
+        <div class="brutal-block grad-7 concrete-texture block-7">
+            <span class="rotated-text">Strength in Simplicity</span>
+        </div>
+        <div class="brutal-block grad-8 concrete-texture block-8 animated-block">
+            Functional Beauty
+        </div>
+        <div class="brutal-block grad-1 concrete-texture block-9">
+            Ugly & Grand
+        </div>
+        <div class="brutal-block grad-2 concrete-texture block-10">
+            A Rainbow of Brutal Structures
+        </div>
+        <div class="brutal-block grad-3 concrete-texture block-11 animated-block">
+            Concrete Dreams
+        </div>
+         <div class="brutal-block grad-4 concrete-texture block-12">
+            MASSIVE SCALE
+        </div>
+         <div class="brutal-block grad-5 concrete-texture block-13 animated-block">
+            Utilitarian Art
+        </div>
+         <div class="brutal-block grad-6 concrete-texture block-14">
+            POWERFUL
+        </div>
+         <div class="brutal-block grad-7 concrete-texture block-15">
+            <span class="rotated-text">MODERNISM</span>
+        </div>
+         <div class="brutal-block grad-8 concrete-texture block-16 animated-block">
+            URBAN SCULPTURE
+        </div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">brutalist architecture</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 06:05:16.243675</div>
         <!DOCTYPE html>
 <html>
