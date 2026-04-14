@@ -16,6 +16,279 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 18:11:09.474886</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithmic Surveillance Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: #000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(20,0,40,0.9) 50%, rgba(0,0,0,1) 100%);
+        }
+
+        @keyframes rainbowText {
+            0% { color: #ff0000; } 14% { color: #ff7f00; } 28% { color: #ffff00; }
+            42% { color: #00ff00; } 56% { color: #0000ff; } 70% { color: #4b0082; }
+            84% { color: #9400d3; } 100% { color: #ff0000; }
+        }
+
+        @keyframes rainbowBackground {
+            0% { background: linear-gradient(45deg, #ff0000, #ff7f00); }
+            14% { background: linear-gradient(45deg, #ff7f00, #ffff00); }
+            28% { background: linear-gradient(45deg, #ffff00, #00ff00); }
+            42% { background: linear-gradient(45deg, #00ff00, #0000ff); }
+            56% { background: linear-gradient(45deg, #0000ff, #4b0082); }
+            70% { background: linear-gradient(45deg, #4b0082, #9400d3); }
+            84% { background: linear-gradient(45deg, #9400d3, #ff0000); }
+            100% { background: linear-gradient(45deg, #ff0000, #ff7f00); }
+        }
+
+        @keyframes pulseOpacity {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        @keyframes rotate3D {
+            0% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+            50% { transform: perspective(1000px) rotateY(180deg) rotateX(15deg); }
+            100% { transform: perspective(1000px) rotateY(360deg) rotateX(0deg); }
+        }
+
+        @keyframes rotateZ {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .element {
+            position: absolute;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,255,255,0.7), 0 0 40px rgba(255,0,255,0.5);
+            font-size: 2em;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 10;
+            animation: pulseOpacity 3s ease-in-out infinite alternate;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .text-rainbow {
+            animation: rainbowText 8s infinite linear;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .bg-rainbow {
+            animation: rainbowBackground 10s infinite linear;
+            background-size: 200% 200%;
+            border: none;
+            box-shadow: 0 0 25px rgba(255,255,255,0.8);
+        }
+        .rotated { transform: rotate(-10deg); }
+
+        /* Specific elements */
+        .e1 { top: 10%; left: 5%; font-size: 3.5em; font-weight: bold; transform: rotate(-15deg); }
+        .e2 { top: 25%; right: 10%; font-size: 2.8em; transform: rotate(10deg); animation-delay: 0.5s; }
+        .e3 { bottom: 20%; left: 15%; font-size: 2.2em; transform: rotate(5deg); animation-delay: 1s; }
+        .e4 { top: 45%; left: 30%; font-size: 4em; font-weight: bolder; transform: rotate(0deg); animation-delay: 1.5s; z-index: 15; }
+        .e5 { bottom: 10%; right: 5%; font-size: 3em; transform: rotate(20deg); animation-delay: 2s; }
+        .e6 { top: 5%; left: 40%; font-size: 2.5em; transform: rotate(-5deg); animation-delay: 2.5s; }
+        .e7 { top: 60%; left: 5%; font-size: 3.2em; transform: rotate(12deg); animation-delay: 3s; }
+        .e8 { top: 35%; left: 60%; font-size: 2.6em; transform: rotate(-8deg); animation-delay: 3.5s; }
+        .e9 { bottom: 5%; left: 40%; font-size: 1.8em; transform: rotate(7deg); animation-delay: 4s; }
+        .e10 { top: 15%; right: 25%; font-size: 2em; transform: rotate(-20deg); animation-delay: 4.5s; }
+        .e-eye {
+            font-size: 10em;
+            top: 25%; left: 45%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            color: white;
+            text-shadow: 0 0 40px #0ff, 0 0 80px #f0f;
+            animation: pulseOpacity 2s ease-in-out infinite, rotateZ 15s linear infinite;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+        .e-matrix {
+            position: absolute;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,255,0,0.05),
+                rgba(0,255,0,0.05) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            z-index: 1;
+            opacity: 0.2;
+            animation: pulseOpacity 5s infinite alternate;
+        }
+        .e-ghost {
+            font-size: 6em;
+            bottom: 30%; right: 20%;
+            color: #fff;
+            text-shadow: 0 0 20px #fff, 0 0 40px #eee;
+            z-index: 18;
+            animation: rotate3D 10s linear infinite, pulseOpacity 3.5s ease-in-out infinite alternate;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+        .e-net {
+            font-size: 5em;
+            top: 50%; left: 10%;
+            color: #ccc;
+            opacity: 0.8;
+            animation: pulseOpacity 4s ease-in-out infinite;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+        .e-privacy-lost {
+            top: 70%; right: 10%;
+            font-size: 3em;
+            color: #f00;
+            background: rgba(255,0,0,0.1);
+            border-radius: 10px;
+            padding: 5px 15px;
+            transform: rotate(-10deg);
+            box-shadow: 0 0 15px rgba(255,0,0,0.8);
+            animation: pulseOpacity 2s ease-in-out infinite alternate;
+            border: 2px solid rgba(255,0,0,0.5);
+        }
+        .e-data-trail {
+            top: 85%; left: 50%;
+            transform: translateX(-50%) rotate(5deg);
+            font-size: 1.5em;
+            color: #0f0;
+            animation: rainbowText 12s linear infinite;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+        .e-control {
+            top: 5%; right: 5%;
+            font-size: 4em;
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+            transform: rotate(25deg);
+            animation: pulseOpacity 2s ease-in-out infinite alternate, rotateZ 20s linear infinite reverse;
+            z-index: 25;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+
+        <div class="e-matrix"></div>
+
+        <div class="element e1 text-rainbow">
+            <span style="font-size:0.8em;">YOUR</span><br>DATA 💾
+        </div>
+
+        <div class="element e2 bg-rainbow">
+            <span style="color: black; font-weight: bold;">TRACKED</span> 👣
+        </div>
+
+        <div class="element e3 text-rainbow" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(0,255,0,0.5);">
+            ALGORITHM<br>EYES 👁️
+        </div>
+
+        <div class="element e4" style="color: #0ff; text-shadow: 0 0 15px #0ff, 0 0 30px #00ffff; border: 2px solid rgba(0,255,255,0.8);">
+            PROFILE<br>BUILT 🧠
+        </div>
+
+        <div class="element e5 bg-rainbow">
+            <span style="color: black; font-weight: bold;">SURVEILLANCE</span> 📡
+        </div>
+
+        <div class="element e6 text-rainbow" style="background: rgba(0,0,0,0.3); border: 2px solid rgba(255,0,255,0.5);">
+            INVISIBLE<br>CHAINS 🔗
+        </div>
+
+        <div class="element e7" style="color: #ff0; text-shadow: 0 0 10px #ff0, 0 0 20px #ffff00; border: 2px solid rgba(255,255,0,0.8);">
+            <span style="font-size:0.8em;">BIG</span> TECH 🌐
+        </div>
+
+        <div class="element e8 bg-rainbow">
+            <span style="color: black; font-weight: bold;">PREDICTIVE</span> <br>FUTURES 🔮
+        </div>
+
+        <div class="element e9 text-rainbow" style="background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.3);">
+            <span style="font-size:0.8em;">GHOST IN THE</span> MACHINE 👻
+        </div>
+
+        <div class="element e10" style="color: #f0f; text-shadow: 0 0 15px #f0f, 0 0 30px #ff00ff; border: 2px solid rgba(255,0,255,0.8);">
+            <span style="font-size:0.8em;">NO</span> ESCAPE?
+        </div>
+
+        <div class="element e-eye">👁️</div>
+
+        <div class="element e-ghost">
+            <span style="display: block; animation: rainbowText 15s linear infinite;">PRIVACY</span>
+            <span style="display: block; animation: rainbowText 15s linear infinite reverse;">LOST</span> 💔
+        </div>
+
+        <div class="element e-net" style="z-index: 5;">
+            <span style="animation: rainbowText 10s linear infinite;">THE WEB </span>
+            <span style="animation: rainbowText 10s linear infinite reverse;">WE WEAVE</span>
+        </div>
+
+        <div class="element e-privacy-lost">
+            <span style="animation: rainbowText 8s linear infinite;">FREEDOM?</span>
+            <span style="font-size:0.7em; display:block; animation: rainbowText 8s linear infinite reverse;">ILLUSION.</span>
+        </div>
+
+        <div class="element e-data-trail">
+            <span style="animation: rainbowText 6s linear infinite;">cookies.js </span>
+            <span style="animation: rainbowText 6s linear infinite reverse;">track.gif </span>
+            <span style="animation: rainbowText 6s linear infinite;">pixel.png </span>
+        </div>
+
+        <div class="element e-control">
+            CONTROL ⛓️‍💥
+        </div>
+
+    </div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">algorithmic surveillance</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 16:14:43.580252</div>
         <!DOCTYPE html>
 <html lang="en">
