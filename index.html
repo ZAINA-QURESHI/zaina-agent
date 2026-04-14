@@ -16,6 +16,222 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 22:55:35.469078</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Decay Rainbow Collage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            perspective: 1000px;
+        }
+
+        .collage-container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            transform-style: preserve-3d;
+            animation: rotateCollage 60s infinite linear;
+        }
+
+        @keyframes rotateCollage {
+            from { transform: rotateY(0deg) rotateX(0deg); }
+            to { transform: rotateY(360deg) rotateX(360deg); }
+        }
+
+        .decay-element {
+            position: absolute;
+            opacity: 0.8;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            animation: glitchEffect 2s infinite alternate, fadePulse 3s infinite alternate;
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+
+        @keyframes glitchEffect {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px) scale(1.01); filter: hue-rotate(0deg); }
+            40% { transform: translate(2px, -2px) scale(0.99); filter: hue-rotate(180deg); }
+            60% { transform: translate(-1px, 1px) scale(1.02); filter: hue-rotate(90deg); }
+            80% { transform: translate(1px, -1px) scale(0.98); filter: hue-rotate(270deg); }
+            100% { transform: translate(0, 0); filter: hue-rotate(360deg); }
+        }
+
+        @keyframes fadePulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 0.95; }
+            100% { opacity: 0.7; }
+        }
+
+        .text-overlay {
+            position: absolute;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+            color: rgba(255, 255, 255, 0.9);
+            pointer-events: none;
+            z-index: 100;
+            transform: translateZ(10px);
+        }
+
+        .large-text {
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+            opacity: 0.7;
+            animation: textGlitch 4s infinite alternate;
+        }
+
+        @keyframes textGlitch {
+            0% { transform: skewX(0deg); }
+            25% { transform: skewX(2deg); opacity: 0.6; }
+            50% { transform: skewX(-2deg); opacity: 0.8; }
+            75% { transform: skewX(1deg); opacity: 0.7; }
+            100% { transform: skewX(0deg); }
+        }
+
+        /* Rainbow Colors */
+        .red { background-color: #FF0000; }
+        .orange { background-color: #FFA500; }
+        .yellow { background-color: #FFFF00; }
+        .green { background-color: #00FF00; }
+        .blue { background-color: #0000FF; }
+        .indigo { background-color: #4B0082; }
+        .violet { background-color: #EE82EE; }
+
+        /* Specific styles for decay effects */
+        .data-corruption {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noiseFilter)" fill-opacity="0.2"/></svg>');
+            background-blend-mode: screen;
+            mix-blend-mode: screen;
+            animation: scanline 5s infinite linear;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .static-burst {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="url(%23g)"></rect><defs><pattern id="g" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M5 0L5 10M0 5L10 5" stroke-width="0.5" stroke="rgba(255,255,255,0.3)"></path></pattern></defs></svg>');
+            background-blend-mode: exclusion;
+            animation: staticShift 0.5s infinite alternate;
+        }
+
+        @keyframes staticShift {
+            0% { transform: translateX(0) translateY(0); opacity: 0.9; }
+            50% { transform: translateX(5px) translateY(-5px); opacity: 0.7; }
+            100% { transform: translateX(-5px) translateY(5px); opacity: 0.9; }
+        }
+
+        .pixel-rot {
+            border: 2px solid rgba(255,255,255,0.5);
+            animation: borderFlicker 1s infinite step-end;
+        }
+
+        @keyframes borderFlicker {
+            0% { border-color: rgba(255,255,255,0.5); }
+            50% { border-color: rgba(255,255,255,0.2); }
+            100% { border-color: rgba(255,255,255,0.5); }
+        }
+
+        .ghosting {
+            filter: blur(2px) contrast(150%);
+            mix-blend-mode: screen;
+            animation: ghostTrail 4s infinite alternate;
+        }
+
+        @keyframes ghostTrail {
+            0% { transform: translateZ(0); filter: blur(1px) brightness(1); }
+            50% { transform: translateZ(10px); filter: blur(3px) brightness(1.5); }
+            100% { transform: translateZ(0); filter: blur(1px) brightness(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <!-- Main title element -->
+        <div class="decay-element large-text" style="
+            width: 80%; height: auto; padding: 20px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) translateZ(150px) rotateY(10deg) rotateX(-5deg);
+            background: none; box-shadow: none; opacity: 1; color: #fff;
+            animation: none;
+            ">
+            <span style="color: #FF0000;">D</span><span style="color: #FFA500;">I</span><span style="color: #FFFF00;">G</span><span style="color: #00FF00;">I</span><span style="color: #0000FF;">T</span><span style="color: #4B0082;">A</span><span style="color: #EE82EE;">L</span><br>
+            <span style="color: #FF0000;">D</span><span style="color: #FFA500;">E</span><span style="color: #FFFF00;">C</span><span style="color: #00FF00;">A</span><span style="color: #0000FF;">Y</span>
+        </div>
+
+        <!-- Red elements -->
+        <div class="decay-element red data-corruption" style="width: 150px; height: 100px; top: 10%; left: 5%; transform: translateZ(20px) rotateY(15deg) rotateX(5deg);"></div>
+        <div class="decay-element red pixel-rot" style="width: 80px; height: 80px; top: 25%; left: 15%; transform: translateZ(50px) rotateY(-20deg);"></div>
+        <div class="decay-element red ghosting" style="width: 120px; height: 60px; top: 5%; right: 10%; transform: translateZ(30px) rotateY(25deg) rotateZ(10deg);"></div>
+
+        <!-- Orange elements -->
+        <div class="decay-element orange static-burst" style="width: 200px; height: 120px; top: 18%; left: 30%; transform: translateZ(0px) rotateX(10deg) rotateZ(-5deg);"></div>
+        <div class="decay-element orange data-corruption" style="width: 100px; height: 100px; top: 40%; left: 5%; transform: translateZ(70px) rotateY(30deg);"></div>
+        <div class="decay-element orange pixel-rot" style="width: 70px; height: 150px; bottom: 10%; left: 20%; transform: translateZ(40px) rotateY(-10deg) rotateX(15deg);"></div>
+
+        <!-- Yellow elements -->
+        <div class="decay-element yellow ghosting" style="width: 180px; height: 90px; top: 12%; left: 55%; transform: translateZ(60px) rotateY(5deg) rotateX(-15deg);"></div>
+        <div class="decay-element yellow static-burst" style="width: 90px; height: 180px; top: 35%; right: 15%; transform: translateZ(10px) rotateX(20deg);"></div>
+        <div class="decay-element yellow data-corruption" style="width: 130px; height: 70px; bottom: 25%; right: 5%; transform: translateZ(80px) rotateY(45deg) rotateZ(-10deg);"></div>
+
+        <!-- Green elements -->
+        <div class="decay-element green pixel-rot" style="width: 110px; height: 110px; top: 50%; left: 25%; transform: translateZ(90px) rotateY(50deg) rotateX(5deg);"></div>
+        <div class="decay-element green ghosting" style="width: 160px; height: 80px; top: 60%; right: 20%; transform: translateZ(0px) rotateY(-30deg);"></div>
+        <div class="decay-element green static-burst" style="width: 140px; height: 100px; bottom: 5%; left: 40%; transform: translateZ(20px) rotateX(-10deg) rotateY(10deg);"></div>
+
+        <!-- Blue elements -->
+        <div class="decay-element blue data-corruption" style="width: 100px; height: 160px; top: 20%; left: 75%; transform: translateZ(40px) rotateY(-40deg) rotateZ(5deg);"></div>
+        <div class="decay-element blue pixel-rot" style="width: 90px; height: 90px; top: 70%; left: 10%; transform: translateZ(60px) rotateX(25deg);"></div>
+        <div class="decay-element blue ghosting" style="width: 170px; height: 100px; bottom: 15%; left: 60%; transform: translateZ(10px) rotateY(15deg) rotateX(-5deg);"></div>
+
+        <!-- Indigo elements -->
+        <div class="decay-element indigo static-burst" style="width: 120px; height: 120px; top: 45%; left: 10%; transform: translateZ(5px) rotateY(-5deg) rotateX(10deg);"></div>
+        <div class="decay-element indigo data-corruption" style="width: 180px; height: 80px; top: 75%; right: 5%; transform: translateZ(70px) rotateY(60deg);"></div>
+        <div class="decay-element indigo pixel-rot" style="width: 60px; height: 130px; top: 10%; left: 40%; transform: translateZ(30px) rotateX(30deg) rotateY(10deg);"></div>
+
+        <!-- Violet elements -->
+        <div class="decay-element violet ghosting" style="width: 150px; height: 70px; top: 5%; left: 20%; transform: translateZ(80px) rotateY(10deg) rotateX(20deg);"></div>
+        <div class="decay-element violet static-burst" style="width: 100px; height: 100px; top: 80%; left: 50%; transform: translateZ(0px) rotateY(-20deg) rotateZ(-15deg);"></div>
+        <div class="decay-element violet data-corruption" style="width: 130px; height: 90px; top: 30%; right: 5%; transform: translateZ(90px) rotateX(-20deg) rotateY(-5deg);"></div>
+
+        <!-- More diverse elements scattered -->
+        <div class="decay-element red pixel-rot" style="width: 50px; height: 50px; top: 60%; left: 45%; transform: translateZ(100px) rotateY(70deg) rotateX(10deg);"></div>
+        <div class="decay-element green data-corruption" style="width: 70px; height: 140px; top: 15%; left: 70%; transform: translateZ(120px) rotateY(-10deg) rotateX(15deg);"></div>
+        <div class="decay-element blue static-burst" style="width: 80px; height: 80px; bottom: 20%; left: 30%; transform: translateZ(50px) rotateY(25deg) rotateZ(5deg);"></div>
+        <div class="decay-element violet ghosting" style="width: 110px; height: 60px; top: 70%; right: 40%; transform: translateZ(130px) rotateY(5deg) rotateX(-10deg);"></div>
+
+        <!-- Some text overlays for specific elements -->
+        <div class="text-overlay" style="top: 15%; left: 8%; transform: translateZ(30px) rotateY(15deg);">LOST_PACKET</div>
+        <div class="text-overlay" style="top: 45%; left: 10%; transform: translateZ(80px) rotateY(30deg);">BUFFER_OVERFLOW</div>
+        <div class="text-overlay" style="bottom: 10%; left: 25%; transform: translateZ(50px) rotateY(-10deg);">CORRUPT.DAT</div>
+        <div class="text-overlay" style="top: 20%; right: 15%; transform: translateZ(40px) rotateY(25deg);">DEAD_PIXEL</div>
+        <div class="text-overlay" style="bottom: 30%; right: 10%; transform: translateZ(90px) rotateY(45deg);">404_LIFE</div>
+        <div class="text-overlay" style="top: 55%; left: 30%; transform: translateZ(100px) rotateY(50deg);">REBOOT_FAIL</div>
+        <div class="text-overlay" style="bottom: 5%; left: 50%; transform: translateZ(30px) rotateY(10deg);">SYSTEM_ERROR</div>
+    </div>
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">digital decay</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 21:57:21.473363</div>
         <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #1a1a1a; font-family: 'Arial Black', Gadget, sans-serif; color: white;">
 
