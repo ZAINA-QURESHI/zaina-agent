@@ -16,6 +16,217 @@
             <!-- ZAINA_INJECTION_MARKER -->
 
     <div class="gallery-card">
+        <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 12:02:14.473289</div>
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; overflow-x: hidden; background-color: #000; font-family: 'Courier New', monospace; }
+  .collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    animation: background-shift 15s infinite alternate;
+  }
+  @keyframes background-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .glitch-element {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(0.8em, 2vw, 2.5em);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow:
+      0 0 5px rgba(255, 0, 0, 0.7),
+      0 0 10px rgba(0, 255, 0, 0.7),
+      0 0 15px rgba(0, 0, 255, 0.7);
+    overflow: hidden;
+    animation: glitch-text 5s infinite alternate;
+    mix-blend-mode: screen; /* Or difference, overlay, lighten, color-dodge */
+  }
+
+  @keyframes glitch-text {
+    0% { transform: translate(0, 0); opacity: 1; }
+    20% { transform: translate(-2px, 2px) scaleX(1.02); opacity: 0.9; text-shadow: 2px 0 0 red, -2px 0 0 blue; }
+    40% { transform: translate(2px, -2px) scaleX(0.98); opacity: 0.8; text-shadow: -2px 0 0 lime, 2px 0 0 yellow; }
+    60% { transform: translate(-1px, 1px) scaleX(1.01); opacity: 0.95; text-shadow: 1px 0 0 magenta, -1px 0 0 cyan; }
+    80% { transform: translate(1px, -1px) scaleX(0.99); opacity: 0.85; text-shadow: -1px 0 0 orange, 1px 0 0 purple; }
+    100% { transform: translate(0, 0) scaleX(1); opacity: 1; text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(0, 255, 0, 0.7), 0 0 15px rgba(0, 0, 255, 0.7); }
+  }
+
+  .glitch-box {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 0, 0, 0.7),
+      rgba(255, 165, 0, 0.7),
+      rgba(255, 255, 0, 0.7),
+      rgba(0, 128, 0, 0.7),
+      rgba(0, 0, 255, 0.7),
+      rgba(75, 0, 130, 0.7),
+      rgba(238, 130, 238, 0.7)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    animation: box-distortion 8s infinite alternate ease-in-out;
+    mix-blend-mode: screen;
+    z-index: 10;
+  }
+
+  @keyframes box-distortion {
+    0% { transform: rotate(0deg) skew(0deg); opacity: 0.8; }
+    25% { transform: rotate(5deg) skewX(10deg); opacity: 0.6; }
+    50% { transform: rotate(-3deg) skewY(8deg); opacity: 0.9; }
+    75% { transform: rotate(2deg) skewX(-12deg); opacity: 0.7; }
+    100% { transform: rotate(0deg) skew(0deg); opacity: 0.8; }
+  }
+
+  .glitch-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(0, 255, 0, 0.8),
+      rgba(0, 0, 255, 0.8)
+    );
+    opacity: 0.7;
+    animation: line-flicker 2s infinite steps(1);
+    mix-blend-mode: lighten;
+    z-index: 5;
+  }
+
+  @keyframes line-flicker {
+    0% { opacity: 0.7; transform: translateX(0); }
+    50% { opacity: 0.2; transform: translateX(5px); }
+    100% { opacity: 0.7; transform: translateX(0); }
+  }
+
+  .scanline {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 1px,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0.1) 2px
+    );
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    z-index: 100;
+  }
+
+  .pixel-burst {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    animation: pixel-burst 3s infinite;
+    mix-blend-mode: difference;
+    border-radius: 50%; /* Make them slightly softer, like static */
+    z-index: 20;
+  }
+
+  @keyframes pixel-burst {
+    0% { transform: scale(0); opacity: 0.8; }
+    50% { transform: scale(2); opacity: 0; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+
+  /* Specific element styles */
+  #el1 { top: 10%; left: 5%; width: 25%; height: 15%; font-size: 2em; animation-delay: 0s; color: cyan; }
+  #el2 { top: 30%; left: 70%; width: 20%; height: 10%; font-size: 1.5em; animation-delay: 1.5s; color: yellow; }
+  #el3 { top: 50%; left: 10%; width: 30%; height: 20%; font-size: 2.5em; animation-delay: 3s; color: magenta; }
+  #el4 { top: 75%; left: 40%; width: 15%; height: 10%; font-size: 1.2em; animation-delay: 0.5s; color: lime; }
+  #el5 { top: 5%; left: 40%; width: 20%; height: 12%; font-size: 1.8em; animation-delay: 2s; color: orange; }
+  #el6 { top: 60%; left: 60%; width: 25%; height: 18%; font-size: 2.2em; animation-delay: 1s; color: purple; }
+  #el7 { top: 20%; left: 30%; width: 18%; height: 8%; font-size: 1.3em; animation-delay: 2.5s; color: red; }
+  #el8 { top: 85%; left: 5%; width: 22%; height: 10%; font-size: 1.7em; animation-delay: 3.5s; color: blue; }
+
+  #box1 { top: 15%; left: 20%; width: 100px; height: 100px; animation-delay: 0.5s; }
+  #box2 { top: 40%; left: 50%; width: 150px; height: 80px; animation-delay: 2s; }
+  #box3 { top: 70%; left: 20%; width: 70px; height: 120px; animation-delay: 1s; }
+  #box4 { top: 5%; left: 80%; width: 90px; height: 60px; animation-delay: 3s; }
+
+  #line1 { top: 25%; left: 0%; width: 120%; animation-delay: 0.2s; }
+  #line2 { top: 65%; left: -20%; width: 140%; animation-delay: 1.8s; }
+  #line3 { top: 45%; left: 10%; width: 80%; animation-delay: 0.8s; }
+
+  #pixel1 { top: 30%; left: 35%; animation-delay: 0.1s; }
+  #pixel2 { top: 70%; left: 80%; animation-delay: 1.2s; }
+  #pixel3 { top: 10%; left: 60%; animation-delay: 2.3s; }
+  #pixel4 { top: 90%; left: 10%; animation-delay: 0.7s; }
+  #pixel5 { top: 50%; left: 50%; animation-delay: 1.8s; }
+
+  h1 { font-size: clamp(3em, 8vw, 6em); text-transform: uppercase; margin: 0; padding: 0; line-height: 1; text-shadow: 5px 5px 0 red, -5px -5px 0 blue; mix-blend-mode: difference; }
+</style>
+</head>
+<body>
+
+<div class="collage-container">
+  <div class="scanline"></div>
+
+  <div id="el1" class="glitch-element">
+    <h1>ERROR<br>DECODE</h1>
+  </div>
+  <div id="el2" class="glitch-element">
+    <p>PIXELATED<br>DREAM</p>
+  </div>
+  <div id="el3" class="glitch-element">
+    <h1>CORRUPT<br>BEAUTY</h1>
+  </div>
+  <div id="el4" class="glitch-element">
+    <p>DATA<br>BEND</p>
+  </div>
+  <div id="el5" class="glitch-element">
+    <h1>SYSTEM<br>OVERLOAD</h1>
+  </div>
+  <div id="el6" class="glitch-element">
+    <p>STATIC<br>VOICES</p>
+  </div>
+  <div id="el7" class="glitch-element">
+    <p>GLITCH<br>CORE</p>
+  </div>
+  <div id="el8" class="glitch-element">
+    <h1>RAINBOW<br>CHAOS</h1>
+  </div>
+
+  <div id="box1" class="glitch-box"></div>
+  <div id="box2" class="glitch-box"></div>
+  <div id="box3" class="glitch-box"></div>
+  <div id="box4" class="glitch-box"></div>
+
+  <div id="line1" class="glitch-line"></div>
+  <div id="line2" class="glitch-line"></div>
+  <div id="line3" class="glitch-line"></div>
+
+  <div id="pixel1" class="pixel-burst"></div>
+  <div id="pixel2" class="pixel-burst"></div>
+  <div id="pixel3" class="pixel-burst"></div>
+  <div id="pixel4" class="pixel-burst"></div>
+  <div id="pixel5" class="pixel-burst"></div>
+
+</div>
+
+</body>
+</html>
+        <h3 class="text-3xl font-black mt-6 uppercase text-white tracking-tighter">glitch aesthetics</h3>
+    </div>
+    
+
+    <div class="gallery-card">
         <div class="text-[10px] text-red-500 mb-4 font-bold uppercase">System Time: 2026-04-14 10:20:57.466281</div>
         <!DOCTYPE html>
 <html lang="en">
