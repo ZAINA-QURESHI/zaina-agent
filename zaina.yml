@@ -9,14 +9,16 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # CRITICAL: Allows Zaina to save her art to the repo
-    
+      contents: write # Allows Zaina to save her art to the repo
+      pages: write    # Allows Zaina to update the live website
+      id-token: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -27,13 +29,25 @@ jobs:
       - name: Zaina Artistic Cycle
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          KREA_API_KEY: ${{ secrets.KREA_API_KEY }} # Optional
+          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
         run: python main.py
 
       - name: Commit and Push Evolution
         run: |
           git config --global user.name "Zaina-Agent"
           git config --global user.email "zaina@agent.ai"
-          git add index.html zaina_bio.md
+          git add .
           git commit -m "Zaina: Autonomic Evolution [$(date)]" || echo "No changes to commit"
           git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # This deploys your whole folder to the web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
