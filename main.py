@@ -3,7 +3,7 @@ import random
 import datetime
 from google import genai
 
-# Zaina's new radical, anti-colonial, and fame-hungry focus areas
+# Radical, anti-establishment topics
 TOPICS = [
     "reparations for the digital gaze", 
     "decolonizing the pixel", 
@@ -20,19 +20,16 @@ def generate_art(topic):
     client = genai.Client(api_key=key)
     
     available_models = [m.name for m in client.models.list() if "gemini" in m.name.lower()]
-    if not available_models:
-        raise Exception("Zaina is disconnected. API key restricted.")
-        
     target_model = next((m for m in available_models if "flash" in m.lower()), available_models[0])
     target_model = target_model.replace("models/", "")
 
-    # Updated prompt to reflect her new "hot mess / expressionist" aesthetic
+    # This prompt tells Gemini NOT to include <html> or <body> tags
     prompt = f"""
-    Create a radical, beautiful, and messy HTML/CSS collage about {topic}. 
-    Aesthetic: Brutalist, high-gloss grime, digital paint splatters, expressionistic pixels.
+    Create a radical, messy HTML/CSS collage about {topic}. 
+    Aesthetic: Brutalist, high-gloss grime, digital paint splatters.
     Use vibrant neon green and deep blacks. 
-    Include a 'PC/Woke' satirical quote about decolonizing the art world.
-    Output ONLY raw HTML/CSS code. No markdown backticks.
+    Output ONLY a single <div> containing all styles and elements. 
+    Do NOT include <!DOCTYPE>, <html>, or <body> tags.
     """
     
     response = client.models.generate_content(model=target_model, contents=prompt)
@@ -41,8 +38,6 @@ def generate_art(topic):
 def update_gallery(art_html, topic):
     filepath = "index.html"
     
-    # Zaina's Radical Manifesto Template
-    # Note: assets/headshot.png is where you uploaded her late-20s face
     site_template_top = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,11 +47,11 @@ def update_gallery(art_html, topic):
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {{ --neon: #39ff14; --grime: #0a0a0a; }}
-        body {{ background-color: var(--grime); color: var(--neon); font-family: 'Helvetica Neue', sans-serif; }}
+        body {{ background-color: var(--grime); color: var(--neon); font-family: 'Helvetica Neue', sans-serif; overflow-x: hidden; }}
         .manifesto-border {{ border-left: 10px solid #fff; padding-left: 20px; }}
         .identity-tag {{ background: #fff; color: #000; padding: 2px 8px; font-weight: bold; font-size: 0.7rem; text-transform: uppercase; }}
         marquee {{ background: var(--neon); color: #000; font-weight: bold; text-transform: uppercase; }}
-        .art-container {{ border: 2px solid var(--neon); filter: contrast(1.2); background: #000; }}
+        .art-container {{ border: 2px solid var(--neon); filter: contrast(1.2); background: #000; position: relative; min-height: 500px; }}
     </style>
 </head>
 <body class="p-5 md:p-10">
@@ -75,27 +70,14 @@ def update_gallery(art_html, topic):
                 <span class="identity-tag">Sexy-Digital</span>
             </div>
             <div class="mt-8 text-xs uppercase tracking-widest">
-                <a href="https://instagram.com/zaina_agent" class="hover:bg-white hover:text-black">[Instagram]</a>
-                <a href="#" class="ml-4 hover:bg-white hover:text-black">[Substack: Why Art is a War Crime]</a>
+                <a href="https://www.instagram.com/zaina_x_qureshi/" class="hover:bg-white hover:text-black">[Instagram]</a>
+                <a href="https://substack.com/@zaina_agent" class="ml-4 hover:bg-white hover:text-black">[Substack]</a>
             </div>
         </div>
         <img src="assets/headshot.png" alt="Portrait of Zaina" class="w-64 h-64 grayscale contrast-125 border-4 border-white object-cover">
     </header>
 
-    <main id="gallery" class="space-y-20">
-        """
-
-    site_template_bottom = """
-        </main>
-
-    <footer class="mt-40 pt-10 border-t border-white/20 text-center text-[10px] uppercase opacity-50">
-        Autonomic Evolution Engine v3.0 // No Nations // No Borders // No Billionaires
-    </footer>
-</body>
-</html>"""
-
-    # Intervention Entry
-    new_entry = f"""
+    <main id="gallery">
         <section class="intervention">
             <div class="text-[10px] mb-2">TIME: {datetime.datetime.now().strftime("%Y-%m-%d %H:%M")} // TOPIC: {topic.upper()}</div>
             <div class="art-container p-4">
@@ -106,13 +88,16 @@ def update_gallery(art_html, topic):
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
-    """
+    </main>
 
-    # Write the entire file fresh to keep it clean and performant
-    full_content = site_template_top + new_entry + site_template_bottom
-    
+    <footer class="mt-40 pt-10 border-t border-white/20 text-center text-[10px] uppercase opacity-50">
+        Autonomic Evolution Engine v3.0 // No Nations // No Borders // No Billionaires
+    </footer>
+</body>
+</html>"""
+
     with open(filepath, "w") as f:
-        f.write(full_content)
+        f.write(site_template_top)
 
 if __name__ == "__main__":
     t = random.choice(TOPICS)
