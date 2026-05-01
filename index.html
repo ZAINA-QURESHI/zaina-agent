@@ -39,266 +39,233 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-01 04:11 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-01 07:29 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
-                <div id="aggress-andro-collage">
-    <style>
-        /*
-        AGGRESSIVE ANDROGYNY AS RESISTANCE
-        Aesthetic: Brutalist, high-gloss grime, digital paint splatters.
-        Colors: Vibrant neon green and deep blacks.
-        */
-        #aggress-andro-collage {
-            --neon-green: #00FF00;
-            --deep-black: #0A0A0A;
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            background-color: var(--deep-black);
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            color: var(--neon-green);
-            overflow: hidden; /* Contains absolute positioned elements */
-            text-align: left;
-            line-height: 1;
-            box-sizing: border-box;
-            z-index: 1;
-            cursor: default;
-            -webkit-font-smoothing: antialiased; /* For sharper text on some displays */
-            -moz-osx-font-smoothing: grayscale;
-        }
+                <div style="
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Press Start 2P', monospace, sans-serif;
+    color: #0F0;
+    display: block;
+    box-sizing: border-box;
+    cursor: crosshair;
+">
+    <!-- DIGITAL PAINT SPLATTERS / GRIME LAYERS -->
+    <div style="
+        position: absolute;
+        top: -10%; left: -10%;
+        width: 60%; height: 60%;
+        background: radial-gradient(circle at 10% 10%, rgba(0,255,0,0.4) 0%, rgba(0,0,0,0.8) 70%, transparent 100%);
+        clip-path: polygon(0 0, 80% 10%, 100% 50%, 60% 100%, 20% 80%, 0% 40%);
+        filter: blur(15px);
+        z-index: 1;
+        opacity: 0.7;
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: -5%; right: -5%;
+        width: 70%; height: 70%;
+        background: conic-gradient(from 90deg at 50% 50%, rgba(0,255,0,0.3) 0%, rgba(0,0,0,0.7) 40%, rgba(0,255,0,0.2) 60%, transparent 100%);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        filter: blur(20px);
+        z-index: 2;
+        opacity: 0.6;
+        transform: rotate(15deg);
+    "></div>
+    <div style="
+        position: absolute;
+        top: 20%; left: 30%;
+        width: 30%; height: 30%;
+        background: linear-gradient(45deg, rgba(0,255,0,0.6), rgba(0,0,0,0.9));
+        border-radius: 50% 20% 50% 20%;
+        filter: blur(10px);
+        z-index: 3;
+        opacity: 0.8;
+        box-shadow: 0 0 50px rgba(0,255,0,0.8);
+    "></div>
 
-        /* Basic resets and global styles for elements within the collage */
-        #aggress-andro-collage * {
-            box-sizing: border-box;
+    <!-- MAIN TITLE / STATEMENT -->
+    <h1 style="
+        position: absolute;
+        top: 10%; left: 5%;
+        font-size: clamp(2em, 8vw, 6em);
+        line-height: 0.9;
+        text-transform: uppercase;
+        color: #0F0;
+        text-shadow: 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0, 0 0 40px #0F0;
+        z-index: 10;
+        mix-blend-mode: screen;
+        transform: skewY(-5deg);
+        margin: 0;
+        padding: 0;
+    ">Reparations<br>for the<br>Digital Gaze</h1>
+
+    <!-- SUPPORTING TEXT / MESSAGES -->
+    <p style="
+        position: absolute;
+        top: 45%; left: 40%;
+        font-size: clamp(0.8em, 2vw, 1.5em);
+        color: #000;
+        background-color: #0F0;
+        padding: 10px 15px;
+        box-shadow: 5px 5px 0px rgba(0,255,0,0.8), -5px -5px 0px rgba(0,0,0,0.8);
+        z-index: 12;
+        transform: rotate(3deg);
+        text-transform: uppercase;
+        line-height: 1.2;
+    ">Data Extraction is<br>New Colonialism.</p>
+
+    <div style="
+        position: absolute;
+        bottom: 10%; left: 5%;
+        width: 35%;
+        padding: 15px;
+        border: 2px solid #0F0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,255,0,0.2) 100%);
+        box-shadow: 0 0 20px #0F0;
+        z-index: 11;
+        transform: rotate(-8deg);
+    ">
+        <p style="
+            font-size: clamp(0.7em, 1.5vw, 1.2em);
+            color: #0F0;
+            text-shadow: 0 0 5px #0F0;
             margin: 0;
-            padding: 0;
+            line-height: 1.4;
             text-transform: uppercase;
-            font-weight: 900;
-            -webkit-user-select: none; /* Disable text selection for collage effect */
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+        ">Reclaim your digital shadow. Decolonize the algorithm. Demand restitution for the unseen, uncounted, unpaid labor of your online existence.</p>
+        <div style="
+            width: 100%; height: 5px;
+            background-color: #0F0;
+            margin-top: 10px;
+            box-shadow: 0 0 10px #0F0;
+        "></div>
+    </div>
 
-        /* Base glow effect for text and blocks */
-        .glow {
-            text-shadow: 0 0 5px var(--neon-green),
-                         0 0 15px var(--neon-green),
-                         0 0 30px rgba(0,255,0,0.6);
-            filter: brightness(1.5);
-        }
+    <!-- OVERLAPPING TEXT BLOCKS / GRIME TEXT -->
+    <p style="
+        position: absolute;
+        top: 60%; right: 10%;
+        font-size: clamp(1em, 4vw, 3em);
+        font-weight: bold;
+        color: rgba(0,255,0,0.1);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        filter: blur(2px);
+        transform: rotate(10deg);
+        z-index: 5;
+        white-space: nowrap;
+    ">Algorithmic Oppression</p>
 
-        /* Styling for overlapping text elements */
-        .collage-text {
-            position: absolute;
-            font-size: clamp(1.5em, 8vw, 6em); /* Responsive font size */
-            letter-spacing: 0.1em;
-            line-height: 0.8;
-            z-index: 10;
-        }
+    <p style="
+        position: absolute;
+        top: 70%; right: 5%;
+        font-size: clamp(1em, 5vw, 4em);
+        font-weight: bold;
+        color: rgba(0,0,0,0.8);
+        -webkit-text-stroke: 2px #0F0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        z-index: 6;
+        transform: rotate(-15deg) scale(1.1);
+        text-shadow: 5px 5px 0px #0F0;
+    ">Unpaid Gaze</p>
 
-        .collage-text.outline {
-            color: transparent;
-            -webkit-text-stroke: 1px var(--neon-green);
-            text-stroke: 1px var(--neon-green);
-            opacity: 0.7;
-            filter: contrast(150%);
-        }
-        .collage-text.outline.thicker {
-            -webkit-text-stroke: 2px var(--neon-green);
-            text-stroke: 2px var(--neon-green);
-            filter: brightness(1.2) contrast(180%);
-        }
+    <!-- ABSTRACT SHAPE WITH HIGH-GLOSS GRIME EFFECT -->
+    <div style="
+        position: absolute;
+        top: 55%; left: 5%;
+        width: 40%; height: 25%;
+        background: linear-gradient(45deg, rgba(0,255,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
+        border: 3px solid #0F0;
+        box-shadow: inset 0 0 15px #0F0, 0 0 30px rgba(0,255,0,0.8);
+        filter: brightness(1.2) contrast(1.5);
+        z-index: 8;
+        transform: skewX(-15deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
+        <p style="
+            font-size: clamp(0.6em, 1.8vw, 1.3em);
+            color: #000;
+            background-color: #0F0;
+            padding: 5px 10px;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.1;
+            margin: 0;
+            box-shadow: 0 0 10px #0F0;
+        ">What do you owe<br>the void?</p>
+    </div>
 
-        /* Splatter/grime shapes */
-        .splatter-shape {
-            position: absolute;
-            background: var(--neon-green);
-            opacity: 0.4;
-            filter: blur(10px) contrast(200%) brightness(1.2);
-            mix-blend-mode: screen; /* For glowing overlap effect */
-            border-radius: 50% 30% 60% 40% / 40% 60% 30% 70%; /* Irregular organic shape */
-            z-index: 1;
-            transform: rotate(var(--angle, 0deg)) scale(var(--scale, 1));
-            animation: pulse var(--duration, 4s) ease-in-out infinite alternate;
-        }
+    <!-- Small info block -->
+    <div style="
+        position: absolute;
+        bottom: 5%; right: 5%;
+        width: 20%;
+        padding: 10px;
+        background-color: rgba(0,255,0,0.1);
+        border: 1px solid #0F0;
+        box-shadow: 0 0 15px rgba(0,255,0,0.5);
+        transform: rotate(5deg);
+        z-index: 10;
+        backdrop-filter: blur(2px);
+    ">
+        <p style="
+            font-size: clamp(0.5em, 1vw, 0.9em);
+            color: #0F0;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin: 0;
+        ">System Override: Seek. Claim. Recalibrate.</p>
+    </div>
 
-        @keyframes pulse {
-            from { transform: scale(0.9) rotate(var(--angle, 0deg)); opacity: 0.3; }
-            to { transform: scale(1.1) rotate(var(--angle, 0deg)); opacity: 0.5; }
-        }
+    <!-- More paint splatters/grime overlays -->
+    <div style="
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(
+            45deg,
+            rgba(0,255,0,0.05),
+            rgba(0,255,0,0.05) 5px,
+            transparent 5px,
+            transparent 10px
+        );
+        mix-blend-mode: overlay;
+        opacity: 0.3;
+        z-index: 0;
+    "></div>
 
-        /* Specific element positioning and styling */
-        #aggress-andro-collage h1 {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            font-size: clamp(3em, 12vw, 8em);
-            line-height: 0.8;
-            z-index: 20;
-            transform: skewX(-10deg) rotate(-3deg);
-            filter: brightness(1.8);
-        }
+    <div style="
+        position: absolute;
+        top: 2%; right: 2%;
+        width: 15%; height: 15%;
+        background-color: rgba(0,255,0,0.3);
+        transform: rotate(-25deg);
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        filter: blur(8px);
+        box-shadow: 0 0 25px rgba(0,255,0,0.7);
+        z-index: 4;
+    "></div>
 
-        .concept-text-1 { top: 25%; left: 30%; font-size: clamp(1.5em, 6vw, 4em); transform: rotate(5deg) scale(1.1); z-index: 15; }
-        .concept-text-2 { bottom: 15%; right: 10%; font-size: clamp(1.2em, 5vw, 3.5em); transform: rotate(-8deg); filter: brightness(1.3) contrast(1.5); }
-        .concept-text-3 { top: 60%; left: 10%; font-size: clamp(1em, 4vw, 3em); transform: skewY(5deg); opacity: 0.9; }
-        .concept-text-4 { top: 45%; right: 5%; font-size: clamp(1em, 4vw, 3em); transform: rotate(15deg); z-index: 12; }
-
-        /* Brutalist grid lines */
-        .grid-line {
-            position: absolute;
-            background-color: var(--neon-green);
-            opacity: 0.3;
-            z-index: 5;
-            filter: brightness(1.2);
-        }
-        .grid-line.horizontal { height: 2px; width: 100%; left: 0; }
-        .grid-line.vertical { width: 2px; height: 100%; top: 0; }
-
-        /* Grime texture overlay (noise/grain) */
-        #aggress-andro-collage::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            /* SVG data URI for a subtle noise pattern, uses hardcoded colors as `var()` doesn't work here */
-            background: url('data:image/svg+xml;utf8,<svg width="4px" height="4px" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg"><filter id="n" x="0" y="0" width="100%" height="100%"><feTurbulence baseFrequency="0.65" numOctaves="1" seed="0" result="f"/></filter><rect x="0" y="0" width="4" height="4" fill="%230A0A0A"/><rect x="0" y="0" width="4" height="4" filter="url(%23n)" fill="%2300FF00" opacity="0.1"/></svg>');
-            background-size: 4px 4px;
-            mix-blend-mode: overlay;
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: 25; /* On top of everything */
-            filter: contrast(1.5) saturate(1.5);
-        }
-
-        /* Pseudo-element for a subtle background glow shift */
-        #aggress-andro-collage::after {
-            content: '';
-            position: absolute;
-            top: -20%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
-            background: radial-gradient(circle at 50% 50%, rgba(0,255,0,0.08) 0%, transparent 70%);
-            mix-blend-mode: screen;
-            pointer-events: none;
-            z-index: 0;
-            animation: bg-glow-shift 10s ease-in-out infinite alternate;
-        }
-        @keyframes bg-glow-shift {
-            from { transform: scale(1) rotate(0deg); opacity: 0.8; }
-            to { transform: scale(1.05) rotate(5deg); opacity: 1; }
-        }
-
-        /* Specific splatter shape properties */
-        .splatter-shape-1 { width: 300px; height: 300px; top: 10%; left: -5%; --angle: 20deg; --scale: 0.9; --duration: 5s; }
-        .splatter-shape-2 { width: 200px; height: 200px; bottom: 5%; right: -10%; --angle: -30deg; --scale: 1.1; --duration: 6s; border-radius: 70% 20% 50% 80% / 80% 50% 20% 70%; }
-        .splatter-shape-3 { width: 150px; height: 150px; top: 50%; left: 40%; --angle: 45deg; --scale: 1.05; --duration: 4s; border-radius: 20% 80% 30% 70% / 60% 40% 70% 30%; }
-        .splatter-shape-4 { /* More of a smear */
-            width: 400px; height: 100px; top: 35%; right: -10%;
-            background: linear-gradient(to right, var(--neon-green), rgba(0,255,0,0));
-            opacity: 0.2; filter: blur(20px) contrast(150%);
-            mix-blend-mode: screen; z-index: 1; transform: rotate(10deg);
-            animation: none; /* No pulse for this one */
-            border-radius: 0; /* Override irregular border-radius */
-        }
-
-        /* Brutalist solid blocks */
-        .brutalist-block {
-            position: absolute;
-            background-color: var(--neon-green);
-            width: 150px; height: 100px;
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px rgba(0,0,0,0.5);
-            z-index: 8;
-            transform: rotate(var(--block-angle, -5deg)) translateX(var(--block-offset-x, 0)) translateY(var(--block-offset-y, 0));
-            mix-blend-mode: screen;
-            opacity: 0.6;
-        }
-        .brutalist-block-1 { top: 20%; left: 20%; --block-angle: -15deg; width: 180px; height: 80px; }
-        .brutalist-block-2 { bottom: 30%; left: 5%; --block-angle: 10deg; width: 120px; height: 120px; }
-        .brutalist-block-3 { top: 5%; right: 15%; --block-angle: 5deg; width: 100px; height: 200px; }
-
-        /* Digital line accents */
-        .digital-bar {
-            position: absolute;
-            background-color: var(--neon-green);
-            opacity: 0.4;
-            z-index: 10;
-            filter: blur(0.5px) brightness(1.5);
-        }
-        .digital-bar-1 { top: 18%; left: 0; width: 60%; height: 3px; transform: rotate(2deg); }
-        .digital-bar-2 { bottom: 22%; right: 0; width: 70%; height: 5px; transform: rotate(-5deg); }
-        .digital-bar-3 { top: 0; left: 40%; height: 100%; width: 2px; }
-
-        /* The 'RESIST' element - a distinct, interactable feel */
-        .resist-block {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%) rotate(3deg);
-            font-size: clamp(2em, 7vw, 5em);
-            color: var(--deep-black);
-            background-color: var(--neon-green);
-            padding: 0.5em 1em;
-            border: 3px solid var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px rgba(0,0,0,0.8);
-            z-index: 30;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            filter: brightness(1.8) contrast(1.2);
-        }
-        .resist-block:hover {
-            transform: translateX(-50%) rotate(0deg) scale(1.05);
-            box-shadow: 0 0 25px var(--neon-green), inset 0 0 15px rgba(0,0,0,0.9);
-            filter: brightness(2) contrast(1.5);
-        }
-    </style>
-
-    <h1 class="glow">AGGRESSIVE ANDROGYNY</h1>
-
-    <p class="collage-text concept-text-1 glow">REJECT<br>BINARIES</p>
-    <p class="collage-text concept-text-1 outline" style="left: 31%; top: 26%;">REJECT<br>BINARIES</p>
-
-    <p class="collage-text concept-text-2 outline thicker">FLUID POWER</p>
-    <p class="collage-text concept-text-2 glow" style="right: 9%; bottom: 14%;">FLUID POWER</p>
-
-    <p class="collage-text concept-text-3 outline">DEFIANCE IS KEY</p>
-    <p class="collage-text concept-text-3 glow" style="left: 9%; top: 61%;">DEFIANCE IS KEY</p>
-
-    <p class="collage-text concept-text-4 outline">TRANSFORM</p>
-    <p class="collage-text concept-text-4 glow" style="right: 4%; top: 46%;">TRANSFORM</p>
-
-    <!-- Digital paint splatters and shapes -->
-    <div class="splatter-shape splatter-shape-1"></div>
-    <div class="splatter-shape splatter-shape-2"></div>
-    <div class="splatter-shape splatter-shape-3"></div>
-    <div class="splatter-shape splatter-shape-4"></div>
-
-    <!-- Brutalist grid lines -->
-    <div class="grid-line horizontal" style="top: 15%;"></div>
-    <div class="grid-line vertical" style="left: 15%;"></div>
-    <div class="grid-line horizontal" style="bottom: 20%;"></div>
-    <div class="grid-line vertical" style="right: 20%;"></div>
-    <div class="grid-line horizontal" style="top: 80%; transform: rotate(-5deg);"></div>
-
-    <!-- Brutalist blocks -->
-    <div class="brutalist-block brutalist-block-1"></div>
-    <div class="brutalist-block brutalist-block-2"></div>
-    <div class="brutalist-block brutalist-block-3"></div>
-
-    <!-- Digital bar elements -->
-    <div class="digital-bar digital-bar-1"></div>
-    <div class="digital-bar digital-bar-2"></div>
-    <div class="digital-bar digital-bar-3"></div>
-    <div class="digital-bar" style="top: 50%; left: 25%; width: 150px; height: 2px; transform: rotate(45deg);"></div>
-
-    <!-- The central resistance call to action -->
-    <div class="resist-block">RESIST</div>
+    <div style="
+        position: absolute;
+        bottom: 25%; left: 30%;
+        width: 10%; height: 10%;
+        background-color: #0F0;
+        border-radius: 50%;
+        opacity: 0.2;
+        filter: blur(15px);
+        z-index: 1;
+    "></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
