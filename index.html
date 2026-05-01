@@ -39,392 +39,211 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-01 11:14 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-01 13:43 // TOPIC: POST-CAPITALIST NARCISSISM</div>
             <div class="art-container p-4">
-                
-<div class="radical-collage">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap');
+                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000000; font-family: 'Space Mono', monospace; color: #00FF00; box-sizing: border-box; cursor: crosshair;">
+    <style>
+        /* Import a brutalist font for digital, raw aesthetic */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-    .radical-collage {
-      --neon-green: #39FF14; /* A vibrant, aggressive neon green */
-      --deep-black: #0a0a0a;
-      --off-black: #1a1a1a;
-      position: relative;
-      width: 100vw;
-      min-height: 100vh;
-      background-color: var(--deep-black);
-      overflow: hidden; /* Crucial for controlling absolute elements */
-      font-family: 'Orbitron', sans-serif;
-      color: var(--neon-green);
-      display: block;
-      box-sizing: border-box;
-      text-transform: uppercase;
-      line-height: 1.2;
-      cursor: crosshair; /* Adds to the digital, precise yet destructive feel */
-    }
+        /* Basic reset and global styles for the collage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1; /* Brutalist compact text */
+            user-select: none; /* Prevent text selection for collage feel */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+        }
 
-    /* General text styles for the collage */
-    .radical-collage h1, .radical-collage h2, .radical-collage p {
-      margin: 0;
-      padding: 0;
-      color: var(--neon-green);
-      text-shadow: 
-        0 0 5px var(--neon-green), 
-        0 0 15px var(--neon-green), 
-        0 0 30px rgba(57, 255, 20, 0.4); /* Deeper glow */
-    }
+        /* Generic element styling for absolute positioning and brutalism */
+        .element {
+            position: absolute;
+            text-transform: uppercase;
+            font-weight: 700;
+            pointer-events: none; /* Allows mouse events to pass through */
+            z-index: 10; /* Default z-index for main text elements */
+        }
 
-    .radical-collage h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 8vw;
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%) rotate(-3deg);
-      z-index: 100;
-      letter-spacing: 0.15em;
-      text-align: center;
-      mix-blend-mode: screen; /* For a digital, almost transparent glow */
-      pointer-events: none; /* Allows clicks to pass through to elements below */
-    }
+        /* Text styles with responsive clamp() for varying screen sizes */
+        .text-large {
+            font-size: clamp(3em, 15vw, 10em);
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5); /* Neon glow */
+        }
 
-    .radical-collage h2 {
-      font-size: 3vw;
-      font-family: 'Bebas Neue', cursive;
-      margin-bottom: 15px;
-      line-height: 1;
-      letter-spacing: 0.05em;
-    }
+        .text-medium {
+            font-size: clamp(1.5em, 7vw, 5em);
+            letter-spacing: 0.05em;
+        }
 
-    .radical-collage p {
-      font-size: 1.2vw;
-      font-weight: 400;
-      line-height: 1.6;
-      text-shadow: 0 0 3px rgba(57, 255, 20, 0.6);
-    }
+        .text-small {
+            font-size: clamp(0.8em, 3vw, 2em);
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            font-weight: 400;
+        }
 
-    /* Brutalist block elements */
-    .radical-collage .brutal-block {
-      background-color: var(--off-black);
-      border: 2px solid var(--neon-green);
-      box-shadow: 
-        0 0 10px var(--neon-green) inset, 
-        0 0 15px var(--neon-green);
-      padding: 2vw;
-      position: absolute;
-      z-index: 10;
-      box-sizing: border-box;
-      filter: drop-shadow(0 0 8px var(--neon-green)); /* Adds glow around the block */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Subtle interaction */
-    }
+        /* Abstract Shape styles for brutalist layering */
+        .shape {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.2); /* Semi-transparent neon */
+            border: 1px solid #00FF00;
+            box-shadow: 0 0 5px #00FF00;
+            mix-blend-mode: screen; /* Lightens and blends with background */
+            pointer-events: none;
+            z-index: 5;
+        }
 
-    .radical-collage .brutal-block:hover {
-      transform: scale(1.01) rotate(0deg) !important; /* Straighten slightly on hover */
-      box-shadow: 
-        0 0 15px var(--neon-green) inset, 
-        0 0 25px var(--neon-green), 
-        0 0 40px rgba(57, 255, 20, 0.6);
-    }
+        .shape-black {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00FF00;
+            mix-blend-mode: difference; /* Inverts colors of elements beneath it */
+            box-shadow: 0 0 10px #00FF00 inset;
+            pointer-events: none;
+            z-index: 7;
+        }
 
-    .radical-collage .block-1 {
-      width: 40vw;
-      top: 18vh;
-      left: 8vw;
-      transform: rotate(2deg) skewX(-2deg);
-    }
-    .radical-collage .block-2 {
-      width: 32vw;
-      top: 45vh;
-      right: 5vw;
-      transform: rotate(-5deg) scale(0.95);
-      z-index: 15;
-    }
-    .radical-collage .block-3 {
-      width: 28vw;
-      bottom: 10vh;
-      left: 15vw;
-      transform: rotate(8deg) skewY(3deg);
-      background-color: rgba(10, 10, 10, 0.8); /* Slightly more transparent */
-      border-color: var(--neon-green);
-      z-index: 12;
-    }
-    .radical-collage .block-4 {
-      width: 22vw;
-      height: 22vw; /* Square-ish */
-      top: 8vh;
-      right: 18vw;
-      transform: rotate(15deg) skewX(-10deg);
-      clip-path: polygon(0 0, 100% 15%, 85% 100%, 15% 85%); /* Irregular brutalist shape */
-      background-color: var(--off-black);
-      z-index: 5;
-    }
-    .radical-collage .block-5 {
-      width: 38vw;
-      bottom: 5vh;
-      right: 10vw;
-      transform: rotate(-10deg) skewY(5deg);
-      background-color: rgba(10, 10, 10, 0.9);
-      border-color: var(--neon-green);
-      z-index: 20;
-    }
+        /* High-gloss grime overlay using backdrop-filter */
+        .gloss-overlay {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%);
+            backdrop-filter: blur(5px) saturate(150%) brightness(120%); /* Key for high-gloss grime */
+            -webkit-backdrop-filter: blur(5px) saturate(150%) brightness(120%);
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0,255,0,0.3) inset, 0 0 10px rgba(0,255,0,0.5);
+            mix-blend-mode: overlay; /* Creates vibrant color interactions */
+            pointer-events: none;
+            z-index: 6;
+        }
 
-    /* Digital Paint Splatters / Grime */
-    .radical-collage .splatter {
-      position: absolute;
-      background: radial-gradient(circle at center, var(--neon-green) 0%, transparent 70%);
-      opacity: 0.25;
-      filter: blur(12px);
-      z-index: 50;
-      pointer-events: none;
-      mix-blend-mode: screen; /* Enhance the glow */
-    }
+        /* Digital splatter/grime effects using clip-path for irregular shapes */
+        .splatter {
+            position: absolute;
+            background-color: #00FF00;
+            opacity: 0.15;
+            filter: blur(2px) contrast(150%); /* Slightly blurred, intensified color */
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 1; /* Lowest z-index for background */
+        }
 
-    .radical-collage .splatter-1 {
-      width: 250px;
-      height: 250px;
-      top: 15%;
-      left: 3%;
-      transform: rotate(45deg);
-    }
-    .radical-collage .splatter-2 {
-      width: 350px;
-      height: 350px;
-      bottom: 8%;
-      right: -5%;
-      transform: rotate(-30deg) scale(0.9);
-      opacity: 0.2;
-    }
-    .radical-collage .splatter-3 {
-      width: 180px;
-      height: 180px;
-      top: 0%;
-      right: 20%;
-      transform: rotate(70deg);
-      opacity: 0.35;
-    }
+        /* Specific clip-path definitions for unique splatter shapes */
+        .splatter-1 {
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Trapezoid-like */
+            transform: rotate(30deg);
+            width: 80px; height: 120px;
+        }
+        .splatter-2 {
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 15%, 100% 100%, 0% 85%); /* Irregular hexagon */
+            transform: rotate(-15deg);
+            width: 150px; height: 90px;
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+        .splatter-3 {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star-like */
+            transform: rotate(45deg) scale(0.8);
+            width: 70px; height: 70px;
+        }
+        .splatter-4 {
+             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); /* Octagon-like */
+             width: 60px; height: 60px;
+             background-color: rgba(0, 0, 0, 0.7);
+             border: 1px solid #00FF00;
+             mix-blend-mode: difference;
+             filter: blur(1px);
+             box-shadow: none;
+        }
 
-    /* Glitch/Grime Overlay effect */
-    .radical-collage::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--neon-green) 0px,
-        var(--deep-black) 1px,
-        var(--deep-black) 4px,
-        var(--neon-green) 5px
-      );
-      opacity: 0.04; /* Very subtle */
-      mix-blend-mode: overlay;
-      z-index: 2;
-      pointer-events: none;
-    }
+        /* Glitch animation for dynamic, digital effect */
+        @keyframes glitch {
+            0% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-2px, 2px); opacity: 0.9; }
+            40% { transform: translate(-2px, -2px); opacity: 1; }
+            60% { transform: translate(2px, 2px); opacity: 0.95; }
+            80% { transform: translate(2px, -2px); opacity: 1; }
+            100% { transform: translate(0); opacity: 0.9; }
+        }
 
-    /* Broken lines / structural cracks */
-    .radical-collage .line-break {
-      position: absolute;
-      background-color: var(--neon-green);
-      box-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(57, 255, 20, 0.4);
-      z-index: 1;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-    .radical-collage .line-break.l1 {
-      width: 18vw;
-      height: 3px;
-      top: 32vh;
-      left: -2vw;
-      transform: rotate(10deg);
-    }
-    .radical-collage .line-break.l2 {
-      width: 3px;
-      height: 28vh;
-      bottom: -5vh;
-      right: 12vw;
-      transform: rotate(-20deg);
-    }
-    .radical-collage .line-break.l3 {
-      width: 10vw;
-      height: 3px;
-      top: 65vh;
-      left: 48vw;
-      transform: rotate(45deg);
-    }
+        .glitch-text {
+            animation: glitch 0.5s infinite alternate;
+        }
 
-    /* Fragmented text (e.g. for "DEMOLITION") */
-    .radical-collage .fragmented-text {
-        position: absolute;
-        font-family: 'Bebas Neue', cursive;
-        font-size: 10vw;
-        color: transparent; /* No fill */
-        -webkit-text-stroke: 1.5px var(--neon-green); /* Outline */
-        text-stroke: 1.5px var(--neon-green);
-        text-shadow: 0 0 5px var(--neon-green), 0 0 15px rgba(57, 255, 20, 0.3);
-        opacity: 0.08;
-        z-index: 1;
-        pointer-events: none;
-        letter-spacing: 0.1em;
-    }
-    .radical-collage .fragmented-text.f1 { top: 12vh; left: -5vw; transform: rotate(-8deg); }
-    .radical-collage .fragmented-text.f2 { bottom: 8vh; right: -8vw; transform: rotate(12deg); }
+        /* Reflection / Screen effect for "post-capitalist narcissism" theme */
+        .reflection {
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,255,0,0.2) 100%);
+            box-shadow: 0 0 20px rgba(0,255,0,0.5) inset;
+            border: 1px solid rgba(0,255,0,0.7);
+            filter: blur(1px);
+            mix-blend-mode: overlay; /* Creates a screen-like visual */
+            pointer-events: none;
+            z-index: 4; /* Below main text but above background shapes */
+        }
 
-    /* ASCII-art like texture */
-    .radical-collage .ascii-texture {
-      font-family: monospace;
-      font-size: 0.85em;
-      line-height: 1;
-      color: var(--neon-green);
-      opacity: 0.07;
-      white-space: pre;
-      position: absolute;
-      z-index: 0;
-      pointer-events: none;
-      filter: blur(0.5px);
-    }
-    .radical-collage .ascii-texture.t1 {
-      top: 68vh; left: 8vw; transform: rotate(15deg);
-    }
-    .radical-collage .ascii-texture.t2 {
-      top: 10vh; right: 12vw; transform: rotate(-20deg);
-    }
+        .reflection::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
+            mix-blend-mode: screen; /* For subtle light reflection highlight */
+            opacity: 0.7;
+        }
 
-    /* Small details for grime/impact */
-    .radical-collage .impact-point {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
-      opacity: 0.4;
-      filter: blur(8px);
-      z-index: 25;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-    .radical-collage .impact-point.i1 { top: 38vh; left: 36vw; }
-    .radical-collage .impact-point.i2 { bottom: 18vh; right: 26vw; transform: scale(0.7); }
-    .radical-collage .impact-point.i3 { top: 60vh; left: 60vw; transform: scale(1.2) rotate(30deg); opacity: 0.3; }
+        /* Overall grime/texture layer for cohesive aesthetic */
+        .overall-grime {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; /* Very low z-index */
+            pointer-events: none;
+            background: radial-gradient(circle at 10% 10%, rgba(0,255,0,0.05) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 90%, rgba(0,255,0,0.05) 0%, transparent 20%),
+                        linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+            mix-blend-mode: overlay;
+            opacity: 0.4;
+            filter: blur(1px) contrast(120%);
+        }
 
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      .radical-collage {
-        padding-top: 15vh;
-        padding-bottom: 5vh;
-        height: auto;
-        min-height: 100vh;
-      }
-      .radical-collage h1 { font-size: 12vw; top: 8vh; transform: translateX(-50%) rotate(0deg); }
-      .radical-collage h2 { font-size: 5vw; }
-      .radical-collage p { font-size: 2.8vw; line-height: 1.4; }
+    </style>
 
-      .radical-collage .brutal-block {
-        width: 85vw;
-        left: 7.5vw;
-        position: relative; /* Stack blocks normally on small screens */
-        top: auto;
-        right: auto;
-        bottom: auto;
-        transform: none !important; /* Remove rotations/skews */
-        margin-bottom: 25px;
-        padding: 4vw;
-      }
-      .radical-collage .brutal-block:hover { transform: none !important; }
+    <!-- Overall Grime/Texture Layer (lowest Z-index) -->
+    <div class="overall-grime"></div>
 
-      /* Hide complex background elements for performance and readability */
-      .radical-collage .splatter, 
-      .radical-collage .line-break,
-      .radical-collage .fragmented-text, 
-      .radical-collage .ascii-texture,
-      .radical-collage .impact-point,
-      .radical-collage .block-4, /* Hide less critical blocks */
-      .radical-collage .block-3 {
-        display: none;
-      }
-      /* Adjust remaining block positions */
-      .radical-collage .block-1 { margin-top: 20px; }
-      .radical-collage .block-2 { margin-top: 20px; }
-      .radical-collage .block-5 { margin-top: 20px; }
-    }
-  </style>
+    <!-- Digital Splatters and Grime Elements -->
+    <div class="splatter splatter-1" style="top: 10%; left: 5%;"></div>
+    <div class="splatter splatter-2" style="bottom: 5%; right: 10%;"></div>
+    <div class="splatter splatter-3" style="top: 30%; right: 3%;"></div>
+    <div class="splatter splatter-4" style="bottom: 20%; left: 15%;"></div>
 
-  <!-- HTML Content - The Collage Elements -->
-  <h1 class="title">WHITE CUBE<br>DEMOLITION</h1>
+    <!-- Abstract Shapes and Gloss Overlays for Brutalist structure and high-gloss grime -->
+    <div class="shape" style="width: 30vw; height: 15vh; top: 50%; left: 5%; transform: rotate(15deg); z-index: 5;"></div>
+    <div class="shape-black" style="width: 20vw; height: 10vh; top: 25%; left: 30%; transform: rotate(-8deg); z-index: 7;"></div>
+    <div class="shape gloss-overlay" style="width: 40vw; height: 20vh; bottom: 20%; right: 2%; transform: rotate(-20deg); z-index: 6;"></div>
+    <div class="gloss-overlay" style="width: 25vw; height: 35vh; top: 10%; left: 40%; transform: rotate(5deg);"></div>
+    <div class="gloss-overlay" style="width: 15vw; height: 15vw; bottom: 5%; left: 35%; border-radius: 50%; transform: rotate(25deg);"></div>
 
-  <div class="brutal-block block-1">
-    <h2>Strategy: Deconstruction.</h2>
-    <p>The systematic dismantling of established structures. Identify the foundational myths, the hidden power dynamics, and the aesthetic frameworks that define the 'white cube'. Fracture its perfect lines, revealing the chaos beneath.</p>
-  </div>
+    <!-- A large, central reflection/screen element, acting as a focal point for the narcissism theme -->
+    <div class="reflection" style="width: 70vw; height: 60vh; top: 20%; left: 15%; transform: skewY(-5deg) rotate(2deg);"></div>
 
-  <div class="brutal-block block-2">
-    <h2>Strategy: Infiltration & Subversion.</h2>
-    <p>Do not attack from without, but from within. Introduce alien elements, rogue code, and unauthorized narratives. Co-opt its mechanisms of display. Turn pristine surfaces into canvases for dissent. The 'gallery voice' becomes a megaphone for radical truth.</p>
-  </div>
+    <!-- Main Text Elements - highest z-index to ensure readability and impact -->
+    <div class="element text-large" style="top: 15%; left: 5%; z-index: 10; transform: rotate(-5deg);">SELF</div>
+    <div class="element text-large" style="bottom: 10%; right: 5%; z-index: 12; color: #000; background-color: #00FF00; padding: 0.1em 0.2em; mix-blend-mode: difference; filter: blur(0.5px);">ECHO</div>
+    <div class="element text-medium glitch-text" style="top: 5%; right: 20%; z-index: 11; opacity: 0.8; transform: rotate(10deg);">VOID</div>
 
-  <div class="brutal-block block-3">
-    <h2>Strategy: Rupture & Void.</h2>
-    <p>Create deliberate breaks in continuity. Carve out negative spaces that challenge existing positive forms. Introduce elements of decay, corrosion, and digital noise. Let the silence of the void speak louder than the curated narrative. Embrace the entropy.</p>
-  </div>
-
-  <div class="brutal-block block-4">
-    <h2>Strategy: Glitch & Anarchy.</h2>
-    <p>Embrace the error, the pixelated breakdown. Disrupt the flow of information, corrupt the data stream. The aesthetic of the broken machine becomes a statement. Overload the senses with a cacophony of visual and conceptual noise. Chaos as a cleansing force.</p>
-  </div>
-
-  <div class="brutal-block block-5">
-    <h2>Strategy: Reclamation.</h2>
-    <p>After the demolition, what remains? Reclaim the space, not as a monument, but as a scaffold for new possibilities. Build transient structures from the debris. The white cube is not destroyed, but transmuted into a site of ongoing, emergent creation.</p>
-  </div>
-
-  <!-- Background grime / splatters / broken elements -->
-  <div class="splatter splatter-1"></div>
-  <div class="splatter splatter-2"></div>
-  <div class="splatter splatter-3"></div>
-
-  <div class="line-break l1"></div>
-  <div class="line-break l2"></div>
-  <div class="line-break l3"></div>
-
-  <div class="fragmented-text f1">DEMOLITION</div>
-  <div class="fragmented-text f2">STRUCTURE</div>
-
-  <pre class="ascii-texture t1">
-    ███╗   ███╗███████╗███╗   ███╗
-    ████╗ ████║██╔════╝████╗ ████║
-    ██╔████╔██║█████╗  ██╔████╔██║
-    ██║╚██╔╝██║██╔══╝  ██║╚██╔╝██║
-    ██║ ╚═╝ ██║███████╗██║ ╚═╝ ██║
-     ▓▓▓▒░  ░▒▓▓▓▓▓▓▓▓▓▓▓▓▒░  ░▒▓▓▓
-    //[ERROR: CUBE_INTEGRITY_FAIL]
-    //FRAGMENTATION INITIATED [0x39FF14]
-    //VOID_PROTOCOL.EXE EXECUTING...
-    //AESTHETIC DEVIANCE MODE ACTIVE
-    //EXPECT UNSTABLE REALITY
-  </pre>
-  <pre class="ascii-texture t2">
-    █▄─█ █──█ █▄─▄█ █▄─█
-    █▀─█ █▀▀█ █▀─▀█ █▀─█
-    ▀──▀ ▀──▀ ▀───▀ ▀──▀
-    //INITIATE RUPTURE
-    //SUBVERSION COMPLETE
-    //RECONFIGURATION OF SPACE
-    //DECONSTRUCT SIGNAL
-    //RESET PERCEPTION
-  </pre>
-
-  <div class="impact-point i1"></div>
-  <div class="impact-point i2"></div>
-  <div class="impact-point i3"></div>
+    <!-- Smaller, supporting text for layered complexity and thematic depth -->
+    <div class="element text-small" style="top: 40%; left: 45%; z-index: 8; transform: rotate(2deg);">DIGITAL GAZE</div>
+    <div class="element text-small" style="bottom: 30%; left: 10%; z-index: 9; color: rgba(0,255,0,0.5); transform: rotate(-15deg);">CONSUME</div>
+    <div class="element text-medium" style="top: 60%; left: 10%; z-index: 10; opacity: 0.9;">REFLECT</div>
+    <div class="element text-medium" style="top: 25%; right: 10%; z-index: 9; color: rgba(0,255,0,0.3); mix-blend-mode: overlay;">IMAGE</div>
 
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
