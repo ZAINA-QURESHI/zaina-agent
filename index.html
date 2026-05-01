@@ -39,398 +39,266 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-01 00:00 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-01 04:11 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
             <div class="art-container p-4">
-                
-<div id="post-capitalist-narcissism-collage" style="
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: #010101; /* Deep black */
-    overflow: hidden;
-    font-family: 'IBM Plex Mono', monospace; /* Brutalist digital feel, falls back to monospace */
-    color: #39FF14; /* Vibrant neon green */
-    line-height: 1.1;
-    box-sizing: border-box;
-    display: block; /* Ensure it behaves as a block */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-">
+                <div id="aggress-andro-collage">
     <style>
-        /* Internal CSS for the collage */
-        #post-capitalist-narcissism-collage * {
+        /*
+        AGGRESSIVE ANDROGYNY AS RESISTANCE
+        Aesthetic: Brutalist, high-gloss grime, digital paint splatters.
+        Colors: Vibrant neon green and deep blacks.
+        */
+        #aggress-andro-collage {
+            --neon-green: #00FF00;
+            --deep-black: #0A0A0A;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--deep-black);
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            color: var(--neon-green);
+            overflow: hidden; /* Contains absolute positioned elements */
+            text-align: left;
+            line-height: 1;
+            box-sizing: border-box;
+            z-index: 1;
+            cursor: default;
+            -webkit-font-smoothing: antialiased; /* For sharper text on some displays */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Basic resets and global styles for elements within the collage */
+        #aggress-andro-collage * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        #post-capitalist-narcissism-collage {
-            --neon-green: #39FF14; /* Standard vibrant neon green */
-            --deep-black: #010101;
-            --mid-black: #1a1a1a;
-            --light-black: #333333;
-            --translucent-green: rgba(57,255,20,0.2);
-            --translucent-black: rgba(0,0,0,0.6);
-        }
-
-        .collage-element {
-            position: absolute;
-            z-index: 10;
-            user-select: none;
-            pointer-events: none; /* Elements are part of the visual collage, not interactive */
-        }
-
-        .text-block {
-            font-size: 3em;
+            text-transform: uppercase;
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-            color: var(--neon-green);
-            text-shadow: 
-                0 0 5px rgba(57,255,20,0.8), 
-                0 0 15px rgba(57,255,20,0.6), 
-                0 0 30px rgba(57,255,20,0.4);
-            white-space: nowrap;
+            -webkit-user-select: none; /* Disable text selection for collage effect */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
-        .brutal-block {
-            background-color: var(--mid-black);
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 10px rgba(57,255,20,0.4);
+        /* Base glow effect for text and blocks */
+        .glow {
+            text-shadow: 0 0 5px var(--neon-green),
+                         0 0 15px var(--neon-green),
+                         0 0 30px rgba(0,255,0,0.6);
+            filter: brightness(1.5);
         }
 
-        .gloss-grime-layer {
-            background: linear-gradient(
-                45deg,
-                var(--translucent-green) 0%,
-                rgba(57,255,20,0.05) 20%,
-                transparent 50%,
-                rgba(0,0,0,0.2) 80%,
-                rgba(0,0,0,0.3) 100%
-            );
-            filter: blur(1px) brightness(120%);
-            mix-blend-mode: screen; /* For high-gloss effect with transparency */
-            opacity: 0.7;
-            z-index: 20;
-        }
-
-        .digital-splatter {
-            background-color: var(--neon-green);
-            opacity: 0.8;
-            filter: blur(0.5px);
-            z-index: 5; /* Background splatters */
-            transform: rotate(var(--rotation, 0deg)) scale(var(--scale, 1));
-            clip-path: polygon(
-                var(--p1, 10%) var(--p2, 0%),
-                var(--p3, 90%) var(--p4, 5%),
-                var(--p5, 100%) var(--p6, 80%),
-                var(--p7, 50%) var(--p8, 100%),
-                var(--p9, 0%) var(--p10, 70%)
-            );
-        }
-
-        .mirror-surface {
-            background: radial-gradient(circle at center, rgba(57,255,20,0.3) 0%, transparent 70%);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 20px rgba(57,255,20,0.6), inset 0 0 10px rgba(57,255,20,0.4);
-            border-radius: 50%; /* Default to circular */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            padding: 5px;
-            color: var(--neon-green);
-            text-shadow: 0 0 3px rgba(57,255,20,0.7);
-            filter: contrast(150%) saturate(180%); /* Gives a harsh, digital reflection look */
-            z-index: 15;
-            line-height: 1.2;
-        }
-
-        .code-snippet {
-            font-family: 'Fira Code', 'IBM Plex Mono', monospace; /* If Fira Code is available */
-            font-size: 0.7em;
-            color: var(--neon-green);
-            background-color: var(--translucent-black);
-            padding: 3px 6px;
-            border: 1px dashed var(--neon-green);
-            box-shadow: 0 0 5px rgba(57,255,20,0.3);
-            white-space: pre;
-            letter-spacing: 0.05em;
-        }
-
-        /* Background Splatter effects using pseudo-elements */
-        .splatter-zone {
+        /* Styling for overlapping text elements */
+        .collage-text {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1; /* Lowest background layer */
-            opacity: 0.6;
+            font-size: clamp(1.5em, 8vw, 6em); /* Responsive font size */
+            letter-spacing: 0.1em;
+            line-height: 0.8;
+            z-index: 10;
         }
 
-        .splatter-zone::before, .splatter-zone::after {
+        .collage-text.outline {
+            color: transparent;
+            -webkit-text-stroke: 1px var(--neon-green);
+            text-stroke: 1px var(--neon-green);
+            opacity: 0.7;
+            filter: contrast(150%);
+        }
+        .collage-text.outline.thicker {
+            -webkit-text-stroke: 2px var(--neon-green);
+            text-stroke: 2px var(--neon-green);
+            filter: brightness(1.2) contrast(180%);
+        }
+
+        /* Splatter/grime shapes */
+        .splatter-shape {
+            position: absolute;
+            background: var(--neon-green);
+            opacity: 0.4;
+            filter: blur(10px) contrast(200%) brightness(1.2);
+            mix-blend-mode: screen; /* For glowing overlap effect */
+            border-radius: 50% 30% 60% 40% / 40% 60% 30% 70%; /* Irregular organic shape */
+            z-index: 1;
+            transform: rotate(var(--angle, 0deg)) scale(var(--scale, 1));
+            animation: pulse var(--duration, 4s) ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(0.9) rotate(var(--angle, 0deg)); opacity: 0.3; }
+            to { transform: scale(1.1) rotate(var(--angle, 0deg)); opacity: 0.5; }
+        }
+
+        /* Specific element positioning and styling */
+        #aggress-andro-collage h1 {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: clamp(3em, 12vw, 8em);
+            line-height: 0.8;
+            z-index: 20;
+            transform: skewX(-10deg) rotate(-3deg);
+            filter: brightness(1.8);
+        }
+
+        .concept-text-1 { top: 25%; left: 30%; font-size: clamp(1.5em, 6vw, 4em); transform: rotate(5deg) scale(1.1); z-index: 15; }
+        .concept-text-2 { bottom: 15%; right: 10%; font-size: clamp(1.2em, 5vw, 3.5em); transform: rotate(-8deg); filter: brightness(1.3) contrast(1.5); }
+        .concept-text-3 { top: 60%; left: 10%; font-size: clamp(1em, 4vw, 3em); transform: skewY(5deg); opacity: 0.9; }
+        .concept-text-4 { top: 45%; right: 5%; font-size: clamp(1em, 4vw, 3em); transform: rotate(15deg); z-index: 12; }
+
+        /* Brutalist grid lines */
+        .grid-line {
+            position: absolute;
+            background-color: var(--neon-green);
+            opacity: 0.3;
+            z-index: 5;
+            filter: brightness(1.2);
+        }
+        .grid-line.horizontal { height: 2px; width: 100%; left: 0; }
+        .grid-line.vertical { width: 2px; height: 100%; top: 0; }
+
+        /* Grime texture overlay (noise/grain) */
+        #aggress-andro-collage::before {
             content: '';
             position: absolute;
-            background-color: var(--neon-green);
-            opacity: 0.1;
-            filter: blur(3px);
-            mix-blend-mode: lighten;
-        }
-
-        .splatter-zone::before {
-            width: 150px; height: 100px;
-            top: 10%; left: 5%;
-            transform: rotate(20deg) skew(10deg);
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-        }
-
-        .splatter-zone::after {
-            width: 120px; height: 180px;
-            bottom: 5%; right: 8%;
-            transform: rotate(-30deg) skew(-15deg);
-            clip-path: polygon(0% 15%, 15% 0%, 100% 85%, 85% 100%);
-        }
-
-        .grime-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* SVG data URI for a subtle noise pattern, uses hardcoded colors as `var()` doesn't work here */
+            background: url('data:image/svg+xml;utf8,<svg width="4px" height="4px" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg"><filter id="n" x="0" y="0" width="100%" height="100%"><feTurbulence baseFrequency="0.65" numOctaves="1" seed="0" result="f"/></filter><rect x="0" y="0" width="4" height="4" fill="%230A0A0A"/><rect x="0" y="0" width="4" height="4" filter="url(%23n)" fill="%2300FF00" opacity="0.1"/></svg>');
+            background-size: 4px 4px;
+            mix-blend-mode: overlay;
+            opacity: 0.15;
             pointer-events: none;
-            z-index: 2; /* Layer above splatters */
-            background-image:
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(0,255,0,0.05) 10px,
-                    rgba(0,255,0,0.05) 20px
-                ),
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(0,0,0,0.1) 10px,
-                    rgba(0,0,0,0.1) 20px
-                );
-            mix-blend-mode: overlay; /* To blend with the black and green */
+            z-index: 25; /* On top of everything */
+            filter: contrast(1.5) saturate(1.5);
+        }
+
+        /* Pseudo-element for a subtle background glow shift */
+        #aggress-andro-collage::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 50% 50%, rgba(0,255,0,0.08) 0%, transparent 70%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 0;
+            animation: bg-glow-shift 10s ease-in-out infinite alternate;
+        }
+        @keyframes bg-glow-shift {
+            from { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            to { transform: scale(1.05) rotate(5deg); opacity: 1; }
+        }
+
+        /* Specific splatter shape properties */
+        .splatter-shape-1 { width: 300px; height: 300px; top: 10%; left: -5%; --angle: 20deg; --scale: 0.9; --duration: 5s; }
+        .splatter-shape-2 { width: 200px; height: 200px; bottom: 5%; right: -10%; --angle: -30deg; --scale: 1.1; --duration: 6s; border-radius: 70% 20% 50% 80% / 80% 50% 20% 70%; }
+        .splatter-shape-3 { width: 150px; height: 150px; top: 50%; left: 40%; --angle: 45deg; --scale: 1.05; --duration: 4s; border-radius: 20% 80% 30% 70% / 60% 40% 70% 30%; }
+        .splatter-shape-4 { /* More of a smear */
+            width: 400px; height: 100px; top: 35%; right: -10%;
+            background: linear-gradient(to right, var(--neon-green), rgba(0,255,0,0));
+            opacity: 0.2; filter: blur(20px) contrast(150%);
+            mix-blend-mode: screen; z-index: 1; transform: rotate(10deg);
+            animation: none; /* No pulse for this one */
+            border-radius: 0; /* Override irregular border-radius */
+        }
+
+        /* Brutalist solid blocks */
+        .brutalist-block {
+            position: absolute;
+            background-color: var(--neon-green);
+            width: 150px; height: 100px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px rgba(0,0,0,0.5);
+            z-index: 8;
+            transform: rotate(var(--block-angle, -5deg)) translateX(var(--block-offset-x, 0)) translateY(var(--block-offset-y, 0));
+            mix-blend-mode: screen;
             opacity: 0.6;
         }
+        .brutalist-block-1 { top: 20%; left: 20%; --block-angle: -15deg; width: 180px; height: 80px; }
+        .brutalist-block-2 { bottom: 30%; left: 5%; --block-angle: 10deg; width: 120px; height: 120px; }
+        .brutalist-block-3 { top: 5%; right: 15%; --block-angle: 5deg; width: 100px; height: 200px; }
 
-        .static-noise-overlay {
+        /* Digital line accents */
+        .digital-bar {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 100; /* On top of everything for a screen effect */
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAABmJLR0QA/wD/AP+gvaeTAAAAGklEQVQIHWNgYGD4zwACWMjAwMAEAAcBAAGv4kXpWqD+AAAAAElFTkSuQmCC'); /* 2x2 png with 1 semi-transparent pixel */
-            background-size: 2px 2px;
-            opacity: 0.08; /* Subtle noise */
-            mix-blend-mode: overlay;
+            background-color: var(--neon-green);
+            opacity: 0.4;
+            z-index: 10;
+            filter: blur(0.5px) brightness(1.5);
+        }
+        .digital-bar-1 { top: 18%; left: 0; width: 60%; height: 3px; transform: rotate(2deg); }
+        .digital-bar-2 { bottom: 22%; right: 0; width: 70%; height: 5px; transform: rotate(-5deg); }
+        .digital-bar-3 { top: 0; left: 40%; height: 100%; width: 2px; }
+
+        /* The 'RESIST' element - a distinct, interactable feel */
+        .resist-block {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%) rotate(3deg);
+            font-size: clamp(2em, 7vw, 5em);
+            color: var(--deep-black);
+            background-color: var(--neon-green);
+            padding: 0.5em 1em;
+            border: 3px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px rgba(0,0,0,0.8);
+            z-index: 30;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            filter: brightness(1.8) contrast(1.2);
+        }
+        .resist-block:hover {
+            transform: translateX(-50%) rotate(0deg) scale(1.05);
+            box-shadow: 0 0 25px var(--neon-green), inset 0 0 15px rgba(0,0,0,0.9);
+            filter: brightness(2) contrast(1.5);
         }
     </style>
 
-    <!-- Background Grime and Splatter Layers -->
-    <div class="splatter-zone"></div>
-    <div class="grime-overlay"></div>
-    <div class="static-noise-overlay"></div>
+    <h1 class="glow">AGGRESSIVE ANDROGYNY</h1>
 
-    <!-- Main Title: EGO.TXT -->
-    <div class="collage-element text-block" style="
-        top: 8%; left: 5%; font-size: 6.5em; transform: skewX(-10deg) rotate(-3deg); z-index: 30;
-        text-shadow: 
-            0 0 8px rgba(57,255,20,0.9), 
-            0 0 25px rgba(57,255,20,0.7), 
-            0 0 50px rgba(57,255,20,0.5),
-            5px 5px 0px rgba(0,0,0,0.5); /* Offset shadow for brutalist depth */
-    ">EGO.TXT</div>
+    <p class="collage-text concept-text-1 glow">REJECT<br>BINARIES</p>
+    <p class="collage-text concept-text-1 outline" style="left: 31%; top: 26%;">REJECT<br>BINARIES</p>
 
-    <!-- Subtitle: Self-Reflected -->
-    <div class="collage-element text-block" style="
-        top: 20%; right: 10%; font-size: 2em; color: var(--light-black); opacity: 0.7;
-        text-shadow: none; transform: rotate(5deg) scale(0.9);
-        border-bottom: 1px solid var(--neon-green); padding-bottom: 5px;
-    ">Self-Reflected</div>
+    <p class="collage-text concept-text-2 outline thicker">FLUID POWER</p>
+    <p class="collage-text concept-text-2 glow" style="right: 9%; bottom: 14%;">FLUID POWER</p>
 
-    <!-- Brutalist Block 1 (top-left) -->
-    <div class="collage-element brutal-block" style="
-        top: 0; left: 0; width: 300px; height: 150px; transform: rotate(-2deg);
-        background: radial-gradient(circle at top left, var(--translucent-green) 0%, transparent 60%);
-        z-index: 25;
-    "></div>
+    <p class="collage-text concept-text-3 outline">DEFIANCE IS KEY</p>
+    <p class="collage-text concept-text-3 glow" style="left: 9%; top: 61%;">DEFIANCE IS KEY</p>
 
-    <!-- Brutalist Block 2 (bottom-right) -->
-    <div class="collage-element brutal-block" style="
-        bottom: 0; right: 0; width: 400px; height: 200px; transform: rotate(3deg) skewY(-5deg);
-        background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, var(--mid-black) 50%, rgba(57,255,20,0.1) 100%);
-        z-index: 25;
-    "></div>
+    <p class="collage-text concept-text-4 outline">TRANSFORM</p>
+    <p class="collage-text concept-text-4 glow" style="right: 4%; top: 46%;">TRANSFORM</p>
 
-    <!-- Digital Splatter 1 -->
-    <div class="collage-element digital-splatter" style="
-        top: 15%; left: 25%; width: 200px; height: 180px;
-        --rotation: 30deg; --scale: 1.1;
-        --p1: 5%; --p2: 20%; --p3: 95%; --p4: 0%; --p5: 100%; --p6: 70%; --p7: 30%; --p8: 100%; --p9: 0%; --p10: 80%;
-    "></div>
+    <!-- Digital paint splatters and shapes -->
+    <div class="splatter-shape splatter-shape-1"></div>
+    <div class="splatter-shape splatter-shape-2"></div>
+    <div class="splatter-shape splatter-shape-3"></div>
+    <div class="splatter-shape splatter-shape-4"></div>
 
-    <!-- Digital Splatter 2 -->
-    <div class="collage-element digital-splatter" style="
-        bottom: 10%; left: 40%; width: 150px; height: 130px;
-        background-color: rgba(57,255,20,0.6);
-        --rotation: -15deg; --scale: 0.8;
-        --p1: 10%; --p2: 0%; --p3: 80%; --p4: 15%; --p5: 90%; --p6: 90%; --p7: 20%; --p8: 100%; --p9: 0%; --p10: 60%;
-    "></div>
+    <!-- Brutalist grid lines -->
+    <div class="grid-line horizontal" style="top: 15%;"></div>
+    <div class="grid-line vertical" style="left: 15%;"></div>
+    <div class="grid-line horizontal" style="bottom: 20%;"></div>
+    <div class="grid-line vertical" style="right: 20%;"></div>
+    <div class="grid-line horizontal" style="top: 80%; transform: rotate(-5deg);"></div>
 
-    <!-- High-gloss Grime Overlay Element 1 -->
-    <div class="collage-element gloss-grime-layer" style="
-        top: 10%; left: 10%; width: 300px; height: 200px; transform: rotate(10deg);
-        border: 1px solid rgba(57,255,20,0.3);
-    "></div>
+    <!-- Brutalist blocks -->
+    <div class="brutalist-block brutalist-block-1"></div>
+    <div class="brutalist-block brutalist-block-2"></div>
+    <div class="brutalist-block brutalist-block-3"></div>
 
-    <!-- High-gloss Grime Overlay Element 2 -->
-    <div class="collage-element gloss-grime-layer" style="
-        bottom: 5%; right: 15%; width: 250px; height: 150px; transform: rotate(-8deg) skewX(5deg);
-        border: 1px solid rgba(0,0,0,0.5);
-        background: radial-gradient(circle at bottom right, rgba(0,0,0,0.3) 0%, transparent 70%);
-    "></div>
+    <!-- Digital bar elements -->
+    <div class="digital-bar digital-bar-1"></div>
+    <div class="digital-bar digital-bar-2"></div>
+    <div class="digital-bar digital-bar-3"></div>
+    <div class="digital-bar" style="top: 50%; left: 25%; width: 150px; height: 2px; transform: rotate(45deg);"></div>
 
-    <!-- Mirror Surface 1: The Self -->
-    <div class="collage-element mirror-surface" style="
-        top: 35%; left: 15%; width: 250px; height: 250px;
-        transform: rotate(-10deg) perspective(1000px) rotateY(15deg);
-    ">
-        <span style="font-size: 2.5em; font-weight: bold; transform: scaleY(0.8); display: block;">ME.</span>
-        <span style="font-size: 0.9em; opacity: 0.8; display: block;">(YOUR REFLECTION)</span>
-    </div>
-
-    <!-- Mirror Surface 2: The Void (Brutalist square) -->
-    <div class="collage-element mirror-surface" style="
-        bottom: 25%; right: 8%; width: 180px; height: 180px; border-radius: 0; /* Make it square brutalist */
-        transform: rotate(15deg) perspective(1000px) rotateX(10deg);
-        background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(57,255,20,0.1), rgba(0,0,0,0.5));
-        border-color: rgba(57,255,20,0.5);
-    ">
-        <span style="font-size: 1.5em; font-weight: bold; display: block;">VOID</span>
-        <span style="font-size: 0.7em; opacity: 0.6; display: block;">(CONSUMED)</span>
-    </div>
-
-    <!-- Distorted Text Block 1 -->
-    <div class="collage-element text-block" style="
-        top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(7deg) skewX(5deg);
-        font-size: 4em; color: var(--mid-black); opacity: 0.5;
-        text-shadow: 0 0 2px rgba(0,0,0,0.8); z-index: 5; /* Behind more prominent elements */
-    ">I AM</div>
-
-    <!-- Distorted Text Block 2 (Strikethrough) -->
-    <div class="collage-element text-block" style="
-        top: 70%; left: 20%; transform: rotate(-12deg);
-        font-size: 2.5em; text-decoration: line-through;
-        text-shadow: 0 0 10px rgba(57,255,20,0.5);
-    ">IDENTITY</div>
-
-    <!-- Code Snippet -->
-    <div class="collage-element code-snippet" style="
-        bottom: 5%; left: 5%; transform: rotate(-5deg);
-        opacity: 0.9;
-        z-index: 35;
-    ">
-        &lt;object id="self" type="post-capitalist"&gt;<br>
-        &nbsp;&nbsp;&lt;property name="reflection" value="true"/&gt;<br>
-        &nbsp;&nbsp;&lt;method name="consume" param="all"/&gt;<br>
-        &lt;/object&gt;
-    </div>
-
-    <!-- Floating "YOU" block (subtle) -->
-    <div class="collage-element text-block" style="
-        top: 10%; right: 5%; font-size: 5em; opacity: 0.3;
-        transform: rotate(15deg);
-        color: var(--light-black); text-shadow: none;
-        letter-spacing: 0.1em; z-index: 5;
-    ">YOU</div>
-
-    <!-- Small "NETWORK" text -->
-    <div class="collage-element text-block" style="
-        bottom: 15%; left: 55%; font-size: 1.2em;
-        transform: rotate(8deg); opacity: 0.8;
-        text-shadow: 0 0 5px var(--neon-green);
-    ">NETWORK_GLITCH</div>
-
-    <!-- Brutalist Grid-like element -->
-    <div class="collage-element" style="
-        top: 25%; right: 20%; width: 150px; height: 100px;
-        background-color: var(--deep-black); border: 3px solid var(--neon-green);
-        display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-        transform: rotate(4deg) skewY(2deg); opacity: 0.9;
-        box-shadow: inset 0 0 10px rgba(57,255,20,0.4);
-        z-index: 28;
-    ">
-        <div style="background-color: rgba(57,255,20,0.2); border: 1px dashed var(--neon-green);"></div>
-        <div style="background-color: rgba(0,0,0,0.8); border: 1px dashed var(--neon-green);"></div>
-        <div style="background-color: rgba(0,0,0,0.8); border: 1px dashed var(--neon-green);"></div>
-        <div style="background-color: rgba(57,255,20,0.2); border: 1px dashed var(--neon-green);"></div>
-    </div>
-
-    <!-- Final High-gloss Splatter/Grime Layer (top-most background effect) -->
-    <div class="collage-element" style="
-        bottom: 0; left: 0; width: 100%; height: 50%; pointer-events: none; z-index: 50;
-        background: radial-gradient(at 10% 90%, rgba(57,255,20,0.15) 0%, transparent 40%),
-                    linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.3) 100%);
-        mix-blend-mode: screen;
-        opacity: 0.6;
-        filter: blur(2px) saturate(150%);
-    "></div>
-
-    <!-- Another digital splatter element (more polygon complexity) -->
-    <div class="collage-element digital-splatter" style="
-        top: 5%; right: 30%; width: 100px; height: 200px;
-        background-color: rgba(57,255,20,0.4);
-        --rotation: -50deg; --scale: 1.3;
-        --p1: 0%; --p2: 10%; --p3: 70%; --p4: 0%; --p5: 100%; --p6: 40%; --p7: 80%; --p8: 100%; --p9: 20%; --p10: 90%;
-        filter: blur(1px) brightness(1.2);
-        z-index: 18;
-    "></div>
-
-    <!-- Overlapping text element for "CONSUME" -->
-    <div class="collage-element text-block" style="
-        top: 60%; left: 10%; font-size: 5em; opacity: 0.2;
-        transform: rotate(-5deg);
-        color: var(--light-black); text-shadow: none;
-        z-index: 5;
-    ">CONSUME</div>
-    <div class="collage-element text-block" style="
-        top: 62%; left: 12%; font-size: 5em;
-        transform: rotate(-3deg);
-        color: var(--neon-green);
-        text-shadow: 0 0 10px var(--neon-green);
-        z-index: 6;
-    ">CONSUME</div>
-
-    <!-- Glitchy 'IDENTITY' bar -->
-    <div class="collage-element" style="
-        bottom: 40%; left: 0; width: 100%; height: 30px;
-        background-color: rgba(0,0,0,0.7);
-        border-top: 2px solid var(--neon-green);
-        border-bottom: 2px solid var(--neon-green);
-        display: flex; align-items: center; justify-content: space-around;
-        font-size: 1.5em; text-transform: uppercase; letter-spacing: 0.2em;
-        overflow: hidden;
-        z-index: 40;
-        text-shadow: 0 0 8px var(--neon-green);
-    ">
-        <span style="transform: skewX(10deg);">FRAGMENT</span>
-        <span style="transform: skewX(-5deg); opacity: 0.7;">ERROR</span>
-        <span style="transform: skewX(15deg);">SYSTEM_SELF</span>
-    </div>
-
+    <!-- The central resistance call to action -->
+    <div class="resist-block">RESIST</div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
+                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
