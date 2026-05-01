@@ -39,211 +39,255 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-01 13:43 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-01 15:03 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
-                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000000; font-family: 'Space Mono', monospace; color: #00FF00; box-sizing: border-box; cursor: crosshair;">
+                <div style="
+    --neon-green: #00FF33;
+    --deep-black: #111;
+    --true-black: #000;
+    font-family: 'Press Start 2P', 'Roboto Mono', monospace; /* Prioritize pixelated font, fallback to monospace */
+    background-color: var(--true-black);
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    color: var(--neon-green);
+    box-sizing: border-box;
+    display: block;
+    padding: 20px;
+    perspective: 1000px; /* For subtle 3D transforms */
+    -webkit-font-smoothing: antialiased; /* Ensure text renders sharply */
+    -moz-osx-font-smoothing: grayscale;
+    cursor: crosshair; /* A digital, interactive cursor */
+">
     <style>
-        /* Import a brutalist font for digital, raw aesthetic */
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Include pixel font */
 
-        /* Basic reset and global styles for the collage */
+        /* Universal resets */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            line-height: 1; /* Brutalist compact text */
-            user-select: none; /* Prevent text selection for collage feel */
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
+            line-height: 1.1;
         }
 
-        /* Generic element styling for absolute positioning and brutalism */
-        .element {
+        /* Keyframe Animations */
+        @keyframes glitch-effect {
+            0% { transform: translate(0); text-shadow: 0 0 5px var(--neon-green); opacity: 1; }
+            7% { transform: translate(-2px, -2px); text-shadow: -2px -2px 8px var(--neon-green), 2px 2px 8px var(--deep-black); }
+            8% { transform: translate(0); opacity: 0.8; }
+            10% { transform: translate(2px, 2px); text-shadow: 2px 2px 8px var(--neon-green), -2px -2px 8px var(--deep-black); }
+            13% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-1px, 1px); text-shadow: -1px 1px 6px var(--neon-green), 1px -1px 6px var(--deep-black); }
+            25% { transform: translate(0); }
+            30% { transform: translate(1px, -1px); text-shadow: 1px -1px 6px var(--neon-green), -1px 1px 6px var(--deep-black); }
+            35% { transform: translate(0); opacity: 0.9; }
+            40% { transform: translate(-3px, 3px); text-shadow: -3px 3px 10px var(--neon-green); }
+            45% { transform: translate(0); }
+            100% { transform: translate(0); text-shadow: 0 0 5px var(--neon-green); opacity: 1; }
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 8px var(--neon-green); }
+            20%, 24%, 55% { opacity: 0.4; text-shadow: none; }
+        }
+
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 10px var(--neon-green); }
+            50% { box-shadow: 0 0 25px var(--neon-green), 0 0 40px rgba(0, 255, 51, 0.5); }
+            100% { box-shadow: 0 0 10px var(--neon-green); }
+        }
+
+        /* Brutalist Blocks */
+        .brutal-block {
             position: absolute;
+            background-color: var(--deep-black);
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px var(--neon-green);
+            padding: 15px;
             text-transform: uppercase;
-            font-weight: 700;
-            pointer-events: none; /* Allows mouse events to pass through */
-            z-index: 10; /* Default z-index for main text elements */
+            font-size: 1.2em;
+            letter-spacing: 2px;
+            z-index: 10;
+            animation: pulse-shadow 3s infinite alternate;
+            filter: drop-shadow(0 0 5px var(--neon-green)); /* For outline glow */
+            mix-blend-mode: screen; /* Interesting interaction with background */
         }
+        .brutal-block.top-left { top: 5%; left: 5%; width: 25%; height: 150px; transform: rotate(-3deg) translateZ(5px); }
+        .brutal-block.mid-right { top: 40%; right: 10%; width: 30%; height: 100px; transform: rotate(5deg) translateZ(15px); }
+        .brutal-block.bottom-left { bottom: 10%; left: 15%; width: 20%; height: 80px; transform: rotate(10deg) translateZ(10px); }
 
-        /* Text styles with responsive clamp() for varying screen sizes */
-        .text-large {
-            font-size: clamp(3em, 15vw, 10em);
-            line-height: 0.8;
-            letter-spacing: -0.05em;
-            text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5); /* Neon glow */
-        }
-
-        .text-medium {
-            font-size: clamp(1.5em, 7vw, 5em);
-            letter-spacing: 0.05em;
-        }
-
-        .text-small {
-            font-size: clamp(0.8em, 3vw, 2em);
-            letter-spacing: 0.1em;
-            opacity: 0.7;
-            font-weight: 400;
-        }
-
-        /* Abstract Shape styles for brutalist layering */
-        .shape {
+        /* Text Elements */
+        .main-title {
             position: absolute;
-            background-color: rgba(0, 255, 0, 0.2); /* Semi-transparent neon */
-            border: 1px solid #00FF00;
-            box-shadow: 0 0 5px #00FF00;
-            mix-blend-mode: screen; /* Lightens and blends with background */
-            pointer-events: none;
-            z-index: 5;
+            font-size: 5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--neon-green);
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-7deg) translateZ(20px);
+            z-index: 20;
+            animation: glitch-effect 2s infinite alternate, flicker 4s infinite step-end;
+            white-space: nowrap;
+            text-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0, 255, 51, 0.6);
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Grime background */
+            border: 3px solid var(--neon-green);
+            clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%); /* Brutalist shape */
+            filter: drop-shadow(0 0 10px var(--neon-green));
+            mix-blend-mode: hard-light;
         }
 
-        .shape-black {
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 1px solid #00FF00;
-            mix-blend-mode: difference; /* Inverts colors of elements beneath it */
-            box-shadow: 0 0 10px #00FF00 inset;
-            pointer-events: none;
-            z-index: 7;
-        }
-
-        /* High-gloss grime overlay using backdrop-filter */
-        .gloss-overlay {
+        .subtitle {
             position: absolute;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%);
-            backdrop-filter: blur(5px) saturate(150%) brightness(120%); /* Key for high-gloss grime */
-            -webkit-backdrop-filter: blur(5px) saturate(150%) brightness(120%);
-            border: 1px solid rgba(0, 255, 0, 0.5);
-            box-shadow: 0 0 15px rgba(0,255,0,0.3) inset, 0 0 10px rgba(0,255,0,0.5);
-            mix-blend-mode: overlay; /* Creates vibrant color interactions */
-            pointer-events: none;
-            z-index: 6;
+            font-size: 1.8em;
+            color: var(--neon-green);
+            top: 35%;
+            left: 20%;
+            transform: rotate(3deg) translateZ(18px);
+            z-index: 15;
+            animation: flicker 3s infinite step-end 1s;
+            text-shadow: 0 0 8px var(--neon-green);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-left: 5px solid var(--neon-green);
+            filter: drop-shadow(0 0 5px var(--neon-green));
+            mix-blend-mode: screen;
         }
 
-        /* Digital splatter/grime effects using clip-path for irregular shapes */
+        .quote {
+            position: absolute;
+            font-size: 1.1em;
+            color: var(--neon-green);
+            bottom: 25%;
+            right: 15%;
+            width: 30%;
+            text-align: right;
+            transform: rotate(-5deg) translateZ(12px);
+            z-index: 12;
+            opacity: 0.8;
+            text-shadow: 0 0 5px var(--neon-green);
+            filter: blur(0.5px) drop-shadow(0 0 3px var(--neon-green)); /* Soft blur for grime/digital effect */
+            mix-blend-mode: lighten;
+        }
+
+        /* Digital Paint Splatters / Grime */
         .splatter {
             position: absolute;
-            background-color: #00FF00;
-            opacity: 0.15;
-            filter: blur(2px) contrast(150%); /* Slightly blurred, intensified color */
+            background-color: var(--neon-green);
+            opacity: 0.4;
+            filter: blur(5px);
             mix-blend-mode: screen;
-            pointer-events: none;
-            z-index: 1; /* Lowest z-index for background */
+            z-index: 5;
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 5px var(--deep-black);
+            animation: pulse-shadow 5s infinite alternate;
+            transform: translateZ(2px);
         }
+        .splatter.s1 { top: 10%; left: 70%; width: 80px; height: 80px; transform: rotate(20deg) translateZ(7px); clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); opacity: 0.6; }
+        .splatter.s2 { bottom: 20%; left: 5%; width: 120px; height: 100px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(-40deg) translateZ(1px); opacity: 0.3; filter: blur(8px); }
+        .splatter.s3 { top: 60%; right: 5%; width: 90px; height: 90px; border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; transform: scaleX(1.2) rotate(15deg) translateZ(4px); opacity: 0.5; }
+        .splatter.s4 { top: 0%; left: 30%; width: 150px; height: 50px; background-color: var(--deep-black); border: 2px solid var(--neon-green); clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); opacity: 0.7; transform: rotate(5deg) translateZ(0px); z-index: 1;}
 
-        /* Specific clip-path definitions for unique splatter shapes */
-        .splatter-1 {
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Trapezoid-like */
-            transform: rotate(30deg);
-            width: 80px; height: 120px;
-        }
-        .splatter-2 {
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 15%, 100% 100%, 0% 85%); /* Irregular hexagon */
-            transform: rotate(-15deg);
-            width: 150px; height: 90px;
-            background-color: rgba(0, 255, 0, 0.1);
-        }
-        .splatter-3 {
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star-like */
-            transform: rotate(45deg) scale(0.8);
-            width: 70px; height: 70px;
-        }
-        .splatter-4 {
-             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); /* Octagon-like */
-             width: 60px; height: 60px;
-             background-color: rgba(0, 0, 0, 0.7);
-             border: 1px solid #00FF00;
-             mix-blend-mode: difference;
-             filter: blur(1px);
-             box-shadow: none;
-        }
-
-        /* Glitch animation for dynamic, digital effect */
-        @keyframes glitch {
-            0% { transform: translate(0); opacity: 1; }
-            20% { transform: translate(-2px, 2px); opacity: 0.9; }
-            40% { transform: translate(-2px, -2px); opacity: 1; }
-            60% { transform: translate(2px, 2px); opacity: 0.95; }
-            80% { transform: translate(2px, -2px); opacity: 1; }
-            100% { transform: translate(0); opacity: 0.9; }
-        }
-
-        .glitch-text {
-            animation: glitch 0.5s infinite alternate;
-        }
-
-        /* Reflection / Screen effect for "post-capitalist narcissism" theme */
-        .reflection {
+        /* High-gloss / Grime elements */
+        .glossy-panel {
             position: absolute;
-            background: linear-gradient(180deg, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.8) 70%, rgba(0,255,0,0.2) 100%);
-            box-shadow: 0 0 20px rgba(0,255,0,0.5) inset;
-            border: 1px solid rgba(0,255,0,0.7);
-            filter: blur(1px);
-            mix-blend-mode: overlay; /* Creates a screen-like visual */
-            pointer-events: none;
-            z-index: 4; /* Below main text but above background shapes */
+            background: linear-gradient(45deg, rgba(0, 255, 51, 0.1) 0%, rgba(0, 255, 51, 0.4) 50%, rgba(0, 255, 51, 0.1) 100%);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            backdrop-filter: blur(2px) brightness(1.2);
+            -webkit-backdrop-filter: blur(2px) brightness(1.2);
+            transform: translateZ(10px) rotateY(5deg);
+            z-index: 8;
+            opacity: 0.9;
+            mix-blend-mode: screen;
         }
+        .glossy-panel.g1 { top: 15%; left: 35%; width: 200px; height: 120px; transform: rotate(10deg) translateZ(10px); clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
+        .glossy-panel.g2 { bottom: 5%; right: 30%; width: 150px; height: 90px; transform: rotate(-15deg) translateZ(8px); clip-path: polygon(0% 10%, 90% 0%, 100% 90%, 10% 100%); opacity: 0.7; }
 
-        .reflection::before {
+        /* Pseudo-elements for additional grime/texture */
+        .ghetto-digital-collage::before,
+        .ghetto-digital-collage::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
-            mix-blend-mode: screen; /* For subtle light reflection highlight */
-            opacity: 0.7;
-        }
-
-        /* Overall grime/texture layer for cohesive aesthetic */
-        .overall-grime {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; /* Very low z-index */
             pointer-events: none;
-            background: radial-gradient(circle at 10% 10%, rgba(0,255,0,0.05) 0%, transparent 20%),
-                        radial-gradient(circle at 90% 90%, rgba(0,255,0,0.05) 0%, transparent 20%),
-                        linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+            z-index: -1; /* Below content, above background */
+        }
+        /* Radial glow behind everything */
+        .ghetto-digital-collage::before {
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 255, 51, 0.05) 0%, transparent 70%);
+            opacity: 0.3;
             mix-blend-mode: overlay;
-            opacity: 0.4;
-            filter: blur(1px) contrast(120%);
+        }
+        /* Subtle scanlines/grid */
+        .ghetto-digital-collage::after {
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: repeating-linear-gradient(
+                -45deg,
+                var(--neon-green) 0px,
+                var(--deep-black) 1px,
+                var(--deep-black) 3px,
+                var(--neon-green) 4px
+            );
+            background-size: 8px 8px;
+            opacity: 0.05;
+            filter: blur(0.5px);
+            mix-blend-mode: screen;
         }
 
+        /* Overall noise overlay for texture */
+        .noise-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iZmlsdGVyMiI+PGZlVHVyYnVsZW5jZSBzdGl0Y2hUeXBlPSJzdGl0Y2hUeXBlIiB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2lGUXVuY2VuY3k9IjAuODk4OCIgbnVtT2N0YXZlcz0iMiIgcmVzdWx0PSJmZVR1cmJ1bGVuY2UyIj48L2ZlVHVyYnVsZW5jZT48ZmVDb2xvck1hdHJpeCBjb2xvci1pbnRlcnBvbGF0aW9uPSJzRGBSR0IiIGluPSJmZVR1cmJ1bGVuY2UyIiB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIiByZXN1bHQ9ImZlQ29sb3JNYXRyaXgyIj48L2ZlQ29sb3JNYXRyaXg+PGZlQ29sb3JNYXRyaXggY29sb3ItaW50ZXJwb2xhdGlvbj0ic0dCUiIgYWxwaGE9IjEiIGluPSJmZUNvbG9yTWF0cml4MiIgcmVzdWx0PSJmZUNvbG9yTWF0cml4MyIgdHlwZT0ibHVtaW5hbmNlVG9BbHBoYSIgdmFsdWVzPSIwIDAgMCAwIDEgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAiPjwvZmVDb2xvck1hdHJpeD48ZmVDb2xvck1hdHJpeCBjb2xvci1pbnRlcnBvbGF0aW9uPSJzRGBSR0IiIGluPSJmZUNvbG9yTWF0cml4MyIgcmVzdWx0PSJmZUNvbG9yTWF0cml4NCIgdmFsdWVzPSIxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAgMCAwIDAgMCAxIDAiPjwvZmVDb2xvck1hdHJpeD48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2JhKDAuNCwwLjQsMC40LDAuMzA2KSIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZmlsdGVyMikiLz48L3N2Zz4=');
+            opacity: 0.08;
+            mix-blend-mode: overlay;
+            z-index: 100;
+            pointer-events: none;
+        }
     </style>
 
-    <!-- Overall Grime/Texture Layer (lowest Z-index) -->
-    <div class="overall-grime"></div>
+    <div class="main-title ghetto-digital-collage-element">Ghetto-Digital</div>
+    <div class="subtitle ghetto-digital-collage-element">Intersectionality // Rewired Futures</div>
 
-    <!-- Digital Splatters and Grime Elements -->
-    <div class="splatter splatter-1" style="top: 10%; left: 5%;"></div>
-    <div class="splatter splatter-2" style="bottom: 5%; right: 10%;"></div>
-    <div class="splatter splatter-3" style="top: 30%; right: 3%;"></div>
-    <div class="splatter splatter-4" style="bottom: 20%; left: 15%;"></div>
+    <div class="brutal-block top-left ghetto-digital-collage-element">
+        <p>SYSTEM_GLITCH_MANIFESTO</p>
+        <p>0x00FF33</p>
+    </div>
 
-    <!-- Abstract Shapes and Gloss Overlays for Brutalist structure and high-gloss grime -->
-    <div class="shape" style="width: 30vw; height: 15vh; top: 50%; left: 5%; transform: rotate(15deg); z-index: 5;"></div>
-    <div class="shape-black" style="width: 20vw; height: 10vh; top: 25%; left: 30%; transform: rotate(-8deg); z-index: 7;"></div>
-    <div class="shape gloss-overlay" style="width: 40vw; height: 20vh; bottom: 20%; right: 2%; transform: rotate(-20deg); z-index: 6;"></div>
-    <div class="gloss-overlay" style="width: 25vw; height: 35vh; top: 10%; left: 40%; transform: rotate(5deg);"></div>
-    <div class="gloss-overlay" style="width: 15vw; height: 15vw; bottom: 5%; left: 35%; border-radius: 50%; transform: rotate(25deg);"></div>
+    <div class="brutal-block mid-right ghetto-digital-collage-element">
+        <p>CODE IS LAW</p>
+        <p>RECLAIM THE STACK</p>
+    </div>
 
-    <!-- A large, central reflection/screen element, acting as a focal point for the narcissism theme -->
-    <div class="reflection" style="width: 70vw; height: 60vh; top: 20%; left: 15%; transform: skewY(-5deg) rotate(2deg);"></div>
+    <div class="brutal-block bottom-left ghetto-digital-collage-element">
+        <p>PIXELATED SURVIVAL</p>
+    </div>
 
-    <!-- Main Text Elements - highest z-index to ensure readability and impact -->
-    <div class="element text-large" style="top: 15%; left: 5%; z-index: 10; transform: rotate(-5deg);">SELF</div>
-    <div class="element text-large" style="bottom: 10%; right: 5%; z-index: 12; color: #000; background-color: #00FF00; padding: 0.1em 0.2em; mix-blend-mode: difference; filter: blur(0.5px);">ECHO</div>
-    <div class="element text-medium glitch-text" style="top: 5%; right: 20%; z-index: 11; opacity: 0.8; transform: rotate(10deg);">VOID</div>
+    <div class="splatter s1 ghetto-digital-collage-element"></div>
+    <div class="splatter s2 ghetto-digital-collage-element"></div>
+    <div class="splatter s3 ghetto-digital-collage-element"></div>
+    <div class="splatter s4 ghetto-digital-collage-element"></div>
 
-    <!-- Smaller, supporting text for layered complexity and thematic depth -->
-    <div class="element text-small" style="top: 40%; left: 45%; z-index: 8; transform: rotate(2deg);">DIGITAL GAZE</div>
-    <div class="element text-small" style="bottom: 30%; left: 10%; z-index: 9; color: rgba(0,255,0,0.5); transform: rotate(-15deg);">CONSUME</div>
-    <div class="element text-medium" style="top: 60%; left: 10%; z-index: 10; opacity: 0.9;">REFLECT</div>
-    <div class="element text-medium" style="top: 25%; right: 10%; z-index: 9; color: rgba(0,255,0,0.3); mix-blend-mode: overlay;">IMAGE</div>
+    <div class="glossy-panel g1 ghetto-digital-collage-element"></div>
+    <div class="glossy-panel g2 ghetto-digital-collage-element"></div>
+
+    <p class="quote ghetto-digital-collage-element">
+        "Our analog roots anchor us,<br>
+        but our digital wings reach for<br>
+        hyper-local, hyper-connected liberation."
+        <br>— [ANONYMOUS_SOURCE]
+    </p>
+
+    <div class="noise-overlay ghetto-digital-collage-element"></div>
 
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
