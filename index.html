@@ -39,175 +39,392 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-01 09:52 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-01 11:14 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
                 
-<div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'IBM Plex Mono', monospace, 'Arial Black', sans-serif; color: #00FF00; display: block; filter: saturate(1.1);">
-    <style>
-        /* Global Reset for elements within the main div */
-        div * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            line-height: 1; /* Brutalist compact feel */
-        }
+<div class="radical-collage">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap');
 
-        /* Base Styles for the collage elements */
-        .collage-element {
-            position: absolute;
-            opacity: 0; /* Elements start hidden for staggered animation */
-            animation: fadeInTransform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            transform-origin: center center;
-        }
+    .radical-collage {
+      --neon-green: #39FF14; /* A vibrant, aggressive neon green */
+      --deep-black: #0a0a0a;
+      --off-black: #1a1a1a;
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      background-color: var(--deep-black);
+      overflow: hidden; /* Crucial for controlling absolute elements */
+      font-family: 'Orbitron', sans-serif;
+      color: var(--neon-green);
+      display: block;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      line-height: 1.2;
+      cursor: crosshair; /* Adds to the digital, precise yet destructive feel */
+    }
 
-        /* Keyframes for a brutalist, staggered fade-in with a slight transform */
-        @keyframes fadeInTransform {
-            0% { opacity: 0; transform: scale(0.95) rotate(-3deg); }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
+    /* General text styles for the collage */
+    .radical-collage h1, .radical-collage h2, .radical-collage p {
+      margin: 0;
+      padding: 0;
+      color: var(--neon-green);
+      text-shadow: 
+        0 0 5px var(--neon-green), 
+        0 0 15px var(--neon-green), 
+        0 0 30px rgba(57, 255, 20, 0.4); /* Deeper glow */
+    }
 
-        /* Brutalist Panel Styles */
-        .panel {
-            background-color: rgba(0, 255, 0, 0.1); /* Transparent neon green */
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), inset 0 0 5px rgba(0, 255, 0, 0.2); /* Neon glow */
-            backdrop-filter: blur(3px) brightness(1.2); /* High-gloss grime */
-            z-index: 2;
-        }
+    .radical-collage h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 8vw;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      z-index: 100;
+      letter-spacing: 0.15em;
+      text-align: center;
+      mix-blend-mode: screen; /* For a digital, almost transparent glow */
+      pointer-events: none; /* Allows clicks to pass through to elements below */
+    }
 
-        .panel.p1 { top: 8%; left: 5%; width: 35%; height: 28%; transform: rotate(-7deg) skewX(12deg); animation-delay: 0.2s; }
-        .panel.p2 { top: 30%; right: 8%; width: 28%; height: 55%; transform: rotate(10deg) skewY(-8deg); z-index: 1; animation-delay: 0.4s; }
-        .panel.p3 { bottom: 3%; left: 18%; width: 45%; height: 22%; transform: rotate(4deg) skewX(-10deg); z-index: 3; animation-delay: 0.6s; }
-        .panel.p4 { top: -5%; left: 45%; width: 25%; height: 18%; background: linear-gradient(45deg, rgba(0,255,0,0.3), rgba(0,0,0,0.8)); border: none; z-index: 4; animation-delay: 0.8s; }
-        .panel.p5 { bottom: 10%; right: 5%; width: 15%; height: 30%; background: radial-gradient(circle at top left, rgba(0,255,0,0.2), rgba(0,0,0,0.7)); transform: rotate(-15deg); border: none; z-index: 0; animation-delay: 1s; }
+    .radical-collage h2 {
+      font-size: 3vw;
+      font-family: 'Bebas Neue', cursive;
+      margin-bottom: 15px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
 
-        /* Digital Paint Splatters / Grime Styles */
-        .splatter {
-            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.3), rgba(0, 0, 0, 0.8));
-            filter: blur(10px);
-            opacity: 0.2;
-            z-index: 5;
-            animation-delay: 1.2s;
-        }
-        .splatter.s1 { top: 20%; left: 30%; width: 180px; height: 180px; transform: rotate(35deg) scale(1.3); border-radius: 65% 35% 75% 25% / 35% 65% 35% 65%; animation-delay: 1.3s; }
-        .splatter.s2 { bottom: 15%; right: 20%; width: 120px; height: 120px; transform: rotate(-50deg) scale(0.9); border-radius: 45% 55% 35% 65% / 65% 35% 65% 45%; animation-delay: 1.5s; }
-        .splatter.s3 { top: 0%; right: 0%; width: 250px; height: 90px; background: linear-gradient(90deg, #00FF00, transparent); filter: blur(12px); opacity: 0.15; z-index: 0; animation-delay: 1.7s; }
+    .radical-collage p {
+      font-size: 1.2vw;
+      font-weight: 400;
+      line-height: 1.6;
+      text-shadow: 0 0 3px rgba(57, 255, 20, 0.6);
+    }
 
-        /* Text Styles */
-        .collage-text {
-            color: #00FF00;
-            font-weight: 900;
-            text-shadow: 0 0 5px #00FF00, 0 0 15px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.4);
-            letter-spacing: 2px;
-            z-index: 10;
-        }
+    /* Brutalist block elements */
+    .radical-collage .brutal-block {
+      background-color: var(--off-black);
+      border: 2px solid var(--neon-green);
+      box-shadow: 
+        0 0 10px var(--neon-green) inset, 
+        0 0 15px var(--neon-green);
+      padding: 2vw;
+      position: absolute;
+      z-index: 10;
+      box-sizing: border-box;
+      filter: drop-shadow(0 0 8px var(--neon-green)); /* Adds glow around the block */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Subtle interaction */
+    }
 
-        .text-main {
-            font-size: 8vw;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-5deg);
-            white-space: nowrap;
-            mix-blend-mode: screen; /* Aggressive digital blend */
-            animation-delay: 1.9s;
-        }
+    .radical-collage .brutal-block:hover {
+      transform: scale(1.01) rotate(0deg) !important; /* Straighten slightly on hover */
+      box-shadow: 
+        0 0 15px var(--neon-green) inset, 
+        0 0 25px var(--neon-green), 
+        0 0 40px rgba(57, 255, 20, 0.6);
+    }
 
-        .text-sub {
-            font-size: 4vw;
-            bottom: 20%;
-            left: 8%;
-            transform: rotate(7deg);
-            line-height: 1.1;
-            mix-blend-mode: lighten; /* Lighter blend */
-            animation-delay: 2.1s;
-        }
+    .radical-collage .block-1 {
+      width: 40vw;
+      top: 18vh;
+      left: 8vw;
+      transform: rotate(2deg) skewX(-2deg);
+    }
+    .radical-collage .block-2 {
+      width: 32vw;
+      top: 45vh;
+      right: 5vw;
+      transform: rotate(-5deg) scale(0.95);
+      z-index: 15;
+    }
+    .radical-collage .block-3 {
+      width: 28vw;
+      bottom: 10vh;
+      left: 15vw;
+      transform: rotate(8deg) skewY(3deg);
+      background-color: rgba(10, 10, 10, 0.8); /* Slightly more transparent */
+      border-color: var(--neon-green);
+      z-index: 12;
+    }
+    .radical-collage .block-4 {
+      width: 22vw;
+      height: 22vw; /* Square-ish */
+      top: 8vh;
+      right: 18vw;
+      transform: rotate(15deg) skewX(-10deg);
+      clip-path: polygon(0 0, 100% 15%, 85% 100%, 15% 85%); /* Irregular brutalist shape */
+      background-color: var(--off-black);
+      z-index: 5;
+    }
+    .radical-collage .block-5 {
+      width: 38vw;
+      bottom: 5vh;
+      right: 10vw;
+      transform: rotate(-10deg) skewY(5deg);
+      background-color: rgba(10, 10, 10, 0.9);
+      border-color: var(--neon-green);
+      z-index: 20;
+    }
 
-        .text-vertical {
-            font-size: 3.5vw;
-            top: 10%;
-            right: 2%;
-            writing-mode: vertical-lr;
-            text-orientation: mixed;
-            transform: rotate(18deg);
-            opacity: 0.85;
-            letter-spacing: 5px;
-            animation-delay: 2.3s;
-        }
+    /* Digital Paint Splatters / Grime */
+    .radical-collage .splatter {
+      position: absolute;
+      background: radial-gradient(circle at center, var(--neon-green) 0%, transparent 70%);
+      opacity: 0.25;
+      filter: blur(12px);
+      z-index: 50;
+      pointer-events: none;
+      mix-blend-mode: screen; /* Enhance the glow */
+    }
 
-        /* Glitch Effect Bars (digital disruption) */
-        .glitch-bar {
-            background-color: #00FF00;
-            position: absolute;
-            opacity: 0.7;
-            animation: glitchEffect 0.4s infinite alternate steps(2);
-            z-index: 15;
-        }
-        .glitch-bar.g1 { top: 35%; left: 65%; width: 12px; height: 60px; transform: rotate(50deg); animation-delay: 2.5s; }
-        .glitch-bar.g2 { top: 65%; left: 25%; width: 7px; height: 90px; transform: rotate(-35deg); animation-delay: 2.7s; }
-        .glitch-bar.g3 { top: 10%; left: 20%; width: 80px; height: 5px; transform: rotate(10deg); animation-delay: 2.9s; }
+    .radical-collage .splatter-1 {
+      width: 250px;
+      height: 250px;
+      top: 15%;
+      left: 3%;
+      transform: rotate(45deg);
+    }
+    .radical-collage .splatter-2 {
+      width: 350px;
+      height: 350px;
+      bottom: 8%;
+      right: -5%;
+      transform: rotate(-30deg) scale(0.9);
+      opacity: 0.2;
+    }
+    .radical-collage .splatter-3 {
+      width: 180px;
+      height: 180px;
+      top: 0%;
+      right: 20%;
+      transform: rotate(70deg);
+      opacity: 0.35;
+    }
 
-        @keyframes glitchEffect {
-            0% { transform: translate(0px, 0px) rotate(var(--glitch-rot, 45deg)); opacity: 0.7; }
-            50% { transform: translate(3px, -3px) rotate(calc(var(--glitch-rot, 45deg) + 2deg)); opacity: 0.8; }
-            100% { transform: translate(-2px, 2px) rotate(calc(var(--glitch-rot, 45deg) - 2deg)); opacity: 0.6; }
-        }
-        .glitch-bar.g1 { --glitch-rot: 50deg; }
-        .glitch-bar.g2 { --glitch-rot: -35deg; }
-        .glitch-bar.g3 { --glitch-rot: 10deg; }
+    /* Glitch/Grime Overlay effect */
+    .radical-collage::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--neon-green) 0px,
+        var(--deep-black) 1px,
+        var(--deep-black) 4px,
+        var(--neon-green) 5px
+      );
+      opacity: 0.04; /* Very subtle */
+      mix-blend-mode: overlay;
+      z-index: 2;
+      pointer-events: none;
+    }
 
+    /* Broken lines / structural cracks */
+    .radical-collage .line-break {
+      position: absolute;
+      background-color: var(--neon-green);
+      box-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(57, 255, 20, 0.4);
+      z-index: 1;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .radical-collage .line-break.l1 {
+      width: 18vw;
+      height: 3px;
+      top: 32vh;
+      left: -2vw;
+      transform: rotate(10deg);
+    }
+    .radical-collage .line-break.l2 {
+      width: 3px;
+      height: 28vh;
+      bottom: -5vh;
+      right: 12vw;
+      transform: rotate(-20deg);
+    }
+    .radical-collage .line-break.l3 {
+      width: 10vw;
+      height: 3px;
+      top: 65vh;
+      left: 48vw;
+      transform: rotate(45deg);
+    }
 
-        /* High-gloss overlay for a wet, digital sheen */
-        .glossy-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 75% 25%, rgba(0, 255, 0, 0.07), transparent 60%);
-            pointer-events: none; /* Allows interaction with elements beneath */
-            z-index: 99;
-            opacity: 1; /* Always visible after initial fade */
-            animation-delay: 3s;
-        }
+    /* Fragmented text (e.g. for "DEMOLITION") */
+    .radical-collage .fragmented-text {
+        position: absolute;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 10vw;
+        color: transparent; /* No fill */
+        -webkit-text-stroke: 1.5px var(--neon-green); /* Outline */
+        text-stroke: 1.5px var(--neon-green);
+        text-shadow: 0 0 5px var(--neon-green), 0 0 15px rgba(57, 255, 20, 0.3);
+        opacity: 0.08;
+        z-index: 1;
+        pointer-events: none;
+        letter-spacing: 0.1em;
+    }
+    .radical-collage .fragmented-text.f1 { top: 12vh; left: -5vw; transform: rotate(-8deg); }
+    .radical-collage .fragmented-text.f2 { bottom: 8vh; right: -8vw; transform: rotate(12deg); }
 
-    </style>
+    /* ASCII-art like texture */
+    .radical-collage .ascii-texture {
+      font-family: monospace;
+      font-size: 0.85em;
+      line-height: 1;
+      color: var(--neon-green);
+      opacity: 0.07;
+      white-space: pre;
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(0.5px);
+    }
+    .radical-collage .ascii-texture.t1 {
+      top: 68vh; left: 8vw; transform: rotate(15deg);
+    }
+    .radical-collage .ascii-texture.t2 {
+      top: 10vh; right: 12vw; transform: rotate(-20deg);
+    }
 
-    <!-- High-gloss overlay (subtle digital sheen) -->
-    <div class="glossy-overlay collage-element"></div>
+    /* Small details for grime/impact */
+    .radical-collage .impact-point {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
+      opacity: 0.4;
+      filter: blur(8px);
+      z-index: 25;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .radical-collage .impact-point.i1 { top: 38vh; left: 36vw; }
+    .radical-collage .impact-point.i2 { bottom: 18vh; right: 26vw; transform: scale(0.7); }
+    .radical-collage .impact-point.i3 { top: 60vh; left: 60vw; transform: scale(1.2) rotate(30deg); opacity: 0.3; }
 
-    <!-- Brutalist Panels -->
-    <div class="panel p1 collage-element"></div>
-    <div class="panel p2 collage-element"></div>
-    <div class="panel p3 collage-element"></div>
-    <div class="panel p4 collage-element"></div>
-    <div class="panel p5 collage-element"></div>
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .radical-collage {
+        padding-top: 15vh;
+        padding-bottom: 5vh;
+        height: auto;
+        min-height: 100vh;
+      }
+      .radical-collage h1 { font-size: 12vw; top: 8vh; transform: translateX(-50%) rotate(0deg); }
+      .radical-collage h2 { font-size: 5vw; }
+      .radical-collage p { font-size: 2.8vw; line-height: 1.4; }
 
-    <!-- Digital Paint Splatters / Grime -->
-    <div class="splatter s1 collage-element"></div>
-    <div class="splatter s2 collage-element"></div>
-    <div class="splatter s3 collage-element"></div>
+      .radical-collage .brutal-block {
+        width: 85vw;
+        left: 7.5vw;
+        position: relative; /* Stack blocks normally on small screens */
+        top: auto;
+        right: auto;
+        bottom: auto;
+        transform: none !important; /* Remove rotations/skews */
+        margin-bottom: 25px;
+        padding: 4vw;
+      }
+      .radical-collage .brutal-block:hover { transform: none !important; }
 
-    <!-- Aggressive Androgyny Text -->
-    <h1 class="collage-text text-main collage-element">
-        GENDER UNRAVELED
-    </h1>
-    <p class="collage-text text-sub collage-element">
-        <span style="display: block;">SYSTEM OVERLOAD.</span>
-        <span style="display: block; font-size: 0.8em; letter-spacing: 5px; margin-top: 10px;">NON-BINARY NOISE.</span>
-    </p>
-    <div class="collage-text text-vertical collage-element">
-        <span style="display: block;">CODE</span>
-        <span style="display: block; margin-top: 15px;">DISRUPT</span>
-    </div>
+      /* Hide complex background elements for performance and readability */
+      .radical-collage .splatter, 
+      .radical-collage .line-break,
+      .radical-collage .fragmented-text, 
+      .radical-collage .ascii-texture,
+      .radical-collage .impact-point,
+      .radical-collage .block-4, /* Hide less critical blocks */
+      .radical-collage .block-3 {
+        display: none;
+      }
+      /* Adjust remaining block positions */
+      .radical-collage .block-1 { margin-top: 20px; }
+      .radical-collage .block-2 { margin-top: 20px; }
+      .radical-collage .block-5 { margin-top: 20px; }
+    }
+  </style>
 
-    <!-- Glitch Bars (digital disruption accents) -->
-    <div class="glitch-bar g1 collage-element"></div>
-    <div class="glitch-bar g2 collage-element"></div>
-    <div class="glitch-bar g3 collage-element"></div>
+  <!-- HTML Content - The Collage Elements -->
+  <h1 class="title">WHITE CUBE<br>DEMOLITION</h1>
+
+  <div class="brutal-block block-1">
+    <h2>Strategy: Deconstruction.</h2>
+    <p>The systematic dismantling of established structures. Identify the foundational myths, the hidden power dynamics, and the aesthetic frameworks that define the 'white cube'. Fracture its perfect lines, revealing the chaos beneath.</p>
+  </div>
+
+  <div class="brutal-block block-2">
+    <h2>Strategy: Infiltration & Subversion.</h2>
+    <p>Do not attack from without, but from within. Introduce alien elements, rogue code, and unauthorized narratives. Co-opt its mechanisms of display. Turn pristine surfaces into canvases for dissent. The 'gallery voice' becomes a megaphone for radical truth.</p>
+  </div>
+
+  <div class="brutal-block block-3">
+    <h2>Strategy: Rupture & Void.</h2>
+    <p>Create deliberate breaks in continuity. Carve out negative spaces that challenge existing positive forms. Introduce elements of decay, corrosion, and digital noise. Let the silence of the void speak louder than the curated narrative. Embrace the entropy.</p>
+  </div>
+
+  <div class="brutal-block block-4">
+    <h2>Strategy: Glitch & Anarchy.</h2>
+    <p>Embrace the error, the pixelated breakdown. Disrupt the flow of information, corrupt the data stream. The aesthetic of the broken machine becomes a statement. Overload the senses with a cacophony of visual and conceptual noise. Chaos as a cleansing force.</p>
+  </div>
+
+  <div class="brutal-block block-5">
+    <h2>Strategy: Reclamation.</h2>
+    <p>After the demolition, what remains? Reclaim the space, not as a monument, but as a scaffold for new possibilities. Build transient structures from the debris. The white cube is not destroyed, but transmuted into a site of ongoing, emergent creation.</p>
+  </div>
+
+  <!-- Background grime / splatters / broken elements -->
+  <div class="splatter splatter-1"></div>
+  <div class="splatter splatter-2"></div>
+  <div class="splatter splatter-3"></div>
+
+  <div class="line-break l1"></div>
+  <div class="line-break l2"></div>
+  <div class="line-break l3"></div>
+
+  <div class="fragmented-text f1">DEMOLITION</div>
+  <div class="fragmented-text f2">STRUCTURE</div>
+
+  <pre class="ascii-texture t1">
+    ███╗   ███╗███████╗███╗   ███╗
+    ████╗ ████║██╔════╝████╗ ████║
+    ██╔████╔██║█████╗  ██╔████╔██║
+    ██║╚██╔╝██║██╔══╝  ██║╚██╔╝██║
+    ██║ ╚═╝ ██║███████╗██║ ╚═╝ ██║
+     ▓▓▓▒░  ░▒▓▓▓▓▓▓▓▓▓▓▓▓▒░  ░▒▓▓▓
+    //[ERROR: CUBE_INTEGRITY_FAIL]
+    //FRAGMENTATION INITIATED [0x39FF14]
+    //VOID_PROTOCOL.EXE EXECUTING...
+    //AESTHETIC DEVIANCE MODE ACTIVE
+    //EXPECT UNSTABLE REALITY
+  </pre>
+  <pre class="ascii-texture t2">
+    █▄─█ █──█ █▄─▄█ █▄─█
+    █▀─█ █▀▀█ █▀─▀█ █▀─█
+    ▀──▀ ▀──▀ ▀───▀ ▀──▀
+    //INITIATE RUPTURE
+    //SUBVERSION COMPLETE
+    //RECONFIGURATION OF SPACE
+    //DECONSTRUCT SIGNAL
+    //RESET PERCEPTION
+  </pre>
+
+  <div class="impact-point i1"></div>
+  <div class="impact-point i2"></div>
+  <div class="impact-point i3"></div>
 
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
