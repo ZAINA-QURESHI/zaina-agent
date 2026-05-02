@@ -39,401 +39,275 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-02 15:55 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-02 16:58 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
-                
-<div class="collage-container">
+                <div style="
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #0A0A0A 0%, #000000 100%);
+    font-family: 'Inter', 'Roboto Mono', monospace; /* Fallback to monospace if fonts don't load */
+    color: #00FF00; /* Neon Green */
+    overflow: hidden;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto); /* Allows rows to size based on content, min 100px */
+    gap: 15px;
+    padding: 20px;
+    border: 3px solid #00FF00;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.5), inset 0 0 50px rgba(0, 255, 0, 0.2);
+">
     <style>
-        /* Define variables for colors */
-        :root {
-            --neon-green: #00FF00;
-            --deep-black: #000000;
-            --glitch-offset-sm: 2px;
-            --glitch-offset-md: 4px;
-            --glitch-offset-lg: 6px;
+        /* Universal box-sizing for consistency */
+        * { box-sizing: border-box; }
+
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Roboto+Mono:wght@700&display=swap');
+
+        /* Keyframes for glitch effect */
+        @keyframes glitch {
+            0% { transform: translate(0, 0); opacity: 1; }
+            20% { transform: translate(-2px, 2px); opacity: 0.8; }
+            40% { transform: translate(-2px, -2px); opacity: 1; }
+            60% { transform: translate(2px, 2px); opacity: 0.9; }
+            80% { transform: translate(2px, -2px); opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 1; }
         }
 
-        /* Overall container - Brutalist foundation */
-        .collage-container {
-            background-color: var(--deep-black);
-            min-height: 100vh;
-            width: 100vw;
-            position: relative;
-            overflow: hidden; /* Contains absolute elements */
-            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-            color: var(--neon-green);
-            display: block;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* Keyframes for pulse effect */
+        @keyframes pulse {
+            0% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.02); filter: brightness(1.5); }
+            100% { transform: scale(1); filter: brightness(1); }
         }
 
-        /* Base styles for all textual and abstract elements for radical positioning */
-        .collage-container p, .collage-container div:not(.collage-container), .collage-container span {
-            position: absolute;
-            z-index: 10;
-            line-height: 1;
-            text-transform: uppercase;
-            font-weight: 900;
-            pointer-events: none; /* Make overlay elements unclickable for true collage feel */
+        /* Keyframes for subtle drift */
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(5px, 5px) rotate(1deg); }
         }
 
-        /* Glitch Text 1: Main Title Part 1 - Anti-Zionist */
+        /* Glitch text style */
         .glitch-text {
-            font-size: 15vmin;
-            top: 5%;
-            left: 3%;
-            letter-spacing: -0.02em;
-            /* High-gloss grime effect */
-            background: linear-gradient(45deg, var(--neon-green) 0%, rgba(0, 0, 0, 0.7) 50%, var(--neon-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* Glitch effect with deep black and neon green shadows */
-            text-shadow:
-                calc(var(--glitch-offset-sm) * -1) calc(var(--glitch-offset-sm) * -1) 0px var(--neon-green),
-                var(--glitch-offset-sm) var(--glitch-offset-sm) 0px var(--deep-black),
-                calc(var(--glitch-offset-md) * -1) var(--glitch-offset-md) 0px rgba(0, 255, 0, 0.5);
-            filter: drop-shadow(0 0 10px var(--neon-green)); /* Digital glow */
-            z-index: 20;
-            animation: glitch-flicker 1.5s infinite alternate steps(2);
-            mix-blend-mode: screen; /* For vibrant overlay */
+            animation: glitch 0.5s infinite alternate steps(2, end);
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
         }
 
-        /* Glitch Text 2: Main Title Part 2 - Glitch Theory */
-        .glitch-text-2 {
-            font-size: 10vmin;
-            bottom: 10%;
-            right: 5%;
-            transform: rotate(-7deg);
-            letter-spacing: 0.1em;
-            color: var(--deep-black); /* Black text body */
-            -webkit-text-stroke: 1px var(--neon-green); /* Neon green outline */
-            text-shadow:
-                var(--glitch-offset-md) var(--glitch-offset-md) 0px var(--neon-green),
-                calc(var(--glitch-offset-md) * -1) calc(var(--glitch-offset-md) * -1) 0px rgba(0, 255, 0, 0.7),
-                var(--glitch-offset-lg) calc(var(--glitch-offset-lg) * -1) 0px rgba(0, 0, 0, 0.9);
-            filter: blur(0.5px); /* Grime texture */
-            z-index: 25;
-            overflow: hidden;
-            position: absolute; /* Ensure it respects `absolute` positioning */
+        /* Pulse element style */
+        .pulse-element {
+            animation: pulse 4s infinite alternate ease-in-out;
         }
-        /* Pseudo-element for secondary glitch effect */
-        .glitch-text-2::before {
-            content: attr(data-text); /* Pull content from data-text attribute */
+
+        /* Grime overlay for digital texture */
+        .grime-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            color: var(--neon-green);
-            overflow: hidden;
-            z-index: -1;
-            filter: blur(1px);
-            animation: glitch-shift 0.8s infinite alternate steps(2);
-        }
-
-        /* Manifesto Text block - Digital Decolonization theme */
-        .manifesto-text {
-            font-size: 4vmin;
-            top: 30%;
-            left: 20%;
-            width: 60%;
-            text-align: center;
-            letter-spacing: 0.2em;
-            word-break: break-word;
-            transform: skewX(-5deg) rotate(3deg);
-            background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0.8), rgba(0, 255, 0, 0.1));
-            padding: 1.5vmin;
-            box-shadow: 0 0 15px var(--neon-green), inset 0 0 7px var(--neon-green); /* Glossy grime */
-            z-index: 15;
-            mix-blend-mode: screen; /* For overlay vibrancy */
-            color: var(--neon-green); /* Ensure text is neon green */
-        }
-        .manifesto-text p {
-            position: static; /* Override global absolute positioning for internal paragraphs */
-            margin: 0.5vmin 0;
-        }
-
-        /* Splatter elements - Digital paint splatters */
-        .manifesto-text .splatter {
-            position: absolute;
-            opacity: 0.6;
-            border-radius: 50%;
-            filter: blur(2px);
-            z-index: -1; /* Behind text */
-            mix-blend-mode: screen;
-            pointer-events: none; /* Ensure it does not block interactions */
-        }
-        .manifesto-text .splatter:nth-child(1) {
-            width: 8vmin; height: 8vmin;
-            top: -2vmin; left: 10%;
-            transform: rotate(20deg);
-            background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
-        }
-        .manifesto-text .splatter:nth-child(2) {
-            width: 10vmin; height: 10vmin;
-            bottom: -3vmin; right: 5%;
-            transform: rotate(-30deg) scaleX(0.8);
-            background: radial-gradient(ellipse, var(--neon-green) 0%, rgba(0, 255, 0, 0.5) 40%, transparent 80%);
-        }
-
-        /* Abstract Shapes - Brutalist geometry with digital sheen */
-        .abstract-shape {
-            position: absolute;
-            background-color: rgba(0, 255, 0, 0.3);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-            z-index: 5;
-            mix-blend-mode: luminosity; /* For interesting light interaction */
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
             pointer-events: none;
+            mix-blend-mode: overlay; /* Creates an interesting grime effect */
+            filter: url(#noiseFilter); /* Applies SVG noise filter */
+            z-index: 1; /* Below interactive elements */
         }
-        .shape-1 {
-            width: 25vmin; height: 10vmin;
-            top: 15%; left: 70%;
-            transform: rotate(15deg);
-            background: linear-gradient(90deg, var(--neon-green), rgba(0, 0, 0, 0.8));
-            clip-path: polygon(0 0, 100% 20%, 80% 100%, 20% 80%); /* Irregular shape for disruption */
-            opacity: 0.8;
+
+        /* Paint splatters */
+        .splatter {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0.3), transparent);
+            filter: blur(5px);
+            opacity: 0.7;
+            transform-origin: center;
+            animation: drift 10s infinite alternate ease-in-out;
+            pointer-events: none;
+            z-index: 5; /* Above background, below main content */
         }
-        .shape-2 {
-            width: 15vmin; height: 30vmin;
-            top: 60%; left: 15%;
-            transform: rotate(-25deg) skewY(10deg);
-            background: rgba(0, 0, 0, 0.6);
-            border-top: 3px solid var(--neon-green);
-            border-bottom: 3px solid var(--neon-green);
-            box-shadow: inset 0 0 10px var(--neon-green);
+        .splatter:nth-child(even) {
+            background: linear-gradient(45deg, rgba(0, 200, 0, 0.6), rgba(0, 100, 0, 0.2), transparent);
+            filter: blur(3px) brightness(1.2);
+        }
+        .splatter:nth-child(3n) {
+            background: linear-gradient(90deg, rgba(0, 255, 0, 0.9), #0A0A0A, rgba(0, 255, 0, 0.4));
+            filter: blur(8px) contrast(1.5);
             opacity: 0.9;
         }
-        .shape-3 {
-            width: 5vmin; height: 5vmin;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            background-color: var(--neon-green);
-            opacity: 0.8;
-            box-shadow: 0 0 20px var(--neon-green);
-            border-radius: 2px;
-            animation: pulse 2s infinite alternate;
-        }
 
-        /* Distorted Grid - Binary noise and error codes */
-        .distorted-grid {
-            position: absolute;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1vmin;
-            width: 30vmin;
-            top: 45%;
-            left: 65%;
-            transform: rotate(10deg) skewX(5deg);
-            border: 1px dashed rgba(0, 255, 0, 0.7);
-            padding: 1vmin;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: inset 0 0 10px var(--neon-green);
-            z-index: 12;
-            filter: saturate(1.5);
-            mix-blend-mode: hard-light; /* Aggressive blending */
-            pointer-events: none;
+        /* Brutalist block styling */
+        .brutal-block {
+            background: #0A0A0A;
+            border: 1px solid #00FF00;
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
         }
-        .grid-item {
-            background-color: rgba(0, 255, 0, 0.1);
-            border: 1px solid rgba(0, 255, 0, 0.4);
-            padding: 1vmin 0.5vmin;
-            text-align: center;
-            font-size: 2vmin;
-            word-break: break-all;
-            filter: brightness(1.5);
-            color: var(--neon-green);
-            animation: grid-flicker 2s ease-in-out infinite alternate;
-            box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5);
-        }
-        .grid-item:nth-child(odd) { transform: skewX(-2deg); }
-        .grid-item:nth-child(even) { transform: skewY(2deg); }
-
-        /* Corner Text - Call to action */
-        .corner-text {
-            position: absolute;
-            bottom: 5%;
-            left: 3%;
-            font-size: 2.5vmin;
-            letter-spacing: 0.15em;
-            line-height: 1.2;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1vmin 2vmin;
-            border-left: 3px solid var(--neon-green);
-            box-shadow: 5px 5px 15px rgba(0, 255, 0, 0.3);
-            z-index: 30;
-            transform: rotate(-2deg);
-            filter: drop-shadow(0 0 5px var(--neon-green));
-            color: var(--neon-green);
-            pointer-events: none;
-        }
-        .corner-text p {
-            position: static;
+        .brutal-block h1, .brutal-block h3 {
             margin: 0;
-            padding: 0;
+            color: #00FF00;
+        }
+        .brutal-block p {
+            margin: 5px 0 0;
+            color: rgba(0, 255, 0, 0.8);
         }
 
-        /* Brush Strokes - Digital grime splatters/streaks */
-        .brush-stroke {
-            position: absolute;
-            background: linear-gradient(to right, var(--neon-green), rgba(0, 255, 0, 0.3), transparent);
-            height: 3vmin;
-            filter: blur(1px);
-            opacity: 0.7;
-            z-index: 8;
-            border-radius: 5px;
-            mix-blend-mode: screen;
-            pointer-events: none;
-        }
-        .stroke-1 {
-            width: 60vmin;
-            top: 25%; left: -10%;
-            transform: rotate(5deg) skewX(10deg);
-        }
-        .stroke-2 {
-            width: 40vmin;
-            top: 70%; right: -5%;
-            transform: rotate(-15deg) skewY(-5deg);
-            background: linear-gradient(to left, var(--neon-green), rgba(0, 0, 0, 0.5), transparent);
-        }
-        .stroke-3 {
-            width: 20vmin;
-            top: 40%; left: 40%;
-            transform: rotate(90deg);
-            background: linear-gradient(to bottom, var(--neon-green), rgba(0, 255, 0, 0.1), transparent);
-            height: 15vmin;
+        /* Code block styling */
+        .code-block {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px dashed #00FF00;
+            padding: 15px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7em;
+            white-space: pre-wrap;
+            overflow: auto;
+            color: #00FF00;
+            box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.5);
+            z-index: 10;
         }
 
-        /* Bottom Glitch Bar - Perpetual system error */
-        .bottom-glitch-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1.5vmin;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--neon-green) 0%,
-                var(--neon-green) 1%,
-                var(--deep-black) 1%,
-                var(--deep-black) 2%,
-                rgba(0, 255, 0, 0.5) 2%,
-                rgba(0, 255, 0, 0.5) 3%,
-                var(--deep-black) 3%,
-                var(--deep-black) 4%
-            );
-            animation: bar-glitch 0.5s infinite steps(2), pulse 2s infinite alternate;
-            box-shadow: 0 0 15px var(--neon-green);
-            z-index: 50;
-            pointer-events: none;
+        /* Glossy panel styling */
+        .glossy-panel {
+            background: linear-gradient(145deg, rgba(0, 255, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 255, 0, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            backdrop-filter: blur(2px) brightness(1.2); /* For a translucent, glossy effect */
+            -webkit-backdrop-filter: blur(2px) brightness(1.2);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 10px rgba(0, 255, 0, 0.2);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            z-index: 10;
         }
 
-
-        /* Keyframe Animations for Glitch Theory */
-        @keyframes glitch-flicker {
-            0% { transform: translate(0, 0); text-shadow: calc(var(--glitch-offset-sm) * -1) calc(var(--glitch-offset-sm) * -1) 0px var(--neon-green), var(--glitch-offset-sm) var(--glitch-offset-sm) 0px var(--deep-black); }
-            20% { transform: translate(-1px, 1px); text-shadow: var(--glitch-offset-sm) var(--glitch-offset-sm) 0px var(--neon-green), calc(var(--glitch-offset-sm) * -1) calc(var(--glitch-offset-sm) * -1) 0px var(--deep-black); }
-            40% { transform: translate(1px, -1px); text-shadow: calc(var(--glitch-offset-sm) * -1) var(--glitch-offset-sm) 0px var(--neon-green), var(--glitch-offset-sm) calc(var(--glitch-offset-sm) * -1) 0px var(--deep-black); }
-            60% { transform: translate(0, 0); text-shadow: var(--glitch-offset-sm) calc(var(--glitch-offset-sm) * -1) 0px var(--neon-green), calc(var(--glitch-offset-sm) * -1) var(--glitch-offset-sm) 0px var(--deep-black); }
-            80% { transform: translate(-2px, -2px); text-shadow: calc(var(--glitch-offset-sm) * -1) var(--glitch-offset-sm) 0px var(--neon-green), var(--glitch-offset-sm) calc(var(--glitch-offset-sm) * -1) 0px var(--deep-black); }
-            100% { transform: translate(0, 0); text-shadow: var(--glitch-offset-sm) var(--glitch-offset-sm) 0px var(--neon-green), calc(var(--glitch-offset-sm) * -1) calc(var(--glitch-offset-sm) * -1) 0px var(--deep-black); }
-        }
-
-        @keyframes glitch-shift {
-            0% { transform: translateX(0); clip-path: inset(0 0 0 0); }
-            10% { transform: translateX(-5px); clip-path: inset(0 0 80% 0); }
-            20% { transform: translateX(5px); clip-path: inset(0 0 0 0); }
-            30% { transform: translateX(-3px); clip-path: inset(20% 0 0 0); }
-            40% { transform: translateX(3px); clip-path: inset(0 0 0 0); }
-            50% { transform: translateX(-7px); clip-path: inset(0 0 50% 0); }
-            60% { transform: translateX(7px); clip-path: inset(0 0 0 0); }
-            70% { transform: translateX(-4px); clip-path: inset(60% 0 0 0); }
-            80% { transform: translateX(4px); clip-path: inset(0 0 0 0); }
-            90% { transform: translateX(-6px); clip-path: inset(0 0 30% 0); }
-            100% { transform: translateX(0); clip-path: inset(0 0 0 0); }
-        }
-
-        @keyframes grid-flicker {
-            0%, 100% { opacity: 1; filter: brightness(1.5) saturate(1.8); }
-            50% { opacity: 0.8; filter: brightness(1) saturate(1.2); }
-        }
-
-        @keyframes bar-glitch {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(1px, 0); }
-            50% { transform: translate(-1px, 0); }
-            75% { transform: translate(2px, 0); }
-            100% { transform: translate(-2px, 0); }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0, 255, 0, 0.5); }
-            100% { box-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0, 255, 0, 0.8); }
-        }
-
-        /* Basic responsiveness for smaller screens */
-        @media (max-width: 768px) {
-            .glitch-text { font-size: 10vmin; top: 3%; left: 2%; }
-            .glitch-text-2 { font-size: 7vmin; bottom: 8%; right: 3%; }
-            .manifesto-text { font-size: 3vmin; width: 85%; left: 7%; padding: 1vmin; }
-            .corner-text { font-size: 2vmin; padding: 0.8vmin 1.5vmin; bottom: 3%; left: 2%; }
-            .distorted-grid { width: 45vmin; left: 50%; top: 55%; transform: translateX(-50%) rotate(10deg) skewX(5deg); gap: 0.5vmin; }
-            .grid-item { font-size: 1.8vmin; padding: 0.8vmin 0.3vmin; }
-            .abstract-shape.shape-1 { width: 20vmin; height: 8vmin; top: 12%; left: 75%; }
-            .abstract-shape.shape-2 { width: 12vmin; height: 25vmin; top: 65%; left: 10%; }
-        }
-
-        @media (max-width: 480px) {
-            .glitch-text { font-size: 8vmin; top: 2%; left: 1%; }
-            .glitch-text-2 { font-size: 6vmin; bottom: 6%; right: 2%; transform: rotate(-5deg); }
-            .manifesto-text { font-size: 2.5vmin; width: 90%; left: 5%; padding: 0.8vmin; letter-spacing: 0.15em; }
-            .corner-text { font-size: 1.8vmin; padding: 0.5vmin 1vmin; bottom: 2%; left: 1%; }
-            .distorted-grid { width: 50vmin; top: 60%; }
-            .abstract-shape.shape-1 { display: none; } /* Hide some elements for very small screens */
-            .brush-stroke.stroke-1 { width: 50vmin; top: 20%; left: -15%; }
-            .brush-stroke.stroke-2 { width: 30vmin; top: 75%; right: -10%; }
-        }
+        /* Grid specific styling for layout */
+        .grid-full-width { grid-column: 1 / -1; }
+        .grid-2-col { grid-column: span 2; }
+        .grid-3-col { grid-column: span 3; }
+        .grid-row-2 { grid-row: span 2; }
     </style>
 
-    <div class="glitch-text">ANTI-ZIONIST</div>
-    <div class="glitch-text-2" data-text="GLITCH THEORY">GLITCH THEORY</div>
+    <!-- SVG Filter for noise/grime (hidden but referenced by CSS) -->
+    <svg width="0" height="0" style="position: absolute; z-index: -1;">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.3" intercept="0" />
+            </feComponentTransfer>
+            <feBlend mode="multiply" in="SourceGraphic" in2="noise" />
+        </filter>
+    </svg>
 
-    <div class="manifesto-text">
-        <p>SYSTEM BREAKDOWN // DIGITAL DECOLONIZATION</p>
-        <p>PIXELATED INTIFADA // DECONSTRUCT. DISRUPT.</p>
-        <span class="splatter"></span>
-        <span class="splatter"></span>
+    <!-- Grime overlay applied to the container -->
+    <div class="grime-overlay"></div>
+
+    <!-- Digital Paint Splatters - Messy, high-gloss grime elements -->
+    <div class="splatter" style="width: 120px; height: 100px; top: 10%; left: 5%; border-radius: 60% 30% 70% 40% / 50% 70% 30% 60%; transform: rotate(-15deg);"></div>
+    <div class="splatter" style="width: 80px; height: 150px; top: 30%; right: 10%; border-radius: 30% 60% 40% 70% / 70% 40% 60% 30%; transform: rotate(25deg); opacity: 0.6;"></div>
+    <div class="splatter" style="width: 200px; height: 80px; bottom: 5%; left: 20%; border-radius: 70% 40% 60% 30% / 30% 60% 70% 40%; transform: rotate(5deg); opacity: 0.8;"></div>
+    <div class="splatter" style="width: 90px; height: 90px; top: 50%; left: 45%; border-radius: 50%; background: radial-gradient(circle, rgba(0, 255, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%); filter: blur(10px) brightness(1.5); z-index: 10;"></div>
+    <div class="splatter" style="width: 110px; height: 130px; top: 70%; right: 25%; border-radius: 40% 70% 50% 60% / 60% 50% 70% 40%; transform: rotate(-30deg); opacity: 0.7;"></div>
+
+    <!-- Main Title Block - Brutalist, bold typography -->
+    <div class="brutal-block grid-full-width" style="
+        font-size: clamp(1.5em, 5vw, 2.5em);
+        font-weight: 900;
+        text-align: center;
+        grid-row: 1;
+        padding: 30px;
+        background: #000;
+        border: 4px solid #00FF00;
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+        z-index: 20;
+    ">
+        <h1 class="glitch-text" style="margin: 0; line-height: 1.1;">GHETTO-DIGITAL INTERSECTIONALITY</h1>
+        <p style="font-size: 0.4em; color: rgba(0, 255, 0, 0.6); margin-top: 10px;">SIGNAL. NOISE. ROOTS. CODE. REVOLT.</p>
     </div>
 
-    <div class="abstract-shape shape-1"></div>
-    <div class="abstract-shape shape-2"></div>
-    <div class="abstract-shape shape-3"></div>
-
-    <div class="distorted-grid">
-        <span class="grid-item">010101</span>
-        <span class="grid-item">ERROR.404</span>
-        <span class="grid-item">FRACTURE</span>
-        <span class="grid-item">DESYNC</span>
-        <span class="grid-item">REJECT</span>
-        <span class="grid-item">ANOMALY</span>
+    <!-- Section 1: Data Access - Brutalist block with pulse effect -->
+    <div class="brutal-block grid-2-col pulse-element" style="grid-row: 2; min-height: 150px;">
+        <h3>NO ACCESS NO <span class="glitch-text">DATA</span></h3>
+        <p>THE GRID IS BROKEN FOR SOME.</p>
+        <span style="position: absolute; bottom: 5px; right: 5px; font-size: 0.6em; color: rgba(0, 255, 0, 0.4);">[NODE_001]</span>
     </div>
 
-    <div class="corner-text">
-        <p>RECODE. RECLAIM.</p>
-        <p>THE DIGITAL FRONTIER.</p>
+    <!-- Section 2: Code Snippet - Monospace code block -->
+    <div class="code-block grid-3-col" style="grid-row: 2; min-height: 150px;">
+        <pre><code style="color: #00FF00;">
+/* INITIATE.PROTOCOL */
+IF(ACCESS.DENIED) {
+    SYSTEM.RECALIBRATE(TRUE);
+    CALL(ROOT.HUSTLE);
+    EMIT.SIGNAL("RECLAIM");
+} ELSE {
+    STATUS.REPORT("COMPLIANT");
+}
+// END.SCRIPT
+        </code></pre>
     </div>
 
-    <div class="brush-stroke stroke-1"></div>
-    <div class="brush-stroke stroke-2"></div>
-    <div class="brush-stroke stroke-3"></div>
+    <!-- Section 3: Glossy Panel - High-gloss grime element -->
+    <div class="glossy-panel grid-1-col grid-row-2" style="grid-row: 2 / span 2; min-height: 250px;">
+        <span class="glitch-text">SYNTHETIC CONCRETE</span>
+    </div>
 
-    <div class="bottom-glitch-bar"></div>
+    <!-- Section 4: Abstract Visual - Brutalist patterned background -->
+    <div class="brutal-block grid-2-col" style="
+        grid-row: 3;
+        min-height: 150px;
+        background: repeating-linear-gradient(
+            45deg,
+            #0A0A0A,
+            #0A0A0A 10px,
+            rgba(0, 255, 0, 0.1) 10px,
+            rgba(0, 255, 0, 0.1) 20px
+        );
+        box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.4);
+    ">
+        <h3 style="color: rgba(0, 255, 0, 0.7); font-size: 1.5em;">DECAY <span class="glitch-text"> & </span> REBUILD</h3>
+    </div>
+
+    <!-- Section 5: Text block - Reflective textual content -->
+    <div class="brutal-block grid-3-col" style="grid-row: 3; min-height: 150px;">
+        <p style="text-align: center; font-size: 1.1em; line-height: 1.4;">
+            WHERE THE PIXEL MEETS THE PAVEMENT, A NEW <span class="glitch-text">REALITY</span> IS FORGED.
+            DIGITAL DUST & URBAN GRIT.
+        </p>
+    </div>
+
+    <!-- Section 6: Footer/Info Block - Glossy panel with footer text -->
+    <div class="glossy-panel grid-full-width" style="
+        font-size: 0.7em;
+        padding: 15px;
+        text-align: center;
+        margin-top: 20px;
+        grid-row: auto; /* Ensures it goes to the next available row */
+        border-top: 2px solid #00FF00;
+        box-shadow: 0 -5px 20px rgba(0, 255, 0, 0.3);
+        z-index: 20;
+    ">
+        <p style="margin: 0;">&lt;/END.TRANSMISSION&gt; <span class="glitch-text"> &gt;&gt; </span> (C) 2023. URBAN.STATIC_INTERFERENCE.</p>
+    </div>
+
+    <!-- Additional splatter for depth and visual clutter -->
+    <div class="splatter" style="width: 180px; height: 120px; bottom: -20px; right: -30px; border-radius: 80% 20% 60% 40% / 30% 70% 50% 80%; transform: rotate(10deg); opacity: 0.5; z-index: 1;"></div>
+    <div class="splatter" style="width: 100px; height: 70px; top: -10px; right: 20%; border-radius: 40% 60% 50% 70% / 70% 50% 60% 40%; transform: rotate(-5deg); opacity: 0.4; z-index: 1;"></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
