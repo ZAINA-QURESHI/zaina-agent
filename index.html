@@ -39,179 +39,242 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-02 13:27 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-02 14:55 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
             <div class="art-container p-4">
-                <div style="
+                
+<div style="
     position: relative;
     width: 100vw;
-    height: 100vh;
-    background-color: #000;
-    overflow: hidden; /* Crucial for absolute positioning and containing elements */
-    font-family: monospace; /* Brutalist and reliable system monospace font */
-    color: #39FF14; /* Vibrant neon green default text color */
-    box-sizing: border-box; /* Include padding/border in element's total width/height */
-    filter: contrast(1.2) saturate(1.5); /* Overall visual punch for grime/gloss */
-    user-select: none; /* Prevent text selection for collage effect */
-    cursor: default; /* Indicate non-interactive */
+    min-height: 100vh;
+    height: auto; /* Allow height to adjust if content requires, but use min-height for initial full screen */
+    background-color: #000; /* Deepest black */
+    font-family: 'Arial Black', Impact, sans-serif; /* Brutalist font choice */
+    color: #39FF14; /* Vibrant Neon Green */
+    text-transform: uppercase;
+    overflow: hidden; /* Contains absolute positioned elements */
+    box-sizing: border-box; /* Include padding/border in dimensions */
+    padding: 20px; /* Some breathing room, but elements will overlap */
+    display: block;
 ">
     <style>
-        /* Reset body margin to ensure the main div fills the viewport */
-        body { margin: 0; }
+        /* CSS styles embedded directly within the main div */
+        :root {
+            --neon-green: #39FF14;
+            --deep-black: #000;
+            --dark-charcoal: #1a1a1a;
+            --light-grey-wash: rgba(255, 255, 255, 0.1);
+            --dark-green-fade: rgba(57, 255, 20, 0.6);
+            --transparent-black: rgba(0, 0, 0, 0);
+        }
+
+        /* Basic resets for elements within this specific context */
+        div, span, h1, p {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1; /* Tighter line height for brutalism */
+        }
+
+        /* General styles for all collage elements */
+        .collage-element {
+            position: absolute;
+            pointer-events: none; /* Make collage elements non-interactive visually */
+            will-change: transform, opacity, filter; /* Optimize for animations/transforms */
+        }
+
+        /* Text styles */
+        .collage-text {
+            font-size: clamp(2rem, 7vw, 6rem); /* Responsive font size */
+            font-weight: 900;
+            letter-spacing: -0.05em; /* Tighter letter spacing */
+            text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); /* Neon glow */
+            z-index: 10; /* Ensures text is visible over many elements */
+            mix-blend-mode: screen; /* For glowing text over dark areas */
+            white-space: nowrap; /* Prevent breaking in awkward places for impact */
+        }
+
+        .collage-text.large {
+            font-size: clamp(3rem, 12vw, 9rem);
+            letter-spacing: -0.08em;
+        }
+
+        .collage-text.small {
+            font-size: clamp(1rem, 3vw, 2.5rem);
+            letter-spacing: 0.05em;
+            font-weight: bold;
+            mix-blend-mode: difference; /* Aggressive contrast */
+            background-color: var(--neon-green);
+            color: var(--deep-black);
+            padding: 0.2em 0.5em;
+            text-shadow: none; /* Remove glow for difference blend mode */
+        }
         
-        /* Grid Overlay for Brutalist structure - via pseudo-element on the main div */
-        div:first-child::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image:
-                linear-gradient(to right, rgba(57, 255, 20, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(57, 255, 20, 0.08) 1px, transparent 1px);
-            background-size: 25px 25px; /* Grid cell size */
-            pointer-events: none; /* Allows interaction with elements beneath */
-            z-index: 0; /* Background layer */
-            opacity: 0.4;
+        /* Brutalist Blocks - solid, angular shapes */
+        .brutal-block {
+            background-color: var(--neon-green);
+            border: 2px solid var(--dark-charcoal);
+            box-shadow: 0 0 0 2px var(--neon-green) inset; /* Inner glow/border */
+            z-index: 1;
         }
 
-        /* Base styles for brutalist text blocks */
-        .brutal-text {
-            position: absolute;
-            font-size: clamp(2em, 8vw, 6em); /* Responsive font size for large impact */
-            font-weight: 900; /* Extra bold */
-            text-transform: uppercase;
-            line-height: 0.8;
-            letter-spacing: -2px;
-            color: #39FF14;
-            /* Neon text glow */
-            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 15px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.3);
-            z-index: 10; /* Ensures text is on top */
-            white-space: nowrap; /* Prevent breaking lines by default */
-            padding: 5px; /* Base padding for text blocks */
+        .brutal-block.black {
+            background-color: var(--dark-charcoal);
+            border-color: var(--neon-green);
+            box-shadow: none;
+            mix-blend-mode: multiply; /* Darkens anything underneath */
         }
 
-        /* Styles for abstract graphic blobs (simulating grime/impact zones) */
-        .graphic-blob {
-            position: absolute;
-            /* Radial gradient for glowing, hazy effect */
-            background: radial-gradient(circle at var(--x, 30%) var(--y, 30%), rgba(57, 255, 20, 0.7), rgba(0,0,0,0.5) 70%, transparent);
-            border: 2px solid rgba(57, 255, 20, 0.8);
-            /* Glossy inner/outer shadow */
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(57, 255, 20, 0.5);
-            mix-blend-mode: screen; /* For glowing blend with background */
-            filter: blur(1px); /* Soften edges slightly for an ethereal glow */
-            z-index: 5;
-            transform: rotate(var(--r, 0deg)); /* Allow rotation via CSS variable */
-        }
-
-        /* Styles for splatter effects (digital paint splatters) */
-        .splatter-effect {
-            position: absolute;
-            width: var(--size, 150px);
-            height: var(--size, 150px);
-            /* Radial gradient for splatter texture */
-            background: radial-gradient(circle at var(--cx, 70%) var(--cy, 70%), rgba(57, 255, 20, 0.8), rgba(0,0,0,0.6) 50%, transparent 80%);
-            transform: rotate(var(--r, 0deg));
-            filter: blur(2px) brightness(1.5); /* Enhance glow and blur edges */
-            mix-blend-mode: lighten; /* Lighter blend mode for splatters */
-            opacity: 0.7;
-            z-index: 7;
-            border-radius: 50%; /* Start as a circle for base shape */
-            /* Irregular polygon for a shattered/splattered look */
-            clip-path: polygon(
-                20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%
-            ); 
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6); /* Splatter glow */
-        }
-
-        /* Styles for structural plates (geometric elements) */
-        .structural-plate {
-            position: absolute;
-            background-color: #39FF14;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.8); /* Strong glow */
-            z-index: 8;
+        /* Digital Paint Splatters / Grime - organic, blurred shapes */
+        .splatter {
+            background: radial-gradient(circle, var(--neon-green) 0%, var(--dark-green-fade) 30%, var(--transparent-black) 70%);
+            border-radius: 50%; /* Circular initial shape */
+            filter: blur(8px) saturate(200%) contrast(150%);
             opacity: 0.6;
-            mix-blend-mode: difference; /* High contrast blend */
+            mix-blend-mode: screen; /* Lightens and blends organically */
+            z-index: 5;
+            transform: scale(var(--splatter-scale, 1)) rotate(var(--splatter-rotate, 0deg)); /* Randomness */
         }
-
-        /* Styles for glowing border boxes */
-        .glow-border-box {
-            position: absolute;
-            border: 2px solid #39FF14;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.7), inset 0 0 5px rgba(57, 255, 20, 0.5);
-            z-index: 9;
-            pointer-events: none; /* Non-interactive */
-            opacity: 0.9;
-        }
-
-        /* Specific modifications for text blocks */
-        .brutal-text.bg-invert {
-            color: #000;
-            background: #39FF14;
-            text-shadow: none; /* No glow on inverted text */
-            padding: 8px 15px;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.9); /* Strong box glow */
-        }
-        .brutal-text.bordered {
-            border: 3px solid #39FF14;
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.8), inset 0 0 15px rgba(57, 255, 20, 0.6);
-            padding: 10px 20px;
-        }
-        .brutal-text.footer {
-            letter-spacing: 1px;
+        .splatter.dark {
+            background: radial-gradient(circle, var(--deep-black) 0%, rgba(0, 0, 0, 0.8) 30%, var(--transparent-black) 70%);
+            filter: blur(10px) brightness(50%);
+            mix-blend-mode: multiply; /* Darkens elements underneath */
             opacity: 0.8;
-            text-align: right;
-            border-top: 1px dashed #39FF14; /* Dashed border for digital line */
-            padding-top: 8px;
-            box-shadow: 0 -5px 15px rgba(57, 255, 20, 0.4); /* Subtle bottom glow */
-            font-size: clamp(0.7em, 2.5vw, 1.5em);
-            line-height: 1.2;
-            text-shadow: none;
+            z-index: 4;
         }
+        
+        /* High-gloss grime effects - reflective overlays */
+        .gloss {
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.25) 0%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0.2) 100%
+            );
+            mix-blend-mode: overlay; /* Creates sheen and highlights */
+            opacity: 0.7;
+            z-index: 15; /* Highest layer for reflectivity */
+            pointer-events: none;
+            filter: blur(1px); /* Soften edges slightly */
+        }
+
+        /* Digital paint strokes - more defined, linear shapes */
+        .digital-stroke {
+            background-color: var(--neon-green);
+            mix-blend-mode: screen;
+            opacity: 0.8;
+            filter: blur(2px) drop-shadow(0 0 5px var(--neon-green));
+            z-index: 3;
+            transform-origin: center center;
+            border: 1px solid var(--dark-charcoal);
+        }
+        .digital-stroke.dark {
+            background-color: var(--deep-black);
+            mix-blend-mode: multiply;
+            opacity: 0.9;
+            filter: blur(1px);
+            border-color: var(--neon-green);
+        }
+        
+        /* Specific positioning and transformations for each element instance */
+
+        /* Main title "ANDROGYNY" */
+        #title-androgyny {
+            top: 8%; left: 5%;
+            transform: rotate(-7deg) skewX(-5deg);
+        }
+        /* Sub-title "RESISTANCE" */
+        #title-resistance {
+            bottom: 12%; right: 8%;
+            transform: rotate(12deg) skewX(10deg);
+            background-color: var(--neon-green);
+            color: var(--deep-black);
+            text-shadow: none;
+            mix-blend-mode: normal; /* Override screen blend for explicit background */
+            padding: 0.7rem 1.2rem;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.9); /* Intense glow on block */
+            z-index: 12;
+            white-space: normal; /* Allow breaking for this one with padding */
+        }
+        
+        /* Brutalist Blocks - varied positions, sizes, transforms */
+        #block-1 { top: 0; left: 30%; width: 220px; height: 110px; transform: skewX(18deg) rotate(7deg); z-index: 2; }
+        #block-2 { bottom: 0; right: 18%; width: 320px; height: 160px; transform: skewY(12deg) rotate(-12deg); z-index: 2; }
+        #block-3 { top: 38%; left: -60px; width: 160px; height: 320px; transform: rotate(22deg); }
+        #block-4 { top: 15%; right: -20px; width: 120px; height: 420px; background-color: var(--dark-charcoal); border-color: var(--neon-green); }
+        #block-5 { bottom: 8%; left: 12%; width: 270px; height: 90px; transform: rotate(-17deg) skewX(-22deg); border: 4px solid var(--neon-green); background-color: var(--deep-black); }
+        #block-6 { top: 58%; left: 37%; width: 130px; height: 190px; transform: rotate(35deg); background-color: var(--dark-charcoal); border-color: var(--neon-green); z-index: 6; }
+
+        /* Text statements */
+        #text-fluid { top: 52%; left: 17%; transform: translate(-50%, -50%) rotate(-18deg); white-space: nowrap; }
+        #text-power { bottom: 3%; left: 50%; transform: translateX(-50%) rotate(8deg); white-space: nowrap; }
+        #text-no-gender { top: 27%; right: 12%; transform: rotate(15deg); writing-mode: vertical-lr; text-orientation: mixed; white-space: nowrap; }
+        #text-break-mold { top: 68%; right: 23%; transform: rotate(-10deg); white-space: nowrap; }
+
+        /* Splatters */
+        #splatter-1 { top: 10%; right: 10%; width: 160px; height: 160px; transform: rotate(35deg) scale(1.1); }
+        #splatter-2 { bottom: 22%; left: 18%; width: 220px; height: 220px; transform: rotate(-48deg) scale(0.9); opacity: 0.7; }
+        #splatter-3 { top: 3%; left: 52%; width: 90px; height: 90px; opacity: 0.5; transform: rotate(10deg) scale(1.2); }
+        #splatter-4 { top: 38%; right: -30px; width: 270px; height: 270px; opacity: 0.4; mix-blend-mode: hard-light; transform: rotate(60deg) scale(0.8); }
+        #splatter-5 { bottom: -50px; left: -50px; width: 350px; height: 350px; mix-blend-mode: luminosity; transform: rotate(15deg) scale(1.3); } /* Dark splatter */
+
+        /* Digital strokes */
+        #stroke-1 { top: 22%; left: 8%; width: 210px; height: 35px; transform: rotate(48deg); z-index: 7; }
+        #stroke-2 { bottom: 28%; right: 13%; width: 160px; height: 22px; transform: rotate(-33deg); z-index: 7; }
+        #stroke-3 { top: 7%; right: 22%; width: 110px; height: 55px; transform: skewX(25deg); z-index: 7; }
+        #stroke-4 { bottom: 8%; left: 42%; width: 260px; height: 45px; transform: rotate(18deg); z-index: 7; }
+        #stroke-5 { top: 48%; left: 68%; width: 190px; height: 28px; transform: rotate(-65deg); z-index: 7; }
+
+        /* Gloss effects */
+        #gloss-1 { top: 0; left: 0; width: 100%; height: 100%; opacity: 0.6; }
+        #gloss-2 { top: 28%; left: 0; width: 100%; height: 120px; transform: skewY(7deg); mix-blend-mode: screen; opacity: 0.35; }
+        #gloss-3 { bottom: 0; left: 0; width: 100%; height: 170px; mix-blend-mode: overlay; opacity: 0.25; transform: skewX(-5deg); }
+
     </style>
 
-    <!-- Brutalist Text Elements -->
-    <div class="brutal-text" style="top: 8%; left: 5%; transform: rotate(-5deg);">DECONSTRUCTION PROTOCOL_</div>
-    <div class="brutal-text bg-invert" style="top: 28%; right: 8%; font-size: clamp(1.5em, 5vw, 4em); transform: rotate(3deg); white-space: normal; width: 30vw;">SMASH THE WALLS<br>ERASE THE CANON</div>
-    <div class="brutal-text bordered" style="bottom: 18%; left: 12%; font-size: clamp(1.8em, 7vw, 5em);">RECLAIM THE VOID::</div>
+    <!-- Main Title: ANDROGYNY -->
+    <div id="title-androgyny" class="collage-element collage-text large">ANDROGYNY</div>
 
-    <div class="brutal-text" style="top: 5%; right: 35%; font-size: clamp(0.7em, 2.5vw, 1.8em); letter-spacing: 0.2em; opacity: 0.7; transform: rotate(10deg);">::INITIATE IMPLOSION</div>
-    <div class="brutal-text" style="top: 50%; left: 40%; font-size: clamp(0.6em, 2vw, 1.2em); opacity: 0.6; transform: rotate(-15deg); border-bottom: 1px solid #39FF14; padding-bottom: 5px;">DIGITAL DYNAMITE</div>
+    <!-- Sub Title / Statement: RESISTANCE -->
+    <div id="title-resistance" class="collage-element collage-text large">RESISTANCE</div>
+    
+    <!-- Brutalist Geometric Blocks -->
+    <div id="block-1" class="collage-element brutal-block"></div>
+    <div id="block-2" class="collage-element brutal-block black"></div>
+    <div id="block-3" class="collage-element brutal-block"></div>
+    <div id="block-4" class="collage-element brutal-block black"></div>
+    <div id="block-5" class="collage-element brutal-block"></div>
+    <div id="block-6" class="collage-element brutal-block black"></div>
 
-    <!-- Grime/Texture/Splatter Elements -->
-    <div class="graphic-blob" style="width: 220px; height: 200px; top: 15%; left: 35%; --r: 15deg; --x: 20%; --y: 80%;"></div>
-    <div class="graphic-blob" style="width: 150px; height: 130px; bottom: 8%; right: 15%; --r: -25deg; --x: 70%; --y: 20%; opacity: 0.6;"></div>
+    <!-- Text statements embodying resistance and androgyny -->
+    <div id="text-fluid" class="collage-element collage-text small">FLUID FORCE</div>
+    <div id="text-power" class="collage-element collage-text small">POWER PLAY</div>
+    <div id="text-no-gender" class="collage-element collage-text small">NO GENDER</div>
+    <div id="text-break-mold" class="collage-element collage-text small">BREAK THE MOLD</div>
 
-    <div class="splatter-effect" style="top: 10%; right: 10%; --r: 20deg; --size: 120px; --cx: 60%; --cy: 30%;"></div>
-    <div class="splatter-effect" style="bottom: 25%; left: 30%; --r: -40deg; --size: 200px; --cx: 20%; --cy: 80%; background: radial-gradient(circle at var(--cx, 20%) var(--cy, 80%), rgba(57, 255, 20, 0.9), rgba(0,0,0,0.7) 60%, transparent 90%);"></div>
-    <div class="splatter-effect" style="top: 55%; left: 5%; --r: 60deg; --size: 90px; opacity: 0.8; background: radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.6), transparent 70%); filter: blur(3px) brightness(2); clip-path: polygon(10% 20%, 80% 10%, 90% 90%, 20% 80%);"></div>
+    <!-- Digital Paint Splatters / Grime effects -->
+    <div id="splatter-1" class="collage-element splatter"></div>
+    <div id="splatter-2" class="collage-element splatter dark"></div>
+    <div id="splatter-3" class="collage-element splatter"></div>
+    <div id="splatter-4" class="collage-element splatter dark"></div>
+    <div id="splatter-5" class="collage-element splatter"></div>
 
-    <!-- Structural / Abstract elements -->
-    <div class="structural-plate" style="width: 350px; height: 180px; top: 60%; left: -20px; transform: skewY(-10deg) translateX(-20px); clip-path: polygon(0 0, 100% 20%, 90% 100%, 10% 80%);"></div>
-    <div class="structural-plate" style="width: 100px; height: 250px; top: 10%; right: 20%; transform: rotate(80deg); opacity: 0.4;"></div>
+    <!-- Aggressive Digital Strokes -->
+    <div id="stroke-1" class="collage-element digital-stroke"></div>
+    <div id="stroke-2" class="collage-element digital-stroke dark"></div>
+    <div id="stroke-3" class="collage-element digital-stroke"></div>
+    <div id="stroke-4" class="collage-element digital-stroke dark"></div>
+    <div id="stroke-5" class="collage-element digital-stroke"></div>
 
-    <div class="glow-border-box" style="width: 150px; height: 150px; top: 20%; right: 20%; transform: rotate(45deg);"></div>
-    <div class="glow-border-box" style="width: 80px; height: 200px; bottom: 5%; left: 60%; transform: rotate(-30deg);"></div>
-
-
-    <!-- Footer / Signature -->
-    <div class="brutal-text footer" style="bottom: 5%; right: 5%; width: 25vw;">WHITE CUBE_DEMO LAB_01<br>INITIATE: OBLITERATION</div>
-
-    <div style="
-        position: absolute;
-        bottom: 2%;
-        left: 2%;
-        font-family: monospace;
-        font-size: clamp(0.5em, 1.5vw, 1em);
-        color: rgba(57, 255, 20, 0.6);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        z-index: 11;
-        opacity: 0.7;
-    ">_ANTI-ARCHITECTURE MANIFESTO_</div>
-
+    <!-- High-gloss Overlays for a 'Grime' Sheen -->
+    <div id="gloss-1" class="collage-element gloss"></div>
+    <div id="gloss-2" class="collage-element gloss"></div>
+    <div id="gloss-3" class="collage-element gloss"></div>
+    
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
