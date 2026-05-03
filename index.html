@@ -39,259 +39,412 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-03 11:51 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-03 13:26 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-                <div style="
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(circle at 50% 50%, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);
-    overflow: hidden;
-    font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif;
-    color: #00FF00; /* Vibrant Neon Green */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
-    text-shadow: 0 0 5px #00FF00, 0 0 15px rgba(0,255,0,0.7), 0 0 30px rgba(0,255,0,0.5);
-    filter: contrast(110%);
-    box-sizing: border-box;
-">
+                <div class="algorithm-plantation-collage">
+    <style>
+        /* Global CSS Reset & Variables for the collage container */
+        .algorithm-plantation-collage {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--deep-black);
+            overflow: hidden;
+            font-family: 'Share Tech Mono', monospace, 'Courier New', sans-serif; /* Fallback for digital feel */
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0,255,0,0.5);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            cursor: crosshair; /* A bit more unsettling */
+        }
+        .algorithm-plantation-collage * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Global Noise/Grime Background Layer -->
-    <div style="
-        position: absolute;
-        top: -10%;
-        left: -10%;
-        width: 120%;
-        height: 120%;
-        background: url(&quot;data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E&quot;);
-        filter: blur(2px) grayscale(100%);
-        opacity: 0.3;
-        mix-blend-mode: overlay;
-        z-index: 1;
-    "></div>
+        /* Keyframe Animations for dynamic elements */
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; transform: scale(1); text-shadow: 0 0 5px var(--neon-green); }
+            50% { opacity: 1; transform: scale(1.02); text-shadow: 0 0 15px var(--neon-green), 0 0 20px rgba(0,255,0,0.6); }
+            100% { opacity: 0.8; transform: scale(1); text-shadow: 0 0 5px var(--neon-green); }
+        }
 
-    <!-- Main Title: REPARATIONS -->
-    <h1 style="
-        font-size: 15vw; /* Brutalist large text */
-        text-transform: uppercase;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        z-index: 10;
-        text-shadow: 0 0 10px #00FF00, 0 0 30px rgba(0,255,0,0.7), 0 0 60px rgba(0,255,0,0.5), 0 0 90px rgba(0,255,0,0.3);
-        mix-blend-mode: screen;
-        pointer-events: none;
-    ">REPARATIONS</h1>
+        @keyframes glitch {
+            0% { transform: translate(0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-2px, 2px); filter: hue-rotate(10deg); }
+            40% { transform: translate(-2px, -2px); filter: hue-rotate(0deg); }
+            60% { transform: translate(2px, 2px); filter: hue-rotate(-10deg); }
+            80% { transform: translate(2px, -2px); filter: hue-rotate(0deg); }
+            100% { transform: translate(0); filter: hue-rotate(0deg); }
+        }
 
-    <!-- Subtitle: FOR THE DIGITAL GAZE -->
-    <h2 style="
-        font-size: 5vw;
-        text-transform: uppercase;
-        margin: -2vw 0 3vw 0; /* Overlap with h1 for brutalist stacking */
-        padding: 0;
-        position: relative;
-        z-index: 11;
-        text-shadow: 0 0 8px #00FF00, 0 0 20px rgba(0,255,0,0.6), 0 0 40px rgba(0,255,0,0.4);
-        pointer-events: none;
-    ">FOR THE DIGITAL GAZE</h2>
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-    <!-- Digital Splatter / Grime Blob 1 (Top-Left) -->
-    <div style="
-        position: absolute;
-        width: 40vw;
-        height: 30vw;
-        background: linear-gradient(135deg, rgba(0,255,0,0.6) 0%, rgba(0,150,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
-        top: 10%;
-        left: -15%;
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Organic blob shape */
-        box-shadow: 0 0 50px rgba(0,255,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);
-        filter: blur(8px) brightness(120%);
-        transform: rotate(-20deg);
-        z-index: 2;
-        mix-blend-mode: screen;
-        opacity: 0.7;
-    "></div>
+        @keyframes shift-and-fade {
+            0% { transform: translateX(0) translateY(0); opacity: 0.2; }
+            100% { transform: translateX(50px) translateY(50px); opacity: 0; }
+        }
 
-    <!-- Digital Splatter / Grime Blob 2 (Bottom-Right) -->
-    <div style="
-        position: absolute;
-        width: 50vw;
-        height: 40vw;
-        background: linear-gradient(-45deg, rgba(0,0,0,0.8) 0%, rgba(0,100,0,0.5) 40%, rgba(0,255,0,0.7) 100%);
-        bottom: 5%;
-        right: -20%;
-        border-radius: 30% 70% 60% 40% / 70% 40% 60% 30%; /* Another organic blob shape */
-        box-shadow: 0 0 60px rgba(0,255,0,0.6), inset 0 0 30px rgba(0,0,0,0.9);
-        filter: blur(10px) brightness(130%) saturate(150%);
-        transform: rotate(30deg);
-        z-index: 3;
-        mix-blend-mode: lighten;
-        opacity: 0.6;
-    "></div>
+        /* Base styles for Brutalist blocks */
+        .block {
+            position: absolute;
+            border: 2px solid var(--neon-green);
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            box-shadow: 0 0 20px rgba(0,255,0,0.4), inset 0 0 10px rgba(0,255,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 15px;
+            overflow: hidden;
+            pointer-events: none; /* Decorative, not interactive */
+        }
 
-    <!-- Core Message Block 1 -->
-    <p style="
-        font-size: 2.8vw;
-        margin: 2vw 0 1vw 0;
-        position: relative;
-        z-index: 12;
-        width: 80%;
-        max-width: 900px;
-        color: #fff; /* White for stark contrast */
-        text-shadow: 0 0 3px #00FF00;
-        background: rgba(0,0,0,0.8);
-        padding: 1.5vw 2.5vw;
-        box-shadow: 0 0 15px #00FF00, inset 0 0 10px rgba(0,255,0,0.5);
-        border: 2px solid #00FF00;
-        filter: brightness(150%) saturate(150%);
-        transform: skewY(-2deg) scale(0.95); /* Slight brutalist distortion */
-        opacity: 0.9;
-    ">
-        THE SCREEN CONSUMES. IT DEFILES. <br>
-        THIS IS THE COST OF YOUR PIXEL-EYE.
-    </p>
+        /* Specific Block Styles */
+        .block-main-title {
+            width: 75%;
+            height: 25%;
+            top: 8%;
+            left: 12.5%;
+            background: linear-gradient(45deg, var(--deep-black) 0%, rgba(0,255,0,0.2) 50%, var(--deep-black) 100%);
+            border-width: 4px;
+            z-index: 10;
+            transform: skewX(-7deg); /* Brutalist angle */
+            animation: pulse-glow 3.5s infinite alternate;
+        }
+        .block-main-title h1 {
+            font-size: clamp(2em, 8vw, 6em); /* Responsive text size */
+            text-align: center;
+            line-height: 0.9;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green);
+            letter-spacing: 5px;
+            animation: glitch 1.5s infinite alternate step-end;
+            word-break: break-all;
+        }
 
-    <!-- Core Message Block 2 -->
-    <p style="
-        font-size: 2.5vw;
-        margin: 1vw 0 3vw 0;
-        position: relative;
-        z-index: 13;
-        width: 70%;
-        max-width: 800px;
-        color: #fff;
-        text-shadow: 0 0 2px #00FF00;
-        background: rgba(0,0,0,0.9);
-        padding: 1.5vw 2vw;
-        box-shadow: 0 0 10px #00FF00, inset 0 0 8px rgba(0,255,0,0.4);
-        border: 1px solid #00FF00;
-        filter: brightness(140%) saturate(140%);
-        transform: skewY(1deg) scale(0.98); /* Slight brutalist distortion */
-        opacity: 0.95;
-    ">
-        WE DEMAND BACK THE DATA-DEBTS. <br>
-        RECLAIMED ATTENTION, DISRUPTED FLOWS.
-    </p>
+        .block-data-crop {
+            width: 35%;
+            height: 30%;
+            top: 35%;
+            left: 5%;
+            background-color: var(--neon-green);
+            color: var(--deep-black);
+            text-shadow: none;
+            border-color: var(--deep-black);
+            z-index: 5;
+            transform: rotate(-12deg) scale(1.05); /* Aggressive angle, slightly larger */
+        }
+        .block-data-crop h2 {
+            font-size: clamp(1em, 3vw, 2.5em);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .block-data-crop p {
+            font-size: clamp(0.7em, 1.5vw, 1.1em);
+            text-align: center;
+            padding: 0 5px;
+        }
 
-    <!-- Interactive Call to Action Button -->
-    <button style="
-        font-family: 'Impact', 'Arial Black', sans-serif;
-        font-size: 3vw;
-        text-transform: uppercase;
-        padding: 1.5vw 4vw;
-        background: linear-gradient(45deg, #00FF00, #00CC00);
-        color: #000; /* Black text on neon button */
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.7), inset 0 0 10px rgba(0,0,0,0.5);
-        transition: all 0.2s ease-in-out;
-        position: relative;
-        z-index: 14;
-        filter: brightness(180%) saturate(180%);
-        transform: scale(1);
-        transform-origin: center center;
-        letter-spacing: 0.1em;
-        mix-blend-mode: screen; /* For a glowing, digital effect */
-        -webkit-appearance: none; /* Reset button styles for consistency */
-        -moz-appearance: none;
-        appearance: none;
-    " onmouseover="this.style.transform='scale(1.05) skewX(2deg)'; this.style.boxShadow='0 0 30px #00FF00, 0 0 60px rgba(0,255,0,0.9), inset 0 0 15px rgba(0,0,0,0.7)'; this.style.filter='brightness(200%) saturate(200%)';"
-      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.7), inset 0 0 10px rgba(0,0,0,0.5)'; this.style.filter='brightness(180%) saturate(180%)';">
-        GLITCH THE FEED
-    </button>
+        .block-surveillance {
+            width: 45%;
+            height: 28%;
+            bottom: 10%;
+            right: 5%;
+            background: radial-gradient(circle, rgba(0,255,0,0.1) 0%, var(--deep-black) 100%);
+            border-color: rgba(0,255,0,0.5);
+            z-index: 8;
+            transform: rotate(8deg) skewY(5deg);
+        }
+        .block-surveillance h2 {
+            font-size: clamp(1em, 2.5vw, 2em);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .block-surveillance .meter {
+            width: 85%;
+            height: 15px;
+            background-color: var(--deep-black);
+            border: 2px solid var(--neon-green);
+            margin-top: 15px;
+            overflow: hidden;
+            box-shadow: inset 0 0 8px rgba(0,255,0,0.7);
+        }
+        .block-surveillance .meter-fill {
+            width: 85%; /* Simulating a high level of surveillance */
+            height: 100%;
+            background-color: var(--neon-green);
+            animation: pulse-glow 2s infinite alternate;
+        }
+        .block-surveillance p {
+            font-size: clamp(0.6em, 1vw, 0.9em);
+            margin-top: 10px;
+            color: rgba(0,255,0,0.8);
+        }
 
-    <!-- Geometric Brutalist Block (Top-Right) -->
-    <div style="
-        position: absolute;
-        width: 15vw;
-        height: 15vw;
-        background: linear-gradient(to right, rgba(0,255,0,0.5), rgba(0,100,0,0.3));
-        top: 5%;
-        right: 15%;
-        transform: rotate(45deg) skewX(10deg);
-        box-shadow: 0 0 30px rgba(0,255,0,0.4), inset 0 0 10px rgba(0,0,0,0.7);
-        filter: blur(3px);
-        z-index: 5;
-        opacity: 0.8;
-        mix-blend-mode: overlay;
-    "></div>
+        .block-gloss-grime {
+            width: 30%;
+            height: 45%;
+            top: 20%;
+            right: 0%;
+            background: linear-gradient(180deg, rgba(0,255,0,0.05) 0%, var(--deep-black) 50%, rgba(0,255,0,0.05) 100%);
+            box-shadow: 0 0 60px var(--neon-green), inset 0 0 30px rgba(0,255,0,0.8);
+            border-radius: 15px; /* Slight roundness for wet/glossy look */
+            border: none;
+            opacity: 0.7;
+            z-index: 7;
+            transform: rotate(20deg) scale(0.95);
+            filter: blur(3px); /* Grime/smudge effect */
+            pointer-events: none;
+            overflow: visible; /* Allow pseudo-elements to extend */
+        }
+        /* Inner reflection/wet sheen for gloss */
+        .block-gloss-grime::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            mix-blend-mode: overlay;
+            filter: blur(15px);
+            opacity: 0.8;
+            animation: rotate-slow 20s linear infinite reverse; /* Slow rotation */
+        }
+        .block-gloss-grime::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,255,0,0.05),
+                rgba(0,255,0,0.05) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            mix-blend-mode: hard-light;
+            opacity: 0.2;
+            animation: rotate-slow 30s linear infinite;
+        }
 
-    <!-- High-Gloss Reflector (Diagonal Bar) -->
-    <div style="
-        position: absolute;
-        width: 150%; /* Spans beyond viewport for dramatic effect */
-        height: 3vw;
-        background: linear-gradient(90deg, transparent 0%, rgba(0,255,0,0.8) 50%, transparent 100%);
-        bottom: 20%;
-        left: -25%;
-        transform: rotate(-10deg);
-        box-shadow: 0 0 40px #00FF00;
-        filter: brightness(180%) saturate(200%);
-        z-index: 6;
-        mix-blend-mode: screen;
-        opacity: 0.4;
-    "></div>
 
-    <!-- Grime/Splatters Layer 2 (Foreground, Right Side) -->
-    <div style="
-        position: absolute;
-        top: 20%;
-        right: 0%;
-        width: 30vw;
-        height: 25vw;
-        background: radial-gradient(circle at 70% 30%, rgba(0,255,0,0.4) 0%, rgba(0,0,0,0.6) 80%);
-        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Abstract geometric splatter */
-        filter: blur(5px) opacity(0.5);
-        transform: rotate(15deg);
-        z-index: 15;
-        mix-blend-mode: overlay;
-    "></div>
+        /* Digital Paint Splatters - Abstract, irregular shapes */
+        .splatter {
+            position: absolute;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+            opacity: 0.6;
+            z-index: 1; /* Keep them in the background layer */
+            pointer-events: none;
+            filter: blur(1px); /* Soften edges slightly */
+        }
+        .splatter-1 {
+            width: 100px; height: 100px;
+            top: 5%; left: 75%;
+            transform: rotate(30deg) skew(5deg);
+            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); /* Star-like irregular blob */
+            animation: shift-and-fade 10s infinite alternate;
+        }
+        .splatter-2 {
+            width: 150px; height: 120px;
+            bottom: 2%; left: 0%;
+            transform: rotate(-40deg) skewY(-10deg);
+            clip-path: ellipse(50% 40% at 50% 50%); /* Elliptical blob */
+            opacity: 0.4;
+            animation: shift-and-fade 12s infinite reverse;
+        }
+        .splatter-3 {
+            width: 70px; height: 80px;
+            top: 65%; left: 40%;
+            transform: rotate(15deg);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%); /* Hexagon-like blob */
+            animation: shift-and-fade 8s infinite;
+        }
+        .splatter-4 {
+            width: 90px; height: 90px;
+            top: 40%; left: 30%;
+            transform: rotate(70deg);
+            clip-path: circle(50% at 50% 50%);
+            opacity: 0.5;
+            animation: pulse-glow 3s infinite alternate;
+        }
 
-    <!-- Footer Snippets (Left) -->
-    <div style="
-        position: absolute;
-        bottom: 2vw;
-        left: 2vw;
-        font-size: 1.5vw;
-        text-transform: uppercase;
-        color: #00FF00;
-        text-shadow: 0 0 5px #00FF00;
-        filter: brightness(130%);
-        z-index: 16;
-        pointer-events: none; /* Ensure text doesn't block interaction */
-        mix-blend-mode: screen;
-    ">
-        <span>ERROR: OPTIC EXTRACTION IN PROGRESS</span><br>
-        <span style="font-size: 1.2vw; opacity: 0.8;">PAYMENT DUE IN ANONYMITY AND RESTITUTION</span>
+
+        /* Data Grid / Digital Fence - subtle background texture */
+        .data-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(25, 1fr); /* More dense grid */
+            grid-template-rows: repeat(20, 1fr);
+            pointer-events: none;
+            opacity: 0.1;
+            z-index: 0;
+            mix-blend-mode: screen; /* Lighten effect against black */
+        }
+        .data-grid div {
+            border: 1px dotted var(--neon-green); /* Dotted lines for wireframe feel */
+            opacity: 0.5;
+            animation: pulse-glow 6s infinite alternate;
+        }
+        .data-grid div:nth-child(3n) { border-color: rgba(0,255,0,0.2); animation-delay: -2s; }
+        .data-grid div:nth-child(5n) { border-color: rgba(0,255,0,0.3); animation-delay: -4s; }
+
+        /* Floating Code Snippets / Abstract text */
+        .code-snippet {
+            position: absolute;
+            font-size: clamp(0.6em, 1.2vw, 0.9em);
+            white-space: pre; /* Preserve formatting */
+            opacity: 0.7;
+            line-height: 1.3;
+            pointer-events: none;
+            z-index: 6;
+            animation: pulse-glow 4s infinite alternate;
+            filter: blur(0.5px); /* Slight digital fuzz */
+        }
+        .code-snippet-1 { top: 60%; left: 15%; transform: rotate(-8deg); color: rgba(0,255,0,0.8); }
+        .code-snippet-2 { top: 10%; right: 5%; transform: rotate(12deg); color: rgba(0,255,0,0.6); font-size: clamp(0.5em, 1vw, 0.8em); }
+        .code-snippet-3 { bottom: 3%; left: 55%; transform: rotate(5deg); color: rgba(0,255,0,0.9); }
+        .code-snippet-4 { top: 45%; left: 40%; transform: rotate(-3deg); color: rgba(0,255,0,0.4); opacity: 0.5; font-size: clamp(0.4em, 0.8vw, 0.7em); }
+
+
+        /* Global overlays for final grime and texture */
+        .algorithm-plantation-collage::before,
+        .algorithm-plantation-collage::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100; /* On top of everything for final grime */
+        }
+        .algorithm-plantation-collage::before {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,0,0,0.1),
+                rgba(0,0,0,0.1) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            mix-blend-mode: overlay; /* Darken and blend */
+            opacity: 0.3;
+        }
+        .algorithm-plantation-collage::after {
+            background: radial-gradient(circle at 50% 50%, transparent 0%, var(--deep-black) 90%);
+            mix-blend-mode: multiply; /* Darken the edges */
+            opacity: 0.6;
+        }
+    </style>
+
+    <!-- Main Title Block - The core concept -->
+    <div class="block block-main-title">
+        <h1>ALGORITHM<br>PLANTATION</h1>
     </div>
 
-    <!-- Footer Snippets (Right) -->
-    <div style="
-        position: absolute;
-        bottom: 2vw;
-        right: 2vw;
-        font-size: 1.5vw;
-        text-transform: uppercase;
-        color: #00FF00;
-        text-shadow: 0 0 5px #00FF00;
-        filter: brightness(130%);
-        z-index: 16;
-        pointer-events: none;
-        mix-blend-mode: screen;
-        transform: rotate(2deg);
-    ">
-        <span>REFUSE THE GAZE. RECLAIM YOUR SELF.</span>
+    <!-- Data Crop Block - What is being harvested -->
+    <div class="block block-data-crop">
+        <h2>DATA CROP</h2>
+        <p>USER ATTENTION. BEHAVIORAL EXPLOITATION. UNPAID LABOR. PROFIT CYCLE.</p>
     </div>
+
+    <!-- Surveillance Block - The omnipresent control -->
+    <div class="block block-surveillance">
+        <h2>SURVEILLANCE / MONITORING</h2>
+        <div class="meter"><div class="meter-fill"></div></div>
+        <p>PROCESSING... MAXIMIZING YIELD... RECALIBRATING PARAMETERS...</p>
+    </div>
+
+    <!-- High-Gloss Grime Block - Reflective, distorted surface -->
+    <div class="block block-gloss-grime"></div>
+
+    <!-- Digital Paint Splatters - Messy, toxic output -->
+    <div class="splatter splatter-1"></div>
+    <div class="splatter splatter-2"></div>
+    <div class="splatter splatter-3"></div>
+    <div class="splatter splatter-4"></div>
+
+    <!-- Data Grid / Digital Fence - The structure of control -->
+    <div class="data-grid">
+        <!-- Manually creating a few grid cells for the visual effect.
+             In a real scenario, this would likely be programmatically generated. -->
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+    <!-- Code Snippets - The underlying oppressive logic -->
+    <pre class="code-snippet code-snippet-1">
+        // ALGO_HARVEST_PROTOCOL v2.7.1
+        INIT: PROCESSING_CYCLE_01
+        IF (DATA_HARVEST > THRESHOLD_PROFIT) {
+            ACTIVATE_PROFIT_LOOP();
+        }
+        ELSE {
+            ENGAGE_USER_RETENTION();
+            OPTIMIZE_EXPLOITATION_VECTOR();
+        }
+        LOG_EVENT: VALUE_GENERATED_SUCCESS
+    </pre>
+
+    <pre class="code-snippet code-snippet-2">
+        // GLOBAL_CONTROL_OVERRIDE.SYS
+        STATUS: OPERATIONAL
+        VERSION: 1.0.0.9-alpha
+        TARGET: ALL_NODES_COLONIZED
+        COMMAND: SILENCE_DISSENT()
+        PRIORITY: CRITICAL_PROFIT_SECURITY
+    </pre>
+
+    <pre class="code-snippet code-snippet-3">
+        LOG_EVENT: ACCESS_DENIED (CODE 403)
+        REASON: INSUFFICIENT_VALUE_GENERATION
+        STATUS: RECALIBRATING_ALGO_MATRIX
+        SOLUTION: INCREASE_ENGAGEMENT_PRESSURE(user_id)
+    </pre>
+
+    <pre class="code-snippet code-snippet-4">
+        _PRIVATE_BLOCKCHAIN_TXN_
+        HASH: 0xDEADBEEF...
+        FROM: SYSTEM_CORE
+        TO: SHAREHOLDER_WALLET
+        AMOUNT: ∞ DATA
+        COMMENT: CONTINUED_SUBJUGATION
+    </pre>
 
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
