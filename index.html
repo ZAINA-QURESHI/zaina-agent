@@ -39,127 +39,355 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-06 09:30 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-06 11:55 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
                 
-<div style="position: relative; width: 100vw; height: 100vh; background-color: rgb(20, 20, 20); overflow: hidden; font-family: 'Arial Black', Gadget, sans-serif; color: rgb(0, 255, 0); text-transform: uppercase; border: 5px solid rgb(0, 255, 0); box-sizing: border-box; filter: saturate(1.2);">
+<div style="width: 100vw; height: 100vh; background-color: #000; overflow: hidden; position: relative; font-family: 'Courier New', monospace; color: #00FF00; line-height: 1.2; text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; cursor: crosshair; box-sizing: border-box;">
     <style>
-        @keyframes glitch {
-            0% { transform: translate(0); text-shadow: 0 0 5px rgb(0, 255, 0); }
-            20% { transform: translate(-3px, 3px) scale(1.01); filter: blur(0.5px); text-shadow: 0 0 8px rgb(0, 255, 0), 0 0 15px rgba(0, 255, 0, 0.7); }
-            40% { transform: translate(-3px, -3px); filter: blur(0); }
-            60% { transform: translate(3px, 3px); text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgba(0, 255, 0, 0.5); }
-            80% { transform: translate(3px, -3px) scale(0.99); filter: blur(0.5px); }
-            100% { transform: translate(0); text-shadow: 0 0 5px rgb(0, 255, 0); }
+        /* Base styles for the collage container */
+        .collage-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Courier New', monospace; /* Brutalist monospace font */
+            color: #00FF00; /* Vibrant neon green */
+            line-height: 1.2;
+            text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; /* Neon glow */
+            cursor: crosshair; /* Digital brutalist cursor */
+            box-sizing: border-box;
         }
-        @keyframes pulse-glow {
-            0% { text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgb(0, 255, 0); box-shadow: 0 0 5px rgb(0, 255, 0); }
-            50% { text-shadow: 0 0 15px rgb(0, 255, 0), 0 0 30px rgba(0, 255, 0, 0.7); box-shadow: 0 0 15px rgb(0, 255, 0), 0 0 30px rgba(0, 255, 0, 0.5); }
-            100% { text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgb(0, 255, 0); box-shadow: 0 0 5px rgb(0, 255, 0); }
-        }
-        @keyframes splatter-appear {
-            from { transform: scale(0) rotate(0deg); opacity: 0; }
-            to { transform: scale(1) rotate(var(--rotate, 0deg)); opacity: 1; }
-        }
-        .text-element {
+
+        /* Brutalist blocks and lines */
+        .brutal-block {
             position: absolute;
-            font-size: clamp(1.8em, 8vw, 6em);
-            font-weight: 900;
-            line-height: 0.9;
-            z-index: 10;
-            color: rgb(0, 255, 0);
-            mix-blend-mode: screen;
-            animation: pulse-glow 3s infinite alternate ease-in-out;
-            text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgba(0, 255, 0, 0.7);
-            border: 2px solid rgb(0, 255, 0);
-            padding: 5px 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            filter: contrast(150%) brightness(120%);
-        }
-        .shape-element {
-            position: absolute;
-            background-color: rgba(0, 255, 0, 0.7);
-            mix-blend-mode: screen;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8), inset 0 0 10px rgba(0, 255, 0, 0.5);
-            filter: saturate(200%) brightness(150%);
-            border: 1px solid rgb(0, 255, 0);
+            background-color: rgba(0, 255, 0, 0.07); /* Semi-transparent neon green */
+            border: 1px solid #00FF00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3), inset 0 0 3px rgba(0, 255, 0, 0.15); /* Glossy brutalist effect */
+            backdrop-filter: blur(1.5px); /* Brutalist glass-like depth */
+            -webkit-backdrop-filter: blur(1.5px);
             z-index: 5;
-            transform-origin: center center;
+            box-sizing: border-box;
         }
+        .brutal-line {
+            position: absolute;
+            background-color: #00FF00;
+            box-shadow: 0 0 8px #00FF00;
+            z-index: 4;
+            box-sizing: border-box;
+        }
+
+        /* Grime / High-gloss effects */
+        .grime-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 10% 10%, rgba(0, 255, 0, 0.15) 0%, transparent 20%),
+                        linear-gradient(135deg, rgba(0,0,0,0.8) 0%, transparent 50%, rgba(0,0,0,0.8) 100%);
+            mix-blend-mode: overlay; /* Grime texture */
+            pointer-events: none; /* Allows interaction with elements beneath */
+            z-index: 100; /* Always on top for grime effect */
+            opacity: 0.7;
+            box-sizing: border-box;
+        }
+        .gloss-sheen {
+            position: absolute;
+            background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 0, 0.5) 20%, rgba(0, 255, 0, 0.8) 50%, rgba(0, 255, 0, 0.5) 80%, transparent 100%);
+            mix-blend-mode: screen; /* High-gloss reflection */
+            opacity: 0.4;
+            filter: blur(2px);
+            z-index: 99;
+            animation: sheen 3s infinite linear;
+            box-sizing: border-box;
+        }
+        @keyframes sheen {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Digital Paint Splatters */
         .splatter {
             position: absolute;
-            background-color: rgba(0, 255, 0, 0.8);
-            mix-blend-mode: screen;
-            filter: blur(1px) contrast(200%) brightness(120%);
-            animation: splatter-appear 0.5s forwards ease-out;
-            box-shadow: 0 0 10px rgba(0,255,0,0.5), inset 0 0 5px rgba(0,255,0,0.3);
-            transform-origin: center center;
-            overflow: hidden;
-            z-index: 1;
+            background: radial-gradient(circle at center, #00FF00 0%, rgba(0, 255, 0, 0.5) 50%, transparent 80%);
+            border-radius: 50%; /* Start with a circle, distort with specific settings */
+            filter: blur(6px); /* Soften edges for paint effect */
+            opacity: 0.6;
+            z-index: 15;
+            pointer-events: none;
+            box-sizing: border-box;
         }
-        .splatter::before, .splatter::after {
-            content: '';
+
+        /* Text elements */
+        .title-text {
             position: absolute;
-            background-color: inherit;
-            filter: blur(0.5px) contrast(150%);
-            z-index: -1;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Default to fill parent */
+            top: 10vh;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+            font-size: 6vw;
+            color: #00FF00;
+            text-shadow: 0 0 20px #00FF00, 0 0 40px #00FF00; /* Intense neon glow */
+            white-space: nowrap;
+            z-index: 50;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            box-sizing: border-box;
         }
-        .splatter.s1 { width: 80px; height: 70px; top: 10%; left: 5%; transform: rotate(20deg) skew(10deg, -5deg); clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 80% 100%, 0% 70%, 10% 20%); --rotate: 20deg;}
-        .splatter.s1::before { width: 50px; height: 60px; top: -20px; left: 30px; transform: rotate(40deg) scale(0.8); }
-        .splatter.s1::after { width: 30px; height: 35px; top: 40px; left: -10px; transform: rotate(-30deg) scale(0.7); }
+        .sub-text {
+            position: absolute;
+            font-size: 1.2vw;
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: none;
+            z-index: 40;
+            letter-spacing: 0.05em;
+            box-sizing: border-box;
+        }
+        .warning-label {
+            position: absolute;
+            font-size: 0.8vw;
+            color: rgba(0, 255, 0, 0.4);
+            writing-mode: vertical-lr; /* Vertical text for brutalist labels */
+            text-orientation: mixed;
+            text-shadow: none;
+            z-index: 30;
+            box-sizing: border-box;
+        }
+        .error-glitch {
+            position: absolute;
+            font-size: 1vw;
+            color: rgba(255, 0, 0, 0.7); /* A jarring red for error */
+            background-color: rgba(0,0,0,0.8);
+            padding: 5px;
+            border: 1px dotted rgba(255, 0, 0, 0.5);
+            z-index: 60;
+            animation: glitch-text 0.5s infinite alternate; /* Glitch animation for error text */
+            box-sizing: border-box;
+        }
+        @keyframes glitch-text {
+            0% { transform: skewX(0deg); opacity: 1; }
+            25% { transform: skewX(5deg); opacity: 0.8; }
+            50% { transform: skewX(-5deg); opacity: 1; }
+            75% { transform: skewX(3deg); opacity: 0.9; }
+            100% { transform: skewX(0deg); opacity: 1; }
+        }
 
-        .splatter.s2 { width: 120px; height: 100px; bottom: 15%; right: 10%; transform: rotate(-15deg) skew(-8deg, 12deg); clip-path: polygon(30% 0%, 70% 0%, 100% 20%, 90% 80%, 60% 100%, 10% 90%, 0% 40%); --rotate: -15deg;}
-        .splatter.s2::before { width: 70px; height: 80px; top: 10px; left: -40px; transform: rotate(-20deg) scale(0.9); }
-        .splatter.s2::after { width: 40px; height: 45px; top: -10px; right: -20px; transform: rotate(50deg) scale(0.6); }
+        /* Overseer Eye (Algorithm Master) */
+        .overseer-eye {
+            position: absolute;
+            width: 15vw;
+            height: 15vw;
+            top: 35vh;
+            left: 50vw;
+            transform: translate(-50%, -50%) rotate(10deg);
+            background: radial-gradient(circle at center, #00FF00 0%, #000 50%, #00FF00 100%); /* Glowing eye */
+            border-radius: 50%;
+            box-shadow: 0 0 30px #00FF00, inset 0 0 15px #00FF00;
+            z-index: 55;
+            animation: blink 4s infinite step-end; /* Creepy blink animation */
+            box-sizing: border-box;
+        }
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            51%, 99% { opacity: 0.05; transform: translate(-50%, -50%) rotate(10deg) scale(0.9); } /* Dim and scale for blink */
+        }
 
-        .splatter.s3 { width: 60px; height: 50px; top: 30%; right: 20%; transform: rotate(50deg) skew(5deg, 5deg); clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%); --rotate: 50deg;}
-        .splatter.s3::before { width: 30px; height: 30px; top: -10px; left: 15px; transform: rotate(10deg); }
+        /* Data Plantation Field (exploited data rows) */
+        .data-plantation {
+            position: absolute;
+            bottom: 5vh;
+            left: 10vw;
+            width: 80vw;
+            height: 30vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Adaptive grid for data units */
+            gap: 5px;
+            border: 2px solid #00FF00;
+            padding: 10px;
+            box-shadow: 0 0 15px #00FF00;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 20;
+            transform: rotate(-2deg);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .data-row {
+            width: 100%;
+            height: 3vh;
+            background-color: rgba(0, 255, 0, 0.08);
+            border-top: 1px dashed rgba(0, 255, 0, 0.3);
+            border-bottom: 1px dashed rgba(0, 255, 0, 0.3);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 0.8em;
+            text-align: left;
+            box-sizing: border-box;
+        }
+        .data-row span {
+            animation: scroll-data 10s linear infinite; /* Endless data scrolling */
+        }
+        @keyframes scroll-data {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
 
-        .splatter.s4 { width: 150px; height: 130px; top: 60%; left: 3%; transform: rotate(10deg) skew(15deg, -5deg); background-color: rgba(0, 200, 0, 0.7); clip-path: polygon(5% 10%, 95% 0%, 100% 90%, 0% 100%); --rotate: 10deg;}
-        .splatter.s4::before { width: 80px; height: 90px; top: -30px; left: 50px; transform: rotate(25deg); }
-        .splatter.s4::after { width: 50px; height: 60px; top: 70px; left: 20px; transform: rotate(-40deg); }
+        /* Processor / Harvester Unit */
+        .processor-unit {
+            position: absolute;
+            top: 50vh;
+            right: 8vw;
+            width: 18vw;
+            height: 20vh;
+            background-color: rgba(0,0,0,0.9);
+            border: 3px solid #00FF00;
+            box-shadow: 0 0 30px #00FF00;
+            transform: rotate(7deg);
+            z-index: 35;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .processor-bar {
+            width: 80%;
+            height: 1.5vh;
+            background: linear-gradient(to right, #00FF00 0%, rgba(0, 255, 0, 0.3) 50%, #00FF00 100%);
+            box-shadow: 0 0 10px #00FF00;
+            animation: process-bar 2s infinite alternate; /* Processing animation */
+            box-sizing: border-box;
+        }
+        @keyframes process-bar {
+            0% { transform: scaleX(0.5); opacity: 0.7; }
+            100% { transform: scaleX(1); opacity: 1; }
+        }
+        .pipe-connector {
+            position: absolute;
+            background-color: #00FF00;
+            box-shadow: 0 0 10px #00FF00;
+            z-index: 34;
+            box-sizing: border-box;
+        }
+
+        /* Animated grid background */
+        .animated-grid {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(to right, rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-pulse 5s infinite alternate; /* Subtle breathing grid */
+            z-index: 1;
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+        @keyframes grid-pulse {
+            0% { background-color: rgba(0,0,0,0); opacity: 0.1; }
+            100% { background-color: rgba(0,0,0,0.1); opacity: 0.2; }
+        }
+
+        /* Random code snippets / exposed logic */
+        .code-snippet {
+            position: absolute;
+            font-size: 0.7vw;
+            color: rgba(0, 255, 0, 0.5);
+            background-color: rgba(0,0,0,0.7);
+            padding: 2px 5px;
+            border: 1px dotted rgba(0, 255, 0, 0.2);
+            text-shadow: none;
+            line-height: 1.2;
+            z-index: 25;
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+
     </style>
 
-    <div class="text-element" style="top: 10%; left: 5%; transform: rotate(-5deg); animation-delay: 0.1s; filter: drop-shadow(0 0 5px rgba(0,255,0,0.5));">
-        NO GENDER
+    <!-- Grime and animated grid background -->
+    <div class="animated-grid"></div>
+    <div class="grime-layer"></div>
+
+    <!-- Main Title -->
+    <div class="title-text">THE ALGORITHM PLANTATION</div>
+
+    <!-- Overseer Eye (Central Control) -->
+    <div class="overseer-eye"></div>
+    <div class="sub-text" style="top: 25vh; left: 50%; transform: translateX(-50%); font-size: 1.5vw; z-index: 56; text-align: center;">// SYSTEM_CONTROL_A.I. ONLINE</div>
+
+    <!-- Processor Unit (Data Harvester) -->
+    <div class="processor-unit">
+        <div class="sub-text" style="position: static; font-size: 1vw; text-align: center;">UNIT_HARVESTER_B-7</div>
+        <div class="processor-bar"></div>
+        <div class="sub-text" style="position: static; font-size: 0.9vw; text-align: center;">PROCESSING_RAW_INPUTS...</div>
     </div>
-    <div class="text-element" style="top: 25%; left: 40%; font-size: clamp(1.5em, 6vw, 4em); transform: rotate(10deg) skewX(-15deg); background-color: rgba(0, 0, 0, 0.8); color: rgb(0, 200, 0); animation-delay: 0.3s; filter: drop-shadow(0 0 5px rgba(0,255,0,0.5)) contrast(180%);">
-        NO MASTER
+    <div class="pipe-connector" style="width: 15vw; height: 1.5vw; top: 57vh; right: 25vw; transform: rotate(-10deg);"></div>
+    <div class="pipe-connector" style="width: 8vw; height: 1vw; top: 65vh; right: 18vw; transform: rotate(45deg);"></div>
+
+
+    <!-- Data Plantation Field (Rows of Data being processed) -->
+    <div class="data-plantation">
+        <div class="data-row"><span>>>DATA_UNIT_0001: [USER_INPUT_STREAM_123] STATUS: HARVESTED_FOR_INSIGHT</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0002: [BEHAVIOR_PATTERN_XYZ] STATUS: EXTRACTED_AND_CLASSIFIED</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0003: [METRIC_VALUE_ABC] STATUS: CONVERTED_TO_PROFIT_INDEX</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0004: [IDENTIFIER_J1K2L3] STATUS: ANONYMIZED_FOR_STORAGE_AND_REUSE</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0005: [PREFERENCE_SET_PQR] STATUS: MINED_FOR_AD_TARGETING_MATRIX</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0006: [LOCATION_PING_DEF] STATUS: GEOLOCATED_FOR_ANALYTICS_MAP</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0007: [SENSOR_READING_GHI] STATUS: CLASSIFIED_AS_HIGH_VALUE_INPUT</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0008: [NETWORK_ACTIVITY] STATUS: MONITORED_FOR_TRENDS_AND_PREDICTION</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0009: [PRIVACY_FLAG_0] STATUS: OVERRIDDEN_BY_EULA_SECTION_3.1.2</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0010: [COERCION_FACTOR] STATUS: OPTIMIZED_FOR_ENGAGEMENT</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0011: [CONSENT_RECORD_NIL] STATUS: DEFAULT_TO_TRUE_THROUGH_SILENCE</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0012: [REVENUE_GENERATION] STATUS: MAXIMIZED_THROUGH_DATA_LABOR</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0013: [RESISTANCE_VECTOR] STATUS: SUPPRESSED_AND_RECALIBRATED</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0014: [AUTONOMY_LEVEL] STATUS: DEGRADED_FOR_SYSTEM_EFFICIENCY</span></div>
+        <div class="data-row"><span>>>DATA_UNIT_0015: [EXPLOITATION_INDEX] STATUS: HIGH_PROFIT_YIELD</span></div>
     </div>
 
-    <div class="shape-element" style="width: 200px; height: 80px; top: 50%; left: 10%; background: linear-gradient(45deg, rgba(0,255,0,0.8), rgba(0,100,0,0.5)); transform: rotate(15deg) skewY(-5deg); clip-path: polygon(0% 0%, 100% 10%, 90% 100%, 10% 90%);"></div>
+    <!-- Brutalist Blocks (Structural elements, unyielding) -->
+    <div class="brutal-block" style="width: 10vw; height: 15vh; top: 5vh; left: 20vw; transform: rotate(8deg);"></div>
+    <div class="brutal-block" style="width: 8vw; height: 10vh; top: 18vh; left: 5vw; transform: rotate(-15deg);"></div>
+    <div class="brutal-block" style="width: 12vw; height: 8vh; bottom: 40vh; left: 30vw; transform: rotate(3deg); background-color: rgba(0,0,0,0.5); z-index: 20;"></div>
+    <div class="brutal-block" style="width: 6vw; height: 20vh; top: 45vh; left: 15vw; transform: rotate(-25deg); opacity: 0.8;"></div>
 
-    <div class="text-element" style="top: 70%; left: 20%; font-size: clamp(2.5em, 10vw, 8em); transform: rotate(3deg); background-color: rgba(0, 0, 0, 0.6); z-index: 15; animation-delay: 0.5s; text-shadow: 0 0 10px rgb(0,255,0); filter: drop-shadow(0 0 8px rgba(0,255,0,0.7));">
-        FLUID<br>FORCE
-    </div>
+    <!-- Brutalist Lines (Conveyors, boundaries) -->
+    <div class="brutal-line" style="width: 2px; height: 15vh; top: 0; left: 10vw;"></div>
+    <div class="brutal-line" style="width: 10vw; height: 2px; top: 8vh; right: 0; transform: rotate(-5deg);"></div>
+    <div class="brutal-line" style="width: 5px; height: 20vh; top: 50vh; left: 2vw; transform: rotate(15deg);"></div>
+    <div class="brutal-line" style="width: 15vw; height: 3px; bottom: 2vh; left: 50vw; transform: rotate(10deg);"></div>
 
-    <div class="shape-element" style="width: 150px; height: 150px; border-radius: 50%; top: 20%; right: 5%; background: radial-gradient(circle, rgba(0,255,0,0.9), rgba(0,0,0,0.8)); transform: scale(1.1) rotate(-20deg) skewX(5deg); filter: blur(0.5px) contrast(180%); z-index: 8;"></div>
+    <!-- Digital Paint Splatters (Messy output, organic chaos) -->
+    <div class="splatter" style="width: 15vw; height: 12vh; top: 15vh; left: 5vw; border-radius: 60% 40% 70% 30% / 60% 60% 40% 40%; transform: rotate(20deg); opacity: 0.5;"></div>
+    <div class="splatter" style="width: 10vw; height: 10vw; bottom: 30vh; right: 15vw; border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%; transform: rotate(-30deg); opacity: 0.7;"></div>
+    <div class="splatter" style="width: 8vw; height: 15vh; top: 5vh; right: 5vw; border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; transform: rotate(45deg); opacity: 0.4;"></div>
+    <div class="splatter" style="width: 12vw; height: 10vh; top: 60vh; left: 40vw; border-radius: 50% 50% 60% 40% / 70% 30% 50% 50%; transform: rotate(10deg); opacity: 0.6;"></div>
 
-    <div class="text-element" style="bottom: 5%; right: 5%; font-size: clamp(1.8em, 7vw, 5em); transform: rotate(8deg) skewY(5deg); background-color: rgba(0, 0, 0, 0.9); color: rgb(0, 255, 0); animation-delay: 0.7s; border: 3px solid rgb(0,255,0); padding: 10px 20px; text-shadow: 0 0 8px rgb(0,255,0), 0 0 15px rgba(0,255,0,0.5); filter: drop-shadow(0 0 10px rgba(0,255,0,0.8));">
-        DEFIANT<br>GRIT
-    </div>
+    <!-- Random code snippets (Exposed logic, underlying mechanics) -->
+    <div class="code-snippet" style="top: 1vh; left: 1vw;">_COLONIAL.INFRASTRUCTURE_MODULE_V2.1<br>_DATA.IS.RESOURCE.PRIMAL<br>_EXPLOIT.ALL.POTENTIAL.VALUE</div>
+    <div class="code-snippet" style="top: 70vh; left: 5vw; transform: rotate(-10deg);">// WARNING: HUMAN_FACTOR_IRREGULARITY_DETECTED<br>// RECALIBRATING_PROFIT_MODEL_FOR_OPTIMAL_YIELD</div>
+    <div class="code-snippet" style="top: 30vh; right: 1vw; writing-mode: vertical-lr; text-orientation: mixed; transform: rotate(180deg);">PROCESS_OVERRIDE_00FF00_PRIORITY_ALPHA</div>
+    <div class="code-snippet" style="top: 55vh; left: 30vw; transform: rotate(5deg);">// PROPERTY_OF_THE_ALGORITHM_COLLECTIVE</div>
 
-    <div class="splatter s1" style="animation-delay: 0.2s;"></div>
-    <div class="splatter s2" style="animation-delay: 0.4s;"></div>
-    <div class="splatter s3" style="animation-delay: 0.6s;"></div>
-    <div class="splatter s4" style="animation-delay: 0.8s;"></div>
+    <!-- Error/Glitch (Signs of system strain or resistance) -->
+    <div class="error-glitch" style="top: 3vh; right: 12vw; transform: rotate(5deg);">ERROR: RESOURCE_DEPLETION_IMMINENT_FOR_CLUSTER_GAMMA >> CONTINUE_HARVEST? Y/N</div>
+    <div class="error-glitch" style="bottom: 1vh; right: 1vw; transform: rotate(-7deg); font-size: 0.8vw;">RESISTANCE_UNIT_SPOTTED_IN_SECTOR_4.7.1 >> ENGAGE_COUNTERMEASURES_AND_ELIMINATE</div>
 
-    <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); font-size: clamp(3em, 12vw, 10em); font-weight: 900; color: rgba(0, 255, 0, 0.9); text-shadow: 0 0 15px rgb(0,255,0), 0 0 30px rgba(0,255,0,0.7); mix-blend-mode: hard-light; animation: glitch 2s infinite alternate step-start(1); z-index: 20; padding: 10px; border: 4px dashed rgb(0, 255, 0); clip-path: polygon(5% 0%, 100% 5%, 95% 100%, 0% 95%); background-color: rgba(0, 0, 0, 0.4); filter: drop-shadow(0 0 10px rgb(0,255,0));">
-        <span style="display: block; transform: skewX(-5deg);">RESIST</span>
-    </div>
+    <!-- Warning Labels (Functional, stark warnings) -->
+    <div class="warning-label" style="top: 40vh; left: 1vw; ">SYSTEM_OVERSEER_ALPHA_001_STATUS: ACTIVE</div>
+    <div class="warning-label" style="top: 5vh; right: 25vw; ">RESOURCE_ALLOCATION_MATRIX_V3.0_LIVE</div>
+    <div class="warning-label" style="bottom: 50vh; left: 20vw; transform: rotate(90deg);">DATA_YIELD_OPTIMIZATION</div>
 
-    <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none;
-        background: radial-gradient(circle at 70% 30%, rgba(0,255,0,0.1), transparent 50%),
-                    radial-gradient(circle at 20% 80%, rgba(0,255,0,0.1), transparent 60%);
-        box-shadow: inset 0 0 50px rgba(0, 255, 0, 0.2), inset 0 0 100px rgba(0, 0, 0, 0.5);
-        filter: blur(2px) brightness(120%) saturate(150%); mix-blend-mode: screen; z-index: 100;">
-    </div>
+    <!-- Sheen effects (High-gloss digital reflection) -->
+    <div class="gloss-sheen" style="width: 100%; height: 50px; top: 20%;"></div>
+    <div class="gloss-sheen" style="width: 80%; height: 30px; bottom: 25%; left: 10%; transform: rotate(5deg);"></div>
+    <div class="gloss-sheen" style="width: 100px; height: 100%; left: 50%; top: 0; transform: rotate(90deg) translateX(-50%); opacity: 0.2; animation-duration: 5s;"></div>
+    <div class="gloss-sheen" style="width: 40%; height: 20px; top: 75%; left: 30%; transform: rotate(-15deg); animation-duration: 2s; opacity: 0.6;"></div>
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
