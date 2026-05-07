@@ -39,372 +39,390 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-07 09:40 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-07 11:54 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                
-<div id="aggressive-androgyny-collage" style="
+                <div class="white-cube-demolition-collage" style="
+    /* GLOBAL CONTAINER STYLES (BRUTALIST BASE) */
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
-    background-color: #000;
-    color: #000;
-    font-size: 16px;
-    line-height: 1.2;
-    cursor: crosshair;
-    background-image:
-        radial-gradient(circle at top left, rgba(0,255,0,0.15) 0%, transparent 70%),
-        linear-gradient(145deg, rgba(0,0,0,0.9) 0%, rgba(10,10,10,0.95) 100%),
-        url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"none\" stroke=\"%2300FF00\" stroke-width=\"0.5\" opacity=\"0.05\"><path d=\"M0 100L100 0M0 0L100 100\"/></svg>') repeat;
-    background-blend-mode: screen, normal, overlay;
-    font-family: 'Roboto Mono', monospace, sans-serif; /* Using a common monospace font */
+    background-color: #000; /* Deep Black */
+    font-family: 'Arial Black', Gadget, sans-serif; /* Brutalist font */
+    color: #00FF00; /* Vibrant Neon Green */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: crosshair; /* Adds to the digital, edgy feel */
+    pointer-events: auto; /* Ensure events work on elements inside */
 ">
     <style>
-        /* General Reset & Base Styles for elements within the collage */
-        #aggressive-androgyny-collage * {
+        /* CSS COLLAGE STYLES */
+        :root {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --dark-gray: #111;
+            --light-green-glow: rgba(0, 255, 0, 0.7);
+            --dark-green-glow: rgba(0, 255, 0, 0.3);
+        }
+
+        /* RESET FOR COLLAGE ELEMENTS */
+        .white-cube-demolition-collage * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: inherit;
-            color: inherit;
+            line-height: 1.2;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Neon Green & Black Palette */
-        :root {
-            --neon-green: #00FF00;
-            --deep-black: #000;
-            --dark-grey: #1a1a1a;
-        }
-
-        /* Utility Classes */
-        .neon-text { color: var(--neon-green); }
-        .bg-neon { background-color: var(--neon-green); }
-        .border-neon { border-color: var(--neon-green); }
-        .shadow-neon { box-shadow: 0 0 5px var(--neon-green), 0 0 15px var(--neon-green); }
-        .text-glow { text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green); }
-
-        /* Brutalist Block Style */
-        .brutal-block {
-            position: absolute;
-            background-color: rgba(10,10,10,0.95);
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 3px var(--neon-green), inset 0 0 2px var(--neon-green);
-            padding: 15px;
-            color: var(--neon-green);
-            font-weight: bold;
+        /* BASE ELEMENT STYLES */
+        .demolition-title, .strategy-block, .glossy-fragment, .splatter, .grime-patch, .info-shard {
+            position: absolute; /* Absolute positioning for collage layout */
+            z-index: 10; /* Default z-index for layering */
             text-transform: uppercase;
-            overflow: hidden;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            filter: brightness(1.1); /* Subtle gloss */
-            z-index: 10;
-        }
-        .brutal-block:hover {
-            transform: scale(1.02) rotate(-1deg);
-            background-color: rgba(0,255,0,0.1);
+            letter-spacing: 0.05em;
         }
 
-        /* Grime Texture Overlay */
-        .grime-texture::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%2300FF00" opacity="0.1"/><path d="M0 0L20 20M20 0L0 20" stroke="%23000" opacity="0.1" stroke-width="0.5"/></svg>') repeat;
-            opacity: 0.4;
-            pointer-events: none;
-            mix-blend-mode: overlay;
-        }
-
-        /* High-Gloss Effect */
-        .gloss-effect::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.2) 0%, transparent 60%);
-            mix-blend-mode: screen;
-            pointer-events: none;
-        }
-
-        /* Digital Paint Splatters */
-        .splatter {
-            position: absolute;
-            background-color: var(--neon-green);
-            border-radius: 50%;
-            opacity: 0.6;
-            filter: blur(1px) drop-shadow(0 0 5px var(--neon-green));
-            mix-blend-mode: screen;
-            animation: pulse-splatter 3s infinite alternate;
-            z-index: 5;
-            pointer-events: none;
-        }
-        @keyframes pulse-splatter {
-            0% { transform: scale(1); opacity: 0.6; }
-            100% { transform: scale(1.05); opacity: 0.8; }
-        }
-
-        /* Glitch Text Animation */
-        .glitch-text {
-            color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green);
-            animation: glitch 1s infinite steps(2, end);
-        }
-        @keyframes glitch {
-            0% { transform: translate(0, 0); text-shadow: 0 0 5px var(--neon-green); }
-            20% { transform: translate(-2px, 2px); text-shadow: 0 0 5px var(--neon-green); }
-            40% { transform: translate(-1px, -1px); text-shadow: 0 0 5px var(--neon-green), 2px 2px 0 red; }
-            60% { transform: translate(1px, 1px); text-shadow: 0 0 5px var(--neon-green), -2px -2px 0 blue; }
-            80% { transform: translate(2px, -2px); text-shadow: 0 0 5px var(--neon-green); }
-            100% { transform: translate(0, 0); text-shadow: 0 0 5px var(--neon-green); }
-        }
-
-        /* Specific Elements Layout */
-        .header-title {
-            position: absolute;
+        /* DEMOLITION TITLE (BRUTALIST, GLITCHED) */
+        .demolition-title {
             top: 5%;
             left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            font-size: 3.5em;
-            text-align: center;
-            width: 80%;
-            padding: 20px 25px;
-            background-color: rgba(0, 0, 0, 0.95);
-            border: 3px solid var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green), 0 0 25px var(--neon-green);
+            transform: translateX(-50%) skewX(-15deg);
+            font-size: 8vw;
+            line-height: 0.9;
+            font-weight: 900;
             color: var(--neon-green);
-            font-weight: bold;
-            text-transform: uppercase;
-            mix-blend-mode: screen;
-            z-index: 50;
-            line-height: 1;
+            text-shadow: 
+                0 0 15px var(--neon-green), 
+                0 0 30px var(--light-green-glow), 
+                6px 6px 0 var(--dark-gray); /* Hard shadow for depth */
+            white-space: nowrap;
+            letter-spacing: -0.05em;
+            z-index: 20;
+        }
+        .demolition-title span {
+            display: block;
+            margin-top: -1.5vw; /* Overlap lines for aggressive look */
+        }
+        .demolition-title span:first-child {
+            color: #0F0; /* Slightly different green hue */
+            text-shadow: 
+                0 0 8px #0F0, 
+                0 0 20px rgba(0, 255, 0, 0.8), 
+                3px 3px 0 var(--dark-gray);
         }
 
-        .manifesto-text {
-            top: 25%;
+        /* STRATEGY BLOCKS (BRUTALIST, GLOWING) */
+        .strategy-block {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--neon-green);
+            padding: 1.8vw 2.5vw;
+            font-size: 1.8vw;
+            color: var(--neon-green);
+            box-shadow: 
+                0 0 20px var(--light-green-glow), 
+                inset 0 0 8px var(--dark-green-glow);
+            filter: drop-shadow(0 0 8px var(--neon-green));
+            z-index: 15;
+            overflow: hidden;
+            max-width: 40vw;
+            backdrop-filter: blur(2px); /* Subtle background blur for depth */
+        }
+        .strategy-block p {
+            margin-bottom: 0.8em;
+            letter-spacing: 0.08em;
+        }
+        .strategy-block p:last-child { margin-bottom: 0; }
+
+        #block-1 {
+            top: 30%;
             left: 8%;
             width: 35%;
-            font-size: 1.1em;
-            line-height: 1.4;
-            transform: rotate(2deg);
-            z-index: 20;
-            filter: drop-shadow(0 0 3px rgba(0,255,0,0.5));
+            transform: rotate(-7deg);
+            animation: pulse-border 3s infinite alternate;
         }
-
-        .quote-block {
-            bottom: 15%;
+        #block-2 {
+            bottom: 12%;
             right: 10%;
-            width: 30%;
-            font-size: 0.9em;
-            line-height: 1.5;
-            transform: rotate(-5deg);
-            background-color: rgba(0,255,0,0.15);
-            border-left: 5px solid var(--neon-green);
-            padding-left: 20px;
-            z-index: 25;
-            filter: drop-shadow(0 0 3px rgba(0,255,0,0.5));
+            width: 38%;
+            transform: rotate(5deg) skewY(5deg);
+            animation: glitch-block 0.5s infinite steps(1);
         }
 
-        .image-placeholder {
-            position: absolute;
-            top: 30%;
-            left: 48%;
-            width: 280px;
-            height: 350px;
-            background-color: rgba(0, 255, 0, 0.1);
-            border: 3px dashed var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), inset 0 0 15px var(--neon-green);
-            transform: rotate(7deg) scaleX(-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6em;
-            font-weight: bold;
-            color: var(--neon-green);
-            text-transform: uppercase;
-            overflow: hidden;
-            z-index: 30;
-            filter: saturate(1.5) contrast(1.2) drop-shadow(0 0 5px rgba(0,255,0,0.7));
-            pointer-events: none;
-            mix-blend-mode: screen;
+        /* HIGH-GLOSS GRIME / FRAGMENTS */
+        .glossy-fragment {
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 255, 0, 0.8), rgba(0, 0, 0, 0.9) 70%), 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 255, 0, 0.4) 100%);
+            border-radius: 50%; /* Start as circular */
+            filter: blur(7px);
+            opacity: 0.5;
+            box-shadow: 
+                0 0 25px var(--neon-green), 
+                inset 0 0 12px var(--light-green-glow);
+            animation: subtle-pulse 5s infinite ease-in-out;
+            z-index: 7;
         }
-        .image-placeholder::before {
-            content: 'DEFIANCE';
-            position: absolute;
-            transform: rotate(90deg) translateX(-50%);
-            opacity: 0.15;
-            font-size: 4em;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green);
-            white-space: nowrap;
+        #fragment-1 {
+            top: 15%;
+            left: 65%;
+            width: 18vw;
+            height: 18vw;
+            transform: rotate(30deg);
+            border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; /* Irregular shape */
         }
-
-        .call-to-action {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%) skewX(-15deg);
-            background-color: var(--neon-green);
-            color: var(--deep-black);
-            padding: 12px 30px;
-            font-size: 1.6em;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 10px var(--neon-green), 0 0 25px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.6);
-            transition: all 0.2s ease;
-            z-index: 40;
-            filter: drop-shadow(0 0 5px var(--neon-green));
-        }
-        .call-to-action:hover {
-            transform: translateX(-50%) skewX(-15deg) scale(1.05);
-            background-color: #00E600;
-            box-shadow: 0 0 15px var(--neon-green), 0 0 35px rgba(0,255,0,0.9), 0 0 55px rgba(0,255,0,0.7);
-        }
-
-        .barcode-strip {
-            position: absolute;
-            top: 8%;
-            right: -25px;
-            width: 180px;
-            height: 60px;
-            background: linear-gradient(90deg, #000 0%, #000 10%, #00FF00 10%, #00FF00 12%, #000 12%, #000 18%, #00FF00 18%, #00FF00 20%, #000 20%, #000 30%, #00FF00 30%, #00FF00 32%, #000 32%, #000 40%, #00FF00 40%, #00FF00 42%, #000 42%, #000 55%, #00FF00 55%, #00FF00 57%, #000 57%, #000 65%, #00FF00 65%, #00FF00 67%, #000 67%, #000 80%, #00FF00 80%, #00FF00 82%, #000 82%, #000 100%);
-            transform: rotate(90deg);
-            transform-origin: 100% 0%;
-            box-shadow: 0 0 5px var(--neon-green);
-            z-index: 15;
-            mix-blend-mode: screen;
-            opacity: 0.8;
-        }
-
-        .rotating-gear {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: radial-gradient(circle at center, var(--neon-green) 0%, var(--neon-green) 15%, var(--dark-grey) 16%, var(--dark-grey) 20%, var(--neon-green) 21%, var(--neon-green) 25%, transparent 26%);
-            background-size: 100% 100%;
-            box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px var(--neon-green);
-            animation: rotate-gear 15s linear infinite;
-            top: 60%;
-            left: 5%;
-            z-index: 5;
-            opacity: 0.7;
-            pointer-events: none;
-            mix-blend-mode: overlay;
-        }
-        @keyframes rotate-gear {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .small-text-fragments {
-            position: absolute;
-            font-size: 0.8em;
-            color: rgba(0,255,0,0.8);
-            text-transform: uppercase;
-            white-space: nowrap;
-            overflow: hidden;
-            pointer-events: none;
-            mix-blend-mode: overlay;
-            z-index: 10;
-        }
-
-        .fragment-1 { top: 18%; left: 40%; transform: rotate(10deg); width: 180px; text-shadow: 0 0 3px var(--neon-green); }
-        .fragment-2 { bottom: 12%; left: 30%; transform: rotate(-8deg); width: 150px; text-shadow: 0 0 3px var(--neon-green); }
-        .fragment-3 { top: 55%; right: 7%; transform: rotate(20deg); width: 200px; text-align: right; text-shadow: 0 0 3px var(--neon-green); }
-
-        /* More splatter shapes & positions */
-        .splatter-large {
-            width: 180px; height: 150px;
-            border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
-            top: 20%; left: 60%;
-            opacity: 0.4; transform: rotate(30deg);
-        }
-        .splatter-small {
-            width: 60px; height: 50px;
-            border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
-            bottom: 40%; left: 20%;
-            opacity: 0.5; transform: rotate(-15deg);
-        }
-        .splatter-medium {
-            width: 100px; height: 110px;
+        #fragment-2 {
+            bottom: 8%;
+            left: 20%;
+            width: 12vw;
+            height: 12vw;
+            transform: skewX(25deg) rotate(-50deg);
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            top: 5%; right: 10%;
-            opacity: 0.3; transform: rotate(80deg);
+            opacity: 0.4;
+            filter: blur(4px);
+            z-index: 6;
         }
+
+        /* DIGITAL PAINT SPLATTERS (MESSY) */
+        .splatter {
+            background-color: var(--neon-green);
+            filter: blur(12px);
+            opacity: 0.2;
+            z-index: 3;
+            animation: fade-in-out 6s infinite ease-in-out;
+        }
+        #splatter-1 {
+            top: 40%;
+            left: 35%;
+            width: 22vw;
+            height: 12vw;
+            transform: rotate(15deg) scale(1.1);
+            border-radius: 65% 35% 75% 25% / 55% 65% 35% 45%;
+        }
+        #splatter-2 {
+            bottom: 25%;
+            right: 20%;
+            width: 18vw;
+            height: 10vw;
+            transform: rotate(-25deg) scale(0.9);
+            border-radius: 35% 65% 55% 45% / 75% 25% 65% 35%;
+            opacity: 0.15;
+            animation-delay: 1.5s;
+        }
+
+        /* GRIME PATCHES (BACKGROUND TEXTURE) */
+        .grime-patch {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Lowest content z-index */
+            pointer-events: none; /* Non-interactive */
+        }
+        .grime-patch::before, .grime-patch::after {
+            content: '';
+            position: absolute;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(0, 255, 0, 0.03),
+                    rgba(0, 255, 0, 0.03) 5px,
+                    transparent 5px,
+                    transparent 10px
+                );
+            opacity: 0.1;
+            filter: blur(3px);
+            z-index: 0;
+        }
+        .grime-patch::before {
+            top: 15%;
+            left: 10%;
+            width: 45%;
+            height: 35%;
+            transform: rotate(-12deg);
+            background-color: rgba(0, 255, 0, 0.08);
+            background-image: 
+                radial-gradient(circle, transparent 25%, var(--neon-green) 75%),
+                repeating-linear-gradient(
+                    -45deg,
+                    var(--dark-gray),
+                    var(--dark-gray) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+            background-size: 100%, 12px 12px;
+            background-blend-mode: overlay;
+            clip-path: polygon(0 0, 100% 25%, 85% 100%, 15% 75%); /* Jagged */
+        }
+        .grime-patch::after {
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 45%;
+            transform: rotate(8deg) scaleX(0.95);
+            background-color: rgba(0, 0, 0, 0.85);
+            box-shadow: inset 0 0 60px rgba(0, 255, 0, 0.25);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            animation: sheen-move 8s infinite alternate;
+        }
+
+        /* INFO SHARDS (SMALL TEXT ELEMENTS) */
+        .info-shard {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--neon-green);
+            padding: 0.8vw 1.5vw;
+            font-size: 1.2vw;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+            transform: rotate(var(--rotation, 0deg));
+            z-index: 18;
+            opacity: 0.9;
+        }
+        #shard-1 { top: 60%; left: 3%; --rotation: -10deg; }
+        #shard-2 { bottom: 5%; right: 30%; --rotation: 8deg; }
+        #shard-3 { top: 10%; right: 15%; --rotation: 20deg; }
+
+        /* GLITCH EFFECT (FOR TEXT) */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-black);
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+        }
+        .glitch::after {
+            left: 2px;
+            text-shadow: -1px 0 var(--neon-green);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch::before {
+            left: -2px;
+            text-shadow: 1px 0 var(--neon-green);
+            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+        }
+
+        /* ANIMATIONS */
+        @keyframes pulse-border {
+            0% { border-color: var(--neon-green); box-shadow: 0 0 20px var(--light-green-glow); }
+            100% { border-color: rgba(0, 255, 0, 0.5); box-shadow: 0 0 40px var(--light-green-glow); }
+        }
+
+        @keyframes subtle-pulse {
+            0% { transform: scale(1) rotate(var(--rotation, 25deg)); opacity: 0.5; }
+            50% { transform: scale(1.03) rotate(calc(var(--rotation, 25deg) + 1deg)); opacity: 0.6; }
+            100% { transform: scale(1) rotate(var(--rotation, 25deg)); opacity: 0.5; }
+        }
+        
+        @keyframes glitch-block {
+            0% { transform: rotate(5deg) skewY(5deg); box-shadow: 0 0 20px var(--light-green-glow); }
+            20% { transform: rotate(5deg) skewY(5deg) translateX(2px); box-shadow: 0 0 25px rgba(0, 255, 0, 0.8); }
+            40% { transform: rotate(5deg) skewY(5deg) translateY(-2px); box-shadow: 0 0 18px var(--light-green-glow); }
+            60% { transform: rotate(5deg) skewY(5deg) translateX(-3px); box-shadow: 0 0 30px rgba(0, 255, 0, 0.9); }
+            80% { transform: rotate(5deg) skewY(5deg) translateY(3px); box-shadow: 0 0 22px var(--light-green-glow); }
+            100% { transform: rotate(5deg) skewY(5deg); box-shadow: 0 0 28px rgba(0, 255, 0, 0.7); }
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(32px, 9999px, 86px, 0); transform: skewX(10deg); }
+            20% { clip: rect(86px, 9999px, 73px, 0); transform: skewX(0deg); }
+            40% { clip: rect(78px, 9999px, 34px, 0); transform: skewX(10deg); }
+            60% { clip: rect(61px, 9999px, 16px, 0); transform: skewX(0deg); }
+            80% { clip: rect(38px, 9999px, 59px, 0); transform: skewX(10deg); }
+            100% { clip: rect(98px, 9999px, 44px, 0); transform: skewX(0deg); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(50px, 9999px, 20px, 0); transform: skewX(0deg); }
+            20% { clip: rect(70px, 9999px, 90px, 0); transform: skewX(10deg); }
+            40% { clip: rect(30px, 9999px, 60px, 0); transform: skewX(0deg); }
+            60% { clip: rect(80px, 9999px, 10px, 0); transform: skewX(10deg); }
+            80% { clip: rect(10px, 9999px, 50px, 0); transform: skewX(0deg); }
+            100% { clip: rect(40px, 9999px, 70px, 0); transform: skewX(10deg); }
+        }
+
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0.15; transform: scale(1) rotate(var(--rotation, 0deg)); }
+            50% { opacity: 0.3; transform: scale(1.05) rotate(calc(var(--rotation, 0deg) + 5deg)); }
+        }
+
+        @keyframes sheen-move {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* DIGITAL NOISE OVERLAY */
+        .noise-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100; /* Highest z-index for overlay */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+            background-size: cover;
+            opacity: 0.2;
+        }
+
     </style>
 
-    <!-- Main Title -->
-    <h1 class="header-title glitch-text text-glow">
-        ANDROGYNY:<br>SYSTEM ERROR
-    </h1>
-
-    <!-- Manifesto Text Block -->
-    <div class="brutal-block manifesto-text grime-texture gloss-effect">
-        <p>
-            <span class="neon-text">RESIST</span> the binary. Dismantle expectation.
-            Our forms are fluid, our power absolute. We are the glitch in the matrix,
-            the ghost in the machine. A new syntax for being.
-        </p>
-        <p class="neon-text" style="margin-top: 15px;">
-            <strong class="glitch-text">NO COMPROMISE. REPROGRAM.</strong>
-        </p>
+    <!-- MAIN TITLE -->
+    <div class="demolition-title">
+        <span class="glitch" data-text="WHITE CUBE">WHITE CUBE</span>
+        <span class="glitch" data-text="DEMOLITION">DEMOLITION</span>
     </div>
 
-    <!-- Quote Block -->
-    <div class="brutal-block quote-block grime-texture gloss-effect">
-        <p>
-            "Gender is the structure through which our bodies become objects of knowledge.
-            Aggressive refusal is the only path to genuine liberation."
-        </p>
-        <p class="neon-text" style="text-align: right; font-style: italic; margin-top: 15px;">
-            — [SOURCE_UNKNOWN // FILE CORRUPTED]
-        </p>
+    <!-- STRATEGY BLOCKS -->
+    <div id="block-1" class="strategy-block">
+        <p>STRATEGY_01: TARGETED IMPLOSION PROTOCOLS. INITIATE STRUCTURAL INTEGRITY FAILURE AT CORE POINTS.</p>
+        <p>MINIMAL COLLATERAL. MAXIMUM ICONOCLASM. EXPOSE THE VOID.</p>
     </div>
 
-    <!-- Image Placeholder with text -->
-    <div class="image-placeholder">
-        <span class="glitch-text" style="text-align: center;">IDENTITY<br>LOADING...</span>
+    <div id="block-2" class="strategy-block">
+        <p>STRATEGY_02: CULTURAL EROSION & RECLAIMATION. SUBVERT NARRATIVES.</p>
+        <p>INJECT PARASITIC INFORMATION CHUNKS. FLOOD VOIDS WITH UNGOVERNED AESTHETICS.</p>
     </div>
 
-    <!-- Call to Action Button -->
-    <button class="call-to-action">
-        SUBVERT
-    </button>
+    <!-- GLOSSY GRIME / FRAGMENTS -->
+    <div id="fragment-1" class="glossy-fragment"></div>
+    <div id="fragment-2" class="glossy-fragment"></div>
 
-    <!-- Barcode Strip for data/system feel -->
-    <div class="barcode-strip"></div>
+    <!-- DIGITAL PAINT SPLATTERS -->
+    <div id="splatter-1" class="splatter" style="--rotation: 15deg;"></div>
+    <div id="splatter-2" class="splatter" style="--rotation: -25deg;"></div>
 
-    <!-- Rotating Gear -->
-    <div class="rotating-gear"></div>
+    <!-- GRIME PATCHES (BACKGROUND TEXTURE) -->
+    <div class="grime-patch"></div>
 
-    <!-- Small text fragments -->
-    <div class="small-text-fragments fragment-1">
-        // PROTOCOL_OVERRIDE // ACCESS_GRANTED //
+    <!-- SMALL INFO SHARDS -->
+    <div id="shard-1" class="info-shard">
+        <span class="glitch" data-text="CUBE_001_STATUS: CRITICAL">CUBE_001_STATUS: CRITICAL</span>
     </div>
-    <div class="small-text-fragments fragment-2">
-        <span class="glitch-text">ERROR:</span> GENDER_NOT_FOUND (BY DESIGN)
+    <div id="shard-2" class="info-shard">
+        <span class="glitch" data-text="RECLAIM_DATE: UNKNOWN">RECLAIM_DATE: UNKNOWN</span>
     </div>
-    <div class="small-text-fragments fragment-3">
-        ACCESS DENIED_NORMALCY // STATUS: UNDEFINED
+    <div id="shard-3" class="info-shard">
+        <span class="glitch" data-text="ERROR_LOG: AESTHETIC OVERLOAD">ERROR_LOG: AESTHETIC OVERLOAD</span>
     </div>
 
-    <!-- Digital paint splatters -->
-    <div class="splatter splatter-large"></div>
-    <div class="splatter splatter-small"></div>
-    <div class="splatter splatter-medium"></div>
-    <div class="splatter" style="top: 70%; right: 25%; width: 80px; height: 70px; transform: rotate(45deg); opacity: 0.7;"></div>
-    <div class="splatter" style="bottom: 8%; left: 5%; width: 100px; height: 80px; transform: rotate(-20deg); opacity: 0.6;"></div>
-    <div class="splatter" style="top: 45%; left: 18%; width: 50px; height: 40px; transform: rotate(100deg); opacity: 0.4;"></div>
-
-    <!-- Additional background elements for grime/brutalist feel -->
-    <div class="brutal-block" style="top: -20px; left: -20px; width: 120px; height: 120px; background-color: rgba(0,255,0,0.1); border: none; z-index: 1; transform: rotate(15deg) scale(0.9);"></div>
-    <div class="brutal-block" style="bottom: -30px; right: -30px; width: 180px; height: 180px; background-color: rgba(10,10,10,0.7); border: 3px solid var(--neon-green); z-index: 1; transform: rotate(-25deg) scale(0.95);"></div>
-    <div class="brutal-block" style="top: 10%; right: 5%; width: 80px; height: 80px; background-color: rgba(0,0,0,0.8); border: 1px dashed var(--neon-green); z-index: 8; transform: rotate(45deg) scale(0.8); opacity: 0.7; mix-blend-mode: overlay;"></div>
+    <!-- DIGITAL NOISE OVERLAY -->
+    <div class="noise-overlay"></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
