@@ -39,357 +39,192 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-11 00:02 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-11 05:05 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
             <div class="art-container p-4">
                 
-<div id="androgyny-resistance">
+<div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+    background-image:
+        radial-gradient(ellipse at center, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.9) 100%),
+        linear-gradient(to right, rgba(0,255,0,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,255,0,0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+    font-family: 'Courier New', monospace;
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00;
+">
     <style>
-        /* Global Reset for this specific div and its children */
-        #androgyny-resistance * {
-            box-sizing: border-box;
+        @keyframes glitch-shift {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-1px, 1px); }
+            80% { transform: translate(1px, -1px); }
+            100% { transform: translate(0, 0); }
+        }
+        @keyframes glitch-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.7; }
+            22% { opacity: 0.9; }
+        }
+        @keyframes text-distortion {
+            0% { transform: skewX(0deg); }
+            10% { transform: skewX(-15deg); }
+            20% { transform: skewX(10deg); }
+            30% { transform: skewX(-5deg); }
+            40% { transform: skewX(0deg); }
+            100% { transform: skewX(0deg); }
+        }
+        @keyframes line-flicker {
+            0% { background-color: rgba(0,255,0,0.5); }
+            50% { background-color: rgba(0,255,0,0.1); }
+            100% { background-color: rgba(0,255,0,0.5); }
+        }
+        .anti-zionist-glitch-collage * {
             margin: 0;
             padding: 0;
-            line-height: 1.1;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* Brutalist Font */
-            color: #0F0; /* Vibrant Neon Green */
+            box-sizing: border-box;
+            font-family: inherit;
+            color: inherit;
+            text-shadow: inherit;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: 8vw;
+            font-weight: bold;
             text-transform: uppercase;
-            text-shadow: 0 0 2px #0F0, 0 0 5px #0F0; /* Initial glow */
-        }
-
-        /* Main Container Styling: Deep Black Background */
-        #androgyny-resistance {
-            background-color: #000;
-            min-height: 100vh;
-            width: 100%;
-            position: relative;
-            overflow: hidden; /* Contains splatters and ensures scroll doesn't show over-rotated elements */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            cursor: crosshair; /* Aggressive interaction cue */
-            animation: backgroundPulse 15s infinite alternate; /* Subtle breathing effect for depth */
-            perspective: 1000px; /* For 3D transforms */
-        }
-
-        /* Keyframes for subtle background pulse */
-        @keyframes backgroundPulse {
-            0% { background-color: #000; }
-            50% { background-color: #0A0A0A; } /* Slightly lighter black */
-            100% { background-color: #000; }
-        }
-
-        /* Text Elements - Aggressive, Glowing, Skewed */
-        #androgyny-resistance h1 {
-            font-size: clamp(2.5em, 8vw, 6em);
-            font-weight: 900;
-            z-index: 10;
-            position: relative;
-            margin-bottom: 20px;
-            letter-spacing: 0.1em;
-            transform: skewY(-5deg) rotateZ(1deg); /* Aggressive angle */
-            text-shadow: 0 0 5px #0F0, 0 0 15px #0F0, 0 0 30px rgba(15, 255, 0, 0.7);
-            filter: drop-shadow(0 0 5px rgba(15, 255, 0, 0.5)); /* Adds depth to shadow */
-        }
-
-        #androgyny-resistance h2 {
-            font-size: clamp(1.5em, 5vw, 3.5em);
-            font-weight: 800;
-            z-index: 10;
-            position: relative;
-            margin-bottom: 15px;
-            letter-spacing: 0.08em;
-            transform: skewX(-7deg) rotateZ(2deg); /* Different angle */
-            color: #0FFF0F; /* Slightly brighter green for contrast */
-            text-shadow: 0 0 4px #0F0, 0 0 10px #0FFF0F, 0 0 20px rgba(15, 255, 0, 0.5);
-        }
-
-        #androgyny-resistance p {
-            font-size: clamp(1em, 3vw, 2em);
-            font-weight: 600;
-            z-index: 10;
-            position: relative;
-            margin: 10px 0;
             letter-spacing: 0.05em;
-            transform: rotateZ(-3deg); /* Subtle rotation */
-            color: #00FF00;
-            text-shadow: 0 0 3px #0F0, 0 0 8px rgba(0, 255, 0, 0.8);
+            transform: skewX(-10deg) rotate(-3deg);
+            animation: glitch-shift 3s infinite alternate, text-distortion 5s infinite step-end;
+            z-index: 100;
+            filter: drop-shadow(0 0 15px #00FF00);
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            border-bottom: 5px solid #00FF00;
+            border-left: 5px solid #00FF00;
         }
 
-        /* Brutalist Lines/Dividers - Sharp, glowing elements */
-        #androgyny-resistance .line-divider {
+        .sub-header {
             position: absolute;
-            background: linear-gradient(to right, transparent, #0F0, transparent);
-            height: 3px;
-            z-index: 5;
-            filter: drop-shadow(0 0 5px #0F0);
-            animation: linePulse 3s infinite alternate;
+            top: 25%;
+            left: 15%;
+            font-size: 4vw;
+            transform: rotate(5deg);
+            animation: glitch-flicker 2s infinite step-end, glitch-shift 4s infinite reverse;
+            z-index: 90;
+            background-color: rgba(0,255,0,0.1);
+            padding: 15px 30px;
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 20px rgba(0,255,0,0.5), inset 0 0 10px rgba(0,255,0,0.3); /* High-gloss grime */
         }
 
-        #androgyny-resistance .ld1 {
-            width: 80%;
-            top: 20%;
-            left: 10%;
-            transform: rotateZ(10deg);
-        }
-
-        #androgyny-resistance .ld2 {
-            width: 60%;
-            bottom: 15%;
+        .message-block {
+            position: absolute;
+            bottom: 10%;
             right: 5%;
-            transform: rotateZ(-15deg) scaleX(1.1);
-        }
-        
-        #androgyny-resistance .ld3 {
-            width: 50%;
-            top: 55%;
-            left: -10%;
-            transform: rotateZ(25deg);
-        }
-
-        @keyframes linePulse {
-            0% { opacity: 0.8; transform: scaleX(1); }
-            100% { opacity: 1; transform: scaleX(1.05); }
+            width: 40vw;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.8);
+            border: 3px dashed #00FF00;
+            box-shadow: 0 0 25px #00FF00, 0 0 40px rgba(0,255,0,0.7);
+            transform: rotate(8deg) skewY(-5deg);
+            animation: glitch-flicker 5s infinite step-end, glitch-shift 6s infinite alternate;
+            z-index: 80;
+            font-size: 1.5vw;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
         }
 
-        /* Digital Paint Splatters - Irregular, glowing, messy */
-        #androgyny-resistance .splatter {
+        .data-stream {
             position: absolute;
-            background: #0F0;
-            filter: blur(1px) brightness(1.2) contrast(1.5) drop-shadow(0 0 10px #0F0);
-            z-index: 2;
-            opacity: 0.8;
-            animation: splatterGlow 2s infinite alternate;
+            top: 60%;
+            left: 5%;
+            width: 30vw;
+            height: 5px;
+            background-color: #00FF00;
+            transform: rotate(15deg);
+            opacity: 0.6;
+            animation: line-flicker 1s infinite alternate;
+            z-index: 70;
+            box-shadow: 0 0 10px #00FF00;
         }
 
-        @keyframes splatterGlow {
-            0% { filter: blur(1px) brightness(1.2) contrast(1.5) drop-shadow(0 0 10px #0F0); opacity: 0.8; }
-            100% { filter: blur(0.5px) brightness(1.5) contrast(1.8) drop-shadow(0 0 15px #0F0); opacity: 0.9; }
-        }
-
-        #androgyny-resistance .s1 {
-            width: 150px; height: 100px;
-            top: 5%; left: -10px;
-            transform: rotate(30deg) scale(1.2);
-            background: radial-gradient(circle at top left, #0F0, rgba(0,0,0,0.8));
-            clip-path: polygon(0 0, 100% 20%, 80% 100%, 20% 80%, 0% 50%); /* Irregular shape */
-        }
-
-        #androgyny-resistance .s2 {
-            width: 200px; height: 120px;
-            bottom: 10%; right: 0;
-            transform: rotate(-45deg) scale(1.1);
-            background: linear-gradient(135deg, #0F0, #00FF00, rgba(0,0,0,0.7));
-            clip-path: polygon(10% 0%, 100% 10%, 90% 100%, 0% 90%);
-        }
-
-        #androgyny-resistance .s3 {
-            width: 80px; height: 180px;
-            top: 40%; left: 10%;
-            transform: rotate(70deg);
-            background: linear-gradient(to bottom, #0F0, rgba(0,0,0,0.5));
-            clip-path: polygon(50% 0%, 100% 30%, 75% 100%, 0% 70%);
-        }
-
-        #androgyny-resistance .s4 {
-            width: 100px; height: 100px;
-            top: 0; right: 10%;
-            transform: rotate(-10deg) scale(0.9);
-            background: radial-gradient(circle at center, #0F0, #00A000);
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 15%, 100% 100%, 85% 85%, 15% 100%, 0% 85%); /* Star-like but messy */
-        }
-        
-        #androgyny-resistance .s5 {
-            width: 120px; height: 90px;
-            bottom: 20%; left: 15%;
-            transform: rotate(50deg) scale(1.3);
-            background: linear-gradient(20deg, #0F0, #0F0, rgba(0,0,0,0.6));
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); /* trapezoid */
-            filter: blur(0.5px) brightness(1.3) contrast(1.6) drop-shadow(0 0 12px #0F0);
-            z-index: 8; /* Overlap some text */
-        }
-
-        /* High-Gloss Grime / Digital Overlays - Adding texture and light effects */
-        #androgyny-resistance .gloss-overlay {
+        .data-stream::before, .data-stream::after {
+            content: '';
             position: absolute;
-            pointer-events: none; /* Allows interaction with elements beneath */
-            z-index: 15; /* On top of most things */
-            opacity: 0.15;
-            filter: blur(0.5px) brightness(1.8) contrast(1.2);
-            animation: glossShift 20s infinite linear alternate;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(0,255,0,0.3);
+            left: 0;
+            animation: glitch-shift 0.5s infinite alternate;
+        }
+        .data-stream::before {
+            top: -100%;
+            transform: skewX(20deg);
+        }
+        .data-stream::after {
+            bottom: -100%;
+            transform: skewX(-20deg);
         }
 
-        @keyframes glossShift {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.15; }
-            50% { transform: translate(5px, 10px) scale(1.02); opacity: 0.18; }
-            100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+        .corner-element {
+            position: absolute;
+            width: 15vw;
+            height: 15vw;
+            background-color: rgba(0,255,0,0.2);
+            border-left: 5px solid #00FF00;
+            border-top: 5px solid #00FF00;
+            top: -5vw;
+            left: -5vw;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 20px #00FF00;
+            z-index: 10;
         }
 
-        #androgyny-resistance .go1 {
-            width: 100%; height: 100%;
-            top: 0; left: 0;
-            background: radial-gradient(circle at 10% 10%, rgba(15, 255, 0, 0.3), transparent 70%);
-        }
-
-        #androgyny-resistance .go2 {
-            width: 100%; height: 100%;
-            top: 0; left: 0;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, transparent 20%, rgba(15, 255, 0, 0.1) 50%, transparent 80%, rgba(0, 0, 0, 0.8) 100%);
-            mix-blend-mode: screen; /* For interesting light effects */
-            opacity: 0.2;
-        }
-
-        #androgyny-resistance .go3 {
-            width: 100%; height: 100%;
-            top: 0; left: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(15, 255, 0, 0.05),
-                rgba(15, 255, 0, 0.05) 10px,
-                transparent 10px,
-                transparent 20px
-            );
-            mix-blend-mode: overlay; /* Creates interesting grid-like grime */
-            opacity: 0.1;
-            animation: gridShift 10s infinite linear;
-        }
-
-        @keyframes gridShift {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 100px; }
-        }
-
-        /* Glitch effect for key text - Visual distortion as resistance */
-        #androgyny-resistance .glitch {
-            position: relative;
-        }
-
-        #androgyny-resistance .glitch::before,
-        #androgyny-resistance .glitch::after {
-            content: attr(data-text);
+        .overlay-glitch-lines {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            text-shadow: 0 0 5px #0F0;
-            clip: rect(0, 0, 0, 0); /* Hides parts of the duplicated text */
-            animation: glitch-anim 2s infinite linear alternate-reverse;
-            /* Using CSS variables for a 'random' feel, though static in pure CSS */
-            --rand1: 0.1; --rand2: 0.3; --rand3: 0.05;
-            --rand4: 0.2; --rand5: 0.4; --rand6: 0.02;
-            --rand7: 0.05; --rand8: 0.6; --rand9: 0.08;
-            --rand10: 0.3; --rand11: 0.7; --rand12: 0.03;
-            --rand13: 0.1; --rand14: 0.9; --rand15: 0.01;
-            --rand16: 0.2; --rand17: 0.5;
+            pointer-events: none;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 1px,
+                rgba(0,255,0,0.2) 1px,
+                rgba(0,255,0,0.2) 2px
+            ), repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 1px,
+                rgba(0,255,0,0.2) 1px,
+                rgba(0,255,0,0.2) 2px
+            );
+            background-size: 100% 100px, 100px 100%;
+            animation: glitch-flicker 7s infinite reverse step-end;
+            opacity: 0.1;
+            z-index: 200;
         }
 
-        #androgyny-resistance .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #FF00FF; /* Magenta offset */
-            animation-delay: -1s;
-        }
-
-        #androgyny-resistance .glitch::after {
-            left: -2px;
-            text-shadow: 2px 0 #00FFFF; /* Cyan offset */
-            animation-delay: -0.5s;
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                clip: rect(calc(var(--rand1) * 100%), 9999px, calc(var(--rand2) * 100%), 0);
-                transform: skewX(calc(var(--rand3) * 10deg));
-                opacity: 0.8;
-            }
-            20% {
-                clip: rect(calc(var(--rand4) * 100%), 9999px, calc(var(--rand5) * 100%), 0);
-                transform: skewX(calc(var(--rand6) * 5deg));
-                opacity: 0.9;
-            }
-            40% {
-                clip: rect(calc(var(--rand7) * 100%), 9999px, calc(var(--rand8) * 100%), 0);
-                transform: skewX(calc(var(--rand9) * 2deg));
-                opacity: 0.7;
-            }
-            60% {
-                clip: rect(calc(var(--rand10) * 100%), 9999px, calc(var(--rand11) * 100%), 0);
-                transform: skewX(calc(var(--rand12) * 1deg));
-                opacity: 0.9;
-            }
-            80% {
-                clip: rect(calc(var(--rand13) * 100%), 9999px, calc(var(--rand14) * 100%), 0);
-                transform: skewX(calc(var(--rand15) * 0.5deg));
-                opacity: 0.8;
-            }
-            100% {
-                clip: rect(calc(var(--rand16) * 100%), 9999px, calc(var(--rand17) * 100%), 0);
-                transform: skewX(0deg);
-                opacity: 1;
-            }
-        }
-
-        /* Additional aggressive shapes/overlays - Corner flashes for dynamism */
-        #androgyny-resistance .corner-flash {
+        .static-noise {
             position: absolute;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(45deg, rgba(15, 255, 0, 0.8), transparent);
-            z-index: 1;
-            opacity: 0.2;
-            filter: blur(2px) brightness(1.5);
-            animation: flashFade 5s infinite alternate ease-in-out;
-        }
-        #androgyny-resistance .cf1 { top: -50px; left: -50px; transform: rotate(10deg); }
-        #androgupy-resistance .cf2 { bottom: -50px; right: -50px; transform: rotate(190deg); }
-
-        @keyframes flashFade {
-            0% { opacity: 0.2; }
-            50% { opacity: 0.4; }
-            100% { opacity: 0.2; }
-        }
-
-    </style>
-
-    <!-- High-Gloss Grime / Digital Overlays -->
-    <div class="gloss-overlay go1"></div>
-    <div class="gloss-overlay go2"></div>
-    <div class="gloss-overlay go3"></div>
-
-    <!-- Digital Paint Splatters -->
-    <div class="splatter s1"></div>
-    <div class="splatter s2"></div>
-    <div class="splatter s3"></div>
-    <div class="splatter s4"></div>
-    <div class="splatter s5"></div>
-
-    <!-- Brutalist Lines/Dividers -->
-    <div class="line-divider ld1"></div>
-    <div class="line-divider ld2"></div>
-    <div class="line-divider ld3"></div>
-
-    <!-- Corner Flashes -->
-    <div class="corner-flash cf1"></div>
-    <div class="corner-flash cf2"></div>
-
-    <!-- Main Text Elements - Aggressive Androgyny as Resistance -->
-    <h1 class="glitch" data-text="AGGRESSIVE">AGGRESSIVE</h1>
-    <h1 class="glitch" data-text="ANDROGYNY">ANDROGYNY</h1>
-    
-    <h2 class="glitch" data-text="SMASH BINARIES.">SMASH BINARIES.</h2>
-
-    <p>
-        DECONSTRUCT. RECLAIM. RESIST.
-    </p>
-
-    <p class="glitch" data-text="QUEER FUTURES NOW.">QUEER FUTURES NOW.</p>
-</div>
-
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEVHZmaZmZn////KysoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3yT7CAAAAGnRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobH3qXwS8AAABjSURBVDjL7dPbDoAwDATB8g/w/2+t2BvKpgIq0Gqf4SjM4GZ628XkKj/4wzX99nS/Hw/uA/nQ2VjGvX6w7uP7wzW3/4w7W/4wzX/4wzW/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
