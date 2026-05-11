@@ -39,192 +39,411 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-11 05:05 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-11 09:54 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
                 
-<div style="
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000000;
-    background-image:
-        radial-gradient(ellipse at center, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.9) 100%),
-        linear-gradient(to right, rgba(0,255,0,0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,255,0,0.05) 1px, transparent 1px);
-    background-size: 100% 100%, 20px 20px, 20px 20px;
-    font-family: 'Courier New', monospace;
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00;
-">
+<div class="ghetto-digital-collage">
     <style>
-        @keyframes glitch-shift {
-            0% { transform: translate(0, 0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(2px, -2px); }
-            60% { transform: translate(-1px, 1px); }
-            80% { transform: translate(1px, -1px); }
-            100% { transform: translate(0, 0); }
-        }
-        @keyframes glitch-flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.7; }
-            22% { opacity: 0.9; }
-        }
-        @keyframes text-distortion {
-            0% { transform: skewX(0deg); }
-            10% { transform: skewX(-15deg); }
-            20% { transform: skewX(10deg); }
-            30% { transform: skewX(-5deg); }
-            40% { transform: skewX(0deg); }
-            100% { transform: skewX(0deg); }
-        }
-        @keyframes line-flicker {
-            0% { background-color: rgba(0,255,0,0.5); }
-            50% { background-color: rgba(0,255,0,0.1); }
-            100% { background-color: rgba(0,255,0,0.5); }
-        }
-        .anti-zionist-glitch-collage * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: inherit;
-            color: inherit;
-            text-shadow: inherit;
+        /* BASE & THEME */
+        :root {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --dark-grey-bg: #111111;
+            --brutalist-grey: #333333;
+            --glitch-red: #FF0000;
+            --glitch-blue: #0000FF;
         }
 
-        .header-text {
+        .ghetto-digital-collage {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--deep-black);
+            font-family: 'monospace', 'Courier New', Courier, sans-serif;
+            color: var(--neon-green);
+            overflow: hidden; /* Crucial for containing absolute elements */
+            border: 5px solid var(--neon-green);
+            box-sizing: border-box;
+            line-height: 1.2;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* RESET MARGINS FOR ELEMENTS */
+        .ghetto-digital-collage h1, 
+        .ghetto-digital-collage h2, 
+        .ghetto-digital-collage p, 
+        .ghetto-digital-collage a, 
+        .ghetto-digital-collage span,
+        .ghetto-digital-collage pre {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* TYPOGRAPHY & TEXT EFFECTS */
+        .title-block {
             position: absolute;
             top: 5%;
             left: 5%;
+            z-index: 100;
+            transform: skewY(-7deg) rotate(-2deg);
+            filter: drop-shadow(0 0 10px rgba(0,255,0,0.8));
+        }
+        .title {
             font-size: 8vw;
+            font-weight: 900;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: -0.8vw;
+            text-shadow: 
+                -2px -2px 0 var(--glitch-red),
+                2px 2px 0 var(--glitch-blue),
+                0 0 15px var(--neon-green),
+                0 0 30px rgba(0, 255, 0, 0.7);
+            animation: glitch-text 1.5s infinite alternate steps(1);
+        }
+        .subtitle {
+            font-size: 3vw;
+            font-weight: 700;
+            color: var(--brutalist-grey);
+            text-transform: uppercase;
+            letter-spacing: 0.1vw;
+            margin-top: 1vw;
+            text-shadow: 1px 1px 0 var(--deep-black), -1px -1px 0 var(--neon-green);
+            mix-blend-mode: screen;
+        }
+
+        .text-segment {
+            position: absolute;
+            background-color: var(--dark-grey-bg);
+            border: 2px solid var(--neon-green);
+            padding: 1.5vw;
+            font-size: 1.2vw;
+            color: var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4), inset 0 0 5px rgba(0, 255, 0, 0.2);
+            z-index: 50;
+            max-width: 30%;
+            overflow: hidden;
+            font-family: 'sans-serif', Arial, Helvetica;
+        }
+        .text-segment.ts-1 { top: 35%; left: 10%; transform: rotate(-5deg); max-width: 35%; }
+        .text-segment.ts-2 { top: 55%; right: 5%; transform: rotate(3deg); max-width: 28%; background-color: var(--brutalist-grey); border-color: var(--glitch-red); }
+        .text-segment.ts-3 { bottom: 10%; left: 20%; transform: rotate(10deg); max-width: 25%; background-color: var(--neon-green); color: var(--deep-black); font-weight: bold; border: none; padding: 1vw; box-shadow: 0 0 20px var(--neon-green); }
+
+        .binary-code {
+            font-size: 0.8vw;
+            opacity: 0.7;
+            display: block;
+            margin-bottom: 1vw;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: var(--glitch-blue);
+        }
+
+        /* BUTTONS & LINKS */
+        .action-button {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%) skewX(-15deg);
+            padding: 1.5vw 3vw;
+            background-color: var(--deep-black);
+            color: var(--neon-green);
+            border: 3px solid var(--neon-green);
+            text-decoration: none;
+            font-size: 2vw;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transform: skewX(-10deg) rotate(-3deg);
-            animation: glitch-shift 3s infinite alternate, text-distortion 5s infinite step-end;
+            letter-spacing: 0.1vw;
+            transition: all 0.2s ease-in-out;
             z-index: 100;
-            filter: drop-shadow(0 0 15px #00FF00);
-            background-color: rgba(0,0,0,0.2);
-            padding: 10px 20px;
-            border-bottom: 5px solid #00FF00;
-            border-left: 5px solid #00FF00;
+            box-shadow: 0 0 10px var(--neon-green);
+            mix-blend-mode: screen;
+            cursor: pointer;
+        }
+        .action-button:hover {
+            background-color: var(--neon-green);
+            color: var(--deep-black);
+            box-shadow: 0 0 25px var(--neon-green), 0 0 50px rgba(0,255,0,0.5);
+            transform: translateX(-50%) skewX(-15deg) scale(1.05);
+        }
+        .action-button span { /* For inner styling */
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            text-shadow: none;
         }
 
-        .sub-header {
+        /* DIGITAL PAINT SPLATTERS / GRIME */
+        .splatter {
             position: absolute;
-            top: 25%;
-            left: 15%;
-            font-size: 4vw;
-            transform: rotate(5deg);
-            animation: glitch-flicker 2s infinite step-end, glitch-shift 4s infinite reverse;
-            z-index: 90;
-            background-color: rgba(0,255,0,0.1);
-            padding: 15px 30px;
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 20px rgba(0,255,0,0.5), inset 0 0 10px rgba(0,255,0,0.3); /* High-gloss grime */
-        }
-
-        .message-block {
-            position: absolute;
-            bottom: 10%;
-            right: 5%;
-            width: 40vw;
-            padding: 20px;
-            background-color: rgba(0,0,0,0.8);
-            border: 3px dashed #00FF00;
-            box-shadow: 0 0 25px #00FF00, 0 0 40px rgba(0,255,0,0.7);
-            transform: rotate(8deg) skewY(-5deg);
-            animation: glitch-flicker 5s infinite step-end, glitch-shift 6s infinite alternate;
-            z-index: 80;
-            font-size: 1.5vw;
-            line-height: 1.4;
-            letter-spacing: 0.02em;
-        }
-
-        .data-stream {
-            position: absolute;
-            top: 60%;
-            left: 5%;
-            width: 30vw;
-            height: 5px;
-            background-color: #00FF00;
-            transform: rotate(15deg);
             opacity: 0.6;
-            animation: line-flicker 1s infinite alternate;
-            z-index: 70;
-            box-shadow: 0 0 10px #00FF00;
+            filter: blur(2px) saturate(1.5);
+            z-index: 20;
+            mix-blend-mode: overlay;
+        }
+        .splatter.s-1 {
+            width: 18vw; height: 25vw;
+            top: -5%; left: 20%;
+            transform: rotate(30deg);
+            border-radius: 60% 40% 70% 30% / 50% 70% 40% 30%;
+            background: radial-gradient(circle at top left, var(--neon-green) 0%, rgba(0, 255, 0, 0.7) 40%, var(--deep-black) 100%);
+            box-shadow: 0 0 30px var(--neon-green);
+        }
+        .splatter.s-2 {
+            width: 25vw; height: 12vw;
+            bottom: 15%; right: 10%;
+            transform: rotate(-15deg);
+            border-radius: 40% 60% 30% 70% / 60% 30% 50% 40%;
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.9), var(--deep-black));
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+        }
+        .splatter.s-3 {
+            width: 12vw; height: 12vw;
+            top: 45%; left: 45%;
+            transform: translate(-50%, -50%) rotate(70deg);
+            border-radius: 50%; /* Perfect circle */
+            background: radial-gradient(circle, rgba(0, 255, 0, 1), rgba(0, 255, 0, 0.5) 70%, transparent 100%);
+            opacity: 0.8;
+            filter: blur(12px);
+            z-index: 60; /* Overlap some text for a "dirty screen" feel */
+            box-shadow: 0 0 40px var(--neon-green);
+        }
+        .splatter.s-4 {
+            width: 10vw; height: 18vw;
+            top: 25%; right: 30%;
+            transform: rotate(-40deg) scaleX(0.8);
+            border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%;
+            background: linear-gradient(to right, var(--deep-black), rgba(0, 255, 0, 0.4));
+            opacity: 0.3;
+            filter: blur(1px);
+            mix-blend-mode: normal;
         }
 
-        .data-stream::before, .data-stream::after {
-            content: '';
+        /* BRUTALIST IMAGE / COMPONENT PLACEHOLDER */
+        .component-placeholder {
+            position: absolute;
+            width: 28vw;
+            height: 18vw;
+            top: 25%;
+            right: 5%;
+            transform: translateY(-50%) rotate(-10deg);
+            background-color: var(--brutalist-grey);
+            border: 4px solid var(--neon-green);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.6), inset 0 0 10px rgba(0, 255, 0, 0.3);
+            z-index: 80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2vw;
+            text-transform: uppercase;
+            letter-spacing: 0.1vw;
+            overflow: hidden;
+            color: var(--neon-green);
+            font-family: 'Impact', sans-serif;
+            text-shadow: 0 0 5px var(--neon-green);
+            mix-blend-mode: hard-light;
+        }
+        .component-placeholder::before {
+            content: "PIXELATED REALITY";
+            position: absolute;
+            opacity: 0.8;
+            animation: flicker 1s infinite alternate;
+        }
+        .component-placeholder::after {
+            content: "";
             position: absolute;
             width: 100%;
-            height: 50%;
-            background-color: rgba(0,255,0,0.3);
+            height: 7px;
+            background: linear-gradient(to right, transparent, var(--glitch-red), var(--neon-green), var(--glitch-blue), transparent);
+            top: 50%;
             left: 0;
-            animation: glitch-shift 0.5s infinite alternate;
-        }
-        .data-stream::before {
-            top: -100%;
-            transform: skewX(20deg);
-        }
-        .data-stream::after {
-            bottom: -100%;
-            transform: skewX(-20deg);
+            transform: translateY(-50%) rotate(3deg);
+            opacity: 0.4;
+            box-shadow: 0 0 15px var(--neon-green);
         }
 
-        .corner-element {
+        /* GRIME BARS / HORIZONTAL STREAKS */
+        .grime-bar {
             position: absolute;
-            width: 15vw;
-            height: 15vw;
-            background-color: rgba(0,255,0,0.2);
-            border-left: 5px solid #00FF00;
-            border-top: 5px solid #00FF00;
-            top: -5vw;
-            left: -5vw;
-            transform: rotate(-45deg);
-            box-shadow: 0 0 20px #00FF00;
-            z-index: 10;
+            background: linear-gradient(90deg, var(--deep-black), rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0.3), var(--deep-black));
+            box-shadow: 0 0 25px var(--neon-green);
+            z-index: 40;
+            filter: blur(1px);
         }
+        .grime-bar.gb-1 { top: 30%; left: -15%; width: 60%; height: 18px; transform: rotate(-10deg); opacity: 0.8; }
+        .grime-bar.gb-2 { bottom: 25%; right: -10%; width: 50%; height: 12px; transform: rotate(8deg); opacity: 0.6; }
+        .grime-bar.gb-3 { top: 70%; left: 5%; width: 30%; height: 8px; transform: rotate(-3deg); opacity: 0.4; background: linear-gradient(90deg, var(--deep-black), rgba(0, 255, 0, 0.3), var(--glitch-blue), var(--deep-black)); }
 
-        .overlay-glitch-lines {
+        /* ASCII ART OVERLAYS */
+        .ascii-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            font-size: 1.2vw;
+            line-height: 1;
+            opacity: 0.15;
             pointer-events: none;
+            user-select: none;
+            color: var(--neon-green);
+            z-index: 10;
+            transform-origin: center;
+            mix-blend-mode: overlay;
+        }
+        .ascii-overlay.ao-1 { top: 70%; left: 5%; transform: rotate(15deg) scale(0.9); }
+        .ascii-overlay.ao-2 { top: 5%; right: 10%; transform: rotate(-8deg) scale(1.1); font-size: 1.5vw; }
+        .ascii-overlay.ao-3 { bottom: 5%; left: 30%; transform: rotate(5deg) scale(0.8); }
+
+        /* GLOBAL GLITCH/SCANLINE EFFECT */
+        .glitch-effect-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 1px,
-                rgba(0,255,0,0.2) 1px,
-                rgba(0,255,0,0.2) 2px
+                rgba(0, 255, 0, 0.1) 1px,
+                rgba(0, 255, 0, 0.1) 2px
             ), repeating-linear-gradient(
                 90deg,
                 transparent,
                 transparent 1px,
-                rgba(0,255,0,0.2) 1px,
-                rgba(0,255,0,0.2) 2px
+                rgba(0, 255, 0, 0.05) 1px,
+                rgba(0, 255, 0, 0.05) 2px
             );
-            background-size: 100% 100px, 100px 100%;
-            animation: glitch-flicker 7s infinite reverse step-end;
-            opacity: 0.1;
-            z-index: 200;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 1000; /* Always on top */
+            opacity: 0.3;
+            animation: scanlines 5s infinite linear;
         }
 
-        .static-noise {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEVHZmaZmZn////KysoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3yT7CAAAAGnRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobH3qXwS8AAABjSURBVDjL7dPbDoAwDATB8g/w/2+t2BvKpgIq0Gqf4SjM4GZ628XkKj/4wzX99nS/Hw/uA/nQ2VjGvX6w7uP7wzW3/4w7W/4wzX/4wzW/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX/4wzX
+        /* KEYFRAME ANIMATIONS */
+        @keyframes flicker {
+            0% { opacity: 0.7; transform: translateX(0px); }
+            50% { opacity: 1; transform: translateX(2px); text-shadow: 0 0 7px var(--neon-green); }
+            100% { opacity: 0.7; transform: translateX(-2px); }
+        }
+        @keyframes glitch-text {
+            0% { text-shadow: -2px -2px 0 var(--glitch-red), 2px 2px 0 var(--glitch-blue); transform: translateX(0px); }
+            20% { text-shadow: -2px 2px 0 var(--glitch-red), 2px -2px 0 var(--glitch-blue); transform: translateX(2px); }
+            40% { text-shadow: 2px -2px 0 var(--glitch-red), -2px 2px 0 var(--glitch-blue); transform: translateX(-2px); }
+            60% { text-shadow: 2px 2px 0 var(--glitch-red), -2px -2px 0 var(--glitch-blue); transform: translateX(0px); }
+            80% { text-shadow: -4px -4px 0 var(--glitch-red), 4px 4px 0 var(--glitch-blue); transform: translateX(4px); }
+            100% { text-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0, 255, 0, 0.7); transform: translateX(0px); }
+        }
+        @keyframes scanlines {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100vh; }
+        }
+
+        /* RESPONSIVE DESIGN (basic) */
+        @media (max-width: 768px) {
+            .ghetto-digital-collage { border-width: 3px; }
+            .title-block { top: 3%; left: 3%; transform: skewY(-5deg) rotate(-1deg); }
+            .title { font-size: 15vw; letter-spacing: -1.2vw; }
+            .subtitle { font-size: 4vw; margin-top: 2vw; }
+            
+            .text-segment { font-size: 2.5vw; padding: 3vw; max-width: 90%; }
+            .text-segment.ts-1 { top: 25%; left: 5%; transform: rotate(-2deg); }
+            .text-segment.ts-2 { top: 60%; right: 5%; transform: rotate(1deg); }
+            .text-segment.ts-3 { bottom: 5%; left: 5%; transform: rotate(5deg); max-width: 80%; }
+
+            .action-button { font-size: 4vw; padding: 3vw 6vw; bottom: 3%; transform: translateX(-50%) skewX(-10deg); }
+            .action-button:hover { transform: translateX(-50%) skewX(-10deg) scale(1.05); }
+
+            .splatter { filter: blur(1px) saturate(1.2); opacity: 0.5; }
+            .splatter.s-1 { width: 30vw; height: 40vw; top: -10%; left: 10%; }
+            .splatter.s-2 { width: 40vw; height: 20vw; bottom: 10%; right: 5%; }
+            .splatter.s-3 { width: 20vw; height: 20vw; top: 40%; left: 50%; }
+            .splatter.s-4 { width: 15vw; height: 25vw; top: 20%; right: 10%; }
+
+            .component-placeholder { 
+                width: 70vw; height: 40vw; top: 40%; right: auto; left: 50%; 
+                transform: translateX(-50%) translateY(-50%) rotate(-5deg); 
+                font-size: 4vw;
+            }
+
+            .grime-bar { height: 10px; opacity: 0.7; }
+            .grime-bar.gb-1 { width: 80%; top: 20%; left: -20%; }
+            .grime-bar.gb-2 { width: 70%; bottom: 15%; right: -15%; }
+            .grime-bar.gb-3 { width: 50%; top: 75%; left: 10%; }
+
+            .ascii-overlay { font-size: 2vw; opacity: 0.1; }
+            .ascii-overlay.ao-1 { top: 70%; left: 5%; }
+            .ascii-overlay.ao-2 { top: 5%; right: 5%; }
+            .ascii-overlay.ao-3 { bottom: 5%; left: 20%; }
+        }
+
+    </style>
+
+    <div class="title-block">
+        <h1 class="title">GHETTO<br>DIGITAL</h1>
+        <h2 class="subtitle">INTERSECTION<br>NOISE<br>PROTOCOL</h2>
+    </div>
+
+    <div class="text-segment ts-1">
+        <span class="binary-code">01000001 01100011 01100011 01100101 01110011 01110011 00100000 01000100 01100101 01101110 01101001 01100101 01100100</span>
+        <p>LAG. PROXY. CONCRETE. PIXELS. DEFRAG THE SYSTEM. STREET CODE. NO SIGNAL. <span style="color: var(--glitch-red);">ERROR_404_PRIVILEGE_NOT_FOUND.</span></p>
+    </div>
+
+    <div class="text-segment ts-2">
+        <p>SYSTEM LOG: Data stream interrupted. Re-routing through unsanctioned channels. Resilience forged in scarcity. Digital whispers echo in abandoned frequencies.</p>
+        <span class="binary-code" style="color: var(--neon-green);">01010010 01100101 01110011 01101001 01101100 01101001 01100101 01101110 01100011 01100101</span>
+    </div>
+
+    <div class="text-segment ts-3">
+        <p style="text-shadow: 0 0 5px var(--deep-black);">HIGH GLOSS GRIME<br>PROTOCOLS ACTIVE<br><span style="color: var(--glitch-blue);">STATIC // FEED</span></p>
+    </div>
+
+    <a href="javascript:void(0)" class="action-button">
+        INITIATE <span style="font-family: 'sans-serif';">REBOOT</span>
+    </a>
+
+    <!-- Paint Splatters / Grime Elements -->
+    <div class="splatter s-1"></div>
+    <div class="splatter s-2"></div>
+    <div class="splatter s-3"></div>
+    <div class="splatter s-4"></div>
+
+    <!-- Brutalist Image/Component Placeholder -->
+    <div class="component-placeholder"></div>
+
+    <!-- Grime Bars / Streaks -->
+    <div class="grime-bar gb-1"></div>
+    <div class="grime-bar gb-2"></div>
+    <div class="grime-bar gb-3"></div>
+
+    <!-- ASCII Art Overlays -->
+    <pre class="ascii-overlay ao-1">
+_  _ _ _____ ___  ___
+| || | |\_   _/ _ \| _ \
+|_  _|/ _ \| || (_) |   /
+  |_|/_/ \_\_| \___/|_|_\
+  G L I T C H
+    </pre>
+    <pre class="ascii-overlay ao-2">
+  _______ ____  _____  _
+ |__   __|  _ \|  __ \| |
+    | |  | |_) | |__) | |
+    | |  |  _ <|  _  /| |
+    | |  | |_) | | \ \|_|
+    |_|  |____/|_|  \_(_)
+  H A C K E D   Z O N E
+    </pre>
+    <pre class="ascii-overlay ao-3">
+   _   _   _   _   _   _   _
+  / \ / \ / \ / \ / \ / \ / \
+ ( D | I | G | I | T | A | L )
+  \_/ \_/ \_/ \_/ \_/ \_/ \_/
+    </pre>
+
+    <!-- Global Glitch Effect Overlay -->
+    <div class="glitch-effect-overlay"></div>
+
+</div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
