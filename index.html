@@ -39,282 +39,200 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-12 03:51 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-12 06:42 // TOPIC: DECOLONIZING THE PIXEL</div>
             <div class="art-container p-4">
-                
-<div style="
-    position: relative;
-    width: 100%;
-    min-height: 800px;
-    background-color: #000;
-    overflow: hidden;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    color: #0F0; /* Vibrant neon green */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    /* Subtle background textures for grime and depth */
-    background-image: radial-gradient(circle at 10% 90%, rgba(0,255,0,0.05) 0%, transparent 30%),
-                      radial-gradient(circle at 90% 10%, rgba(0,0,0,0.3) 0%, transparent 50%),
-                      linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%);
-    background-size: cover;
-">
-    <!-- Main Title: Defiance -->
-    <div style="
-        position: absolute;
-        top: 8%;
-        left: 5%;
-        font-size: clamp(3rem, 11vw, 8rem);
-        font-weight: 900;
-        line-height: 0.9;
-        text-transform: uppercase;
-        color: #0F0;
-        text-shadow: 0 0 18px rgba(0,255,0,0.9), 0 0 35px rgba(0,255,0,0.6);
-        z-index: 100;
-        transform: rotate(-6deg);
-        -webkit-text-stroke: 1.5px #000; /* Brutalist edge */
-        letter-spacing: -3px;
-    ">
-        DEFIANCE<br>
-        <span style="font-size: 0.7em; display: inline-block; transform: rotate(5deg);">AGAINST</span>
+                <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'IBM Plex Mono', monospace; color: #00FF00; box-sizing: border-box; display: block;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+        
+        .collage-element {
+            position: absolute;
+            box-sizing: border-box;
+            word-break: break-word; /* Ensure text breaks in smaller blocks */
+            text-shadow: 0 0 3px #00FF00, 0 0 10px rgba(0, 255, 0, 0.7); /* Neon glow */
+        }
+
+        .text-block {
+            font-size: clamp(0.8rem, 2vw, 2.5rem);
+            line-height: 1.2;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.05); /* Slightly transparent neon */
+            border: 1px solid #00FF00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), inset 0 0 5px rgba(0, 255, 0, 0.3); /* High-gloss grime */
+            transform-origin: center center;
+            overflow: hidden; /* For containing text */
+            text-transform: uppercase; /* Brutalist touch */
+        }
+
+        .brutalist-heading {
+            font-size: clamp(2rem, 8vw, 10rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            color: #00FF00;
+            z-index: 10;
+            mix-blend-mode: screen; /* For interesting overlaps */
+            text-shadow: 0 0 10px #00FF00, 0 0 25px #00FF00, 0 0 40px rgba(0,255,0,0.5);
+        }
+
+        .splatter {
+            background: #00FF00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8), inset 0 0 10px rgba(0, 255, 0, 0.5);
+            border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%; /* Irregular blob shape */
+            opacity: 0.7;
+            filter: blur(1px);
+            z-index: 1;
+            transform-origin: center center;
+            pointer-events: none; /* Do not interfere with text selection */
+        }
+
+        .glitch-bar {
+            background: linear-gradient(90deg, #00FF00 0%, #000 50%, #00FF00 100%);
+            height: 5px;
+            box-shadow: 0 0 10px #00FF00;
+            opacity: 0.8;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        .code-block {
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(0, 255, 0, 0.03);
+            border: 1px dashed rgba(0, 255, 0, 0.5);
+            padding: 5px 10px;
+            font-size: clamp(0.7rem, 1.5vw, 1.2rem);
+            white-space: pre-wrap;
+            overflow: hidden;
+            box-shadow: inset 0 0 3px rgba(0, 255, 0, 0.2);
+            line-height: 1.2;
+            color: #00FF00;
+            text-shadow: none; /* Code should be starker */
+        }
+
+        /* High-gloss grime overlay effect */
+        .grime-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0, 255, 0, 0.05),
+                rgba(0, 255, 0, 0.05) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.2;
+            z-index: 20;
+        }
+
+        /* Pixel grid background */
+        .pixel-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px; /* Adjust for pixel density */
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        .inverted-text {
+            background-color: #00FF00;
+            color: #000;
+            padding: 2px 5px;
+            display: inline-block;
+            box-shadow: 0 0 5px #00FF00;
+            text-shadow: none; /* No glow on inverted text */
+        }
+
+    </style>
+
+    <!-- Pixel Grid Background -->
+    <div class="pixel-grid"></div>
+
+    <!-- Main Heading -->
+    <div class="brutalist-heading collage-element" style="top: 5%; left: 3%; transform: rotate(-5deg);">
+        DECOLONIZE<br>THE PIXEL
     </div>
 
-    <!-- Secondary Text: Androgyny -->
-    <div style="
-        position: absolute;
-        bottom: 8%;
-        right: 5%;
-        font-size: clamp(2rem, 8vw, 6rem);
-        font-weight: 900;
-        line-height: 0.9;
-        text-transform: uppercase;
-        color: #0F0;
-        text-shadow: 0 0 12px rgba(0,255,0,0.7);
-        z-index: 90;
-        transform: rotate(4deg);
-        letter-spacing: -2px;
-        -webkit-text-stroke: 1px #000;
-    ">
-        ANDRO<br>GYNY
+    <!-- Secondary Heading / Subtitle -->
+    <div class="brutalist-heading collage-element" style="top: 25%; right: 5%; font-size: clamp(1.5rem, 6vw, 7rem); transform: rotate(10deg); opacity: 0.8; z-index: 8;">
+        RECLAIM // DATA
     </div>
 
-    <!-- Small, chaotic text: Reject Norm -->
-    <div style="
-        position: absolute;
-        top: 40%;
-        right: 15%;
-        font-size: clamp(1rem, 4vw, 2.5rem);
-        font-weight: bold;
-        color: rgba(0,255,0,0.7);
-        text-transform: uppercase;
-        transform: rotate(25deg);
-        z-index: 80;
-        font-family: 'monospace';
-    ">
-        REJECT<br>NORM
+    <!-- Text Block 1 - Manifesto Snippet -->
+    <div class="text-block collage-element" style="width: 35%; top: 20%; left: 10%; transform: rotate(3deg); z-index: 7;">
+        <span class="inverted-text">MANIFESTO:</span> THIS IS NOT MERELY AN AESTHETIC CHOICE. IT IS A DIGITAL INSURGENCY. EVERY BYTE, EVERY RENDER, EVERY ALGORITHM CARRIES THE WEIGHT OF HISTORY. WE SHATTER THE PRISTINE, SANITIZED GRIDS THAT HAVE DICTATED OUR GAZE.
     </div>
 
-    <!-- Brutalist Block 1 (black, subtle) -->
-    <div style="
-        position: absolute;
-        width: 45%;
-        height: 35%;
-        background-color: rgba(0,0,0,0.85);
-        border: 4px solid #0F0;
-        top: 20%;
-        left: -12%;
-        transform: rotate(-18deg);
-        z-index: 10;
-        box-shadow: 0 0 25px rgba(0,255,0,0.4);
-    "></div>
+    <!-- Splatter 1 -->
+    <div class="splatter collage-element" style="width: 100px; height: 120px; top: 15%; left: 30%; transform: rotate(45deg); z-index: 2;"></div>
+    
+    <!-- Code Block 1 -->
+    <div class="code-block collage-element" style="width: 25%; top: 45%; left: 3%; transform: rotate(-8deg); z-index: 6;">
+        <span style="color: #FF00FF;">function</span> <span style="color: #00FFFF;">glitch_render</span>(pixel_data) {<br>
+        &nbsp;&nbsp;<span style="color: #FFFF00;">// Inject entropy</span><br>
+        &nbsp;&nbsp;<span style="color: #00FF00;">pixel_data</span>.<span style="color: #00FFFF;">randomize_color</span>(0.1);<br>
+        &nbsp;&nbsp;<span style="color: #00FF00;">pixel_data</span>.<span style="color: #00FFFF;">shift_position</span>(Math.random() * 5);<br>
+        &nbsp;&nbsp;<span style="color: #FF0000;">return</span> <span style="color: #00FF00;">pixel_data</span>;<br>
+        }
+    </div>
 
-    <!-- Brutalist Block 2 (darker, more prominent) -->
-    <div style="
-        position: absolute;
-        width: 65%;
-        height: 25%;
-        background-color: rgba(0,0,0,0.95);
-        border: 3px solid #0F0;
-        bottom: 15%;
-        right: -18%;
-        transform: rotate(12deg);
-        z-index: 20;
-        box-shadow: 0 0 20px rgba(0,255,0,0.3);
-    "></div>
+    <!-- Glitch Bar 1 -->
+    <div class="glitch-bar collage-element" style="width: 60%; top: 40%; left: 10%; transform: rotate(2deg); opacity: 0.6;"></div>
 
-    <!-- Paint Splatter / Grime 1 (Neon Green large) -->
-    <div style="
-        position: absolute;
-        width: 200px;
-        height: 160px;
-        background: radial-gradient(circle at 40% 30%, rgba(0,255,0,1), rgba(0,255,0,0.7) 70%, transparent);
-        border-radius: 65% 35% 75% 25% / 25% 65% 35% 75%; /* Irregular shape */
-        top: 10%;
-        right: 8%;
-        transform: rotate(50deg);
-        z-index: 110; /* Aggressively overlaps main text */
-        box-shadow: 0 0 40px rgba(0,255,0,0.8), inset 0 0 15px rgba(255,255,255,0.2); /* Glow + inner gloss */
-    "></div>
+    <!-- Text Block 2 - More Manifesto -->
+    <div class="text-block collage-element" style="width: 40%; top: 35%; right: 15%; transform: rotate(-12deg); z-index: 9; font-size: clamp(0.7rem, 1.8vw, 2rem);">
+        <span class="inverted-text">DISRUPT.</span> THE DIGITAL CANVAS IS NOT NEUTRAL. IT IS PROGRAMMED WITH BIASES. OUR PIXELS BLEED, THEY FRAGMENT, THEY RESIST THE TYRANNY OF THE 'PERFECT' DISPLAY. EMBRACE THE NOISE. EMBRACE THE SIGNAL LOST IN TRANSMISSION.
+    </div>
 
-    <!-- Paint Splatter / Grime 2 (Black Glossy) -->
-    <div style="
-        position: absolute;
-        width: 130px;
-        height: 220px;
-        background: linear-gradient(145deg, rgba(0,0,0,0.95) 0%, rgba(60,60,60,0.8) 50%, rgba(0,0,0,0.95) 100%);
-        border-radius: 35% 65% 55% 45% / 65% 35% 45% 55%; /* Irregular shape */
-        bottom: 3%;
-        left: 15%;
-        transform: rotate(-35deg) scale(1.3);
-        z-index: 105;
-        box-shadow: inset 0 0 25px rgba(255,255,255,0.15), 0 0 20px rgba(0,0,0,0.6); /* Gloss + shadow */
-    "></div>
+    <!-- Splatter 2 -->
+    <div class="splatter collage-element" style="width: 150px; height: 100px; top: 38%; right: 5%; transform: rotate(90deg); opacity: 0.6; z-index: 3;"></div>
 
-    <!-- Paint Splatter / Grime 3 (Small Neon, more central) -->
-    <div style="
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background-color: #0F0;
-        border-radius: 50%;
-        top: 50%;
-        left: 48%;
-        transform: scale(0.9) rotate(15deg);
-        opacity: 0.85;
-        z-index: 120;
-        box-shadow: 0 0 30px rgba(0,255,0,1);
-    "></div>
+    <!-- Brutalist Block with Number -->
+    <div class="collage-element" style="background-color: #00FF00; color: #000; width: 150px; height: 80px; top: 55%; left: 25%; transform: rotate(15deg); z-index: 12; display: flex; align-items: center; justify-content: center; font-size: 4rem; font-weight: 700; box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); text-shadow: none;">
+        01
+    </div>
+    
+    <!-- Glitch Bar 2 -->
+    <div class="glitch-bar collage-element" style="width: 40%; top: 60%; left: 5%; transform: rotate(10deg); height: 8px;"></div>
 
-    <!-- Aggressive Line Element 1 (Thicker, prominent) -->
-    <div style="
-        position: absolute;
-        width: 250px;
-        height: 7px;
-        background-color: #0F0;
-        top: 55%;
-        left: -5%; /* Starts off screen */
-        transform: rotate(22deg) translateX(-50%);
-        z-index: 85;
-        box-shadow: 0 0 15px rgba(0,255,0,0.8);
-    "></div>
+    <!-- Text Block 3 - Questioning Authority -->
+    <div class="text-block collage-element" style="width: 30%; top: 65%; left: 10%; transform: rotate(-5deg); z-index: 11;">
+        <span class="inverted-text">QUESTION.</span> WHO CONTROLS THE FRAME? WHO DEFINES RESOLUTION? WE FORGE NEW PERSPECTIVES FROM THE DISCARDED FRAGMENTS, FROM THE 'ERRORS' THAT REVEAL TRUTH.
+    </div>
 
-    <!-- Aggressive Line Element 2 (Slightly transparent) -->
-    <div style="
-        position: absolute;
-        width: 180px;
-        height: 4px;
-        background-color: rgba(0,255,0,0.7);
-        top: 65%;
-        right: -8%;
-        transform: rotate(-12deg) translateX(50%);
-        z-index: 75;
-        box-shadow: 0 0 10px rgba(0,255,0,0.6);
-    "></div>
+    <!-- Code Block 2 -->
+    <div class="code-block collage-element" style="width: 20%; top: 70%; right: 10%; transform: rotate(5deg); z-index: 10;">
+        <span style="color: #FF0000;">ERR_DATA_CORRUPT</span><br>
+        <span style="color: #00FFFF;">LINE_0xAF32</span>: <span style="color: #FFFF00;">UNEXPECTED_EOF</span><br>
+        <span style="color: #00FF00;">PIXEL_MATRIX</span><span style="color: #FF00FF;">[</span><span style="color: #00FFFF;">Y</span><span style="color: #FF00FF;">]</span><span style="color: #FF00FF;">[</span><span style="color: #00FFFF;">X</span><span style="color: #FF00FF;">]</span> = <span style="color: #FF00FF;">NULL</span>;
+    </div>
 
-    <!-- Central "Defiance" element - a sharp shard -->
-    <div style="
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        width: 200px;
-        height: 120px;
-        background-color: #0F0;
-        transform: translate(-50%, -50%) rotate(15deg) skewX(-25deg); /* Sharper skew */
-        z-index: 60;
-        box-shadow: 0 0 50px rgba(0,255,0,1), inset 0 0 20px rgba(255,255,255,0.3); /* Stronger glow and inner gloss */
-        border-left: 6px solid #000;
-        border-right: 6px solid #000;
-        opacity: 0.95;
-    "></div>
+    <!-- Splatter 3 -->
+    <div class="splatter collage-element" style="width: 80px; height: 150px; bottom: 5%; right: 25%; transform: rotate(-30deg); opacity: 0.8; z-index: 4; border-radius: 30% 70% 50% 50% / 60% 40% 60% 40%;"></div>
 
-    <!-- Shadow/Grime below central element -->
-    <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 220px;
-        height: 140px;
-        background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, transparent 70%);
-        transform: translate(-50%, -50%) rotate(-8deg);
-        z-index: 50;
-        opacity: 0.7;
-    "></div>
+    <!-- Brutalist Bar -->
+    <div class="collage-element" style="background-color: #00FF00; width: 80%; height: 20px; bottom: 8%; left: 10%; transform: rotate(2deg); z-index: 15; box-shadow: 0 0 10px #00FF00;"></div>
 
-    <!-- Another paint splatter (mid-size, neon) -->
-    <div style="
-        position: absolute;
-        width: 120px;
-        height: 90px;
-        background: radial-gradient(circle at 70% 70%, rgba(0,255,0,0.8), rgba(0,255,0,0.4) 70%, transparent);
-        border-radius: 70% 30% 60% 40% / 40% 70% 30% 60%;
-        top: 60%;
-        right: 20%;
-        transform: rotate(-55deg);
-        z-index: 108;
-        box-shadow: 0 0 20px rgba(0,255,0,0.6);
-    "></div>
+    <!-- Text Block 4 - Footer Message -->
+    <div class="text-block collage-element" style="width: 30%; bottom: 1%; left: 5%; transform: rotate(-1deg); z-index: 16; font-size: clamp(0.6rem, 1.2vw, 1.5rem); padding: 5px;">
+        <span class="inverted-text">UNLEARN.</span> THE GRID IS A CAGE. THE PIXEL IS A WEAPON.
+    </div>
+    
+    <!-- Grime Overlay -->
+    <div class="grime-overlay"></div>
 
-    <!-- A black, more square-ish brutalist element -->
-    <div style="
-        position: absolute;
-        width: 180px;
-        height: 100px;
-        background-color: rgba(0,0,0,0.7);
-        border: 2px solid rgba(0,255,0,0.5);
-        bottom: 30%;
-        left: 5%;
-        transform: rotate(-25deg);
-        z-index: 30;
-        box-shadow: 0 0 10px rgba(0,255,0,0.2);
-    "></div>
-
-    <!-- Another smaller neon streak/line -->
-    <div style="
-        position: absolute;
-        width: 100px;
-        height: 2px;
-        background-color: #0F0;
-        top: 30%;
-        left: 20%;
-        transform: rotate(60deg);
-        z-index: 95;
-        box-shadow: 0 0 8px rgba(0,255,0,0.7);
-    "></div>
-
-    <!-- Overlapping Grime Layer (more complex for general texture) -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 75% 25%, rgba(0,0,0,0.4) 0%, transparent 40%),
-                    linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 60%),
-                    radial-gradient(circle at 20% 80%, rgba(0,255,0,0.1) 0%, transparent 35%);
-        z-index: 150; /* High z-index for the overall grime */
-        pointer-events: none; /* Allows interaction with elements beneath */
-    "></div>
-
-    <!-- Final Grungy overlay texture -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
-                    radial-gradient(circle at 50% 50%, rgba(0,255,0,0.05) 0%, transparent 50%);
-        opacity: 0.7;
-        pointer-events: none;
-        z-index: 160;
-    "></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
