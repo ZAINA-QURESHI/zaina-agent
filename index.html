@@ -39,208 +39,343 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-13 10:36 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-13 13:22 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-                
-<div class="androgyny-collage">
-  <style>
-    /* CSS Variables for theme consistency */
-    :root {
-      --neon-green: #39FF14; /* Vibrant electric green */
-      --deep-black: #000000;
-      --font-brutalist: 'Arial Black', Impact, sans-serif; /* Aggressive, bold font */
-    }
+                <div class="algorithm-plantation-collage">
+    <style>
+        /* CSS Variables for consistent theming */
+        .algorithm-plantation-collage {
+            --neon-green: #39FF14; /* The signature vibrant neon green */
+            --deep-black: #080808; /* Very dark, almost pure black */
+            --off-black: #1a1a1a;  /* Slightly lighter black for depth */
+            --mid-black: #2a2a2a;  /* Medium black for layers */
+            --bright-glow: rgba(57, 255, 20, 0.7); /* Neon green with transparency for glow */
+            --shadow-alpha: rgba(0, 0, 0, 0.8); /* Dark shadow for depth */
 
-    /* Main container for the collage */
-    .androgyny-collage {
-      position: relative;
-      width: 100vw; /* Fills the viewport width */
-      height: 100vh; /* Fills the viewport height */
-      overflow: hidden; /* Crucial to contain absolutely positioned elements */
-      background-color: var(--deep-black);
-      font-family: var(--font-brutalist);
-      color: var(--neon-green);
-      box-sizing: border-box; /* Include padding and border in element's total width and height */
-      display: flex; /* For basic centering if content isn't absolutely positioned */
-      justify-content: center;
-      align-items: center;
-      perspective: 1000px; /* Enables 3D transforms */
-      text-rendering: optimizeLegibility; /* Improves text appearance */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      cursor: crosshair; /* Adds to aggressive digital feel */
-    }
+            /* Base styles for the entire collage container */
+            position: relative; /* Establishes positioning context for absolute elements */
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            background-color: var(--deep-black); /* Core background color */
+            overflow: hidden; /* Crucial to contain all absolute elements within the div */
+            font-family: 'monospace', sans-serif; /* Brutalist/digital text feel */
+            color: var(--neon-green); /* Default text color */
+            cursor: crosshair; /* Unsettling, surveillance-like cursor */
+            box-sizing: border-box; /* Ensures padding/border are included in element's total size */
+            display: block; /* Explicitly set to block for predictable behavior */
+            /* filter: saturate(1.2) contrast(1.1); /* Overall intensity boost */
+        }
 
-    /* Overall grime/sheen effect using a pseudo-element on the main container */
-    .androgyny-collage::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      /* Radial gradient for a pulsing, high-gloss grime effect */
-      background: radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.1) 0%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-      opacity: 0.7;
-      mix-blend-mode: overlay; /* Blends nicely with underlying elements */
-      pointer-events: none; /* Allows interaction with elements beneath */
-      z-index: 100; /* Ensures this effect is on top */
-      animation: pulse-shine 8s infinite alternate-reverse ease-in-out; /* Subtle animation */
-    }
+        /* General styling for collage elements */
+        .collage-element {
+            position: absolute; /* Allows for precise, overlapping placement */
+            box-sizing: border-box;
+            border: 2px solid var(--neon-green); /* Sharp, defined borders */
+            background-color: var(--off-black); /* Default background for blocks */
+            box-shadow: 0 0 15px var(--bright-glow), inset 0 0 8px var(--neon-green); /* High-gloss grime effect */
+            padding: 10px;
+            text-transform: uppercase; /* All caps for brutalist typography */
+            font-weight: 900; /* Bold and impactful */
+            line-height: 1.1; /* Tightly packed lines */
+            transform-origin: center center; /* For rotating/skewing from center */
+            z-index: 10; /* Base z-index for most elements */
+            user-select: none; /* Prevents selection, keeping the collage fixed */
+            pointer-events: auto; /* Allows interaction by default */
+        }
 
-    @keyframes pulse-shine {
-      0% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.1); opacity: 0.4; }
-      100% { transform: scale(1); opacity: 0.7; }
-    }
+        /* Styling for text within collage elements */
+        .collage-text {
+            color: var(--neon-green);
+            font-size: clamp(1.5em, 5vw, 4em); /* Responsive text sizing */
+            text-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--bright-glow); /* Glowing text effect */
+            letter-spacing: 2px;
+            word-break: break-all; /* Breaks long words for glitchy look */
+            text-align: center;
+        }
 
-    /* Common styles for brutalist blocks */
-    .collage-block {
-      position: absolute; /* Essential for collage layout */
-      background-color: var(--deep-black);
-      border: 2px solid var(--neon-green);
-      /* High-gloss glow and a brutalist hard offset shadow */
-      box-shadow: 0 0 10px var(--neon-green), inset 0 0 10px var(--neon-green), 5px 5px 0 var(--deep-black);
-      transform-origin: center center;
-      z-index: 20; /* Layering */
-    }
-    /* Inverted color scheme for some blocks */
-    .collage-block.inverted {
-        background-color: var(--neon-green);
-        border-color: var(--deep-black);
-        box-shadow: 0 0 10px var(--deep-black), inset 0 0 10px var(--deep-black), 5px 5px 0 var(--neon-green);
-    }
+        /* Specific brutalist block aesthetic */
+        .brutal-block {
+            background-color: var(--mid-black);
+            border: 5px solid var(--neon-green); /* Thicker, more imposing border */
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.9), inset 0 0 10px var(--neon-green); /* Intense glow */
+            z-index: 15; /* Higher z-index for prominence */
+            overflow: hidden; /* For containing nested content cleanly */
+            backdrop-filter: blur(2px) brightness(1.2); /* Distorted, glowing effect */
+            -webkit-backdrop-filter: blur(2px) brightness(1.2); /* Safari compatibility */
+        }
 
-    /* Text styles for aggressive typography */
-    .collage-text {
-      position: absolute;
-      font-size: clamp(2em, 8vw, 6em); /* Responsive font sizing */
-      font-weight: 900;
-      line-height: 0.8;
-      text-transform: uppercase;
-      color: var(--neon-green);
-      /* Aggressive glow for text */
-      text-shadow: 0 0 5px var(--neon-green), 0 0 15px var(--neon-green);
-      mix-blend-mode: screen; /* Interesting blend for text over other elements */
-      z-index: 30;
-      pointer-events: none;
-    }
-    /* Dark text on bright backgrounds for contrast */
-    .collage-text.dark {
-        color: var(--deep-black);
-        text-shadow: 0 0 5px var(--neon-green), 0 0 15px var(--neon-green), 2px 2px 0 var(--neon-green);
-        mix-blend-mode: multiply; /* Dark text over bright elements */
-    }
+        /* High-gloss grime panel aesthetic */
+        .glossy-panel {
+            background: linear-gradient(135deg, var(--off-black) 0%, var(--mid-black) 30%, var(--off-black) 60%, var(--mid-black) 100%); /* Metallic gradient */
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle reflections */
+            filter: saturate(1.5) contrast(1.2); /* Enhances color and definition */
+            z-index: 20;
+        }
 
-    /* Grime / Digital Paint Splatter Effects */
-    .grime-splatter {
-      position: absolute;
-      background-color: var(--neon-green);
-      opacity: 0.6;
-      filter: blur(2px) contrast(1.5); /* Blurry, glowing splatter effect */
-      mix-blend-mode: lighten; /* Blends by picking the lighter color */
-      z-index: 15;
-    }
-    /* Specific shapes for splatters using border-radius and transforms */
-    .grime-splatter.s1 { width: 150px; height: 180px; top: 10%; left: 5%; border-radius: 60% 40% 30% 70% / 70% 30% 60% 40%; transform: rotate(-25deg); }
-    .grime-splatter.s2 { width: 200px; height: 100px; bottom: 8%; right: 10%; border-radius: 30% 70% 70% 30% / 50% 50% 50% 50%; transform: rotate(15deg); }
-    .grime-splatter.s3 { width: 180px; height: 120px; top: 5%; left: 70%; border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%; transform: rotate(30deg); opacity: 0.4; }
-    .grime-splatter.s4 { width: 100px; height: 150px; bottom: 15%; left: 5%; border-radius: 40% 60% 50% 50% / 60% 40% 70% 30%; transform: rotate(-15deg); opacity: 0.5; }
-    .grime-splatter.s5 { width: 250px; height: 80px; top: 60%; right: -20px; border-radius: 80% 20% 80% 20% / 20% 80% 20% 80%; transform: rotate(45deg); opacity: 0.3; }
+        /* Digital paint splatters */
+        .splatter {
+            position: absolute;
+            background-color: var(--neon-green);
+            border-radius: 50%; /* Circular base for splatters */
+            opacity: 0.8;
+            filter: blur(1px); /* Softens edges */
+            z-index: 5; /* Generally behind main elements */
+            box-shadow: 0 0 10px var(--neon-green); /* Glowing splatter effect */
+            mix-blend-mode: screen; /* For interesting visual overlaps with background */
+        }
 
-    /* Brutalist lines for structural elements */
-    .brutalist-line {
-      position: absolute;
-      background-color: var(--neon-green);
-      box-shadow: 0 0 8px var(--neon-green), 3px 3px 0 var(--deep-black); /* Glow and hard shadow */
-      z-index: 25;
-    }
-    /* Inverted line color */
-    .brutalist-line.inverted {
-        background-color: var(--deep-black);
-        box-shadow: 0 0 8px var(--deep-black), 3px 3px 0 var(--neon-green);
-    }
+        /* Glitch overlay effect */
+        .overlay-glitch {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; /* Allows clicks to pass through */
+            mix-blend-mode: overlay; /* Blends intensely with underlying elements */
+            background: repeating-linear-gradient(
+                45deg,
+                var(--neon-green),
+                var(--neon-green) 1px,
+                transparent 1px,
+                transparent 3px
+            ); /* Creates scanning lines */
+            opacity: 0.1; /* Subtle effect */
+            z-index: 100; /* On top of most elements */
+            animation: glitch-flicker 0.5s infinite alternate; /* Animates opacity/scale */
+        }
 
-    /* Glitch effect on specific text elements */
-    .glitch-text {
-      position: relative;
-      overflow: visible; /* Allow pseudo-elements to extend beyond the box */
-      z-index: 35;
-    }
-    .glitch-text::before, .glitch-text::after {
-      content: attr(data-text); /* Uses the text content from data-text attribute */
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      text-shadow: 0 0 5px var(--neon-green);
-    }
-    .glitch-text::before {
-      left: 2px;
-      text-shadow: -2px 0 var(--neon-green);
-      animation: glitch-anim-1 2s infinite linear alternate-reverse;
-      clip-path: inset(60% 0 0 0); /* Clips the text for partial visibility */
-    }
-    .glitch-text::after {
-      left: -2px;
-      text-shadow: 2px 0 var(--neon-green);
-      animation: glitch-anim-2 2s infinite linear alternate-reverse;
-      clip-path: inset(0 0 60% 0);
-    }
+        /* Keyframe animation for glitch effect */
+        @keyframes glitch-flicker {
+            0% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.05; transform: scale(1.01); }
+            100% { opacity: 0.15; transform: scale(0.99); }
+        }
 
-    /* Keyframe animations for the glitch effect */
-    @keyframes glitch-anim-1 {
-      0% { clip-path: inset(80% 0 0 0); transform: translateX(-5px); }
-      20% { clip-path: inset(40% 0 0 0); transform: translateX(5px); }
-      40% { clip-path: inset(10% 0 0 0); transform: translateX(-5px); }
-      60% { clip-path: inset(70% 0 0 0); transform: translateX(5px); }
-      80% { clip-path: inset(20% 0 0 0); transform: translateX(-5px); }
-      100% { clip-path: inset(90% 0 0 0); transform: translateX(0); }
-    }
-    @keyframes glitch-anim-2 {
-      0% { clip-path: inset(0 0 80% 0); transform: translateX(5px); }
-      20% { clip-path: inset(0 0 40% 0); transform: translateX(-5px); }
-      40% { clip-path: inset(0 0 10% 0); transform: translateX(5px); }
-      60% { clip-path: inset(0 0 70% 0); transform: translateX(-5px); }
-      80% { clip-path: inset(0 0 20% 0); transform: translateX(5px); }
-      100% { clip-path: inset(0 0 90% 0); transform: translateX(0); }
-    }
-  </style>
+        /* Grime texture overlay */
+        .grime-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 10%, rgba(57, 255, 20, 0.05) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 90%, rgba(57, 255, 20, 0.05) 0%, transparent 20%); /* Subtle glowing dirt spots */
+            mix-blend-mode: overlay; /* Integrates into the design */
+            pointer-events: none;
+            z-index: 99;
+        }
 
-  <!-- COLLAGE ELEMENTS: Arranged with absolute positioning and transforms for a messy, dynamic look -->
+        /* Animated grid background for digital plantation feel */
+        .animated-grid {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(57, 255, 20, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(57, 255, 20, 0.05) 1px, transparent 1px); /* Creates a fine grid */
+            background-size: 40px 40px; /* Grid cell size */
+            animation: grid-scroll 20s linear infinite; /* Smoothly scrolls the grid */
+            z-index: 0; /* Ensures it's at the very back */
+            mix-blend-mode: hard-light; /* Intense blending */
+        }
 
-  <!-- Digital Paint Splatters / Grime -->
-  <div class="grime-splatter s1"></div>
-  <div class="grime-splatter s2"></div>
-  <div class="grime-splatter s3"></div>
-  <div class="grime-splatter s4"></div>
-  <div class="grime-splatter s5"></div>
+        /* Keyframe animation for grid scrolling */
+        @keyframes grid-scroll {
+            from { background-position: 0 0; }
+            to { background-position: 40px 40px; }
+        }
 
-  <!-- Brutalist Blocks and Lines -->
-  <div class="collage-block" style="width: 300px; height: 150px; top: 15%; left: 30%; transform: rotate(-8deg);"></div>
-  <div class="collage-block inverted" style="width: 200px; height: 250px; bottom: 10%; left: 20%; transform: rotate(15deg); border-width: 5px;"></div>
-  <div class="collage-block" style="width: 400px; height: 70px; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(3deg);"></div>
-  <div class="collage-block inverted" style="width: 100px; height: 100px; top: 5%; right: 10%; transform: rotate(45deg);"></div>
-  <div class="collage-block" style="width: 80px; height: 300px; bottom: -50px; right: 30%; transform: rotate(-20deg);"></div>
+        /* Specific styles for "Data Field" blocks */
+        .data-field {
+            width: 150px;
+            height: 250px;
+            background-color: var(--off-black);
+            border: 2px solid var(--neon-green);
+            box-shadow: inset 0 0 10px var(--neon-green), 0 0 15px var(--bright-glow);
+            z-index: 12;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            filter: saturate(1.2);
+            font-size: 0.9em;
+        }
 
-  <div class="brutalist-line" style="width: 300px; height: 8px; top: 20%; left: -10%; transform: rotate(10deg);"></div>
-  <div class="brutalist-line inverted" style="width: 8px; height: 400px; top: 50%; right: 15%; transform: translateY(-50%) rotate(-5deg);"></div>
-  <div class="brutalist-line" style="width: 150px; height: 15px; bottom: 2%; left: 40%; transform: rotate(5deg);"></div>
-  <div class="brutalist-line inverted" style="width: 10px; height: 200px; top: 5%; left: 20%; transform: rotate(20deg);"></div>
+        /* Pseudo-element for "DATA FIELD" label on data fields */
+        .data-field::before {
+            content: "DATA\AFIELD"; /* Use \A for line break */
+            white-space: pre; /* Preserves whitespace and line breaks */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8em;
+            color: rgba(57, 255, 20, 0.4); /* Faded effect */
+            text-shadow: none;
+            z-index: 1; /* Below the main data content */
+        }
 
-  <!-- Aggressive Androgyny Text as Resistance -->
-  <div class="collage-text" style="top: 25%; left: 10%;">RESIST<br>FORM</div>
-  <div class="collage-text dark" style="bottom: 15%; right: 5%; font-size: clamp(1.5em, 5vw, 4em); transform: rotate(10deg);">FLUID<br>FORCE</div>
-  <!-- Main "ANDROGYNY" text split and slightly offset for a deconstructed look -->
-  <div class="collage-text" style="top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg); font-size: clamp(3em, 12vw, 8em); color: var(--deep-black); text-shadow: 0 0 8px var(--neon-green), 0 0 20px var(--neon-green);">ANDRO</div>
-  <div class="collage-text" style="top: 55%; left: 48%; transform: translate(-50%, -50%) rotate(5deg); font-size: clamp(3em, 12vw, 8em); z-index: 31; opacity: 0.9;">GYNY</div>
-  <!-- Glitching text element -->
-  <div class="collage-text glitch-text" data-text="RECLAIM" style="top: 70%; left: 10%; font-size: clamp(2em, 7vw, 5em); transform: rotate(-12deg);">RECLAIM</div>
-  <div class="collage-text dark" style="top: 5%; right: 5%; font-size: clamp(1em, 3vw, 2.5em); transform: rotate(8deg);">DEFIANT</div>
+        .data-value {
+            font-size: 1.2em; /* Larger font for actual data */
+            word-break: break-all;
+            margin-top: auto; /* Pushes content to the bottom if needed */
+            margin-bottom: auto; /* Pushes content to the top if needed */
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
 
+        /* Brutalist Structures */
+        .structure-pillar {
+            bottom: 0; left: 35%;
+            width: 80px; height: 400px;
+            background-color: var(--off-black);
+            border: 3px solid var(--neon-green);
+            box-shadow: inset 0 0 15px var(--neon-green), 0 0 10px var(--bright-glow);
+            transform: skewX(-10deg); /* Distorted angle */
+            z-index: 10;
+        }
+        .structure-beam {
+            top: 20%; left: 15%;
+            width: 400px; height: 50px;
+            background-color: var(--mid-black);
+            border: 3px solid var(--neon-green);
+            box-shadow: inset 0 0 10px var(--neon-green);
+            transform: rotate(-7deg);
+            z-index: 11;
+        }
+        .structure-platform {
+            bottom: -50px; right: -50px; /* Partially off-screen for depth */
+            width: 400px; height: 200px;
+            background-color: var(--mid-black);
+            border: 5px solid var(--neon-green);
+            transform: skewY(15deg);
+            box-shadow: 0 0 20px var(--bright-glow);
+            z-index: 20;
+            overflow: hidden;
+        }
+        .structure-platform::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            background: linear-gradient(45deg, var(--neon-green) 0%, transparent 5%, transparent 95%, var(--neon-green) 100%);
+            opacity: 0.2; /* Subtle internal glowing lines */
+        }
+
+    </style>
+
+    <!-- Animated grid background layer -->
+    <div class="animated-grid"></div>
+
+    <!-- Digital Paint Splatters - Messy, random elements for grime and visual noise -->
+    <div class="splatter" style="width: 80px; height: 70px; top: 10%; left: 50%; transform: rotate(20deg);"></div>
+    <div class="splatter" style="width: 120px; height: 90px; top: 40%; left: 30%; transform: rotate(-30deg); background-color: var(--deep-black); opacity: 0.6; box-shadow: 0 0 10px var(--deep-black);"></div>
+    <div class="splatter" style="width: 50px; height: 60px; bottom: 15%; right: 15%; transform: rotate(45deg);"></div>
+    <div class="splatter" style="width: 100px; height: 110px; top: 20%; right: 20%; transform: rotate(-10deg); opacity: 0.7;"></div>
+    <div class="splatter" style="width: 70px; height: 70px; bottom: 5%; left: 5%; transform: rotate(60deg);"></div>
+    <div class="splatter" style="width: 90px; height: 80px; top: 70%; left: 60%; transform: rotate(-25deg); background-color: var(--deep-black); opacity: 0.5; box-shadow: 0 0 10px var(--deep-black);"></div>
+
+    <!-- Brutalist Structures - Architectural elements suggesting industrial scale -->
+    <div class="collage-element structure-pillar"></div>
+    <div class="collage-element structure-beam"></div>
+    <div class="collage-element structure-platform"></div>
+
+    <!-- Main Collage Elements - Thematic blocks with specific styling -->
+
+    <!-- "ALGORITHM PLANTATION" Title Block -->
+    <div class="collage-element brutal-block" style="
+        top: 5%; left: 5%; width: 80%; transform: rotate(-5deg); z-index: 30;
+        padding: 20px; font-size: clamp(2em, 8vw, 6em); text-align: left;
+        background-color: var(--deep-black); border: 8px solid var(--neon-green);
+        box-shadow: 0 0 30px var(--bright-glow); color: var(--neon-green);
+        filter: contrast(1.5) brightness(1.2);
+    ">
+        <span class="collage-text">ALGORITHM<br>PLANTATION</span>
+    </div>
+
+    <!-- "MASTER CONTROL" Block -->
+    <div class="collage-element brutal-block" style="
+        top: 60%; left: 20%; width: 300px; height: 150px;
+        transform: rotate(10deg) skewX(-15deg); z-index: 40;
+        background-color: var(--deep-black); border: 6px solid var(--neon-green);
+        box-shadow: 0 0 40px var(--bright-glow), inset 0 0 20px var(--neon-green);
+        display: flex; align-items: center; justify-content: center;
+        filter: drop-shadow(0 0 15px var(--neon-green));
+    ">
+        <span class="collage-text" style="font-size: clamp(1.2em, 4vw, 3em); color: var(--neon-green); filter: brightness(1.8);">MASTER<br>CONTROL</span>
+    </div>
+
+    <!-- Data Field 1: Binary Data -->
+    <div class="collage-element data-field" style="top: 30%; left: 10%; transform: rotate(8deg); z-index: 25;">
+        <div class="data-value">01010011<br>01100001<br>01110110<br>01100101<br>00100000<br>01100100<br>01100001<br>01110100<br>01100001</div>
+    </div>
+
+    <!-- Data Field 2: Resource Keywords -->
+    <div class="collage-element data-field" style="top: 45%; right: 5%; transform: rotate(-12deg); z-index: 28;">
+        <div class="data-value">RESOURCE<br>OPTIMIZE<br>YIELD<br>PROFIT</div>
+    </div>
+
+    <!-- "DATA HARVESTER" Machine Block -->
+    <div class="collage-element brutal-block" style="
+        top: 10%; right: 10%; width: 250px; height: 180px;
+        background: repeating-linear-gradient(
+            45deg,
+            var(--mid-black), var(--mid-black) 10px,
+            var(--off-black) 10px, var(--off-black) 20px
+        ); /* Striped machine texture */
+        border: 4px solid var(--neon-green);
+        transform: rotate(15deg) skewY(5deg);
+        box-shadow: 0 0 20px var(--bright-glow), inset 0 0 10px var(--neon-green);
+        z-index: 35;
+        overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+    ">
+        <span class="collage-text" style="font-size: 1.5em; text-align: center; color: var(--neon-green);">DATA HARVESTER</span>
+        <div style="position: absolute; width: 120%; height: 30px; top: 30%; left: -10%; background-color: var(--neon-green); opacity: 0.6; filter: blur(2px); transform: rotate(-10deg); z-index: -1;"></div>
+        <div style="position: absolute; width: 100px; height: 100px; border-radius: 50%; bottom: -50px; right: -50px; background-color: var(--neon-green); opacity: 0.6; filter: blur(2px); box-shadow: 0 0 20px var(--bright-glow); z-index: -1;"></div>
+    </div>
+
+    <!-- "PROFIT++" Glossy Panel -->
+    <div class="collage-element glossy-panel" style="
+        bottom: 5%; right: 2%; width: 200px; height: 100px;
+        transform: rotate(-8deg); z-index: 32;
+        background-color: var(--neon-green); color: var(--deep-black); /* Inverted colors for emphasis */
+        display: flex; align-items: center; justify-content: center;
+        font-size: clamp(1.2em, 3vw, 2em); font-weight: 900;
+        box-shadow: 0 0 25px var(--neon-green), inset 0 0 10px var(--deep-black);
+    ">
+        PROFIT++
+    </div>
+
+    <!-- "CONTROL GRID" Panel -->
+    <div class="collage-element" style="
+        top: 50%; left: -5%; width: 250px; height: 120px;
+        transform: rotate(20deg); z-index: 29;
+        background-color: var(--off-black);
+        display: flex; align-items: center; justify-content: center;
+        font-size: clamp(1em, 3vw, 2em);
+        border: 3px solid var(--neon-green);
+    ">
+        <span class="collage-text" style="color: var(--neon-green);">CONTROL<br>GRID</span>
+    </div>
+
+    <!-- Subtle, almost hidden text for subtext/warning -->
+    <div class="collage-element" style="
+        top: 80%; left: 50%; transform: translate(-50%, -50%) rotate(5deg);
+        font-size: clamp(0.8em, 2vw, 1.5em);
+        opacity: 0.1; /* Very faded */
+        z-index: 10;
+        pointer-events: none; /* Non-interactive */
+        white-space: nowrap; /* Keeps text on one line */
+        text-shadow: none; border: none; background: none; box-shadow: none; /* Remove default element styling */
+        color: var(--neon-green);
+    ">
+        ALL YOUR DATA ARE BELONG TO US
+    </div>
+
+    <!-- Grime and Glitch Overlays - Final touches for aesthetic -->
+    <div class="grime-overlay"></div>
+    <div class="overlay-glitch"></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
