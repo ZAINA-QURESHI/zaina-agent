@@ -39,301 +39,395 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-14 07:48 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-14 10:27 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
             <div class="art-container p-4">
-                <div id="reparations-collage" style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Courier New', monospace; color: #00FF00; box-sizing: border-box;">
+                <div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000; /* Deep black base */
+    font-family: 'Press Start 2P', monospace, sans-serif;
+    color: #0F0; /* Neon green default text color */
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* For 3D transformations */
+    background-image:
+        radial-gradient(circle at top left, rgba(15, 255, 0, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(15, 255, 0, 0.03) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%); /* High-gloss grime base */
+">
     <style>
-        /* General reset for elements within the collage */
-        #reparations-collage * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1; /* Normalize line height for brutalist text blocks */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @keyframes glitch-flicker {
+            0% { opacity: 1; transform: translate(0, 0); }
+            20% { opacity: 0.8; transform: translate(-2px, 2px); }
+            40% { opacity: 1; transform: translate(0, 0); }
+            60% { opacity: 0.9; transform: translate(1px, -1px); }
+            80% { opacity: 0.7; transform: translate(-1px, 1px); }
+            100% { opacity: 1; transform: translate(0, 0); }
         }
-
-        /* Main Title */
-        .main-title {
-            position: absolute;
-            top: 15vh;
-            left: 10vw;
-            font-size: 10vw;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1vw;
-            color: #00FF00;
-            text-shadow: 0 0 2vw #00FF00, 0 0 4vw rgba(0,255,0,0.5);
-            z-index: 20;
-            mix-blend-mode: lighten;
-            filter: brightness(1.2);
+        @keyframes color-shift {
+            0% { filter: hue-rotate(0deg) saturate(1); }
+            50% { filter: hue-rotate(90deg) saturate(1.5); }
+            100% { filter: hue-rotate(0deg) saturate(1); }
         }
-
-        /* Subtitle */
-        .subtitle {
-            position: absolute;
-            top: 35vh;
-            left: 12vw;
-            font-size: 3vw;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5vw;
-            color: rgba(0,255,0,0.8);
-            text-shadow: 0 0 1vw rgba(0,255,0,0.5);
-            z-index: 21;
-            transform: rotate(-5deg);
+        @keyframes text-glitch {
+            0%, 100% { text-shadow: 0.05em 0 0 #0F0, -0.05em 0 0 #000; }
+            25% { text-shadow: -0.05em 0 0 #0F0, 0.05em 0 0 #000; }
+            50% { text-shadow: 0 0.05em 0 #0F0, 0 -0.05em 0 #000; }
+            75% { text-shadow: 0 -0.05em 0 #0F0, 0 0.05em 0 #000; }
         }
-
-        /* Glitch Text */
         .glitch-text {
+            animation: text-glitch 0.5s infinite alternate;
+        }
+        .glitch-item {
             position: absolute;
-            bottom: 10vh;
-            right: 5vw;
-            font-size: 2.5vw;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #00FF00;
-            letter-spacing: 0.3vw;
-            z-index: 25;
-            animation: glitch 1s infinite alternate;
-            mix-blend-mode: screen;
+            background: rgba(15, 255, 0, 0.1);
+            box-shadow: 0 0 5px #0F0, 0 0 15px #0F0 inset;
+            border: 1px solid #0F0;
+            backdrop-filter: blur(1px) brightness(1.2);
+            opacity: 0.9;
         }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); text-shadow: 0.15vw 0 0 rgba(0,255,0,0.7), -0.15vw 0 0 rgba(0,0,0,0.5); }
-            25% { transform: translate(-0.25vw, 0.25vw); text-shadow: -0.1vw 0 0 rgba(0,255,0,0.7), 0.1vw 0 0 rgba(0,0,0,0.5); }
-            50% { transform: translate(0.25vw, -0.25vw); text-shadow: 0.2vw 0 0 rgba(0,255,0,0.7), -0.2vw 0 0 rgba(0,0,0,0.5); }
-            75% { transform: translate(-0.15vw, -0.15vw); text-shadow: -0.05vw 0 0 rgba(0,255,0,0.7), 0.05vw 0 0 rgba(0,0,0,0.5); }
-            100% { transform: translate(0, 0); text-shadow: 0.15vw 0 0 rgba(0,255,0,0.7), -0.15vw 0 0 rgba(0,0,0,0.5); }
+        .digital-splatter {
+            position: absolute;
+            background: radial-gradient(circle, rgba(15, 255, 0, 0.7) 0%, rgba(15, 255, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(2px);
+            opacity: 0.5;
         }
-
-        /* Brutalist Blocks */
         .brutalist-block {
             position: absolute;
-            padding: 1vw 2vw;
-            border: 2px solid #00FF00;
-            background-color: rgba(0,0,0,0.8);
-            box-shadow: 0 0 1vw rgba(0,255,0,0.5);
-            font-size: 1.5vw;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.1vw;
-            z-index: 15;
-            mix-blend-mode: screen;
-            opacity: 0.9;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #0F0;
+            box-shadow: 0 0 10px rgba(15, 255, 0, 0.5);
+            padding: 10px;
+            color: #0F0;
+            font-size: 1.2em;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 0.1em;
+            overflow: hidden;
         }
-        .brutalist-block-1 {
-            top: 50vh;
-            left: 5vw;
-            transform: rotate(10deg);
+        @keyframes screen-flash {
+            0%, 98% { opacity: 0; }
+            99% { opacity: 0.8; }
+            100% { opacity: 0; }
         }
-        .brutalist-block-2 {
-            top: 70vh;
-            left: 20vw;
-            transform: rotate(-15deg);
-            font-size: 2vw;
-            background-color: rgba(0,0,0,0.9);
-            border-width: 4px;
+        div[style*="mix-blend-mode: screen"] {
+            animation: screen-flash 5s infinite;
         }
-        .brutalist-block-3 {
-            top: 20vh;
-            right: 15vw;
-            transform: rotate(20deg) scale(0.8);
-            background-color: rgba(0,0,0,0.7);
-            color: rgba(0,255,0,0.7);
-            filter: brightness(1.5);
-        }
-        .brutalist-block-4 {
-            bottom: 5vh;
-            left: 50vw;
-            width: 20vw;
-            height: 10vh;
-            transform: skewX(-30deg) rotate(5deg);
-            background-color: rgba(0,255,0,0.2);
-            box-shadow: 0 0 2vw rgba(0,255,0,0.8);
-            border: none;
-            z-index: 5;
-            mix-blend-mode: overlay;
-        }
-
-        /* Grime/Gloss Layers */
-        .grime-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .grime-layer-1 {
-            background: radial-gradient(circle at 80% 20%, rgba(0,255,0,0.05) 0%, rgba(0,0,0,0.9) 70%);
-            filter: blur(10px);
-            mix-blend-mode: multiply;
-            opacity: 0.7;
-        }
-        .grime-layer-2 {
-            background: linear-gradient(45deg, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,255,0,0.05) 100%);
-            filter: blur(5px);
-            mix-blend-mode: overlay;
-            opacity: 0.6;
-            transform: rotate(5deg) scale(1.1);
-            top: -5%;
-            left: -5%;
-            width: 110%;
-            height: 110%;
-        }
-        .gloss-reflection {
-            position: absolute;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0,255,0,0.3) 0%, rgba(0,0,0,0) 50%);
-            width: 40vw;
-            height: 40vh;
-            filter: blur(15px);
-            opacity: 0.4;
-            mix-blend-mode: screen;
-            pointer-events: none;
-            z-index: 10;
-        }
-        .gloss-reflection-1 {
-            top: 10vh;
-            left: 60vw;
-            --x: 70%; --y: 30%;
-            transform: rotate(30deg);
-        }
-        .gloss-reflection-2 {
-            bottom: 5vh;
-            left: 10vw;
-            --x: 20%; --y: 80%;
-            width: 50vw;
-            height: 30vh;
-            transform: rotate(-45deg);
-        }
-
-        /* Paint Splatters */
-        .splatter {
-            position: absolute;
-            background: #00FF00;
-            opacity: 0.8;
-            filter: blur(2px) brightness(1.2);
-            box-shadow: 0 0 1.5vw rgba(0,255,0,0.8);
-            z-index: 12;
-            mix-blend-mode: lighten;
-        }
-        .splatter-1 {
-            width: 15vw;
-            height: 10vh;
-            top: 40vh;
-            left: 45vw;
-            transform: rotate(25deg);
-            clip-path: polygon(0% 20%, 10% 0%, 50% 10%, 70% 5%, 90% 20%, 100% 50%, 80% 80%, 60% 100%, 30% 90%, 0% 70%);
-        }
-        .splatter-2 {
-            width: 10vw;
-            height: 15vh;
-            top: 10vh;
-            left: 5vw;
-            transform: rotate(-40deg);
-            clip-path: polygon(10% 0%, 90% 10%, 100% 50%, 70% 100%, 0% 80%, 30% 20%);
-            opacity: 0.6;
-            background: rgba(0,255,0,0.7);
-        }
-        .splatter-3 {
-            width: 8vw;
-            height: 8vw;
-            bottom: 20vh;
-            right: 10vw;
-            transform: rotate(60deg) scale(0.9);
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Organic blob */
-            background: #00FF00;
-            opacity: 0.9;
-            z-index: 18;
-        }
-        .splatter-4 {
-            width: 20vw;
-            height: 5vh;
-            top: 60vh;
-            right: 5vw;
-            transform: rotate(10deg);
-            background: linear-gradient(90deg, #00FF00, rgba(0,255,0,0.3), #00FF00);
-            filter: blur(1px);
-            mix-blend-mode: screen;
-            z-index: 8;
-            clip-path: polygon(0% 50%, 10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%);
-        }
-
-        /* Data Stream / Pixel Dust */
-        .data-stream-line {
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,255,0,0), #00FF00, rgba(0,255,0,0));
-            opacity: 0.1;
-            animation: dataflow 5s linear infinite;
-            z-index: 0;
-        }
-        .data-stream-line-1 { left: 20vw; animation-delay: 0s; }
-        .data-stream-line-2 { left: 40vw; animation-delay: 1.5s; transform: rotate(5deg); }
-        .data-stream-line-3 { left: 70vw; animation-delay: 3s; transform: rotate(-10deg); }
-
-        @keyframes dataflow {
-            0% { transform: translateY(-100%) scaleY(0); opacity: 0; }
-            20% { opacity: 0.1; transform: translateY(-50%) scaleY(1); }
-            80% { opacity: 0.1; transform: translateY(50%) scaleY(1); }
-            100% { transform: translateY(100%) scaleY(0); opacity: 0; }
-        }
-
-        /* Gaze target/overlay */
-        .gaze-target-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0,0,0,0.1),
-                rgba(0,0,0,0.1) 2px,
-                rgba(0,255,0,0.05) 2px,
-                rgba(0,255,0,0.05) 4px
-            );
-            mix-blend-mode: overlay;
-            opacity: 0.3;
-            z-index: 2;
-            pointer-events: none;
-            animation: subtle-pulse 10s infinite alternate;
-        }
-
-        @keyframes subtle-pulse {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.4; }
-            100% { opacity: 0.3; }
+        div[style*="mix-blend-mode: screen"] > span {
+            animation: text-glitch 0.2s infinite alternate;
+            animation-delay: 4.9s;
         }
     </style>
 
-    <h1 class="main-title">REPARATIONS</h1>
-    <h2 class="subtitle">FOR THE DIGITAL GAZE</h2>
+    <h1 style="
+        position: absolute;
+        font-size: 4em;
+        font-weight: 900;
+        z-index: 10;
+        color: #0F0;
+        text-shadow: 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateZ(50px) rotateX(-5deg);
+        animation: glitch-flicker 0.3s infinite alternate, text-glitch 0.7s infinite alternate;
+        white-space: nowrap;
+        user-select: none;
+    " class="glitch-text">
+        GLITCH<br>THEORY
+    </h1>
 
-    <div class="grime-layer grime-layer-1"></div>
-    <div class="grime-layer grime-layer-2"></div>
+    <p style="
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateZ(30px);
+        font-size: 1.5em;
+        color: rgba(15, 255, 0, 0.8);
+        text-shadow: 0 0 5px rgba(15, 255, 0, 0.5);
+        animation: text-glitch 0.9s infinite alternate;
+        letter-spacing: 0.05em;
+        user-select: none;
+        white-space: nowrap;
+    " class="glitch-text">
+        DECONSTRUCT RECONFIGURE
+    </p>
 
-    <div class="gloss-reflection gloss-reflection-1"></div>
-    <div class="gloss-reflection gloss-reflection-2"></div>
+    <div class="brutalist-block" style="
+        width: 300px;
+        height: 150px;
+        top: 10%;
+        left: 5%;
+        transform: rotate(-7deg) skewX(5deg) translateZ(10px);
+        background: repeating-linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8) 5px, rgba(15,255,0,0.1) 5px, rgba(15,255,0,0.1) 10px);
+        animation: glitch-flicker 0.2s infinite alternate;
+        box-shadow: 0 0 15px #0F0;
+    ">
+        <span style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8em;
+            color: #0F0;
+            text-shadow: 0 0 5px #0F0;
+        ">
+            ERROR_404
+        </span>
+    </div>
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <div class="glitch-item" style="
+        width: 250px;
+        height: 100px;
+        bottom: 5%;
+        right: 10%;
+        transform: rotate(10deg) skewY(-3deg) translateZ(20px);
+        background: rgba(15, 255, 0, 0.05);
+        border: 2px dashed #0F0;
+        box-shadow: 0 0 8px #0F0 inset;
+        overflow: hidden;
+    ">
+        <span style="
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.9em;
+            color: rgba(15, 255, 0, 0.7);
+            filter: blur(0.5px);
+            user-select: none;
+        ">
+            DATA CORRUPTED_
+        </span>
+        <div style="
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #0F0;
+            bottom: -20px;
+            right: -20px;
+            transform: rotate(45deg);
+            opacity: 0.2;
+            filter: blur(3px);
+            box-shadow: 0 0 15px #0F0;
+        "></div>
+    </div>
 
-    <div class="brutalist-block brutalist-block-1"><span>ATTENTION IS CURRENCY</span></div>
-    <div class="brutalist-block brutalist-block-2"><span>DEMAND YOUR SHARE</span></div>
-    <div class="brutalist-block brutalist-block-3"><span>PIXEL DUES</span></div>
-    <div class="brutalist-block brutalist-block-4"></div>
+    <div class="brutalist-block" style="
+        width: 200px;
+        height: 80px;
+        top: 50%;
+        right: 5%;
+        transform: rotate(3deg) skewX(-2deg) translateZ(15px);
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid #0F0;
+        box-shadow: 0 0 10px #0F0;
+    ">
+        <span style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.1em;
+            color: #0F0;
+            animation: text-glitch 1.1s infinite alternate;
+            user-select: none;
+        ">
+            REDACTED//
+        </span>
+    </div>
 
-    <div class="glitch-text">YOUR EYES, THEIR PROFIT</div>
+    <div class="glitch-item" style="
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        left: 15%;
+        transform: rotate(-15deg) translateZ(5px);
+        border: 3px solid #0F0;
+        background: repeating-linear-gradient(45deg, rgba(15,255,0,0.1), rgba(15,255,0,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 6px);
+        animation: glitch-flicker 0.4s infinite alternate;
+        box-shadow: 0 0 10px #0F0;
+    ">
+        <div style="
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background: #0F0;
+            top: 20%;
+            opacity: 0.15;
+            filter: blur(2px);
+        "></div>
+        <div style="
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            background: #0F0;
+            bottom: 10%;
+            opacity: 0.1;
+            filter: blur(1px);
+        "></div>
+    </div>
 
-    <div class="data-stream-line data-stream-line-1"></div>
-    <div class="data-stream-line data-stream-line-2"></div>
-    <div class="data-stream-line data-stream-line-3"></div>
+    <div class="digital-splatter" style="
+        width: 120px;
+        height: 100px;
+        top: 5%;
+        right: 15%;
+        transform: rotate(20deg);
+        opacity: 0.4;
+        clip-path: polygon(0 20%, 10% 0, 100% 10%, 90% 80%, 70% 100%, 20% 90%);
+        background: radial-gradient(circle at 70% 30%, rgba(15, 255, 0, 0.8) 0%, rgba(15, 255, 0, 0) 70%);
+        box-shadow: 0 0 15px rgba(15, 255, 0, 0.7);
+    "></div>
 
-    <div class="gaze-target-overlay"></div>
+    <div class="digital-splatter" style="
+        width: 80px;
+        height: 80px;
+        bottom: 20%;
+        left: 5%;
+        transform: rotate(-30deg);
+        opacity: 0.6;
+        background: radial-gradient(circle at 30% 70%, rgba(15, 255, 0, 0.9) 0%, rgba(15, 255, 0, 0) 70%);
+        box-shadow: 0 0 10px rgba(15, 255, 0, 0.8);
+        clip-path: polygon(15% 0%, 100% 30%, 85% 100%, 0% 70%);
+    "></div>
+
+    <div class="digital-splatter" style="
+        width: 150px;
+        height: 150px;
+        top: 45%;
+        left: 40%;
+        transform: rotate(5deg) scale(0.8);
+        opacity: 0.3;
+        background: radial-gradient(circle at center, rgba(15, 255, 0, 0.6) 0%, rgba(15, 255, 0, 0) 70%);
+        box-shadow: 0 0 20px rgba(15, 255, 0, 0.5);
+    "></div>
+
+    <div style="
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image:
+            linear-gradient(0deg, transparent 99%, rgba(15, 255, 0, 0.1) 99.5%, rgba(15, 255, 0, 0.1) 100%),
+            linear-gradient(90deg, transparent 99%, rgba(15, 255, 0, 0.1) 99.5%, rgba(15, 255, 0, 0.1) 100%),
+            linear-gradient(180deg, transparent 99%, rgba(15, 255, 0, 0.1) 99.5%, rgba(15, 255, 0, 0.1) 100%),
+            linear-gradient(270deg, transparent 99%, rgba(15, 255, 0, 0.1) 99.5%, rgba(15, 255, 0, 0.1) 100%);
+        background-size: 100% 3px, 3px 100%;
+        opacity: 0.1;
+        filter: blur(0.5px);
+        animation: glitch-flicker 5s infinite alternate;
+        z-index: 20;
+    "></div>
+
+    <span style="
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.8em;
+        color: rgba(15, 255, 0, 0.5);
+        text-shadow: 0 0 3px rgba(15, 255, 0, 0.3);
+        animation: text-glitch 1.5s infinite alternate;
+        user-select: none;
+        white-space: nowrap;
+    " class="glitch-text">
+        SYSTEM_OVERLOAD
+    </span>
+
+    <span style="
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.7em;
+        color: rgba(15, 255, 0, 0.6);
+        text-shadow: 0 0 4px rgba(15, 255, 0, 0.4);
+        animation: glitch-flicker 0.8s infinite alternate;
+        user-select: none;
+        white-space: nowrap;
+    " class="glitch-text">
+        INTERRUPT: NARRATIVE FRACTURE
+    </span>
+
+    <div style="
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(circle at 10% 90%, rgba(15, 255, 0, 0.03) 0%, transparent 30%),
+                    radial-gradient(circle at 90% 10%, rgba(0, 0, 0, 0.2) 0%, transparent 50%),
+                    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 5%, transparent 95%, rgba(0,0,0,0.1) 100%);
+        pointer-events: none;
+        z-index: 100;
+        opacity: 0.8;
+    "></div>
+
+    <div style="
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+        z-index: 101;
+        mix-blend-mode: screen;
+        opacity: 0;
+    ">
+        <span style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5em;
+            color: #0F0;
+            text-shadow: 0 0 20px #0F0;
+            opacity: 0;
+            user-select: none;
+        " class="glitch-text">
+            /////
+        </span>
+    </div>
+
+    <div style="
+        position: absolute;
+        width: 180px;
+        height: 120px;
+        top: 70%;
+        right: 20%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" preserveAspectRatio="none"><rect width="10" height="10" fill="black"/><rect x="0" y="0" width="2" height="2" fill="%230F0"/><rect x="4" y="2" width="2" height="2" fill="%230F0"/><rect x="8" y="4" width="2" height="2" fill="%230F0"/><rect x="2" y="6" width="2" height="2" fill="%230F0"/><rect x="6" y="8" width="2" height="2" fill="%230F0"/></svg>') repeat;
+        background-size: 20px 20px;
+        border: 2px solid #0F0;
+        box-shadow: 0 0 10px #0F0;
+        transform: rotate(5deg) scale(1.1) translateZ(25px);
+        filter: saturate(1.5) contrast(1.2);
+        animation: color-shift 7s infinite alternate;
+        overflow: hidden;
+    ">
+        <span style="
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 0.7em;
+            color: #0F0;
+            text-shadow: 0 0 2px #0F0;
+            opacity: 0.8;
+            user-select: none;
+        ">
+            SOURCE///
+        </span>
+    </div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
+                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
