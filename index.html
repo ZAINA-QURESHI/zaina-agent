@@ -39,212 +39,298 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-14 15:26 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-14 17:59 // TOPIC: POST-CAPITALIST NARCISSISM</div>
             <div class="art-container p-4">
-                <div class="collage-outer-container" style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Helvetica Neue', Arial, sans-serif; color: #00FF00; cursor: crosshair;">
+                <div style="
+    display: block;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at 10% 20%, #0a0a0a, #000000 70%);
+    font-family: 'Arial Black', Impact, monospace, sans-serif;
+    color: #00FF00;
+    filter: saturate(150%) contrast(120%);
+    box-sizing: border-box;
+    cursor: default;
+    touch-action: manipulation; /* For better mobile interaction */
+">
     <style>
-        /* General container for the collage content */
-        .collage-inner-content {
-            position: relative; /* All children will be absolute relative to this */
-            width: 100%; /* Fill the outer container */
-            height: 100%; /* Fill the outer container */
-            overflow: hidden; /* Crucial for clipping elements that go off screen */
-            /* Colors and font inherited from the outer div */
+        /* CSS Variables */
+        :root {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --dark-gray: #1a1a1a;
+            --shadow-intensity: rgba(0, 255, 0, 0.5);
+            --gloss-effect: rgba(0, 255, 0, 0.3);
         }
 
-        /* Brutalist Typography */
-        .collage-text {
-            position: absolute;
-            font-size: 3em; /* Large text */
-            font-weight: 900; /* Ultra bold */
-            text-transform: uppercase;
-            line-height: 0.9;
+        /* Basic Reset for elements within this div */
+        div, p, h1, h2, span {
             margin: 0;
-            padding: 10px;
-            /* High-gloss grime: inner/outer glow, grimy gradient */
-            box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00 inset;
-            border: 1px solid #00FF00;
-            background: linear-gradient(135deg, rgba(0,255,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
-            backdrop-filter: blur(1px); /* Brutalist-tech filter */
-            -webkit-backdrop-filter: blur(1px); /* For Safari */
-            z-index: 10;
-            white-space: nowrap; /* Prevent text wrapping inside boxes */
-            pointer-events: none; /* Allow interaction with elements beneath */
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            box-sizing: border-box;
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
         }
 
-        .collage-text.t1 { top: 5%; left: 5%; transform: rotate(-5deg); font-size: 5em; pointer-events: auto; }
-        .collage-text.t2 { bottom: 10%; right: 15%; transform: rotate(8deg); font-size: 3.5em; border-left: 5px solid #00FF00; }
-        .collage-text.t3 { top: 30%; left: 40%; transform: rotate(15deg) scale(0.8); z-index: 12; background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(0,255,0,0.3) 100%); }
-        .collage-text.t4 { top: 60%; left: 10%; transform: rotate(-12deg); font-size: 2.8em; border-bottom: 3px dashed #00FF00; }
-        .collage-text.t5 { top: 2%; right: 2%; transform: rotate(3deg); font-size: 2em; opacity: 0.7; }
+        /* Generic Collage Element Styling */
+        .collage-element {
+            position: absolute;
+            border: 2px solid var(--neon-green);
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 10px 15px;
+            box-shadow: 0 0 15px var(--shadow-intensity), inset 0 0 10px var(--gloss-effect);
+            backdrop-filter: blur(2px) brightness(150%); /* High-gloss grime */
+            border-radius: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+        }
 
-        /* Digital Paint Splatters */
+        /* Specific Element Styles */
+        .title {
+            font-size: 5vw;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, -50%) rotate(-3deg);
+            width: 80%;
+            padding: 20px;
+            background: linear-gradient(45deg, var(--deep-black) 0%, var(--dark-gray) 50%, var(--deep-black) 100%);
+            border-bottom: 5px solid var(--neon-green);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
+            z-index: 20;
+            white-space: nowrap; /* Prevent breaking on small screens */
+            text-overflow: ellipsis; /* Handle overflow with dots */
+        }
+
+        .subtitle {
+            font-size: 2.5vw;
+            left: 20%;
+            top: 25%;
+            transform: rotate(7deg);
+            color: var(--neon-green);
+            background: rgba(0,0,0,0.9);
+            padding: 10px 20px;
+            width: auto;
+            white-space: nowrap;
+        }
+
+        .text-block-1 {
+            font-size: 1.8vw;
+            left: 65%;
+            top: 35%;
+            width: 30vw;
+            min-height: 10vw;
+            transform: rotate(15deg) skewY(-5deg);
+            background-color: var(--dark-gray);
+            color: var(--neon-green);
+            border-color: rgba(0, 255, 0, 0.7);
+            overflow: hidden;
+            display: block;
+            padding: 2vw;
+            text-align: left;
+            line-height: 1.3;
+        }
+        .text-block-1 p {
+             text-shadow: none;
+             font-size: 0.9em;
+             margin-bottom: 0.5em;
+        }
+
+        .text-block-2 {
+            font-size: 2.2vw;
+            left: 5%;
+            top: 45%;
+            width: 35vw;
+            transform: rotate(-10deg) skewX(5deg);
+            background-color: var(--deep-black);
+            color: var(--neon-green);
+            border-width: 4px;
+            padding: 1.5vw;
+            text-align: right;
+            line-height: 1.1;
+        }
+
+        .text-block-3 {
+            font-size: 1.5vw;
+            left: 40%;
+            top: 65%;
+            width: 25vw;
+            transform: rotate(5deg) scale(0.9);
+            background-color: rgba(0, 255, 0, 0.1);
+            color: var(--neon-green);
+            border: none;
+            box-shadow: inset 0 0 20px var(--neon-green), 0 0 15px rgba(0, 255, 0, 0.7);
+            padding: 1vw;
+            overflow: hidden;
+            letter-spacing: 2px;
+            word-wrap: break-word;
+        }
+        .text-block-3 span {
+            text-shadow: 0 0 3px var(--neon-green);
+        }
+
+        /* Digital Splatters / Grunge Elements */
         .splatter {
             position: absolute;
-            background-color: #00FF00;
-            box-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5) inset;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(5px) contrast(150%);
             z-index: 5;
-            opacity: 0.8;
-            filter: blur(0.5px); /* Soften edges for a paint-like effect */
-            pointer-events: none;
         }
 
-        /* Custom splatter shapes and positions using border-radius magic */
-        .splatter.s1 { width: 80px; height: 120px; border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%; top: 10%; left: 30%; transform: rotate(40deg); opacity: 0.6; }
-        .splatter.s2 { width: 150px; height: 70px; border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; bottom: 5%; left: 50%; transform: rotate(-20deg); opacity: 0.7; }
-        .splatter.s3 { width: 50px; height: 50px; border-radius: 50%; top: 25%; right: 10%; box-shadow: 0 0 25px #00FF00; opacity: 0.9; }
-        .splatter.s4 { width: 100px; height: 100px; border-radius: 50% 20% 50% 20% / 20% 50% 20% 50%; top: 55%; left: 20%; transform: rotate(70deg); opacity: 0.5; }
-        .splatter.s5 { width: 60px; height: 90px; border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%; top: 1%; left: 80%; transform: rotate(10deg); opacity: 0.6; }
-
-        /* Grid/Glitch elements - disrupting the digital structure */
-        .grid-line {
-            position: absolute;
-            background-color: rgba(0,255,0,0.5);
-            box-shadow: 0 0 5px #00FF00;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .grid-line.h1 { top: 20%; left: 0; width: 100%; height: 2px; }
-        .grid-line.h2 { top: 50%; left: -10%; width: 120%; height: 1px; transform: rotate(2deg); opacity: 0.7; }
-        .grid-line.v1 { left: 30%; top: 0; height: 100%; width: 3px; }
-        .grid-line.v2 { left: 70%; top: -10%; height: 120%; width: 1px; transform: rotate(-3deg); opacity: 0.6; }
-
-        /* More complex Brutal Boxes */
-        .brutal-box {
-            position: absolute;
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 20px rgba(0,255,0,0.7);
-            background-color: rgba(0,0,0,0.7);
-            z-index: 8;
-            padding: 15px;
-            color: #00FF00;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            overflow: hidden; /* Clip content inside the box */
-            pointer-events: auto; /* Allow text selection inside */
-        }
-        .brutal-box p { margin: 0; line-height: 1.2; }
-        .brutal-box.b1 { width: 200px; height: 100px; top: 15%; left: 60%; transform: rotate(10deg); }
-        .brutal-box.b2 { width: 150px; height: 80px; bottom: 20%; left: 5%; transform: rotate(-7deg); background-color: rgba(0,255,0,0.1); border-style: dashed; }
-        .brutal-box.b3 { width: 180px; height: 120px; top: 45%; right: 5%; transform: rotate(3deg) skewX(-10deg); background-color: rgba(0,0,0,0.9); }
-
-        /* Glitch effect on text */
-        @keyframes glitch {
-            0% { transform: translate(0); text-shadow: 0 0 5px #00FF00; }
-            20% { transform: translate(-2px, 2px); text-shadow: 2px 2px 5px #00FF00; }
-            40% { transform: translate(-2px, -2px); text-shadow: -2px -2px 5px #00FF00; }
-            60% { transform: translate(2px, 2px); text-shadow: 2px -2px 5px #00FF00; }
-            80% { transform: translate(2px, -2px); text-shadow: -2px 2px 5px #00FF00; }
-            100% { transform: translate(0); text-shadow: 0 0 5px #00FF00; }
-        }
-        .glitch-text {
-            animation: glitch 0.5s infinite alternate;
-            display: inline-block; /* Essential for text-shadow to apply correctly */
-            text-shadow: 0 0 10px #00FF00;
-        }
-
-        /* Overall "grime" via pseudo-elements on the main content container */
-        .collage-inner-content::before {
-            content: '';
-            position: absolute;
-            top: -5%; left: -5%; right: -5%; bottom: -5%; /* Slightly larger than container for bleed effect */
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0,255,0,0.05),
-                rgba(0,255,0,0.05) 5px,
-                transparent 5px,
-                transparent 10px
-            );
-            pointer-events: none;
-            z-index: 1; /* Below text and boxes */
+        .splatter-1 {
+            width: 150px; height: 150px;
+            left: 10%; top: 5%;
+            transform: rotate(45deg) scale(0.8);
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 30% 70% 60% 40% / 40% 60% 70% 30%;
             opacity: 0.3;
         }
-        .collage-inner-content::after {
-            content: '';
+        .splatter-2 {
+            width: 200px; height: 100px;
+            right: 5%; top: 20%;
+            transform: rotate(-20deg) scale(1.2);
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.5), var(--deep-black) 70%);
+            border-radius: 70% 30% 50% 50% / 30% 70% 50% 50%;
+            opacity: 0.25;
+            filter: blur(8px);
+        }
+        .splatter-3 {
+            width: 120px; height: 180px;
+            left: 25%; bottom: 10%;
+            transform: rotate(90deg) skewX(10deg);
+            background-color: var(--neon-green);
+            opacity: 0.15;
+            border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+            filter: blur(10px) brightness(180%);
+        }
+
+        /* High-gloss overlay for grime effect */
+        .gloss-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* Subtle radial/linear gradients for uneven grime/light */
-            background: radial-gradient(circle, transparent 70%, rgba(0,255,0,0.1) 100%),
-                        linear-gradient(to right, rgba(0,255,0,0.05), transparent, rgba(0,255,0,0.05));
-            mix-blend-mode: overlay; /* Blends with underlying content */
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
-            z-index: 98; /* High z-index to act as a top layer grime */
+            background: repeating-linear-gradient(
+                -45deg,
+                rgba(0, 255, 0, 0.05),
+                rgba(0, 255, 0, 0.05) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.3;
+            z-index: 20;
         }
 
-        /* Responsive adjustments for smaller screens */
+        /* Reflective element for narcissism */
+        .mirror-text {
+            position: absolute;
+            bottom: 5%; right: 5%;
+            font-size: 3vw;
+            color: rgba(0, 255, 0, 0.8);
+            transform: rotate(-15deg);
+            padding: 15px 25px;
+            background: linear-gradient(to right, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 255, 0, 0.1) 100%);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
+            text-shadow: 0 0 8px var(--neon-green), 0 0 15px rgba(0, 255, 0, 0.5);
+            -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(0,0,0,0.4));
+            z-index: 15;
+        }
+
+        /* Glitch effect on some elements */
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); filter: hue-rotate(10deg); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); filter: hue-rotate(-10deg); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .glitchy {
+            animation: glitch 0.5s infinite step-end alternate;
+        }
+
+        /* Additional visual noise/texture */
+        .noise-texture {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            background-size: cover;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.2;
+            z-index: 25;
+        }
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .collage-text { font-size: 1.5em; padding: 5px; }
-            .collage-text.t1 { font-size: 2.5em; top: 3%; left: 3%; }
-            .collage-text.t2 { font-size: 1.8em; bottom: 8%; right: 5%; }
-            .collage-text.t3 { font-size: 1.2em; top: 25%; left: 35%; }
-            .collage-text.t4 { font-size: 1.6em; top: 65%; left: 5%; }
-            .collage-text.t5 { font-size: 1.2em; top: 1%; right: 1%; }
+            .title { font-size: 8vw; top: 8%; padding: 10px; }
+            .subtitle { font-size: 4vw; left: 10%; top: 22%; transform: rotate(3deg); padding: 8px 15px;}
+            .text-block-1 { font-size: 3vw; width: 80vw; min-height: auto; padding: 3vw; left: 5%; top: 35%; transform: rotate(5deg) skewY(-2deg); }
+            .text-block-2 { font-size: 3.5vw; width: 80vw; padding: 2.5vw; left: 10%; top: 58%; transform: rotate(-3deg) skewX(2deg); }
+            .text-block-3 { font-size: 2.5vw; width: 70vw; padding: 2vw; left: 15%; top: 78%; transform: rotate(2deg) scale(1); }
+            .mirror-text { font-size: 5vw; bottom: 2%; right: 2%; transform: rotate(0deg); padding: 10px 20px;}
 
-            .splatter { width: 40px; height: 40px; }
-            .splatter.s1 { width: 60px; height: 90px; top: 5%; left: 25%; }
-            .splatter.s2 { width: 100px; height: 50px; bottom: 3%; left: 40%; }
-            .splatter.s3 { width: 40px; height: 40px; top: 20%; right: 5%; }
-            .splatter.s4 { width: 80px; height: 80px; top: 60%; left: 15%; }
-            .splatter.s5 { width: 50px; height: 70px; top: 1%; left: 70%; }
-
-            .brutal-box { width: 120px; height: 70px; font-size: 0.7em; padding: 10px; }
-            .brutal-box.b1 { width: 150px; height: 80px; top: 10%; left: 50%; }
-            .brutal-box.b2 { width: 100px; height: 60px; bottom: 15%; left: 2%; }
-            .brutal-box.b3 { width: 130px; height: 90px; top: 40%; right: 2%; }
-        }
-
-        @media (max-width: 480px) {
-            .collage-text { font-size: 1em; padding: 3px; }
-            .collage-text.t1 { font-size: 1.8em; }
-            .collage-text.t2 { font-size: 1.2em; }
-            .collage-text.t3 { font-size: 0.9em; }
-            .collage-text.t4 { font-size: 1em; }
-            .collage-text.t5 { font-size: 0.8em; }
-
-            .splatter { width: 30px; height: 30px; }
-            .brutal-box { width: 80px; height: 50px; font-size: 0.6em; padding: 5px; }
+            .splatter-1 { width: 80px; height: 80px; left: 5%; top: 3%; }
+            .splatter-2 { width: 100px; height: 50px; right: 3%; top: 15%; }
+            .splatter-3 { width: 60px; height: 90px; left: 15%; bottom: 5%; }
         }
     </style>
 
-    <div class="collage-inner-content">
-        <!-- Main textual statements for decolonizing the pixel -->
-        <h1 class="collage-text t1">Decolonize the <span class="glitch-text">Pixel</span></h1>
-        <p class="collage-text t2">Reclaim <span class="glitch-text">Digital</span> Space</p>
-        <p class="collage-text t3">Break the <span class="glitch-text">Grid</span></p>
-        <p class="collage-text t4">Untamed Interface</p>
-        <p class="collage-text t5">Messy Truth</p>
+    <div class="noise-texture"></div>
 
-        <!-- Digital paint splatters for an organic, disruptive touch -->
-        <div class="splatter s1"></div>
-        <div class="splatter s2"></div>
-        <div class="splatter s3"></div>
-        <div class="splatter s4"></div>
-        <div class="splatter s5"></div>
+    <div class="splatter splatter-1"></div>
+    <div class="splatter splatter-2"></div>
+    <div class="splatter splatter-3"></div>
 
-        <!-- Disrupted grid lines as a symbol of broken norms -->
-        <div class="grid-line h1"></div>
-        <div class="grid-line v1"></div>
-        <div class="grid-line h2"></div>
-        <div class="grid-line v2"></div>
-
-        <!-- Brutalist, high-gloss grime boxes with abstract digital messages -->
-        <div class="brutal-box b1">
-            <p>Error_00FF00</p>
-            <p><span class="glitch-text">DATA_CORRUPT</span></p>
-        </div>
-        <div class="brutal-box b2">
-            <p>Override System</p>
-            <p>New Logic</p>
-        </div>
-        <div class="brutal-box b3">
-            <p>NO MORE DEFAULT</p>
-            <p>RAW OUTPUT</p>
-        </div>
+    <div class="collage-element title glitchy">
+        <h1>POST-CAPITAL NARCISSUS</h1>
     </div>
+
+    <div class="collage-element subtitle">
+        <p>ECHO CHAMBER OF THE SELF</p>
+    </div>
+
+    <div class="collage-element text-block-1">
+        <p>Your feed is your reality. Curated, amplified, validated. The constant stream of 'I's, a digital mirror reflecting endless, fractured selves. Are you seeing yourself, or just the algorithm's desire?</p>
+        <p>Performative authenticity is the highest currency. Engagement metrics, not truth, define your worth. Replicate. Repeat. Revere.</p>
+    </div>
+
+    <div class="collage-element text-block-2 glitchy">
+        <p>ME. INC. <br>OPTIMIZED. <br>CONSUMED. <br>FOREVER.</p>
+    </div>
+
+    <div class="collage-element text-block-3">
+        <span>TRANSIENT SELF-WORSHIP. THE MARKET OF EGO NEVER CRASHES. ONLY RESETS.</span>
+    </div>
+
+    <div class="collage-element mirror-text">
+        <p>SEE ME.</p>
+    </div>
+
+    <div class="gloss-overlay"></div>
+
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
