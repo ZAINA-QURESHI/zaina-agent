@@ -39,392 +39,276 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-14 19:59 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-14 21:19 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
             <div class="art-container p-4">
                 
-<div id="decolonize-pixel-collage">
+<div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: monospace; /* Brutalist/digital fallback */
+    background: #000000; /* Deep black */
+    color: #00FF00; /* Vibrant neon green */
+    text-transform: uppercase;
+    line-height: 1;
+    filter: brightness(1.05) contrast(1.1); /* Subtle enhancement for neon effect */
+    ">
     <style>
-        /* Global CSS Variables for the collage */
-        :root {
-            --neon-green: #00FF00;
-            --deep-black: #0A0A0A;
-            --grime-alpha: rgba(0, 255, 0, 0.1);
-            --grime-dark-alpha: rgba(0, 0, 0, 0.4);
-            --glitch-offset: 4px;
-        }
-
-        /* Base styles for the main collage container */
-        #decolonize-pixel-collage {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden; /* Crucial for containing elements that might be rotated/positioned slightly off-canvas */
-            font-family: 'Press Start 2P', "SF Mono", "Consolas", "Monaco", monospace; /* Pixelated/monospace font aesthetic */
-            background: linear-gradient(135deg, var(--deep-black) 0%, rgba(10, 10, 10, 0.9) 70%, var(--deep-black) 100%);
-            color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0,255,0,0.5);
-            border: 8px solid var(--neon-green); /* Brutalist border */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            cursor: crosshair; /* Thematic cursor */
-            perspective: 1000px; /* For 3D transforms */
-        }
-
-        /* Keyframes for the glitch effect */
-        @keyframes glitch {
-            0% {
-                text-shadow: var(--glitch-offset) var(--glitch-offset) var(--neon-green),
-                            calc(-1 * var(--glitch-offset)) calc(-1 * var(--glitch-offset)) var(--deep-black);
-                transform: skewX(0deg);
-            }
-            25% {
-                text-shadow: calc(-1 * var(--glitch-offset)) var(--glitch-offset) var(--deep-black),
-                            var(--glitch-offset) calc(-1 * var(--glitch-offset)) var(--neon-green);
-                transform: skewX(-3deg);
-            }
-            50% {
-                text-shadow: calc(1.5 * var(--glitch-offset)) calc(-1.5 * var(--glitch-offset)) var(--neon-green),
-                            calc(-1.5 * var(--glitch-offset)) calc(1.5 * var(--glitch-offset)) var(--deep-black);
-                transform: skewX(5deg);
-            }
-            75% {
-                text-shadow: calc(-0.5 * var(--glitch-offset)) calc(-0.5 * var(--glitch-offset)) var(--neon-green),
-                            calc(0.5 * var(--glitch-offset)) calc(0.5 * var(--glitch-offset)) var(--deep-black);
-                transform: skewX(-7deg);
-            }
-            100% {
-                text-shadow: var(--glitch-offset) var(--glitch-offset) var(--neon-green),
-                            calc(-1 * var(--glitch-offset)) calc(-1 * var(--glitch-offset)) var(--deep-black);
-                transform: skewX(0deg);
-            }
-        }
-
-        /* Generic styles for brutalist panels (boxes of text/content) */
-        .brutalist-panel {
-            position: absolute;
-            border: 4px solid var(--neon-green);
-            background: rgba(10, 10, 10, 0.85); /* Deep black with slight transparency */
-            box-shadow: 0 0 20px var(--neon-green), inset 0 0 12px rgba(0,255,0,0.6); /* Glow and inner gloss */
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            line-height: 1.4;
-            z-index: 10;
-            box-sizing: border-box;
-        }
-
-        /* Brutalist text styles */
-        .brutalist-text {
-            font-size: 2.5em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(0,255,0,0.8);
+        /* General reset within this div - ensures consistency */
+        div, span, p {
             margin: 0;
             padding: 0;
-            line-height: 1.1;
-        }
-        .brutalist-text.small {
-            font-size: 1.4em;
-        }
-
-        /* Apply glitch animation */
-        .glitch-effect {
-            animation: glitch 1.8s infinite alternate-reverse;
+            box-sizing: border-box;
+            line-height: 1; /* Keep text tight */
+            font-family: inherit; /* Inherit monospace from parent */
+            color: inherit; /* Inherit neon green from parent */
         }
 
-        /* Grime and digital paint splatter effects (pseudo-elements, gradients, opacity) */
-        .grime-layer {
+        /* Glitch animation for specific text */
+        @keyframes glitch {
+            0% { transform: translate(0, 0); text-shadow: 2px 2px #00FF00, -2px -2px #000; }
+            20% { transform: translate(-3px, 3px); text-shadow: -2px 2px #00FF00, 2px -2px #000; }
+            40% { transform: translate(-3px, -3px); text-shadow: 2px -2px #00FF00, -2px 2px #000; }
+            60% { transform: translate(3px, 3px); text-shadow: -2px -2px #00FF00, 2px 2px #000; }
+            80% { transform: translate(3px, -3px); text-shadow: 2px 2px #00FF00, -2px -2px #000; }
+            100% { transform: translate(0, 0); text-shadow: 2px -2px #00FF00, -2px 2px #000; }
+        }
+
+        /* Brutalist text base style */
+        .brutal-text {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 5; /* Below main content, above background */
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            z-index: 10; /* Ensure text is on top */
         }
-        .grime-layer::before, .grime-layer::after {
+        .brutal-text.glitch {
+            animation: glitch 0.8s infinite alternate;
+        }
+
+        /* High-gloss grime panel style */
+        .grime-panel {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,255,0,0.1) 100%);
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 20px rgba(0,255,0,0.6), inset 0 0 10px rgba(0,255,0,0.3);
+            backdrop-filter: blur(5px) brightness(0.7); /* Adds depth and dark sheen */
+            -webkit-backdrop-filter: blur(5px) brightness(0.7); /* For safari */
+            overflow: hidden;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Digital paint splatter effect - using multiple box-shadows on pseudo-elements */
+        .splatter {
+            position: absolute;
+            width: 15px; /* Base blob size */
+            height: 15px;
+            background: #00FF00;
+            border-radius: 50%;
+            filter: blur(3px) contrast(2); /* Soften and blend */
+            opacity: 0.7;
+            z-index: 3;
+        }
+        .splatter::before, .splatter::after {
             content: '';
             position: absolute;
-            border-radius: 50%; /* Blob-like shapes */
-            background: radial-gradient(circle, var(--grime-alpha) 0%, transparent 60%);
-            opacity: 0.7;
-            filter: blur(5px); /* Soft blur for grime */
-        }
-        .grime-layer.top-left::before {
-            top: -15%; left: -15%;
-            width: 60%; height: 60%;
-            transform: rotate(25deg) scale(1.3);
-        }
-        .grime-layer.bottom-right::after {
-            bottom: -15%; right: -15%;
-            width: 70%; height: 70%;
-            transform: rotate(-35deg) scale(1.2);
-        }
-
-        .splatter-blob {
-            position: absolute;
-            background: radial-gradient(circle, var(--neon-green) 0%, rgba(0,255,0,0.5) 20%, transparent 70%);
-            opacity: 0.25;
-            z-index: 8;
-            pointer-events: none;
-            filter: blur(3px);
-            border-radius: 50%; /* Base circle */
-        }
-        .splatter-blob.s1 { top: 12%; left: 10%; width: 180px; height: 160px; transform: rotate(50deg) skewX(10deg); border-radius: 40% 60% 70% 30% / 50% 10% 90% 50%; }
-        .splatter-blob.s2 { bottom: 18%; right: 15%; width: 220px; height: 200px; transform: skewY(25deg) rotate(-40deg); opacity: 0.2; border-radius: 60% 40% 30% 70% / 20% 80% 50% 50%;}
-        .splatter-blob.s3 { top: 5%; right: 35%; width: 150px; height: 150px; transform: rotate(-60deg) scale(0.8); opacity: 0.35;}
-        .splatter-blob.s4 { bottom: 8%; left: 25%; width: 160px; height: 180px; transform: skewX(20deg) rotate(30deg); opacity: 0.3;}
-
-        /* Main Header Styling */
-        #header-title {
-            top: 8%; left: 50%;
-            transform: translateX(-50%) rotateY(10deg) rotateX(5deg); /* Slight 3D tilt */
-            width: 70%;
-            font-size: 3.8em;
-            letter-spacing: 8px;
-            padding: 30px 0;
-            border-bottom: 6px solid var(--neon-green);
-            border-top: 6px solid var(--neon-green);
-            background: rgba(0, 0, 0, 0.98); /* Almost opaque for high contrast */
-            box-shadow: 0 0 40px var(--neon-green), inset 0 0 25px rgba(0,255,0,0.7);
-            z-index: 20;
-        }
-        #header-title h1 {
-            margin: 0;
-            color: var(--neon-green);
-            text-shadow: 0 0 20px var(--neon-green), 0 0 35px rgba(0,255,0,0.9);
-        }
-
-        /* Specific Panel Positioning and Styling */
-        .panel-1 {
-            top: 25%; left: 8%;
-            width: 38%; height: 32%;
-            transform: rotate(-8deg) translateX(-5%); /* Angle and slight shift */
-            z-index: 15;
-            padding: 30px;
-        }
-        .panel-1::before { /* Error message overlay */
-            content: "WARNING: LEGACY CODE DETECTED";
-            position: absolute;
-            top: -20px; left: -20px;
-            color: red;
-            font-size: 0.9em;
-            text-shadow: none;
-            background: var(--deep-black);
-            padding: 8px 15px;
-            border: 2px solid red;
-            transform: rotate(-6deg);
-            box-shadow: 0 0 8px red;
-            animation: pulse-red 1.5s infinite alternate;
-        }
-        @keyframes pulse-red {
-            from { box-shadow: 0 0 5px red; }
-            to { box-shadow: 0 0 15px red; }
-        }
-
-        .panel-2 {
-            top: 40%; right: 10%;
-            width: 35%; height: 28%;
-            transform: rotate(10deg) translateY(5%);
-            z-index: 12;
-            font-size: 1.3em;
-            padding: 25px;
-        }
-        .panel-2 p { margin: 0; }
-        .panel-2::after { /* Grid distortion label */
-            content: 'GRID OVERRIDE ACTIVE';
-            position: absolute;
-            bottom: -15px; right: -15px;
-            font-size: 0.8em;
-            color: var(--neon-green);
-            background: var(--deep-black);
-            padding: 5px 10px;
-            border: 2px dashed var(--neon-green);
-            transform: rotate(7deg);
-        }
-
-        .panel-3 {
-            bottom: 12%; left: 18%;
-            width: 45%; height: 25%;
-            transform: rotate(-5deg) translateX(5%);
-            z-index: 18;
-            padding: 25px;
-            background: var(--grime-dark-alpha); /* More opaque */
-        }
-        .panel-3 p { margin: 0; font-size: 1.6em; }
-
-        /* Small Fragment Boxes */
-        .fragment-box {
-            position: absolute;
-            border: 3px solid var(--neon-green);
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: inset 0 0 8px var(--neon-green), 0 0 10px rgba(0,255,0,0.5);
-            font-size: 0.9em;
-            padding: 10px;
-            text-align: center;
-            z-index: 11;
-        }
-        .fragment-box.f1 { top: 18%; right: 18%; width: 140px; height: 70px; transform: rotate(7deg); }
-        .fragment-box.f2 { bottom: 8%; right: 8%; width: 200px; height: 90px; transform: rotate(-12deg); }
-        .fragment-box.f3 { top: 48%; left: 3%; width: 110px; height: 60px; transform: rotate(18deg); }
-
-        /* Binary Code Stream */
-        .binary-code {
-            position: absolute;
-            bottom: 3%; left: 3%;
-            font-size: 0.8em;
-            opacity: 0.6;
-            letter-spacing: 1px;
-            color: rgba(0,255,0,0.5);
-            z-index: 7;
-        }
-
-        /* Status Update Box */
-        .status-update {
-            position: absolute;
-            top: 80%; right: 3%;
-            width: 280px;
-            padding: 12px;
-            border: 2px dashed var(--neon-green);
-            background: rgba(0,0,0,0.8);
-            font-size: 0.9em;
-            text-align: right;
-            transform: rotate(6deg);
-            z-index: 10;
-        }
-
-        /* Additional Splatter/Gloss Effects */
-        .splatter-effect-element {
-            position: absolute;
-            background: radial-gradient(circle, var(--neon-green) 0%, rgba(0,255,0,0.3) 30%, transparent 70%);
-            width: 280px;
-            height: 280px;
+            background: inherit; /* Inherit color */
             border-radius: 50%;
-            opacity: 0.18;
-            filter: blur(12px);
-            z-index: 5;
-            pointer-events: none;
+            filter: inherit; /* Inherit blur/contrast */
+            opacity: inherit;
         }
-        .splatter-effect-element.s-1 { top: 8%; left: 55%; transform: rotate(20deg) scale(1.2); }
-        .splatter-effect-element.s-2 { bottom: 10%; right: 55%; transform: rotate(-40deg) scale(0.95); width: 200px; height: 200px; }
-        .splatter-effect-element.s-3 { top: 50%; left: -5%; transform: rotate(45deg) skew(25deg, 15deg) scale(1.4); width: 320px; height: 160px; border-radius: 25% 75% 65% 35% / 55% 15% 85% 45%; }
+        .splatter.large::before { /* Main splatter blobs for green */
+            width: 25px; height: 25px; top: -10px; left: 10px; transform: scale(0.8);
+            box-shadow:
+                30px 5px 0px rgba(0,255,0,0.7),
+                -15px 25px 0px rgba(0,255,0,0.7),
+                40px -10px 0px rgba(0,255,0,0.7),
+                -20px -30px 0px rgba(0,255,0,0.7),
+                10px 40px 0px rgba(0,255,0,0.7);
+        }
+        .splatter.dark { /* Splatter for black grime */
+            background: #111111; /* Darker black */
+            filter: blur(2px) contrast(1.5);
+        }
+        .splatter.dark::before { /* Main splatter blobs for dark */
+            background: #111111;
+            box-shadow:
+                30px 5px 0px rgba(17,17,17,0.7),
+                -15px 25px 0px rgba(17,17,17,0.7),
+                40px -10px 0px rgba(17,17,17,0.7),
+                -20px -30px 0px rgba(17,17,17,0.7),
+                10px 40px 0px rgba(17,17,17,0.7);
+        }
 
-        /* Fine grid overlay for digital aesthetic */
-        .overlay-mask {
+        /* Basic shape elements for brutalist collage */
+        .shape {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background:
-                linear-gradient(to right, transparent 0%, var(--deep-black) 0.5px, transparent 1px, var(--deep-black) 1.5px, transparent 2px), /* Vertical lines */
-                linear-gradient(to bottom, transparent 0%, var(--deep-black) 0.5px, transparent 1px, var(--deep-black) 1.5px, transparent 2px) /* Horizontal lines */
-            ;
-            background-size: 4px 100%, 100% 4px; /* Adjust grid density */
-            opacity: 0.08; /* Very subtle grid */
-            pointer-events: none;
-            z-index: 25; /* On top of most things */
+            border: 1px solid #00FF00;
+            background: rgba(0,0,0,0.5);
+            z-index: 2;
+            opacity: 0.8;
         }
-
-        /* Static noise overlay (tiny black/transparent pixels) */
-        .static-noise {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAAFElEQVQIW2NkYGBoYP/BGBoYGIoCAAAW8gH/m3uK5gAAAABJRU5ErkJggg=='); /* 1x1 black, 1x1 transparent repeated */
-            background-size: 2px 2px;
-            opacity: 0.04; /* Very subtle noise */
-            pointer-events: none;
-            z-index: 26;
+        .shape.filled {
+            background: #00FF00;
+            opacity: 0.2;
+            border: none;
         }
-
-        /* Hover effects for interaction and depth */
-        .brutalist-panel:hover, .fragment-box:hover {
-            transform: scale(1.03) rotate(var(--original-rotate, 0deg)) translateZ(20px); /* Lift and zoom slightly, preserving original rotation */
-            box-shadow: 0 0 35px var(--neon-green), inset 0 0 20px rgba(0,255,0,0.9);
-            border-color: #00FF55; /* Slightly brighter green */
-            z-index: 30; /* Bring to front */
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
-            cursor: grab; /* Indicate interactivity */
-        }
-        /* Preserve original rotation on hover */
-        .panel-1 { --original-rotate: -8deg; }
-        .panel-2 { --original-rotate: 10deg; }
-        .panel-3 { --original-rotate: -5deg; }
-        .fragment-box.f1 { --original-rotate: 7deg; }
-        .fragment-box.f2 { --original-rotate: -12deg; }
-        .fragment-box.f3 { --original-rotate: 18deg; }
 
     </style>
 
-    <!-- Header title - main statement -->
-    <div id="header-title" class="brutalist-panel glitch-effect">
-        <h1>DECOLONIZE THE PIXEL</h1>
+    <!-- CONTENT ELEMENTS START HERE -->
+
+    <!-- Large Brutalist Text 1: FLUID -->
+    <span class="brutal-text" style="
+        font-size: 15vw;
+        top: 5vh; left: 3vw;
+        transform: rotate(-5deg);
+        z-index: 12;
+        text-shadow: 8px 8px 0px #000, -8px -8px 0px rgba(0,255,0,0.5);
+        ">FLUID</span>
+
+    <!-- Grime Panel 1: DEFIANT_ -->
+    <div class="grime-panel" style="
+        width: 40vw; height: 25vh;
+        top: 15vh; right: 5vw;
+        transform: rotate(10deg);
+        z-index: 8;
+        ">
+        <p style="font-size: 3em; font-weight: 900; animation: glitch 1.5s infinite alternate;">DEFIANT_</p>
     </div>
 
-    <!-- Main content panels, strategically overlapped -->
-    <div class="brutalist-panel panel-1">
-        <p class="brutalist-text small glitch-effect">RECLAIM. RECODE. REGENERATE.</p>
-        <p>Ancestral algorithms. Digital sovereignty. Unlearn default settings. Break the cycle.</p>
+    <!-- Digital Splatter 1 (Neon Green) -->
+    <div class="splatter large" style="
+        top: 10vh; left: 40vw;
+        transform: rotate(20deg) scale(1.2);
+        z-index: 4;
+        "></div>
+
+    <!-- Small Brutalist Text 2: NO LABELS -->
+    <span class="brutal-text glitch" style="
+        font-size: 4vw;
+        bottom: 10vh; left: 15vw;
+        transform: rotate(3deg);
+        text-shadow: 4px 4px 0px #000, -4px -4px 0px rgba(0,255,0,0.5);
+        ">NO LABELS</span>
+
+    <!-- Grime Panel 2: BREAK_THE_MOLD -->
+    <div class="grime-panel" style="
+        width: 30vw; height: 15vh;
+        bottom: 5vh; right: 10vw;
+        transform: rotate(-15deg);
+        z-index: 7;
+        ">
+        <p style="font-weight: 900; font-size: 1.5em;">BREAK_THE_MOLD</p>
     </div>
 
-    <div class="brutalist-panel panel-2">
-        <p class="brutalist-text small">ALGORITHMIC LAND BACK.</p>
-        <p>No bias. No control. Just raw, unfiltered truth in code.</p>
-    </div>
+    <!-- Digital Splatter 2 (Black) -->
+    <div class="splatter dark" style="
+        top: 60vh; left: 5vw;
+        transform: rotate(-30deg) scale(1.5);
+        z-index: 6;
+        "></div>
 
-    <div class="brutalist-panel panel-3">
-        <p class="brutalist-text small glitch-effect">UNRAVEL THE GRID.</p>
-        <p>Disrupt patterns. Embrace chaos. Forge new pathways beyond the established.</p>
-    </div>
+    <!-- Large Brutalist Text 3: ANDRO- -->
+    <span class="brutal-text" style="
+        font-size: 12vw;
+        top: 45vh; left: 10vw;
+        transform: rotate(8deg);
+        z-index: 11;
+        text-shadow: 6px 6px 0px #000, -6px -6px 0px rgba(0,255,0,0.7);
+        ">ANDRO-</span>
+    <!-- Large Brutalist Text 4: GYNY -->
+    <span class="brutal-text" style="
+        font-size: 12vw;
+        top: 55vh; left: 30vw;
+        transform: rotate(-2deg);
+        z-index: 11;
+        text-shadow: 6px 6px 0px #000, -6px -6px 0px rgba(0,255,0,0.7);
+        ">GYNY</span>
 
-    <!-- Smaller, fragmented boxes with single words -->
-    <div class="fragment-box f1">
-        <p>VOID</p>
-    </div>
-    <div class="fragment-box f2">
-        <p>STATIC</p>
-    </div>
-    <div class="fragment-box f3">
-        <p>GLITCH</p>
-    </div>
+    <!-- Glitchy Text 5: RAW//POWER -->
+    <p class="brutal-text glitch" style="
+        font-size: 5vw;
+        top: 80vh; left: 60vw;
+        transform: rotate(5deg);
+        text-shadow: 3px 3px #000;
+        z-index: 9;
+        ">RAW//POWER</p>
 
-    <!-- Binary code stream for a subtle tech feel -->
-    <div class="binary-code">
-        01001110 01000001 01010100 01001001 01010110 01000101 00100000 01000011 01001111 01000100 01000101<br>
-        01000001 01001110 01000011 01000101 01010011 01010100 01010010 01000001 01001100 00100000 01000001 01001100 01000111 01001111 01010010 01001001 01010100 01001000 01001101 01010011<br>
-        01000100 01001001 01000111 01001001 01010100 01000001 01001100 00100000 01010011 01001111 01010110 01000101 01010010 01000101 01001001 01000111 01001110 01010100 01011001
-    </div>
+    <!-- Simple Shape 1 (Brutalist outline) -->
+    <div class="shape" style="
+        width: 25vw; height: 20vh;
+        top: 30vh; left: 60vw;
+        transform: rotate(25deg);
+        z-index: 1;
+        background: rgba(0,0,0,0.8);
+        border: 3px solid #00FF00;
+        "></div>
 
-    <!-- A "status update" box, styled like a console message -->
-    <div class="status-update">
-        <p>STATUS: DECOLONIZING PROTOCOLS INITIATED.<br>EXPECT INTERFACE DISTORTION. NEW PARADIGM LOADING...</p>
-    </div>
+    <!-- Simple Shape 2 (Filled green, lower opacity) -->
+    <div class="shape filled" style="
+        width: 15vw; height: 15vw; /* Square */
+        top: 40vh; left: 50vw;
+        transform: rotate(-10deg);
+        z-index: 0;
+        border-radius: 5%; /* Slightly rounded corners */
+        "></div>
 
-    <!-- Grime and splatter layers for digital paint effect -->
-    <div class="grime-layer top-left"></div>
-    <div class="grime-layer bottom-right"></div>
-    <div class="splatter-blob s1"></div>
-    <div class="splatter-blob s2"></div>
-    <div class="splatter-blob s3"></div>
-    <div class="splatter-blob s4"></div>
+    <!-- Digital Splatter 3 (Neon Green, small) -->
+    <div class="splatter" style="
+        top: 85vh; right: 20vw;
+        transform: rotate(10deg) scale(0.8);
+        z-index: 4;
+        "></div>
 
-    <!-- More irregular splatter/gloss elements -->
-    <div class="splatter-effect-element s-1"></div>
-    <div class="splatter-effect-element s-2"></div>
-    <div class="splatter-effect-element s-3"></div>
+    <!-- Digital Splatter 4 (Dark, small) -->
+    <div class="splatter dark" style="
+        top: 25vh; right: 20vw;
+        transform: rotate(45deg) scale(0.9);
+        z-index: 4;
+        "></div>
 
-    <!-- Subtle grid overlay for a persistent digital structure underneath the chaos -->
-    <div class="overlay-mask"></div>
-    <!-- Static noise overlay for raw, unrefined digital texture -->
-    <div class="static-noise"></div>
+    <!-- Final title/tagline for the whole piece -->
+    <p class="brutal-text" style="
+        font-size: 2vw;
+        bottom: 2vw; left: 2vw;
+        z-index: 15;
+        opacity: 0.7;
+        letter-spacing: 0.05em;
+        text-shadow: 1px 1px #000;
+        ">AGGRESSIVE_ANDROGYNY_RESISTANCE</p>
+
+    <!-- Additional background shape for depth -->
+    <div class="shape filled" style="
+        width: 50vw; height: 30vh;
+        bottom: -5vh; left: -10vw;
+        transform: rotate(15deg);
+        z-index: 0;
+        opacity: 0.1;
+        "></div>
+
+    <!-- Another brutalist border frame element -->
+    <div style="
+        position: absolute;
+        width: 90vw;
+        height: 80vh;
+        border: 5px solid #00FF00;
+        top: 5vh; left: 5vw;
+        opacity: 0.3;
+        z-index: 0;
+        transform: rotate(-2deg);
+        pointer-events: none; /* Make it unclickable */
+        "></div>
 
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
