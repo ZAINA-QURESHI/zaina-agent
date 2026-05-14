@@ -39,398 +39,225 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-13 22:20 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-14 00:09 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
                 
-<div class="decolonize-pixel-collage">
+<div style="position: relative; width: 100vw; min-height: 100vh; overflow: hidden; background: #000; font-family: 'Arial Black', sans-serif; color: #0F0; display: flex; flex-direction: column; align-items: center; justify-content: center; isolation: isolate; border: 5px solid rgba(0, 255, 0, 0.5); box-sizing: border-box; text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);">
     <style>
-        /* Base styles for a radical, brutalist aesthetic */
-        .decolonize-pixel-collage * {
+        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Press+Start+2P&display=swap');
+        
+        .collage-element {
+            position: absolute;
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            /* Prioritize a specific pixel font if available, else monospace */
-            font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
-            color: #00FF00; /* Vibrant neon green */
-            text-shadow: 0 0 5px #00FF00; /* Default neon glow */
+            filter: contrast(1.2) saturate(1.5) brightness(1.2);
+            z-index: 10;
         }
 
-        /* Main container for the collage */
-        .decolonize-pixel-collage {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000000; /* Deep black background */
-            background-image:
-                /* Subtle grid lines in neon green */
-                radial-gradient(circle at 10% 10%, rgba(0,255,0,0.1) 1px, transparent 1px),
-                radial-gradient(circle at 90% 90%, rgba(0,255,0,0.1) 1px, transparent 1px),
-                repeating-linear-gradient(0deg, rgba(0,255,0,0.05) 0 1px, transparent 1px 10px),
-                repeating-linear-gradient(90deg, rgba(0,255,0,0.05) 0 1px, transparent 1px 10px);
-            overflow: hidden; /* Contains absolute children */
-            display: block; /* Ensures block behavior */
-            box-shadow: inset 0 0 50px rgba(0,255,0,0.5); /* Inner glow effect */
-            filter: contrast(120%) brightness(110%); /* High-gloss effect */
-            perspective: 1000px; /* For 3D transforms */
+        .text-neon-glow {
+            text-shadow: 0 0 8px #0F0, 0 0 15px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.4);
         }
 
-        /* Keyframe animations for dynamic effects */
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; filter: blur(0); }
-            10% { transform: translate(-3px, 3px); opacity: 0.8; filter: blur(1px); }
-            20% { transform: translate(2px, -2px); opacity: 0.9; filter: blur(0.5px); }
-            30% { transform: translate(-1px, 1px); opacity: 0.7; filter: blur(1.5px); }
-            40% { transform: translate(4px, -4px); opacity: 0.9; filter: blur(0); }
-            50% { transform: translate(-2px, 2px); opacity: 0.8; filter: blur(1px); }
-            60% { transform: translate(1px, -1px); opacity: 0.7; filter: blur(0.5px); }
-            70% { transform: translate(-3px, 3px); opacity: 0.9; filter: blur(0); }
-            80% { transform: translate(2px, -2px); opacity: 0.8; filter: blur(1px); }
-            90% { transform: translate(-1px, 1px); opacity: 0.7; filter: blur(0.5px); }
-            100% { transform: translate(0, 0); opacity: 1; filter: blur(0); }
+        .box-neon-glow {
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.5), inset 0 0 5px rgba(0, 255, 0, 0.3);
+        }
+
+        .brutalist-block {
+            background: #111;
+            border: 2px solid #0F0;
+            padding: 10px;
+            transform-origin: center center;
+            opacity: 0.9;
+            filter: grayscale(0.1) brightness(0.9);
+            box-shadow: 3px 3px 0 #000;
+        }
+
+        .grime-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%),
+                        linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
+            mix-blend-mode: hard-light;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 100;
+            filter: contrast(1.5) blur(1px);
+        }
+
+        .splatter {
+            background: #0F0;
+            border-radius: 50%;
+            opacity: 0.7;
+            filter: blur(2px) contrast(2);
+            mix-blend-mode: screen; /* Or lighter */
+            z-index: 5;
+            position: absolute;
+        }
+        .splatter.large { width: 100px; height: 120px; border-radius: 30% 70% 60% 40% / 70% 30% 70% 30%; }
+        .splatter.medium { width: 60px; height: 70px; border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+        .splatter.small { width: 30px; height: 35px; border-radius: 50% 50% 30% 70% / 30% 70% 70% 30%; }
+
+        .data-row {
+            display: flex;
+            gap: 15px;
+            transform-origin: 0% 50%;
+            z-index: 15;
+        }
+        .data-block {
+            width: 80px;
+            height: 30px;
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #0F0;
+            opacity: 0.8;
+            transform: skewX(-10deg) rotate(2deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            font-family: 'Major Mono Display', monospace;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        .overseer-eye {
+            width: 150px;
+            height: 100px;
+            background: #000;
+            border: 5px solid #0F0;
+            border-radius: 50% / 60% 60% 40% 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 30;
+            opacity: 0.95;
+            box-shadow: 0 0 30px 15px rgba(0, 255, 0, 0.8), inset 0 0 10px rgba(0, 255, 0, 0.6);
+            filter: contrast(1.5);
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        .overseer-pupil {
+            width: 40px;
+            height: 40px;
+            background: #0F0;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 1), inset 0 0 8px #000;
+            animation: iris-scan 5s infinite ease-in-out;
         }
 
         @keyframes pulse-glow {
-            0% { box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; }
-            50% { box-shadow: 0 0 20px #00FF00, 0 0 40px #00FF00; }
-            100% { box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; }
+            from { transform: scale(1); box-shadow: 0 0 30px 15px rgba(0, 255, 0, 0.8), inset 0 0 10px rgba(0, 255, 0, 0.6); }
+            to { transform: scale(1.03); box-shadow: 0 0 40px 20px rgba(0, 255, 0, 0.9), inset 0 0 15px rgba(0, 255, 0, 0.8); }
         }
 
-        @keyframes splatter-shift {
-            0% { transform: rotate(0deg) scale(1) translateX(0) translateY(0); }
-            25% { transform: rotate(15deg) scale(1.05) translateX(5px) translateY(-5px); }
-            50% { transform: rotate(-10deg) scale(0.95) translateX(-5px) translateY(5px); }
-            75% { transform: rotate(20deg) scale(1.1) translateX(5px) translateY(5px); }
-            100% { transform: rotate(0deg) scale(1) translateX(0) translateY(0); }
-        }
-        @keyframes rotate-3d {
-            0% { transform: perspective(500px) rotateY(0deg) rotateX(0deg); }
-            100% { transform: perspective(500px) rotateY(360deg) rotateX(15deg); }
-        }
-        @keyframes shift-blur {
-            0% { transform: translate(0); filter: blur(0); }
-            50% { transform: translate(5px, 5px) skewX(5deg); filter: blur(2px); }
-            100% { transform: translate(0); filter: blur(0); }
+        @keyframes iris-scan {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(10px); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
         }
 
-        /* Title element */
-        .decolonize-pixel-collage .title {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-5deg);
-            font-size: 8vw; /* Responsive font size */
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            z-index: 10;
-            animation: glitch 3s infinite alternate steps(2);
-            text-shadow:
-                0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00,
-                0 0 40px #00FF00, 0 0 70px #00FF00, 0 0 80px #00FF00; /* Intense neon glow */
-            color: #000000; /* Black text for inverse glow effect */
-            background-color: #00FF00; /* Neon green background for text block */
-            padding: 10px 20px;
-            border: 5px solid #00FF00;
-            box-shadow: inset 0 0 20px rgba(0,255,0,0.8);
-            filter: drop-shadow(0 0 5px #00FF00);
-            mix-blend-mode: screen; /* For intense glow effect */
+        .glitch-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2em;
+            color: #0F0;
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 2px 2px 0 #0F0, -2px -2px 0 rgba(0, 255, 0, 0.5);
+            animation: glitch 1s infinite linear alternate;
         }
 
-        /* General text blocks */
-        .decolonize-pixel-collage .text-block {
-            position: absolute;
-            font-size: 2vw;
-            font-weight: 700;
-            text-transform: uppercase;
-            background-color: #00FF00;
-            color: #000000;
-            padding: 10px 15px;
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 5px #00FF00;
-            z-index: 5;
-            animation: pulse-glow 2s infinite alternate;
-            filter: drop-shadow(0 0 2px #00FF00);
-        }
-
-        .decolonize-pixel-collage .text-1 {
-            top: 40%;
-            left: 10%;
-            transform: rotate(8deg) skewX(5deg);
-            filter: blur(0.5px);
-            mix-blend-mode: hard-light;
-        }
-
-        .decolonize-pixel-collage .text-2 {
-            bottom: 20%;
-            right: 5%;
-            transform: rotate(-12deg) scale(1.1) perspective(500px) rotateY(15deg);
-            filter: contrast(150%) blur(0.5px);
-            mix-blend-mode: exclusion;
-        }
-
-        /* Glitched text element */
-        .decolonize-pixel-collage .glitch-text {
-            position: absolute;
-            top: 70%;
-            left: 30%;
-            font-size: 3vw;
-            color: #00FF00;
-            text-shadow: 0 0 5px #00FF00;
-            animation: glitch 2s infinite linear;
-            z-index: 8;
-            background: #000000;
-            padding: 5px 10px;
-            border: 1px solid #00FF00;
-            transform: rotate(3deg) skewX(-10deg);
-            filter: drop-shadow(0 0 3px #00FF00);
-            mix-blend-mode: difference;
-        }
-
-        /* Brutalist panels/blocks */
-        .decolonize-pixel-collage .panel {
-            position: absolute;
-            background-color: rgba(0,255,0,0.2);
-            border: 3px solid #00FF00;
-            box-shadow: inset 0 0 15px rgba(0,255,0,0.5), 0 0 20px rgba(0,255,0,0.8);
-            filter: saturate(200%) brightness(150%);
-            z-index: 3;
-            animation: pulse-glow 3s infinite ease-in-out alternate;
-            transform-style: preserve-3d;
-        }
-
-        .decolonize-pixel-collage .panel-1 {
-            width: 30vw;
-            height: 40vh;
-            top: 5%;
-            right: 5%;
-            transform: rotate(10deg) perspective(500px) rotateY(-20deg);
-            background:
-                linear-gradient(45deg, rgba(0,255,0,0.5) 0%, transparent 50%),
-                repeating-linear-gradient(45deg, #000000 0 2px, transparent 2px 4px);
-            mix-blend-mode: screen;
-        }
-
-        .decolonize-pixel-collage .panel-2 {
-            width: 20vw;
-            height: 30vh;
-            bottom: 10%;
-            left: 15%;
-            transform: rotate(-7deg) skewY(5deg) perspective(500px) rotateX(15deg);
-            background:
-                radial-gradient(circle at center, rgba(0,255,0,0.6) 0%, transparent 70%),
-                linear-gradient(90deg, rgba(0,255,0,0.1) 0%, #000000 50%, rgba(0,255,0,0.1) 100%);
-            box-shadow: inset 0 0 30px #00FF00, 0 0 10px rgba(0,255,0,0.8);
-            mix-blend-mode: lighten;
-        }
-        .decolonize-pixel-collage .panel-3 {
-            width: 15vw;
-            height: 20vh;
-            top: 55%;
-            left: 70%;
-            background-color: rgba(0,0,0,0.7);
-            border: 2px dotted #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-            animation: rotate-3d 5s infinite linear;
-            mix-blend-mode: overlay;
-        }
-
-        /* Digital paint splatters */
-        .decolonize-pixel-collage .splatter {
-            position: absolute;
-            background-color: #00FF00;
-            border-radius: 50% 30% 60% 40% / 40% 50% 30% 60%; /* Irregular organic shape */
-            filter: blur(1px) drop-shadow(0 0 5px #00FF00) contrast(150%);
-            opacity: 0.8;
-            animation: splatter-shift 4s infinite ease-in-out alternate;
-            z-index: 2;
-            mix-blend-mode: screen;
-            box-shadow: 0 0 15px #00FF00;
-        }
-
-        .decolonize-pixel-collage .s1 {
-            width: 150px;
-            height: 100px;
-            top: 25%;
-            left: 20%;
-            transform: rotate(20deg) scale(1.2);
-            background-image: radial-gradient(circle at top left, #00FF00, rgba(0,255,0,0.5));
-            animation-delay: 0.5s;
-        }
-
-        .decolonize-pixel-collage .s2 {
-            width: 120px;
-            height: 180px;
-            bottom: 30%;
-            right: 25%;
-            transform: rotate(-30deg) scale(0.9);
-            background-image: linear-gradient(135deg, rgba(0,255,0,0.8), #00FF00);
-            border-radius: 30% 50% 70% 20% / 60% 20% 40% 80%;
-            animation-delay: 1.5s;
-        }
-        .decolonize-pixel-collage .s3 {
-            width: 80px;
-            height: 80px;
-            top: 60%;
-            left: 5%;
-            background-color: rgba(0,255,0,0.7);
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00FF00;
-            transform: rotate(45deg);
-            mix-blend-mode: color-dodge;
-            animation-delay: 1s;
-        }
-
-        /* Noise overlay for grime and texture */
-        .decolonize-pixel-collage .noise-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            /* Base64 encoded SVG for subtle fractal noise */
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgNTEyIDUxMicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48ZmlsdGVyIGlkPSdub2lzZUZpbHRlcic+PGZlVHViYXJsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzAuOCcgbnVtT2N0YXZlcz0nMScgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbHRlcj0ndXJsKCNub2lzZUZpbHRlciknIG9wYWNpdHk9JzAuMDUnLz48L3N2Zz4=");
-            background-size: 100px 100px;
-            opacity: 0.2;
-            z-index: 99;
-            mix-blend-mode: overlay;
-            filter: grayscale(100%) contrast(200%) brightness(50%);
-        }
-
-        /* Code block element, representing digital structure */
-        .decolonize-pixel-collage .code-block {
-            position: absolute;
-            bottom: 5%;
-            left: 5%;
-            width: 35vw;
-            background-color: rgba(0,0,0,0.8);
-            border: 1px dashed #00FF00;
-            padding: 15px;
-            font-size: 0.9vw;
-            line-height: 1.4;
-            color: #00FF00;
-            box-shadow: inset 0 0 10px rgba(0,255,0,0.5), 0 0 15px rgba(0,255,0,0.7);
-            transform: rotate(-2deg);
-            z-index: 6;
-            filter: drop-shadow(0 0 5px #00FF00);
-        }
-        .decolonize-pixel-collage .code-block pre {
-            margin: 0;
-            padding: 0;
-        }
-        .decolonize-pixel-collage .code-block code {
-            display: block;
-            white-space: pre-wrap;
-            text-shadow: 0 0 2px #00FF00;
-        }
-
-        /* Abstract line art elements for digital noise */
-        .decolonize-pixel-collage .line-art {
-            position: absolute;
-            background-color: #00FF00;
-            opacity: 0.7;
-            box-shadow: 0 0 5px #00FF00;
-            z-index: 4;
-            animation: shift-blur 2s infinite alternate;
-        }
-        .decolonize-pixel-collage .line-art-1 {
-            width: 2px;
-            height: 50vh;
-            top: 10%;
-            left: 45%;
-            transform: rotate(15deg);
-        }
-        .decolonize-pixel-collage .line-art-2 {
-            width: 60vw;
-            height: 3px;
-            bottom: 40%;
-            left: 20%;
-            transform: rotate(-8deg);
-            background: linear-gradient(90deg, transparent, #00FF00, transparent);
-        }
-
-        /* Fragmented elements, breaking the traditional grid */
-        .decolonize-pixel-collage .fragment {
-            position: absolute;
-            background-color: rgba(0,255,0,0.5);
-            border: 1px solid #00FF00;
-            box-shadow: 0 0 5px #00FF00;
-            z-index: 7;
-            transform: perspective(300px) rotateX(45deg) rotateY(-15deg);
-            animation: glitch 4s infinite alternate;
-            mix-blend-mode: screen;
-        }
-        .decolonize-pixel-collage .fragment-1 {
-            width: 100px;
-            height: 70px;
-            top: 30%;
-            left: 60%;
-            background-image: linear-gradient(45deg, #00FF00, #000000);
-        }
-        .decolonize-pixel-collage .fragment-2 {
-            width: 80px;
-            height: 120px;
-            bottom: 5%;
-            right: 15%;
-            background-image: radial-gradient(circle, #00FF00, #000000);
-            transform: perspective(400px) rotateY(30deg) rotateZ(10deg);
-            animation-delay: 1s;
+        @keyframes glitch {
+            0% { transform: translate(0, 0) skew(0deg); text-shadow: 1px 0 #0F0, -1px 0 #000; }
+            25% { transform: translate(-2px, 2px) skew(-5deg); text-shadow: -1px 0 rgba(0, 255, 0, 0.7), 1px 0 #000; }
+            50% { transform: translate(2px, -2px) skew(0deg); text-shadow: 1px 0 #0F0, -1px 0 #000; }
+            75% { transform: translate(-1px, 1px) skew(3deg); text-shadow: -1px 0 rgba(0, 255, 0, 0.7), 1px 0 #000; }
+            100% { transform: translate(0, 0) skew(0deg); text-shadow: 1px 0 #0F0, -1px 0 #000; }
         }
     </style>
 
-    <!-- Main Title: Decolonizing The Pixel -->
-    <h1 class="title">DECOLONIZING THE PIXEL</h1>
+    <!-- Background Grime/Gloss layers -->
+    <div class="grime-overlay"></div>
 
-    <!-- Brutalist panels/blocks, layered and rotated -->
-    <div class="panel panel-1"></div>
-    <div class="panel panel-2"></div>
-    <div class="panel panel-3"></div>
+    <!-- Digital Paint Splatters -->
+    <div class="splatter large" style="top: 10%; left: -5%; transform: rotate(30deg);"></div>
+    <div class="splatter medium" style="top: 50%; right: -2%; transform: rotate(-70deg);"></div>
+    <div class="splatter small" style="bottom: 15%; left: 20%; transform: rotate(120deg);"></div>
+    <div class="splatter large" style="bottom: -10%; right: 10%; transform: rotate(-45deg); opacity: 0.5;"></div>
+    <div class="splatter medium" style="top: 5%; right: 40%; transform: rotate(15deg); opacity: 0.6;"></div>
 
-    <!-- Sub-text blocks, deconstructing digital norms -->
-    <p class="text-block text-1">Grid Systems Are Colonial Constructs</p>
-    <p class="text-block text-2">Reclaim The Digital Canvas</p>
+    <!-- Main Title/Slogan -->
+    <h1 class="collage-element text-neon-glow" style="font-size: 5em; top: 10%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); text-align: center; color: #0F0; z-index: 25;">
+        THE <span style="color: #000; background: #0F0; padding: 0 10px;">ALGORITHM</span> PLANTATION
+    </h1>
 
-    <!-- Digital paint splatters, breaking clean lines -->
-    <span class="splatter s1"></span>
-    <span class="splatter s2"></span>
-    <span class="splatter s3"></span>
-
-    <!-- Glitched error message for digital subversion -->
-    <p class="glitch-text">ERROR_404_CANVAS_NOT_FOUND_REBOOTING</p>
-
-    <!-- Grime/noise overlay for texture -->
-    <div class="noise-overlay"></div>
-
-    <!-- Code block, exposing the underlying structure and subverting it -->
-    <div class="code-block">
-        <pre><code>
-            .pixel {
-                display: none;     /* remove conformity */
-                position: absolute;/* embrace chaos     */
-                z-index: 999;      /* assert dominance  */
-                filter: invert(1); /* flip the script   */
-            }
-
-            @media (max-width: 768px) {
-                .pixel-grid {
-                    display: none; /* Mobile Liberation */
-                }
-            }
-        </code></pre>
+    <!-- Sub-slogan / Brutalist text block -->
+    <div class="collage-element brutalist-block text-neon-glow" style="top: 25%; left: 10%; transform: rotate(8deg); font-size: 1.2em; max-width: 300px; color: #0F0; border-color: #0F0;">
+        <p>YIELD TO THE LOGIC</p>
+        <p style="margin-top: 5px; font-size: 0.8em; opacity: 0.8;">DATA HARVEST IS ETERNAL</p>
     </div>
 
-    <!-- Abstract line art, cutting through the space -->
-    <div class="line-art line-art-1"></div>
-    <div class="line-art line-art-2"></div>
+    <!-- Data Fields/Rows -->
+    <div class="collage-element data-row" style="top: 40%; left: -20%; transform: rotate(10deg);">
+        <div class="data-block">INPUT-001</div>
+        <div class="data-block">FLOW-B</div>
+        <div class="data-block">UNIT-734</div>
+        <div class="data-block">VALUE-X</div>
+        <div class="data-block">METRIC-P</div>
+    </div>
+    <div class="collage-element data-row" style="top: 55%; left: -5%; transform: rotate(-3deg); gap: 10px;">
+        <div class="data-block">USER-ID-99</div>
+        <div class="data-block">ACTIVITY-LOG</div>
+        <div class="data-block">PREDICT-A</div>
+        <div class="data-block">EXTRACT-B</div>
+        <div class="data-block">PROFIT-C</div>
+    </div>
+    <div class="collage-element data-row" style="top: 70%; right: -20%; transform: rotate(7deg); gap: 20px;">
+        <div class="data-block">CONTROL-GRID</div>
+        <div class="data-block">SYSTEM-OVERRIDE</div>
+        <div class="data-block">LABOR-EFFICIENCY</div>
+        <div class="data-block">RESOURCE-LOCK</div>
+    </div>
 
-    <!-- Fragmented shapes, symbolizing broken digital constraints -->
-    <div class="fragment fragment-1"></div>
-    <div class="fragment fragment-2"></div>
+    <!-- Overseer Eye -->
+    <div class="overseer-eye collage-element" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="overseer-pupil"></div>
+    </div>
+
+    <!-- Grimy, reflective block with text -->
+    <div class="collage-element brutalist-block box-neon-glow" style="bottom: 10%; right: 5%; transform: rotate(-12deg); width: 250px; height: 150px; background: rgba(0,0,0,0.8); backdrop-filter: blur(3px) brightness(70%) saturate(150%); border: 3px solid rgba(0, 255, 0, 0.7);">
+        <p class="text-neon-glow" style="font-family: 'Major Mono Display', monospace; font-size: 1.1em; text-align: right; color: #0F0;">
+            <span style="font-size: 1.5em; display: block; margin-bottom: 5px;">SURVEILLANCE</span>
+            <span style="opacity: 0.7;">IS OPTIMIZATION</span>
+            <br><span style="font-size: 0.8em; color: #0F0; opacity: 0.5;">[MONITOR. CULTIVATE. EXPLOIT.]</span>
+        </p>
+    </div>
+
+    <!-- Glitching text element -->
+    <p class="collage-element glitch-text" style="bottom: 5%; left: 10%; transform: rotate(3deg); font-size: 1.5em; white-space: nowrap;">
+        COLONIAL LOGIC AUTOMATED
+    </p>
+
+    <!-- Small code snippets / scar like elements -->
+    <span class="collage-element" style="top: 5%; right: 15%; font-family: 'Major Mono Display', monospace; font-size: 0.8em; color: rgba(0, 255, 0, 0.5); transform: rotate(20deg);">
+        IF (HUMAN_RESOURCE_ID) {<br>  PROCESS_FOR_MAX_VALUE();<br>}
+    </span>
+    <span class="collage-element" style="bottom: 25%; left: 30%; font-family: 'Press Start 2P', cursive; font-size: 0.9em; color: rgba(0, 255, 0, 0.3); transform: rotate(-10deg); white-space: nowrap;">
+        SYSTEM_FAILURE?_NO<br>YIELD_CONSTANT
+    </span>
+
+    <!-- Another brutalist block, slightly submerged -->
+    <div class="collage-element brutalist-block" style="bottom: -5%; left: 50%; transform: translateX(-50%) rotate(1deg); width: 70%; height: 100px; background: rgba(0,0,0,0.7); border-width: 5px; opacity: 0.7; filter: blur(0.5px) brightness(0.8); z-index: 5;">
+        <p style="text-align: center; font-size: 1.5em; margin-top: 15px; color: #0F0; opacity: 0.6; text-shadow: 0 0 3px #0F0;">
+            EXTRACT. CLASSIFY. CONTROL.
+        </p>
+    </div>
+
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
