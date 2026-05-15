@@ -39,419 +39,177 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-15 21:13 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-15 23:02 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
-                <div style="width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Orbitron', 'Arial Black', sans-serif; position: relative; color: #00FF00; box-sizing: border-box; background-image: radial-gradient(circle at top left, rgba(0,255,0,0.1) 0%, transparent 40%), radial-gradient(circle at bottom right, rgba(0,255,0,0.1) 0%, transparent 40%);">
+                <div style="
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #00FF00;
+    display: block;
+    box-sizing: border-box;
+    padding: 2.5vmin;
+    border: 0.5vmin solid #00FF00;
+">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
-        
-        .collage-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            background-color: #000;
-            font-family: 'Orbitron', sans-serif;
-            color: #00FF00;
-            box-sizing: border-box;
-            background-image: radial-gradient(circle at top left, rgba(0,255,0,0.1) 0%, transparent 40%),
-                              radial-gradient(circle at bottom right, rgba(0,255,0,0.1) 0%, transparent 40%);
+        /* CSS Variables for consistent colors */
+        :root {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --dark-grey: #1a1a1a;
+            --light-grey: #888888;
         }
 
-        /* Base element styling for Brutalist aesthetic */
-        .element {
-            position: absolute;
-            background-color: rgba(0,255,0,0.2);
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-            padding: 10px;
-            box-sizing: border-box;
-            filter: blur(0.2px) contrast(1.1); /* Grime effect */
-            z-index: 10;
-        }
-
-        .element-black {
-            background-color: #000;
-            border-color: #00FF00;
-            box-shadow: inset 0 0 15px rgba(0,255,0,0.7), 0 0 5px rgba(0,255,0,0.5); /* High-gloss grime */
-            color: #00FF00;
-        }
-
-        h1, h2, p, span {
+        /* Basic reset for elements within this div */
+        * {
             margin: 0;
             padding: 0;
-            text-shadow: 0 0 5px #00FF00, 0 0 15px rgba(0,255,0,0.8), 0 0 25px rgba(0,255,0,0.6);
-            line-height: 0.9;
+            box-sizing: border-box;
+        }
+
+        /* Shared styles for most collage text/block elements */
+        .collage-element {
+            position: absolute;
+            opacity: 0.95;
             text-transform: uppercase;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            pointer-events: none; /* Allows mouse events to pass through */
+            color: var(--neon-green);
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            z-index: 10; /* Default layering */
+        }
+
+        /* Glitch effect for text */
+        .text-glitch {
+            text-shadow:
+                0.1vmin 0.1vmin 0 var(--neon-green),
+                -0.1vmin -0.1vmin 0 var(--neon-green),
+                0.2vmin 0.2vmin 0 rgba(0,0,0,0.5),
+                -0.2vmin -0.2vmin 0 rgba(0,0,0,0.5);
+            animation: glitch-text 0.5s infinite alternate steps(2);
+        }
+
+        @keyframes glitch-text {
+            0% { transform: translate(0, 0); text-shadow: 0.1vmin 0px var(--neon-green), -0.1vmin 0px var(--neon-green); }
+            20% { transform: translate(0.2vmin, -0.2vmin); text-shadow: 0.2vmin -0.2vmin var(--neon-green), -0.2vmin 0.2vmin var(--neon-green); }
+            40% { transform: translate(-0.1vmin, 0.1vmin); text-shadow: -0.1vmin 0.1vmin var(--neon-green), 0.1vmin -0.1vmin var(--neon-green); }
+            60% { transform: translate(0.3vmin, 0); text-shadow: 0.3vmin 0px var(--neon-green), -0.3vmin 0px var(--neon-green); }
+            80% { transform: translate(-0.2vmin, -0.1vmin); text-shadow: -0.2vmin -0.1vmin var(--neon-green), 0.2vmin 0.1vmin var(--neon-green); }
+            100% { transform: translate(0, 0); text-shadow: 0.1vmin 0px var(--neon-green), -0.1vmin 0px var(--neon-green); }
+        }
+
+        /* Neon glow effect */
+        .neon-glow {
+            text-shadow: 0 0 0.5vmin var(--neon-green), 0 0 1vmin var(--neon-green), 0 0 2vmin var(--neon-green), 0 0 4vmin var(--neon-green), 0 0 8vmin var(--neon-green);
+        }
+
+        /* Digital paint splatter effect */
+        .paint-splatter {
+            background-color: var(--neon-green);
+            opacity: 0.3;
+            filter: blur(0.2vmin) contrast(150%);
+            box-shadow: inset 0 0 1vmin rgba(0,255,0,0.5);
+            background-image: radial-gradient(circle at 30% 30%, rgba(0,255,0,0.8), rgba(0,255,0,0.2) 70%, transparent 100%);
+            border: 0.1vmin solid rgba(0,255,0,0.5);
+            z-index: 5; /* Lower z-index for background splatters */
+        }
+
+        /* Brutalist block style */
+        .brutalist-block {
+            background-color: var(--dark-grey);
+            border: 0.2vmin solid var(--neon-green);
+            padding: 1vmin;
+            box-shadow: 0.5vmin 0.5vmin 0px var(--neon-green), 1vmin 1vmin 0px var(--dark-grey);
+            color: var(--neon-green);
+            font-family: 'Share Tech Mono', monospace; /* Digital font */
+        }
+
+        /* High-gloss grime effect for blocks */
+        .high-gloss {
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.8) 50%, rgba(255,255,255,0.1) 100%);
+            box-shadow: inset 0 0 1.5vmin rgba(0,255,0,0.5), 0 0 1vmin rgba(0,255,0,0.3);
+            border: 0.1vmin solid var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        /* Specific monospace font class */
+        .monospace-text {
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
             letter-spacing: 0.05em;
         }
-
-        /* Digital paint splatters */
-        .splatter {
-            position: absolute;
-            background: radial-gradient(circle at center, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.4) 50%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(2px) saturate(2);
-            opacity: 0.6;
-            z-index: 5;
-            animation: pulse 4s infinite alternate;
-        }
-
-        .splatter-1 { top: 10%; left: 15%; width: 150px; height: 150px; transform: rotate(30deg); --rotation: 30deg; }
-        .splatter-2 { bottom: 5%; right: 10%; width: 200px; height: 200px; transform: rotate(-45deg); opacity: 0.5; --rotation: -45deg; }
-        .splatter-3 { top: 40%; right: 30%; width: 100px; height: 100px; transform: rotate(15deg); opacity: 0.7; animation-delay: 1s; --rotation: 15deg; }
-        .splatter-4 { bottom: 20%; left: 5%; width: 120px; height: 120px; transform: rotate(60deg); opacity: 0.4; animation-delay: 2s; --rotation: 60deg; }
-
-        /* Keyframes for animation */
-        @keyframes pulse {
-            0% { transform: scale(1) rotate(var(--rotation, 0deg)); opacity: 0.6; }
-            50% { transform: scale(1.05) rotate(var(--rotation, 0deg)); opacity: 0.7; }
-            100% { transform: scale(1) rotate(var(--rotation, 0deg)); opacity: 0.6; }
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; filter: hue-rotate(0deg); }
-            20% { transform: translate(-2px, 2px); opacity: 0.8; filter: hue-rotate(5deg); }
-            40% { transform: translate(2px, -2px); opacity: 1; filter: hue-rotate(0deg); }
-            60% { transform: translate(-1px, 1px); opacity: 0.9; filter: hue-rotate(-5deg); }
-            80% { transform: translate(1px, -1px); opacity: 1; filter: hue-rotate(0deg); }
-            100% { transform: translate(0, 0); opacity: 1; filter: hue-rotate(0deg); }
-        }
-
-        /* Specific element positioning and styling */
-        .title {
-            font-size: clamp(2em, 10vw, 8em);
-            font-weight: 900;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-            position: absolute;
-            animation: glitch 3s infinite alternate;
-        }
-
-        .subtitle {
-            font-size: clamp(1em, 4vw, 3em);
-            font-weight: 700;
-            top: 28%;
-            left: 55%;
-            transform: translateX(-50%);
-            z-index: 21;
-            position: absolute;
-            color: #000;
-            background-color: #00FF00;
-            padding: 5px 15px;
-            box-shadow: 0 0 15px rgba(0,255,0,0.8);
-            text-shadow: none; /* Remove text shadow for contrast */
-        }
-
-        .text-block-1 {
-            width: 30%;
-            min-width: 250px;
-            top: 40%;
-            left: 5%;
-            font-size: clamp(0.8em, 2vw, 1.2em);
-            line-height: 1.3;
-            padding: 20px;
-            z-index: 15;
-            animation: pulse 5s infinite ease-in-out alternate;
-            --rotation: 5deg;
-        }
-
-        .text-block-2 {
-            width: 25%;
-            min-width: 200px;
-            top: 50%;
-            right: 10%;
-            font-size: clamp(0.7em, 1.8vw, 1.1em);
-            line-height: 1.5;
-            padding: 15px;
-            background-color: #000;
-            border: 1px solid #00FF00;
-            box-shadow: inset 0 0 10px rgba(0,255,0,0.6);
-            z-index: 18;
-            transform: rotate(-3deg);
-            filter: contrast(1.5) blur(0.1px);
-        }
-
-        .data-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-image: 
-                linear-gradient(to right, rgba(0,255,0,0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0,255,0,0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 0;
-            opacity: 0.3;
-        }
-
-        .bar-chart {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            padding: 10px;
-            box-sizing: border-box;
-            background-color: rgba(0,0,0,0.7);
-            border-top: 2px solid #00FF00;
-            z-index: 25;
-            box-shadow: 0 0 20px rgba(0,255,0,0.8);
-        }
-
-        .bar {
-            width: 8%;
-            background-color: #00FF00;
-            margin: 0 1%;
-            box-shadow: 0 0 8px #00FF00;
-            animation: barGrow 2s ease-out forwards;
-        }
-
-        @keyframes barGrow {
-            0% { height: 0; }
-            100% { height: var(--final-height); }
-        }
-        .bar:nth-child(1) { --final-height: 70%; animation-delay: 0s; }
-        .bar:nth-child(2) { --final-height: 90%; animation-delay: 0.2s; }
-        .bar:nth-child(3) { --final-height: 50%; animation-delay: 0.4s; }
-        .bar:nth-child(4) { --final-height: 80%; animation-delay: 0.6s; }
-        .bar:nth-child(5) { --final-height: 60%; animation-delay: 0.8s; }
-        .bar:nth-child(6) { --final-height: 75%; animation-delay: 1s; }
-
-        .image-frame {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-            width: 200px;
-            height: 150px;
-            border: 5px solid #00FF00;
-            background-color: #000;
-            box-shadow: 0 0 20px rgba(0,255,0,0.9), inset 0 0 10px rgba(0,255,0,0.5);
-            z-index: 22;
-            transform: rotate(7deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            text-align: center;
-            filter: saturate(1.5) contrast(1.2);
-            overflow: hidden;
-        }
-
-        .image-frame::before {
-            content: "SELF_BRAND.JPG"; /* Placeholder for image */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-7deg);
-            color: #00FF00;
-            font-weight: bold;
-            font-size: 0.8em;
-            opacity: 0.8;
-            white-space: nowrap;
-        }
-
-        .image-frame .glitch-text {
-            color: #00FF00;
-            font-family: monospace;
-            font-size: 0.7em;
-            line-height: 1;
-            text-align: left;
-            word-break: break-all;
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            overflow: hidden;
-            opacity: 0.9;
-        }
-
-        .code-block {
-            position: absolute;
-            bottom: 25%;
-            left: 2%;
-            width: 350px;
-            max-width: 40vw;
-            background-color: rgba(0,0,0,0.8);
-            border: 1px solid #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-            padding: 15px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7em;
-            color: #00FF00;
-            line-height: 1.4;
-            transform: rotate(-2deg);
-            z-index: 19;
-            animation: glitch 4s infinite alternate;
-            filter: drop-shadow(0 0 5px rgba(0,255,0,0.5));
-            overflow: hidden;
-        }
-        
-        .code-block .line {
-            display: block;
-            white-space: pre;
-        }
-        .code-block .comment { color: rgba(0,255,0,0.5); }
-        .code-block .keyword { color: #00FF00; font-weight: bold; }
-        .code-block .string { color: #33FF33; }
-        .code-block .number { color: #99FF99; }
-        .code-block .variable { color: #66FF66; }
-
-        .overlay-text {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(3deg);
-            font-size: clamp(1.5em, 6vw, 5em);
-            font-weight: 900;
-            color: rgba(0,255,0,0.1); /* Very subtle */
-            z-index: 8;
-            text-transform: uppercase;
-            white-space: nowrap;
-            letter-spacing: 0.1em;
-            pointer-events: none;
-        }
-
-        .attention-meter {
-            position: absolute;
-            top: 5%;
-            left: 2%;
-            width: 150px;
-            height: 30px;
-            background-color: rgba(0,0,0,0.8);
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 10px rgba(0,255,0,0.7);
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            z-index: 23;
-            transform: rotate(-5deg);
-        }
-        .meter-fill {
-            height: 80%;
-            width: 70%; /* Represents current "attention" level */
-            background-color: #00FF00;
-            box-shadow: inset 0 0 5px rgba(0,255,0,0.9);
-            animation: fillMeter 3s ease-in-out infinite alternate;
-        }
-        .meter-label {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.7em;
-            color: #00FF00;
-            margin-left: 5px;
-        }
-
-        @keyframes fillMeter {
-            0% { width: 50%; }
-            50% { width: 80%; }
-            100% { width: 50%; }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .title { font-size: 8vw; top: 5%; }
-            .subtitle { font-size: 3vw; top: 18%; }
-            .text-block-1 { top: 30%; left: 2%; width: 90%; min-width: unset; }
-            .text-block-2 { top: 60%; right: 2%; width: 90%; min-width: unset; transform: rotate(0deg); }
-            .image-frame { top: 15%; right: 2%; width: 150px; height: 100px; font-size: 1em; transform: rotate(0deg); }
-            .bar-chart { height: 100px; }
-            .code-block { bottom: 5%; left: 50%; transform: translateX(-50%) rotate(0deg); max-width: 90%; width: auto; font-size: 0.6em; }
-            .splatter-1 { top: 5%; left: 5%; width: 80px; height: 80px; }
-            .splatter-2 { bottom: 10%; right: 5%; width: 100px; height: 100px; }
-            .splatter-3 { top: 25%; right: 5%; width: 60px; height: 60px; }
-            .attention-meter { top: 2%; left: 2%; width: 100px; height: 25px; font-size: 0.6em; transform: rotate(0deg); }
-            .overlay-text { font-size: 3vw; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); }
-        }
-        
-        @media (max-width: 480px) {
-            .title { font-size: 10vw; top: 2%; }
-            .subtitle { font-size: 4vw; top: 15%; }
-            .text-block-1 { top: 25%; left: 2%; width: 96%; }
-            .text-block-2 { top: 55%; right: 2%; width: 96%; }
-            .image-frame { top: 10%; right: 2%; width: 120px; height: 80px; font-size: 0.8em; }
-            .bar-chart { height: 80px; }
-            .code-block { bottom: 2%; font-size: 0.5em; max-width: 95%; }
-            .splatter-1 { width: 60px; height: 60px; }
-            .splatter-2 { width: 80px; height: 80px; }
-            .attention-meter { width: 80px; height: 20px; font-size: 0.5em; }
-            .overlay-text { font-size: 2.5vw; }
-        }
-
     </style>
 
-    <div class="data-grid"></div>
+    <!-- Background Grime/Texture Layer -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background-image:
+            radial-gradient(circle at 10% 20%, rgba(0,255,0,0.05) 0%, rgba(0,0,0,0.9) 70%),
+            linear-gradient(180deg, rgba(0,255,0,0.02) 0%, rgba(0,0,0,0.95) 50%, rgba(0,255,0,0.02) 100%);
+        filter: saturate(150%) contrast(120%) brightness(110%);
+        z-index: 0;
+        opacity: 0.8;
+    "></div>
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <!-- Digital Paint Splatters - Irregular shapes with varying opacity and rotation -->
+    <div class="paint-splatter" style="left: 10%; top: 5%; width: 10vmin; height: 12vmin; transform: rotate(15deg) scaleX(0.8); border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%;"></div>
+    <div class="paint-splatter" style="right: 5%; bottom: 15%; width: 15vmin; height: 9vmin; opacity: 0.2; transform: rotate(-25deg) scaleY(0.7); border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+    <div class="paint-splatter" style="left: 40%; top: 30%; width: 8vmin; height: 8vmin; opacity: 0.4; transform: rotate(45deg);"></div>
+    <div class="paint-splatter" style="right: 20%; top: 10%; width: 7vmin; height: 11vmin; opacity: 0.3; transform: rotate(80deg) scaleX(0.6); border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%;"></div>
+    <div class="paint-splatter" style="left: 25%; bottom: 5%; width: 18vmin; height: 6vmin; opacity: 0.25; transform: rotate(-10deg) scaleY(0.5); border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;"></div>
+    <div class="paint-splatter" style="top: 20%; left: 70%; width: 9vmin; height: 10vmin; opacity: 0.15; transform: rotate(50deg); border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%;"></div>
 
-    <h1 class="title">I, CONSUMER</h1>
-    <h2 class="subtitle">THE BRAND IS ME</h2>
+    <!-- Brutalist, Grimy Text Elements -->
+    <div class="collage-element text-glitch" style="top: 5%; left: 10%; font-size: 8vmin; transform: rotate(-5deg); z-index: 12;">GHETTO</div>
+    <div class="collage-element neon-glow" style="top: 15%; right: 5%; font-size: 6vmin; transform: rotate(10deg); color: var(--neon-green); z-index: 11;">DIGITAL</div>
+    <div class="collage-element" style="bottom: 10%; left: 8%; font-size: 5vmin; transform: rotate(3deg); background-color: var(--neon-green); color: var(--deep-black); padding: 1vmin 2vmin; border: 0.3vmin solid var(--deep-black); box-shadow: 0 0 1.5vmin rgba(0,255,0,0.8); z-index: 13;">CODE <span style="color: var(--dark-grey); text-shadow: none;">///</span> RESIST</div>
 
-    <div class="element text-block-1">
-        <p>Your feed, your truth. The algorithm knows you better than you know yourself. Every click, every like, a pixel in the ever-expanding canvas of your optimized existence. Are you living, or are you performing?</p>
+    <!-- Intersecting Blocks with high-gloss grime -->
+    <div class="collage-element brutalist-block high-gloss" style="top: 30%; left: 5%; width: 30vmin; height: 15vmin; transform: rotate(7deg); z-index: 10; font-size: 1.5vmin; padding: 2vmin;">
+        <p style="color: var(--neon-green); text-shadow: 0 0 0.5vmin var(--neon-green);" class="monospace-text">ACCESS DENIED_</p>
+        <p style="color: var(--light-grey); font-size: 0.8em;" class="monospace-text">ERROR 404_PRIVILEGE NOT FOUND_</p>
+        <div style="width: 100%; height: 0.5vmin; background: linear-gradient(90deg, var(--neon-green) 0%, rgba(0,0,0,0) 100%); margin-top: 1vmin;"></div>
     </div>
 
-    <div class="element element-black text-block-2">
-        <p>Authenticity is a filter. Validation is the currency. We are all curators of our digital void, perpetually scrolling for a reflection that pleases the eye of the unseen market. #Blessed #Grateful #MyBestLife</p>
+    <div class="collage-element brutalist-block" style="bottom: 25%; right: 10%; width: 25vmin; height: 12vmin; transform: rotate(-12deg); z-index: 12; background-color: var(--neon-green); color: var(--deep-black); padding: 1.5vmin;">
+        <span style="font-size: 2.5vmin; font-weight: bold; display: block; text-shadow: 0.2vmin 0.2vmin 0 var(--deep-black);">VOICE</span>
+        <span style="font-size: 1.2vmin; display: block; margin-top: 0.5vmin; text-shadow: 0.1vmin 0.1vmin 0 var(--deep-black);">DECRYPT THE SYSTEM</span>
+        <div style="width: 100%; height: 0.2vmin; background-color: var(--deep-black); margin-top: 1vmin;"></div>
     </div>
 
-    <div class="image-frame">
-        <pre class="glitch-text">
-.-----     //_-_\\
-| ( ) |   /  . .  \
-'-----'  |   <|>   |
-  \ /    \_  '-'  _/
-   v       \\_//
-  .-.       `v`
- ( O )      
-  '-'  
-        </pre>
+    <!-- Overlapping Text Layers for "STATIC", "GLITCH", "SIGNAL" -->
+    <div class="collage-element" style="top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(2deg); font-size: 12vmin; opacity: 0.1; color: var(--light-grey); z-index: 1;">STATIC</div>
+    <div class="collage-element" style="top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(-3deg); font-size: 10vmin; opacity: 0.3; color: var(--neon-green); z-index: 2; text-shadow: 0 0 2vmin var(--neon-green);">GLITCH</div>
+    <div class="collage-element" style="top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); font-size: 8vmin; opacity: 0.8; color: var(--neon-green); z-index: 3; text-shadow: 0 0 1vmin var(--neon-green); animation: glitch-text 0.8s infinite alternate;">SIGNAL</div>
+
+    <!-- Grime Patches / High Gloss Rectangles -->
+    <div style="position: absolute; top: 10%; left: 60%; width: 20vmin; height: 8vmin; background: linear-gradient(45deg, rgba(0,255,0,0.4), rgba(0,0,0,0.6)); transform: rotate(-15deg); border-radius: 1vmin; filter: blur(0.3vmin); opacity: 0.5; z-index: 6;"></div>
+    <div style="position: absolute; bottom: 5%; right: 20%; width: 15vmin; height: 15vmin; background: radial-gradient(circle at top left, rgba(0,255,0,0.3), rgba(0,0,0,0.8)); transform: rotate(25deg); border-radius: 50%; filter: blur(0.5vmin); opacity: 0.4; z-index: 6;"></div>
+
+    <!-- Additional text elements -->
+    <div class="collage-element" style="top: 70%; left: 10%; font-size: 4vmin; transform: rotate(-7deg); background-color: var(--dark-grey); color: var(--neon-green); padding: 0.5vmin 1.5vmin; border: 0.2vmin solid var(--neon-green); box-shadow: 0.3vmin 0.3vmin 0 var(--neon-green); z-index: 14;">INTERSECTION</div>
+    <div class="collage-element neon-glow" style="bottom: 5%; right: 5%; font-size: 3vmin; transform: rotate(15deg); letter-spacing: 0.5em; z-index: 14;">SYSTEM ERROR</div>
+
+    <!-- Final touch: a block with a subtle background shine and message -->
+    <div class="collage-element" style="
+        bottom: 2%; left: 2%; width: 40vmin; height: 5vmin;
+        background: var(--dark-grey);
+        border: 0.1vmin solid var(--neon-green);
+        box-shadow: 0 0 1.5vmin rgba(0,255,0,0.4);
+        background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%);
+        transform: rotate(-2deg);
+        z-index: 15;
+    ">
+        <p style="font-size: 1.2vmin; color: var(--light-grey); text-align: center; line-height: 5vmin;" class="monospace-text">_DECODE_REALITY_</p>
     </div>
 
-    <div class="element code-block">
-        <span class="comment">// Post-Capitalist Narcissism Protocol v3.1</span>
-        <span class="line"><span class="keyword">const</span> <span class="variable">selfIdentity</span> = <span class="string">"optimized_for_engagement"</span>;</span>
-        <span class="line"><span class="keyword">let</span> <span class="variable">likesReceived</span> = <span class="number">1337</span>;</span>
-        <span class="line"><span class="keyword">function</span> <span class="variable">updateSelfWorth</span>() {</span>
-        <span class="line">  <span class="variable">likesReceived</span>++;</span>
-        <span class="line">  <span class="keyword">if</span> (<span class="variable">likesReceived</span> % <span class="number">100</span> === <span class="number">0</span>) {</span>
-        <span class="line">    <span class="keyword">return</span> <span class="string">"Validation level: MAX"</span>;</span>
-        <span class="line">  } <span class="keyword">else</span> {</span>
-        <span class="line">    <span class="keyword">return</span> <span class="string">"Seeking further affirmation..."</span>;</span>
-        <span class="line">  }</span>
-        <span class="line">}</span>
-    </div>
-
-    <div class="overlay-text">
-        <p>VALIDATION VOID</p>
-    </div>
-
-    <div class="attention-meter">
-        <div class="meter-fill"></div>
-        <span class="meter-label">ATTENTION</span>
-    </div>
-
-    <div class="bar-chart">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
