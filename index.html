@@ -39,217 +39,160 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-16 13:51 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-16 15:03 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
-                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000000; font-family: 'IBM Plex Mono', monospace; color: #00FF00; box-sizing: border-box; font-size: 16px;">
+                
+<div style="position: relative; width: 100vw; height: 100vh; background-color: #000; font-family: 'Impact', 'Arial Black', sans-serif; overflow: hidden; color: #00ff00; box-sizing: border-box;">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
-
-        /* General Reset for Collage Elements */
+        /* Base styles for the collage */
         .collage-element {
             position: absolute;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00a0;
+            mix-blend-mode: screen; /* For layering and blending effects, giving that glowing interaction on black */
+            pointer-events: none; /* So elements don't block interaction with others if any were clickable */
             box-sizing: border-box;
-            border: 1px solid transparent; /* default for brutalist lines */
-            pointer-events: none; /* allows clicking through overlapping elements */
-            z-index: 10; /* default z-index for most elements */
+            z-index: 10; /* Default z-index for content */
         }
 
-        /* Brutalist Text */
-        .brutal-text {
-            font-family: 'IBM Plex Mono', monospace;
-            font-weight: 900;
+        .text-block {
+            font-family: 'Impact', 'Arial Black', sans-serif;
             text-transform: uppercase;
             line-height: 0.9;
-            text-shadow: 0 0 5px rgba(0,255,0,0.5), 0 0 15px rgba(0,255,0,0.3);
-            border: 2px solid #00FF00;
-            padding: 5px;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 25; /* Text usually on top */
         }
 
-        /* Grime/Splatters */
-        .grime-splatter {
-            background: linear-gradient(45deg, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,255,0,0.1) 100%);
-            border-radius: 50% 20% 60% 30% / 30% 60% 20% 50%; /* Irregular blob */
-            filter: blur(2px) brightness(1.2);
+        /* Brutalist elements - solid, angular, layered */
+        .brutal-block {
+            background-color: rgba(0, 255, 0, 0.15); /* Slightly transparent green */
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 10px #00ff00, inset 0 0 15px rgba(0, 255, 0, 0.5); /* High-gloss grime */
+            mix-blend-mode: screen;
+            z-index: 5;
+        }
+
+        /* Grime/Gloss effects - organic, blurred */
+        .grime-blob {
+            background: radial-gradient(circle at 30% 30%, rgba(0, 255, 0, 0.7) 0%, rgba(0, 255, 0, 0.3) 70%, transparent 100%);
+            border-radius: 50%;
+            filter: blur(8px);
             opacity: 0.6;
-            z-index: 5; /* Grime usually behind main elements */
+            transform: scale(var(--s, 1)) rotate(var(--r, 0deg));
+            mix-blend-mode: screen;
+            z-index: 3;
+        }
+        .grime-sheen {
+            background: linear-gradient(135deg, rgba(0,255,0,0.6) 0%, transparent 50%, rgba(0,255,0,0.6) 100%);
+            opacity: 0.2;
+            mix-blend-mode: overlay; /* Creates interesting interactions with the black background */
+            z-index: 1;
         }
 
-        /* High-Gloss Panels */
-        .high-gloss-panel {
-            background: linear-gradient(to bottom right, rgba(0,255,0,0.3) 0%, rgba(0,0,0,0.9) 80%, rgba(0,255,0,0.1) 100%);
-            box-shadow: 0 0 20px rgba(0,255,0,0.5), inset 0 0 10px rgba(0,255,0,0.3);
-            border: 1px solid #00FF00;
-            opacity: 0.9;
-            z-index: 15;
-        }
-
-        /* Abstract Lines / Grids */
-        .line-segment {
-            background-color: #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-            z-index: 10;
-        }
-        .grid-line {
-            background-color: rgba(0,255,0,0.3);
-            box-shadow: 0 0 5px rgba(0,255,0,0.2);
-            z-index: 1; /* Grid lines usually furthest back */
-        }
-
-        /* Data Field / Crop Cells */
-        .data-cell-container {
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(0,255,0,0.5);
-            background-color: rgba(0,0,0,0.6);
-            z-index: 20;
-        }
-        .data-cell {
-            width: 20px;
-            height: 20px;
-            background-color: rgba(0,255,0,0.1);
-            border: 1px solid rgba(0,255,0,0.3);
+        /* Digital paint splatters - irregular, chaotic, layered */
+        .splatter {
+            background-color: #00ff00;
             position: absolute;
-            opacity: 0.8;
-            box-shadow: inset 0 0 5px rgba(0,255,0,0.2);
-            animation: flicker 2s infinite alternate;
+            opacity: var(--o, 0.8);
+            filter: blur(var(--b, 2px));
+            border-radius: var(--br, 30% 70% 70% 30% / 30% 30% 70% 70%); /* Irregular blob shapes */
+            transform: rotate(var(--deg, 0deg)) scale(var(--s, 1));
+            mix-blend-mode: screen;
+            z-index: 2;
+        }
+        .splatter:nth-child(even) {
+            background-color: rgba(0, 255, 0, 0.7);
+            border-radius: var(--br2, 70% 30% 30% 70% / 70% 70% 30% 30%);
+            filter: blur(var(--b2, 1px));
+        }
+
+        /* Animations for dynamic effects */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.02); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        @keyframes subtle-rot {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
         @keyframes flicker {
-            0% { opacity: 0.8; }
-            50% { opacity: 0.5; }
-            100% { opacity: 0.8; }
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00a0; }
+            20%, 24%, 55% { opacity: 0.8; text-shadow: none; }
         }
-
-        /* Surveillance Eye */
-        .surveillance-eye {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: rgba(0,255,0,0.2);
-            border: 3px solid #00FF00;
-            box-shadow: 0 0 20px #00FF00, inset 0 0 15px #00FF00;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-        .surveillance-pupil {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background-color: #00FF00;
-            box-shadow: 0 0 10px #00FF00;
-        }
-
-        /* Digital Paint Drip */
-        .digital-drip {
-            width: 30px;
-            height: 100px;
-            background-color: #00FF00;
-            clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
-            filter: drop-shadow(0 0 10px #00FF00);
-            opacity: 0.7;
-            z-index: 10;
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
         }
     </style>
 
     <!-- Main Title -->
-    <h1 class="collage-element brutal-text" style="font-size: 6vw; top: 10%; left: 5%; transform: rotate(-5deg); padding: 15px;">
-        ALGORITHMIC <br>PLANTATION
+    <h1 class="collage-element text-block" style="top: 10%; left: 5%; font-size: 10vw; z-index: 15; transform: skewY(-5deg); animation: flicker 3s infinite step-end;">
+        REPARATIONS
     </h1>
 
-    <!-- Subtitle / Key Concept -->
-    <p class="collage-element brutal-text" style="font-size: 2.5vw; top: 30%; left: 60%; transform: rotate(10deg); width: 35%; padding: 10px;">
-        DATA EXTRACTION <br> HUMAN HARVEST <br> DIGITAL LABOR
+    <!-- Subtitle/Keywords -->
+    <p class="collage-element text-block" style="top: 30%; right: 10%; font-size: 4vw; z-index: 14; transform: rotate(5deg) scaleX(0.9); animation: glitch 0.5s infinite alternate;">
+        FOR THE DIGITAL GAZE
     </p>
 
-    <!-- Grime Splatter 1 -->
-    <div class="collage-element grime-splatter" style="width: 200px; height: 180px; top: 5%; left: 40%; transform: rotate(20deg);"></div>
+    <!-- Brutalist Blocks and Overlays -->
+    <div class="brutal-block" style="width: 30%; height: 20%; top: 20%; left: 40%; transform: skew(-10deg);"></div>
+    <div class="brutal-block" style="width: 20%; height: 15%; top: 35%; left: 50%; transform: skew(15deg) rotate(-5deg); z-index: 6;"></div>
+    <div class="brutal-block" style="width: 25%; height: 10%; bottom: 10%; left: 15%; background-color: rgba(0, 255, 0, 0.25); z-index: 7;"></div>
 
-    <!-- Grime Splatter 2 -->
-    <div class="collage-element grime-splatter" style="width: 300px; height: 250px; bottom: -5%; right: 10%; transform: rotate(-15deg); opacity: 0.4;"></div>
+    <!-- Grime blobs/sheen - more abstract background elements -->
+    <div class="grime-blob" style="width: 150px; height: 150px; top: 15%; left: 60%; --s:1.2; --r:30deg;"></div>
+    <div class="grime-blob" style="width: 200px; height: 100px; bottom: 20%; right: 10%; --s:0.8; --r:-45deg;"></div>
+    <div class="grime-sheen" style="width: 100%; height: 50px; top: 0; left: 0;"></div>
+    <div class="grime-sheen" style="width: 100%; height: 80px; bottom: 0; left: 0;"></div>
 
-    <!-- High Gloss Panel 1 -->
-    <div class="collage-element high-gloss-panel" style="width: 250px; height: 150px; top: 40%; left: 10%; transform: rotate(15deg);"></div>
-
-    <!-- High Gloss Panel 2 (Overlaying text) -->
-    <div class="collage-element high-gloss-panel" style="width: 180px; height: 200px; top: 20%; right: 15%; transform: rotate(-25deg); opacity: 0.7;"></div>
-
-    <!-- Surveillance Eye -->
-    <div class="collage-element surveillance-eye" style="top: 25%; left: 45%;">
-        <div class="surveillance-pupil"></div>
-    </div>
-
-    <!-- Data Field / Crop (Container for cells) -->
-    <div class="collage-element data-cell-container" style="width: 300px; height: 200px; top: 55%; left: 30%; transform: rotate(5deg);">
-        <div class="data-cell" style="top: 10%; left: 5%; background-color: #00FF00;"></div>
-        <div class="data-cell" style="top: 30%; left: 20%;"></div>
-        <div class="data-cell" style="top: 50%; left: 10%; background-color: #00FF00;"></div>
-        <div class="data-cell" style="top: 70%; left: 30%;"></div>
-        <div class="data-cell" style="top: 20%; left: 40%;"></div>
-        <div class="data-cell" style="top: 40%; left: 55%; background-color: #00FF00;"></div>
-        <div class="data-cell" style="top: 60%; left: 45%;"></div>
-        <div class="data-cell" style="top: 80%; left: 60%;"></div>
-        <div class="data-cell" style="top: 10%; left: 70%; background-color: #00FF00;"></div>
-        <div class="data-cell" style="top: 30%; left: 85%;"></div>
-        <div class="data-cell" style="top: 50%; left: 75%;"></div>
-        <div class="data-cell" style="top: 70%; left: 90%; background-color: #00FF00;"></div>
-        <div class="data-cell" style="top: 0%; left: 25%;"></div>
-        <div class="data-cell" style="top: 90%; left: 50%;"></div>
-    </div>
-    <p class="collage-element brutal-text" style="font-size: 1.5vw; top: 75%; left: 35%; transform: rotate(-8deg); z-index: 25; background-color: rgba(0,0,0,0.8); padding: 5px;">
-        DATA CROP <br> HARVEST YIELD
+    <!-- More Text Elements -->
+    <p class="collage-element text-block" style="bottom: 5%; left: 5%; font-size: 2vw; letter-spacing: 2px; transform: rotate(-3deg); z-index: 16; animation: pulse 2s infinite alternate;">
+        DATA IS DEBT. PAYMENT DUE.
+    </p>
+    <p class="collage-element text-block" style="top: 50%; left: 10%; font-size: 3vw; transform: skewX(-10deg); opacity: 0.9; z-index: 13;">
+        EXPLOITATION OVERDUE
+    </p>
+    <p class="collage-element" style="top: 70%; right: 5%; font-size: 2.5vw; font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 5px; z-index: 17; transform: rotate(2deg); animation: flicker 4s infinite;">
+        RECLAIM. REDRESS. REBOOT.
     </p>
 
-    <!-- Vertical line / fence post -->
-    <div class="collage-element line-segment" style="width: 8px; height: 180px; top: 15%; left: 2%; transform: rotate(-15deg);"></div>
-    <div class="collage-element line-segment" style="width: 8px; height: 120px; top: 5%; left: 90%; transform: rotate(5deg);"></div>
+    <!-- Digital Paint Splatters - foreground visual noise -->
+    <div class="splatter" style="width: 150px; height: 100px; top: 5%; left: 70%; --deg:15deg; --o:0.7; --b:3px;"></div>
+    <div class="splatter" style="width: 80px; height: 120px; top: 25%; left: 80%; --deg:90deg; --o:0.6; --b:2px; z-index: 4;"></div>
+    <div class="splatter" style="width: 200px; height: 50px; bottom: 15%; left: 60%; --deg:-20deg; --o:0.9; --b:4px; z-index: 4;"></div>
+    <div class="splatter" style="width: 100px; height: 100px; top: 45%; left: 0%; --deg:45deg; --o:0.5; --b:1px;"></div>
+    <div class="splatter" style="width: 70px; height: 90px; top: 60%; left: 25%; --deg:120deg; --o:0.8; --b:2px; z-index: 6;"></div>
 
-    <!-- Horizontal grid lines / digital fences -->
-    <div class="collage-element grid-line" style="width: 100%; height: 2px; top: 50%; left: 0; transform: rotate(0deg);"></div>
-    <div class="collage-element grid-line" style="width: 100%; height: 2px; top: 65%; left: 0; transform: rotate(0deg); opacity: 0.2;"></div>
+    <!-- Overlapping grid-like element, low opacity, animated -->
+    <div class="collage-element" style="width: 30vw; height: 30vw; border: 5px solid #00ff00; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(10deg); z-index: 0; box-shadow: 0 0 30px #00ff00 inset, 0 0 50px #00ff00; opacity: 0.15; mix-blend-mode: screen; animation: subtle-rot 10s linear infinite;"></div>
 
-    <!-- Digital Drips -->
-    <div class="collage-element digital-drip" style="top: 0; left: 10%; transform: rotate(5deg);"></div>
-    <div class="collage-element digital-drip" style="top: 0; left: 80%; transform: rotate(-10deg);"></div>
-    <div class="collage-element digital-drip" style="bottom: 0; left: 25%; transform: rotate(185deg); height: 70px;"></div>
-
-    <!-- Control text block -->
-    <p class="collage-element brutal-text" style="font-size: 4vw; bottom: 5%; right: 5%; transform: rotate(8deg); width: 30%;">
-        OPTIMIZATION IS <br> CONTROL. <br> SUBMISSION.
-    </p>
-
-    <!-- Binary Code / Ghost in the machine -->
-    <span class="collage-element" style="font-family: 'IBM Plex Mono', monospace; font-size: 1.2vw; top: 80%; left: 10%; opacity: 0.3; letter-spacing: 0.2em; filter: blur(0.5px); z-index: 1;">
-        01001000 01010101 01001101 01000001 01001110 <br>
-        01010010 01000101 01010011 01001111 01010101 01010010 01000011 01000101 <br>
-        01000101 01011000 01010100 01010010 01000001 01000011 01010100 01001001 01001111 01001110
+    <!-- Smaller scattered text for digital noise -->
+    <span class="collage-element" style="top: 2%; left: 85%; font-size: 1.5vw; opacity: 0.6; transform: rotate(-10deg); z-index: 1;">
+        [TRACE:0101]
+    </span>
+    <span class="collage-element" style="bottom: 2%; right: 80%; font-size: 1.5vw; opacity: 0.7; transform: rotate(5deg); z-index: 1;">
+        [SURVEIL:0XF2]
+    </span>
+    <span class="collage-element" style="top: 40%; left: 2%; font-size: 1.2vw; opacity: 0.5; transform: rotate(15deg); z-index: 1;">
+        [EXPROPRIATE:ERR]
+    </span>
+    <span class="collage-element" style="top: 85%; left: 45%; font-size: 1.8vw; opacity: 0.7; transform: rotate(-8deg); z-index: 1;">
+        [LOG_REDACTED]
     </span>
 
-    <!-- More Grime/Splatter with different shape -->
-    <div class="collage-element grime-splatter" style="width: 150px; height: 250px; top: 60%; left: 5%; border-radius: 40% 60% 70% 30% / 70% 30% 40% 60%; transform: rotate(-25deg); opacity: 0.7;"></div>
-
-    <!-- Small, sharp text -->
-    <span class="collage-element brutal-text" style="font-size: 1.5vw; top: 10%; right: 10%; transform: rotate(20deg); padding: 3px; border: 1px solid #00FF00; background-color: rgba(0,0,0,0.5);">
-        OVERSEER <br> ALGO <br> EYE
-    </span>
-
-    <!-- Another high-gloss panel, smaller -->
-    <div class="collage-element high-gloss-panel" style="width: 100px; height: 80px; top: 70%; right: 40%; transform: rotate(-50deg); opacity: 0.6; z-index: 12;"></div>
-
-    <!-- Thin, diagonal line - like a whip or code stream -->
-    <div class="collage-element line-segment" style="width: 3px; height: 300px; top: 5%; right: 30%; transform: rotate(45deg); background: linear-gradient(to top, #00FF00, rgba(0,255,0,0.2));"></div>
-
-    <!-- More aggressive text -->
-    <h2 class="collage-element brutal-text" style="font-size: 5vw; top: 50%; left: 5%; transform: rotate(-12deg); color: #00FF00; text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.7); border: 4px solid #00FF00; padding: 15px;">
-        GHOSTS <br> IN THE <br> MACHINE
-    </h2>
-
+    <!-- Glitchy line elements - emphasizing digital breakdown -->
+    <div class="collage-element" style="width: 1px; height: 80%; background-color: #00ff00; left: 33%; top: 10%; opacity: 0.4; animation: flicker 5s infinite linear alternate; z-index: 8;"></div>
+    <div class="collage-element" style="width: 70%; height: 1px; background-color: #00ff00; top: 60%; left: 10%; opacity: 0.3; animation: flicker 4s infinite linear; z-index: 8;"></div>
+    <div class="collage-element" style="width: 5px; height: 50px; background-color: #00ff00; top: 80%; left: 70%; transform: rotate(45deg); opacity: 0.6; animation: glitch 2s infinite step-start; z-index: 8;"></div>
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
