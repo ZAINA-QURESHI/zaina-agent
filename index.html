@@ -39,268 +39,261 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-16 03:45 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-16 06:28 // TOPIC: POST-CAPITALIST NARCISSISM</div>
             <div class="art-container p-4">
-                <div style="
-    /* Main container styles */
+                
+<div style="
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
-    overflow: hidden;
-    font-family: 'Impact', 'Arial Black', 'Share Tech Mono', monospace, sans-serif; /* Brutalist and techy fonts */
-    color: #00FF00; /* Neon green text */
-    line-height: 0.9;
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; /* Overall neon glow */
-    filter: contrast(1.2) brightness(1.1) saturate(1.3); /* Overall digital grit and vibrancy */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Important for absolute positioning and content containment */
+    background-color: #000000; /* Deep black background */
+    font-family: 'IBM Plex Mono', monospace; /* Brutalist-ish, raw font */
+    color: #00FF00; /* Vibrant neon green text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"6\" fill=\"%2300FF00\" stroke=\"%23000000\" stroke-width=\"1\" opacity=\"0.8\"/></svg>') 12 12, crosshair; /* Custom neon green cursor */
+    box-sizing: border-box; /* Ensure padding/border don't affect width/height */
 ">
-    <!-- Keyframe Animations (must be inside the div as per instructions) -->
     <style>
-        @keyframes glitch-text {
-            0% { transform: rotate(10deg) skewY(5deg) translateX(0); text-shadow: 2px 2px 0 #00FF00, -2px -2px 0 #00FF00; }
-            20% { transform: rotate(10.5deg) skewY(5.2deg) translateX(5px); text-shadow: -2px 2px 0 #00FF00, 2px -2px 0 #00FF00; }
-            40% { transform: rotate(9.8deg) skewY(4.8deg) translateX(-5px); text-shadow: 2px -2px 0 #00FF00, -2px 2px 0 #00FF00; }
-            60% { transform: rotate(10.3deg) skewY(5.1deg) translateX(5px); text-shadow: -2px -2px 0 #00FF00, 2px 2px 0 #00FF00; }
-            80% { transform: rotate(9.9deg) skewY(4.9deg) translateX(-5px); text-shadow: 2px 2px 0 #00FF00, -2px -2px 0 #00FF00; }
-            100% { transform: rotate(10deg) skewY(5deg) translateX(0); text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
+        /* Import Google Fonts for better font support */
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Bebas+Neue&display=swap');
+
+        /* Base style for collage elements */
+        .collage-element {
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid #00FF00; /* Default neon border */
+            box-shadow: 0 0 5px #00FF00, 0 0 15px #00FF0088; /* High-gloss grime effect */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            padding: 10px 15px;
+            font-size: 1.1em;
+            line-height: 1.4;
+            transform-origin: center center;
+            overflow: hidden; /* Keep content within element boundaries */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            z-index: 10; /* Base layering */
         }
-        @keyframes subtle-glitch-h1 {
-            0% { transform: rotate(-5deg) skewX(-10deg) translateX(0); }
-            25% { transform: rotate(-5.5deg) skewX(-10.2deg) translateX(2px); }
-            50% { transform: rotate(-4.8deg) skewX(-9.8deg) translateX(-2px); }
-            75% { transform: rotate(-5.3deg) skewX(-10.1deg) translateX(2px); }
-            100% { transform: rotate(-5deg) skewX(-10deg) translateX(0); }
+        .collage-element:hover {
+            transform: scale(1.02) rotate(1deg); /* Slight lift and rotate on hover */
+            box-shadow: 0 0 8px #00FF00, 0 0 25px #00FF00CC, 0 0 40px #00FF0055;
+            z-index: 100; /* Bring to front on hover */
+            background-color: rgba(0, 0, 0, 0.85);
         }
-        @keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Neon text styling for emphasis */
+        .text-neon {
+            color: #00FF00;
+            text-shadow: 0 0 3px #00FF00, 0 0 8px #00FF0088;
         }
-        @keyframes pulse {
-            0% { opacity: 0.5; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-            100% { opacity: 0.5; transform: scale(0.8); }
+        /* Digital splatter/grime elements */
+        .digital-splatter {
+            position: absolute;
+            background: radial-gradient(circle at center, #00FF0088 0%, #00FF0033 50%, transparent 70%);
+            border-radius: 50%; /* Circular splatters */
+            pointer-events: none; /* Splatters shouldn't block interaction */
+            filter: blur(2px) saturate(200%); /* Soft blur and intensified color */
+            opacity: 0.6;
+            z-index: 1; /* Keep behind main content */
+        }
+        /* Glitch effect for titles */
+        .glitch-text {
+            font-family: 'Bebas Neue', sans-serif; /* Impactful font for glitch */
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00FF00;
+            text-shadow: 
+                1px 1px 0 #00FF00,
+                -1px -1px 0 #00FF00,
+                2px 2px 0 #00FF00,
+                -2px -2px 0 #00FF00;
+            position: relative;
+            animation: glitch 1.5s infinite alternate steps(2, start); /* Glitch animation */
+        }
+        @keyframes glitch {
+            0% { text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00; transform: translate(0); }
+            20% { text-shadow: -1px 0 0 #00FF00, 1px 0 0 #00FF00; transform: translate(-2px, 2px); }
+            40% { text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00; transform: translate(-2px, -2px); }
+            60% { text-shadow: -1px 0 0 #00FF00, 1px 0 0 #00FF00; transform: translate(2px, 2px); }
+            80% { text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00; transform: translate(2px, -2px); }
+            100% { text-shadow: -1px 0 0 #00FF00, 1px 0 0 #00FF00; transform: translate(0); }
+        }
+        /* Brutalist button style */
+        .brutalist-button {
+            background-color: #00FF00;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 8px #00FF00;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            transform: skewX(-10deg); /* Angled appearance */
+        }
+        .brutalist-button:hover {
+            background-color: #00CC00;
+            box-shadow: 0 0 15px #00FF00, 0 0 25px #00FF00AA;
+            transform: skewX(-10deg) scale(1.05);
+        }
+        /* Scrolling banner animation */
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 
-    <!-- Background Grid Lines / Digital Noise -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image:
-            linear-gradient(to right, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
-        background-size: 40px 40px;
-        z-index: 1;
-        opacity: 0.2;
-        transform: skewY(5deg) scale(1.1);
-        filter: blur(0.5px);
-    "></div>
+    <!-- Digital Splatters (background grime elements) -->
+    <div class="digital-splatter" style="width: 150px; height: 150px; top: 5%; left: 10%; transform: rotate(15deg) scale(0.9);"></div>
+    <div class="digital-splatter" style="width: 220px; height: 220px; top: 25%; right: 5%; transform: rotate(-25deg) skewY(10deg); background: conic-gradient(from 0deg, #00FF0088 0%, #00FF0033 40%, transparent 60%); border-radius: 20% 80% 50% 70%;"></div>
+    <div class="digital-splatter" style="width: 100px; height: 100px; bottom: 15%; left: 25%; transform: rotate(45deg);"></div>
+    <div class="digital-splatter" style="width: 180px; height: 180px; top: 60%; left: 0%; transform: rotate(-5deg); background: radial-gradient(ellipse at bottom right, #00FF0088 0%, transparent 70%); border-radius: 60% 40% 30% 70%;"></div>
+    <div class="digital-splatter" style="width: 120px; height: 120px; top: 15%; right: 40%; transform: rotate(60deg) skewX(15deg); background: linear-gradient(45deg, #00FF0088, transparent); border-radius: 10px;"></div>
 
-    <!-- Main Title: DECONSTRUCT -->
-    <h1 style="
-        position: absolute;
-        top: 8%;
-        left: 5%;
-        font-size: 13vw;
-        font-weight: 900;
-        letter-spacing: -0.05em;
-        text-transform: uppercase;
-        margin: 0;
-        z-index: 10;
-        transform: rotate(-5deg) skewX(-10deg);
-        background: linear-gradient(45deg, #00FF00 0%, #00FF00 60%, rgba(0,255,0,0.5) 65%, #000 65%, #000 70%, rgba(0,0,0,0.8)); /* Glitch text pattern */
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: none; /* Override parent for unique effect */
-        filter: drop-shadow(5px 5px 15px rgba(0, 255, 0, 0.7));
-        animation: subtle-glitch-h1 4s infinite alternate steps(1);
-    ">
-        DECONSTRUCT
-    </h1>
-
-    <!-- Subtitle/Call to action: Shatter The Cube -->
-    <p style="
-        position: absolute;
-        top: 40%;
-        right: 8%;
-        font-size: 3.5vw;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin: 0;
-        z-index: 11;
-        transform: rotate(10deg) skewY(5deg);
-        background-color: #00FF00;
-        color: #000;
-        padding: 0.5vw 1.8vw;
-        border: 2px solid #000;
-        box-shadow: 10px 10px 0 #00FF00, 15px 15px 0 #000; /* Brutalist offset shadow */
-        animation: glitch-text 3s infinite alternate steps(1);
-        font-family: 'Impact', 'Arial Black', sans-serif;
-    ">
-        Shatter The Cube
-    </p>
-
-    <!-- Floating text snippets / strategies block 1 -->
-    <div style="
-        position: absolute;
-        bottom: 5%;
-        left: 2%;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.6vw;
-        line-height: 1.2;
-        color: #00FF00;
-        text-transform: uppercase;
-        transform: rotate(-15deg);
-        z-index: 5;
-        opacity: 0.8;
-        filter: blur(0.5px);
-        animation: fade-in 2s ease-out;
-    ">
-        <p style="margin: 0 0 0.8em 0; background-color: rgba(0,255,0,0.1); padding: 0.2em 0.5em; border-left: 3px solid #00FF00;">// AXIAL_COLLAPSE [INITIATED]</p>
-        <p style="margin: 0 0 0.8em 0;">// PERIMETER_BREACH [ACTIVE]</p>
-        <p style="margin: 0; background-color: rgba(0,255,0,0.1); padding: 0.2em 0.5em; border-left: 3px solid #00FF00;">// AESTHETIC_RUPTURE [CRITICAL]</p>
-    </div>
-
-    <!-- Floating text snippets / strategies block 2 -->
-    <div style="
-        position: absolute;
-        top: 25%;
-        right: 12%;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.9vw;
-        line-height: 1.3;
-        color: #00FF00;
-        text-align: right;
-        transform: rotate(20deg) scale(0.9);
-        z-index: 7;
-        opacity: 0.7;
-        text-shadow: 0 0 3px #00FF00;
-        animation: fade-in 2.5s ease-out;
-    ">
-        <p style="margin: 0 0 0.5em 0;">01. INFUSE CHAOS. &gt;</p>
-        <p style="margin: 0 0 0.5em 0; background-color: rgba(0,0,0,0.5); padding: 0.1em 0.2em;">02. FRACTURE NARRATIVE. &gt;</p>
-        <p style="margin: 0;">03. RECLAIM SPACE. &gt;</p>
-    </div>
-
-    <!-- Large abstract splatter/shape 1 (neon green, high-gloss grime) -->
-    <div style="
-        position: absolute;
-        top: -10%;
-        left: 40%;
-        width: 65vw;
-        height: 65vh;
-        background: linear-gradient(135deg, #00FF00 0%, #00FF00 70%, rgba(0,255,0,0.5) 90%, transparent 100%);
-        clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 70% 100%, 0% 80%, 10% 20%); /* Irregular brutalist shape */
-        transform: rotate(30deg) scale(1.1);
-        z-index: 2;
-        filter: blur(12px) brightness(1.8) saturate(1.8) drop-shadow(0 0 20px #00FF00); /* Enhanced gloss and splatter */
-        opacity: 0.6;
-    "></div>
-
-    <!-- Smaller fragmented shape 2 (black with neon green border) -->
-    <div style="
-        position: absolute;
-        bottom: 0%;
-        right: -5%;
-        width: 45vw;
-        height: 55vh;
+    <!-- Main Title Block -->
+    <div class="collage-element" style="
+        width: 75%; max-width: 900px;
+        top: 8%; left: 50%; transform: translateX(-50%) rotate(-3deg);
         background-color: rgba(0, 0, 0, 0.9);
-        border: 5px solid #00FF00;
-        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); /* Hexagonal/Fragmented shape */
-        transform: rotate(-15deg) skewX(-20deg) scale(1.05);
-        z-index: 3;
-        box-shadow: inset 0 0 20px #00FF00, 0 0 30px #00FF00; /* Inner glow/grime */
-        filter: contrast(1.5) brightness(1.2); /* Add to grimy effect */
-    "></div>
-
-    <!-- Neon green high-gloss stripe/tear/glitch element -->
-    <div style="
-        position: absolute;
-        top: 50%;
-        left: -10%;
-        width: 120vw;
-        height: 35px;
-        background: linear-gradient(90deg, transparent 0%, #00FF00 10%, rgba(0,255,0,0.7) 50%, #00FF00 90%, transparent 100%);
-        transform: rotate(3deg) skewY(-2deg);
-        z-index: 8;
-        filter: blur(3px) drop-shadow(0 0 15px #00FF00);
-    "></div>
-
-    <!-- More aggressive paint splatter / digital tear, more central -->
-    <div style="
-        position: absolute;
-        top: 55%;
-        left: 5%;
-        width: 55vw;
-        height: 45vh;
-        background: radial-gradient(circle at 20% 30%, #00FF00 0%, rgba(0,255,0,0.8) 30%, rgba(0,255,0,0.4) 60%, transparent 100%);
-        clip-path: polygon(0% 15%, 15% 0%, 65% 0%, 80% 15%, 80% 75%, 65% 100%, 15% 100%, 0% 85%); /* Irregular shape */
-        transform: rotate(10deg) scale(0.95);
-        z-index: 4;
-        filter: blur(10px) brightness(2) contrast(1.8) saturate(2); /* Extremely glossy, grimy effect */
-        opacity: 0.7;
-    "></div>
-
-    <!-- A thin, sharp, rotated line -->
-    <div style="
-        position: absolute;
-        top: 15%;
-        left: 70%;
-        width: 2px;
-        height: 50vh;
-        background-color: #00FF00;
-        transform: rotate(45deg);
-        z-index: 9;
-        box-shadow: 0 0 10px #00FF00;
-        opacity: 0.9;
-    "></div>
-
-    <!-- Another angular element with strategy text -->
-    <div style="
-        position: absolute;
-        top: 65%;
-        left: 60%;
-        width: 30vw;
-        padding: 1vw;
-        background-color: rgba(0, 0, 0, 0.7);
-        border: 1px solid #00FF00;
-        transform: rotate(-7deg) skewX(5deg);
-        z-index: 12;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.2vw;
-        text-transform: uppercase;
-        color: #00FF00;
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        border: 3px solid #00FF00;
+        z-index: 50;
+        padding: 20px 30px;
+        text-align: center;
     ">
-        <p style="margin: 0; line-height: 1.5;">TARGET_ACQUISITION: WHITE_CUBE</p>
-        <p style="margin: 0; line-height: 1.5;">STATUS: VULNERABLE</p>
-        <p style="margin: 0; line-height: 1.5;">OPERATION: PROCEED &gt;</p>
+        <h1 class="glitch-text" style="font-size: 3.5em; margin: 0;">
+            <span style="display: block; letter-spacing: 5px;">THE BRAND OF ME</span>
+            <span style="display: block; font-size: 0.5em; opacity: 0.8; margin-top: 5px;">A POST-CONSUMPTION NARRATIVE</span>
+        </h1>
     </div>
 
-    <!-- Small, fast flickering indicator -->
-    <div style="
-        position: absolute;
-        top: 15%;
-        left: 15%;
-        width: 15px;
-        height: 15px;
-        background-color: #00FF00;
-        border-radius: 50%;
+    <!-- Self-Data / Metrics Block -->
+    <div class="collage-element" style="
+        width: 380px; height: 280px;
+        top: 25%; left: 8%; transform: rotate(5deg);
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 100%);
+        border-left: 5px solid #00FF00;
+        overflow: hidden;
+        z-index: 30;
+    ">
+        <h2 class="text-neon" style="font-size: 1.8em; margin-top: 5px; text-transform: uppercase;">Self-Data v2.3</h2>
+        <p style="font-size: 0.9em; margin-bottom: 15px;">
+            Identity fragments algorithmically curated. Optimal emotional response metrics: <span class="text-neon">97.4% positive.</span>
+            <br>Authenticity score: <span class="text-neon">PROCESSING...</span>
+        </p>
+        <div style="background-color: #00FF00; height: 5px; width: 85%; margin: 15px auto; box-shadow: 0 0 10px #00FF00;"></div>
+        <p style="font-size: 0.8em; text-align: center; margin-bottom: 20px;">Your personal narrative is processing.</p>
+        <button class="brutalist-button" style="display: block; margin: 0 auto; transform: skewX(-5deg); border: 1px solid #000; box-shadow: none;">Access Profile &gt;</button>
+    </div>
+
+    <!-- Distorted Abstract Face/Image Placeholder -->
+    <div class="collage-element" style="
+        width: 320px; height: 420px;
+        top: 20%; right: 10%; transform: rotate(-10deg) skewY(-5deg);
+        background-image: linear-gradient(45deg, #000000 0%, #00FF0055 50%, #000000 100%);
+        border: 2px solid #00FF00;
+        display: flex; justify-content: center; align-items: center;
+        font-size: 1.5em; text-transform: uppercase;
+        letter-spacing: 1px;
+        overflow: hidden;
+        z-index: 25;
+    ">
+        <span class="glitch-text" style="font-size: 1.2em; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg) scale(0.9);">SYNTHETIC SUPERIORITY</span>
+        <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, #00FF0033, #00FF0033 1px, transparent 1px, transparent 5px);"></div>
+    </div>
+
+    <!-- Quote/Manifesto Fragment -->
+    <div class="collage-element" style="
+        width: 450px;
+        bottom: 10%; left: 5%; transform: rotate(8deg);
+        background-color: rgba(0, 0, 0, 0.85);
+        border-left: 5px solid #00FF00;
+        padding-left: 20px;
+        z-index: 40;
+    ">
+        <p style="font-style: italic; font-size: 1.1em; margin-bottom: 10px;">
+            "We are not merely consumers; we are the consumed. Our data, our desires, our very essence, distilled into marketable truths. My existence, a flawlessly optimized algorithm, perpetually trending."
+        </p>
+        <p style="text-align: right; font-size: 0.8em; opacity: 0.7;">— <span class="text-neon">Anon. (Self-Optimized Entity 7.1)</span></p>
+    </div>
+
+    <!-- Glitchy Navigation / Link Block -->
+    <div class="collage-element" style="
+        width: 280px;
+        top: 50%; left: 55%; transform: rotate(-7deg);
+        z-index: 35;
+        background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+        border-top: 3px solid #00FF00;
+        border-bottom: 3px solid #00FF00;
+        padding: 15px;
+    ">
+        <p style="font-weight: bold; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">Navigation // v0.9</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 8px;"><a href="#" class="text-neon" style="text-decoration: none; font-size: 1.1em; display: block; padding: 5px; background-color: #00FF001A;">&gt; MY NARRATIVE &lt;</a></li>
+            <li style="margin-bottom: 8px;"><a href="#" class="text-neon" style="text-decoration: none; font-size: 1.1em; display: block; padding: 5px; background-color: #00FF001A;">&gt; ECO-CURATED FEED &lt;</a></li>
+            <li style="margin-bottom: 8px;"><a href="#" class="text-neon" style="text-decoration: none; font-size: 1.1em; display: block; padding: 5px; background-color: #00FF001A;">&gt; AURA SYNTHESIS &lt;</a></li>
+            <li><a href="#" class="text-neon" style="text-decoration: none; font-size: 1.1em; display: block; padding: 5px; background-color: #00FF001A;">&gt; CONTACT [DATA] &lt;</a></li>
+        </ul>
+    </div>
+
+    <!-- Small Data Point / Stats Block -->
+    <div class="collage-element" style="
+        width: 220px; height: 120px;
+        bottom: 5%; right: 10%; transform: rotate(12deg) skewX(5deg);
+        background-color: rgba(0, 0, 0, 0.95);
+        border-right: 3px solid #00FF00;
+        text-align: center;
+        padding: 10px 5px;
+        z-index: 20;
+    ">
+        <p style="font-size: 0.9em; margin-bottom: 5px;">Engagement Score: <span class="text-neon" style="font-size: 1.5em; font-weight: bold;">100%</span></p>
+        <p style="font-size: 0.8em; opacity: 0.8; margin-bottom: 5px;">Status: <span class="text-neon">ASCENDANT</span></p>
+        <p style="font-size: 0.7em; opacity: 0.6;">(OPTIMAL)</p>
+    </div>
+
+    <!-- Overlapping Graphic Element (Abstract Void Shape) -->
+    <div class="collage-element" style="
+        width: 350px; height: 350px;
+        top: 65%; left: 25%; transform: rotate(-20deg) skewY(10deg);
+        background: conic-gradient(from 0deg, #000000 0%, #00FF0088 10%, #000000 20%, #00FF00AA 30%, #000000 40%, #00FF0088 50%, #000000 60%, #00FF00AA 70%, #000000 80%, #00FF0088 90%, #000000 100%);
+        border: none;
+        box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00AA;
+        border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%; /* Irregular, organic shape */
+        display: flex; justify-content: center; align-items: center;
+        font-size: 1.5em; text-transform: uppercase;
         z-index: 15;
-        box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
-        animation: pulse 1s infinite alternate;
-    "></div>
-    
+        opacity: 0.7;
+    ">
+        <span class="text-neon" style="filter: invert(1); mix-blend-mode: difference; font-family: 'Bebas Neue', sans-serif;">VOID_CORE</span>
+    </div>
+
+    <!-- Bottom Scrolling Marquee Banner -->
+    <div class="collage-element" style="
+        width: 100%; height: 30px;
+        bottom: 0; left: 0;
+        background-color: #00FF00;
+        color: #000000;
+        text-align: center;
+        line-height: 30px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        box-shadow: none;
+        z-index: 1000; /* Always on top */
+        overflow: hidden; /* Hide excess text for smooth scroll */
+        padding: 0; /* Remove padding for banner */
+    ">
+        <span style="display: inline-block; white-space: nowrap; animation: scroll-text 30s linear infinite;">
+            &lt; SYSTEM ALERT &gt; YOUR IDENTITY IS DATA. OPTIMIZE YOUR NARRATIVE. ENGAGE. TRANSCEND. REPEAT. &lt; SYSTEM ALERT &gt; YOUR IDENTITY IS DATA. OPTIMIZE YOUR NARRATIVE. ENGAGE. TRANSCEND. REPEAT. &lt; SYSTEM ALERT &gt; YOUR IDENTITY IS DATA. OPTIMIZE YOUR NARRATIVE. ENGAGE. TRANSCEND. REPEAT. &lt; SYSTEM ALERT &gt; YOUR IDENTITY IS DATA. OPTIMIZE YOUR NARRATIVE. ENGAGE. TRANSCEND. REPEAT.
+        </span>
+    </div>
+
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
