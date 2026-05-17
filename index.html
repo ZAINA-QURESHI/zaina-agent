@@ -39,322 +39,214 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-17 09:54 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-17 11:15 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
                 
-<div class="narcissism-collage">
-  <style>
-    /* Import Google Fonts for Brutalist & Digital Aesthetics */
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700&display=swap');
-
-    /* Core Collage Container */
-    .narcissism-collage {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); /* Deep black with subtle depth */
-        color: #0f0; /* Vibrant Neon Green */
-        font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; /* Brutalist font, bold and condensed */
-        position: relative;
-        display: flex; /* Helps implicitly position children relative to main flow */
-        justify-content: center;
-        align-items: center;
-        text-transform: uppercase;
-        perspective: 1000px; /* Enable 3D transforms for depth */
-        -webkit-font-smoothing: antialiased; /* Smooth font rendering */
-        -moz-osx-font-smoothing: grayscale;
-        background-blend-mode: hard-light; /* Adds to grime and contrast */
-        cursor: crosshair; /* Aesthetic cursor */
-    }
-
-    /* Global text shadow for all elements for the "glow" */
-    .narcissism-collage > * {
-        text-shadow: 0 0 3px #0f0, 0 0 10px rgba(0,255,0,0.7);
-    }
-
-    /* Base styles for the main text elements */
-    .narcissism-collage .text-element {
-        position: absolute;
-        font-size: clamp(3em, 10vw, 10em); /* Responsive font size */
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        line-height: 0.9;
-        filter: drop-shadow(0 0 8px #0f0); /* Soft glowing shadow */
-        z-index: 10;
-        mix-blend-mode: screen; /* Creates high-contrast, glowing overlaps */
-        opacity: 0.9;
-        transform: translateZ(var(--z-depth, 0)); /* Initial Z depth for 3D collage effect */
-        animation: glitch-text 4s infinite alternate ease-in-out; /* Glitching text animation */
-        will-change: transform, opacity, text-shadow; /* Optimize animations */
-        pointer-events: none; /* Text is decorative, not interactive */
-    }
-
-    /* Specific text elements positioning and individual styles */
-    .narcissism-collage .text-1 {
-        top: 5%; left: 5%;
-        transform: rotate(-10deg) scale(0.9) translateZ(20px); --z-depth: 20px;
-        font-size: clamp(2.5em, 8vw, 8em);
-        z-index: 15; /* Higher z-index for this element */
-        --initial-rotate: -10deg; --initial-scale: 0.9; --rand-x: -3px; --rand-y: 2px; --rand-rot: 1.5deg;
-    }
-    .narcissism-collage .text-2 {
-        bottom: 10%; right: 15%;
-        transform: rotate(5deg) scale(1.1) translateZ(-10px); --z-depth: -10px;
-        font-size: clamp(3em, 12vw, 12em);
-        opacity: 0.95;
-        --initial-rotate: 5deg; --initial-scale: 1.1; --rand-x: 2px; --rand-y: -1px; --rand-rot: -0.8deg;
-    }
-    .narcissism-collage .text-3 {
-        top: 30%; left: 50%;
-        transform: translate(-50%, -50%) rotate(15deg) scale(0.8) translateZ(10px); --z-depth: 10px;
-        color: #0c0; /* Slightly darker green for depth contrast */
-        z-index: 12;
-        font-family: 'Orbitron', sans-serif; /* Different font for a digital/futuristic feel */
-        letter-spacing: 0.15em;
-        --initial-rotate: 15deg; --initial-scale: 0.8; --rand-x: -1px; --rand-y: 3px; --rand-rot: 1deg;
-    }
-    .narcissism-collage .text-4 {
-        bottom: 25%; left: 5%;
-        transform: rotate(-7deg) scale(0.7) translateZ(30px); --z-depth: 30px;
-        font-size: clamp(2em, 6vw, 6em);
-        opacity: 0.8;
-        --initial-rotate: -7deg; --initial-scale: 0.7; --rand-x: 3px; --rand-y: -2px; --rand-rot: -1.2deg;
-    }
-    .narcissism-collage .text-5 {
-        top: 15%; right: 5%;
-        transform: rotate(8deg) scale(0.6) translateZ(-20px); --z-depth: -20px;
-        font-size: clamp(1.5em, 5vw, 5em);
-        opacity: 0.7;
-        font-family: 'Orbitron', sans-serif;
-        --initial-rotate: 8deg; --initial-scale: 0.6; --rand-x: -2px; --rand-y: 1px; --rand-rot: 0.7deg;
-    }
-
-    /* Abstract shapes / Digital Paint Splatters */
-    .narcissism-collage .splatter {
-        position: absolute;
-        background: linear-gradient(var(--gradient-angle, 45deg), rgba(0,255,0,0.8), rgba(0,255,0,0.2) 70%);
-        filter: blur(8px) drop-shadow(0 0 20px #0f0); /* Blurry glow effect */
-        border-radius: var(--border-rad, 40% 60% 70% 30% / 60% 30% 70% 40%); /* Irregular blob shape */
-        mix-blend-mode: screen; /* High-gloss blend with background */
-        opacity: 0.7;
-        z-index: 5;
-        animation: pulse-splatter 5s infinite alternate ease-in-out; /* Pulsing animation */
-        will-change: transform, opacity, filter;
-        pointer-events: none;
-    }
-    .narcissism-collage .splatter-1 {
-        width: 18vw; height: 18vw; top: 8%; left: 15%;
-        transform: rotate(30deg) translateZ(-50px);
-        --initial-rotate: 30deg; --initial-z: -50px; --gradient-angle: 60deg;
-        --border-rad: 50% 50% 40% 60% / 60% 40% 50% 50%;
-    }
-    .narcissism-collage .splatter-2 {
-        width: 28vw; height: 12vw; bottom: 7%; right: 8%;
-        background: linear-gradient(var(--gradient-angle, 135deg), rgba(0,255,0,0.6), rgba(0,255,0,0.1));
-        transform: rotate(-45deg) translateZ(-100px);
-        --initial-rotate: -45deg; --initial-z: -100px; --gradient-angle: 150deg;
-        --border-rad: 70% 30% 40% 60% / 30% 60% 40% 70%;
-    }
-    .narcissism-collage .splatter-3 {
-        width: 12vw; height: 22vw; top: 40%; left: 8%;
-        background: linear-gradient(var(--gradient-angle, 90deg), rgba(0,255,0,0.9), rgba(0,255,0,0.3));
-        transform: rotate(80deg) translateZ(-20px);
-        --initial-rotate: 80deg; --initial-z: -20px; --gradient-angle: 100deg;
-        --border-rad: 50% 50% 50% 50% / 30% 70% 30% 70%;
-        opacity: 0.9;
-    }
-    .narcissism-collage .splatter-4 {
-        width: 10vw; height: 10vw; top: 60%; right: 20%;
-        background: linear-gradient(var(--gradient-angle, -90deg), rgba(0,255,0,0.7), rgba(0,255,0,0.2));
-        transform: rotate(10deg) translateZ(-80px);
-        --initial-rotate: 10deg; --initial-z: -80px; --gradient-angle: -120deg;
-        --border-rad: 30% 70% 60% 40% / 70% 40% 30% 60%;
-    }
-
-    /* Stylized "Selfie" Frame - representing digital identity */
-    .narcissism-collage .selfie-frame {
-        position: absolute;
-        width: clamp(180px, 30vw, 450px);
-        height: clamp(180px, 30vw, 450px);
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%) rotate(-5deg) translateZ(10px);
-        background: linear-gradient(45deg, #000, #333 70%); /* Dark, glossy background */
-        border: 2px solid #0f0; /* Neon green border */
-        box-shadow: 0 0 10px #0f0, 0 0 30px #0f0 inset, 0 0 50px rgba(0,255,0,0.5); /* Intense glow */
-        z-index: 20;
-        overflow: hidden;
-        border-radius: 5px; /* Slightly rounded for a screen aesthetic */
-        filter: contrast(120%) brightness(110%); /* High-gloss filter */
-        animation: frame-glitch 6s infinite ease-in-out alternate; /* Subtle frame glitch */
-        will-change: transform, box-shadow, filter;
-        pointer-events: none;
-    }
-    .narcissism-collage .selfie-frame::before {
-        content: "SCANNING IDENTITY..."; /* Placeholder text */
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        color: rgba(0,255,0,0.7);
-        font-size: clamp(0.6em, 1.5vw, 1.2em);
-        letter-spacing: 0.08em;
-        text-align: center;
-        width: 80%;
-        font-family: 'Orbitron', sans-serif;
-    }
-    .narcissism-collage .selfie-frame::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        /* SVG data URL for subtle scanlines */
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.15"><rect x="0" y="0" width="100" height="1" fill="%230F0" /><rect x="0" y="10" width="100" height="1" fill="%230F0" /><rect x="0" y="20" width="100" height="1" fill="%230F0" /><rect x="0" y="30" width="100" height="1" fill="%230F0" /><rect x="0" y="40" width="100" height="1" fill="%230F0" /><rect x="0" y="50" width="100" height="1" fill="%230F0" /><rect x="0" y="60" width="100" height="1" fill="%230F0" /><rect x="0" y="70" width="100" height="1" fill="%230F0" /><rect x="0" y="80" width="100" height="1" fill="%230F0" /><rect x="0" y="90" width="100" height="1" fill="%230F0" /></svg>') repeat;
-        background-size: 100% 10px; /* Scanline pattern */
-        animation: scanlines 2s infinite linear; /* Moving scanlines */
-        mix-blend-mode: overlay;
-    }
-
-    /* Overall Grime / Noise Overlay */
-    .narcissism-collage::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        /* SVG data URL for fractal noise texture */
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
-        background-size: cover;
-        opacity: 0.07; /* Subtle noise for grime */
-        mix-blend-mode: overlay; /* Blends with everything for gritty effect */
-        pointer-events: none; /* Allows interaction with elements beneath */
-        z-index: 100; /* Ensures it's on top of everything */
-    }
-
-    /* Keyframe Animations */
-    @keyframes glitch-text {
-        0%, 100% {
-            transform: translate(0, 0) rotate(var(--initial-rotate, 0deg)) scale(var(--initial-scale, 1)) translateZ(var(--z-depth, 0));
-            opacity: 0.9;
+<div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Arial Black', Impact, sans-serif; color: #00FF00; perspective: 1000px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+    <style>
+        /* Brutalist blocks */
+        .block {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00FF00;
+            box-shadow: inset 0 0 10px #00FF00, 0 0 15px rgba(0, 255, 0, 0.5);
+            padding: 10px;
+            box-sizing: border-box;
+            mix-blend-mode: screen; /* For interesting overlaps and glows */
+            transition: all 0.3s ease-in-out; /* Subtle interaction */
+            filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.3)); /* Adds a slight glow to the block itself */
         }
-        25% {
-            transform: translate(calc(var(--rand-x, 2px)), calc(var(--rand-y, -2px))) rotate(calc(var(--initial-rotate, 0deg) + var(--rand-rot, 1deg))) scale(calc(var(--initial-scale, 1) + 0.01)) translateZ(calc(var(--z-depth, 0) + 2px));
-            opacity: 0.95;
-        }
-        50% {
-            transform: translate(calc(var(--rand-x, -3px)), calc(var(--rand-y, 3px))) rotate(calc(var(--initial-rotate, 0deg) + var(--rand-rot, -1.5deg))) scale(calc(var(--initial-scale, 1) - 0.01)) translateZ(calc(var(--z-depth, 0) - 1px));
-            opacity: 0.85;
-        }
-        75% {
-            transform: translate(calc(var(--rand-x, 1px)), calc(var(--rand-y, -1px))) rotate(calc(var(--initial-rotate, 0deg) + var(--rand-rot, 0.5deg))) scale(calc(var(--initial-scale, 1) + 0.005)) translateZ(calc(var(--z-depth, 0) + 1px));
-            opacity: 0.92;
-        }
-    }
 
-    @keyframes pulse-splatter {
-        0% {
-            transform: scale(1) rotate(var(--initial-rotate, 0deg)) translateZ(var(--initial-z, 0px));
-            opacity: 0.7; filter: blur(8px) drop-shadow(0 0 20px #0f0);
+        .block:hover {
+            transform: scale(1.02) rotate(1deg);
+            box-shadow: inset 0 0 20px #00FF00, 0 0 30px rgba(0, 255, 0, 0.7);
         }
-        50% {
-            transform: scale(1.05) rotate(calc(var(--initial-rotate, 0deg) + 5deg)) translateZ(calc(var(--initial-z, 0px) - 10px));
-            opacity: 0.85; filter: blur(10px) drop-shadow(0 0 25px #0f0);
+
+        /* High-gloss grime effect */
+        .grime-gloss {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 5px rgba(0, 255, 0, 0.2);
+            backdrop-filter: blur(2px) brightness(1.2); /* Creates a slick, slightly distorted surface */
+            -webkit-backdrop-filter: blur(2px) brightness(1.2);
+            mix-blend-mode: hard-light;
+            z-index: 10;
         }
-        100% {
-            transform: scale(1) rotate(var(--initial-rotate, 0deg)) translateZ(var(--initial-z, 0px));
-            opacity: 0.7; filter: blur(8px) drop-shadow(0 0 20px #0f0);
+
+        /* Digital paint splatters */
+        .splatter {
+            position: absolute;
+            background-color: #00FF00;
+            border-radius: 50% 30% 60% 40% / 60% 40% 50% 50%; /* Irregular blob shape */
+            opacity: 0.7;
+            filter: blur(1px);
+            mix-blend-mode: screen;
+            box-shadow: 0 0 15px #00FF00, inset 0 0 5px rgba(0, 255, 0, 0.5);
+            z-index: 5;
+            animation: pulse-splatter 5s infinite alternate ease-in-out;
         }
-    }
 
-    @keyframes scanlines {
-        0% { background-position: 0 0; }
-        100% { background-position: 0 -100px; } /* Scrolls the scanline pattern */
-    }
-
-    @keyframes frame-glitch {
-        0%, 100% {
-            transform: translate(-50%, -50%) rotate(-5deg) translateZ(10px);
-            box-shadow: 0 0 10px #0f0, 0 0 30px #0f0 inset, 0 0 50px rgba(0,255,0,0.5);
+        @keyframes pulse-splatter {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+            50% { transform: scale(1.05) rotate(5deg); opacity: 0.8; }
+            100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
         }
-        20% {
-            transform: translate(calc(-50% + 2px), calc(-50% - 1px)) rotate(-4deg) translateZ(12px);
-            box-shadow: 0 0 12px #0f0, 0 0 35px #0f0 inset, 0 0 60px rgba(0,255,0,0.6);
+
+        /* Text styles */
+        .neon-text {
+            color: #00FF00;
+            font-weight: 900;
+            line-height: 1.1;
+            word-break: break-all; /* For a digital, fragmented look */
+            text-transform: uppercase;
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
         }
-        40% {
-            transform: translate(calc(-50% - 1px), calc(-50% + 2px)) rotate(-6deg) translateZ(8px);
-            box-shadow: 0 0 8px #0f0, 0 0 25px #0f0 inset, 0 0 40px rgba(0,255,0,0.4);
+
+        @keyframes neon-glow {
+            from {
+                text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00, 0 0 20px rgba(0, 255, 0, 0.8);
+            }
+            to {
+                text-shadow: 0 0 2px #00FF00, 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00, 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.4);
+            }
         }
-        60% {
-            transform: translate(calc(-50% + 3px), calc(-50% - 3px)) rotate(-5.5deg) translateZ(11px);
-            box-shadow: 0 0 15px #0f0, 0 0 40px #0f0 inset, 0 0 70px rgba(0,255,0,0.7);
+
+        .title {
+            font-size: 4em;
+            letter-spacing: -2px;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            filter: drop-shadow(0 0 5px #00FF00); /* Adds a softer glow than text-shadow */
         }
-        80% {
-            transform: translate(calc(-50% - 2px), calc(-50% + 1px)) rotate(-4.5deg) translateZ(9px);
-            box-shadow: 0 0 9px #0f0, 0 0 28px #0f0 inset, 0 0 45px rgba(0,255,0,0.45);
+
+        .subtitle {
+            font-size: 1.8em;
+            letter-spacing: 1px;
+            font-family: 'Arial Black', sans-serif;
         }
-    }
 
-    /* Brutalist/Grime Panel Elements - Data displays */
-    .narcissism-collage .panel {
-        position: absolute;
-        background: rgba(0,0,0,0.85); /* Semi-transparent black */
-        border: 1px solid rgba(0,255,0,0.6); /* Neon green border */
-        box-shadow: 0 0 5px rgba(0,255,0,0.4), inset 0 0 5px rgba(0,255,0,0.4);
-        z-index: 10;
-        padding: clamp(5px, 0.8vw, 15px);
-        font-size: clamp(0.7em, 1.2vw, 1em);
-        letter-spacing: 0.08em;
-        color: rgba(0,255,0,0.8);
-        pointer-events: none;
-        transform: translateZ(var(--panel-z-depth, 0px));
-        mix-blend-mode: screen;
-        opacity: 0.9;
-        font-family: 'Orbitron', sans-serif; /* Digital font */
-        text-align: right;
-    }
-    .narcissism-collage .panel-1 {
-        top: 2%; right: 2%;
-        width: clamp(100px, 15vw, 200px); height: clamp(50px, 10vh, 100px);
-        transform: rotate(3deg) translateZ(-5px); --panel-z-depth: -5px;
-    }
-    .narcissism-collage .panel-2 {
-        bottom: 2%; left: 2%;
-        width: clamp(80px, 12vw, 180px); height: clamp(40px, 8vh, 90px);
-        transform: rotate(-2deg) translateZ(-15px); --panel-z-depth: -15px;
-        text-align: left;
-    }
-    .narcissism-collage .panel-3 {
-        top: 20%; left: 40%;
-        width: clamp(60px, 8vw, 150px); height: clamp(30px, 5vh, 80px);
-        transform: rotate(1deg) translateZ(-20px); --panel-z-depth: -20px;
-        text-align: center;
-    }
+        .data-fragment {
+            font-size: 0.8em;
+            font-family: 'Courier New', monospace;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
 
-  </style>
+        .glitch-effect {
+            animation: glitch 1.5s infinite alternate;
+            filter: drop-shadow(0 0 3px #00FF00);
+        }
 
-  <!-- Text elements representing themes of post-capitalist narcissism -->
-  <div class="text-element text-1">ME.INC</div>
-  <div class="text-element text-2">CURATED SELF</div>
-  <div class="text-element text-3">PERFORM</div>
-  <div class="text-element text-4">THE ALGORITHM SEES YOU</div>
-  <div class="text-element text-5">DIGITAL GOD</div>
+        @keyframes glitch {
+            0% { transform: translate(0, 0) skewX(0deg); text-shadow: none; }
+            25% { transform: translate(-2px, 2px) skewX(5deg); text-shadow: -2px 0 #00FF00; }
+            50% { transform: translate(2px, -2px) skewX(-5deg); text-shadow: 2px 0 #00FF00; }
+            75% { transform: translate(-1px, 1px) skewX(2deg); text-shadow: -1px 0 #00FF00; }
+            100% { transform: translate(0, 0) skewX(0deg); text-shadow: none; }
+        }
 
-  <!-- Digital Paint Splatters - chaotic, glowing blobs -->
-  <div class="splatter splatter-1"></div>
-  <div class="splatter splatter-2"></div>
-  <div class="splatter splatter-3"></div>
-  <div class="splatter splatter-4"></div>
+        /* Overlays and visual noise */
+        .scanline-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.7;
+        }
 
-  <!-- The "Selfie" Frame - central object of self-obsession -->
-  <div class="selfie-frame"></div>
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
 
-  <!-- Brutalist data panels, showing metrics of identity -->
-  <div class="panel panel-1">STATUS: ONLINE<br>ENGAGEMENT: HIGH</div>
-  <div class="panel panel-2">IDENTITY: FLUID<br>VALUE: OPTIMIZED</div>
-  <div class="panel panel-3">DATA: YOURS</div>
+        /* Data stream lines / pixel noise */
+        .data-line {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.5);
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+            animation: flow-data 10s linear infinite;
+            pointer-events: none;
+        }
 
+        @keyframes flow-data {
+            0% { transform: translateX(-100%) rotate(0deg); opacity: 0.5; width: 0; }
+            50% { transform: translateX(100%) rotate(360deg); opacity: 0.8; width: 100px; }
+            100% { transform: translateX(-100%) rotate(0deg); opacity: 0.5; width: 0; }
+        }
+    </style>
+
+    <!-- Global Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Main Title Block -->
+    <div class="block" style="width: 70%; max-width: 800px; height: auto; padding: 30px; top: 10%; left: 50%; transform: translateX(-50%) rotate(-3deg); z-index: 50; background-color: rgba(0, 0, 0, 0.9); border-width: 4px;">
+        <h1 class="neon-text title glitch-effect" style="text-align: center; margin-bottom: 10px;">REPARATIONS</h1>
+        <h2 class="neon-text subtitle" style="text-align: center; margin-top: 0;">FOR THE DIGITAL GAZE</h2>
+    </div>
+
+    <!-- Data Fragments / Sub-statements -->
+    <div class="block data-fragment" style="width: 300px; height: auto; padding: 15px; top: 35%; left: 10%; transform: rotate(5deg); z-index: 40; background-color: rgba(0, 0, 0, 0.85);">
+        <p class="neon-text">DATA AS LABOR. <br>GAZE AS EXTRACTION.</p>
+        <p class="neon-text" style="font-size: 0.7em; margin-top: 10px;">PROFIT. SURVEILLANCE. ALGORITHM. DEBT.</p>
+    </div>
+
+    <div class="block data-fragment" style="width: 250px; height: auto; padding: 15px; top: 60%; right: 5%; transform: rotate(-7deg); z-index: 45; background-color: rgba(0, 0, 0, 0.85);">
+        <p class="neon-text">RECLAIM. RE-CODE. RE-DISTRIBUTE.</p>
+        <p class="neon-text" style="font-size: 0.7em; margin-top: 10px;">DIGITAL SOVEREIGNTY NOW.</p>
+    </div>
+
+    <!-- Digital Paint Splatters -->
+    <div class="splatter" style="width: 150px; height: 120px; top: 20%; left: 5%;"></div>
+    <div class="splatter" style="width: 100px; height: 100px; top: 50%; right: 15%; background-color: rgba(0, 255, 0, 0.8); border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+    <div class="splatter" style="width: 200px; height: 180px; bottom: 5%; left: 20%; transform: rotate(15deg); background-color: rgba(0, 255, 0, 0.6); border-radius: 70% 30% 50% 50% / 30% 70% 50% 50%;"></div>
+
+    <!-- High-Gloss Grime Elements -->
+    <div class="grime-gloss" style="width: 400px; height: 150px; top: 40%; left: 50%; transform: translate(-50%, -50%) rotate(10deg) skewX(-10deg); z-index: 20; border-radius: 10px;"></div>
+    <div class="grime-gloss" style="width: 200px; height: 300px; bottom: 10%; right: 10%; transform: rotate(-20deg) skewY(5deg); z-index: 25; border-radius: 5px;"></div>
+
+    <!-- Data Stream Lines (thin, glowing lines) -->
+    <div class="data-line" style="width: 10%; min-width: 50px; height: 3px; top: 5%; left: 0; transform-origin: left; animation-delay: 0s;"></div>
+    <div class="data-line" style="width: 8%; min-width: 40px; height: 2px; top: 15%; right: 0; transform-origin: right; animation-delay: 2s; background-color: rgba(0, 255, 0, 0.3);"></div>
+    <div class="data-line" style="width: 12%; min-width: 60px; height: 4px; bottom: 10%; left: 0; transform-origin: left; animation-delay: 4s;"></div>
+    <div class="data-line" style="width: 7%; min-width: 35px; height: 2px; bottom: 25%; right: 0; transform-origin: right; animation-delay: 6s; background-color: rgba(0, 255, 0, 0.4);"></div>
+
+    <!-- More blocky text/elements -->
+    <div class="block" style="width: 180px; height: 80px; top: 5%; right: 10%; transform: rotate(12deg); z-index: 30; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.7);">
+        <span class="neon-text data-fragment" style="font-size: 1.2em;">LEDGER.</span>
+    </div>
+
+    <div class="block" style="width: 220px; height: 60px; bottom: 15%; left: 5%; transform: rotate(-8deg); z-index: 35; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.7);">
+        <span class="neon-text data-fragment" style="font-size: 1.1em;">FOOTPRINT.</span>
+    </div>
+
+    <!-- Final overlay for scanlines/CRT effect -->
+    <div class="scanline-overlay"></div>
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
