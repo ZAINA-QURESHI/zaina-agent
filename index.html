@@ -39,297 +39,245 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-18 19:54 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-18 21:19 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
-                
-<div style="
-    display: block;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: black;
-    overflow: hidden;
-    position: relative;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    color: rgb(0, 255, 0);
-    line-height: 1;
-    filter: contrast(1.1) brightness(0.9) saturate(1.2); /* Overall grimy and vibrant feel */
-    text-rendering: crispEdges; /* For a sharper, less anti-aliased look */
-    -webkit-font-smoothing: none; /* Disable font smoothing */
-    -moz-osx-font-smoothing: grayscale;
-">
+                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Arial Black', sans-serif; color: #39FF14; perspective: 1000px;">
     <style>
-        /* Global CSS reset for elements within the collage */
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Orbitron:wght@900&display=swap');
+
+        :root {
+            --neon-green: #39FF14;
+            --deep-black: #000000;
+            --dark-grey: #111111;
+            --mid-grey: #222222;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-user-select: none; /* Disable text selection for collage effect */
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Keyframes for glitch/flicker animations */
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 0 0 7px rgb(0,255,0), 0 0 15px rgba(0,255,0,0.6);
-                opacity: 1;
-                transform: translateX(0);
-            }
-            20% {
-                text-shadow: 0 0 10px rgb(0,255,0), 0 0 20px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.4);
-                opacity: 0.8;
-                transform: translateX(-2px) translateY(1px);
-            }
-            24% {
-                opacity: 0.7;
-                transform: translateX(3px) translateY(-1px);
-            }
-            55% {
-                text-shadow: none;
-                opacity: 0.5;
-                filter: blur(1px);
-            }
-        }
-
-        /* Keyframes for the digital scanline effect */
-        @keyframes scanline {
-            0% { transform: translateY(-50vh) scaleY(0.5); opacity: 0.6; }
-            50% { opacity: 0.9; }
-            100% { transform: translateY(150vh) scaleY(0.5); opacity: 0.6; }
-        }
-
-        /* Base styles for brutalist text elements */
-        .brutal-text {
+        h1, h2, h3, p, span {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(57, 255, 20, 0.7), 0 0 15px rgba(57, 255, 20, 0.4);
+            filter: drop-shadow(0 0 2px var(--neon-green));
             position: absolute;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            color: rgb(0, 255, 0);
-            text-shadow: 0 0 10px rgba(0,255,0,0.8), 0 0 20px rgba(0,255,0,0.5);
-            line-height: 0.8; /* Brutalist compact text */
-            z-index: 10;
-            white-space: nowrap; /* Prevent breaking lines unless specified */
-            filter: drop-shadow(0 0 5px rgba(0,255,0,0.7)); /* Subtle glow */
         }
 
-        /* Base styles for brutalist boxes/panels */
-        .brutal-box {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent */
-            border: 2px solid rgb(0, 255, 0);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
-            z-index: 5;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgb(0, 255, 0);
-            font-family: 'Courier New', monospace; /* More digital feel */
-            text-align: center;
-            font-size: 1.2em;
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6vw;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 100;
+        }
+
+        h2 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 3.5vw;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            z-index: 90;
+        }
+
+        p {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.5vw;
             line-height: 1.2;
-            filter: drop-shadow(0 0 3px rgba(0,255,0,0.5));
-            mix-blend-mode: screen; /* For glossy overlaps */
+            z-index: 80;
         }
 
-        /* Styles for digital paint splatters */
+        span {
+            font-family: monospace;
+            font-size: 1vw;
+            opacity: 0.7;
+            z-index: 70;
+        }
+
+        .brutal-block {
+            position: absolute;
+            background-color: var(--dark-grey);
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4), inset 0 0 10px rgba(57, 255, 20, 0.2);
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .brutal-block.b1 { width: 30vw; height: 15vh; top: 10%; left: -5%; transform: rotate(-10deg); }
+        .brutal-block.b2 { width: 10vw; height: 40vh; top: 5%; right: 5%; transform: rotate(15deg); background-color: var(--neon-green); opacity: 0.5; }
+        .brutal-block.b3 { width: 50vw; height: 5vh; bottom: 15%; left: 30%; transform: skewX(-20deg); background-color: var(--mid-grey); }
+        .brutal-block.b4 { width: 8vw; height: 8vw; bottom: -2%; left: 10%; background-color: var(--deep-black); border: 1px solid var(--neon-green); opacity: 0.9; transform: rotate(45deg); z-index: 15; }
+
         .splatter {
             position: absolute;
-            background-color: rgb(0, 255, 0);
-            mix-blend-mode: screen; /* For overlapping glow */
-            filter: blur(1px) drop-shadow(0 0 10px rgb(0,255,0)) saturate(1.5); /* Grime + glow + vibrancy */
-            opacity: 0.7;
-            z-index: 1; /* Behind most text */
-        }
-        .splatter-1 {
-            width: 180px; height: 120px;
-            clip-path: polygon(10% 0%, 90% 5%, 100% 40%, 80% 80%, 30% 100%, 0% 60%, 5% 20%);
-            top: 5%; left: 10%;
-            transform: rotate(-15deg);
-        }
-        .splatter-2 {
-            width: 220px; height: 140px;
-            clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
-            bottom: 8%; right: 12%;
-            transform: rotate(30deg);
-            background-color: rgb(0, 200, 0); /* Slightly darker green */
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.5) 0%, rgba(57, 255, 20, 0.1) 50%, transparent 100%);
+            border-radius: 50%;
+            filter: blur(5px);
             opacity: 0.6;
+            z-index: 5;
         }
-        .splatter-3 {
-            width: 90px; height: 90px;
-            clip-path: circle(45% at 50% 50%);
-            top: 25%; right: 7%;
-            transform: rotate(45deg);
-            background-color: rgb(50, 255, 50); /* Lighter green */
-            opacity: 0.8;
-            filter: blur(0.5px) drop-shadow(0 0 8px rgba(50,255,50,0.8));
+        .splatter.s1 { width: 200px; height: 200px; top: 20%; left: 15%; transform: rotate(30deg); }
+        .splatter.s2 { width: 150px; height: 150px; bottom: 10%; right: 5%; transform: rotate(-45deg); opacity: 0.4; }
+        .splatter.s3 { width: 300px; height: 100px; top: 5%; left: 50%; transform: rotate(10deg) skewX(20deg); border-radius: 50% / 100% 100% 0 0; background: linear-gradient(to right, rgba(57, 255, 20, 0.3), rgba(0,0,0,0.5)); opacity: 0.7; }
+        .splatter.s4 { width: 100px; height: 100px; top: 60%; left: 70%; background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%); opacity: 0.8; filter: blur(8px); }
+
+        @keyframes glitch-text {
+            0% { text-shadow: 0 0 5px var(--neon-green), 2px 2px 0 #FF00FF; transform: translateX(0px); }
+            20% { text-shadow: 0 0 5px var(--neon-green), -2px -2px 0 #00FFFF; transform: translateX(-1px); }
+            40% { text-shadow: 0 0 5px var(--neon-green), 3px 0 0 #FF00FF; transform: translateX(1px); }
+            60% { text-shadow: 0 0 5px var(--neon-green), -1px 1px 0 #00FFFF; transform: translateX(-2px); }
+            80% { text-shadow: 0 0 5px var(--neon-green), 0 -3px 0 #FF00FF; transform: translateX(2px); }
+            100% { text-shadow: 0 0 5px var(--neon-green), 0 0 0 #000; transform: translateX(0px); }
         }
-        .splatter-4 {
-            width: 100px; height: 160px;
-            clip-path: polygon(0% 15%, 15% 0%, 100% 25%, 85% 100%, 15% 85%);
-            top: 60%; left: 0%;
-            transform: rotate(-25deg);
-            background-color: rgb(0, 255, 0);
+
+        .glitch-text {
+            animation: glitch-text 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px var(--neon-green); }
+            50% { box-shadow: 0 0 25px var(--neon-green), 0 0 40px rgba(57, 255, 20, 0.5); }
+            100% { box-shadow: 0 0 10px var(--neon-green); }
+        }
+
+        .digital-artifact {
+            position: absolute;
+            width: 40vw;
+            height: 30vh;
+            background: linear-gradient(45deg, var(--dark-grey), var(--deep-black));
+            border: 3px solid var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green), inset 0 0 10px rgba(57, 255, 20, 0.5);
+            overflow: hidden;
+            z-index: 60;
+            opacity: 0.9;
+            filter: blur(0.5px);
+        }
+        .digital-artifact::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: repeating-linear-gradient(45deg,
+                rgba(57, 255, 20, 0.1) 0px,
+                rgba(57, 255, 20, 0.1) 2px,
+                transparent 2px,
+                transparent 4px);
+            opacity: 0.1;
+            animation: scanline 5s infinite linear;
+        }
+        @keyframes scanline {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100%, 100%); }
+        }
+        .digital-artifact.d1 { top: 15%; left: 5%; transform: rotate(-5deg); }
+        .digital-artifact.d2 { bottom: 10%; right: 15%; width: 25vw; height: 20vh; transform: rotate(8deg); }
+
+        .grime-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.9) 100%),
+                              url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23222222' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h3v3H0V0zm3 3h3v3H3V3z'/%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
+            pointer-events: none;
+            z-index: 1000;
+            mix-blend-mode: overlay;
+            filter: saturate(1.5);
         }
+
+        .gloss-accent {
+            position: absolute;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+            border-radius: 5px;
+            pointer-events: none;
+            z-index: 100;
+        }
+        .gloss-accent.g1 { width: 10vw; height: 2vh; top: 5%; left: 30%; transform: rotate(20deg); opacity: 0.3; }
+        .gloss-accent.g2 { width: 5vw; height: 10vh; bottom: 20%; right: 5%; transform: rotate(-15deg); opacity: 0.2; }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--neon-green), 0 0 15px rgba(57, 255, 20, 0.7);
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+        }
+
+        .flicker-text {
+            animation: flicker 2s infinite step-end;
+        }
+
+        .intersector {
+            position: absolute;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green);
+            opacity: 0.7;
+            z-index: 20;
+        }
+        .intersector.i1 { width: 1px; height: 100%; left: 20%; top: 0; }
+        .intersector.i2 { width: 100%; height: 1px; top: 70%; left: 0; }
+        .intersector.i3 { width: 2px; height: 30%; right: 10%; top: 30%; transform: rotate(-30deg); }
 
     </style>
 
-    <!-- Splatters for paint/grime -->
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <h1 style="top: 10%; left: 15%;" class="glitch-text">Ghetto-Digital</h1>
+    <h1 style="top: 20%; left: 20%; font-size: 5vw; z-index: 110; opacity: 0.9;" class="flicker-text">Intersection</h1>
 
-    <!-- Main Brutalist Text Elements -->
-    <div class="brutal-text" style="
-        font-size: 14vw;
-        top: 8%;
-        left: 5%;
-        transform: rotate(-8deg);
-        animation: flicker 6s infinite step-end;
-        z-index: 20;
-    ">
-        DIGITAL<br>DEBT
+    <h2 style="top: 45%; left: 10%;">SYNTAX ERROR: POVERTY</h2>
+    <h2 style="top: 55%; right: 10%; transform: rotate(5deg);" class="glitch-text">CODE SWITCH</h2>
+    <p style="top: 70%; left: 25%; width: 40vw; text-align: justify;">
+        Binary dreams on concrete screens. Pixels bleed truth. Analog struggles in a digital world.
+    </p>
+    <p style="bottom: 5%; left: 5%; font-size: 1vw; opacity: 0.6;">
+        > ACCESS DENIED / SYSTEM OVERRIDE_
+    </p>
+
+    <div class="brutal-block b1"></div>
+    <div class="brutal-block b2 pulse-glow"></div>
+    <div class="brutal-block b3"></div>
+    <div class="brutal-block b4"></div>
+
+    <div class="digital-artifact d1">
+        <p style="position: absolute; top: 10%; left: 10%; font-size: 1.2vw; width: 80%; opacity: 0.8;">
+            // USER INTERFACE OF SURVIVAL <br>
+            > RUN_SCRIPT: RESILIENCE.sh
+        </p>
+        <span style="position: absolute; bottom: 5%; right: 5%; font-size: 0.8vw;">[FRAGMENT 0xAF3]</span>
+    </div>
+    <div class="digital-artifact d2">
+        <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 2vw; position: absolute; top: 20%; left: 5%; width: 90%; text-align: center; color: var(--neon-green);">
+            SYSTEM LAG<br> NO SIGNAL
+        </h3>
     </div>
 
-    <div class="brutal-text" style="
-        font-size: 9vw;
-        bottom: 12%;
-        right: 8%;
-        transform: rotate(12deg);
-        opacity: 0.9;
-        color: rgb(0,200,0);
-        animation: flicker 7s infinite step-end reverse;
-    ">
-        GAZE TAX<br>OVERDUE
-    </div>
+    <div class="splatter s1"></div>
+    <div class="splatter s2"></div>
+    <div class="splatter s3"></div>
+    <div class="splatter s4"></div>
 
-    <div class="brutal-text" style="
-        font-size: 6vw;
-        top: 45%;
-        left: 28%;
-        transform: rotate(3deg);
-        color: rgb(0,255,0);
-        filter: blur(0.5px) drop-shadow(0 0 8px rgba(0,255,0,0.9));
-        mix-blend-mode: hard-light; /* Stronger blending */
-    ">
-        REPARATIONS
-    </div>
+    <div class="intersector i1"></div>
+    <div class="intersector i2"></div>
+    <div class="intersector i3"></div>
 
-    <!-- Brutalist Boxes with further text/data points -->
-    <div class="brutal-box" style="
-        width: 280px;
-        height: 120px;
-        top: 4%;
-        right: 3%;
-        transform: rotate(5deg) skewX(5deg);
-        background-color: rgba(0,0,0,0.8);
-        border-color: rgb(0,255,0);
-        z-index: 15;
-    ">
-        <span style="font-size: 1.4em; animation: flicker 5s infinite step-end;">ACCESS FEE:<br>YOUR DATA</span>
-    </div>
+    <div class="gloss-accent g1"></div>
+    <div class="gloss-accent g2"></div>
 
-    <div class="brutal-box" style="
-        width: 200px;
-        height: 200px;
-        bottom: 5%;
-        left: 5%;
-        transform: rotate(-10deg) scale(0.95);
-        opacity: 0.8;
-        filter: blur(0.5px);
-        mix-blend-mode: lighten; /* Brighter overlap */
-        border-width: 3px;
-        z-index: 12;
-    ">
-        <span style="font-size: 1.8em; animation: flicker 6s infinite step-end;">PRODUCT ID:<br>YOU</span>
-    </div>
+    <span style="top: 5%; left: 80%; transform: rotate(90deg); opacity: 0.4;">01100111 01101000 01100101 01110100 01110100 01101111</span>
+    <span style="bottom: 15%; right: 5%; font-family: 'Orbitron', sans-serif; opacity: 0.7; font-size: 0.9vw;">ERROR_404_JUSTICE</span>
+    <span style="top: 30%; left: 60%; font-size: 1.8vw; opacity: 0.9; text-transform: uppercase;">[DISCONNECT]</span>
 
-    <div class="brutal-box" style="
-        width: 320px;
-        height: 70px;
-        top: 25%;
-        left: -8%;
-        transform: rotate(20deg) skewY(-5deg);
-        background-color: rgb(0, 255, 0);
-        color: black;
-        box-shadow: 0 0 20px rgba(0,255,0,0.9); /* High-gloss glow */
-        border: none;
-        font-weight: bold;
-        font-size: 2.2em;
-        mix-blend-mode: normal; /* Opaque green */
-        z-index: 18;
-    ">
-        <span style="text-shadow: none;">PAY UP</span>
-    </div>
-
-    <!-- Digital scanlines / Grime elements -->
-    <div style="
-        position: absolute;
-        top: 30%; left: 0%; right: 0%;
-        height: 4px;
-        background-color: rgba(0,255,0,0.7);
-        box-shadow: 0 0 15px rgba(0,255,0,0.8);
-        animation: scanline 8s infinite linear;
-        mix-blend-mode: screen;
-        z-index: 7;
-    "></div>
-    <div style="
-        position: absolute;
-        bottom: 20%; left: 0%; right: 0%;
-        height: 2px;
-        background-color: rgba(0,255,0,0.5);
-        box-shadow: 0 0 10px rgba(0,255,0,0.6);
-        animation: scanline 6s infinite reverse linear;
-        mix-blend-mode: screen;
-        z-index: 6;
-    "></div>
-
-    <!-- Smaller brutalist blocks / lines for detail -->
-    <div style="
-        position: absolute;
-        top: 55%; left: 0%;
-        width: 150px; height: 15px;
-        background-color: rgb(0,255,0);
-        transform: rotate(10deg);
-        opacity: 0.4;
-        filter: blur(1px);
-        box-shadow: 0 0 10px rgba(0,255,0,0.5);
-        z-index: 4;
-    "></div>
-    <div style="
-        position: absolute;
-        bottom: 0%; right: 10%;
-        width: 20px; height: 100px;
-        background-color: rgb(0,255,0);
-        transform: rotate(-20deg);
-        opacity: 0.6;
-        box-shadow: 0 0 10px rgba(0,255,0,0.7);
-        z-index: 3;
-    "></div>
-
-    <div class="brutal-text" style="
-        font-family: 'Courier New', monospace;
-        font-size: 2vw;
-        bottom: 2%;
-        left: 2%;
-        opacity: 0.7;
-        color: rgb(0,180,0);
-        white-space: normal;
-        max-width: 250px;
-        line-height: 1.2;
-        text-shadow: 0 0 5px rgba(0,180,0,0.7);
-        z-index: 10;
-        filter: blur(0.2px); /* Slight grime effect */
-    ">
-        [ERROR: DIGITAL GAZE PROTOCOL VIOLATION. REPARATIONS REQUIRED. TRANSACTION PENDING.]
-    </div>
-
+    <div class="grime-overlay"></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
