@@ -39,345 +39,297 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-18 17:34 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-18 19:54 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
                 
-<div id="decolonize-collage">
-  <style>
-    /*
-     * CSS for the Radical, Messy HTML/CSS Collage: Decolonizing the Pixel
-     * Aesthetic: Brutalist, High-gloss Grime, Digital Paint Splatters
-     * Colors: Vibrant Neon Green, Deep Blacks
-     * All styles are self-contained within this single div.
-     */
+<div style="
+    display: block;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: rgb(0, 255, 0);
+    line-height: 1;
+    filter: contrast(1.1) brightness(0.9) saturate(1.2); /* Overall grimy and vibrant feel */
+    text-rendering: crispEdges; /* For a sharper, less anti-aliased look */
+    -webkit-font-smoothing: none; /* Disable font smoothing */
+    -moz-osx-font-smoothing: grayscale;
+">
+    <style>
+        /* Global CSS reset for elements within the collage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none; /* Disable text selection for collage effect */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-    #decolonize-collage {
-      /* Color Variables - Defined on the root element for inheritance */
-      --neon-green: #0FFF0F; /* Slightly adjusted for extra vibrancy */
-      --deep-black: #0A0A0A; /* Not pure black for depth and contrast */
-      --off-black: #1A1A1A;  /* For elements that appear 'under' the green */
-      /* Global Glow Effect Variable */
-      --glow-effect: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 40px var(--neon-green), 0 0 80px var(--neon-green);
+        /* Keyframes for glitch/flicker animations */
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 7px rgb(0,255,0), 0 0 15px rgba(0,255,0,0.6);
+                opacity: 1;
+                transform: translateX(0);
+            }
+            20% {
+                text-shadow: 0 0 10px rgb(0,255,0), 0 0 20px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.4);
+                opacity: 0.8;
+                transform: translateX(-2px) translateY(1px);
+            }
+            24% {
+                opacity: 0.7;
+                transform: translateX(3px) translateY(-1px);
+            }
+            55% {
+                text-shadow: none;
+                opacity: 0.5;
+                filter: blur(1px);
+            }
+        }
 
-      position: relative;
-      width: 100vw;          /* Full viewport width */
-      height: 100vh;         /* Full viewport height */
-      min-height: 600px;     /* Ensure a minimum height for smaller screens */
-      background-color: var(--deep-black);
-      overflow: hidden;      /* Crucial for containing absolute children and effects */
-      font-family: 'Space Mono', 'Roboto Mono', monospace; /* Brutalist/digital font */
-      color: var(--neon-green);
-      border: 5px solid var(--neon-green); /* Stark, Brutalist border */
-      box-shadow: 0 0 20px rgba(0,255,0,0.5); /* Subtle outer glow for the entire collage */
-      cursor: crosshair;     /* Thematic cursor */
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg); /* Initial subtle 3D perspective */
-      transition: transform 0.5s ease-in-out; /* Smooth transition for hover effects */
-      box-sizing: border-box; /* Include padding and border in the element's total width and height */
-      display: block;        /* Ensure it behaves as expected */
-      user-select: none;     /* Prevent text selection */
-    }
+        /* Keyframes for the digital scanline effect */
+        @keyframes scanline {
+            0% { transform: translateY(-50vh) scaleY(0.5); opacity: 0.6; }
+            50% { opacity: 0.9; }
+            100% { transform: translateY(150vh) scaleY(0.5); opacity: 0.6; }
+        }
 
-    /* Basic styling for all absolute-positioned text/elements */
-    #decolonize-collage h1, #decolonize-collage h2, #decolonize-collage p, #decolonize-collage span {
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      line-height: 1;
-      font-weight: 900;
-      text-transform: uppercase;
-      pointer-events: none; /* Elements don't block mouse events by default */
-      will-change: transform, opacity, filter; /* Optimize animations */
-    }
+        /* Base styles for brutalist text elements */
+        .brutal-text {
+            position: absolute;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            color: rgb(0, 255, 0);
+            text-shadow: 0 0 10px rgba(0,255,0,0.8), 0 0 20px rgba(0,255,0,0.5);
+            line-height: 0.8; /* Brutalist compact text */
+            z-index: 10;
+            white-space: nowrap; /* Prevent breaking lines unless specified */
+            filter: drop-shadow(0 0 5px rgba(0,255,0,0.7)); /* Subtle glow */
+        }
 
-    /* --- Keyframe Animations --- */
+        /* Base styles for brutalist boxes/panels */
+        .brutal-box {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent */
+            border: 2px solid rgb(0, 255, 0);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
+            z-index: 5;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(0, 255, 0);
+            font-family: 'Courier New', monospace; /* More digital feel */
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.2;
+            filter: drop-shadow(0 0 3px rgba(0,255,0,0.5));
+            mix-blend-mode: screen; /* For glossy overlaps */
+        }
 
-    @keyframes glitch-effect {
-      0% { transform: translate(0); opacity: 1; filter: brightness(1); }
-      20% { transform: translate(-2px, 2px); opacity: 0.9; filter: blur(0.5px) brightness(1.1); }
-      40% { transform: translate(-2px, -2px); opacity: 1; filter: blur(0) brightness(1); }
-      60% { transform: translate(2px, 2px); opacity: 0.8; filter: blur(0.7px) brightness(0.9); }
-      80% { transform: translate(2px, -2px); opacity: 1; filter: blur(0) brightness(1.2); }
-      100% { transform: translate(0); opacity: 1; filter: brightness(1); }
-    }
+        /* Styles for digital paint splatters */
+        .splatter {
+            position: absolute;
+            background-color: rgb(0, 255, 0);
+            mix-blend-mode: screen; /* For overlapping glow */
+            filter: blur(1px) drop-shadow(0 0 10px rgb(0,255,0)) saturate(1.5); /* Grime + glow + vibrancy */
+            opacity: 0.7;
+            z-index: 1; /* Behind most text */
+        }
+        .splatter-1 {
+            width: 180px; height: 120px;
+            clip-path: polygon(10% 0%, 90% 5%, 100% 40%, 80% 80%, 30% 100%, 0% 60%, 5% 20%);
+            top: 5%; left: 10%;
+            transform: rotate(-15deg);
+        }
+        .splatter-2 {
+            width: 220px; height: 140px;
+            clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
+            bottom: 8%; right: 12%;
+            transform: rotate(30deg);
+            background-color: rgb(0, 200, 0); /* Slightly darker green */
+            opacity: 0.6;
+        }
+        .splatter-3 {
+            width: 90px; height: 90px;
+            clip-path: circle(45% at 50% 50%);
+            top: 25%; right: 7%;
+            transform: rotate(45deg);
+            background-color: rgb(50, 255, 50); /* Lighter green */
+            opacity: 0.8;
+            filter: blur(0.5px) drop-shadow(0 0 8px rgba(50,255,50,0.8));
+        }
+        .splatter-4 {
+            width: 100px; height: 160px;
+            clip-path: polygon(0% 15%, 15% 0%, 100% 25%, 85% 100%, 15% 85%);
+            top: 60%; left: 0%;
+            transform: rotate(-25deg);
+            background-color: rgb(0, 255, 0);
+            opacity: 0.5;
+        }
 
-    @keyframes flicker-glow {
-      0%, 100% { filter: brightness(1) drop-shadow(0 0 5px var(--neon-green)); opacity: 1; }
-      50% { filter: brightness(1.5) drop-shadow(0 0 15px var(--neon-green)); opacity: 0.85; }
-    }
+    </style>
 
-    @keyframes pulse-shadow {
-      0%, 100% { box-shadow: 0 0 5px var(--neon-green), inset 0 0 2px var(--neon-green); }
-      50% { box-shadow: 0 0 20px var(--neon-green), 0 0 30px rgba(0,255,0,0.5), inset 0 0 10px var(--neon-green); }
-    }
+    <!-- Splatters for paint/grime -->
+    <div class="splatter splatter-1"></div>
+    <div class="splatter splatter-2"></div>
+    <div class="splatter splatter-3"></div>
+    <div class="splatter splatter-4"></div>
 
-    /* --- Main Title Styling --- */
-    #decolonize-collage .title {
-      font-size: 8vw; /* Responsive font size */
-      color: var(--neon-green);
-      left: 5%;
-      top: 15%;
-      text-shadow: var(--glow-effect);
-      animation: flicker-glow 3s infinite alternate ease-in-out, glitch-effect 5s infinite linear alternate-reverse;
-      letter-spacing: -0.5vw; /* Tight letter spacing for Brutalist feel */
-      mix-blend-mode: screen; /* For vibrant layering against black */
-      z-index: 10;
-      transform: skewY(-7deg); /* Initial skew for dynamic look */
-    }
-    #decolonize-collage .title-overlay { /* Shadow/glitch layer for the title */
-        left: 5.2%; /* Slightly offset */
-        top: 15.3%;
-        color: var(--deep-black); /* Darker color to create depth */
-        font-size: 8vw;
-        filter: blur(1px); /* Blurry effect */
-        transform: skewY(-5deg) scaleX(1.02); /* Different transform for more chaos */
-        z-index: 9;
-        mix-blend-mode: overlay; /* Blends intensely */
-        animation: glitch-effect 3s infinite linear alternate; /* Independent glitch animation */
-    }
+    <!-- Main Brutalist Text Elements -->
+    <div class="brutal-text" style="
+        font-size: 14vw;
+        top: 8%;
+        left: 5%;
+        transform: rotate(-8deg);
+        animation: flicker 6s infinite step-end;
+        z-index: 20;
+    ">
+        DIGITAL<br>DEBT
+    </div>
 
-    /* --- Sub-slogans Styling --- */
-    #decolonize-collage .slogan {
-      font-size: 2.5vw;
-      text-shadow: 0 0 3px var(--neon-green), 0 0 10px rgba(0,255,0,0.5);
-      mix-blend-mode: screen;
-      animation: flicker-glow 4s infinite alternate ease-in-out;
-      z-index: 8;
-      white-space: nowrap; /* Prevent breaking lines for short slogans */
-    }
-    #decolonize-collage .slogan-1 { left: 60%; top: 40%; transform: rotate(-10deg) skewX(-5deg); opacity: 0.9; animation-delay: 0.5s; }
-    #decolonize-collage .slogan-2 { left: 15%; top: 65%; transform: rotate(15deg) skewY(5deg); opacity: 0.8; animation-delay: 1s; }
-    #decolonize-collage .slogan-3 { left: 70%; top: 75%; transform: rotate(5deg) skewX(10deg); opacity: 0.95; animation-delay: 1.5s; }
+    <div class="brutal-text" style="
+        font-size: 9vw;
+        bottom: 12%;
+        right: 8%;
+        transform: rotate(12deg);
+        opacity: 0.9;
+        color: rgb(0,200,0);
+        animation: flicker 7s infinite step-end reverse;
+    ">
+        GAZE TAX<br>OVERDUE
+    </div>
 
-    /* --- Geometric Shapes / Grime Elements --- */
-    #decolonize-collage .shape {
-      background-color: var(--neon-green);
-      position: absolute;
-      opacity: 0.6;
-      mix-blend-mode: screen;
-      filter: blur(0.5px);
-      box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px var(--neon-green); /* Inner and outer glow */
-      animation: pulse-shadow 2s infinite alternate ease-in-out;
-      z-index: 5;
-    }
-    #decolonize-collage .shape-1 { width: 30vw; height: 50px; left: -10%; top: 30%; transform: rotate(20deg) skewX(-15deg); }
-    #decolonize-collage .shape-2 { width: 80px; height: 40vw; left: 85%; top: 10%; transform: rotate(-30deg) skewY(10deg); opacity: 0.7; animation-delay: 0.3s; }
-    #decolonize-collage .shape-3 { width: 10vw; height: 10vw; left: 30%; top: 5%; transform: rotate(45deg); opacity: 0.5; border: 2px solid var(--neon-green); background: none; box-shadow: none; animation-delay: 0.6s; }
-    #decolonize-collage .shape-4 {
-      width: 200px; height: 150px; left: 5%; bottom: -5%;
-      transform: rotate(-15deg) skewX(20deg);
-      background: linear-gradient(45deg, var(--neon-green) 0%, rgba(0,255,0,0) 100%); /* Gradient for a 'fade' effect */
-      opacity: 0.4;
-      mix-blend-mode: overlay;
-      box-shadow: none;
-      animation-delay: 0.9s;
-    }
+    <div class="brutal-text" style="
+        font-size: 6vw;
+        top: 45%;
+        left: 28%;
+        transform: rotate(3deg);
+        color: rgb(0,255,0);
+        filter: blur(0.5px) drop-shadow(0 0 8px rgba(0,255,0,0.9));
+        mix-blend-mode: hard-light; /* Stronger blending */
+    ">
+        REPARATIONS
+    </div>
 
-    /* --- Digital Grime / Paint Splatter Effects --- */
-    #decolonize-collage .grime-layer {
-      position: absolute;
-      width: 100%; height: 100%;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 20; /* High z-index for top-level grime */
-    }
-    #decolonize-collage .grime-layer::before,
-    #decolonize-collage .grime-layer::after {
-      content: '';
-      position: absolute;
-      mix-blend-mode: overlay; /* Intense blending */
-      opacity: 0.1;
-      filter: blur(2px) contrast(150%) brightness(1.2); /* Enhanced blur and contrast */
-      transform: rotate(var(--angle, 0deg)) skew(var(--skew-x, 0deg), var(--skew-y, 0deg));
-      background-color: var(--neon-green); /* Default base for gradients */
-      animation: glitch-effect 10s infinite alternate-reverse; /* Slow, continuous glitch */
-    }
-    #decolonize-collage .grime-layer::before {
-      width: 120%; height: 120%; /* Larger than viewport */
-      left: -10%; top: -10%;
-      background: radial-gradient(circle at 10% 20%, var(--neon-green) 0%, transparent 30%), /* Radial splatters */
-                  radial-gradient(circle at 80% 90%, var(--neon-green) 0%, transparent 20%),
-                  linear-gradient(135deg, rgba(0,255,0,0.1) 0%, transparent 50%, rgba(0,255,0,0.1) 100%); /* Diagonal stripe */
-      --angle: 5deg; --skew-x: -10deg; --skew-y: 5deg;
-      opacity: 0.08;
-      animation-delay: 1s;
-    }
-    #decolonize-collage .grime-layer::after {
-      width: 150%; height: 150%; /* Even larger */
-      left: -20%; top: -20%;
-      background: repeating-linear-gradient( /* Fine grid/noise pattern */
-        -45deg,
-        rgba(0,0,0,0.1) 0,
-        rgba(0,0,0,0.1) 1px,
-        transparent 1px,
-        transparent 5px
-      ), repeating-linear-gradient(
-        45deg,
-        rgba(0,0,0,0.1) 0,
-        rgba(0,0,0,0.1) 1px,
-        transparent 1px,
-        transparent 5px
-      );
-      --angle: -15deg; --skew-x: 15deg; --skew-y: -10deg;
-      opacity: 0.05;
-      animation-delay: 2s;
-    }
+    <!-- Brutalist Boxes with further text/data points -->
+    <div class="brutal-box" style="
+        width: 280px;
+        height: 120px;
+        top: 4%;
+        right: 3%;
+        transform: rotate(5deg) skewX(5deg);
+        background-color: rgba(0,0,0,0.8);
+        border-color: rgb(0,255,0);
+        z-index: 15;
+    ">
+        <span style="font-size: 1.4em; animation: flicker 5s infinite step-end;">ACCESS FEE:<br>YOUR DATA</span>
+    </div>
 
-    /* --- Additional Text Fragments --- */
-    #decolonize-collage .data-fragment {
-      font-size: 1.5vw;
-      color: var(--off-black); /* Text on green background */
-      background-color: var(--neon-green);
-      padding: 0.2em 0.5em;
-      transform: rotate(var(--rot, 0deg)) skew(var(--skew, 0deg));
-      text-shadow: none;
-      box-shadow: 0 0 5px var(--neon-green); /* Subtle glow on block */
-      mix-blend-mode: multiply; /* Darkens underlying content */
-      z-index: 12;
-      animation: flicker-glow 6s infinite alternate;
-    }
-    #decolonize-collage .data-fragment-1 { left: 40%; top: 30%; --rot: -8deg; --skew: 5deg; animation-delay: 0.2s; }
-    #decolonize-collage .data-fragment-2 { left: 10%; top: 50%; --rot: 12deg; --skew: -10deg; animation-delay: 0.8s; }
-    #decolonize-collage .data-fragment-3 { right: 5%; bottom: 10%; --rot: -20deg; --skew: 15deg; animation-delay: 1.5s; }
+    <div class="brutal-box" style="
+        width: 200px;
+        height: 200px;
+        bottom: 5%;
+        left: 5%;
+        transform: rotate(-10deg) scale(0.95);
+        opacity: 0.8;
+        filter: blur(0.5px);
+        mix-blend-mode: lighten; /* Brighter overlap */
+        border-width: 3px;
+        z-index: 12;
+    ">
+        <span style="font-size: 1.8em; animation: flicker 6s infinite step-end;">PRODUCT ID:<br>YOU</span>
+    </div>
 
-    /* --- Glitch Lines --- */
-    #decolonize-collage .glitch-line {
-      position: absolute;
-      background-color: var(--neon-green);
-      opacity: 0.5;
-      mix-blend-mode: screen;
-      filter: blur(1px);
-      animation: glitch-effect 2s infinite linear alternate;
-      z-index: 7;
-    }
-    #decolonize-collage .glitch-line-1 { width: 100%; height: 2px; top: 35%; left: 0; animation-delay: 0.1s; }
-    #decolonize-collage .glitch-line-2 { width: 2px; height: 100%; left: 70%; top: 0; animation-delay: 0.5s; }
-    #decolonize-collage .glitch-line-3 { width: 10%; height: 3px; top: 80%; left: 20%; transform: rotate(5deg); animation-delay: 0.8s; }
+    <div class="brutal-box" style="
+        width: 320px;
+        height: 70px;
+        top: 25%;
+        left: -8%;
+        transform: rotate(20deg) skewY(-5deg);
+        background-color: rgb(0, 255, 0);
+        color: black;
+        box-shadow: 0 0 20px rgba(0,255,0,0.9); /* High-gloss glow */
+        border: none;
+        font-weight: bold;
+        font-size: 2.2em;
+        mix-blend-mode: normal; /* Opaque green */
+        z-index: 18;
+    ">
+        <span style="text-shadow: none;">PAY UP</span>
+    </div>
 
-    /* --- Broken Grid Fragments --- */
-    #decolonize-collage .grid-fragment {
-      position: absolute;
-      width: 50px; height: 50px; /* Fixed size for grid elements */
-      border: 1px solid var(--neon-green);
-      box-shadow: inset 0 0 5px var(--neon-green);
-      opacity: 0.2;
-      mix-blend-mode: screen;
-      animation: glitch-effect 8s infinite linear alternate-reverse;
-      z-index: 3;
-    }
-    #decolonize-collage .grid-fragment-1 { left: 10%; top: 10%; transform: rotate(10deg); animation-delay: 0.1s; }
-    #decolonize-collage .grid-fragment-2 { left: 25%; top: 5%; transform: rotate(-20deg); animation-delay: 0.5s; }
-    #decolonize-collage .grid-fragment-3 { left: 80%; top: 20%; transform: rotate(5deg); animation-delay: 0.3s; }
-    #decolonize-collage .grid-fragment-4 { left: 5%; bottom: 20%; transform: rotate(-15deg); animation-delay: 0.7s; }
-    #decolonize-collage .grid-fragment-5 { right: 15%; top: 50%; transform: rotate(25deg); animation-delay: 0.9s; }
+    <!-- Digital scanlines / Grime elements -->
+    <div style="
+        position: absolute;
+        top: 30%; left: 0%; right: 0%;
+        height: 4px;
+        background-color: rgba(0,255,0,0.7);
+        box-shadow: 0 0 15px rgba(0,255,0,0.8);
+        animation: scanline 8s infinite linear;
+        mix-blend-mode: screen;
+        z-index: 7;
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: 20%; left: 0%; right: 0%;
+        height: 2px;
+        background-color: rgba(0,255,0,0.5);
+        box-shadow: 0 0 10px rgba(0,255,0,0.6);
+        animation: scanline 6s infinite reverse linear;
+        mix-blend-mode: screen;
+        z-index: 6;
+    "></div>
 
-    /* --- Splatter Shapes (using clip-path) --- */
-    #decolonize-collage .splatter {
-      position: absolute;
-      background-color: var(--neon-green);
-      opacity: 0.3;
-      filter: blur(3px); /* Soft blur for a paint-like effect */
-      mix-blend-mode: overlay;
-      box-shadow: 0 0 15px var(--neon-green);
-      z-index: 1; /* Lowest Z-index to be behind most elements */
-      animation: pulse-shadow 5s infinite ease-in-out alternate;
-    }
-    #decolonize-collage .splatter-1 {
-      width: 150px; height: 100px; left: 10%; top: 40%;
-      clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Jagged blob shape */
-      transform: rotate(10deg);
-      animation-delay: 0.2s;
-    }
-    #decolonize-collage .splatter-2 {
-      width: 200px; height: 120px; right: 5%; top: 10%;
-      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); /* Octagonal blob */
-      transform: rotate(-25deg);
-      opacity: 0.2;
-      animation-delay: 0.8s;
-    }
+    <!-- Smaller brutalist blocks / lines for detail -->
+    <div style="
+        position: absolute;
+        top: 55%; left: 0%;
+        width: 150px; height: 15px;
+        background-color: rgb(0,255,0);
+        transform: rotate(10deg);
+        opacity: 0.4;
+        filter: blur(1px);
+        box-shadow: 0 0 10px rgba(0,255,0,0.5);
+        z-index: 4;
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: 0%; right: 10%;
+        width: 20px; height: 100px;
+        background-color: rgb(0,255,0);
+        transform: rotate(-20deg);
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(0,255,0,0.7);
+        z-index: 3;
+    "></div>
 
-    /* --- Interactive Glare (High-gloss grime effect) --- */
-    /* This element relies on CSS only for a hover effect, actual mouse-follow would require JS. */
-    #decolonize-collage .interactive-glare {
-      position: absolute;
-      width: 100%; height: 100%;
-      top: 0; left: 0;
-      /* Default to center, would be updated by JS for mouse movement */
-      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,255,0,0.2) 0%, transparent 30%);
-      pointer-events: none; /* Crucial: ensures it doesn't block interactions with other elements */
-      mix-blend-mode: overlay;
-      opacity: 0; /* Hidden by default */
-      transition: opacity 0.5s ease, filter 0.5s ease; /* Smooth transition */
-      z-index: 25;
-    }
-    #decolonize-collage:hover .interactive-glare { /* When hovering over the collage, the glare appears */
-      opacity: 0.5;
-      filter: drop-shadow(0 0 10px rgba(0,255,0,0.7)) brightness(1.2); /* Enhanced glow on hover */
-    }
-
-    /* --- Digital Noise Overlay --- */
-    /* Using ::before on the main div to apply a subtle, repeating noise pattern */
-    #decolonize-collage::before {
-      content: '';
-      position: absolute;
-      width: 100%; height: 100%;
-      top: 0; left: 0;
-      /* Base64 SVG for a tiny noise pattern, keeps it self-contained */
-      background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgNCA0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiMwMzAzMDMiIGZpbGwtb3BhY2l0eT0iMC41IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDRoMVYzaDNWMGgwVjFoMXYySDJ2MWMwIDAgMCAwIDAgMGgtMVY0ek00IDBoMVYxSDJWMGMwIDAgMCAwIDAgMHoiLz48L2c+PC9zdmc+') repeat;
-      mix-blend-mode: overlay; /* Blends subtly with existing content */
-      opacity: 0.05; /* Very subtle */
-      pointer-events: none;
-      z-index: 30; /* Highest z-index for final noise layer */
-    }
-
-  </style>
-
-  <!-- HTML Elements for the Collage -->
-
-  <h1 class="title">DECOLONIZE THE PIXEL</h1>
-  <h1 class="title-overlay">DECOLONIZE THE PIXEL</h1>
-
-  <h2 class="slogan slogan-1">RECLAIM THE SCREEN</h2>
-  <h2 class="slogan slogan-2">DIGITAL SOVEREIGNTY</h2>
-  <h2 class="slogan slogan-3">GLITCH IS RESISTANCE</h2>
-
-  <!-- Geometric Shapes / Brutalist Elements -->
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-  <div class="shape shape-3"></div>
-  <div class="shape shape-4"></div>
-
-  <!-- Fragmented Data Text -->
-  <span class="data-fragment data-fragment-1">CODE IS LAND</span>
-  <span class="data-fragment data-fragment-2">NATIVE BYTE</span>
-  <span class="data-fragment data-fragment-3">ANALOG NOISE</span>
-
-  <!-- Glitch Lines -->
-  <div class="glitch-line glitch-line-1"></div>
-  <div class="glitch-line glitch-line-2"></div>
-  <div class="glitch-line glitch-line-3"></div>
-
-  <!-- Broken Grid Elements -->
-  <div class="grid-fragment grid-fragment-1"></div>
-  <div class="grid-fragment grid-fragment-2"></div>
-  <div class="grid-fragment grid-fragment-3"></div>
-  <div class="grid-fragment grid-fragment-4"></div>
-  <div class="grid-fragment grid-fragment-5"></div>
-
-  <!-- Digital Paint Splatters -->
-  <div class="splatter splatter-1"></div>
-  <div class="splatter splatter-2"></div>
-
-  <!-- Grime Layer (using pseudo-elements defined in CSS) -->
-  <div class="grime-layer"></div>
-
-  <!-- Interactive Glare for High-gloss effect (CSS-only hover interaction) -->
-  <div class="interactive-glare"></div>
+    <div class="brutal-text" style="
+        font-family: 'Courier New', monospace;
+        font-size: 2vw;
+        bottom: 2%;
+        left: 2%;
+        opacity: 0.7;
+        color: rgb(0,180,0);
+        white-space: normal;
+        max-width: 250px;
+        line-height: 1.2;
+        text-shadow: 0 0 5px rgba(0,180,0,0.7);
+        z-index: 10;
+        filter: blur(0.2px); /* Slight grime effect */
+    ">
+        [ERROR: DIGITAL GAZE PROTOCOL VIOLATION. REPARATIONS REQUIRED. TRANSACTION PENDING.]
+    </div>
 
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
