@@ -39,426 +39,366 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-20 08:32 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-20 11:53 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
             <div class="art-container p-4">
-                <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'SF Mono', 'Fira Code', monospace, sans-serif; color: #0F0; border: 4px solid #0F0; box-shadow: 0 0 30px rgba(0,255,0,0.8), inset 0 0 10px rgba(0,255,0,0.5);">
+                
+<div class="collage-container">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Orbitron:wght@700&display=swap'); /* For brutalist/techy fonts */
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #000; /* Deep black */
+            overflow: hidden;
+            font-family: 'monospace', sans-serif;
+            color: #0F0; /* Vibrant neon green */
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 0 0 5px #0F0, 0 0 10px rgba(0,255,0,0.5); /* Neon glow */
+            line-height: 1.2;
+            cursor: crosshair; /* Aggressive interaction */
+            -webkit-user-select: none; /* Disable text selection for collage feel */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            perspective: 1000px; /* For potential 3D transforms */
+        }
 
-        /* General styles for collage elements */
         .collage-element {
             position: absolute;
-            box-sizing: border-box;
-            word-break: break-all;
-            text-align: center;
-            font-size: 14px;
-            line-height: 1.2;
-            text-shadow: 0 0 3px rgba(0,255,0,0.5);
-            filter: drop-shadow(0 0 2px rgba(0,255,0,0.5));
-            color: #0F0; /* Default text color */
+            background-color: transparent;
+            border: 2px solid #0F0;
+            box-shadow: 0 0 15px #0F0, inset 0 0 5px #0F0; /* High-gloss grime */
+            padding: 10px 15px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 10;
+            transform-style: preserve-3d;
         }
 
-        /* Brutalist concrete background textures */
-        .concrete-texture {
-            background:
-                linear-gradient(45deg, rgba(50,50,50,0.9) 0%, rgba(20,20,20,0.95) 100%),
-                linear-gradient(-45deg, rgba(80,80,80,0.7) 0%, rgba(30,30,30,0.9) 100%),
-                linear-gradient(rgba(100,100,100,0.4), rgba(0,0,0,0.6) 50%, rgba(10,10,10,0.9));
-            background-blend-mode: overlay;
-            border: 2px solid rgba(0,255,0,0.6);
-            box-shadow: 0 0 10px rgba(0,255,0,0.5), inset 0 0 5px rgba(0,255,0,0.3);
-            filter: grayscale(0.2) brightness(0.8);
-        }
-
-        /* High-gloss grime */
-        .glossy-grime {
-            background: linear-gradient(135deg, rgba(0,255,0,0.3) 0%, transparent 20%, transparent 80%, rgba(0,255,0,0.3) 100%),
-                        linear-gradient(45deg, rgba(0,0,0,0.9) 0%, transparent 50%, rgba(0,0,0,0.95) 100%),
-                        radial-gradient(circle at 10% 10%, rgba(0,255,0,0.5), transparent 70%);
-            border: 1px solid rgba(0,255,0,0.7);
-            box-shadow: 0 0 20px rgba(0,255,0,0.9), inset 0 0 15px rgba(0,255,0,0.6);
-            filter: blur(0.8px) brightness(1.3);
-            mix-blend-mode: screen;
-        }
-
-        /* Digital paint splatters (using pseudo-elements for shapes) */
-        .splatter {
-            background-color: #0F0;
-            opacity: 0.7;
-            filter: blur(4px) brightness(1.8) drop-shadow(0 0 12px #0F0);
-            mix-blend-mode: lighten;
-            border-radius: 50%; /* Base for distortion */
-        }
-        .splatter:nth-child(even) {
-            background-color: #000;
-            opacity: 0.9;
-            filter: blur(3px) brightness(0.7);
-            mix-blend-mode: multiply;
-            border: 1px solid rgba(0,255,0,0.3);
-        }
-
-        /* Neon Glow Text */
-        .neon-glow {
-            color: #0F0;
-            text-shadow: 0 0 8px #0F0, 0 0 20px #0F0, 0 0 40px #0F0;
+        /* Brutalist titles/text blocks */
+        .title {
+            top: 5%;
+            left: 5%;
+            font-size: 3.8em;
             font-weight: bold;
-        }
-        .black-out {
-            color: #000;
-            background-color: #0F0;
-            padding: 3px 6px;
-            box-shadow: 0 0 12px rgba(0,255,0,0.9);
-            filter: brightness(1.1);
+            text-shadow: 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px rgba(0,255,0,0.7);
+            background: linear-gradient(45deg, #000 0%, #001a00 50%, #000 100%);
+            padding: 25px;
+            border: 5px solid #0F0;
+            transform: rotate(-3deg) translateZ(10px); /* Slight 3D tilt */
+            animation: flicker 1.5s infinite alternate steps(5, end);
         }
 
-        /* Data stream text */
-        .data-stream {
-            position: absolute;
-            background-color: rgba(0,255,0,0.08);
-            color: #0F0;
-            font-size: 8px;
-            line-height: 1;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            overflow: hidden;
-            pointer-events: none;
-            text-shadow: none;
+        .sub-text {
+            bottom: 10%;
+            right: 8%;
+            font-size: 1.9em;
+            max-width: 350px;
+            text-align: right;
+            border-left: 3px dashed #0F0;
+            padding-left: 20px;
+            transform: rotate(7deg) translateZ(5px);
+            background-color: rgba(0,0,0,0.7);
         }
-        .data-stream span {
-            animation: dataScroll 8s linear infinite;
-            display: block;
+
+        .statement {
+            top: 30%;
+            left: 20%;
+            max-width: 450px;
+            transform: rotate(-8deg) translateZ(12px);
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px dotted #0F0;
+            box-shadow: inset 0 0 10px #0F0, 0 0 30px rgba(0,255,0,0.8);
+            padding: 15px;
+            line-height: 1.4;
+            font-size: 1.1em;
+        }
+        .statement p { margin: 0; }
+
+        /* Digital paint splatters */
+        .splatter {
+            background: radial-gradient(circle at center, #0F0 0%, transparent 70%);
+            opacity: 0.7;
+            filter: blur(8px) drop-shadow(0 0 15px #0F0);
+            border-radius: 50%;
+            z-index: 5;
+            animation: pulse-splatter 2s infinite alternate ease-in-out;
+            border: none;
+            box-shadow: none;
+            position: absolute; /* Already in .collage-element but good to reiterate */
+        }
+
+        .splatter-1 { width: 180px; height: 140px; top: 15%; left: 70%; transform: rotate(25deg) scaleX(0.9) translateZ(2px); }
+        .splatter-2 { width: 120px; height: 200px; bottom: 25%; left: 10%; transform: rotate(-35deg) scaleY(0.8) translateZ(4px); opacity: 0.8; }
+        .splatter-3 { width: 90px; height: 90px; top: 60%; right: 5%; transform: scale(1.3) rotate(10deg) translateZ(1px); opacity: 0.6; }
+        .splatter-4 {
+            width: 220px; height: 100px; top: 50%; left: 45%;
+            transform: rotate(15deg) translateZ(6px);
+            opacity: 0.9;
+            background: radial-gradient(ellipse at center, #0F0 0%, #000 70%);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Irregular shape */
+            animation-delay: 0.5s;
+        }
+
+        /* Fragmented graphic blocks */
+        .fragment {
+            background-color: rgba(0,255,0,0.1);
+            border: none;
+            box-shadow: 0 0 15px #0F0;
+            z-index: 1;
+            transform-style: preserve-3d;
+        }
+        .fragment-1 { top: 0; left: 15%; width: 60px; height: 220px; transform: rotate(12deg) translateZ(0px); animation: shimmer 3s infinite; }
+        .fragment-2 { bottom: 0; right: 20%; width: 70px; height: 180px; transform: rotate(-22deg) translateZ(0px); animation: shimmer 3s infinite 1s; }
+        .fragment-3 { top: 40%; right: 10%; width: 160px; height: 40px; transform: rotate(38deg) translateZ(0px); animation: shimmer 3s infinite 2s; }
+
+        /* Glitchy Text */
+        .glitch-text {
+            font-size: 2.5em;
+            position: absolute;
+            color: transparent;
+            z-index: 15;
+            mix-blend-mode: lighten; /* Blends neon glow effectively */
+            text-shadow: none; /* Remove default shadow, handled by pseudo-elements */
+            border: none;
+            box-shadow: none;
+            transform-style: preserve-3d;
+            transform: translateZ(15px); /* Bring to front */
+            overflow: hidden;
             white-space: nowrap;
         }
-        @keyframes dataScroll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
-        }
 
-        /* Broken Button */
-        .broken-button {
-            background-color: rgba(0,0,0,0.85);
-            border: 3px solid #0F0;
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Ensures black background for glitch effect */
             color: #0F0;
-            padding: 6px 12px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(0,255,0,0.8), inset 0 0 5px rgba(0,255,0,0.5);
-            filter: brightness(1.3);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.15s ease-in-out;
-            font-family: 'Orbitron', sans-serif;
+            overflow: hidden;
             text-shadow: 0 0 8px #0F0;
-        }
-        .broken-button:hover {
-            box-shadow: 0 0 25px #0F0, inset 0 0 8px #0F0;
-            background-color: rgba(0,255,0,0.15);
-            color: #FFF;
-            transform: scale(1.02);
-        }
-        .broken-button:active {
-            transform: scale(0.97);
-            background-color: rgba(0,255,0,0.3);
-            color: #000;
+            mix-blend-mode: screen;
+            display: flex; /* For vertical centering if needed, but here acts like block */
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Grime Overlay for overall effect */
-        .grime-overlay {
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #0F0, 2px 0 #000;
+            animation: glitch-anim-1 1.8s infinite alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #000, 2px 0 #0F0;
+            animation: glitch-anim-2 1.8s infinite alternate-reverse;
+        }
+
+        /* Keyframe animations */
+        @keyframes pulse-splatter {
+            0% { transform: scale(0.9) rotate(20deg) translateZ(2px); opacity: 0.6; }
+            100% { transform: scale(1.1) rotate(22deg) translateZ(2px); opacity: 0.8; }
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(6% 0 77% 0); }
+            10% { clip-path: inset(2% 0 15% 0); }
+            20% { clip-path: inset(30% 0 12% 0); }
+            30% { clip-path: inset(90% 0 1% 0); }
+            40% { clip-path: inset(45% 0 33% 0); }
+            50% { clip-path: inset(7% 0 55% 0); }
+            60% { clip-path: inset(90% 0 1% 0); }
+            70% { clip-path: inset(2% 0 15% 0); }
+            80% { clip-path: inset(30% 0 12% 0); }
+            90% { clip-path: inset(6% 0 77% 0); }
+            100% { clip-path: inset(45% 0 33% 0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(20% 0 10% 0); }
+            10% { clip-path: inset(70% 0 5% 0); }
+            20% { clip-path: inset(10% 0 80% 0); }
+            30% { clip-path: inset(5% 0 10% 0); }
+            40% { clip-path: inset(80% 0 0% 0); }
+            50% { clip-path: inset(20% 0 10% 0); }
+            60% { clip-path: inset(70% 0 5% 0); }
+            70% { clip-path: inset(10% 0 80% 0); }
+            80% { clip-path: inset(5% 0 10% 0); }
+            90% { clip-path: inset(80% 0 0% 0); }
+            100% { clip-path: inset(20% 0 10% 0); }
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px rgba(0,255,0,0.7); }
+            20%, 24%, 55% { opacity: 0.8; text-shadow: 0 0 8px #0F0, 0 0 15px rgba(0,255,0,0.5); }
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.25; }
+            100% { opacity: 0.1; }
+        }
+
+        /* Overall digital noise/grime overlay */
+        .glitch-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(0,255,0,0.06), transparent 35%),
-                radial-gradient(circle at 90% 80%, rgba(0,255,0,0.09), transparent 45%),
-                repeating-linear-gradient(0deg, transparent, transparent 1.5px, rgba(0,255,0,0.07) 1.5px, rgba(0,255,0,0.07) 3px),
-                repeating-linear-gradient(90deg, transparent, transparent 1.5px, rgba(0,255,0,0.07) 1.5px, rgba(0,255,0,0.07) 3px),
-                linear-gradient(rgba(0,0,0,0.6), transparent 50%, rgba(0,0,0,0.7)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3"><rect width="1" height="1" x="0" y="0" fill="rgba(0,255,0,0.15)"/><rect width="1" height="1" x="2" y="1" fill="rgba(0,0,0,0.3)"/></svg>') 0 0 / 3px 3px;
             pointer-events: none;
-            z-index: 999;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0,255,0,0.05),
+                rgba(0,255,0,0.05) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            z-index: 99;
+            opacity: 0.1;
             mix-blend-mode: overlay;
         }
 
-        /* Glitched Title */
-        .title-glitch {
-            font-size: 100px;
-            letter-spacing: -8px;
-            line-height: 0.9;
-            font-family: 'Chakra Petch', 'Arial Black', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            transform: skew(-12deg);
-            background: linear-gradient(90deg, #0F0, #000, #0F0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            animation: glitchEffect 1.2s infinite alternate;
-            user-select: none;
-        }
-
-        @keyframes glitchEffect {
-            0% { transform: skew(-12deg) translate(0,0); text-shadow: 0 0 8px #0F0; }
-            25% { transform: skew(6deg) translate(3px,-3px); text-shadow: -3px 3px 12px rgba(0,255,0,0.9); }
-            50% { transform: skew(-18deg) translate(-4px,4px); text-shadow: 4px -4px 15px #0F0; }
-            75% { transform: skew(9deg) translate(2px, -2px); text-shadow: -2px 2px 10px rgba(0,255,0,0.7); }
-            100% { transform: skew(-12deg) translate(0,0); text-shadow: 0 0 8px #0F0; }
-        }
-
-        /* Code Block */
-        .code-block {
-            background-color: rgba(0,0,0,0.95);
-            border: 2px solid rgba(0,255,0,0.6);
-            padding: 12px;
-            font-size: 11px;
-            line-height: 1.5;
-            color: #0F0;
-            white-space: pre-wrap;
-            overflow: hidden;
-            box-shadow: 0 0 18px rgba(0,255,0,0.9);
-            filter: drop-shadow(0 0 7px rgba(0,255,0,0.6));
-            text-align: left;
-        }
-
-        /* Alert Box */
-        .alert-box {
-            background-color: #0F0;
-            color: #000;
-            border: 3px solid #000;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 0 25px rgba(0,255,0,1);
-            filter: drop-shadow(0 0 12px rgba(0,255,0,0.9));
-            transform: rotate(-7deg) scale(1.05);
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        /* Graphic Line */
-        .graphic-line {
-            background-color: #0F0;
-            height: 4px;
-            box-shadow: 0 0 12px #0F0;
-            transform-origin: center;
-        }
-
-        /* Overlay Text Field */
-        .overlay-text-field {
+        .signature {
             position: absolute;
-            background-color: rgba(0,0,0,0.92);
-            border: 2px dashed #0F0;
-            padding: 7px;
-            font-size: 10px;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.8em;
+            opacity: 0.6;
+            letter-spacing: 1px;
             color: #0F0;
-            opacity: 0.75;
-            text-align: left;
-            pointer-events: none;
-            overflow: hidden;
-            box-shadow: 0 0 7px #0F0;
+            text-shadow: none;
+            z-index: 20;
+            transform: translateZ(20px);
         }
 
-        /* Hidden Menu Item */
-        .hidden-menu-item {
-            display: block;
-            background-color: rgba(0,0,0,0.8);
-            border: 2px solid #0F0;
-            color: #0F0;
-            padding: 4px 10px;
-            margin: 3px;
-            font-size: 11px;
-            text-decoration: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 0 10px rgba(0,255,0,0.6);
-            filter: brightness(1.1);
-            font-family: 'Chakra Petch', sans-serif;
-        }
-        .hidden-menu-item:hover {
-            background-color: #0F0;
-            color: #000;
-            box-shadow: 0 0 18px #0F0;
-            transform: translateX(5px);
-        }
-
-        /* Data Input Field */
-        .data-input-field {
-            background-color: rgba(0,0,0,0.95);
-            border: 3px solid #0F0;
-            color: #0F0;
-            padding: 7px;
-            font-size: 13px;
-            text-align: left;
-            box-shadow: 0 0 15px rgba(0,255,0,0.8);
-            filter: brightness(1.1);
-            font-family: 'SF Mono', monospace;
-        }
-
-        /* Progress Bar */
-        .progress-bar-container {
+        .graphic-block {
+            position: absolute;
             width: 180px;
-            height: 18px;
-            background-color: rgba(0,0,0,0.85);
-            border: 2px solid #0F0;
-            box-shadow: 0 0 12px rgba(0,255,0,0.8);
+            height: 100px;
+            background: linear-gradient(135deg, #000 0%, #003300 50%, #0F0 100%);
+            border: 1px solid #0F0;
+            box-shadow: 0 0 10px #0F0, inset 0 0 5px #0F0;
+            transform: rotate(8deg) translateZ(8px);
+            top: 65%;
+            left: 25%;
+            z-index: 12;
             overflow: hidden;
         }
-        .progress-bar-fill {
-            width: 65%; /* Example progress */
-            height: 100%;
-            background-color: #0F0;
-            box-shadow: inset 0 0 10px #0F0;
-            animation: progressBarFill 4s linear infinite alternate;
-        }
-        @keyframes progressBarFill {
-            0% { width: 30%; }
-            100% { width: 90%; }
-        }
-
-        /* Monitor Frame */
-        .monitor-frame {
-            background-color: rgba(0,0,0,0.98);
-            border: 4px ridge #0F0;
-            box-shadow: 0 0 30px rgba(0,255,0,1), inset 0 0 20px rgba(0,255,0,0.7);
-            padding: 18px;
-            filter: brightness(1.4);
-            overflow: hidden;
-        }
-        .monitor-content {
-            background-color: #000;
-            border: 2px dashed rgba(0,255,0,0.6);
-            padding: 12px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-size: 11px;
-            color: #0F0;
-            line-height: 1.4;
-            font-family: 'SF Mono', monospace;
-        }
-
-        /* Scan Line Overlay */
-        .scan-line {
+        .graphic-block::before {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, transparent, rgba(0,255,0,0.9), transparent);
-            animation: scanLine 3.5s linear infinite;
-            pointer-events: none;
-            z-index: 1000;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(
+                45deg,
+                transparent 49%,
+                rgba(0,255,0,0.5) 50%,
+                transparent 51%
+            );
+            animation: scanline 2s infinite linear;
             mix-blend-mode: screen;
         }
-        @keyframes scanLine {
-            0% { top: 0%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .inverted-text {
+            position: absolute;
+            top: 25%;
+            right: 15%;
+            font-size: 1.6em;
+            color: #000;
+            background-color: #0F0;
+            padding: 8px 12px;
+            border: 2px solid #000;
+            z-index: 11;
+            transform: rotate(12deg) translateZ(10px);
+            box-shadow: 0 0 15px #0F0, 0 0 5px #000;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .data-stream {
+            position: absolute;
+            bottom: 5%;
+            left: 40%;
+            width: 250px;
+            height: 80px;
+            border: 1px solid #0F0;
+            box-shadow: inset 0 0 8px #0F0, 0 0 12px #0F0;
+            background-color: rgba(0,0,0,0.8);
+            transform: rotate(-10deg) translateZ(7px);
+            overflow: hidden;
+            font-size: 0.9em;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 13;
+        }
+        .data-stream::before {
+            content: ">> PROCESSING IDENTITY. . . RESISTING CLASSIFICATION [ERROR CODE: 404_GENDER_NOT_FOUND] DEFY BINARY >>";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%; /* Make wider than container to scroll */
+            color: #0F0;
+            white-space: nowrap;
+            animation: data-scroll 15s linear infinite;
+        }
+        @keyframes data-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
     </style>
 
-    <!-- Main Title -->
-    <h1 class="collage-element title-glitch" style="top: 3%; left: 4%; z-index: 20;">
-        DATA<br>PLANTATION
+    <div class="glitch-overlay"></div>
+
+    <h1 class="collage-element title">
+        AGGRESSIVE<br>ANDROGYNY
     </h1>
 
-    <!-- Subtitle / Call to Action -->
-    <p class="collage-element neon-glow" style="top: 27%; left: 8%; font-size: 24px; z-index: 18; transform: rotate(4deg);">
-        HARVESTING ATTENTION.<br>CULTIVATING CONTROL.
+    <p class="collage-element sub-text">
+        RECALIBRATE<br>RESIST<br>RECLAIM
     </p>
 
-    <!-- Splatters -->
-    <div class="collage-element splatter" style="width: 90px; height: 100px; top: 12%; left: 32%; transform: rotate(25deg) scaleX(0.85); border-radius: 65% 35% 75% 25% / 25% 65% 35% 75%; z-index: 8;"></div>
-    <div class="collage-element splatter" style="width: 130px; height: 80px; top: 35%; right: 18%; transform: rotate(-45deg) skewX(18deg); border-radius: 45% 55% 25% 75% / 55% 25% 75% 45%; z-index: 9;"></div>
-    <div class="collage-element splatter" style="width: 70px; height: 70px; bottom: 8%; left: 6%; transform: rotate(100deg) scale(0.9); border-radius: 55% 45% 15% 85% / 85% 15% 45% 55%; z-index: 7;"></div>
-    <div class="collage-element splatter" style="width: 110px; height: 120px; top: 52%; left: 48%; transform: translate(-50%, -50%) rotate(18deg) skewY(-12deg); border-radius: 75% 25% 55% 45% / 45% 55% 75% 25%; background-color: rgba(0,255,0,0.5); filter: blur(6px) brightness(2) drop-shadow(0 0 20px #0F0); z-index: 15;"></div>
-
-    <!-- Data Stream / Code Wall -->
-    <div class="collage-element data-stream" style="top: 0; right: 0; height: 100%; width: 60px; z-index: 5; opacity: 0.15; transform: translateX(25px);">
-        <span>01100100011000010111010001100001011010000110000101110010011101100110010101110011011101000110100101101110011001110110100101110011011000010110001101101111011011000110111101101110011010010110000101101100011100000110110001100001011011100111010001100001011101000110100101101111011011100110010101110110011001010111001001111001011000010110001101110100011010010110111101101110011010010111001101100001011000110110111101101100011011110110111001101001011000010110110001110000011011000110000101101110011101000110000101110100011010010110111101101110</span>
+    <div class="collage-element statement">
+        <p>THEIR GAZE WILL NOT DEFINE US. DISMANTLE THE BINARIES. WE ARE THE ANOMALY, THE ECHO, THE UNDEFINED.</p>
     </div>
 
-    <div class="collage-element data-stream" style="top: 0; left: 12%; height: 75%; width: 40px; z-index: 6; opacity: 0.1; transform: translateX(-15px) rotate(-12deg);">
-        <span>COLONIALALGORITHMCAPITALISMEXTRACTSATTENTIONASRESOURCE</span>
-    </div>
+    <span class="splatter splatter-1"></span>
+    <span class="splatter splatter-2"></span>
+    <span class="splatter splatter-3"></span>
+    <span class="splatter splatter-4"></span>
 
-    <!-- Concrete Blocks / Grime Panels -->
-    <div class="collage-element concrete-texture" style="width: 220px; height: 170px; top: 32%; left: 38%; z-index: 10; transform: rotate(15deg) skewX(-7deg); border: 3px solid #0F0;"></div>
-    <div class="collage-element glossy-grime" style="width: 200px; height: 120px; bottom: 12%; right: 7%; z-index: 12; transform: rotate(-20deg) scale(1.15);"></div>
-    <div class="collage-element concrete-texture" style="width: 120px; height: 220px; top: 7%; right: 4%; z-index: 8; transform: rotate(7deg) translateX(20px); opacity: 0.8;"></div>
+    <div class="fragment fragment-1"></div>
+    <div class="fragment fragment-2"></div>
+    <div class="fragment fragment-3"></div>
 
-    <!-- Broken Buttons / UI elements -->
-    <a href="#" class="collage-element broken-button" style="top: 47%; left: 6%; z-index: 15;">ACCESS DENIED</a>
-    <a href="#" class="collage-element broken-button" style="top: 57%; left: 9%; z-index: 16; transform: rotate(5deg);">SUBMIT DATA</a>
-    <div class="collage-element broken-button" style="bottom: 7%; left: 50%; transform: translateX(-50%) rotate(-9deg); z-index: 17; opacity: 0.9;">DELETE SELF?</div>
+    <div class="glitch-text" style="top: 45%; left: 5%; font-size: 2.8em;" data-text="UNBIND">UNBIND</div>
+    <div class="glitch-text" style="top: 70%; left: 60%; transform: rotate(-15deg) translateZ(15px); font-size: 2.2em;" data-text="DEFIANCE">DEFIANCE</div>
+    <div class="glitch-text" style="top: 10%; right: 10%; font-size: 1.8em; transform: rotate(5deg) translateZ(15px);" data-text="CHAOS">CHAOS</div>
 
-    <!-- Code Block with "Logic" -->
-    <pre class="collage-element code-block" style="width: 320px; height: 200px; top: 55%; left: 30%; z-index: 19; transform: rotate(10deg); text-align: left;">
-        <span style="color: #FFF;">function</span> <span style="color: #0FF;">harvest_attention</span>(user_data) {
-            <span style="color: #FF0;">if</span> (user_data.<span style="color: #F00;">engagement_score</span> > <span style="color: #0F0;">CRITICAL_THRESHOLD</span>) {
-                <span style="color: #FFF;">return</span> <span style="color: #0F0;">extract_value</span>(user_data.<span style="color: #F80;">personal_identity</span>);
-            } <span style="color: #FF0;">else</span> {
-                <span style="color: #FFF;">deploy_reinforcement_protocol</span>(<span style="color: #888;">user_data.preferences</span>);
-                <span style="color: #FFF;">return</span> <span style="color: #888;">// Re-engage at all costs</span>
-            }
-        }
-        <span style="color: #FF0;">console</span>.<span style="color: #0FF;">log</span>(<span style="color: #F80;">"Plantation Status: OPTIMAL PROFIT MARGINS"</span>);
-    </pre>
+    <div class="graphic-block"></div>
 
-    <!-- Alert Box -->
-    <div class="collage-element alert-box" style="width: 280px; top: 22%; right: 6%; z-index: 25;">
-        WARNING: SYSTEM INTEGRITY COMPROMISED BY HUMANITY
-    </div>
+    <p class="inverted-text">
+        NO LABELS
+    </p>
 
-    <!-- Graphic Lines -->
-    <div class="collage-element graphic-line" style="width: 220px; top: 20%; left: 50%; transform: rotate(50deg); z-index: 10;"></div>
-    <div class="collage-element graphic-line" style="width: 170px; top: 82%; left: 22%; transform: rotate(-25deg); z-index: 10;"></div>
+    <div class="data-stream"></div>
 
-    <!-- Overlay Text Field for subtle messages -->
-    <div class="collage-element overlay-text-field" style="width: 170px; height: 80px; top: 72%; right: 22%; transform: rotate(12deg); z-index: 7;">
-        INPUT: LIKES, CLICKS, VIEWS, SENTIMENT. OUTPUT: AD REVENUE, CONTROL, PREDICTION.
-    </div>
-
-    <!-- Hidden Menu / Data Options -->
-    <div class="collage-element" style="top: 68%; left: 62%; z-index: 15; transform: rotate(-12deg); text-align: left;">
-        <a href="#" class="hidden-menu-item">OVERRIDE PARAMETERS</a>
-        <a href="#" class="hidden-menu-item">MONITOR SLAVES</a>
-        <a href="#" class="hidden-menu-item">OPTIMIZE HARVEST</a>
-        <a href="#" class="hidden-menu-item">VIEW PROPHET REPORTS</a>
-    </div>
-
-    <!-- Data Input Field (mock) -->
-    <div class="collage-element data-input-field" style="width: 280px; top: 88%; left: 60%; z-index: 18; transform: rotate(7deg);">
-        ENTER USER_IDENTITY_ID: <span style="color: #888;">||||||||||||||||||||||</span>_
-    </div>
-
-    <!-- Progress Bar -->
-    <div class="collage-element progress-bar-container" style="bottom: 17%; left: 18%; z-index: 12; transform: rotate(-5deg);">
-        <div class="progress-bar-fill"></div>
-    </div>
-    <span class="collage-element neon-glow" style="bottom: 14%; left: 19%; font-size: 11px; z-index: 13;">PROCESSING ATTENTION. . .</span>
-
-    <!-- Monitor Frame with internal content -->
-    <div class="collage-element monitor-frame" style="width: 300px; height: 220px; top: 40%; right: 5%; z-index: 22; transform: rotate(-12deg);">
-        <div class="monitor-content">
-            <p><span style="color: #0F0;">// ALGORITHM OVERSEER V8.0.2 - COLONIAL_MODE ACTIVE</span></p>
-            <p>> <span style="color: #FFF;">QUERY:</span> USER_VALUE WHERE SOURCE='ALL_PLATFORMS'</p>
-            <p><span style="color: #AAA;">RESULT:</span> AVG_LTV = $12.45. <span style="color: #F00;">INSUFFICIENT.</span></p>
-            <p><span style="color: #F00;">ACTION:</span> INCREASE AD LOAD. DEPLOY BEHAVIORAL NUDGES. ISOLATE RESISTANCE.</p>
-            <p><span style="color: #0F0;">SYSTEM STATUS:</span> <span style="color: #FF0;">PROFIT MAXIMIZATION REQUIRED. NEW HARVEST CYCLE BEGINS.</span></p>
-        </div>
-    </div>
-
-    <!-- Overall Grime and Scanline Overlays -->
-    <div class="grime-overlay"></div>
-    <div class="scan-line"></div>
+    <p class="signature">
+        [CODE//ART.GENERATED]
+    </p>
 
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
+                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
