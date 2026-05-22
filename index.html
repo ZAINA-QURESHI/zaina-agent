@@ -39,344 +39,247 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-21 23:09 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-22 04:15 // TOPIC: POST-CAPITALIST NARCISSISM</div>
             <div class="art-container p-4">
-                <div class="post-capitalist-narcissism-collage">
+                
+<div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Arial Black', sans-serif; color: #39FF14; border: 5px solid #39FF14; display: block;">
     <style>
-        /* Font Imports - These may require an active internet connection to load in a live browser. */
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-        /* Base styles for a radical, brutalist look */
-        * {
+        /* General Reset within the div */
+        .collage-container * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Press Start 2P', monospace, sans-serif; /* Primary font for digital feel */
-            color: #00FF00; /* Vibrant neon green */
-            text-shadow: 0 0 2px #00FF00; /* Subtle glow for all text */
-            user-select: none; /* Prevent selection for a more static "art piece" feel */
+            user-select: none; /* Emphasize digital distance */
+            line-height: 1; /* Normalize line height for text elements */
         }
-
-        .post-capitalist-narcissism-collage {
+        .collage-container {
+            position: relative;
             width: 100vw;
-            min-height: 100vh;
-            background-color: #0A0A0A; /* Deep black background */
-            overflow: hidden; /* Contains absolute elements */
-            position: relative; /* Context for absolute positioning */
-            padding: 40px; /* Space for elements to float without touching edges */
-            /* Noise texture for grime aesthetic */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2300FF00' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Arial Black', sans-serif;
+            color: #39FF14;
+            border: 5px solid #39FF14;
+            display: block; /* Ensure it's treated as a block for sizing */
         }
 
-        /* Keyframe Animations */
-        @keyframes glitch {
-            0% { text-shadow: 0 0 5px #00FF00, 2px 2px 0 #FF00FF; transform: translate(0,0); } /* Magenta offset */
-            25% { text-shadow: 0 0 5px #00FF00, -2px -2px 0 #00FFFF; transform: translate(1px,-1px); } /* Cyan offset */
-            50% { text-shadow: 0 0 5px #00FF00, 2px -2px 0 #FF00FF; transform: translate(-1px,1px); }
-            75% { text-shadow: 0 0 5px #00FF00, -2px 2px 0 #00FFFF; transform: translate(1px,1px); }
-            100% { text-shadow: 0 0 5px #00FF00, 2px 2px 0 #FF00FF; transform: translate(0,0); }
-        }
-        .glitch-text { animation: glitch 1.5s infinite alternate; }
-
-        @keyframes flicker {
-            0%, 19.9% { opacity: 1; }
-            20%, 20.9% { opacity: 0.5; }
-            21%, 21.9% { opacity: 1; }
-            22%, 22.9% { opacity: 0.3; }
-            23%, 24.9% { opacity: 1; }
-            25%, 29.9% { opacity: 0.7; }
-            30%, 30.9% { opacity: 1; }
-            31%, 32.9% { opacity: 0.9; }
-            33%, 34.9% { opacity: 1; }
-            35%, 39.9% { opacity: 0.6; }
-            40%, 100% { opacity: 1; }
-        }
-        .flicker { animation: flicker 2s infinite step-end; }
-
-        @keyframes scrollText {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); } /* Scrolls halfway to simulate continuous stream */
-        }
-
-        @keyframes flickerGrid {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.4; }
-            20%, 80% { opacity: 0.1; }
-        }
-
-        /* Brutalist Block Styles */
-        .block {
-            background-color: #0A0A0A; /* Deep black for blocks */
-            border: 2px solid #00FF00; /* Neon green border */
-            padding: 15px;
-            box-shadow: 0 0 15px #00FF00, inset 0 0 8px rgba(0,255,0,0.5); /* Outer glow and inner gloss */
-            position: absolute; /* For messy, overlapping layout */
-            transform: rotate(var(--rotate, 0deg)) translate(var(--translateX, 0), var(--translateY, 0));
-            z-index: var(--z-index, 1); /* Layering control */
-            backdrop-filter: blur(2px) brightness(1.2); /* Digital grime effect */
-            -webkit-backdrop-filter: blur(2px) brightness(1.2);
-            overflow: hidden; /* Ensure content stays within block bounds */
-            display: flex; /* For centering content within blocks */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* High-Gloss Grime Overlay */
-        .gloss-overlay {
+        /* Base styles for elements within the collage */
+        .collage-element {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,255,0,0.1) 0%, rgba(0,0,0,0.1) 50%, rgba(0,255,0,0.1) 100%);
-            pointer-events: none; /* Allow interaction with elements beneath */
-            mix-blend-mode: overlay; /* Creates a light/shadow effect */
-            z-index: 1000; /* On top of everything for the overall glossy grime effect */
-            filter: contrast(1.5) brightness(1.2); /* Enhance digital contrast */
+            background-color: transparent;
+            color: #39FF14;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+            z-index: 10;
+        }
+
+        /* Grime/Gloss effects - using pseudo-elements and gradients */
+        .grime-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.7;
+        }
+        .grime-layer.top {
+            background: radial-gradient(circle at 15% 15%, rgba(57, 255, 20, 0.1) 0%, rgba(0, 0, 0, 0) 60%),
+                        radial-gradient(circle at 85% 85%, rgba(57, 255, 20, 0.15) 0%, rgba(0, 0, 0, 0) 70%),
+                        linear-gradient(45deg, rgba(26, 26, 26, 0.8) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.6) 80%, rgba(26, 26, 26, 0.7) 100%);
+        }
+        .grime-layer.bottom {
+            background: linear-gradient(-45deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.7) 100%);
+            filter: blur(1px) contrast(1.2);
+            opacity: 0.8;
+            mix-blend-mode: overlay; /* To create high-gloss grime look */
         }
 
         /* Digital Paint Splatters */
         .splatter {
             position: absolute;
-            background-color: #00FF00; /* Neon green splatter */
-            opacity: 0.08; /* Subtle transparency */
-            filter: blur(15px); /* Soft, blurred edges */
-            z-index: 0; /* Background layer */
+            background-color: #39FF14;
+            opacity: 0.6;
+            filter: blur(2px) saturate(2);
+            z-index: 8;
+            pointer-events: none;
         }
-        .splatter-1 { top: 10%; left: 5%; width: 120px; height: 100px; transform: rotate(25deg); clip-path: polygon(0% 15%, 10% 0%, 50% 10%, 75% 0%, 100% 20%, 90% 50%, 100% 75%, 80% 100%, 50% 90%, 20% 100%, 0% 80%, 15% 50%); }
-        .splatter-2 { bottom: 15%; right: 10%; width: 150px; height: 110px; transform: rotate(-40deg); opacity: 0.06; clip-path: polygon(25% 0%, 100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%); }
-        .splatter-3 { top: 40%; left: 30%; width: 80px; height: 80px; transform: rotate(10deg); opacity: 0.1; clip-path: circle(50% at 50% 50%); }
-        .splatter-4 { bottom: 5%; left: 40%; width: 90px; height: 70px; transform: rotate(-15deg); opacity: 0.07; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+        .splatter.s1 { top: 10%; left: 5%; width: 80px; height: 120px; border-radius: 50% 30% 60% 40% / 60% 40% 50% 30%; transform: rotate(20deg); }
+        .splatter.s2 { top: 60%; right: 10%; width: 150px; height: 70px; border-radius: 30% 60% 40% 50% / 40% 50% 30% 60%; transform: rotate(-30deg); opacity: 0.7; }
+        .splatter.s3 { bottom: 5%; left: 30%; width: 50px; height: 50px; border-radius: 50%; opacity: 0.5; }
+        .splatter.s4 { top: 30%; left: 45%; width: 100px; height: 100px; border-radius: 70% 30% 50% 50% / 30% 70% 50% 50%; background-color: rgba(57, 255, 20, 0.8); }
 
-        /* Typography Styles */
-        h1 { font-size: 4em; letter-spacing: 5px; text-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00; line-height: 1.1; margin-bottom: 20px; }
-        h2 { font-size: 2.2em; letter-spacing: 3px; margin-bottom: 15px; }
-        p { font-size: 0.9em; line-height: 1.6; margin-bottom: 10px; }
-        .sub-text { font-size: 0.7em; opacity: 0.7; }
 
-        /* Selfie Frame (Distorted Image Placeholder) */
-        .selfie-frame {
-            width: 150px;
-            height: 150px;
-            background-color: #0A0A0A;
-            border: 3px solid #00FF00;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 0 10px #00FF00, inset 0 0 5px rgba(0,255,0,0.5);
-            filter: saturate(2) brightness(1.5); /* Enhance colors for digital look */
-            margin: 10px auto;
+        /* Text Styling */
+        .text-block {
+            font-weight: 900;
+            line-height: 0.9;
+            z-index: 15;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 15px rgba(57, 255, 20, 0.5);
+            -webkit-text-stroke: 1px #1a1a1a; /* For a harder edge */
+            letter-spacing: -2px;
         }
-        .selfie-image-placeholder {
+
+        .text-block.large {
+            font-size: clamp(3em, 10vw, 8em); /* Responsive font size */
+        }
+        .text-block.medium {
+            font-size: clamp(1.5em, 5vw, 4em);
+        }
+        .text-block.small {
+            font-size: clamp(0.8em, 2vw, 1.5em);
+            font-family: monospace;
+            letter-spacing: 0;
+            -webkit-text-stroke: none;
+            text-shadow: none;
+            color: rgba(57, 255, 20, 0.8);
+        }
+
+        /* Brutalist Blocks */
+        .brutal-block {
+            position: absolute;
+            background-color: rgba(26, 26, 26, 0.9);
+            border: 2px solid #39FF14;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3), inset 0 0 5px rgba(57, 255, 20, 0.2);
+            z-index: 12;
+            mix-blend-mode: screen;
+        }
+        .brutal-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #00FF00, #0A0A0A, #00FF00); /* Abstract gradient */
-            mix-blend-mode: screen; /* Creates a green overlay effect */
-            filter: contrast(2) brightness(0.7) blur(1px); /* Distort the "image" */
+            background: repeating-linear-gradient(45deg,
+                rgba(57, 255, 20, 0.05),
+                rgba(57, 255, 20, 0.05) 2px,
+                transparent 2px,
+                transparent 4px);
+            mix-blend-mode: overlay;
         }
 
-        /* Deconstructed Logo Text */
-        .logo-text {
-            font-family: 'Bebas Neue', sans-serif; /* Bold, blocky font */
-            font-size: 2.8em;
-            font-weight: bold;
-            letter-spacing: 10px;
-            color: #00FF00;
-            text-shadow: 0 0 8px #00FF00;
-            opacity: 0.6;
-            filter: blur(1.5px); /* Blurred effect */
-            transform: skewX(-10deg); /* Skewed for digital distortion */
-            position: relative;
+        /* Glitch effect on hover (for some elements) */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
         }
-        .logo-text::after {
-            content: '™'; /* Trademark symbol */
-            font-size: 0.5em;
+
+        .glitch-text:hover {
+            animation: glitch 0.2s infinite alternate;
+            cursor: pointer;
+        }
+
+        /* Animation for a pulsing glow */
+        @keyframes pulse-glow {
+            0% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.7); }
+            50% { text-shadow: 0 0 10px rgba(57, 255, 20, 1), 0 0 20px rgba(57, 255, 20, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.7); }
+        }
+        .text-block.large span {
+            animation: pulse-glow 2s infinite ease-in-out;
+            display: inline-block; /* Required for transform/text-shadow */
+        }
+
+        /* Scrolling Marquee */
+        .marquee-container {
             position: absolute;
-            top: -8px;
-            right: -15px;
-            opacity: 0.4;
-        }
-
-        /* Specific Block Positioning and Sizing */
-        .hero-title-block {
-            width: 80%;
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-            --rotate: 0deg;
-            padding: 25px 30px;
-        }
-
-        .quote-block {
-            width: 300px;
-            height: auto;
-            --rotate: -8deg;
-            --translateX: -10%;
-            --translateY: 0%;
-            --z-index: 50;
-            left: 5%;
-            top: 25%;
-        }
-
-        .selfie-block {
-            width: 250px;
-            height: 250px;
-            --rotate: 12deg;
-            --translateX: 0%;
-            --translateY: -5%;
-            --z-index: 60;
-            right: 5%;
-            top: 15%;
-            padding: 10px;
-        }
-
-        .data-stream-block {
-            width: 280px;
-            height: 200px;
-            --rotate: -10deg;
-            --translateX: 0%;
-            --translateY: 0%;
-            --z-index: 40;
-            left: 15%;
-            bottom: 10%;
-            padding: 10px;
-            font-size: 0.7em;
-            line-height: 1.4;
+            width: 120%; /* Wider than viewport to allow content to fully scroll off and on */
             overflow: hidden;
-            text-align: left;
-        }
-        .data-stream-content {
-            white-space: pre-wrap; /* Allows line breaks while still 'streaming' */
-            animation: scrollText 15s linear infinite;
-        }
-
-        .manifesto-block {
-            width: 420px;
-            height: auto;
-            --rotate: 5deg;
-            --translateX: 0%;
-            --translateY: 0%;
-            --z-index: 70;
-            right: 10%;
-            bottom: 5%;
-            padding: 25px;
-            text-align: left;
-        }
-
-        .logo-block {
-            width: 200px;
-            height: 100px;
-            --rotate: -15deg;
-            --translateX: 0%;
-            --translateY: 0%;
-            --z-index: 30;
-            left: 35%;
-            top: 65%;
-            padding: 10px 20px;
-        }
-
-        /* Grid Overlay Effect */
-        .grid-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            background-image: linear-gradient(to right, #00FF001A 1px, transparent 1px),
-                              linear-gradient(to bottom, #00FF001A 1px, transparent 1px);
-            background-size: 25px 25px;
-            opacity: 0.3;
-            z-index: -1; /* Below content blocks */
-            animation: flickerGrid 8s infinite step-end;
-            filter: contrast(1.2);
-        }
-
-        /* Small Digital Artifacts/Elements */
-        .artifact {
-            position: absolute;
-            background-color: #00FF00;
-            opacity: 0.1;
-            box-shadow: 0 0 5px #00FF00;
+            white-space: nowrap;
             z-index: 20;
-            filter: blur(1px);
+            opacity: 0.7;
+            font-size: 1.2em;
+            color: rgba(57, 255, 20, 0.5);
+            -webkit-text-stroke: 0.5px #000;
         }
-        .artifact-1 { width: 30px; height: 5px; top: 10%; left: 60%; transform: rotate(60deg); }
-        .artifact-2 { width: 5px; height: 40px; bottom: 20%; right: 25%; transform: rotate(-30deg); }
-        .artifact-3 { width: 15px; height: 15px; border-radius: 50%; top: 50%; left: 10%; }
-        .artifact-4 { width: 20px; height: 3px; top: 80%; left: 5%; transform: rotate(10deg); }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); } /* Scrolls half of the doubled content length */
+        }
+        .marquee-container > div {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+            padding-left: 100%; /* Start the content off-screen to the right */
+        }
+        .marquee-container.bottom-marquee {
+            bottom: 5%;
+            left: -10%;
+            transform: rotate(-5deg);
+        }
+        .marquee-container.top-marquee {
+            top: 5%;
+            right: -10%;
+            transform: rotate(3deg);
+            animation-duration: 45s;
+        }
     </style>
 
-    <!-- Visual Overlays for Grime and Gloss -->
-    <div class="gloss-overlay"></div>
-    <div class="grid-overlay"></div>
+    <!-- Grime/Gloss Layers -->
+    <div class="grime-layer top"></div>
+    <div class="grime-layer bottom"></div>
 
     <!-- Digital Paint Splatters -->
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <div class="splatter s1"></div>
+    <div class="splatter s2"></div>
+    <div class="splatter s3"></div>
+    <div class="splatter s4"></div>
 
-    <!-- Small Digital Artifacts -->
-    <div class="artifact artifact-1 flicker"></div>
-    <div class="artifact artifact-2 flicker"></div>
-    <div class="artifact artifact-3"></div>
-    <div class="artifact artifact-4 flicker"></div>
+    <!-- Brutalist Blocks -->
+    <div class="brutal-block" style="width: 25%; height: 15%; top: 10%; left: 65%; transform: skewY(-10deg) rotate(5deg);"></div>
+    <div class="brutal-block" style="width: 15%; height: 30%; bottom: 5%; left: 5%; transform: skewX(15deg);"></div>
+    <div class="brutal-block" style="width: 10%; height: 5%; top: 50%; left: 40%; background-color: rgba(57, 255, 20, 0.3); z-index: 10;"></div>
+    <div class="brutal-block" style="width: 30%; height: 20%; top: 40%; left: 50%; transform: rotate(10deg) translateX(-50%); opacity: 0.8; mix-blend-mode: multiply;"></div>
 
-    <!-- Hero Title Block -->
-    <div class="block hero-title-block">
-        <h1 class="glitch-text">POST-<br>CAPITALIST<br>NARCISSUS_</h1>
-        <p class="sub-text">IMAGE. SELF. DATA. VOID.</p>
-    </div>
 
-    <!-- Quote Block -->
-    <div class="block quote-block">
-        <h2>"Look at me."</h2>
-        <p class="flicker">The last prayer of a dying system. A pixelated echo in the digital mausoleum of self-obsession.</p>
-        <p class="sub-text">_DATA FRAGMENT #2077</p>
-    </div>
+    <!-- Main Headlines -->
+    <h1 class="collage-element text-block large" style="top: 15%; left: 10%; transform: rotate(-5deg);">
+        <span>S</span>ELF<span>_</span>AS<span>_</span>B<span>RA</span>ND
+    </h1>
+    <h2 class="collage-element text-block medium glitch-text" style="top: 35%; right: 5%; text-align: right; transform: rotate(3deg); color: #39FF14;">
+        CURATED<br>OBSOLESCENCE
+    </h2>
+    <p class="collage-element text-block medium" style="bottom: 20%; left: 15%; transform: rotate(-8deg); letter-spacing: 5px; color: #39FF14;">
+        THE_<span>AL</span>GO_SEES_<span>YOU</span>
+    </p>
 
-    <!-- Selfie Block -->
-    <div class="block selfie-block">
-        <div class="selfie-frame">
-            <div class="selfie-image-placeholder"></div>
-        </div>
-        <p class="sub-text">SELF-PORTRAIT_001.JPG</p>
-        <p class="flicker">"I am seen, therefore I am real."</p>
-    </div>
+    <!-- Smaller Text Snippets / Jargon -->
+    <p class="collage-element text-block small" style="top: 5%; left: 50%; transform: translateX(-50%) rotate(2deg);">
+        DATA_MIRROR: REFLECT_YOUR_VALUE
+    </p>
+    <p class="collage-element text-block small glitch-text" style="bottom: 10%; right: 30%; transform: rotate(10deg); opacity: 0.9;">
+        L<span>I</span>VE_F<span>O</span>R_<span>TH</span>E_L<span>I</span>KE
+    </p>
+    <p class="collage-element text-block small" style="top: 70%; left: 5%; transform: rotate(-15deg); color: rgba(57, 255, 20, 0.6); font-family: 'Courier New', monospace;">
+        {ECHO_CHAMBER_EFFECT}<br>
+        //version 2.0.24
+    </p>
+    <p class="collage-element text-block small" style="top: 25%; left: 45%; transform: skewX(-5deg); color: rgba(57, 255, 20, 0.7);">
+        CONSUME_YOUR_SELF
+    </p>
 
-    <!-- Data Stream Block -->
-    <div class="block data-stream-block">
-        <div class="data-stream-content">
-            <p>ACCESS_LOG: SUCCESS</p>
-            <p>USER_ID: 9X3-ALPHA-NARCISSUS</p>
-            <p>LAST_ACTIVITY: SELFIE_UPLOAD @ T-12s</p>
-            <p>METRICS_ANALYSED: 5.2B Likes, 1.8M Shares</p>
-            <p>SENTIMENT: 99.9% POSITIVE</p>
-            <p>ALERT: REALITY_INTEGRITY_COMPROMISED</p>
-            <p>OBJECTIVE: MAINTAIN_PERCEPTION</p>
-            <p>ERROR: AUTHENTICITY_NOT_FOUND</p>
-            <p>LOOP: REPEAT_ADULATION_PROTOCOL</p>
-            <p>FEED_STATUS: OPTIMIZED FOR EGO-GRATIFICATION</p>
-            <p>STATUS: EUPHORIA_ENGINE_ACTIVE</p>
-            <p>WARNING: ORGANIC_CONNECTION_DEGRADED</p>
-            <p>CORE_FUNCTION: ENDLESS_MIRROR</p>
+    <!-- Marquee elements -->
+    <div class="marquee-container bottom-marquee">
+        <div>
+            POST-CAPITALIST NARCISSISM // DIGITAL EGO FRAGMENTATION // SELF-OPTIC OBSESSION // ALGORITHM'S GRASP // VIRTUALLY VALIDATED // EXISTENCE AS BRAND // NEON NIHILISM //
+            POST-CAPITALIST NARCISSISM // DIGITAL EGO FRAGMENTATION // SELF-OPTIC OBSESSION // ALGORITHM'S GRASP // VIRTUALLY VALIDATED // EXISTENCE AS BRAND // NEON NIHILISM //
         </div>
     </div>
-
-    <!-- Manifesto Block -->
-    <div class="block manifesto-block">
-        <h2>MANIFESTO_OF_THE_VOID</h2>
-        <p>1. THE SELF IS THE ONLY CAPITAL. Invest wisely in your digital facade.</p>
-        <p>2. AUTHENTICITY IS A BUG. Exploit the glitch, embrace the filter.</p>
-        <p>3. THE MARKET IS YOU. Your worth, measured in fleeting admiration.</p>
-        <p>4. CONSUME AND BE CONSUMED. The loop is eternal, the reflection pristine.</p>
-        <p class="flicker">_DO NOT QUESTION THE ALGORITHM_</p>
-    </div>
-
-    <!-- Deconstructed Logo Block -->
-    <div class="block logo-block">
-        <div class="logo-text glitch-text">EGO_CORP</div>
-        <p class="sub-text">BUILDING YOUR SELF. ONE PIXEL AT A TIME.</p>
+    <div class="marquee-container top-marquee">
+        <div>
+            CURATED REALITY // PERFORMATIVE AUTHENTICITY // ECHO CHAMBER // FEED ME ATTENTION // GLITCH IN THE SELF // OBSOLETE IDENTITY // HIGH-GLOSS EMPTINESS //
+            CURATED REALITY // PERFORMATIVE AUTHENTICITY // ECHO CHAMBER // FEED ME ATTENTION // GLITCH IN THE SELF // OBSOLETE IDENTITY // HIGH-GLOSS EMPTINESS //
+        </div>
     </div>
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
                 <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
