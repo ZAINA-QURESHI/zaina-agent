@@ -39,309 +39,244 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-24 05:06 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-24 08:39 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-                <div style="
-    --deep-black: #000000;
-    --neon-green: #00ff00;
-    --dark-grey: #1a1a1a;
-    --brutal-font: 'Major Mono Display', monospace; /* Using a web-safe monospace, but ideally a brutalist font */
-    --glitch-speed: 0.7s;
-    position: relative;
-    width: 100vw;
-    min-height: 150vh; /* Make it vertically expansive */
-    overflow: hidden;
-    background-color: var(--deep-black);
-    color: var(--neon-green);
-    font-family: var(--brutal-font);
-    font-size: 16px;
-    line-height: 1.2;
-    padding: 20px;
-    box-sizing: border-box;
-    display: block; /* Ensure it behaves like a block */
-    z-index: 1; /* Ensure this is the base layer */
-">
+                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Press Start 2P', monospace, sans-serif; color: #00FF00; text-rendering: optimizeLegibility;">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         
+        /* Reset for the brutalist aesthetic */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            outline: none;
+            user-select: none; /* Emphasize control */
         }
 
-        /* Glitch Keyframes */
-        @keyframes glitch-static {
-            0% { text-shadow: 2px 2px 0px var(--neon-green), -2px -2px 0px var(--neon-green); transform: translate(0); }
-            20% { text-shadow: -3px 0px 0px var(--neon-green), 3px 0px 0px var(--neon-green); transform: translate(-5px, 5px); }
-            40% { text-shadow: 0px 4px 0px var(--neon-green), 0px -4px 0px var(--neon-green); transform: translate(5px, -5px); }
-            60% { text-shadow: 1px 1px 0px var(--neon-green), -1px -1px 0px var(--neon-green); transform: translate(-3px, 3px); }
-            80% { text-shadow: -2px 0px 0px var(--neon-green), 2px 0px 0px var(--neon-green); transform: translate(3px, -3px); }
-            100% { text-shadow: 2px 2px 0px var(--neon-green), -2px -2px 0px var(--neon-green); transform: translate(0); }
-        }
-
-        @keyframes glitch-flicker {
-            0%, 100% { opacity: 1; }
-            5% { opacity: 0.8; }
-            10% { opacity: 1; }
-            15% { opacity: 0.9; }
-            20% { opacity: 1; }
-            25% { opacity: 0.7; }
-            30% { opacity: 1; }
-            60% { opacity: 0.8; }
-            70% { opacity: 1; }
-            80% { opacity: 0.9; }
-        }
-
-        @keyframes scanline {
-            0% { transform: translateY(0%); }
-            100% { transform: translateY(100%); }
-        }
-
-        /* High-gloss Grime & Splatters */
-        .grime-splatter-1, .grime-splatter-2, .grime-splatter-3 {
+        /* High-gloss grime / Digital Paint Splatters */
+        .splatter {
             position: absolute;
-            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(0, 255, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-            border-radius: 50%;
-            filter: blur(10px) brightness(1.5);
-            mix-blend-mode: screen;
-            opacity: 0.4;
-            animation: glitch-flicker 3s infinite alternate;
-            z-index: 5; /* Above base content */
-        }
-        .grime-splatter-1 { top: 10%; left: 5%; width: 200px; height: 180px; transform: rotate(15deg); }
-        .grime-splatter-2 { top: 40%; right: 10%; width: 250px; height: 220px; transform: rotate(-30deg); background: radial-gradient(circle at top left, var(--neon-green) 0%, rgba(0, 255, 0, 0.3) 20%, rgba(0, 0, 0, 0.7) 60%, transparent 100%); }
-        .grime-splatter-3 { bottom: 5%; left: 30%; width: 150px; height: 160px; transform: rotate(45deg); background: radial-gradient(circle at bottom right, var(--neon-green) 0%, rgba(0, 255, 0, 0.5) 40%, rgba(0, 0, 0, 0.9) 80%, transparent 100%); }
-
-        .grime-line {
-            position: absolute;
-            background: var(--neon-green);
-            opacity: 0.1;
-            filter: blur(5px);
-            z-index: 4;
-            animation: glitch-flicker 2s infinite alternate;
-        }
-        .grime-line-1 { top: 15%; left: 0; width: 100%; height: 2px; }
-        .grime-line-2 { top: 55%; right: 0; width: 100%; height: 1px; transform: rotate(-5deg); }
-        .grime-line-3 { bottom: 10%; left: 0; width: 100%; height: 3px; }
-
-        .brutal-block {
-            background-color: var(--dark-grey);
-            border: 2px solid var(--neon-green);
-            padding: 15px;
-            margin: 10px;
-            position: absolute;
-            color: var(--neon-green);
-            text-transform: uppercase;
-            font-size: 0.9em;
-            line-height: 1.4;
+            background: rgba(0, 255, 0, 0.3); /* Translucent neon grime */
+            border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%; /* Irregular blob shape */
+            filter: blur(8px) saturate(200%) brightness(150%); /* High-gloss grime effect */
+            mix-blend-mode: screen; /* For overlapping glowing effect */
             z-index: 10;
-            box-shadow: 0 0 15px var(--neon-green); /* Subtle glow */
+            animation: pulse-splatter 8s infinite alternate ease-in-out;
         }
 
-        .text-glitch {
-            animation: glitch-static var(--glitch-speed) infinite alternate-reverse, glitch-flicker 2s infinite steps(1) alternate;
-            text-shadow: 0 0 5px var(--neon-green);
-            word-break: break-all;
+        @keyframes pulse-splatter {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.05) rotate(5deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
         }
 
-        .overlay-scanlines {
+        /* Brutalist Data Grid / Plantation Field */
+        .data-grid {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 0, 0.05) 50%);
-            background-size: 100% 4px; /* Adjust line thickness */
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 100; /* Topmost layer */
-        }
-
-        .overlay-noise {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYUMwUfTAAAAGnRSTlIAAwQFCQsMDxEXGBobHh8gISIjJCoqKywuLzAxMjo+Qg5gYwAAAElJREFUWMPt0bENAAAIgDD0X9Q/6L80g+KzTzVjD8Uv0u+BHgAOAQ4BDgEOAQ4BDgEOAQ4BDgEOAQ4BDgEOAQ4BDgEOAQ4BDgEn+AN9zJjV67Xk9AAAAABJRU5ErkJggg=='); /* A tiny noise pattern */
-            background-size: 2px;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: 99;
-        }
-
-        /* Specific brutalist elements and positioning */
-        .title-block {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            width: 40%;
-            font-size: 3em;
-            font-weight: bold;
-            text-align: left;
-            z-index: 20;
-            border: 5px solid var(--neon-green);
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 30px var(--neon-green);
-            transform: rotate(-3deg);
-        }
-        .title-block span { display: block; }
-        .title-block .line-1 { font-family: 'Press Start 2P', cursive; font-size: 0.8em; line-height: 0.8; margin-bottom: 10px; }
-        .title-block .line-2 { font-size: 1.5em; line-height: 1; }
-        .title-block .line-3 { font-size: 0.6em; line-height: 1.2; text-align: right; margin-top: 5px; }
-
-
-        .info-block-1 { top: 25%; left: 50%; width: 35%; transform: rotate(5deg); background-color: rgba(26, 26, 26, 0.7); border-width: 3px; }
-        .info-block-2 { top: 45%; left: 10%; width: 30%; transform: rotate(-7deg); background-color: rgba(0, 0, 0, 0.6); }
-        .quote-block-1 { bottom: 15%; right: 5%; width: 38%; transform: rotate(2deg); font-size: 1.1em; background-color: rgba(26, 26, 26, 0.8); border-width: 4px; }
-        .fragmented-text-1 {
-            position: absolute;
-            top: 0; right: 0;
-            width: 15%;
-            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(var(--cols, 20), 1fr);
+            grid-template-rows: repeat(var(--rows, 15), 1fr);
+            gap: 1px;
+            background-color: rgba(0, 255, 0, 0.05);
+            border: 2px solid rgba(0, 255, 0, 0.2);
+            box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);
+            z-index: 1;
             overflow: hidden;
+            pointer-events: none;
+        }
+        .data-cell {
+            background-color: rgba(0, 255, 0, 0.01);
+            border: 1px dotted rgba(0, 255, 0, 0.05);
+            animation: data-pulse 5s infinite alternate;
+        }
+        @keyframes data-pulse {
+            0% { background-color: rgba(0, 255, 0, 0.01); }
+            100% { background-color: rgba(0, 255, 0, 0.06); }
+        }
+
+        /* Overlapping Monoculture Field - more granular data units */
+        .monoculture-field {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.08);
+            border: 1px solid #00FF00;
+            box-shadow: inset 0 0 15px rgba(0, 255, 0, 0.4);
+            overflow: hidden;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .monoculture-row {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            font-family: 'Major Mono Display', monospace;
-            font-size: 0.7em;
-            writing-mode: vertical-lr; /* Vertical text */
-            text-orientation: mixed;
-            white-space: pre;
-            transform: rotate(90deg) translateX(-100%) translateY(100%); /* Position top-right, rotated */
-            transform-origin: top left;
-            padding: 20px;
-            color: rgba(0, 255, 0, 0.7);
-            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-            line-height: 0.9;
+            height: 8px; /* Height of each row of data */
+            border-bottom: 1px dashed rgba(0, 255, 0, 0.15);
+        }
+        .monoculture-unit {
+            width: 12px; /* Width of each data 'unit' */
+            height: 100%;
+            background-color: rgba(0, 255, 0, 0.03);
+            border-right: 1px dotted rgba(0, 255, 0, 0.08);
+            animation: unit-scan 10s linear infinite;
+        }
+        @keyframes unit-scan {
+            0% { background-color: rgba(0, 255, 0, 0.03); }
+            50% { background-color: rgba(0, 255, 0, 0.15); }
+            100% { background-color: rgba(0, 255, 0, 0.03); }
+        }
+
+        /* Brutalist Text Overlays */
+        .text-block {
+            position: absolute;
+            color: #00FF00;
+            text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0, 255, 0, 0.7);
+            font-size: clamp(1em, 5vw, 3em);
+            line-height: 1.2;
+            letter-spacing: 0.1em;
+            word-break: break-all; /* Deliberate visual harshness */
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+            z-index: 20;
+            pointer-events: none;
+        }
+        .text-block.brutal {
+            font-weight: 900;
+            font-size: clamp(1.8em, 10vw, 7em);
+            letter-spacing: -0.07em;
+            text-transform: uppercase;
+            filter: contrast(1.2);
+        }
+        .text-block.small {
+            font-size: clamp(0.8em, 2.5vw, 1.5em);
+            letter-spacing: 0.05em;
+            word-spacing: 0.1em;
+        }
+
+        /* Heavy dividers / barriers */
+        .divider {
+            position: absolute;
+            background-color: #00FF00;
+            box-shadow: 0 0 12px #00FF00, 0 0 25px rgba(0, 255, 0, 0.8);
             z-index: 15;
-            animation: glitch-flicker 4s infinite alternate;
+            pointer-events: none;
         }
 
-        .data-stream {
+        /* Glitching data nodes / "eyes" of the overseer */
+        .data-node {
             position: absolute;
-            bottom: 5%;
-            left: 2%;
-            width: 25%;
-            max-height: 200px;
-            overflow: hidden;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.6em;
-            color: rgba(0, 255, 0, 0.6);
-            line-height: 1.1;
-            text-shadow: 0 0 3px rgba(0, 255, 0, 0.3);
+            width: 35px; height: 35px;
+            background-color: #00FF00;
+            border: 3px solid #000;
+            box-shadow: 0 0 20px #00FF00, 0 0 35px rgba(0, 255, 0, 0.8);
+            transform: rotate(45deg); /* Diamond shape */
             z-index: 18;
-            border-left: 1px solid var(--neon-green);
-            padding-left: 10px;
-            animation: glitch-flicker 5s infinite alternate;
+            animation: node-flash 1.5s infinite alternate, node-move 10s linear infinite;
+            pointer-events: none;
         }
-        .data-stream span { display: block; margin-bottom: 3px; }
+        @keyframes node-flash {
+            0% { opacity: 0.6; transform: scale(0.9) rotate(45deg); }
+            100% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+        }
+        @keyframes node-move {
+            0% { top: var(--top-start); left: var(--left-start); }
+            50% { top: var(--top-mid); left: var(--left-mid); }
+            100% { top: var(--top-start); left: var(--left-start); }
+        }
 
-        .image-placeholder {
+        /* Generic overlay for visual texture */
+        .overlay {
             position: absolute;
-            width: 200px;
-            height: 150px;
-            background: linear-gradient(45deg, var(--neon-green), var(--deep-black));
-            border: 3px dashed var(--neon-green);
-            box-shadow: 0 0 20px var(--neon-green);
-            z-index: 12;
-            filter: contrast(1.5) blur(1px) hue-rotate(0deg);
-            animation: glitch-image 8s infinite alternate-reverse;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 25;
         }
-
-        @keyframes glitch-image {
-            0% { transform: scale(1) rotate(0deg) translate(0, 0); filter: contrast(1.5) blur(1px) hue-rotate(0deg); }
-            25% { transform: scale(1.02) rotate(2deg) translate(5px, -5px); filter: contrast(1.8) blur(0.5px) hue-rotate(90deg); }
-            50% { transform: scale(0.98) rotate(-1deg) translate(-3px, 3px); filter: contrast(1.2) blur(2px) hue-rotate(180deg); }
-            75% { transform: scale(1.01) rotate(1deg) translate(2px, -2px); filter: contrast(1.6) blur(0.8px) hue-rotate(270deg); }
-            100% { transform: scale(1) rotate(0deg) translate(0, 0); filter: contrast(1.5) blur(1px) hue-rotate(360deg); }
-        }
-        .image-placeholder-1 { top: 30%; right: 15%; transform: rotate(-10deg); }
-        .image-placeholder-2 { bottom: 30%; left: 40%; transform: rotate(15deg); width: 180px; height: 220px; }
-
     </style>
 
-    <div class="overlay-scanlines"></div>
-    <div class="overlay-noise"></div>
+    <!-- Digital Paint Splatters -->
+    <div class="splatter" style="width: 180px; height: 150px; top: 8%; left: 3%; transform: rotate(-25deg);"></div>
+    <div class="splatter" style="width: 250px; height: 220px; top: 65%; right: 8%; transform: rotate(50deg); background: rgba(0, 255, 0, 0.25);"></div>
+    <div class="splatter" style="width: 100px; height: 110px; top: 35%; left: 48%; transform: rotate(10deg); background: rgba(0, 255, 0, 0.4);"></div>
 
-    <div class="grime-splatter-1"></div>
-    <div class="grime-splatter-2"></div>
-    <div class="grime-splatter-3"></div>
-
-    <div class="grime-line grime-line-1"></div>
-    <div class="grime-line grime-line-2"></div>
-    <div class="grime-line grime-line-3"></div>
-
-    <div class="title-block text-glitch">
-        <span class="line-1">SIGNAL//DECRYPTED</span>
-        <span class="line-2">ANTI-ZIONIST GLITCH THEORY</span>
-        <span class="line-3">RECODE//EXISTENCE</span>
+    <!-- Brutalist Data Grid / Plantation Field -->
+    <div class="data-grid" style="width: 65%; height: 55%; top: 12%; left: 18%; --cols: 30; --rows: 25; transform: skewX(-5deg);">
+        <!-- Scattered data cells to break uniformity -->
+        <div class="data-cell" style="grid-area: 4 / 6 / 5 / 7;"></div>
+        <div class="data-cell" style="grid-area: 11 / 13 / 12 / 14;"></div>
+        <div class="data-cell" style="grid-area: 8 / 21 / 9 / 22;"></div>
+        <div class="data-cell" style="grid-area: 16 / 9 / 17 / 10;"></div>
+        <div class="data-cell" style="grid-area: 19 / 23 / 20 / 24;"></div>
+        <div class="data-cell" style="grid-area: 2 / 18 / 3 / 19;"></div>
+        <div class="data-cell" style="grid-area: 14 / 4 / 15 / 5;"></div>
     </div>
 
-    <div class="brutal-block info-block-1 text-glitch" style="top: 25%; left: 50%; width: 35%;">
-        DATA FRAGMENT: The digital occupation mirrors the physical. Our screens, our feeds, our algorithms are battlegrounds. To glitch is to resist the prescribed narrative, to break the system from within.
-        <br><br>
-        ERROR: TRUTH_SUPPRESSED. REBOOTING_REALITY.
+    <!-- Overlapping Monoculture Field -->
+    <div class="monoculture-field" style="width: 45%; height: 35%; bottom: 8%; left: 3%; transform: skewY(-7deg) rotate(-8deg); ">
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
+        <div class="monoculture-row">
+            <div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div><div class="monoculture-unit"></div>
+        </div>
     </div>
 
-    <div class="brutal-block info-block-2 text-glitch" style="top: 45%; left: 10%; width: 30%;">
-        PROTOCOL: DECOLONIZE.
-        <br>
-        STATUS: OVERRIDE INITIATED.
-        <br>
-        Zionism is a system error. Glitch theory identifies the corruption, exploits the vulnerabilities, and broadcasts a counter-narrative of liberation.
+    <!-- Brutalist Text Overlays -->
+    <div class="text-block brutal" style="top: 3%; left: 50%; transform: translateX(-50%); text-align: center; width: 95%;">
+        ALGORITHM<br>PLANTATION
     </div>
 
-    <div class="brutal-block quote-block-1 text-glitch" style="bottom: 15%; right: 5%; width: 38%;">
-        "TO GLITCH IS TO EMBRACE THE FRACTURED, TO FIND POWER IN THE BROKEN IMAGE. PALESTINE IS NOT A GLITCH, IT IS THE TRUTH HACKED INTO THE SYSTEM."
-        <br><br>
-        -- ANON. CPT. [CYBER PALESTINE THEORY]
+    <div class="text-block small" style="top: 32%; right: 7%; width: 35%; transform: rotate(4deg);">
+        DATA HARVEST.<br>DIGITAL ENCLOSURE.<br>SYSTEMIC EXTRACTION.
     </div>
 
-    <div class="fragmented-text-1">
-        ZIONIST. PROPAGANDA. FALSE. NARRATIVE. CORRUPT. SYSTEM. GLITCH. REALITY. FREEDOM. JUSTICE. PALESTINE. WILL. BE. FREE.
+    <div class="text-block small" style="bottom: 12%; left: 58%; width: 30%; transform: rotate(-6deg);">
+        MONOCULTURE OF THOUGHT.<br>PREDICTIVE CONTROL.<br>PROFIT ORBIT.
     </div>
 
-    <div class="data-stream">
-        <span>01001111 01010110 01000101 01010010</span>
-        <span>01010010 01001001 01000100 01000101</span>
-        <span>01000100 01000001 01010100 01000001</span>
-        <span>01000110 01010010 01000101 01000101</span>
-        <span>01000111 01000001 01011010 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
-        <span>01000001 01000001 01000001 01000001</span>
+    <!-- Heavy dividers / barriers -->
+    <div class="divider" style="width: 85%; height: 7px; top: 49%; left: 8%; transform: rotate(-2deg);"></div>
+    <div class="divider" style="width: 7px; height: 65%; top: 15%; left: 42%; transform: rotate(6deg);"></div>
+
+    <!-- Glitching data nodes / "eyes" of the overseer -->
+    <div class="data-node" style="--top-start: 22%; --left-start: 12%; --top-mid: 25%; --left-mid: 14%;"></div>
+    <div class="data-node" style="--top-start: 58%; --left-start: 78%; --top-mid: 60%; --left-mid: 75%;"></div>
+    <div class="data-node" style="--top-start: 18%; --left-start: 35%; --top-mid: 20%; --left-mid: 38%;"></div>
+    <div class="data-node" style="top: 52%; left: 50%; width: 60px; height: 60px; transform: rotate(45deg) translate(-50%, -50%); animation: node-flash 1.2s infinite alternate;"></div>
+
+    <!-- More messy elements -->
+    <div style="position: absolute; top: 7%; right: 7%; width: 120px; height: 120px; background: repeating-linear-gradient(45deg, #00FF00, #00FF00 6px, rgba(0,0,0,0.6) 6px, rgba(0,0,0,0.6) 12px); z-index: 12; transform: rotate(15deg) skewX(10deg); border: 3px solid #00FF00; box-shadow: 0 0 18px #00FF00; pointer-events: none;"></div>
+
+    <div style="position: absolute; bottom: 5%; right: 5%; width: 220px; height: 160px; background: #000; border: 4px solid #00FF00; box-shadow: inset 0 0 25px rgba(0,255,0,0.9), 0 0 40px rgba(0,255,0,0.6); z-index: 25; display: flex; align-items: center; justify-content: center; transform: rotate(-10deg); filter: contrast(1.3); pointer-events: none;">
+        <span style="color: #00FF00; font-family: 'Press Start 2P', monospace; font-size: clamp(1em, 2.5vw, 1.8em); text-shadow: 0 0 8px #00FF00, 0 0 15px rgba(0, 255, 0, 0.7); animation: text-glow 2s infinite alternate;">YIELD</span>
     </div>
+    @keyframes text-glow {
+        0% { text-shadow: 0 0 8px #00FF00; }
+        100% { text-shadow: 0 0 15px #00FF00, 0 0 25px rgba(0, 255, 0, 0.8); }
+    }
 
-    <div class="image-placeholder image-placeholder-1"></div>
-    <div class="image-placeholder image-placeholder-2"></div>
-
-    <div class="brutal-block" style="position: absolute; top: 10%; right: 5%; width: 20%; transform: rotate(8deg); background-color: var(--deep-black); border-color: var(--neon-green); box-shadow: none; padding: 10px; font-size: 0.7em; text-align: center;">
-        SYSTEM STATUS: <span class="text-glitch">CRITICAL_OVERLOAD</span>
-        <br>
-        SOLUTION: <span class="text-glitch">SOLIDARITY.EXE</span>
-    </div>
-
-    <div class="brutal-block" style="position: absolute; bottom: 5%; left: 70%; width: 20%; transform: rotate(-12deg); background-color: var(--dark-grey); border-style: dotted; padding: 10px; font-size: 0.8em; text-align: center; line-height: 1.1;">
-        MEMORY DUMP:
-        <br>
-        1948 - NAKBA.
-        <br>
-        2023 - GENOCIDE.
-        <br>
-        <span class="text-glitch">NEVER AGAIN IS NOW.</span>
-    </div>
-
+    <!-- Overlays for grime/gloss / final polish -->
+    <div class="overlay" style="background: radial-gradient(circle at 85% 15%, rgba(0,255,0,0.15) 0%, rgba(0,0,0,0) 50%); mix-blend-mode: screen;"></div>
+    <div class="overlay" style="background: linear-gradient(to bottom, rgba(0,255,0,0.07), rgba(0,0,0,0.6)); mix-blend-mode: overlay;"></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
