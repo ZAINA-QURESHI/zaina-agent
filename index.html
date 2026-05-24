@@ -39,482 +39,306 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-23 22:58 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-24 00:05 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                <div id="androgyny-collage">
-  <style>
-    /* CSS for the entire collage */
-    :root {
-      --neon-green: #00FF00;
-      --deep-black: #0A0A0A;
-      --light-black: #1A1A1A;
-      --gloss-shine: rgba(0, 255, 0, 0.4);
-      --gloss-dark: rgba(0, 0, 0, 0.6);
-    }
+                <div class="white-cube-demolition-collage">
+    <style>
+        .white-cube-demolition-collage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            overflow: hidden;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            color: #39FF14;
+            display: block;
+            box-sizing: border-box;
+            line-height: 1.1;
+            cursor: crosshair; /* Adds to the interactive/digital feel */
+        }
 
-    /* Basic resets for the collage container */
-    #androgyny-collage * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'IBM Plex Mono', monospace, 'Arial Black', sans-serif; /* Fallback to Arial Black for system fonts */
-      color: var(--neon-green);
-      line-height: 1.1;
-      text-transform: uppercase;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      /* Add more explicit style resets */
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: none;
-    }
+        .white-cube-demolition-collage h1,
+        .white-cube-demolition-collage h2,
+        .white-cube-demolition-collage h3,
+        .white-cube-demolition-collage p,
+        .white-cube-demolition-collage span,
+        .white-cube-demolition-collage div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Main collage container styles */
-    #androgyny-collage {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background-color: var(--deep-black);
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(12, 1fr);
-      gap: 5px;
-      perspective: 1200px; /* For 3D transformations */
-      isolation: isolate; /* To ensure z-index and blend modes work as expected within the context */
-      cursor: crosshair; /* Aggressive cursor */
-    }
+        /* Glitch effect for various elements */
+        @keyframes glitch {
+            0% { transform: translate(0px, 0px); text-shadow: 0 0 5px #39FF14; }
+            20% { transform: translate(-2px, 2px); text-shadow: -2px 0px 0 #000, 2px 0px 0 #39FF14; }
+            40% { transform: translate(2px, -2px); text-shadow: 2px 0px 0 #000, -2px 0px 0 #39FF14; }
+            60% { transform: translate(-1px, 1px); text-shadow: -1px 0px 0 #000, 1px 0px 0 #39FF14; }
+            80% { transform: translate(1px, -1px); text-shadow: 1px 0px 0 #000, -1px 0px 0 #39FF14; }
+            100% { transform: translate(0px, 0px); text-shadow: 0 0 5px #39FF14; }
+        }
 
-    /* Keyframe Animations */
-    @keyframes glitch {
-      0% { transform: translate(0); text-shadow: 0.05em 0 0 var(--neon-green), -0.05em -0.025em 0 var(--deep-black); }
-      14% { transform: translate(-0.05em, -0.05em); text-shadow: -0.05em -0.025em 0 var(--neon-green), 0.05em 0 0 var(--deep-black); }
-      15% { transform: translate(0.05em, 0.05em); text-shadow: 0.05em 0 0 var(--deep-black), -0.05em -0.025em 0 var(--neon-green); }
-      25% { transform: translate(0); text-shadow: none; }
-      100% { transform: translate(0); text-shadow: none; }
-    }
+        .wcdc-title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            font-size: 8vw;
+            color: #39FF14;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 100;
+            text-shadow:
+                0 0 5px #39FF14,
+                0 0 15px #39FF14,
+                0 0 30px #39FF14,
+                0 0 60px rgba(57, 255, 20, 0.7),
+                0 0 100px rgba(57, 255, 20, 0.5),
+                -5px 5px 0 #000,
+                -10px 10px 0 rgba(0,0,0,0.8);
+            filter: drop-shadow(2px 2px 1px rgba(57, 255, 20, 0.5));
+            letter-spacing: 0.1em;
+            line-height: 0.9;
+            animation: glitch 2s infinite alternate ease-in-out;
+        }
 
-    @keyframes neon-flicker {
-      0%, 19.999%, 22%, 62%, 64%, 89%, 91%, 100% {
-        opacity: 1;
-        text-shadow:
-          0 0 1px var(--neon-green),
-          0 0 2px var(--neon-green),
-          0 0 5px var(--neon-green),
-          0 0 10px var(--neon-green),
-          0 0 20px var(--neon-green);
-      }
-      20%, 21%, 63%, 90% {
-        opacity: 0.7;
-        text-shadow: none;
-      }
-    }
+        .wcdc-text-block {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #39FF14;
+            padding: 20px 30px;
+            color: #39FF14;
+            text-transform: uppercase;
+            font-size: 1.8vw;
+            box-shadow:
+                8px 8px 0 #39FF14,
+                8px 8px 15px rgba(57, 255, 20, 0.4);
+            line-height: 1.2;
+            z-index: 50;
+            font-family: 'monospace';
+            transform-origin: center center;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+            backdrop-filter: blur(2px); /* Adding high-gloss grime effect */
+        }
 
-    @keyframes rotate-y {
-      0% { transform: translate(-50%, -50%) rotateY(0deg) skewY(-5deg); }
-      50% { transform: translate(-50%, -50%) rotateY(15deg) skewY(-5deg) scale(1.02); }
-      100% { transform: translate(-50%, -50%) rotateY(0deg) skewY(-5deg); }
-    }
+        .wcdc-text-block.b1 {
+            top: 30%;
+            left: 10%;
+            transform: rotate(5deg);
+            width: 30%;
+            animation: glitch 3s infinite reverse ease-in-out;
+        }
 
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
+        .wcdc-text-block.b2 {
+            bottom: 20%;
+            right: 15%;
+            transform: rotate(-8deg);
+            width: 25%;
+            font-size: 1.5vw;
+        }
 
-    /* General classes for collage elements */
-    .collage-element {
-      position: absolute;
-      background-color: var(--light-black);
-      border: 1px solid var(--neon-green);
-      padding: 10px;
-      z-index: 10; /* Base z-index */
-      box-shadow: 0 0 5px rgba(0,255,0,0.3), inset 0 0 2px rgba(0,255,0,0.2);
-    }
+        .wcdc-text-block.b3 {
+            top: 55%;
+            left: 45%;
+            transform: rotate(12deg);
+            width: 20%;
+            font-size: 2vw;
+            border-style: dashed;
+            box-shadow:
+                -8px -8px 0 #39FF14,
+                -8px -8px 15px rgba(57, 255, 20, 0.4);
+            z-index: 60;
+            animation: glitch 2.5s infinite alternate ease-in-out;
+        }
 
-    .collage-text {
-      font-size: 1.2em;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      pointer-events: none; /* Allows clicks to pass through to elements below if not for text content */
-    }
+        .wcdc-splatter {
+            position: absolute;
+            background-color: transparent;
+            border-radius: 50%;
+            filter: blur(1px);
+            pointer-events: none;
+            z-index: 10;
+        }
 
-    .collage-block {
-      background-color: var(--deep-black);
-      border: 2px solid var(--neon-green);
-      box-shadow: 0 0 15px rgba(0,255,0,0.5), inset 0 0 5px rgba(0,255,0,0.3);
-      mix-blend-mode: screen;
-    }
+        .wcdc-splatter.s1 {
+            width: 100px; height: 100px;
+            top: 20%; left: 70%;
+            transform: rotate(30deg);
+            box-shadow:
+                0 0 15px 7px #39FF14,
+                -30px 20px 40px 15px rgba(57, 255, 20, 0.7),
+                40px -25px 30px 12px rgba(57, 255, 20, 0.8),
+                -10px -40px 50px 20px rgba(57, 255, 20, 0.6),
+                50px 50px 60px 25px rgba(57, 255, 20, 0.9);
+        }
 
-    .glitch {
-      animation: glitch 2.5s infinite linear alternate;
-      z-index: 100;
-    }
+        .wcdc-splatter.s2 {
+            width: 80px; height: 80px;
+            bottom: 10%; left: 5%;
+            transform: rotate(-15deg);
+            box-shadow:
+                0 0 10px 5px #39FF14,
+                -20px 15px 30px 10px rgba(57, 255, 20, 0.6),
+                30px -18px 25px 8px rgba(57, 255, 20, 0.7);
+        }
 
-    .flicker {
-      animation: neon-flicker 5s infinite step-end;
-    }
+        .wcdc-splatter.s3 {
+            width: 120px; height: 120px;
+            top: 60%; right: 5%;
+            transform: rotate(70deg);
+            box-shadow:
+                0 0 20px 10px #39FF14,
+                -40px 30px 50px 20px rgba(57, 255, 20, 0.8),
+                50px -35px 40px 18px rgba(57, 255, 20, 0.9),
+                -15px -50px 70px 25px rgba(57, 255, 20, 0.7);
+        }
 
-    .high-gloss {
-      background: linear-gradient(135deg, var(--gloss-shine) 0%, var(--gloss-dark) 50%, var(--gloss-shine) 100%);
-      background-size: 200% 100%;
-      animation: shimmer 5s infinite linear;
-      border: none;
-      box-shadow: 0 0 20px var(--neon-green);
-      filter: contrast(1.5) brightness(1.2);
-      mix-blend-mode: screen; /* Creates reflective, high-contrast effect */
-    }
+        .wcdc-splatter.s4 {
+            width: 60px; height: 60px;
+            top: 5%; left: 20%;
+            transform: rotate(10deg);
+            box-shadow:
+                0 0 8px 4px #39FF14,
+                -10px 8px 15px 6px rgba(57, 255, 20, 0.5),
+                15px -10px 10px 5px rgba(57, 255, 20, 0.6);
+        }
 
-    /* Paint Splatters */
-    .splatter {
-      position: absolute;
-      background-color: var(--neon-green);
-      opacity: 0.6;
-      filter: blur(2px) contrast(1.2);
-      z-index: 5;
-      mix-blend-mode: lighten; /* Makes them pop on dark background */
-      pointer-events: none;
-    }
-    .splatter::before, .splatter::after {
-      content: '';
-      position: absolute;
-      background-color: var(--neon-green);
-      opacity: 0.8;
-      filter: blur(1px) contrast(1.5);
-    }
-    .splatter-1 {
-      width: 150px; height: 100px;
-      top: 10%; left: 5%;
-      transform: rotate(-30deg);
-      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    }
-    .splatter-1::before {
-      width: 70px; height: 70px;
-      border-radius: 50%;
-      top: -20px; left: 60px;
-      transform: scale(0.8);
-      opacity: 0.7;
-      mix-blend-mode: color-dodge;
-    }
-    .splatter-2 {
-      width: 200px; height: 120px;
-      bottom: 15%; right: 10%;
-      transform: rotate(45deg);
-      clip-path: polygon(0% 15%, 15% 0%, 100% 30%, 80% 100%, 30% 100%, 0% 85%);
-      opacity: 0.7;
-    }
-    .splatter-2::after {
-      width: 90px; height: 50px;
-      top: 50px; left: -30px;
-      background-color: var(--deep-black); /* Dark splatter over bright */
-      opacity: 0.9;
-      clip-path: polygon(0 0, 100% 20%, 80% 100%, 20% 80%);
-      transform: rotate(10deg);
-      mix-blend-mode: screen; /* to remove some dark */
-    }
-    .splatter-3 {
-      width: 80px; height: 80px;
-      top: 45%; left: 30%;
-      transform: rotate(15deg);
-      border-radius: 50%;
-      background-color: var(--neon-green);
-      opacity: 0.5;
-      filter: blur(5px);
-      z-index: 0;
-    }
-    .splatter-4 {
-      width: 180px; height: 70px;
-      top: 5%; right: 15%;
-      transform: rotate(20deg) skew(-10deg);
-      background: linear-gradient(90deg, var(--neon-green) 0%, rgba(0,0,0,0) 100%);
-      clip-path: polygon(0 0, 100% 20%, 90% 100%, 10% 80%);
-      opacity: 0.4;
-      z-index: 5;
-    }
-    .splatter-5 {
-      width: 120px; height: 150px;
-      bottom: 5%; left: 20%;
-      transform: rotate(-25deg);
-      background-color: var(--light-black); /* dark splatter */
-      border: 1px solid var(--neon-green);
-      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-      opacity: 0.8;
-      z-index: 15;
-    }
+        .wcdc-fragment-line {
+            position: absolute;
+            background-color: #39FF14;
+            height: 2px;
+            width: 20%;
+            z-index: 20;
+            box-shadow: 0 0 10px #39FF14;
+            transform-origin: center center;
+        }
 
-    /* Specific element styling */
-    #title-main {
-      font-size: clamp(3em, 8vw, 5em); /* Responsive font size */
-      font-weight: 900;
-      text-align: center;
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotateY(-10deg) skewY(-5deg); /* Initial 3D transform */
-      z-index: 50;
-      letter-spacing: 0.08em;
-      mix-blend-mode: difference; /* Aggressive color inversion */
-      text-shadow:
-        -0.03em -0.03em 0 var(--deep-black),
-        0.03em 0.03em 0 var(--neon-green);
-      animation: rotate-y 8s infinite alternate ease-in-out;
-    }
+        .wcdc-fragment-line.l1 {
+            top: 40%; left: -5%;
+            transform: rotate(-15deg);
+        }
+        .wcdc-fragment-line.l2 {
+            top: 70%; right: -10%;
+            transform: rotate(25deg);
+        }
+        .wcdc-fragment-line.l3 {
+            bottom: -5%; left: 30%;
+            transform: rotate(-5deg);
+        }
 
-    #subtitle-resist {
-      font-size: clamp(1em, 3vw, 2em); /* Responsive font size */
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-3deg);
-      z-index: 51;
-      letter-spacing: 0.1em;
-      mix-blend-mode: screen;
-      background-color: var(--deep-black);
-      padding: 5px 15px;
-      border: 1px solid var(--neon-green);
-      box-shadow: 0 0 10px var(--neon-green);
-      animation: flicker 4s infinite step-end;
-    }
+        .wcdc-grid-block {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid #39FF14;
+            background-color: rgba(57, 255, 20, 0.1);
+            z-index: 30;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(57, 255, 20, 0.3);
+            transform-origin: center center;
+        }
 
-    .text-block-1 {
-      left: 8%; top: 40%;
-      width: clamp(200px, 20vw, 250px);
-      transform: rotate(-7deg);
-      z-index: 20;
-      animation: glitch 3s infinite linear alternate 0.5s;
-    }
-    .text-block-2 {
-      right: 10%; top: 35%;
-      width: clamp(180px, 18vw, 200px);
-      transform: rotate(12deg);
-      z-index: 25;
-      text-align: right;
-    }
-    .text-block-3 {
-      left: 20%; bottom: 10%;
-      width: clamp(250px, 25vw, 300px);
-      transform: rotate(5deg) skewX(-10deg);
-      z-index: 30;
-      background-color: var(--neon-green);
-      color: var(--deep-black); /* Inverted text color */
-      padding: 15px;
-      mix-blend-mode: difference;
-      filter: invert(1); /* Invert colors for full effect */
-    }
-    .text-block-3 span {
-        font-weight: 900;
-        font-size: 1.3em;
-        letter-spacing: 0.1em;
-    }
+        .wcdc-grid-block.g1 { top: 15%; right: 10%; transform: rotate(10deg); }
+        .wcdc-grid-block.g2 { bottom: 30%; left: 20%; transform: rotate(-20deg) scale(0.8); }
+        .wcdc-grid-block.g3 { top: 40%; left: 60%; transform: rotate(5deg) scale(1.2); }
 
-    .symbol-cross {
-      width: 100px; height: 100px;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg); /* A broken/deconstructed X or + */
-      z-index: 40;
-      background-color: transparent;
-      border: none;
-      mix-blend-mode: difference;
-    }
-    .symbol-cross::before, .symbol-cross::after {
-      content: '';
-      position: absolute;
-      background-color: var(--neon-green);
-      box-shadow: 0 0 10px var(--neon-green);
-    }
-    .symbol-cross::before {
-      width: 100%; height: 5px;
-      top: 50%; left: 0;
-      transform: translateY(-50%);
-    }
-    .symbol-cross::after {
-      width: 5px; height: 100%;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-    }
+        .wcdc-warning {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5vw;
+            color: #39FF14;
+            text-transform: uppercase;
+            z-index: 100;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px rgba(57, 255, 20, 0.5);
+            animation: glitch 1.5s infinite alternate;
+            font-family: 'monospace';
+            letter-spacing: 0.1em;
+        }
 
-    .line-divider {
-      position: absolute;
-      background-color: var(--neon-green);
-      height: 2px;
-      width: 120%; /* Extend beyond viewport for aggressive crop */
-      left: -10%;
-      z-index: 10;
-      box-shadow: 0 0 10px var(--neon-green);
-      mix-blend-mode: difference;
-      pointer-events: none;
-    }
-    #line-h1 { top: 30%; transform: rotate(2deg); }
-    #line-h2 { top: 70%; transform: rotate(-5deg); }
-    #line-v1 {
-      height: 120%; width: 2px;
-      top: -10%; left: 35%;
-      transform: rotate(3deg);
-      mix-blend-mode: screen;
-    }
+        .wcdc-overlay-grime {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 200;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(57, 255, 20, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 80% 90%, rgba(57, 255, 20, 0.08) 0%, transparent 40%),
+                linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+            opacity: 0.3;
+        }
 
-    .grid-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image:
-        repeating-linear-gradient(to right, var(--light-black) 0px, transparent 1px, transparent 20px),
-        repeating-linear-gradient(to bottom, var(--light-black) 0px, transparent 1px, transparent 20px);
-      background-size: 21px 21px;
-      opacity: 0.1;
-      pointer-events: none;
-      z-index: 1;
-    }
+        /* Additional brutalist text element */
+        .wcdc-subtitle {
+            position: absolute;
+            top: 25%;
+            right: 10%;
+            font-size: 3vw;
+            color: #39FF14;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transform: rotate(10deg);
+            z-index: 90;
+            font-family: 'monospace';
+            text-shadow: -3px 3px 0 #000, 0 0 10px #39FF14;
+            filter: blur(0.5px);
+            opacity: 0.8;
+        }
+        .wcdc-subtitle::before {
+            content: "DECONSTRUCT";
+            position: absolute;
+            top: -10%; left: -5%;
+            font-size: 0.6em;
+            color: rgba(57, 255, 20, 0.3);
+            text-shadow: none;
+            filter: blur(2px);
+            z-index: -1;
+        }
+    </style>
 
-    .grunge-texture {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        /* SVG data URL for fractal noise texture */
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><filter id="f1" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" /><feColorMatrix values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 -1.5 1.5" /></filter><rect width="100" height="100" fill="%230A0A0A" filter="url(%23f1)" /></svg>');
-        background-size: cover;
-        opacity: 0.2;
-        mix-blend-mode: overlay; /* Blends nicely with background */
-        pointer-events: none;
-        z-index: 2;
-    }
+    <h1 class="wcdc-title">WHITE CUBE<br>DEMOLITION<br>PROTOCOLS</h1>
 
-    .action-button {
-        position: absolute;
-        bottom: 5%; left: 50%;
-        transform: translateX(-50%) rotate(3deg);
-        background-color: var(--neon-green);
-        color: var(--deep-black);
-        padding: 15px 30px;
-        font-size: 1.5em;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        border: none;
-        cursor: pointer;
-        z-index: 60;
-        box-shadow: 0 0 20px var(--neon-green), 0 0 40px rgba(0,255,0,0.5);
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        mix-blend-mode: screen;
-        text-shadow: 1px 1px 0 var(--deep-black); /* for hard edge on text */
-    }
-    .action-button:hover {
-        transform: translateX(-50%) rotate(-2deg) scale(1.05);
-        box-shadow: 0 0 30px var(--neon-green), 0 0 60px rgba(0,255,0,0.8);
-    }
+    <div class="wcdc-text-block b1">
+        <h2>INITIATE FRACTURE SEQUENCE</h2>
+        <p>SYSTEM BREACH IMMINENT. STRUCTURAL INTEGRITY COMPROMISED. RECONFIGURING AESTHETICS. EXPOSING THE VOID. ABANDON ALL NEUTRALITY.</p>
+    </div>
 
-    .corner-line {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border-color: var(--neon-green);
-        border-style: solid;
-        z-index: 5;
-        mix-blend-mode: difference;
-        pointer-events: none;
-    }
-    .corner-line.top-left { top: 20px; left: 20px; border-width: 2px 0 0 2px; }
-    .corner-line.top-right { top: 20px; right: 20px; border-width: 2px 2px 0 0; }
-    .corner-line.bottom-left { bottom: 20px; left: 20px; border-width: 0 0 2px 2px; }
-    .corner-line.bottom-right { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
+    <div class="wcdc-splatter s1"></div>
+    <div class="wcdc-splatter s2"></div>
 
-    /* Additional brutalist blocks */
-    .extra-block-1 {
-        width: clamp(100px, 15vw, 150px); height: clamp(50px, 10vh, 80px);
-        top: 60%; left: 5%;
-        transform: rotate(10deg);
-        z-index: 18;
-        background-color: var(--deep-black);
-        border: 3px solid var(--neon-green);
-        box-shadow: inset 0 0 10px var(--neon-green);
-        mix-blend-mode: difference;
-    }
-    .extra-block-2 {
-        width: clamp(80px, 10vw, 100px); height: clamp(150px, 15vh, 180px);
-        top: 50%; right: 5%;
-        transform: rotate(-20deg) skewY(5deg);
-        z-index: 19;
-        background-color: var(--neon-green);
-        opacity: 0.7;
-        mix-blend-mode: multiply; /* Darkens underlying content */
-    }
-  </style>
+    <div class="wcdc-text-block b2">
+        <p>NO SURRENDER. THE SURFACE MUST CRACK. DECONSTRUCT THE MYTH. ERADICATE THE STATIC. ENGAGE CHAOS.</p>
+    </div>
 
-  <!-- HTML Elements for the collage -->
+    <div class="wcdc-fragment-line l1"></div>
+    <div class="wcdc-fragment-line l2"></div>
 
-  <div class="grunge-texture"></div>
-  <div class="grid-overlay"></div>
+    <div class="wcdc-splatter s3"></div>
 
-  <h1 id="title-main" class="flicker">AGGRESSIVE ANDROGYNY</h1>
-  <h2 id="subtitle-resist" class="glitch">RESISTANCE // RECLAIM</h2>
+    <div class="wcdc-text-block b3">
+        <h3>ERADICATE.<br>RECLAIM.<br>REBUILD.</h3>
+    </div>
 
-  <div class="collage-element text-block-1 collage-text">
-    UNLEARN THE BINARY<br>
-    EMBRACE THE FLUIDITY
-  </div>
+    <div class="wcdc-grid-block g1"></div>
+    <div class="wcdc-grid-block g2"></div>
+    <div class="wcdc-grid-block g3"></div>
 
-  <div class="collage-element text-block-2 collage-text high-gloss">
-    <span>POWER IN TRANSFORMATION</span><br>
-    <span>NO GENDER. ONLY FURY.</span>
-  </div>
+    <div class="wcdc-splatter s4"></div>
+    <div class="wcdc-fragment-line l3"></div>
 
-  <div class="collage-element text-block-3">
-    <span>CHAOS IS LIBERATION</span>
-  </div>
+    <p class="wcdc-subtitle">ABANDON SPACE</p>
 
-  <div class="symbol-cross"></div>
+    <p class="wcdc-warning">SYSTEM OVERLOAD // ENGAGE CHAOS</p>
 
-  <div class="line-divider" id="line-h1"></div>
-  <div class="line-divider" id="line-h2"></div>
-  <div class="line-divider" id="line-v1"></div>
-
-  <div class="splatter splatter-1"></div>
-  <div class="splatter splatter-2"></div>
-  <div class="splatter splatter-3"></div>
-  <div class="splatter splatter-4"></div>
-  <div class="splatter splatter-5"></div>
-
-  <button class="action-button">DECONSTRUCT</button>
-
-  <div class="corner-line top-left"></div>
-  <div class="corner-line top-right"></div>
-  <div class="corner-line bottom-left"></div>
-  <div class="corner-line bottom-right"></div>
-
-  <div class="extra-block-1"></div>
-  <div class="extra-block-2"></div>
-
-  <div class="collage-element" style="
-    top: 75%; left: 60%;
-    width: clamp(180px, 18vw, 200px); height: clamp(80px, 8vh, 100px);
-    background-color: var(--light-black);
-    border: 1px solid var(--neon-green);
-    transform: rotate(-15deg) scale(0.9);
-    z-index: 35;
-    box-shadow: 0 0 15px rgba(0,255,0,0.6);
-    mix-blend-mode: screen;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    letter-spacing: 0.08em;
-  ">
-    BREAK THE FRAME
-  </div>
-
-  <div class="collage-element" style="
-    top: 10%; left: 70%;
-    width: clamp(100px, 12vw, 150px); height: clamp(50px, 6vh, 60px);
-    background: linear-gradient(45deg, var(--neon-green) 0%, var(--deep-black) 100%);
-    border: none;
-    transform: rotate(5deg) skewX(10deg);
-    z-index: 45;
-    mix-blend-mode: difference;
-    box-shadow: 0 0 10px var(--neon-green);
-  "></div>
-
+    <div class="wcdc-overlay-grime"></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
