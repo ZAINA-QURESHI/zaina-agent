@@ -39,246 +39,399 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-25 10:22 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-25 14:14 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
             <div class="art-container p-4">
-                <div style="
-    /* GLOBAL CONTAINER STYLES */
-    font-family: 'Exo 2', 'Oswald', 'Roboto Mono', monospace, sans-serif; /* Brutalist/digital fonts */
-    background-color: #0A0A0A; /* Deep Black base */
-    color: #F0F0F0; /* Off-white for contrast text */
-    min-height: 100vh;
-    width: 100vw;
-    overflow: hidden; /* Crucial for positioned elements */
+                
+<div style="
     position: relative;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background: #000; /* Deep black background for the whole page/div */
+    font-family: 'Arial Black', sans-serif;
+    color: #00FF00;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute main content */
-    align-items: center; /* Center horizontally */
-    isolation: isolate; /* For mix-blend-mode to work predictably */
-    
-    /* GRIME & GLOSS BACKGROUND EFFECTS */
-    background-image: 
-        radial-gradient(circle at top left, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at bottom right, rgba(0, 255, 0, 0.15) 0%, transparent 60%),
-        linear-gradient(135deg, #181818 0%, #000000 100%); /* Deep dark gradient for depth */
-    background-blend-mode: screen, overlay, normal; /* Mix with default bg color */
-    filter: contrast(110%); /* Overall grimy contrast */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
 ">
+    <style>
+        /* CSS variables for consistent theming, scoped to the main collage container */
+        .collage-container {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --dark-grey: #111;
+            --glow-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
 
-    <!-- NEO-BRUTALIST GRIME GRID OVERLAY -->
-    <div style="
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: 
-            repeating-linear-gradient(0deg, #1A1A1A 0px, #1A1A1A 1px, transparent 1px, transparent 4px),
-            repeating-linear-gradient(90deg, #1A1A1A 0px, #1A1A1A 1px, transparent 1px, transparent 4px);
-        opacity: 0.07;
-        z-index: 0;
-        pointer-events: none; /* Allow interaction with elements beneath */
-    "></div>
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            min-height: 80vh;
+            background: var(--dark-grey);
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 50px rgba(0,255,0,0.5), inset 0 0 30px rgba(0,255,0,0.3);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 5px;
+            box-sizing: border-box;
+            mix-blend-mode: screen; /* For interesting color interactions with background */
+            filter: contrast(120%); /* Enhance the harshness and glow */
+            padding: 5px; /* Visual padding inside the main border */
+        }
 
-    <!-- MAIN TITLE: GLITCHED & BRUTALIST -->
-    <h1 style="
-        font-size: clamp(3em, 8vw, 7em);
-        color: #00FF00; /* Vibrant Neon Green */
-        text-transform: uppercase;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        text-align: center;
-        margin: 5vh auto;
-        padding: 10px 25px;
-        border: 4px solid #00FF00;
-        box-shadow: 0 0 25px rgba(0, 255, 0, 0.6), inset 0 0 15px rgba(0, 255, 0, 0.4); /* Neon glow */
-        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-        position: relative;
-        z-index: 10;
-        transform: skewX(-7deg) rotateZ(3deg); /* Brutalist tilt */
-        filter: drop-shadow(0 0 20px rgba(0,255,0,0.7)); /* Stronger outer glow */
-    ">
-        WHITE CUBE<br>DESTRUCTION PROTOCOLS
-    </h1>
+        /* General styles for elements within the collage grid */
+        .collage-element {
+            position: relative; /* Allows content within to be positioned absolutely, while element itself is in grid flow */
+            background-color: rgba(0, 255, 0, 0.1); /* Subtle green tint */
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px var(--deep-black);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            box-sizing: border-box;
+            display: flex; /* For centering text within blocks */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.2;
+            padding: 5px;
+            z-index: 2; /* Default z-index for grid elements */
+        }
 
-    <!-- ABSTRACT SHAPE 1: NEON SLICE/SHARD -->
-    <div style="
-        position: absolute;
-        top: 10%; left: -8%;
-        width: 70vw; height: 120px;
-        background-color: #00FF00;
-        box-shadow: 0 0 40px rgba(0, 255, 0, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.3);
-        transform: rotate(-18deg) skewX(-25deg);
-        z-index: 5;
-        opacity: 0.7;
-        pointer-events: none;
-        mix-blend-mode: screen; /* For glossy transparency */
-        filter: blur(1.5px); /* Soften edges */
-    "></div>
+        .collage-element:hover {
+            box-shadow: inset 0 0 15px var(--neon-green), 0 0 20px var(--neon-green);
+            transform: scale(1.02);
+            z-index: 10; /* Bring hovered element slightly to front */
+        }
 
-    <!-- TEXT BLOCK 1: FRAGMENTED MESSAGE -->
-    <p style="
-        font-size: clamp(0.8em, 1.6vw, 1.3em);
-        line-height: 1.4;
-        max-width: 450px;
-        margin: 20px auto;
-        padding: 18px;
-        border: 2px solid #333;
-        background-color: rgba(10, 10, 10, 0.85);
-        color: #BBB;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        position: absolute;
-        top: 28%; right: 8%;
-        transform: rotate(10deg) skewY(3deg); /* Messy angle */
-        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.15); /* Depth and gloss */
-        z-index: 8;
-        filter: contrast(130%);
-        border-left: 5px solid #00FF00; /* Neon highlight */
-    ">
-        VOID RUPTURE. COLLAPSE. SYSTEM OVERLOAD.
-        <br>ERASURE PROTOCOL INITIATED. NO RETURN.
-        <span style="display: block; width: 12px; height: 12px; background-color: #00FF00; position: absolute; bottom: -6px; right: -6px; box-shadow: 0 0 8px rgba(0,255,0,0.8);"></span>
-    </p>
+        /* Styles for main text overlays (AGGRESSIVE ANDROGYNY AS RESISTANCE) */
+        .text-overlay {
+            font-size: clamp(1rem, 5vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            word-break: break-word;
+            line-height: 0.9;
+            color: var(--neon-green);
+            text-shadow: var(--glow-shadow);
+            mix-blend-mode: screen;
+            position: absolute;
+            z-index: 15; /* Ensure overlays are on top */
+            padding: 10px;
+            pointer-events: none; /* Allow clicks to pass through */
+            white-space: pre-wrap;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            -webkit-text-stroke: 1px var(--deep-black); /* For a sharper, aggressive outline */
+            text-stroke: 1px var(--deep-black);
+        }
 
-    <!-- ABSTRACT SHAPE 2: DIGITAL PAINT SPLATTER (LARGE) -->
-    <div style="
-        position: absolute;
-        bottom: 8%; right: 3%;
-        width: 280px; height: 280px;
-        border-radius: 50% 30% 60% 40% / 60% 40% 50% 30%; /* Irregular blob shape */
-        background: 
-            radial-gradient(circle at 25% 25%, rgba(0, 255, 0, 0.8) 0%, transparent 65%),
-            radial-gradient(circle at 75% 75%, rgba(0, 255, 0, 0.6) 0%, transparent 55%),
-            #00FF00; /* Base neon green */
-        box-shadow: 0 0 50px rgba(0, 255, 0, 0.8), inset 0 0 25px rgba(255, 255, 255, 0.1);
-        transform: rotate(30deg) scale(0.9) skewX(-10deg);
-        z-index: 6;
-        opacity: 0.6;
-        pointer-events: none;
-        mix-blend-mode: screen;
-        filter: blur(2.5px);
-    "></div>
+        /* Glitch animation for text */
+        .text-glitch {
+            position: relative;
+            animation: glitch 2.5s infinite linear alternate;
+        }
 
-    <!-- TEXT BLOCK 2: STRATEGY FRAGMENT -->
-    <p style="
-        font-size: clamp(0.7em, 1.3vw, 1.1em);
-        line-height: 1.3;
-        max-width: 350px;
-        margin: 0;
-        padding: 12px;
-        background-color: rgba(0, 0, 0, 0.75);
-        border: 1px solid #00FF00;
-        color: #00FF00;
-        position: absolute;
-        bottom: 5%; left: 6%;
-        transform: rotate(-12deg) skewY(-5deg);
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-        z-index: 9;
-        text-transform: uppercase;
-        font-weight: bold;
-        filter: brightness(170%) contrast(120%);
-    ">
-        STRATEGY: FRACTURE.<br>DISMANTLE. RE-FORMAT.<br>THE VOID EXPANDS.
-    </p>
+        @keyframes glitch {
+            0% { transform: translate(0, 0); text-shadow: var(--glow-shadow); }
+            20% { transform: translate(-2px, 2px); text-shadow: 0 0 5px var(--neon-green); }
+            40% { transform: translate(3px, -3px); text-shadow: 0 0 15px var(--neon-green); }
+            60% { transform: translate(-1px, 1px); text-shadow: var(--glow-shadow); }
+            80% { transform: translate(2px, -2px); text-shadow: 0 0 10px var(--neon-green); }
+            100% { transform: translate(0, 0); text-shadow: var(--glow-shadow); }
+        }
 
-    <!-- DEMOLISHED CUBE REPRESENTATION (3D-ish) -->
-    <div style="
-        position: absolute;
-        top: 55%; left: 50%;
-        width: 180px; height: 180px;
-        background-color: #1A1A1A;
-        border: 4px solid #333;
-        transform: translate(-50%, -50%) rotateY(45deg) rotateX(25deg) rotateZ(-15deg); /* Isometric perspective */
-        box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.08); /* Deep shadow, subtle inner gloss */
-        z-index: 7;
-        opacity: 0.95;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 8px;
-        overflow: hidden; /* For inner "cracks" */
-    ">
-        <span style="width: 90%; height: 3px; background-color: #00FF00; transform: rotate(15deg); box-shadow: 0 0 5px rgba(0,255,0,0.8);"></span>
-        <span style="width: 80%; height: 3px; background-color: #00FF00; transform: rotate(-25deg); box-shadow: 0 0 5px rgba(0,255,0,0.8);"></span>
-        <span style="width: 95%; height: 3px; background-color: #00FF00; transform: rotate(8deg); box-shadow: 0 0 5px rgba(0,255,0,0.8);"></span>
-        <div style="position: absolute; top: -10px; left: -10px; width: 30px; height: 30px; background-color: #00FF00; border-radius: 50%; opacity: 0.3; filter: blur(5px);"></div>
+        /* Digital paint splatter elements */
+        .splatter {
+            position: absolute;
+            background: var(--neon-green);
+            filter: blur(2px); /* Soften edges like paint */
+            opacity: 0.7;
+            z-index: 1; /* Keep splatters behind main content */
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        /* Specific splatter shapes and positions */
+        .splatter.s1 { width: 80px; height: 120px; border-radius: 40% 60% 70% 30% / 60% 40% 30% 70%; top: 10%; left: 5%; transform: rotate(25deg); box-shadow: 0 0 20px var(--neon-green); }
+        .splatter.s2 { width: 150px; height: 70px; border-radius: 30% 70% 50% 50% / 70% 30% 70% 30%; bottom: 5%; right: 10%; transform: rotate(-35deg); background: rgba(0, 255, 0, 0.4); box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px var(--deep-black); }
+        .splatter.s3 { width: 60px; height: 60px; border-radius: 50%; top: 30%; right: 25%; background: rgba(0, 255, 0, 0.2); box-shadow: 0 0 10px var(--neon-green); }
+        .splatter.s4 { width: 200px; height: 40px; border-radius: 40% 60% 20% 80% / 80% 20% 80% 20%; top: 50%; left: 0%; transform: rotate(10deg); background: var(--neon-green); box-shadow: 0 0 25px var(--neon-green); filter: blur(1px); opacity: 0.9; }
+        .splatter.s5 { width: 90px; height: 90px; border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%; bottom: 20%; left: 15%; transform: rotate(80deg); background: rgba(0, 255, 0, 0.6); box-shadow: 0 0 18px var(--neon-green); filter: blur(3px); }
+
+        /* Brutalist grid overlay for exposed structure */
+        .grid-mask {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(0, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 15px /* Slightly wider grid lines */
+            ),
+            repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 15px
+            );
+            pointer-events: none;
+            z-index: 0; /* Keep it in the background */
+            mix-blend-mode: overlay; /* Blend with underlying elements */
+        }
+
+        /* High-gloss grime reflections */
+        .reflection {
+            position: absolute;
+            background: linear-gradient(to right, transparent, rgba(0, 255, 0, 0.1), transparent);
+            height: 100%;
+            width: 50px;
+            transform: skewX(-20deg); /* Skew for a dynamic, reflective look */
+            opacity: 0.5;
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 4s infinite alternate; /* Subtle flicker animation */
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.5; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.4; }
+        }
+
+        .reflection.left { left: -20px; }
+        .reflection.right { right: -20px; }
+
+        /* Large brutalist blocks (for main keywords) */
+        .block-lg {
+            background: var(--dark-grey);
+            border: 2px solid var(--neon-green);
+            box-shadow: inset 0 0 10px rgba(0,255,0,0.4);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            grid-column: span 2; /* Span multiple grid columns */
+            grid-row: span 2; /* Span multiple grid rows */
+            position: relative;
+        }
+        .block-lg::before { /* Inner pattern for brutalist texture */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,255,0,0.1),
+                rgba(0,255,0,0.1) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            opacity: 0.3;
+            mix-blend-mode: screen;
+        }
+
+        /* Small brutalist blocks (for supporting keywords) */
+        .block-sm {
+            background: var(--deep-black);
+            border: 1px solid var(--neon-green);
+            box-shadow: inset 0 0 3px rgba(0,255,0,0.3);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--neon-green);
+        }
+
+        /* Grid areas for specific placement within the collage-container */
+        .area-1 { grid-area: 1 / 1 / 3 / 3; z-index: 3; }
+        .area-2 { grid-area: 1 / 3 / 2 / 5; z-index: 2; }
+        .area-3 { grid-area: 2 / 3 / 3 / 4; z-index: 2; }
+        .area-4 { grid-area: 3 / 1 / 4 / 2; z-index: 2; }
+        .area-5 { grid-area: 4 / 2 / 5 / 4; z-index: 3; }
+        .area-6 { grid-area: 3 / 4 / 5 / 6; z-index: 2; }
+        .area-7 { grid-area: 1 / 5 / 2 / 7; z-index: 2; }
+        .area-8 { grid-area: 2 / 4 / 3 / 6; z-index: 2; }
+        .area-9 { grid-area: 5 / 1 / 6 / 3; z-index: 2; }
+        .area-10 { grid-area: 5 / 3 / 6 / 5; z-index: 2; }
+        .area-11 { grid-area: 4 / 1 / 5 / 2; z-index: 2; }
+        .area-12 { grid-area: 3 / 2 / 4 / 4; z-index: 2; }
+        .area-13 { grid-area: 2 / 6 / 3 / 7; z-index: 2; }
+        .area-14 { grid-area: 5 / 5 / 6 / 7; z-index: 2; }
+        .area-15 { grid-area: 4 / 4 / 5 / 6; z-index: 2; }
+        .area-16 { grid-area: 3 / 6 / 4 / 7; z-index: 2; }
+
+        /* Responsive adjustments for various screen sizes */
+        @media (max-width: 768px) {
+            .collage-container {
+                grid-template-columns: repeat(4, 1fr); /* More columns for smaller screens */
+                grid-template-rows: repeat(8, 1fr); /* More rows */
+                width: 95%;
+                min-height: 90vh;
+                gap: 3px;
+            }
+            .block-lg {
+                grid-column: span 2;
+                grid-row: span 2;
+                font-size: 1.2rem;
+            }
+            .block-sm {
+                font-size: 0.7rem;
+            }
+            .text-overlay {
+                font-size: clamp(0.7rem, 8vw, 2.5rem);
+                padding: 5px;
+            }
+            .splatter.s1 { width: 60px; height: 90px; top: 5%; left: 2%; }
+            .splatter.s2 { width: 100px; height: 50px; bottom: 2%; right: 5%; }
+            .splatter.s3, .splatter.s4, .splatter.s5 { display: none; } /* Hide some splatters on smaller screens */
+        }
+        @media (max-width: 480px) {
+            .collage-container {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+                gap: 2px;
+            }
+            .block-lg {
+                grid-column: span 2;
+                grid-row: span 2;
+                font-size: 0.9rem;
+            }
+            .block-sm {
+                font-size: 0.5rem;
+            }
+            .text-overlay {
+                font-size: clamp(0.5rem, 10vw, 2rem);
+            }
+            .splatter { display: none; /* Hide all splatters on very small screens for clarity */ }
+        }
+    </style>
+
+    <!-- Main collage container with brutalist grid and effects -->
+    <div class="collage-container">
+        <div class="grid-mask"></div> <!-- Overlaying grid lines for brutalist aesthetic -->
+
+        <!-- Digital paint splatter elements -->
+        <div class="splatter s1"></div>
+        <div class="splatter s2"></div>
+        <div class="splatter s3"></div>
+        <div class="splatter s4"></div>
+        <div class="splatter s5"></div>
+
+        <!-- Brutalist blocks filled with thematic text -->
+        <div class="collage-element block-lg area-1">
+            <span class="text-glitch">DEFIANCE</span>
+            <div class="reflection left"></div>
+        </div>
+
+        <div class="collage-element block-sm area-2">
+            UNCONFORMITY
+        </div>
+        <div class="collage-element block-sm area-3">
+            <span style="font-size:1.8em; line-height:1; font-family: monospace;">//</span> FUSE
+        </div>
+        <div class="collage-element block-sm area-4">
+            FLUX
+        </div>
+
+        <div class="collage-element block-lg area-5">
+            <span class="text-glitch" style="font-size: 0.8em;">GENDER<br>ANARCHY</span>
+            <div class="reflection right"></div>
+        </div>
+
+        <div class="collage-element block-sm area-6">
+            <span style="font-size:0.7em;">IDENTITY<br>CORRUPT</span>
+        </div>
+        <div class="collage-element block-sm area-7">
+            REJECT
+        </div>
+        <div class="collage-element block-sm area-8">
+            <span style="font-size:0.9em; transform: rotate(5deg);">FORM<br>DESTROY</span>
+        </div>
+        <div class="collage-element block-sm area-9">
+            VOID
+        </div>
+        <div class="collage-element block-sm area-10">
+            <span style="filter: invert(100%); mix-blend-mode: difference;">SYSTEM<br>ERROR</span>
+        </div>
+        <div class="collage-element block-sm area-11">
+            <span style="font-size:1.1em; line-height:1;">[CODE]</span>
+        </div>
+        <div class="collage-element block-sm area-12">
+            <span style="font-size:0.9em;">NO_LABELS</span>
+        </div>
+        <div class="collage-element block-sm area-13">
+            <span style="font-family: 'Courier New', monospace;">_NULL_</span>
+        </div>
+        <div class="collage-element block-sm area-14">
+            <span style="text-shadow: none; color: #000; background: var(--neon-green); padding: 2px;">REVOLT</span>
+        </div>
+        <div class="collage-element block-sm area-15">
+            <span style="filter: contrast(200%);">CHAOS</span>
+        </div>
+        <div class="collage-element block-sm area-16">
+            SHIFT
+        </div>
+
+        <!-- Grime/reflection elements for high-gloss aesthetic -->
+        <div class="collage-element" style="
+            position: absolute;
+            top: 20%; left: 60%;
+            width: 150px; height: 100px;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,255,0,0.2) 50%, rgba(0,0,0,0.8));
+            border: none;
+            box-shadow: 0 0 30px var(--neon-green);
+            transform: skewY(10deg) rotate(5deg);
+            z-index: 4;
+            mix-blend-mode: screen;
+            opacity: 0.8;
+            pointer-events: none;
+            "></div>
+
+         <div class="collage-element" style="
+            position: absolute;
+            bottom: 10%; right: 5%;
+            width: 200px; height: 50px;
+            background: linear-gradient(-45deg, rgba(0,0,0,0.9), rgba(0,255,0,0.3) 70%, rgba(0,0,0,0.9));
+            border: none;
+            box-shadow: 0 0 20px var(--neon-green), inset 0 0 10px rgba(0,255,0,0.5);
+            transform: skewX(-15deg) rotate(-10deg);
+            z-index: 4;
+            mix-blend-mode: screen;
+            opacity: 0.7;
+            pointer-events: none;
+            "></div>
+
+        <!-- Main thematic text overlays, aggressively positioned and animated -->
+        <div class="text-overlay" style="
+            top: 5%; left: 15%; width: 70%; text-align: left;
+            transform: rotate(-3deg);
+            ">
+            <span class="text-glitch">AGGRESSIVE</span>
+        </div>
+        <div class="text-overlay" style="
+            bottom: 5%; right: 10%; width: 80%; text-align: right;
+            transform: rotate(2deg);
+            ">
+            <span class="text-glitch" style="animation-delay: 0.5s;">ANDROGYNY</span>
+        </div>
+        <div class="text-overlay" style="
+            top: 40%; left: 0%; right: 0; text-align: center;
+            font-size: clamp(0.5rem, 3vw, 2rem); letter-spacing: 0.5em;
+            transform: rotate(0deg);
+            opacity: 0.6;
+            animation-delay: 1s;
+            ">
+            <span class="text-glitch">AS RESISTANCE</span>
+        </div>
+
     </div>
-    
-    <!-- FOOTER/SIGNATURE - DISRUPTED & SUBTLE -->
-    <p style="
-        font-size: 0.75em;
-        color: #444;
-        text-align: center;
-        width: 100%;
-        margin-top: 5vh;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 10;
-        transform: rotate(-3deg);
-        border-top: 1px dashed #333;
-        padding-top: 15px;
-        filter: blur(0.7px);
-        opacity: 0.7;
-    ">
-        TRANSMISSION ENDED &gt;&gt; ARCHIVE FRAGMENTED
-    </p>
-
-    <!-- ADDITIONAL DIGITAL PAINT SPLATTERS / GLOWS -->
-    <div style="
-        position: absolute;
-        width: 100px; height: 100px;
-        background-color: #00FF00;
-        border-radius: 50%;
-        box-shadow: 0 0 30px rgba(0, 255, 0, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.25);
-        top: 65%; left: 12%;
-        transform: rotate(50deg) scale(0.7) skewX(15deg);
-        opacity: 0.45;
-        z-index: 1;
-        mix-blend-mode: overlay;
-        filter: blur(3px);
-    "></div>
-    <div style="
-        position: absolute;
-        width: 70px; height: 70px;
-        background-color: #00FF00;
-        border-radius: 50%;
-        box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
-        top: 20%; left: 40%;
-        transform: rotate(-30deg) scale(0.5) skewY(10deg);
-        opacity: 0.3;
-        z-index: 2;
-        mix-blend-mode: color-dodge;
-        filter: blur(1.8px);
-    "></div>
-
-    <!-- BRUTALIST LINES / SHARDS -->
-    <div style="
-        position: absolute;
-        width: 3px; height: 90vh;
-        background-color: #222;
-        left: 22%; top: 5%;
-        transform: rotate(8deg);
-        opacity: 0.8;
-        z-index: 0;
-        box-shadow: 0 0 5px rgba(255,255,255,0.1);
-    "></div>
-    <div style="
-        position: absolute;
-        width: 110vw; height: 4px;
-        background-color: #111;
-        top: 70%; left: -5%;
-        transform: rotate(-12deg);
-        opacity: 0.6;
-        z-index: 0;
-        box-shadow: 0 0 5px rgba(0,0,0,0.8);
-    "></div>
-
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
