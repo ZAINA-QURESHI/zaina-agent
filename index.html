@@ -39,202 +39,227 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-27 22:02 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-28 00:05 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
             <div class="art-container p-4">
-                <div style="
-    /* Main container styles: Brutalist, deep black canvas */
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Contains all elements within viewport */
-    background-color: #000; /* Deep black */
-    font-family: 'Roboto Mono', monospace; /* Stark, digital font */
-    color: #0F0; /* Default neon green for text */
-    text-shadow: 0 0 5px #0F0, 0 0 10px #0F0; /* Basic neon glow */
-    box-sizing: border-box;
-    cursor: crosshair; /* Digital interface feel */
-    display: block; /* Ensure it behaves like a block element */
-">
-    <!-- Inline CSS for the collage elements -->
+                <div class="radical-glitch-container" style="position: relative; width: 100%; min-height: 100vh; overflow: hidden; background-color: #000000; display: flex; align-items: center; justify-content: center;">
     <style>
-        /* Base styles for text elements */
+        /* General styling for the entire collage */
+        :root {
+            --neon-green: #00FF00;
+            --deep-black: #000000;
+            --grime-grey: #151515;
+            --light-glitch: #00AA00;
+            --dark-glitch: #003300;
+        }
+
+        /* Reset and base styles for elements within the collage container */
+        .anti-zionist-glitch-collage * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Mono', monospace, 'Arial Black', sans-serif;
+            color: var(--neon-green);
+            text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--light-glitch);
+            pointer-events: none; /* Make everything non-interactive for a static collage effect */
+            user-select: none; /* Prevent text selection */
+        }
+
+        /* Main collage container styles */
+        .anti-zionist-glitch-collage {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            background: var(--deep-black);
+            overflow: hidden;
+            border: 5px solid var(--neon-green);
+            box-shadow: inset 0 0 20px var(--neon-green), 0 0 30px rgba(0, 255, 0, 0.5);
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%2300FF00" d="M10 21l-8-8 8-8 2.12 2.12-5.5 5.5 5.5 5.5-2.12 2.12zm4-18l8 8-8 8-2.12-2.12 5.5-5.5-5.5-5.5L14 3z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>') 12 12, crosshair; /* Glitchy cursor */
+        }
+
+        /* Text elements - Brutalist, distorted, glowing */
         .glitch-text {
             position: absolute;
-            font-size: clamp(1em, 5vw, 4em); /* Responsive font size for large text */
             font-weight: 900;
-            line-height: 1;
-            color: #0F0;
-            text-shadow: 0 0 5px #0F0, 0 0 15px #0F0, 0 0 30px rgba(0, 255, 0, 0.4); /* Intense neon glow */
+            line-height: 0.9;
+            text-transform: uppercase;
             letter-spacing: -2px;
-            z-index: 10; /* Ensures text is on top */
-            mix-blend-mode: screen; /* For vibrant, overlapping text effects */
-            transform-origin: center center;
+            z-index: 100; /* High z-index to ensure text is visible */
+            mix-blend-mode: lighten; /* For luminous effect over other elements */
+            filter: drop-shadow(0 0 3px var(--neon-green));
+            animation: text-flicker 1.5s infinite alternate; /* Dynamic glitch effect */
         }
+        .glitch-text.h1 { font-size: 8vw; top: 8%; left: 5%; transform: skewX(-10deg) translateX(calc(var(--glitch-offset, 0px) * 1)); }
+        .glitch-text.h2 { font-size: 5vw; top: 28%; right: 8%; transform: rotate(3deg) skewY(3deg) translateX(calc(var(--glitch-offset, 0px) * -1)); }
+        .glitch-text.h3 { font-size: 3vw; bottom: 5%; left: 18%; transform: rotate(-8deg) translateX(calc(var(--glitch-offset, 0px) * 0.5)); }
+        .glitch-text.fragment { font-size: 1.5vw; opacity: 0.8; letter-spacing: 0px; word-spacing: 2px; }
+        .glitch-text.fragment-small { font-size: 1vw; opacity: 0.6; line-height: 1.2; }
 
-        /* Styles for blocky data/grime elements */
-        .data-block {
+        /* Glitch boxes / Overlapping elements */
+        .glitch-box {
             position: absolute;
-            background-color: rgba(0, 255, 0, 0.1); /* Semi-transparent neon green */
-            border: 1px solid #0F0;
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 5px rgba(0, 255, 0, 0.3); /* High-gloss grime glow */
-            z-index: 5;
-            transform-origin: center center;
-            backdrop-filter: blur(2px) brightness(1.2); /* Subtle digital blur and brightness for grime */
-            mix-blend-mode: lighten; /* Lighter blending for overlap */
-            opacity: 0.9;
+            background: rgba(0, 255, 0, 0.1); /* Semi-transparent green */
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green), inset 0 0 4px var(--light-glitch);
+            z-index: 50;
+            filter: blur(0.5px);
+            mix-blend-mode: screen; /* Interesting blend mode for overlays */
+            transform-origin: center;
         }
+        .glitch-box:nth-child(3n+1) { transform: rotate(3deg) skewY(2deg); background: var(--grime-grey); border-color: var(--light-glitch); }
+        .glitch-box:nth-child(3n+2) { transform: rotate(-5deg) skewX(-3deg); background: rgba(0,255,0,0.05); }
+        .glitch-box:nth-child(3n+3) { transform: rotate(10deg); background: var(--dark-glitch); border-width: 2px; }
 
-        /* Styles for digital paint splatters */
-        .paint-splatter {
+        /* Digital paint splatters / Grime */
+        .splatter {
             position: absolute;
-            background-color: #0F0;
-            box-shadow: 0 0 10px #0F0, 0 0 25px rgba(0, 255, 0, 0.6);
-            border-radius: 50%; /* Default to circular, can be overridden */
-            z-index: 7;
-            mix-blend-mode: screen; /* Brightens areas where it overlaps */
-            opacity: 0.8;
-            transform-origin: center center;
+            background: var(--neon-green);
+            opacity: 0.2;
+            filter: blur(12px) brightness(1.5);
+            z-index: 10;
+            mix-blend-mode: overlay; /* Creates gritty, glossy interaction */
         }
+        .splatter-a { width: 18vw; height: 12vw; top: -5%; left: -5%; clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); transform: rotate(25deg); }
+        .splatter-b { width: 25vw; height: 18vw; bottom: -5%; right: -5%; clip-path: circle(60% at 50% 50%); transform: scaleX(0.8) rotate(-35deg); background: var(--light-glitch); opacity: 0.15; }
+        .splatter-c { width: 15vw; height: 15vw; top: 15%; left: 35%; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); transform: rotate(50deg); opacity: 0.25; }
+        .splatter-d { width: 8vw; height: 8vw; bottom: 30%; left: 10%; clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); transform: rotate(15deg); background: var(--dark-glitch); opacity: 0.4;}
 
-        /* Styles for sparse line art / grid elements */
-        .line-art {
+        /* Glitchy lines and separators */
+        .line-glitch {
             position: absolute;
-            background-color: #0F0;
-            box-shadow: 0 0 5px #0F0;
-            z-index: 6;
-            transform-origin: center center;
+            height: 2px;
+            background: linear-gradient(to right, var(--neon-green) 0%, transparent 80%);
+            z-index: 70;
+            box-shadow: 0 0 8px var(--neon-green);
             mix-blend-mode: screen;
-            opacity: 0.4;
         }
 
-        /* Styles for smaller, detailed text */
-        .small-text {
+        /* High-gloss grime overlay for overall texture */
+        .high-gloss-overlay {
             position: absolute;
-            font-size: clamp(0.6em, 2vw, 1em); /* Responsive smaller text */
-            color: #0F0;
-            text-shadow: 0 0 3px #0F0;
-            opacity: 0.7;
-            z-index: 9;
-            pointer-events: none; /* Make these decorative and non-interactive */
-            letter-spacing: 0.05em;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            background: linear-gradient(45deg, rgba(0,255,0,0.08) 0%, rgba(0,0,0,0.6) 50%, rgba(0,255,0,0.08) 100%);
+            mix-blend-mode: overlay; /* Creates interesting interactions */
+            opacity: 0.9;
+            z-index: 200; /* Topmost visual layer */
         }
 
-        /* Keyframe animations for dynamic effects */
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; }
-            20% { transform: translate(-2px, 2px) rotate(0.5deg); opacity: 0.9; }
-            40% { transform: translate(2px, -2px) rotate(-0.5deg); opacity: 1; }
-            60% { transform: translate(-1px, 1px) rotate(0.2deg); opacity: 0.95; }
-            80% { transform: translate(1px, -1px) rotate(-0.2deg); opacity: 1; }
-            100% { transform: translate(0, 0); opacity: 1; }
+        /* Brutalist blocks - solid, structured yet messy */
+        .brutalist-block {
+            position: absolute;
+            background: var(--grime-grey);
+            border: 3px solid var(--neon-green);
+            box-shadow: inset 0 0 15px var(--neon-green), 0 0 10px rgba(0,255,0,0.3);
+            z-index: 80;
+            text-align: center;
+            padding: 1.5vw;
+            font-size: 1.2vw;
+            text-transform: uppercase;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+            mix-blend-mode: lighten;
         }
-        .animate-glitch { animation: glitch 1.5s infinite alternate ease-in-out; }
+        .brutalist-block:before { /* Inner pattern for brutalist texture */
+            content: '';
+            position: absolute;
+            top: -10%; left: -10%; right: -10%; bottom: -10%;
+            background: repeating-linear-gradient(45deg, var(--neon-green), var(--neon-green) 2px, transparent 2px, transparent 4px);
+            opacity: 0.07;
+            z-index: -1;
+        }
+        .brutalist-block-a { width: 35vw; height: 18vw; top: 12%; left: 25%; transform: rotate(-8deg); }
+        .brutalist-block-b { width: 22vw; height: 28vw; bottom: 8%; right: 22%; transform: rotate(10deg) skewX(8deg); }
+        .brutalist-block-c { width: 12vw; height: 12vw; top: 3%; right: 3%; transform: rotate(90deg); opacity: 0.9; font-size: 1vw;}
+        .brutalist-block-d { width: 15vw; height: 8vw; top: 50%; left: 5%; transform: rotate(-20deg) skewY(-5deg); background: var(--dark-glitch); font-size: 0.9vw; }
 
-        @keyframes fadePulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+        /* Animation for text flickering */
+        @keyframes text-flicker {
+            0%, 100% { opacity: 1; text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--light-glitch); transform: translateX(0px); }
+            2% { opacity: 0.9; text-shadow: 0 0 3px var(--neon-green), 0 0 6px var(--light-glitch); transform: translateX(1px); }
+            4% { opacity: 1; text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--light-glitch); transform: translateX(-1px); }
+            6% { opacity: 0.95; text-shadow: 0 0 2px var(--neon-green), 0 0 4px var(--light-glitch); transform: translateX(0px); }
+            8% { opacity: 1; text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--light-glitch); transform: translateX(1px); }
+            10% { opacity: 0.85; text-shadow: 0 0 2px var(--dark-glitch), 0 0 4px var(--dark-glitch); transform: translateX(-2px); }
+            12% { opacity: 1; text-shadow: 0 0 4px var(--neon-green), 0 0 8px var(--light-glitch); transform: translateX(0px); }
         }
-        .animate-pulse { animation: fadePulse 2s infinite alternate ease-in-out; }
-
-        @keyframes rotateJitter {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(1deg); }
-            50% { transform: rotate(-1deg); }
-            75% { transform: rotate(0.5deg); }
-            100% { transform: rotate(0deg); }
-        }
-        .animate-jitter { animation: rotateJitter 3s infinite ease-in-out; }
-
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 5px #0F0; }
-            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
-        }
-        .animate-flicker { animation: flicker 4s infinite linear; }
     </style>
 
-    <!-- Large, brutalist text elements about the theme -->
-    <h1 class="glitch-text animate-glitch" style="top: 10%; left: 5%; font-size: 8vw; transform: rotate(-5deg);">GHETTO<br>DIGITAL</h1>
-    <h1 class="glitch-text animate-glitch animate-flicker" style="bottom: 15%; right: 8%; font-size: 6vw; transform: rotate(3deg); letter-spacing: 0;">INTER<br>SECTIONAL</h1>
-    <h2 class="glitch-text animate-pulse" style="top: 40%; left: 30%; font-size: 4vw; color: rgba(0, 255, 0, 0.8);">RECLAIM.</h2>
-    <h2 class="glitch-text animate-pulse" style="top: 50%; left: 50%; font-size: 4vw; color: rgba(0, 255, 0, 0.8); transform: rotate(2deg);">RECODE.</h2>
-    <h2 class="glitch-text animate-pulse" style="top: 60%; left: 70%; font-size: 4vw; color: rgba(0, 255, 0, 0.8); transform: rotate(-3deg);">REBOOT.</h2>
+    <div class="anti-zionist-glitch-collage">
+        <!-- High gloss overlay for overall effect -->
+        <div class="high-gloss-overlay"></div>
 
-    <!-- Data blocks / Grime elements -->
-    <div class="data-block animate-jitter" style="width: 150px; height: 100px; top: 5%; left: 70%; transform: rotate(10deg);"></div>
-    <div class="data-block animate-jitter" style="width: 200px; height: 70px; top: 30%; left: 10%; transform: rotate(-8deg);"></div>
-    <div class="data-block animate-jitter" style="width: 120px; height: 180px; bottom: 20%; right: 5%; transform: rotate(15deg);"></div>
-    <div class="data-block animate-jitter" style="width: 80px; height: 80px; top: 50%; left: 20%; background-color: rgba(0, 255, 0, 0.2); border-radius: 5px; transform: rotate(25deg);"></div>
-    <div class="data-block animate-jitter" style="width: 100px; height: 150px; top: 15%; right: 25%; background-color: rgba(0, 255, 0, 0.15); transform: rotate(-12deg);"></div>
+        <!-- Digital paint splatters / Grime elements -->
+        <div class="splatter splatter-a"></div>
+        <div class="splatter splatter-b"></div>
+        <div class="splatter splatter-c"></div>
+        <div class="splatter splatter-d"></div>
 
-    <!-- Digital paint splatters, varied shapes -->
-    <div class="paint-splatter animate-pulse" style="width: 40px; height: 40px; top: 18%; left: 60%;"></div>
-    <div class="paint-splatter animate-pulse" style="width: 60px; height: 60px; top: 70%; left: 40%; transform: rotate(30deg); border-radius: 10% 50% 30% 70%;"></div>
-    <div class="paint-splatter animate-pulse" style="width: 25px; height: 25px; bottom: 10%; left: 15%;"></div>
-    <div class="paint-splatter animate-pulse" style="width: 70px; height: 30px; top: 45%; right: 15%; border-radius: 50% 10% 50% 10%; transform: rotate(-20deg);"></div>
-    <div class="paint-splatter animate-pulse" style="width: 30px; height: 80px; top: 25%; left: 40%; border-radius: 60% 30% 60% 30%; transform: rotate(50deg);"></div>
+        <!-- Glitch boxes / Overlapping elements for chaotic structure -->
+        <div class="glitch-box" style="width: 25vw; height: 18vw; top: 3%; left: 60%; background: var(--grime-grey); opacity: 0.7; transform: rotate(15deg);"></div>
+        <div class="glitch-box" style="width: 12vw; height: 22vw; top: 35%; left: 10%; background: rgba(0,255,0,0.25); border: 2px dashed var(--neon-green); transform: rotate(-7deg);"></div>
+        <div class="glitch-box" style="width: 7vw; height: 7vw; bottom: 15%; left: 3%; background: var(--light-glitch); opacity: 0.95; transform: rotate(20deg);"></div>
+        <div class="glitch-box" style="width: 18vw; height: 10vw; top: 65%; right: 10%; background: var(--dark-glitch); opacity: 0.8; transform: skewY(10deg);"></div>
 
-    <!-- Line art / digital noise for structure and chaos -->
-    <div class="line-art" style="width: 2px; height: 100%; top: 0; left: 49.5%; transform: rotate(0deg); opacity: 0.3;"></div>
-    <div class="line-art" style="width: 100%; height: 2px; top: 50%; left: 0; transform: rotate(0deg); opacity: 0.3;"></div>
-    <div class="line-art animate-glitch" style="width: 5px; height: 80px; top: 10%; left: 20%; transform: rotate(45deg); opacity: 0.6;"></div>
-    <div class="line-art animate-glitch" style="width: 80px; height: 5px; bottom: 5%; right: 30%; transform: rotate(-30deg); opacity: 0.6;"></div>
+        <!-- Brutalist Blocks with anti-zionist messaging -->
+        <div class="brutalist-block brutalist-block-a">
+            <p>DE-COLONIZE <br> SYSTEM-ERROR <br> RE-CALIBRATE</p>
+        </div>
+        <div class="brutalist-block brutalist-block-b">
+            <p>OCCUPATION // ERROR // <br> UN-CODE // RE-WRITE <br> DATA CORRUPTION</p>
+        </div>
+        <div class="brutalist-block brutalist-block-c">
+            <p>GLITCH <br> REALITY <br> <span style="font-size: 0.8em;">[VER. 404]</span></p>
+        </div>
+        <div class="brutalist-block brutalist-block-d">
+            <p>RESIST<br>THE<br>SIMULATION</p>
+        </div>
 
-    <!-- Small text elements for detail and sub-themes -->
-    <span class="small-text" style="top: 25%; left: 65%; transform: rotate(-10deg);">SIGNAL // NOISE</span>
-    <span class="small-text animate-flicker" style="bottom: 5%; left: 5%; transform: rotate(5deg);">WIRED : UNWIRED</span>
-    <span class="small-text" style="top: 5%; right: 5%; font-size: 0.8em; opacity: 0.5;">[DATA SCRAPE 001]</span>
-    <span class="small-text" style="top: 80%; left: 30%; transform: rotate(15deg); font-size: 1.2em;">LAG_DELAY_GLITCH</span>
-    <span class="small-text animate-glitch" style="top: 70%; left: 60%; transform: rotate(-7deg);">BROKEN//PIXEL</span>
-    <span class="small-text" style="top: 35%; right: 10%; transform: rotate(20deg); font-size: 0.9em;">INFRASTRUCTURE / SURVIVAL</span>
+        <!-- Glitch Text conveying the theme -->
+        <h1 class="glitch-text h1">
+            ANTI-ZIONIST<br>
+            GLITCH_THEORY<br>
+            //010101//
+        </h1>
+        <h2 class="glitch-text h2">
+            SYSTEM_OVERRIDE<br>
+            #FREEDOM_NOW<br>
+            ERROR: ISRAEL
+        </h2>
+        <p class="glitch-text fragment" style="top: 60%; left: 50%; transform: rotate(-2deg); font-size: 1.8vw;">
+            REALITY IS A BUG<br>
+            PATCH THE LIES
+        </p>
+        <p class="glitch-text fragment" style="top: 80%; right: 5%; transform: skewY(5deg);">
+            NO_FUTURE<br>
+            ON STOLEN LAND
+        </p>
+        <p class="glitch-text fragment fragment-small" style="top: 50%; left: 5%; transform: rotate(10deg); opacity: 0.5;">
+            [DATA_FRAGMENT: HISTORY_ERASED]<br>
+            [RECOVERING: TRUTH_FILES]<br>
+            (ACCESS DENIED)
+        </p>
+        <p class="glitch-text fragment fragment-small" style="bottom: 2%; right: 50%; transform: rotate(2deg) skewX(3deg); opacity: 0.4; width: 15vw;">
+            // Palestine Will Be Free //
+        </p>
 
-    <!-- More aggressive paint-like elements / shapes for grime and depth -->
-    <div class="data-block" style="
-        width: 150px; height: 60px; 
-        bottom: 5%; left: 40%; 
-        transform: skewX(-20deg) rotate(5deg); 
-        background-color: rgba(0, 255, 0, 0.05); 
-        border: none; 
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
-        mix-blend-mode: screen;
-        z-index: 4;
-        opacity: 0.7;
-    "></div>
-    <div class="paint-splatter" style="
-        width: 100px; height: 100px; 
-        top: 60%; right: 10%; 
-        border-radius: 70% 30% 60% 40%; 
-        background-color: rgba(0, 255, 0, 0.7); 
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.9), inset 0 0 10px rgba(0, 255, 0, 0.5);
-        transform: rotate(20deg);
-        z-index: 8;
-        mix-blend-mode: hard-light;
-    "></div>
-    <div class="data-block" style="
-        width: 250px; height: 30px; 
-        top: 20%; left: 35%; 
-        transform: rotate(15deg) skewY(5deg); 
-        background-color: rgba(0, 255, 0, 0.2); 
-        border: 2px solid #0F0;
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        mix-blend-mode: overlay;
-        z-index: 3;
-    "></div>
-    <div class="paint-splatter" style="
-        width: 50px; height: 50px; 
-        top: 10%; left: 10%; 
-        background-color: #0F0; 
-        border-radius: 10% 90% 20% 80%; 
-        box-shadow: 0 0 10px #0F0; 
-        transform: rotate(-30deg);
-        mix-blend-mode: difference;
-        opacity: 0.9;
-        z-index: 7;
-    "></div>
+        <!-- Glitchy lines and structural elements -->
+        <div class="line-glitch" style="width: 70vw; top: 25%; left: -10%; transform: rotate(10deg);"></div>
+        <div class="line-glitch" style="width: 50vw; top: 70%; right: -5%; transform: rotate(-5deg); background: linear-gradient(to left, var(--light-glitch), transparent);"></div>
+        <div class="line-glitch" style="width: 30vw; top: 90%; left: 30%; transform: rotate(20deg); height: 1px;"></div>
+        <div class="line-glitch" style="width: 40vw; top: 45%; left: -20%; transform: rotate(-15deg); height: 3px; background: linear-gradient(to right, var(--dark-glitch), transparent);"></div>
+
+        <!-- More abstract elements for added grunge/glitch -->
+        <div style="position: absolute; top: 5%; right: 20%; width: 50px; height: 50px; background: var(--neon-green); opacity: 0.1; filter: blur(5px); transform: rotate(45deg); z-index: 40;"></div>
+        <div style="position: absolute; bottom: 15%; left: 40%; width: 80px; height: 3px; background: var(--light-glitch); box-shadow: 0 0 10px var(--light-glitch); transform: skewX(30deg); z-index: 60;"></div>
+        <div style="position: absolute; top: 30%; right: 30%; width: 30px; height: 30px; border: 1px dashed var(--neon-green); transform: rotate(60deg) scale(1.5); opacity: 0.7; z-index: 55;"></div>
+    </div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
+                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
