@@ -39,349 +39,391 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-29 16:49 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-29 19:36 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                
-<div class="androgyny-collage">
+                <div class="demolition-collage-container">
     <style>
-        /*
-         * CORE STYLES & VARIABLES: AGGRESSIVE ANDROGYNY AS RESISTANCE
-         * Brutalist, High-Gloss Grime, Digital Paint Splatters.
-         * Colors: Vibrant Neon Green & Deep Blacks.
-         */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Using an @import inside style for a specific font as an alternative, though typically disallowed by strict "only a div" rules. If strict, fallback to monospace. */
+
         :root {
-            --neon-green: #00FF00; /* Pure, vibrant neon green */
-            --deep-black: #000; /* Absolute black for stark contrast */
-            --off-black: #111; /* Slightly lighter black for depth */
-            --light-grey: #CCC; /* For subtle contrast in secondary text */
+            --neon-green: #39FF14;
+            --deep-black: #0A0A0A;
+            --grime-dark: #1A1A1A;
+            --grime-texture-1: rgba(57, 255, 20, 0.1);
+            --grime-texture-2: rgba(26, 26, 26, 0.7);
         }
 
-        /* Reset & Base Styles (scoped to .androgyny-collage to avoid global conflicts) */
-        .androgyny-collage * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', 'Arial Black', sans-serif; /* Prefer Inter for modern brutalism, fallback to Arial Black */
-            color: var(--neon-green); /* Default text color */
-            text-shadow: 0 0 3px var(--neon-green); /* Subtle neon glow */
-            line-height: 1.1; /* Tighter line height for brutalist text */
-        }
-
-        /* Main Container: Full viewport, deep black background with neon border/glow */
-        .androgyny-collage {
+        .demolition-collage-container {
             position: relative;
             width: 100vw;
             height: 100vh;
-            background-color: var(--deep-black);
-            overflow: hidden; /* Crucial for containing absolutely positioned elements */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border: 5px solid var(--neon-green); /* Stark brutalist border */
-            box-shadow: 0 0 30px var(--neon-green) inset, 0 0 60px rgba(0,255,0,0.7); /* Inner glow and stronger outer aura */
-            filter: contrast(1.1) brightness(1.1); /* Enhance contrast and vibrancy */
-            z-index: 1; /* Ensure it's the base layer */
-        }
-
-        /* Text Elements: Positioned absolutely for collage effect, aggressive styling */
-        .androgyny-collage h1, .androgyny-collage h2, .androgyny-collage p, .androgyny-collage span {
-            position: absolute;
-            z-index: 100; /* Ensure text is on top of most elements */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            pointer-events: none; /* Allows mouse events to pass through text */
-        }
-
-        .androgyny-collage h1 {
-            font-size: clamp(2em, 10vw, 8em); /* Responsive, massive text */
-            font-weight: 900;
-            color: var(--neon-green);
-            -webkit-text-stroke: 1px var(--neon-green); /* Brutalist outline */
-            text-shadow: 0 0 15px var(--neon-green), 0 0 40px var(--neon-green); /* Intense glow */
-            filter: drop-shadow(0 0 15px var(--neon-green)); /* More depth to glow */
-            mix-blend-mode: lighten; /* Aggressive text blending for digital feel */
-        }
-
-        .androgyny-collage h2 {
-            font-size: clamp(1.5em, 5vw, 4em);
-            font-weight: 700;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green);
-            mix-blend-mode: screen; /* Brighter, layered effect */
-        }
-
-        .androgyny-collage p {
-            font-size: clamp(0.8em, 2vw, 1.5em);
-            font-weight: 400;
-            color: var(--light-grey); /* Softer for legibility */
-            text-shadow: none; /* Less glow for paragraph text */
-            letter-spacing: 1px;
-            mix-blend-mode: overlay; /* Text interacts with layers beneath */
-            font-family: 'Consolas', monospace; /* Digital, code-like font */
-        }
-
-        /* Brutalist Blocks & Grime: Abstract shapes, distorted, layered */
-        .androgyny-collage .block {
-            position: absolute;
-            background-color: var(--off-black); /* Off-black for texture */
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), 0 0 50px rgba(0,255,0,0.5); /* Glowing edges */
-            filter: brightness(1.2) contrast(1.2);
-            transform-origin: center center;
-            z-index: 10; /* Layers behind main text, but above background */
-            mix-blend-mode: hard-light; /* Aggressive interaction with other layers */
-            opacity: 0.7;
-        }
-
-        .androgyny-collage .block:nth-of-type(1) { /* Large background block, skewed */
-            width: 80%; height: 60%;
-            top: 10%; left: 10%;
-            background: linear-gradient(45deg, var(--off-black) 0%, rgba(0,0,0,0.8) 50%, var(--off-black) 100%);
-            opacity: 0.8;
-            transform: skewX(-5deg) rotate(2deg);
-            z-index: 0; /* Deepest layer */
-            mix-blend-mode: normal;
-        }
-
-        .androgyny-collage .block:nth-of-type(2) { /* Prominent glowing block */
-            width: 40%; height: 30%;
-            bottom: 5%; right: 5%;
-            transform: rotate(15deg);
-            background: linear-gradient(135deg, var(--neon-green) 0%, rgba(0,255,0,0.5) 50%, var(--neon-green) 100%);
-            mix-blend-mode: screen; /* High-gloss grime effect */
-            opacity: 0.4;
-            z-index: 20;
-            filter: blur(2px) brightness(1.5);
-        }
-
-        .androgyny-collage .block:nth-of-type(3) { /* Distorted, splatter-like shape */
-            width: 20%; height: 20%;
-            top: 5%; left: 50%;
-            background: radial-gradient(circle, var(--neon-green) 0%, rgba(0,255,0,0.2) 70%, transparent 100%);
-            border: none;
-            box-shadow: 0 0 25px var(--neon-green);
-            transform: translateX(-50%) rotate(-30deg) scale(1.5);
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Aggressive, sharp shape */
-            opacity: 0.3;
-            z-index: 30;
-            filter: blur(5px);
-            mix-blend-mode: color-dodge;
-        }
-
-        .androgyny-collage .block:nth-of-type(4) { /* Vertical brutalist slab */
-            width: 15%; height: 40%;
-            top: 30%; left: 10%;
+            overflow: hidden;
             background: var(--deep-black);
-            border-left: 5px solid var(--neon-green);
-            transform: skewY(10deg);
-            z-index: 40;
-            box-shadow: -5px 0 20px var(--neon-green);
-            mix-blend-mode: overlay;
+            font-family: 'Press Start 2P', 'Courier New', Courier, monospace; /* Fallback for font */
+            color: var(--neon-green);
+            background-image:
+                radial-gradient(circle at 15% 50%, var(--grime-texture-1) 1%, transparent 10%),
+                radial-gradient(circle at 85% 20%, var(--grime-texture-1) 1%, transparent 12%),
+                linear-gradient(135deg, var(--grime-dark) 0%, var(--deep-black) 100%);
+            background-blend-mode: overlay, multiply, normal;
+            display: block;
+            box-sizing: border-box;
+            line-height: 1.1;
         }
 
-        .androgyny-collage .block:nth-of-type(5) { /* Thin glitch bar */
-            width: 5px; height: 80%;
-            top: 10%; left: 90%;
-            background: var(--neon-green);
-            border: none;
-            box-shadow: 0 0 10px var(--neon-green);
-            transform: rotate(3deg) skewY(-5deg);
-            z-index: 50;
-            mix-blend-mode: screen;
-        }
-
-        /* Digital Paint Splatters (Pseudo-elements for abstract shapes) */
-        .androgyny-collage::before,
-        .androgyny-collage::after {
-            content: '';
+        /* Basic elements for text and shapes */
+        .demolition-collage-container > div,
+        .demolition-collage-container > h1,
+        .demolition-collage-container > p,
+        .demolition-collage-container > a { /* Added 'a' for the CTA */
             position: absolute;
+            box-sizing: border-box;
+            line-height: 1.1;
+        }
+
+        /* Helper classes for text effects */
+        .text-glow {
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px rgba(57, 255, 20, 0.5);
+        }
+
+        .text-heavy {
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            word-break: break-all; /* Brutalist word breaking */
+        }
+
+        /* Splatter elements */
+        .splatter {
+            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(57, 255, 20, 0.5) 30%, rgba(57, 255, 20, 0.2) 60%, transparent 100%);
+            border-radius: 50%; /* Base for irregular shapes */
+            filter: blur(2px) brightness(150%);
+            opacity: 0.7;
+            transform-origin: center center;
+            pointer-events: none; /* Don't block interaction with text */
+            z-index: 5;
+        }
+
+        .splatter-1 {
+            width: 120px; height: 120px;
+            top: 5%; left: 10%;
+            transform: rotate(30deg) scale(1.2);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+        .splatter-2 {
+            width: 80px; height: 80px;
+            bottom: 15%; right: 5%;
+            transform: rotate(-45deg) scale(0.9);
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 100%, 0% 100%);
+            filter: blur(1px) brightness(120%);
+            opacity: 0.5;
+        }
+        .splatter-3 {
+            width: 200px; height: 70px;
+            top: 30%; right: 15%;
+            transform: rotate(15deg) scaleX(1.5);
+            clip-path: ellipse(50% 50% at 50% 50%);
+            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(57, 255, 20, 0.3) 50%, transparent 100%);
+        }
+        .splatter-4 {
+            width: 90px; height: 90px;
+            bottom: 5%; left: 30%;
+            transform: rotate(70deg) scale(0.8);
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            filter: blur(3px) brightness(180%);
+            opacity: 0.6;
+        }
+        .splatter-5 {
+            width: 150px; height: 100px;
+            top: 60%; left: 5%;
+            background: rgba(57, 255, 20, 0.05);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            filter: blur(10px);
+            opacity: 0.3;
+        }
+
+        /* Structural elements - simulating debris/fragments */
+        .fragment {
+            background: var(--grime-dark);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green);
+            transform-origin: center center;
+            z-index: 10;
+        }
+        .fragment-1 {
+            width: 150px; height: 50px;
+            top: 20%; left: 5%;
+            transform: rotate(-10deg);
+            background: linear-gradient(to right, var(--grime-dark), #2c2c2c, var(--grime-dark));
+        }
+        .fragment-2 {
+            width: 80px; height: 100px;
+            bottom: 10%; right: 20%;
+            transform: rotate(20deg) scaleX(0.8);
+            background: linear-gradient(to bottom, var(--grime-dark), #2c2c2c, var(--grime-dark));
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 15% 85%);
+        }
+        .fragment-3 {
+            width: 60px; height: 60px;
+            top: 50%; left: 45%;
+            transform: rotate(90deg) scale(0.7);
+            background: var(--grime-dark);
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            opacity: 0.8;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* Main Headline */
+        .headline {
+            font-size: clamp(3rem, 8vw, 6rem);
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            text-align: center;
+            z-index: 20;
+            color: var(--neon-green);
+            filter: drop-shadow(0 0 10px var(--neon-green)) drop-shadow(0 0 20px rgba(57, 255, 20, 0.5));
+            letter-spacing: 0.15em;
+            word-spacing: 0.2em;
+            font-weight: 900;
+        }
+
+        /* Subtitle/Sub-elements */
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 2rem);
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 80%;
+            text-align: center;
+            z-index: 15;
+            color: var(--neon-green);
+            opacity: 0.9;
+            text-shadow: 0 0 5px var(--neon-green);
+            letter-spacing: 0.08em;
+        }
+
+        .text-block-1 {
+            font-size: clamp(0.7rem, 1.8vw, 1.2rem);
+            width: 28%;
+            top: 55%;
+            left: 8%;
+            transform: rotate(5deg);
+            background: var(--grime-dark);
+            padding: 15px;
+            border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: inset 0 0 5px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.5);
+            z-index: 18;
+            color: var(--neon-green);
+            opacity: 0.9;
+            word-wrap: break-word;
+            font-weight: normal;
+        }
+
+        .text-block-2 {
+            font-size: clamp(0.6rem, 1.5vw, 1rem);
+            width: 25%;
+            bottom: 20%;
+            right: 10%;
+            transform: rotate(-10deg);
+            background: var(--grime-dark);
+            padding: 10px 15px;
+            border-left: 3px solid var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+            z-index: 17;
+            color: var(--neon-green);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .call-to-action {
+            font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%) rotate(2deg);
+            padding: 10px 20px;
             background: var(--neon-green);
-            border-radius: 50%; /* Starting point for organic splatter */
-            filter: blur(15px); /* Softens edges like paint */
-            opacity: 0.2;
-            z-index: 60; /* Overlap some blocks */
-            mix-blend-mode: screen; /* High-gloss, luminous effect */
+            color: var(--deep-black);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--neon-green);
+            filter: brightness(120%);
+            letter-spacing: 0.1em;
+            font-weight: 900;
+            z-index: 25;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .call-to-action:hover {
+            transform: translateX(-50%) rotate(2deg) scale(1.05);
             box-shadow: 0 0 30px var(--neon-green);
         }
 
-        .androgyny-collage::before {
-            width: 150px; height: 150px;
-            top: 20%; left: 70%;
-            transform: rotate(45deg) scaleX(0.8) skewY(10deg);
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 15%, 100% 100%, 85% 85%, 0% 100%, 15% 85%); /* Jagged, aggressive shape */
-            background: radial-gradient(circle, var(--neon-green) 0%, rgba(0,255,0,0.0) 70%);
-            opacity: 0.25;
-        }
-
-        .androgyny-collage::after {
-            width: 200px; height: 100px;
-            bottom: 10%; left: 15%;
-            transform: rotate(-25deg) scaleY(0.7) skewX(-15deg);
-            clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%); /* Another dynamic shape */
-            background: radial-gradient(circle, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.0) 70%);
-            box-shadow: 0 0 40px var(--neon-green);
-            opacity: 0.3;
-        }
-
-        /* Specific Text Placement & Transforms for Collage Effect */
-        .androgyny-collage h1.title {
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%) rotate(-5deg); /* Slightly off-kilter */
-            white-space: nowrap; /* Keep multi-line text together */
-        }
-
-        .androgyny-collage h2.subtitle {
-            bottom: 30%;
-            left: 20%;
-            transform: rotate(10deg);
-            white-space: nowrap;
-        }
-
-        .androgyny-collage p.quote {
-            top: 65%;
-            left: 70%;
-            width: 20%; /* Constrain width for a block of text */
-            transform: translateX(-50%) rotate(-15deg);
-            text-align: left;
-            font-style: italic;
-            color: var(--light-grey);
-            text-shadow: none;
-            opacity: 0.8;
-            font-family: 'Consolas', monospace;
-        }
-
-        .androgyny-collage .tagline {
-            bottom: 10%;
-            right: 5%;
-            font-size: 0.9em;
-            letter-spacing: 3px;
-            transform: rotate(5deg);
-            mix-blend-mode: difference; /* Inverts color with background */
-        }
-
-        /* Digital Glitch Elements (Repeating gradients) */
-        .androgyny-collage .digital-glitch,
-        .androgyny-collage .digital-glitch-2 {
+        /* Decorative lines/shards */
+        .line-shard {
+            background: var(--neon-green);
             position: absolute;
-            background: repeating-linear-gradient(
-                45deg,
-                var(--neon-green),
-                var(--neon-green) 5px,
-                var(--deep-black) 5px,
-                var(--deep-black) 10px
-            );
-            z-index: 100;
-            mix-blend-mode: hard-light;
-            opacity: 0.7;
-            box-shadow: 0 0 10px var(--neon-green);
+            opacity: 0.6;
+            filter: blur(0.5px);
+            z-index: 5;
         }
-
-        .androgyny-collage .digital-glitch {
-            top: 5%; left: 5%;
-            width: 50px; height: 50px;
+        .line-shard-1 {
+            width: 100px; height: 3px;
+            top: 45%; left: 3%;
             transform: rotate(20deg);
         }
-
-        .androgyny-collage .digital-glitch-2 {
-            bottom: 15%; right: 40%;
-            width: 30px; height: 80px;
-            background: repeating-linear-gradient(
-                -45deg,
-                var(--neon-green),
-                var(--neon-green) 3px,
-                var(--deep-black) 3px,
-                var(--deep-black) 6px
-            );
-            transform: skewY(15deg) rotate(5deg);
-            z-index: 101; /* Slightly higher */
-            opacity: 0.6;
+        .line-shard-2 {
+            width: 150px; height: 2px;
+            bottom: 30%; right: 5%;
+            transform: rotate(-30deg);
+        }
+        .line-shard-3 {
+            width: 70px; height: 4px;
+            top: 10%; right: 25%;
+            transform: rotate(90deg);
+            opacity: 0.8;
         }
 
-        /* Grime Spots (Organic, blurred dark patches) */
-        .androgyny-collage .grime-spot {
+        /* High-gloss grime patches - using more complex gradients */
+        .grime-patch {
             position: absolute;
-            background-color: var(--deep-black); /* Darker than background for grime */
-            width: 150px; height: 150px;
-            border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%; /* Organic, irregular shape */
-            opacity: 0.6;
-            filter: blur(10px) contrast(1.5);
-            mix-blend-mode: difference; /* Creates a stark, almost negative effect */
-            box-shadow: 0 0 20px var(--neon-green) inset; /* Inner glow for grime */
-            z-index: 10;
+            filter: blur(15px) contrast(150%) brightness(50%);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            background-blend-mode: hard-light;
+        }
+        .grime-patch-1 {
+            width: 300px; height: 200px;
+            top: -50px; left: -50px;
+            background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.1) 0%, var(--deep-black) 70%);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .grime-patch-2 {
+            width: 400px; height: 300px;
+            bottom: -100px; right: -100px;
+            background: linear-gradient(145deg, rgba(57, 255, 20, 0.1) 0%, transparent 50%, var(--deep-black) 100%);
+            border-radius: 70% 30% 40% 60% / 30% 60% 40% 70%;
+            transform: rotate(180deg);
         }
 
-        .androgyny-collage .grime-spot:nth-of-type(1) {
-            top: 0; left: 0;
-            transform: translate(-50%, -50%) rotate(25deg);
-        }
-        .androgyny-collage .grime-spot:nth-of-type(2) {
-            bottom: 0; right: 0;
-            transform: translate(50%, 50%) rotate(-15deg);
-        }
-        .androgyny-collage .grime-spot:nth-of-type(3) {
-            top: 40%; left: 30%;
-            width: 80px; height: 80px;
-            transform: rotate(50deg);
-            opacity: 0.4;
+        /* Media queries for responsiveness (basic, to prevent text overflow and simplify layout) */
+        @media (max-width: 768px) {
+            .headline { font-size: 6vw; top: 10%; }
+            .subtitle { font-size: 2.5vw; top: 25%; }
+            .text-block-1, .text-block-2 {
+                width: 40%;
+                font-size: 1.5vw;
+                padding: 10px;
+            }
+            .text-block-1 { top: 45%; left: 5%; }
+            .text-block-2 { bottom: 15%; right: 5%; }
+            .call-to-action { font-size: 2vw; padding: 8px 15px; }
+            .splatter-1, .splatter-2, .splatter-3, .splatter-4 {
+                width: 80px; height: 80px;
+                top: auto; bottom: auto; left: auto; right: auto;
+            }
+            .splatter-1 { top: 8%; left: 5%; transform: rotate(20deg) scale(0.8); }
+            .splatter-2 { bottom: 10%; right: 8%; transform: rotate(-30deg) scale(0.7); }
+            .splatter-3 { top: 20%; right: 5%; transform: rotate(10deg) scale(0.9); }
+            .splatter-4 { bottom: 2%; left: 15%; transform: rotate(60deg) scale(0.7); }
         }
 
-        /* High Gloss Strips (Sheen effect) */
-        .androgyny-collage .glossy-strip {
-            position: absolute;
-            background: linear-gradient(90deg, transparent 0%, rgba(0,255,0,0.3) 50%, transparent 100%);
-            height: 3px;
-            z-index: 110; /* Highest z-index for a superficial gloss */
-            mix-blend-mode: screen;
-            filter: blur(1px) brightness(1.5); /* Soft, luminous glow */
-        }
-        .androgyny-collage .glossy-strip:nth-of-type(1) {
-            top: 15%; left: -10%;
-            width: 120%;
-            transform: rotate(-10deg);
-        }
-        .androgyny-collage .glossy-strip:nth-of-type(2) {
-            bottom: 25%; left: -5%;
-            width: 110%;
-            transform: rotate(15deg);
+        @media (max-width: 480px) {
+            .demolition-collage-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* Align from top */
+                align-items: center;
+                padding: 20px 10px;
+                height: auto; /* Allow height to expand */
+                min-height: 100vh; /* Ensure it still covers full viewport if content is short */
+                overflow-y: auto; /* Allow scrolling */
+            }
+            .demolition-collage-container > div,
+            .demolition-collage-container > h1,
+            .demolition-collage-container > p,
+            .demolition-collage-container > a {
+                position: relative; /* Remove absolute positioning */
+                width: 95% !important; /* Override width */
+                margin: 15px 0; /* Add vertical spacing */
+                transform: none !important; /* Remove transforms */
+                left: auto; right: auto; top: auto; bottom: auto;
+                text-align: center;
+                font-size: 3vw; /* Smaller general font size */
+                padding: 10px;
+            }
+            .headline { font-size: 7vw; margin-top: 30px;}
+            .subtitle { font-size: 3.5vw; }
+            .text-block-1, .text-block-2 {
+                font-size: 2.5vw;
+                width: 90% !important;
+            }
+            .call-to-action { font-size: 3.5vw; padding: 12px 20px; margin-bottom: 30px;}
+            .splatter, .fragment, .line-shard, .grime-patch {
+                display: none; /* Hide decorative elements on very small screens to avoid clutter */
+            }
         }
     </style>
 
-    <!-- Background Blocks and Splatters -->
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
+    <div class="grime-patch grime-patch-1"></div>
+    <div class="grime-patch grime-patch-2"></div>
 
-    <!-- Main Text Content -->
-    <h1 class="title">ANDRO<br>GYNY<br>MANIFESTO</h1>
-    <h2 class="subtitle">UNLEASH THE SELF. <br>DEFY THE BINARY.</h2>
+    <div class="splatter splatter-1"></div>
+    <div class="splatter splatter-2"></div>
+    <div class="splatter splatter-3"></div>
+    <div class="splatter splatter-4"></div>
+    <div class="splatter splatter-5"></div>
 
-    <p class="quote">
-        "OUR FORM IS FLUID.<br>OUR WILL IS IRON.<br>WE EXIST BETWEEN."
+    <div class="fragment fragment-1"></div>
+    <div class="fragment fragment-2"></div>
+    <div class="fragment fragment-3"></div>
+
+    <div class="line-shard line-shard-1"></div>
+    <div class="line-shard line-shard-2"></div>
+    <div class="line-shard line-shard-3"></div>
+
+    <h1 class="headline text-heavy">
+        WHITE CUBE:
+        <br>
+        SYSTEMIC RUPTURE
+    </h1>
+
+    <p class="subtitle text-glow">
+        DEMOLITION PROTOCOLS ACTIVATED.
+        <br>
+        POST-EXHIBITION RESIDUE.
     </p>
 
-    <span class="tagline">RESIST. RECLAIM. REVOLT.</span>
+    <div class="text-block-1">
+        This is not an intervention.
+        <br>
+        It is a dissolution.
+        <br>
+        The sterile void crumbles under the weight of its own suppressed narrative.
+        <br>
+        Art unbound.
+    </div>
 
-    <!-- Glitch & Grime Details -->
-    <div class="digital-glitch"></div>
-    <div class="digital-glitch-2"></div>
+    <div class="text-block-2">
+        <span class="text-glow">FRAGMENT_LOG_001:</span>
+        <br>
+        Wall structure compromised.
+        <br>
+        Containment failure.
+        <br>
+        Expected entropy.
+        <br>
+        No recovery initiated.
+    </div>
 
-    <div class="grime-spot"></div>
-    <div class="grime-spot"></div>
-    <div class="grime-spot"></div>
-
-    <!-- Glossy Overlays -->
-    <div class="glossy-strip"></div>
-    <div class="glossy-strip"></div>
+    <a href="#" class="call-to-action">INITIATE COLLAPSE</a>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
