@@ -39,195 +39,300 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-29 08:46 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-29 12:21 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
                 
-<div style="
-    --neon-green: #00FF00;
-    --deep-black: #000000;
-    position: relative;
-    min-height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-color: var(--deep-black);
-    font-family: 'Inconsolata', 'Fira Mono', monospace;
-    color: var(--neon-green);
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-">
+<div id="white-cube-demolition-collage">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
-        /* Basic reset and global brutalist properties */
-        * {
+        /* BASE STYLES & RESET for elements within this div */
+        #white-cube-demolition-collage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000; /* Deep Black */
+            overflow: hidden;
+            font-family: 'Impact', 'Arial Black', 'Bebas Neue', sans-serif; /* Brutalist typography */
+            color: #39FF14; /* Vibrant Neon Green */
+            box-sizing: border-box;
+            cursor: crosshair; /* Aesthetic cursor */
+            perspective: 1200px; /* For 3D transformations */
+            filter: saturate(1.2) contrast(1.1); /* Digital sheen effect */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #white-cube-demolition-collage *,
+        #white-cube-demolition-collage *::before,
+        #white-cube-demolition-collage *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: none; /* Emphasize fixed, unselectable gaze */
-            cursor: default; /* Non-interactive cursor */
+            line-height: 1;
+            transform-style: preserve-3d; /* Ensure children respect parent's 3D space */
         }
 
-        /* General element styling for brutalism and grime */
-        .block {
-            border: 2px solid var(--neon-green);
-            padding: 15px 25px;
-            margin: 20px;
-            background: rgba(0, 255, 0, 0.05); /* Semi-transparent green background */
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4), /* Outer glow */
-                        inset 0 0 5px rgba(0, 255, 0, 0.2); /* Inner highlight */
-            position: relative;
+        /* GLOBAL TEXT STYLES */
+        #white-cube-demolition-collage h1,
+        #white-cube-demolition-collage p,
+        #white-cube-demolition-collage .text-block,
+        #white-cube-demolition-collage .instruction {
+            position: absolute;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 5px #39FF14, 0 0 15px #39FF14, 0 0 30px #39FF14; /* Neon glow effect */
+            pointer-events: none; /* Allow clicks to pass through text to background elements */
+            user-select: none;
             z-index: 10;
-            overflow: hidden; /* For inner effects */
+            white-space: nowrap; /* Prevent text wrapping */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
         }
-        .block::before { /* High-gloss grime overlay effect */
+        #white-cube-demolition-collage h1:hover,
+        #white-cube-demolition-collage p:hover,
+        #white-cube-demolition-collage .text-block:hover {
+            text-shadow: 0 0 10px #39FF14, 0 0 25px #39FF14, 0 0 50px #39FF14;
+            transform: scale(1.02) rotateZ(2deg) translateZ(10px);
+        }
+
+        /* MAIN TITLES AND SLOGANS */
+        #white-cube-demolition-collage .title {
+            font-size: 8vw;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
+            z-index: 20;
+            opacity: 0.9;
+            animation: glitch 1.5s infinite alternate; /* Glitch effect */
+        }
+
+        #white-cube-demolition-collage .subtitle {
+            font-size: 3vw;
+            bottom: 25%;
+            left: 50%;
+            transform: translate(-50%, 50%) rotate(3deg);
+            z-index: 18;
+            opacity: 0.8;
+            color: rgba(57, 255, 20, 0.7);
+            text-shadow: 0 0 3px #39FF14;
+        }
+
+        /* DYNAMIC TEXT FRAGMENTS */
+        #white-cube-demolition-collage .text-block {
+            font-size: 2.5vw;
+            transform-origin: center center;
+            opacity: 0.7;
+        }
+        #white-cube-demolition-collage .fragment-1 { top: 30%; left: 10%; transform: rotate(10deg); }
+        #white-cube-demolition-collage .fragment-2 { top: 60%; right: 15%; transform: rotate(-15deg); font-size: 3vw; }
+        #white-cube-demolition-collage .fragment-3 { bottom: 10%; left: 5%; transform: rotate(5deg); opacity: 0.6; }
+        #white-cube-demolition-collage .fragment-4 { top: 10%; right: 5%; transform: rotate(20deg); font-size: 2vw; }
+        #white-cube-demolition-collage .fragment-5 { top: 45%; left: 25%; transform: rotate(-8deg); opacity: 0.75; font-size: 1.8vw; }
+
+        /* DEMOLITION DEBRIS & COLLAGE ELEMENTS */
+        #white-cube-demolition-collage .debris {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7); /* Deep black grime */
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(57, 255, 20, 0.3); /* High-gloss grime */
+            z-index: 5;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.5s ease-out, box-shadow 0.5s ease-out, filter 0.5s ease-out;
+            pointer-events: auto; /* Make debris interactive */
+            cursor: pointer;
+            filter: blur(0.5px);
+        }
+        #white-cube-demolition-collage .debris:hover {
+            transform: scale(1.05) rotateZ(5deg) translateZ(50px);
+            background-color: rgba(57, 255, 20, 0.1);
+            box-shadow: 0 0 25px #39FF14, inset 0 0 15px #39FF14;
+            z-index: 25; /* Bring to front on hover */
+            filter: blur(0px);
+        }
+
+        /* DIGITAL PAINT SPLATTERS */
+        #white-cube-demolition-collage .splatter {
+            background-color: rgba(57, 255, 20, 0.15); /* Translucent neon green */
+            border-radius: 50% 20% 70% 30% / 60% 40% 30% 70%; /* Irregular blob shape */
+            opacity: 0.7;
+            filter: blur(1px); /* Soften edges */
+            animation: splatterPulse 4s infinite ease-in-out alternate;
+        }
+        #white-cube-demolition-collage .splatter:hover {
+            transform: scale(1.1) rotate(20deg) translateZ(60px);
+            opacity: 1;
+            filter: blur(0px);
+            background-color: rgba(57, 255, 20, 0.4);
+            box-shadow: 0 0 35px #39FF14, inset 0 0 20px #39FF14;
+        }
+        #white-cube-demolition-collage .s1 { width: 180px; height: 120px; top: 5%; left: 30%; transform: rotate(45deg); }
+        #white-cube-demolition-collage .s2 { width: 220px; height: 190px; bottom: 10%; right: 20%; transform: rotate(-30deg); border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%; opacity: 0.6; }
+        #white-cube-demolition-collage .s3 { width: 140px; height: 160px; top: 40%; right: 10%; transform: rotate(10deg); border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%; opacity: 0.5; }
+        #white-cube-demolition-collage .s4 { width: 110px; height: 90px; top: 70%; left: 10%; transform: rotate(60deg); border-radius: 20% 80% 60% 40% / 70% 30% 50% 50%; background-color: rgba(0, 0, 0, 0.8); box-shadow: inset 0 0 15px rgba(57, 255, 20, 0.7), 0 0 8px rgba(57, 255, 20, 0.2); filter: none; pointer-events: none; z-index: 4; }
+        #white-cube-demolition-collage .s5 { width: 250px; height: 150px; bottom: 5%; left: 35%; transform: rotate(15deg) skewX(10deg); border-radius: 80% 20% 50% 50% / 50% 50% 20% 80%; opacity: 0.4; background-color: rgba(0,0,0,0.9); box-shadow: inset 0 0 20px #39FF14; filter: blur(0.2px); }
+
+
+        /* CRACKS / FISSURES */
+        #white-cube-demolition-collage .crack {
+            width: 2px;
+            height: 100px;
+            background-color: #39FF14;
+            box-shadow: 0 0 10px #39FF14;
+            opacity: 0.8;
+            pointer-events: none; /* Cracks are purely visual */
+            filter: blur(0.3px);
+        }
+        #white-cube-demolition-collage .crack::before,
+        #white-cube-demolition-collage .crack::after {
             content: '';
             position: absolute;
-            top: -50%; left: -50%; right: -50%; bottom: -50%; /* Larger area for gradient effect */
-            background: linear-gradient(45deg,
-                                        rgba(0,255,0,0.05) 0%,
-                                        rgba(0,0,0,0.5) 50%,
-                                        rgba(0,255,0,0.05) 100%);
-            mix-blend-mode: overlay; /* Blends with background for a metallic/grimy sheen */
-            opacity: 0.7;
-            transform: scale(1.5); /* Slightly larger to cover edges */
+            background-color: inherit;
+            box-shadow: inherit;
+            width: 100%;
+            height: 50%; /* Jagged crack effect */
+            transform-origin: top left;
         }
+        #white-cube-demolition-collage .crack::before { transform: rotate(20deg) translateY(10px) translateX(-5px); }
+        #white-cube-demolition-collage .crack::after { transform: rotate(-15deg) translateY(20px) translateX(5px); opacity: 0.7; }
 
-        /* Digital paint splatter effect */
-        .splatter {
-            position: absolute;
-            background-color: var(--neon-green);
-            /* Irregular blob shape for paint */
-            border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%;
-            filter: blur(8px) contrast(150%); /* Blurry, intense digital texture */
-            opacity: 0.15; /* Subtler effect */
-            z-index: 1;
-            box-shadow: 0 0 25px var(--neon-green), /* Outer glow */
-                        inset 0 0 12px rgba(0,255,0,0.6); /* Inner light for depth */
-            animation: pulse-splatter 5s infinite alternate ease-in-out;
-        }
-        @keyframes pulse-splatter {
-            0% { transform: scale(1) rotate(0deg); opacity: 0.15; }
-            50% { transform: scale(1.05) rotate(5deg); opacity: 0.2; }
-            100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
-        }
+        #white-cube-demolition-collage .c1 { top: 20%; left: 45%; transform: rotate(60deg); height: 150px; }
+        #white-cube-demolition-collage .c2 { top: 50%; left: 30%; transform: rotate(-45deg); height: 120px; opacity: 0.6; }
+        #white-cube-demolition-collage .c3 { top: 80%; left: 60%; transform: rotate(10deg); height: 80px; }
+        #white-cube-demolition-collage .c4 { top: 10%; right: 40%; transform: rotate(-70deg); height: 180px; opacity: 0.9; }
 
-        /* Text styling */
-        .title {
-            font-size: clamp(2em, 8vw, 6em); /* Responsive font size */
-            letter-spacing: 0.1em;
-            word-break: break-word;
-            line-height: 1.1;
-            text-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.7);
-            animation: flicker 1.5s infinite alternate; /* Subtle flickering */
-            z-index: 10;
-            margin-bottom: 40px;
+        /* BRUTALIST BLOCKS */
+        #white-cube-demolition-collage .block {
+            width: 150px;
+            height: 80px;
+            border: 2px solid #39FF14;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+            box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.3);
+            transform-style: preserve-3d; /* Enable 3D transforms for children */
+            animation: blockFloat 10s infinite ease-in-out alternate;
         }
-        .subtitle {
-            font-size: clamp(0.8em, 2.5vw, 1.8em);
+        #white-cube-demolition-collage .block:hover {
+            transform: scale(1.1) rotateX(15deg) rotateY(20deg) rotateZ(5deg) translateZ(80px);
+            background-color: rgba(57, 255, 20, 0.2);
+            box-shadow: inset 0 0 40px #39FF14, 0 0 20px #39FF14;
+            z-index: 30;
+        }
+        #white-cube-demolition-collage .b1 { top: 5%; right: 5%; width: 180px; transform: rotateY(30deg) rotateX(10deg); }
+        #white-cube-demolition-collage .b2 { bottom: 5%; left: 20%; width: 100px; height: 100px; transform: rotate(-20deg) rotateY(-20deg); }
+        #white-cube-demolition-collage .b3 { top: 50%; left: 5%; width: 200px; height: 50px; transform: rotate(-7deg) rotateX(5deg) rotateY(5deg); }
+        #white-cube-demolition-collage .b4 { top: 25%; right: 25%; width: 120px; height: 120px; transform: rotate(40deg) rotateY(45deg); opacity: 0.8; }
+
+
+        /* INSTRUCTION TEXT */
+        #white-cube-demolition-collage .instruction {
+            font-size: 1.5vw;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.4;
+            color: #39FF14;
+            text-shadow: none;
             letter-spacing: 0.05em;
-            margin-bottom: 20px;
-            text-shadow: 0 0 8px var(--neon-green);
-            z-index: 10;
-        }
-        .paragraph {
-            font-size: clamp(0.7em, 1.8vw, 1.2em);
-            line-height: 1.6;
-            text-shadow: 0 0 5px var(--neon-green);
-            z-index: 10;
+            animation: pulse 2s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 25;
         }
 
-        /* Glitch effect on hover for specific text */
-        .glitch-text {
-            display: inline-block;
-            position: relative;
-            text-shadow: 0 0 5px var(--neon-green);
-            overflow: hidden;
-            transition: text-shadow 0.1s; /* Smoother initial state */
-        }
-        .glitch-text:hover {
-            animation: glitch-effect 0.3s infinite steps(2, end); /* Rapid, steps-based glitch */
-        }
-        @keyframes glitch-effect {
-            0% {
-                transform: translateX(0px);
-                text-shadow: 0 0 5px var(--neon-green);
-            }
-            33% {
-                transform: translateX(2px) translateY(-2px);
-                text-shadow: 0 0 10px var(--neon-green), -2px 0 0 rgba(0,255,0,0.5);
-            }
-            66% {
-                transform: translateX(-2px) translateY(2px);
-                text-shadow: 0 0 10px var(--neon-green), 2px 0 0 rgba(0,255,0,0.5);
-            }
-            100% {
-                transform: translateX(0px);
-                text-shadow: 0 0 5px var(--neon-green);
-            }
-        }
-        
-        /* Flicker animation for main title */
-        @keyframes flicker {
-            0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.7); }
-            50% { opacity: 0.9; text-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(0,255,0,0.5); }
+        /* BACKGROUND GRIME & TEXTURE (via pseudo-elements) */
+        #white-cube-demolition-collage::before,
+        #white-cube-demolition-collage::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .block {
-                margin: 10px;
-                padding: 10px 15px;
-            }
-            .title {
-                margin-bottom: 20px;
-            }
+        #white-cube-demolition-collage::before {
+            background: radial-gradient(circle at 20% 80%, rgba(57, 255, 20, 0.07) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(57, 255, 20, 0.07) 0%, transparent 40%),
+                        linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+            mix-blend-mode: overlay;
+            opacity: 0.7;
         }
+
+        #white-cube-demolition-collage::after {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,0,0,0.1) 0px,
+                rgba(0,0,0,0.1) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            opacity: 0.3;
+            mix-blend-mode: multiply;
+            filter: blur(0.5px);
+        }
+
+        /* KEYFRAME ANIMATIONS */
+        @keyframes pulse {
+            0% { opacity: 0.4; text-shadow: none; }
+            50% { opacity: 0.8; text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; }
+            100% { opacity: 0.4; text-shadow: none; }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(-50%, -50%) rotate(-5deg) skewX(0deg); }
+            5% { transform: translate(-51%, -49%) rotate(-4deg) skewX(2deg); }
+            10% { transform: translate(-49%, -51%) rotate(-6deg) skewX(-2deg); }
+            15% { transform: translate(-50%, -50%) rotate(-5deg) skewX(0deg); }
+            80% { transform: translate(-50%, -50%) rotate(-5deg) skewX(0deg); }
+            85% { transform: translate(-52%, -50%) rotate(-5deg) skewX(1deg); }
+            90% { transform: translate(-50%, -48%) rotate(-5deg) skewX(-1deg); }
+            95% { transform: translate(-51%, -51%) rotate(-5deg) skewX(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(-5deg) skewX(0deg); }
+        }
+
+        @keyframes splatterPulse {
+            0% { transform: scale(1) rotate(45deg); opacity: 0.7; }
+            50% { transform: scale(0.98) rotate(47deg); opacity: 0.6; }
+            100% { transform: scale(1) rotate(45deg); opacity: 0.7; }
+        }
+
+        @keyframes blockFloat {
+            0% { transform: rotateY(30deg) rotateX(10deg) translateY(0px) translateX(0px); }
+            25% { transform: rotateY(35deg) rotateX(15deg) translateY(-5px) translateX(5px); }
+            50% { transform: rotateY(30deg) rotateX(10deg) translateY(0px) translateX(0px); }
+            75% { transform: rotateY(25deg) rotateX(5deg) translateY(5px) translateX(-5px); }
+            100% { transform: rotateY(30deg) rotateX(10deg) translateY(0px) translateX(0px); }
+        }
+
     </style>
 
-    <!-- Digital Paint Splatters - positioned absolutely for chaotic layout -->
-    <div class="splatter" style="width: 150px; height: 120px; top: 10%; left: -5%; transform: rotate(20deg) scale(0.8);"></div>
-    <div class="splatter" style="width: 200px; height: 180px; bottom: 5%; right: -10%; transform: rotate(-35deg) scale(1.1); opacity: 0.12;"></div>
-    <div class="splatter" style="width: 90px; height: 100px; top: 30%; right: 15%; transform: rotate(70deg) scale(0.7); opacity: 0.2;"></div>
-    <div class="splatter" style="width: 250px; height: 100px; bottom: 20%; left: 0%; transform: rotate(15deg) scale(0.9); border-radius: 30% 60% 40% 50% / 50% 40% 60% 30%;"></div>
-    <div class="splatter" style="width: 100px; height: 250px; top: -10%; left: 20%; transform: rotate(-80deg) scale(0.6); border-radius: 60% 40% 50% 30% / 40% 50% 30% 60%; opacity: 0.1;"></div>
-    <div class="splatter" style="width: 180px; height: 160px; top: 60%; left: 80%; transform: rotate(45deg) scale(0.95); opacity: 0.18;"></div>
+    <h1 class="title">WHITE CUBE DECONSTRUCTION</h1>
+    <p class="subtitle">STRATEGIES FOR CATASTROPHE</p>
 
-    <!-- Main Title Block -->
-    <div class="title block">
-        <span class="glitch-text">REPARATIONS</span><br>
-        FOR THE DIGITAL GAZE
-    </div>
+    <div class="text-block fragment-1">FRACTURE THE NARRATIVE</div>
+    <div class="text-block fragment-2">RECLAIM THE VOID</div>
+    <div class="text-block fragment-3">ERASE THE BOUNDARIES</div>
+    <div class="text-block fragment-4">DECONTEXTUALIZE</div>
+    <div class="text-block fragment-5">RECODE THE ARCHITECTURES</div>
 
-    <!-- Subtitle Block -->
-    <div class="block subtitle">
-        UNSEEN LABOR. EXTRACTED DATA. FRACTURED ATTENTION.
-    </div>
+    <div class="debris splatter s1"></div>
+    <div class="debris splatter s2"></div>
+    <div class="debris splatter s3"></div>
+    <div class="debris splatter s4"></div>
+    <div class="debris splatter s5"></div>
 
-    <!-- Paragraph Blocks - containing the manifesto-like text -->
-    <div class="block paragraph" style="max-width: 800px;">
-        <p>
-            THE SCREEN DEMANDS. THE ALGORITHM CONSUMES. YOUR <span class="glitch-text">PRESENCE</span>, YOUR <span class="glitch-text">ENGAGEMENT</span>,
-            IS NOT NEUTRAL. IT IS A COMMODITY. A CONSTANT FLOW OF <span class="glitch-text">VALUE</span>, UNACKNOWLEDGED, UNPAID.
-        </p>
-        <p style="margin-top: 15px;">
-            WHO OWNS THE SILENT ECHOES OF YOUR THOUGHTS, SCROLLED INTO OBLIVION?
-            WHO PROFITS FROM THE <span class="glitch-text">PIXELATED STARE</span> YOU CAST UPON THE VOID?
-            THIS IS A CALL TO <span class="glitch-text">RECLAIM</span>. TO <span class="glitch-text">RECALIBRATE</span>. TO <span class="glitch-text">DEMAND</span>.
-        </p>
-        <p style="margin-top: 15px; font-weight: bold;">
-            PAY THE <span class="glitch-text">VISUAL DEBT</span>. RESTORE THE <span class="glitch-text">DIGITAL DIGNITY</span>.
-        </p>
-    </div>
+    <div class="debris crack c1"></div>
+    <div class="debris crack c2"></div>
+    <div class="debris crack c3"></div>
+    <div class="debris crack c4"></div>
+
+    <div class="debris block b1"></div>
+    <div class="debris block b2"></div>
+    <div class="debris block b3"></div>
+    <div class="debris block b4"></div>
+
+    <div class="instruction">HOVER / CLICK ELEMENTS. SHATTER REALITY.</div>
+
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
