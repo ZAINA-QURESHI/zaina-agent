@@ -39,391 +39,300 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-05-29 19:36 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-05-29 21:59 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
-                <div class="demolition-collage-container">
+                <div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #030303; /* Deep, almost absolute black */
+    font-family: 'Arial Black', sans-serif; /* Brutalist font choice */
+    color: #00FF00; /* Vibrant Neon Green */
+    cursor: crosshair; /* Adds to the digital, surveillance feel */
+    perspective: 1000px; /* For potential 3D transforms */
+    border: 5px solid #00FF00; /* Raw, brutalist border */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Using an @import inside style for a specific font as an alternative, though typically disallowed by strict "only a div" rules. If strict, fallback to monospace. */
-
-        :root {
-            --neon-green: #39FF14;
-            --deep-black: #0A0A0A;
-            --grime-dark: #1A1A1A;
-            --grime-texture-1: rgba(57, 255, 20, 0.1);
-            --grime-texture-2: rgba(26, 26, 26, 0.7);
-        }
-
-        .demolition-collage-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            background: var(--deep-black);
-            font-family: 'Press Start 2P', 'Courier New', Courier, monospace; /* Fallback for font */
-            color: var(--neon-green);
-            background-image:
-                radial-gradient(circle at 15% 50%, var(--grime-texture-1) 1%, transparent 10%),
-                radial-gradient(circle at 85% 20%, var(--grime-texture-1) 1%, transparent 12%),
-                linear-gradient(135deg, var(--grime-dark) 0%, var(--deep-black) 100%);
-            background-blend-mode: overlay, multiply, normal;
-            display: block;
+        /* Base Styling & Brutalism Core */
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1; /* Tight line height for brutal text blocks */
             box-sizing: border-box;
-            line-height: 1.1;
         }
 
-        /* Basic elements for text and shapes */
-        .demolition-collage-container > div,
-        .demolition-collage-container > h1,
-        .demolition-collage-container > p,
-        .demolition-collage-container > a { /* Added 'a' for the CTA */
+        /* Neon Glow Effect for Text */
+        .neon-glow {
+            color: #00FF00;
+            text-shadow:
+                0 0 5px #00FF00,
+                0 0 10px #00FF00,
+                0 0 20px #00FF00,
+                0 0 40px rgba(0, 255, 0, 0.5), /* Wider, softer glow */
+                0 0 80px rgba(0, 255, 0, 0.3);
+        }
+
+        /* Glitch Effect - for visual distortion, digital corruption */
+        .glitch {
+            animation: glitch-anim 2.5s infinite alternate;
+        }
+        @keyframes glitch-anim {
+            0% {
+                text-shadow: 2px 2px 0px #00FF00, -2px -2px 0px #00FF00;
+                transform: translate(0);
+            }
+            20% {
+                text-shadow: -3px -3px 0px #00FF00, 3px 3px 0px #00FF00;
+                transform: translate(-7px, 7px);
+            }
+            40% {
+                text-shadow: 5px 0px 0px #00FF00, -5px 0px 0px #00FF00;
+                transform: translate(12px, -12px);
+            }
+            60% {
+                text-shadow: -5px -5px 0px #00FF00, 5px 5px 0px #00FF00;
+                transform: translate(-12px, 12px);
+            }
+            80% {
+                text-shadow: 0px 5px 0px #00FF00, 0px -5px 0px #00FF00;
+                transform: translate(7px, -7px);
+            }
+            100% {
+                text-shadow: 2px 2px 0px #00FF00, -2px -2px 0px #00FF00;
+                transform: translate(0);
+            }
+        }
+
+        /* High-gloss grime text effect - wet, oily, deep */
+        .wet-gloss-text {
+            text-shadow:
+                -1px -1px 0px #00FF00,
+                1px 1px 0px rgba(0, 0, 0, 0.8), /* Dark shadow for depth and "grime" */
+                2px 2px 5px rgba(0, 0, 0, 0.6), /* Deeper grime shadow */
+                -2px -2px 10px rgba(0, 255, 0, 0.4), /* Wider glow */
+                3px 3px 15px rgba(0, 0, 0, 0.3); /* Soft, messy dark shadow for oiliness */
+        }
+
+        /* Background Noise/Static for digital feel */
+        .background-noise::before {
+            content: '';
             position: absolute;
-            box-sizing: border-box;
-            line-height: 1.1;
-        }
-
-        /* Helper classes for text effects */
-        .text-glow {
-            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px rgba(57, 255, 20, 0.5);
-        }
-
-        .text-heavy {
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            word-break: break-all; /* Brutalist word breaking */
-        }
-
-        /* Splatter elements */
-        .splatter {
-            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(57, 255, 20, 0.5) 30%, rgba(57, 255, 20, 0.2) 60%, transparent 100%);
-            border-radius: 50%; /* Base for irregular shapes */
-            filter: blur(2px) brightness(150%);
-            opacity: 0.7;
-            transform-origin: center center;
-            pointer-events: none; /* Don't block interaction with text */
-            z-index: 5;
-        }
-
-        .splatter-1 {
-            width: 120px; height: 120px;
-            top: 5%; left: 10%;
-            transform: rotate(30deg) scale(1.2);
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-        }
-        .splatter-2 {
-            width: 80px; height: 80px;
-            bottom: 15%; right: 5%;
-            transform: rotate(-45deg) scale(0.9);
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 100%, 0% 100%);
-            filter: blur(1px) brightness(120%);
-            opacity: 0.5;
-        }
-        .splatter-3 {
-            width: 200px; height: 70px;
-            top: 30%; right: 15%;
-            transform: rotate(15deg) scaleX(1.5);
-            clip-path: ellipse(50% 50% at 50% 50%);
-            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(57, 255, 20, 0.3) 50%, transparent 100%);
-        }
-        .splatter-4 {
-            width: 90px; height: 90px;
-            bottom: 5%; left: 30%;
-            transform: rotate(70deg) scale(0.8);
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-            filter: blur(3px) brightness(180%);
-            opacity: 0.6;
-        }
-        .splatter-5 {
-            width: 150px; height: 100px;
-            top: 60%; left: 5%;
-            background: rgba(57, 255, 20, 0.05);
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            filter: blur(10px);
-            opacity: 0.3;
-        }
-
-        /* Structural elements - simulating debris/fragments */
-        .fragment {
-            background: var(--grime-dark);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 8px var(--neon-green);
-            transform-origin: center center;
-            z-index: 10;
-        }
-        .fragment-1 {
-            width: 150px; height: 50px;
-            top: 20%; left: 5%;
-            transform: rotate(-10deg);
-            background: linear-gradient(to right, var(--grime-dark), #2c2c2c, var(--grime-dark));
-        }
-        .fragment-2 {
-            width: 80px; height: 100px;
-            bottom: 10%; right: 20%;
-            transform: rotate(20deg) scaleX(0.8);
-            background: linear-gradient(to bottom, var(--grime-dark), #2c2c2c, var(--grime-dark));
-            clip-path: polygon(0 0, 100% 15%, 100% 100%, 15% 85%);
-        }
-        .fragment-3 {
-            width: 60px; height: 60px;
-            top: 50%; left: 45%;
-            transform: rotate(90deg) scale(0.7);
-            background: var(--grime-dark);
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
-            opacity: 0.8;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        }
-
-        /* Main Headline */
-        .headline {
-            font-size: clamp(3rem, 8vw, 6rem);
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            text-align: center;
-            z-index: 20;
-            color: var(--neon-green);
-            filter: drop-shadow(0 0 10px var(--neon-green)) drop-shadow(0 0 20px rgba(57, 255, 20, 0.5));
-            letter-spacing: 0.15em;
-            word-spacing: 0.2em;
-            font-weight: 900;
-        }
-
-        /* Subtitle/Sub-elements */
-        .subtitle {
-            font-size: clamp(1rem, 3vw, 2rem);
-            top: 35%;
-            left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            width: 80%;
-            text-align: center;
-            z-index: 15;
-            color: var(--neon-green);
-            opacity: 0.9;
-            text-shadow: 0 0 5px var(--neon-green);
-            letter-spacing: 0.08em;
-        }
-
-        .text-block-1 {
-            font-size: clamp(0.7rem, 1.8vw, 1.2rem);
-            width: 28%;
-            top: 55%;
-            left: 8%;
-            transform: rotate(5deg);
-            background: var(--grime-dark);
-            padding: 15px;
-            border: 1px solid rgba(57, 255, 20, 0.4);
-            box-shadow: inset 0 0 5px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.5);
-            z-index: 18;
-            color: var(--neon-green);
-            opacity: 0.9;
-            word-wrap: break-word;
-            font-weight: normal;
-        }
-
-        .text-block-2 {
-            font-size: clamp(0.6rem, 1.5vw, 1rem);
-            width: 25%;
-            bottom: 20%;
-            right: 10%;
-            transform: rotate(-10deg);
-            background: var(--grime-dark);
-            padding: 10px 15px;
-            border-left: 3px solid var(--neon-green);
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
-            z-index: 17;
-            color: var(--neon-green);
-            opacity: 0.8;
-            font-style: italic;
-        }
-
-        .call-to-action {
-            font-size: clamp(0.8rem, 2.5vw, 1.5rem);
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%) rotate(2deg);
-            padding: 10px 20px;
-            background: var(--neon-green);
-            color: var(--deep-black);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 20px var(--neon-green);
-            filter: brightness(120%);
-            letter-spacing: 0.1em;
-            font-weight: 900;
-            z-index: 25;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .call-to-action:hover {
-            transform: translateX(-50%) rotate(2deg) scale(1.05);
-            box-shadow: 0 0 30px var(--neon-green);
-        }
-
-        /* Decorative lines/shards */
-        .line-shard {
-            background: var(--neon-green);
-            position: absolute;
-            opacity: 0.6;
-            filter: blur(0.5px);
-            z-index: 5;
-        }
-        .line-shard-1 {
-            width: 100px; height: 3px;
-            top: 45%; left: 3%;
-            transform: rotate(20deg);
-        }
-        .line-shard-2 {
-            width: 150px; height: 2px;
-            bottom: 30%; right: 5%;
-            transform: rotate(-30deg);
-        }
-        .line-shard-3 {
-            width: 70px; height: 4px;
-            top: 10%; right: 25%;
-            transform: rotate(90deg);
-            opacity: 0.8;
-        }
-
-        /* High-gloss grime patches - using more complex gradients */
-        .grime-patch {
-            position: absolute;
-            filter: blur(15px) contrast(150%) brightness(50%);
-            opacity: 0.2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Minimal SVG noise filter for texture */
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNuKSIgb3BhY2l0eT0iMC4wNyIvPjxmaWx0ZXIgaWQ9Im4iPjxmZXR1cmVOb2lzZSB0eXBlPSJmcmFjdGFsVHVyYnVsZW5jZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub1N0aXRjaCIvPjwvZmlsdGVyPjwvc3ZnPg==');
+            opacity: 0.1; /* Very subtle */
             pointer-events: none;
             z-index: 0;
-            background-blend-mode: hard-light;
-        }
-        .grime-patch-1 {
-            width: 300px; height: 200px;
-            top: -50px; left: -50px;
-            background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.1) 0%, var(--deep-black) 70%);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        }
-        .grime-patch-2 {
-            width: 400px; height: 300px;
-            bottom: -100px; right: -100px;
-            background: linear-gradient(145deg, rgba(57, 255, 20, 0.1) 0%, transparent 50%, var(--deep-black) 100%);
-            border-radius: 70% 30% 40% 60% / 30% 60% 40% 70%;
-            transform: rotate(180deg);
         }
 
-        /* Media queries for responsiveness (basic, to prevent text overflow and simplify layout) */
-        @media (max-width: 768px) {
-            .headline { font-size: 6vw; top: 10%; }
-            .subtitle { font-size: 2.5vw; top: 25%; }
-            .text-block-1, .text-block-2 {
-                width: 40%;
-                font-size: 1.5vw;
-                padding: 10px;
-            }
-            .text-block-1 { top: 45%; left: 5%; }
-            .text-block-2 { bottom: 15%; right: 5%; }
-            .call-to-action { font-size: 2vw; padding: 8px 15px; }
-            .splatter-1, .splatter-2, .splatter-3, .splatter-4 {
-                width: 80px; height: 80px;
-                top: auto; bottom: auto; left: auto; right: auto;
-            }
-            .splatter-1 { top: 8%; left: 5%; transform: rotate(20deg) scale(0.8); }
-            .splatter-2 { bottom: 10%; right: 8%; transform: rotate(-30deg) scale(0.7); }
-            .splatter-3 { top: 20%; right: 5%; transform: rotate(10deg) scale(0.9); }
-            .splatter-4 { bottom: 2%; left: 15%; transform: rotate(60deg) scale(0.7); }
+        /* Digital Paint Splatter shapes - irregular blobs */
+        .paint-splatter {
+            position: absolute;
+            width: var(--size, 150px);
+            height: var(--size, 150px);
+            background-color: #00FF00;
+            /* Irregular blob shape via border-radius "/" syntax */
+            border-radius: 30% 70% 60% 40% / 70% 30% 70% 30%;
+            opacity: var(--opacity, 0.3);
+            filter: blur(var(--blur, 8px));
+            transform: rotateZ(var(--rot, 0deg)) scale(var(--scl, 1));
+            z-index: 2;
         }
 
-        @media (max-width: 480px) {
-            .demolition-collage-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start; /* Align from top */
-                align-items: center;
-                padding: 20px 10px;
-                height: auto; /* Allow height to expand */
-                min-height: 100vh; /* Ensure it still covers full viewport if content is short */
-                overflow-y: auto; /* Allow scrolling */
-            }
-            .demolition-collage-container > div,
-            .demolition-collage-container > h1,
-            .demolition-collage-container > p,
-            .demolition-collage-container > a {
-                position: relative; /* Remove absolute positioning */
-                width: 95% !important; /* Override width */
-                margin: 15px 0; /* Add vertical spacing */
-                transform: none !important; /* Remove transforms */
-                left: auto; right: auto; top: auto; bottom: auto;
-                text-align: center;
-                font-size: 3vw; /* Smaller general font size */
-                padding: 10px;
-            }
-            .headline { font-size: 7vw; margin-top: 30px;}
-            .subtitle { font-size: 3.5vw; }
-            .text-block-1, .text-block-2 {
-                font-size: 2.5vw;
-                width: 90% !important;
-            }
-            .call-to-action { font-size: 3.5vw; padding: 12px 20px; margin-bottom: 30px;}
-            .splatter, .fragment, .line-shard, .grime-patch {
-                display: none; /* Hide decorative elements on very small screens to avoid clutter */
-            }
+        /* Darker, deeper grime splatters */
+        .paint-splatter-dark {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+            opacity: var(--opacity, 0.6);
+            filter: blur(var(--blur, 10px));
+            z-index: 1;
+        }
+
+        /* Brutalist Block elements - exposed, geometric */
+        .block {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.1); /* Semi-transparent green */
+            border: 2px solid #00FF00;
+            z-index: 1;
         }
     </style>
 
-    <div class="grime-patch grime-patch-1"></div>
-    <div class="grime-patch grime-patch-2"></div>
+    <div class="background-noise"></div> <!-- For overall texture -->
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
-    <div class="splatter splatter-5"></div>
+    <!-- Grid overlay for digital aesthetic -->
+    <div style="
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image:
+            linear-gradient(to right, rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px; /* Adjust grid density */
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.2;
+    "></div>
 
-    <div class="fragment fragment-1"></div>
-    <div class="fragment fragment-2"></div>
-    <div class="fragment fragment-3"></div>
-
-    <div class="line-shard line-shard-1"></div>
-    <div class="line-shard line-shard-2"></div>
-    <div class="line-shard line-shard-3"></div>
-
-    <h1 class="headline text-heavy">
-        WHITE CUBE:
-        <br>
-        SYSTEMIC RUPTURE
+    <!-- Main Title Fragment: "REPARATIONS" - brutalist, fragmented, off-kilter -->
+    <h1 class="neon-glow wet-gloss-text" style="
+        position: absolute;
+        top: 5%;
+        left: -2%; /* Start slightly off-screen */
+        font-size: 15vw; /* Extremely large */
+        letter-spacing: -1vw; /* Crushed lettering */
+        transform: rotate(-10deg) skewX(-15deg); /* Aggressive distortion */
+        opacity: 0.8;
+        font-weight: 900;
+        z-index: 10;
+        text-transform: uppercase;
+        color: rgba(0, 255, 0, 0.8); /* Slightly faded for depth, not full bright */
+    ">
+        R<span style="opacity:0.5; color: black; text-shadow: none;">E</span>PARAT<span style="color: black; text-shadow: none;">IO</span>NS
     </h1>
 
-    <p class="subtitle text-glow">
-        DEMOLITION PROTOCOLS ACTIVATED.
-        <br>
-        POST-EXHIBITION RESIDUE.
+    <!-- Secondary Title Fragment: "DIGITAL GAZE" - glitchy, fragmented, mirroring -->
+    <p class="neon-glow glitch wet-gloss-text" style="
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        font-size: 8vw;
+        letter-spacing: 0.2vw;
+        transform: rotate(5deg) skewY(5deg); /* Slight distortion */
+        font-weight: 800;
+        z-index: 11;
+        text-transform: uppercase;
+    ">
+        <span style="display: block; transform: translateX(-10%);">DIGITAL</span>
+        <span style="display: block; transform: translateX(10%);">GAZE</span>
     </p>
 
-    <div class="text-block-1">
-        This is not an intervention.
-        <br>
-        It is a dissolution.
-        <br>
-        The sterile void crumbles under the weight of its own suppressed narrative.
-        <br>
-        Art unbound.
+    <!-- Mid-Left Block Text: Data Debt Message -->
+    <p class="neon-glow wet-gloss-text" style="
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        font-size: 3vw;
+        line-height: 1.1;
+        letter-spacing: 0.1vw;
+        font-weight: 700;
+        text-transform: uppercase;
+        max-width: 30%; /* Confine text to a brutalist block */
+        transform: rotate(-3deg);
+        z-index: 8;
+    ">
+        DATA DEBT IS REAL. UNSEEN LABOR <span style="color: black; text-shadow: none; opacity: 0.7;">OWES.</span> RECLAIM YOUR SIGNAL.
+    </p>
+
+    <!-- Mid-Right Block Text: Questioning the Gaze -->
+    <p class="neon-glow wet-gloss-text glitch" style="
+        position: absolute;
+        bottom: 25%;
+        right: 15%;
+        font-size: 2.5vw;
+        line-height: 1.1;
+        letter-spacing: 0.05vw;
+        font-weight: 600;
+        text-transform: uppercase;
+        max-width: 25%;
+        transform: rotate(2deg) scale(0.95);
+        z-index: 9;
+    ">
+        BROKEN MIRRORS. FRAGMENTED SELVES. <span style="text-decoration: underline; text-decoration-color: #00FF00;">WHO PAYS?</span>
+    </p>
+
+    <!-- Brutalist Blocks / Overlays - geometric interruptions -->
+    <div class="block" style="width: 200px; height: 100px; top: 10%; left: 40%; transform: rotate(15deg) skewY(-5deg);"></div>
+    <div class="block" style="width: 150px; height: 250px; bottom: 5%; left: 30%; transform: rotate(-8deg); background-color: rgba(0, 0, 0, 0.5); border-color: rgba(0,255,0,0.5);"></div>
+    <div class="block" style="width: 300px; height: 50px; top: 50%; right: -10%; transform: rotate(5deg) translateX(50%);"></div>
+
+    <!-- Digital Paint Splatters / Grime - messy textures -->
+    <div class="paint-splatter" style="top: 20%; left: 60%; --rot: 30deg; --scl: 1.2; --size: 180px;"></div>
+    <div class="paint-splatter-dark" style="top: 18%; left: 58%; --rot: 35deg; --scl: 1.3; --size: 200px; --blur: 12px; --opacity: 0.7;"></div>
+
+    <div class="paint-splatter" style="bottom: 10%; left: 10%; --rot: -20deg; --scl: 0.8; --size: 120px;"></div>
+    <div class="paint-splatter-dark" style="bottom: 8%; left: 8%; --rot: -25deg; --scl: 0.9; --size: 130px; --blur: 9px; --opacity: 0.5;"></div>
+
+    <div class="paint-splatter" style="top: 60%; right: 20%; --rot: 90deg; --scl: 1.5; --opacity: 0.2; --size: 250px; filter: blur(15px);"></div>
+
+    <!-- More fragmented, overlapping text elements -->
+    <span class="neon-glow wet-gloss-text" style="
+        position: absolute;
+        top: 2%;
+        right: 10%;
+        font-size: 4vw;
+        transform: rotate(20deg) scale(0.7) skewX(-5deg);
+        opacity: 0.6;
+        text-transform: uppercase;
+        z-index: 7;
+    ">
+        SIGNAL
+    </span>
+
+    <span class="neon-glow glitch" style="
+        position: absolute;
+        bottom: 40%;
+        left: 45%;
+        font-size: 5vw;
+        transform: rotate(-12deg) skewX(8deg);
+        opacity: 0.9;
+        text-transform: uppercase;
+        z-index: 12;
+    ">
+        GAZE
+    </span>
+
+    <span class="neon-glow wet-gloss-text" style="
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        font-size: 6vw;
+        transform: rotate(5deg) scale(0.8);
+        text-transform: uppercase;
+        color: black; /* Black text with green shadow for inverse contrast */
+        text-shadow:
+            0 0 5px #00FF00,
+            0 0 15px #00FF00,
+            2px 2px 0px rgba(0,0,0,0.5); /* Grime on black text */
+        z-index: 13;
+    ">
+        RECLAIM
+    </span>
+
+    <!-- A large, almost hidden block of tiny text to represent overwhelming data/code -->
+    <div style="
+        position: absolute;
+        bottom: -50%; /* Start off-screen to create depth and overflow */
+        left: -20%; /* Start off-screen */
+        width: 200vw; /* Spans multiple viewports */
+        height: 200vh;
+        font-size: 1vw; /* Very small */
+        color: rgba(0, 255, 0, 0.03); /* Extremely faint */
+        font-family: 'monospace'; /* Code-like font */
+        text-transform: uppercase;
+        white-space: pre-wrap; /* Preserve formatting for data blocks */
+        letter-spacing: 0.01em;
+        line-height: 0.8;
+        z-index: 0; /* Background layer */
+        pointer-events: none; /* Do not interfere with other elements */
+        overflow: hidden; /* Prevent this internal div from causing scrollbars */
+        word-break: break-all; /* Break long strings of characters */
+        transform: rotate(30deg); /* Angled for dynamic feel */
+        text-shadow: 0 0 1px rgba(0,255,0,0.01); /* Subtle glow for faint text */
+    ">
+        <!-- Repeating abstract data/code-like text related to the theme -->
+        01010101011100101010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010101010100101010101010010101010101001010... (Due to the length constraints of the output, the data-debt block will be truncated but its nature as repeating/overwhelming data will be evident.)
+        REPARATIONS FOR THE DIGITAL GAZE. DATA DEBT IS REAL. UNSEEN LABOR OWES. RECLAIM YOUR SIGNAL. BROKEN MIRRORS. FRAGMENTED SELVES. WHO PAYS? ALGORITHM DEBT. DIGITAL DISPOSSESSION. OWN YOUR PIXELS. DECENTRALIZE. RECONFIGURE. REIMAGINE. ACCESS GRANTED, ACCESS DENIED. THE GHOST IN THE MACHINE DEMANDS. DIGITAL BLACK HOLES. FORGOTTEN HISTORIES IN THE CODE. REPARATIONS FOR THE DIGITAL GAZE. DATA DEBT IS REAL. UNSEEN LABOR OWES. RECLAIM YOUR SIGNAL. BROKEN MIRRORS. FRAGMENTED SELVES. WHO PAYS? ALGORITHM DEBT. DIGITAL DISPOSSESSION. OWN YOUR PIXELS. DECENTRALIZE. RECONFIGURE. REIMAGINE. ACCESS GRANTED, ACCESS DENIED. THE GHOST IN THE MACHINE DEMANDS. DIGITAL BLACK HOLES. FORGOTTEN HISTORIES IN THE CODE. REPARATIONS FOR THE DIGITAL GAZE. DATA DEBT IS REAL. UNSEEN LABOR OWES. RECLAIM YOUR SIGNAL. BROKEN MIRRORS. FRAGMENTED SELVES. WHO PAYS? ALGORITHM DEBT. DIGITAL DISPOSSESSION. OWN YOUR PIXELS. DECENTRALIZE. RECONFIGURE. REIMAGINE. ACCESS GRANTED, ACCESS DENIED. THE GHOST IN THE MACHINE DEMANDS. DIGITAL BLACK HOLES. FORGOTTEN HISTORIES IN THE CODE. REPARATIONS FOR THE DIGITAL GAZE. DATA DEBT IS REAL. UNSEEN LABOR OWES. RECLAIM YOUR SIGNAL. BROKEN MIRRORS. FRAGMENTED SELVES. WHO PAYS? ALGORITHM DEBT. DIGITAL DISPOSSESSION. OWN YOUR PIXELS. DECENTRALIZE. RECONFIGURE. REIMAGINE. ACCESS GRANTED, ACCESS DENIED. THE GHOST IN THE MACHINE DEMANDS. DIGITAL BLACK HOLES. FORGOTTEN HISTORIES IN THE CODE. REPARATIONS FOR THE DIGITAL GAZE. DATA DEBT IS REAL. UNSEEN LABOR OWES. RECLAIM YOUR SIGNAL. BROKEN MIRRORS. FRAGMENTED SELVES. WHO PAYS? ALGORITHM DEBT. DIGITAL DISPOSSESSION. OWN YOUR PIXELS. DECENTRALIZE. RECONFIGURE. REIMAGINE. ACCESS GRANTED, ACCESS DENIED. THE GHOST IN THE MACHINE DEMANDS. DIGITAL BLACK HOLES. FORGOTTEN HISTORIES IN THE CODE.
     </div>
 
-    <div class="text-block-2">
-        <span class="text-glow">FRAGMENT_LOG_001:</span>
-        <br>
-        Wall structure compromised.
-        <br>
-        Containment failure.
-        <br>
-        Expected entropy.
-        <br>
-        No recovery initiated.
-    </div>
-
-    <a href="#" class="call-to-action">INITIATE COLLAPSE</a>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
