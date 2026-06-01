@@ -39,327 +39,356 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-01 10:29 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-01 16:44 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
                 
-<div class="collage-container">
+<div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden; /* Contains all the messy absolute elements */
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: #00FF00; /* Default text color */
+    display: block; /* Ensure it behaves as a block */
+">
     <style>
-        /* Global Reset for elements within this div */
-        .collage-container * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            /* Avoid user selection breaking the aesthetic */
-            user-select: none; 
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
+        /* Internal styles for animations, pseudo-elements, and complex shapes
+           as requested, all styles and elements contained within the single div. */
+        @keyframes glitch {
+            0% { transform: translate(0, 0) skewX(0); opacity: 1; }
+            20% { transform: translate(-2px, 2px) skewX(5deg); opacity: 0.8; }
+            40% { transform: translate(2px, -2px) skewX(-5deg); opacity: 0.9; }
+            60% { transform: translate(-1px, 1px) skewX(2deg); opacity: 0.7; }
+            80% { transform: translate(1px, -1px) skewX(-2deg); opacity: 0.85; }
+            100% { transform: translate(0, 0) skewX(0); opacity: 1; }
         }
-
-        /* Main Container Styling: Brutalist, high-contrast, full-screen */
-        .collage-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden; /* Contains the mess within the viewport */
-            background-color: #000000; /* Deep black */
-            font-family: 'Consolas', 'Courier New', monospace; /* Digital, aggressive font */
-            color: #00FF00; /* Vibrant neon green */
-            cursor: crosshair; /* Aggressive cursor */
-            perspective: 1000px; /* For potential 3D transforms */
-            /* Initial grime/texture overlay */
-            background-image:
-                linear-gradient(rgba(0,0,0,0.8) 0%, transparent 50%, rgba(0,0,0,0.8) 100%),
-                radial-gradient(ellipse at center, rgba(0,255,0,0.1) 0%, transparent 70%);
-            animation: containerGlint 15s infinite alternate;
-        }
-
-        /* Keyframe Animations for dynamic grime, flicker, and glow */
-        @keyframes containerGlint {
-            0% { filter: brightness(1) contrast(1); }
-            50% { filter: brightness(1.2) contrast(1.1) hue-rotate(5deg); }
-            100% { filter: brightness(1) contrast(1); }
-        }
-
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            5% { opacity: 0.95; }
-            10% { opacity: 1; }
-            15% { opacity: 0.88; }
-            20% { opacity: 1; }
-            25% { opacity: 0.92; }
-            30% { opacity: 1; }
-        }
-
         @keyframes pulseGlow {
-            0% { text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0,255,0,0.4); }
-            50% { text-shadow: 0 0 15px #00FF00, 0 0 30px rgba(0,255,0,0.7), 0 0 50px rgba(0,255,0,0.2); }
-            100% { text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0,255,0,0.4); }
+            0% { text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0,255,0,0.5); }
+            50% { text-shadow: 0 0 15px #00FF00, 0 0 30px rgba(0,255,0,0.8), 0 0 45px rgba(0,255,0,0.3); }
+            100% { text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0,255,0,0.5); }
         }
-
-        @keyframes rotateZ {
-            0% { transform: rotateZ(0deg); }
-            100% { transform: rotateZ(360deg); }
+        @keyframes rotateGrime {
+            0% { transform: rotate(0deg) scale(1.2); }
+            50% { transform: rotate(180deg) scale(1.3); }
+            100% { transform: rotate(360deg) scale(1.2); }
         }
-
-        /* Base style for brutalist blocks */
-        .element {
-            position: absolute;
-            background-color: rgba(0,255,0,0.15); /* Semi-transparent green */
-            border: 1px solid #00FF00;
-            box-shadow: 0 0 10px rgba(0,255,0,0.5);
-            animation: flicker 4s infinite step-end;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: break-all;
-            padding: 5px;
-            box-sizing: border-box;
-            font-size: 1vw; /* Smaller text inside blocks */
+        /* Specific splatter shapes using clip-path for irregularity */
+        .splatter1 {
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         }
-
-        /* Brutalist Block Variations */
-        .block-a {
-            top: 5%; left: 5%;
-            width: 30%; height: 20%;
-            transform: skewX(-15deg);
-            background: linear-gradient(45deg, rgba(0,255,0,0.2), rgba(0,0,0,0.8));
-            z-index: 5;
-            animation-duration: 6s;
+        .splatter2 {
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 15%, 85% 100%, 70% 85%, 15% 100%, 0% 85%);
         }
-        .block-b {
-            bottom: 10%; right: 5%;
-            width: 25%; height: 30%;
-            transform: rotate(5deg);
-            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,255,0,0.2));
-            z-index: 10;
-            animation-duration: 7s;
+        .splatter3 {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 25% 100%, 0% 75%);
         }
-        .block-c {
-            top: 20%; right: 20%;
-            width: 15%; height: 40%;
-            transform: skewY(10deg) rotate(-10deg);
-            background: linear-gradient(90deg, rgba(0,255,0,0.1), rgba(0,0,0,0.5));
-            z-index: 7;
-            animation-duration: 5s;
+        .splatter4 {
+            clip-path: polygon(10% 0%, 90% 10%, 100% 50%, 80% 90%, 20% 100%, 0% 60%);
         }
-        .block-d { /* A solid, intense block */
-            top: 60%; left: 15%;
-            width: 10%; height: 15%;
-            background: #00FF00;
-            box-shadow: 0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.7);
-            z-index: 15;
-            animation: flicker 2s infinite step-end;
-            transform: scale(1.1) rotate(2deg);
-        }
-
-        /* Digital Paint Splatters */
-        .splatter {
-            position: absolute;
-            background: radial-gradient(circle at center, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.3) 50%, transparent 70%);
-            border-radius: 50%; /* Imperfect circles for organic feel */
-            filter: blur(2px) drop-shadow(0 0 8px #00FF00);
-            opacity: 0.7;
-            pointer-events: none; /* Allows interaction with elements beneath */
-            animation: flicker 3s infinite alternate;
-        }
-        .splatter-1 { top: 10%; left: 40%; width: 80px; height: 70px; transform: rotate(20deg) scale(1.2); z-index: 20; animation-duration: 2.5s;}
-        .splatter-2 { bottom: 20%; right: 30%; width: 120px; height: 100px; transform: rotate(-30deg); z-index: 2; animation-delay: 1s;}
-        .splatter-3 { top: 50%; left: 0%; width: 60px; height: 50px; transform: rotate(45deg); z-index: 8; opacity: 0.5; animation-duration: 3.5s;}
-        .splatter-4 { top: 0%; right: 10%; width: 100px; height: 90px; transform: rotate(10deg) scale(0.8); z-index: 12; animation-duration: 4s; animation-delay: 0.5s;}
-
-        /* High-gloss grime/sheen elements */
-        .gloss-line {
-            position: absolute;
-            background: linear-gradient(to right, transparent 0%, rgba(0,255,0,0.7) 20%, rgba(0,255,0,0.7) 80%, transparent 100%);
-            height: 3px;
-            filter: blur(1px);
-            z-index: 100;
-            animation: flicker 1s infinite alternate;
-        }
-        .gloss-line-1 { top: 15%; left: 0; width: 100%; transform: rotate(2deg); opacity: 0.3; animation-delay: 0.5s;}
-        .gloss-line-2 { bottom: 5%; left: 0; width: 100%; transform: rotate(-3deg); opacity: 0.4; animation-delay: 1s;}
-
-        /* Grime Texture Overlay: Subtle grain/noise */
-        .grime-texture {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 200; /* On top of everything */
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0,0,0,0.05),
-                rgba(0,0,0,0.05) 2px,
-                transparent 2px,
-                transparent 4px
-            );
-            mix-blend-mode: overlay; /* To create a dirty screen effect */
-            opacity: 0.1;
-        }
-
-        /* Text elements: Aggressive androgyny as resistance */
-        .text-element {
-            position: absolute;
-            font-size: 4vw;
-            color: #00FF00;
-            text-transform: uppercase;
-            font-weight: bold;
-            white-space: nowrap;
-            filter: drop-shadow(0 0 5px #00FF00);
-            pointer-events: none;
-            z-index: 100;
-            line-height: 1;
-        }
-        .text-element-1 {
-            top: 10%; left: 45%;
-            transform: rotate(-5deg) scale(1.2);
-            font-size: 5vw;
-            animation: pulseGlow 2.5s infinite alternate;
-            text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5);
-        }
-        .text-element-2 {
-            bottom: 15%; left: 5%;
-            transform: rotate(10deg) skewX(-10deg);
-            font-size: 3vw;
-            animation: flicker 3s infinite step-end;
-            z-index: 150;
-        }
-        .text-element-3 {
-            top: 50%; right: 10%;
-            transform: translateY(-50%) rotate(25deg);
-            font-size: 2.5vw;
-            animation: pulseGlow 4s infinite;
-        }
-        .text-element-4 {
-            top: 70%; left: 30%;
-            transform: rotate(-15deg);
-            font-size: 4.5vw;
-            color: black; /* Inverted color for a punch */
-            background-color: #00FF00;
-            padding: 5px 10px;
-            box-shadow: 0 0 15px rgba(0,255,0,0.8);
-            animation: flicker 2s infinite alternate;
-            z-index: 160;
-        }
-        .text-element-5 {
-            top: 2%; right: 2%;
-            transform: rotate(3deg) scale(0.8);
-            font-size: 1.5vw;
-            opacity: 0.6;
-            animation: flicker 5s infinite step-end;
-            z-index: 1; /* Behind most things for depth */
-        }
-        .text-element-6 {
-            top: 40%; left: 5%;
-            transform: rotate(-8deg);
-            font-size: 3.5vw;
-            z-index: 155;
-            /* Gradient text effect for high-gloss grime */
-            background: linear-gradient(to right, #00FF00, rgba(0,255,0,0.5));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent; /* Makes text transparent to show gradient */
-            filter: drop-shadow(0 0 8px rgba(0,255,0,0.7));
-            animation: pulseGlow 3.5s infinite alternate;
-        }
-        .text-element-7 {
-            bottom: 5%; right: 40%;
-            transform: rotate(12deg) skewY(5deg);
-            font-size: 2vw;
-            opacity: 0.8;
-            animation: flicker 2.8s infinite alternate;
-            z-index: 140;
-        }
-
-        /* ASCII Art style elements for digital brutalism */
-        .ascii-shape {
-            position: absolute;
-            font-family: monospace;
-            line-height: 0.8;
-            font-size: 1.5vw;
-            color: #00FF00;
-            filter: drop-shadow(0 0 2px #00FF00);
-            pointer-events: none;
-            opacity: 0.7;
-            animation: flicker 5s infinite step-end;
-            z-index: 50;
-        }
-        .ascii-shape-1 { top: 30%; left: 40%; transform: rotate(90deg); animation-duration: 6s; }
-        .ascii-shape-2 { bottom: 10%; left: 45%; transform: rotate(-20deg); opacity: 0.4; animation-duration: 4s; }
-
-        /* Icon/symbol elements for resistance messaging */
-        .symbol {
-            position: absolute;
-            font-size: 6vw;
-            color: #00FF00;
-            filter: drop-shadow(0 0 10px #00FF00);
-            z-index: 180;
-            pointer-events: none;
-            animation: pulseGlow 2s infinite alternate;
-            transform: rotate(0deg); /* Initial state for animation */
-        }
-        .symbol-1 { top: 30%; left: 30%; animation: rotateZ 20s linear infinite; font-size: 8vw; } /* Crossed swords for defiance */
-        .symbol-2 { bottom: 40%; right: 10%; animation: rotateZ 15s linear infinite reverse; font-size: 5vw; opacity: 0.7;} /* Circle for unity/void */
-
     </style>
 
-    <!-- Overall Grime Texture Overlay (on top of everything) -->
-    <div class="grime-texture"></div>
+    <!-- Grime/Glossy Overlay 1 (Black to Green Radial) -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 10% 90%, rgba(0,255,0,0.15) 0%, rgba(0,0,0,0.8) 70%, #000000 100%);
+        opacity: 0.7;
+        z-index: 1;
+        mix-blend-mode: multiply;
+        filter: blur(5px) contrast(150%);
+    "></div>
 
-    <!-- Brutalist Geometric Blocks -->
-    <div class="element block-a"></div>
-    <div class="element block-b"></div>
-    <div class="element block-c"></div>
-    <div class="element block-d"></div>
+    <!-- Main Title: REPARATIONS -->
+    <div style="
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        font-size: 8vw;
+        font-weight: 900;
+        line-height: 0.8;
+        color: #00FF00;
+        text-shadow:
+            -2px -2px 0 #000000, 2px -2px 0 #000000,
+            -2px 2px 0 #000000, 2px 2px 0 #000000,
+            0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5);
+        transform: skewX(-15deg) rotate(-5deg);
+        z-index: 10;
+        animation: pulseGlow 3s infinite alternate;
+        mix-blend-mode: screen; /* For extra glow effect */
+    ">
+        REPARATIONS
+    </div>
 
-    <!-- Digital Paint Splatters -->
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <!-- Subtitle / Demand: FOR THE DIGITAL GAZE -->
+    <div style="
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        font-size: 4vw;
+        font-weight: 700;
+        color: #000000;
+        background-color: #00FF00;
+        padding: 1vw 2vw;
+        transform: rotate(10deg) skewY(-5deg);
+        z-index: 12;
+        box-shadow:
+            5px 5px 0 #000000,
+            10px 10px 0 rgba(0,255,0,0.3),
+            0 0 30px rgba(0,255,0,0.8) inset; /* Grime/gloss effect */
+        mix-blend-mode: hard-light;
+    ">
+        FOR THE DIGITAL GAZE
+    </div>
 
-    <!-- High-Gloss Grime / Sheen Lines -->
-    <div class="gloss-line gloss-line-1"></div>
-    <div class="gloss-line gloss-line-2"></div>
+    <!-- Brutalist Block 1: ACCESS DENIED -->
+    <div style="
+        position: absolute;
+        top: 60%;
+        right: 10%;
+        width: 30vw;
+        height: 15vh;
+        background-color: #00FF00;
+        border: 5px solid #000000;
+        transform: rotate(8deg);
+        z-index: 5;
+        box-shadow: 15px 15px 0 #000000;
+    ">
+        <p style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2vw;
+            color: #000000;
+            margin: 0; padding: 0;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-align: center;
+            animation: glitch 2s infinite alternate step-end;
+        ">ACCESS DENIED</p>
+    </div>
 
-    <!-- Aggressive Androgyny Resistance Text Elements -->
-    <span class="text-element text-element-1">NO GENDER</span>
-    <span class="text-element text-element-2">RESIST SYSTEM</span>
-    <span class="text-element text-element-3">RECLAIM<br>POWER</span>
-    <span class="text-element text-element-4">FLUID</span>
-    <span class="text-element text-element-5">SUBVERT</span>
-    <span class="text-element text-element-6">DEFIANCE</span>
-    <span class="text-element text-element-7">UNBOUND</span>
+    <!-- Brutalist Block 2: PAY UP / THE COST IS YOUR ATTENTION -->
+    <div style="
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        width: 40vw;
+        height: 20vh;
+        background-color: #000000;
+        border: 3px solid #00FF00;
+        transform: rotate(-12deg) skewX(5deg);
+        z-index: 7;
+        box-shadow:
+            -10px -10px 0 #00FF00,
+            0 0 20px rgba(0,255,0,0.5),
+            inset 0 0 15px rgba(0,255,0,0.3);
+    ">
+        <p style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5vw;
+            color: #00FF00;
+            margin: 0; padding: 0;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-align: center;
+        ">
+            <span style="display: block; animation: pulseGlow 2s infinite linear;">PAY UP</span>
+            <span style="display: block; font-size: 1.5vw; opacity: 0.7; transform: translateY(-0.5vw);">THE COST IS YOUR ATTENTION</span>
+        </p>
+    </div>
 
-    <!-- ASCII Art Shapes for digital texture -->
-    <pre class="ascii-shape ascii-shape-1">
-|\_/|
-|   |
-|---|</pre>
-    <pre class="ascii-shape ascii-shape-2">
-  /--\
- /    \
-|  <>  |
- \    /
-  \--/
-</pre>
+    <!-- Digital Splatter 1 (Large Green Blob) -->
+    <div class="splatter1" style="
+        position: absolute;
+        top: 15%;
+        right: -5%;
+        width: 40vw;
+        height: 40vh;
+        background-color: #00FF00;
+        opacity: 0.2;
+        transform: rotate(45deg) scale(1.2);
+        filter: blur(15px);
+        z-index: 3;
+        mix-blend-mode: screen;
+        animation: rotateGrime 20s infinite linear;
+    "></div>
 
-    <!-- Symbolic Elements (using unicode characters) -->
-    <div class="symbol symbol-1">&#9876;</div> <!-- Crossed Swords Symbol -->
-    <div class="symbol symbol-2">&#9679;</div> <!-- Large Circle Symbol -->
+    <!-- Digital Splatter 2 (Jagged Black) -->
+    <div class="splatter2" style="
+        position: absolute;
+        bottom: -10%;
+        left: 20%;
+        width: 60vw;
+        height: 30vh;
+        background-color: #000000;
+        border: 2px solid #00FF00;
+        opacity: 0.8;
+        transform: rotate(-30deg) skewX(10deg);
+        z-index: 4;
+        box-shadow: 0 0 20px rgba(0,255,0,0.4);
+    "></div>
 
-    <!-- Random smaller brutalist/grime elements for added noise and mess -->
-    <div class="element" style="top: 80%; left: 80%; width: 50px; height: 5px; transform: rotate(40deg); opacity: 0.8; animation-delay: 1s;"></div>
-    <div class="element" style="top: 10%; right: 10%; width: 5px; height: 50px; transform: rotate(-20deg); opacity: 0.6; animation-delay: 2s;"></div>
-    <div class="element" style="bottom: 0%; left: 50%; width: 100px; height: 10px; opacity: 0.5; animation-delay: 0.5s; background-color: #00FF00;"></div>
-    <div class="element" style="top: 50%; left: 50%; width: 20px; height: 20px; transform: translate(-50%, -50%) rotate(15deg); z-index: 190; animation-delay: 1.5s; background-color: rgba(0,255,0,0.8);"></div>
+    <!-- Digital Splatter 3 (Smaller Green) -->
+    <div class="splatter3" style="
+        position: absolute;
+        top: 40%;
+        left: -10%;
+        width: 30vw;
+        height: 20vh;
+        background-color: #00FF00;
+        opacity: 0.3;
+        transform: rotate(15deg) scaleY(1.5);
+        filter: blur(10px);
+        z-index: 2;
+        mix-blend-mode: overlay;
+    "></div>
+
+    <!-- Digital Splatter 4 (Aggressive Black) -->
+    <div class="splatter4" style="
+        position: absolute;
+        top: -5%;
+        left: 40%;
+        width: 25vw;
+        height: 25vh;
+        background-color: #000000;
+        border: 1px solid #00FF00;
+        opacity: 0.9;
+        transform: rotate(70deg) skewX(-15deg);
+        filter: drop-shadow(0 0 8px rgba(0,255,0,0.5));
+        z-index: 9;
+        mix-blend-mode: hard-light;
+    "></div>
+
+    <!-- Glitchy Text: DATA DRAIN -->
+    <div style="
+        position: absolute;
+        top: 85%;
+        right: 5%;
+        font-size: 1.8vw;
+        color: #000000;
+        background-color: #00FF00;
+        padding: 0.5vw 1vw;
+        transform: rotate(-5deg);
+        z-index: 9;
+        font-weight: bold;
+        animation: glitch 1.5s infinite alternate-reverse step-start;
+        mix-blend-mode: darken;
+    ">
+        DATA DRAIN
+    </div>
+
+    <!-- Subtle Text: TRANSMISSION END -->
+    <div style="
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        font-size: 1.5vw;
+        color: #00FF00;
+        text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0,255,0,0.5);
+        transform: rotate(20deg) skewY(10deg);
+        z-index: 8;
+        letter-spacing: 0.2em;
+        opacity: 0.6;
+    ">
+        TRANSMISSION END
+    </div>
+
+    <!-- High-gloss "Grime" texture - a semi-transparent black overlay with blur -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+            45deg,
+            rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px,
+            rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
+        );
+        opacity: 0.4;
+        filter: blur(0.5px);
+        mix-blend-mode: overlay;
+        z-index: 15; /* Topmost grime */
+    "></div>
+
+    <!-- Another brutalist text block: [SYSTEM OVERLOAD] -->
+    <div style="
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        font-size: 1.2vw;
+        color: #000000;
+        background-color: #00FF00;
+        padding: 0.5vw;
+        border: 2px solid #000000;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        mix-blend-mode: exclusion;
+        z-index: 100; /* Always visible */
+    ">
+        [SYSTEM OVERLOAD]
+    </div>
+
+    <!-- Another glossy/grimy highlight element (Radial gradient blob) -->
+    <div style="
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,255,0,0.4) 0%, rgba(0,0,0,0.7) 70%, #000000 100%);
+        opacity: 0.6;
+        filter: blur(20px) contrast(180%);
+        mix-blend-mode: screen;
+        z-index: 1;
+        transform: translate(-50%, -50%) rotate(10deg);
+    "></div>
+
+    <!-- A very sharp, angular black element -->
+    <div style="
+        position: absolute;
+        top: 30%;
+        left: 70%;
+        width: 20vw;
+        height: 5vw;
+        background-color: #000000;
+        border-top: 3px solid #00FF00;
+        border-bottom: 3px solid #00FF00;
+        transform: rotate(30deg) skewX(-20deg);
+        z-index: 6;
+        box-shadow: 0 0 15px rgba(0,255,0,0.7);
+        mix-blend-mode: screen;
+    "></div>
+
+    <!-- Grimy Green Streak across the screen -->
+    <div style="
+        position: absolute;
+        top: 20%;
+        left: -30%;
+        width: 150%;
+        height: 8vh;
+        background: linear-gradient(90deg, #000000 0%, #00FF00 15%, #00FF00 85%, #000000 100%);
+        opacity: 0.2;
+        transform: rotate(-15deg);
+        filter: blur(12px) brightness(180%);
+        mix-blend-mode: hard-light;
+        z-index: 2;
+    "></div>
+
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
