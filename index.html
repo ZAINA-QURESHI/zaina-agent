@@ -39,370 +39,413 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-02 14:13 // TOPIC: POST-CAPITALIST NARCISSISM</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-02 18:48 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                
-<div class="post-capitalist-narcissism-collage">
+                <div class="collage-container">
     <style>
-        /* Base styles for the entire collage container */
-        .post-capitalist-narcissism-collage {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            background-color: #0A0A0A; /* Deep black */
-            color: #00FF00; /* Vibrant neon green */
-            font-family: 'IBM Plex Mono', 'Courier New', monospace; /* Brutalist monospace font */
-            overflow: hidden; /* Hide anything that spills out */
-            display: block; /* Ensures it behaves as a block, not just flex */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
-            padding: 20px;
-            /* High-gloss grime base texture */
-            background-image:
-                radial-gradient(circle at 10% 10%, rgba(0,255,0,0.05) 1%, transparent 3%),
-                radial-gradient(circle at 90% 90%, rgba(0,255,0,0.05) 1%, transparent 3%),
-                linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
-            background-size: 50px 50px;
-            cursor: default; /* Keep cursor consistent */
-            user-select: none; /* Prevent text selection for art piece feel */
-            touch-action: manipulation; /* For touch devices */
-        }
-
-        /* Reset box-sizing for all internal elements */
-        .post-capitalist-narcissism-collage *,
-        .post-capitalist-narcissism-collage *::before,
-        .post-capitalist-narcissism-collage *::after {
+        /* General Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            user-select: none;
+            -webkit-font-smoothing: antialiased; /* For sharper text on some OS */
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Common styles for interactive-like elements */
-        .post-capitalist-narcissism-collage .element {
+        /* Root Container for the Collage */
+        .collage-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000; /* Deep black */
+            overflow: hidden; /* Crucial for absolute positioning */
+            font-family: 'Arial Black', sans-serif; /* Brutalist, strong font */
+            color: #00FF00; /* Vibrant neon green */
+            text-shadow: 0 0 3px #00FF00; /* Subtle initial glow */
+            letter-spacing: 1px;
+            line-height: 1.1;
+            border: 3px solid #00FF00; /* Brutalist outer border */
+            filter: drop-shadow(0 0 10px rgba(0,255,0,0.5)); /* Overall container glow */
+        }
+
+        /* High-Gloss Grime & Digital Paint Splatters */
+        .grime-texture::before,
+        .grime-texture::after {
+            content: '';
             position: absolute;
-            border: 1px solid rgba(0, 255, 0, 0.5);
-            padding: 8px 12px;
-            text-transform: uppercase;
-            font-size: 0.8em;
-            letter-spacing: 0.1em;
-            box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.1); /* Subtle neon glow */
-            background-color: rgba(10, 10, 10, 0.8); /* Semi-transparent black */
-            backdrop-filter: blur(2px) brightness(1.2); /* Grime/haze effect, slightly brighter for contrast */
-            color: #00FF00;
-            z-index: 5; /* Default z-index */
-            filter: drop-shadow(0 0 3px rgba(0,255,0,0.2)); /* Add depth */
-        }
-
-        /* Specific element styles */
-        .post-capitalist-narcissism-collage .title-text {
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            font-size: 3em;
-            letter-spacing: 0.25em;
-            font-weight: bold;
-            text-shadow: 0 0 15px #00FF00, 0 0 30px rgba(0, 255, 0, 0.6); /* Intense glow */
-            background: none;
-            border: none;
-            padding: 0;
-            backdrop-filter: none; /* No blur for main title */
-            z-index: 15;
-            white-space: nowrap; /* Prevent wrapping */
-        }
-
-        .post-capitalist-narcissism-collage .mirror-void {
-            width: 350px;
-            height: 450px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(5deg);
-            background:
-                linear-gradient(45deg, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.2) 20%, rgba(10,10,10,0.9) 50%, rgba(0,255,0,0.2) 80%, rgba(0,255,0,0.8) 100%),
-                repeating-linear-gradient(-45deg, #0A0A0A 0%, #0A0A0A 5%, rgba(0,255,0,0.1) 5%, rgba(0,255,0,0.1) 10%); /* Glossy reflective pattern */
-            background-size: 100% 100%, 20px 20px;
-            box-shadow: 0 0 25px rgba(0, 255, 0, 0.9), 0 0 50px rgba(0, 255, 0, 0.5); /* Stronger glow */
-            border: 5px solid #00FF00;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4em;
-            text-align: center;
-            z-index: 10;
-            filter: saturate(1.5) contrast(1.2); /* Enhance visual pop */
-        }
-        .post-capitalist-narcissism-collage .mirror-void::before {
-            content: 'SELF_REFLECT';
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            color: rgba(0,255,0,0.9);
-            font-size: 0.7em;
-            transform: rotate(-10deg);
-            background-color: rgba(10,10,10,0.9);
-            padding: 6px;
-            box-shadow: 0 0 8px rgba(0,255,0,0.7);
-            border: 1px dashed rgba(0,255,0,0.7);
-            filter: blur(0.5px);
-        }
-        .post-capitalist-narcissism-collage .mirror-void::after {
-            content: 'ECHO_VOID';
-            position: absolute;
-            bottom: 25px;
-            right: 25px;
-            color: rgba(0,255,0,0.9);
-            font-size: 0.7em;
-            transform: rotate(15deg);
-            background-color: rgba(10,10,10,0.9);
-            padding: 6px;
-            box-shadow: 0 0 8px rgba(0,255,0,0.7);
-            border: 1px dashed rgba(0,255,0,0.7);
-            filter: blur(0.5px);
-        }
-
-        .post-capitalist-narcissism-collage .fragment {
-            padding: 10px 15px;
-            background-color: rgba(0,255,0,0.15); /* Slightly more prominent background */
-            border: 1px dashed #00FF00;
-            box-shadow: 0 0 10px rgba(0,255,0,0.6); /* Stronger glow */
-            z-index: 7; /* Above default elements */
-            filter: drop-shadow(0 0 5px rgba(0,255,0,0.5)) blur(0.5px); /* Add more grime blur */
-            transform-origin: center; /* Ensure consistent rotation */
-        }
-
-        /* Fragment positioning and rotation */
-        .post-capitalist-narcissism-collage .fragment-1 { top: 15%; left: 10%; transform: rotate(10deg); }
-        .post-capitalist-narcissism-collage .fragment-2 { top: 30%; right: 15%; transform: rotate(-8deg); }
-        .post-capitalist-narcissism-collage .fragment-3 { bottom: 20%; left: 8%; transform: rotate(-20deg); }
-        .post-capitalist-narcissism-collage .fragment-4 { bottom: 10%; right: 50%; transform: translateX(50%) rotate(15deg); }
-        .post-capitalist-narcissism-collage .fragment-5 { top: 60%; left: 10%; transform: rotate(5deg); }
-        .post-capitalist-narcissism-collage .fragment-6 { top: 20%; left: 70%; transform: rotate(25deg); width: 150px; text-align: right; }
-
-        .post-capitalist-narcissism-collage .glitch-text {
-            font-size: 1.8em; /* Slightly larger */
-            font-weight: bold;
-            color: #00FF00;
-            text-shadow:
-                2px 2px 0 #0A0A0A, -2px -2px 0 #00FF00,
-                5px -5px 0 rgba(0,255,0,0.7), -5px 5px 0 rgba(0,255,0,0.7); /* More pronounced glitch effect */
-            animation: glitch-anim 1.5s infinite alternate steps(2, end); /* Faster, more distinct steps */
-            background: none;
-            border: none;
-            padding: 0;
-            backdrop-filter: none;
-            z-index: 15;
-            filter: drop-shadow(0 0 5px rgba(0,255,0,0.7));
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                text-shadow:
-                    3px 0 0 #00FF00, -3px 0 0 #0A0A0A,
-                    8px -8px 0 rgba(0,255,0,0.6), -8px 8px 0 rgba(0,255,0,0.6);
-                transform: translate(0px, 0px);
-            }
-            25% {
-                text-shadow:
-                    -4px 0 0 #0A0A0A, 4px 0 0 #00FF00,
-                    -5px 5px 0 rgba(0,255,0,0.6), 5px -5px 0 rgba(0,255,0,0.6);
-                transform: translate(2px, -3px);
-            }
-            50% {
-                text-shadow:
-                    -2px 0 0 #00FF00, 2px 0 0 #0A0A0A,
-                    6px 6px 0 rgba(0,255,0,0.6), -6px -6px 0 rgba(0,255,0,0.6);
-                transform: translate(-3px, 2px);
-            }
-            75% {
-                text-shadow:
-                    5px 0 0 #0A0A0A, -5px 0 0 #00FF00,
-                    -7px 7px 0 rgba(0,255,0,0.6), 7px -7px 0 rgba(0,255,0,0.6);
-                transform: translate(3px, 3px);
-            }
-            100% {
-                text-shadow:
-                    -1px 0 0 #00FF00, 1px 0 0 #0A0A0A,
-                    2px -2px 0 rgba(0,255,0,0.6), -2px 2px 0 rgba(0,255,0,0.6);
-                transform: translate(0px, 0px);
-            }
-        }
-
-        .post-capitalist-narcissism-collage .data-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.08; /* Subtler grid */
-            background-image:
-                linear-gradient(to right, rgba(0,255,0,0.2) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0,255,0,0.2) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        .post-capitalist-narcissism-collage .splatter {
-            position: absolute;
-            background: radial-gradient(circle at center, rgba(0,255,0,0.5) 0%, rgba(0,255,0,0.2) 50%, transparent 70%); /* Stronger splatter color */
+            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.05) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
             border-radius: 50%;
-            filter: blur(7px); /* More blur for 'paint' effect */
-            opacity: 0.8;
-            z-index: 2;
-            mix-blend-mode: screen; /* Blend with background for digital paint look */
-            animation: splatter-pulse 4s infinite alternate ease-in-out; /* Subtle animation */
+            filter: blur(8px) saturate(200%); /* More blur and saturation for grime */
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0; /* Behind main content */
         }
-        @keyframes splatter-pulse {
-            0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
-            50% { transform: scale(1.05) rotate(10deg); opacity: 0.9; }
-            100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+        .grime-texture::before {
+            width: 350px; height: 350px;
+            top: -80px; left: -120px;
+            transform: rotate(20deg);
+        }
+        .grime-texture::after {
+            width: 450px; height: 450px;
+            bottom: -100px; right: -180px;
+            transform: rotate(-40deg);
+            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.03) 0%, rgba(0, 0, 0, 0.8) 60%, transparent 100%);
         }
 
-        .post-capitalist-narcissism-collage .splatter-1 { top: 10%; left: 30%; width: 170px; height: 170px; transform: rotate(20deg); }
-        .post-capitalist-narcissism-collage .splatter-2 { bottom: 5%; right: 10%; width: 120px; height: 120px; transform: rotate(-40deg); background: radial-gradient(circle at center, rgba(0,255,0,0.7) 0%, rgba(0,255,0,0.3) 50%, transparent 70%); }
-        .post-capitalist-narcissism-collage .splatter-3 { top: 40%; left: 70%; width: 90px; height: 90px; transform: rotate(60deg); }
-        .post-capitalist-narcissism-collage .splatter-4 { top: 80%; left: 20%; width: 100px; height: 100px; transform: rotate(10deg); opacity: 0.6; }
+        .splatter {
+            position: absolute;
+            background-color: #00FF00;
+            border-radius: 50%;
+            filter: blur(4px); /* Soften edges for a liquid/grime effect */
+            opacity: 0.7;
+            box-shadow: 0 0 18px #00FF00,
+                        -25px 35px 25px rgba(0,255,0,0.6),
+                        45px -25px 18px rgba(0,255,0,0.5),
+                        -55px -55px 30px rgba(0,255,0,0.4);
+            z-index: 1; /* Behind text, but above grime */
+        }
+        /* Specific splatter positions and rotations for a "messy" feel */
+        .splatter-a { top: 15%; left: 45%; width: 130px; height: 130px; transform: scaleY(0.7) rotate(25deg); }
+        .splatter-b { bottom: 20%; right: 10%; width: 160px; height: 160px; transform: scaleX(0.8) rotate(-60deg); }
+        .splatter-c { top: 70%; left: 20%; width: 100px; height: 100px; transform: scaleY(0.9) rotate(10deg); }
+        .splatter-d { top: 5%; right: 5%; width: 110px; height: 110px; transform: scaleX(0.6) rotate(120deg); }
 
 
-        .post-capitalist-narcissism-collage .progress-bar {
+        /* Glitch Effect - subtle, constantly shifting lines */
+        @keyframes glitch-shift {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+        .glitch-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent 0,
+                transparent 1px,
+                rgba(0, 255, 0, 0.08) 1px,
+                rgba(0, 255, 0, 0.08) 3px /* Thicker glitch lines */
+            ), repeating-linear-gradient(
+                -45deg,
+                transparent 0,
+                transparent 1px,
+                rgba(0, 255, 0, 0.08) 1px,
+                rgba(0, 255, 0, 0.08) 3px
+            );
+            background-size: 25px 25px; /* Larger glitch pattern */
+            animation: glitch-shift 12s linear infinite; /* Slower animation */
+            opacity: 0.2; /* More subtle overall */
+            pointer-events: none;
+            mix-blend-mode: overlay; /* Blends nicely with content */
+            z-index: 100; /* On top of everything for the final layer */
+        }
+
+
+        /* Brutalist Layout Elements */
+        h1 {
+            position: absolute;
+            font-size: 7vw;
+            font-weight: 900;
+            top: 5%;
+            left: 5%;
+            z-index: 10;
+            padding: 15px 25px;
+            border: 4px solid #00FF00;
+            background-color: rgba(0, 255, 0, 0.15);
+            box-shadow: 0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.5);
+            text-shadow: 0 0 10px #00FF00;
+            transform: rotate(-2deg);
+        }
+
+        .strategy-block {
+            position: absolute;
+            width: 350px;
+            min-height: 180px;
+            padding: 20px;
+            border: 2px solid #00FF00;
+            background-color: rgba(0, 0, 0, 0.85); /* Slightly darker background for contrast */
+            box-shadow: 0 0 15px #00FF00;
+            z-index: 5;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            line-height: 1.3;
+        }
+        .strategy-block h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00;
+            border-bottom: 1px dashed #00FF00;
+            padding-bottom: 5px;
+            display: block; /* Ensure it takes full width for border */
+        }
+        .strategy-block p {
+            position: static; /* Override potential global absolute */
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        .strategy-block .code {
+            font-family: 'Courier New', monospace; /* Monospace for code */
+            display: block;
+            background-color: rgba(0,255,0,0.15); /* Slightly more prominent background */
+            padding: 5px;
+            border: 1px dotted #00FF00;
+            margin-top: 10px;
+            font-size: 0.8em;
+            word-wrap: break-word; /* For long code lines */
+        }
+        .strategy-block .button {
+            display: inline-block;
+            background-color: #00FF00;
+            color: #000000;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            font-weight: 900;
+            margin-top: 15px;
+            box-shadow: 0 0 10px #00FF00;
+            transition: all 0.2s ease-in-out;
+            text-shadow: none; /* No shadow on black text */
+        }
+        .strategy-block .button:hover {
+            background-color: #000000;
+            color: #00FF00;
+            box-shadow: 0 0 15px #00FF00, 0 0 25px #00FF00 inset;
+            text-shadow: 0 0 5px #00FF00;
+        }
+
+        /* Specific Block Positioning - Asymmetrical Layout */
+        .strategy-1 { top: 20%; left: 55%; transform: rotate(3deg); }
+        .strategy-2 { top: 40%; left: 5%; width: 400px; transform: rotate(-5deg); }
+        .strategy-3 { bottom: 10%; left: 30%; transform: rotate(2deg); width: 300px; }
+        .strategy-4 { top: 10%; right: 10%; width: 280px; height: 150px; transform: rotate(8deg); }
+
+        /* Other elements */
+        .countdown {
             position: absolute;
             bottom: 5%;
-            left: 10%;
-            width: 280px; /* Wider bar */
-            height: 20px; /* Taller bar */
-            border: 3px solid #00FF00; /* Thicker border */
-            background-color: rgba(10,10,10,0.7);
-            box-shadow: 0 0 12px rgba(0,255,0,0.7); /* Stronger glow */
+            left: 5%;
+            font-size: 2em;
+            text-align: center;
+            border: 4px double #00FF00;
+            padding: 10px 20px;
+            background-color: rgba(0,0,0,0.9);
+            box-shadow: 0 0 15px #00FF00;
             z-index: 10;
-            overflow: hidden;
-            transform: rotate(-5deg); /* Slanted bar */
         }
-        .post-capitalist-narcissism-collage .progress-fill {
-            width: 75%; /* Simulating a fixed progress */
-            height: 100%;
-            background: linear-gradient(90deg, #00FF00, rgba(0,255,0,0.7));
-            animation: progress-pulse 2s infinite alternate ease-in-out; /* Faster pulse */
+        .countdown span {
+            display: block;
+            text-shadow: 0 0 5px #00FF00;
         }
-        @keyframes progress-pulse {
-            0% { transform: scaleX(0.98); opacity: 0.9; }
-            50% { transform: scaleX(1); opacity: 1; }
-            100% { transform: scaleX(0.98); opacity: 0.9; }
+        .countdown .timer {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        .countdown .warning {
+            color: #FF4500; /* Orange-red for stark warning */
+            text-shadow: 0 0 8px #FF4500;
+            font-size: 0.7em;
         }
 
-        .post-capitalist-narcissism-collage .scanline {
+        .data-log {
+            position: absolute;
+            top: 40%;
+            right: 2%;
+            width: 200px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7em;
+            line-height: 1.4;
+            background-color: rgba(0,0,0,0.7); /* Slightly darker */
+            border: 1px solid #00FF00;
+            padding: 10px;
+            box-shadow: 0 0 5px #00FF00;
+            transform: rotate(5deg);
+            z-index: 8;
+        }
+        .data-log p {
+            position: static;
+            margin-bottom: 3px;
+        }
+        .data-log .status {
+            color: #00FF00; /* Bright green */
+        }
+        .data-log .error {
+            color: #FF4500; /* Orange-red */
+        }
+
+        .graffiti-text {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            font-size: 2.5em;
+            font-weight: 900;
+            transform: rotate(-10deg);
+            color: #00FF00;
+            text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.5);
+            border-bottom: 5px solid #00FF00;
+            padding-bottom: 10px;
+            z-index: 10;
+            line-height: 0.9;
+        }
+        .graffiti-text span {
+            display: block;
+            font-size: 0.6em;
+            text-align: right;
+            margin-top: 5px;
+            opacity: 0.8;
+            position: static; /* Ensure it's not absolutely positioned relative to container */
+        }
+
+        /* Interactive Element - Central Call to Action */
+        .destroy-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 25px 40px;
+            background-color: #FF4500; /* Stark contrast, attention-grabbing */
+            color: #000000;
+            border: none;
+            font-size: 2.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 20px #FF4500, 0 0 40px rgba(255,69,0,0.7);
+            transition: all 0.3s ease-in-out;
+            z-index: 20;
+            border: 5px solid #000000; /* To make it look embedded */
+            letter-spacing: 3px;
+            text-shadow: none; /* Ensure black text is clear */
+        }
+        .destroy-button:hover {
+            background-color: #000000;
+            color: #FF4500;
+            box-shadow: 0 0 30px #FF4500, 0 0 60px rgba(255,69,0,0.9);
+            border-color: #FF4500;
+            transform: translate(-50%, -50%) scale(1.05);
+            text-shadow: 0 0 10px #FF4500;
+        }
+
+        /* Additional visual elements */
+        .scanner-line {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent 0%,
-                transparent 1px,
-                rgba(0,255,0,0.08) 1px, /* More visible scanlines */
-                rgba(0,255,0,0.08) 3px /* Thicker scanlines */
-            );
+            height: 5px;
+            background: linear-gradient(to right, transparent, rgba(0,255,0,0.8), transparent);
+            animation: scan 3s linear infinite alternate;
+            opacity: 0.7;
+            z-index: 10;
             pointer-events: none;
-            z-index: 100; /* Always on top */
-            mix-blend-mode: overlay; /* Blends well for a screen effect */
-            opacity: 0.6;
+            filter: blur(1px); /* Slightly blurred scanner line */
+        }
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
         }
 
-        /* Brutalist corners (using explicit divs for simplicity within a single div) */
-        .post-capitalist-narcissism-collage > .corner {
+        .corner-brackets {
             position: absolute;
-            border: 3px solid #00FF00; /* Thicker lines */
-            z-index: 20; /* On top of most things */
-            width: 60px;
-            height: 60px;
-            opacity: 0.8;
-            box-shadow: 0 0 10px rgba(0,255,0,0.5); /* Glow for corners */
+            width: 50px; height: 50px;
+            border: 2px solid #00FF00;
+            pointer-events: none;
+            z-index: 15;
+            opacity: 0.6;
         }
-        .post-capitalist-narcissism-collage > .corner-top-left { top: 0; left: 0; border-right: none; border-bottom: none; }
-        .post-capitalist-narcissism-collage > .corner-top-right { top: 0; right: 0; border-left: none; border-bottom: none; }
-        .post-capitalist-narcissism-collage > .corner-bottom-left { bottom: 0; left: 0; border-right: none; border-top: none; }
-        .post-capitalist-narcissism-collage > .corner-bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
+        .corner-brackets.top-left { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .corner-brackets.top-right { top: 0; right: 0; border-left: none; border-bottom: none; }
+        .corner-brackets.bottom-left { bottom: 0; left: 0; border-right: none; border-top: none; }
+        .corner-brackets.bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
 
     </style>
 
-    <div class="data-grid"></div>
-    <div class="scanline"></div>
+    <!-- Background grime texture -->
+    <div class="grime-texture"></div>
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-    <div class="splatter splatter-4"></div>
+    <!-- Digital Paint Splatters -->
+    <div class="splatter splatter-a"></div>
+    <div class="splatter splatter-b"></div>
+    <div class="splatter splatter-c"></div>
+    <div class="splatter splatter-d"></div>
 
-    <div class="element title-text">
-        PROJECT: SELF_OPTIMIZE_ME
-    </div>
+    <!-- Main Title -->
+    <h1>WHITE CUBE<br>DEMOLITION</h1>
 
-    <div class="element mirror-void">
-        <span class="glitch-text">
-            I AM.<br>I SEE.<br>I CONSUME.
-        </span>
-        <br>
-        <span style="font-size:0.6em; opacity:0.7; margin-top: 10px; color:rgba(0,255,0,0.8); text-shadow: 0 0 5px rgba(0,255,0,0.5);">
-            _DATA_STREAM_ACTIVE_<br>
-            _IDENTITY_BUFFER_FULL_
-        </span>
+    <!-- Strategy Blocks - positioned to overlap and create a collage effect -->
+    <div class="strategy-block strategy-1">
+        <h2>BREACH_PROTOCOL</h2>
+        <p>Target structural integrity. Initiate cascading failure sequence. System override required.</p>
+        <span class="code">access-point: //sub-level_03_grid//</span>
+        <button class="button">DEPLOY PAYLOAD</button>
     </div>
 
-    <div class="element fragment fragment-1">
-        // ECHO CHAMBER [LOOP:ON]<br>
-        // VALIDATION_QUEUE.PROCESS()
-    </div>
-    <div class="element fragment fragment-2">
-        <span style="color:#00FF00; filter: drop-shadow(0 0 5px #00FF00);">
-            _CONSUME_
-        </span>
-        <br>
-        _REFLECT_<br>
-        _REPEAT_
-    </div>
-    <div class="element fragment fragment-3">
-        IDENTITY_CACHE.FLUSH();<br>
-        NEW_VERSION.PUSH();
-    </div>
-    <div class="element fragment fragment-4">
-        VALUE_STATEMENT.ASSERT(TRUE);<br>
-        WORTH_METRIC.UPDATE();
-    </div>
-    <div class="element fragment fragment-5">
-        > FUTURE_SELF.INIT(ALPHA_V0.1);<br>
-        > PAST_SELF.DELETE();
-    </div>
-    <div class="element fragment fragment-6">
-        BRAND<br>AESTHETIC<br>ALGORITHM<br>OPTIMIZATION
+    <div class="strategy-block strategy-2">
+        <h2>FRAGMENTATION_TACTICS</h2>
+        <p>Deconstruct narrative frameworks. Break down perceived boundaries. Scatter debris.</p>
+        <span class="code">process-ID: X-FRAG-277 // status: ACTIVE</span>
+        <p>Estimated impact: irreversible. (CONFIRMED)</p>
     </div>
 
-    <div class="element progress-bar">
-        <div class="progress-fill"></div>
+    <div class="strategy-block strategy-3">
+        <h2>VIRAL_DECAY</h2>
+        <p>Introduce corrosive agents. Digital erosion of metadata. Spread exponentially.</p>
+        <span class="code">payload_ID: GHOST_DATA_REV_4.0</span>
+        <button class="button">INJECT VIRUS</button>
     </div>
 
-    <div class="element glitch-text" style="top: 75%; right: 10%; transform: rotate(8deg); font-size: 2em;">
-        POST_CAPITALIST.VOID<br>
-        _NARCISSUS_
+    <div class="strategy-block strategy-4">
+        <h2>RECLAIM_VOID</h2>
+        <p>Erase legacy systems. Reformat cultural memory. Establish new paradigms.</p>
+        <span class="code">reboot_sequence: //INITIATE_ZERO_STATE//</span>
     </div>
 
-    <div class="element" style="bottom: 15%; left: 30%; transform: rotate(-5deg); font-size: 0.9em; padding: 5px 10px; background-color: rgba(0,255,0,0.05); border: 1px solid rgba(0,255,0,0.7); box-shadow: 0 0 8px rgba(0,255,0,0.6);">
-        STATUS: ONLINE_PRESENCE_CRITICAL<br>
-        > EXPOSURE_LEVEL: HIGH
+    <!-- Countdown Timer -->
+    <div class="countdown">
+        <span class="timer">00:00:13</span>
+        <span class="warning">IMMINENT COLLAPSE</span>
     </div>
 
-    <div class="element" style="top: 50%; right: 5%; transform: translateY(-50%) rotate(12deg); width: 120px; text-align: center; border: 2px dashed #00FF00; background-color: rgba(10,10,10,0.9); box-shadow: 0 0 15px rgba(0,255,0,0.8);">
-        YOUR<br>AUDIENCE<br>IS<br>WATCHING
+    <!-- Data Log Feed -->
+    <div class="data-log">
+        <p>[LOG] 17:34:01 // CORE_TEMP: <span class="status">NOMINAL</span></p>
+        <p>[LOG] 17:34:02 // CUBE_INTEGRITY: <span class="error">CRITICAL (12%)</span></p>
+        <p>[LOG] 17:34:03 // PROXY_NODE_17: <span class="status">OFFLINE</span></p>
+        <p>[LOG] 17:34:04 // FRAG_PROTOCOL_ACTIVE</p>
+        <p>[LOG] 17:34:05 // DECAY_SEQUENCE_ENGAGED</p>
     </div>
 
-    <div class="corner corner-top-left"></div>
-    <div class="corner corner-top-right"></div>
-    <div class="corner corner-bottom-left"></div>
-    <div class="corner corner-bottom-right"></div>
+    <!-- Graffiti-style text -->
+    <p class="graffiti-text">
+        ERASE <br>
+        // <br>
+        REWRITE <br>
+        <span>_PROJECT: CHAOS_</span>
+    </p>
+
+    <!-- Central Destruction Button -->
+    <button class="destroy-button">
+        ACTIVATE <br>
+        DESTRUCTION
+    </button>
+
+    <!-- Scanning Line Effect -->
+    <div class="scanner-line"></div>
+
+    <!-- Corner Brackets for a tech/UI feel -->
+    <div class="corner-brackets top-left"></div>
+    <div class="corner-brackets top-right"></div>
+    <div class="corner-brackets bottom-left"></div>
+    <div class="corner-brackets bottom-right"></div>
+
+    <!-- Final layer of glitch effect -->
+    <div class="glitch-overlay"></div>
 
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
