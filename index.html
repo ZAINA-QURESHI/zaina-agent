@@ -39,274 +39,228 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-04 08:55 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-04 12:07 // TOPIC: DECOLONIZING THE PIXEL</div>
             <div class="art-container p-4">
-                
-<div id="ghetto-digital-collage" style="
-    width: 100vw;
-    min-height: 100vh;
-    background: #000000; /* Deep black background */
-    color: #00FF00; /* Vibrant neon green default text color */
-    font-family: 'Arial Black', Gadget, Arial, sans-serif; /* Brutalist font fallback */
-    font-size: 16px;
-    line-height: 1.2;
-    overflow: hidden; /* Contains all absolutely positioned elements */
-    position: relative; /* Establishes positioning context for children */
-    display: block; /* Ensures it takes up space */
-    box-sizing: border-box; /* Standardizes box model */
-    border: 3px solid #00FF00; /* Outer brutalist border */
-    box-shadow: 0 0 20px #00FF00; /* Overall neon glow */
-    text-transform: uppercase;
-    font-weight: 900;
-">
-    <style>
-        /* CSS Reset and base styles scoped to the collage */
-        #ghetto-digital-collage * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            user-select: none; /* Prevents text selection for a unified collage feel */
-            pointer-events: none; /* Default for most collage elements to allow interaction with anything underneath if this were layered */
-        }
+                <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; font-family: 'Monaco', 'Lucida Console', monospace; overflow: hidden; color: #00FF00; box-sizing: border-box; display: block;">
+  <style>
+    /* Reset basic margins/paddings for contained elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Common text block styling */
-        #ghetto-digital-collage .text-block {
-            position: absolute;
-            color: #00FF00;
+    /* High-gloss grime and digital paint splatters via pseudo-elements on the main container */
+    div:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0, 255, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 85% 85%, rgba(0, 255, 0, 0.1) 0%, transparent 20%),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.8) 0%, transparent 50%, rgba(0, 255, 0, 0.05) 100%);
+      mix-blend-mode: overlay; /* Creates high-gloss sheen and grime */
+      pointer-events: none;
+      z-index: 1000; /* Ensure it's on top */
+      opacity: 0.6;
+    }
+
+    div:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 5px,
+          rgba(0, 255, 0, 0.1) 5px,
+          rgba(0, 255, 0, 0.1) 10px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 5px,
+          rgba(0, 0, 0, 0.2) 5px,
+          rgba(0, 0, 0, 0.2) 10px
+        );
+      mix-blend-mode: hard-light; /* Adds gritty texture */
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.1;
+    }
+
+    /* Base styles for pixelated text */
+    .pixel-text {
+        font-family: 'Monaco', 'Lucida Console', monospace;
+        color: #00FF00;
+        text-transform: uppercase;
+        position: absolute;
+        line-height: 0.9;
+        word-break: break-word;
+        letter-spacing: 0.05em;
+        text-shadow:
+            0 0 5px #00FF00,
+            0 0 10px #00FF00,
+            0 0 20px rgba(0, 255, 0, 0.5); /* Default neon glow */
+    }
+
+    /* Brutalist geometric blocks */
+    .brutalist-block {
+        position: absolute;
+        background-color: rgba(0, 255, 0, 0.2);
+        border: 2px solid #00FF00;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
+        mix-blend-mode: screen; /* For a vibrant, high-gloss appearance */
+    }
+
+    /* Digital paint splatter effect */
+    .splatter {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #00FF00 0%, transparent 70%);
+        opacity: 0.7;
+        filter: blur(2px);
+        transform: scale(var(--s, 1)); /* Custom property for scaling */
+    }
+
+    /* Glitch animation for text */
+    .glitch {
+        animation: glitch-anim 0.8s infinite alternate step-end;
+    }
+    @keyframes glitch-anim {
+        0%, 100% {
+            transform: translate(0, 0);
             text-shadow:
-                0 0 5px #00FF00,
-                0 0 10px #00FF00,
-                0 0 20px rgba(0,255,0,0.5),
-                0 0 40px rgba(0,255,0,0.3); /* Neon glow effect */
-            letter-spacing: 0.1em;
-            word-break: break-all; /* For brutalist, fragmented text */
-            z-index: 3; /* Text generally on top */
-            pointer-events: none; /* Prevents text from being selectable/interactive */
-            font-family: 'Arial Black', Gadget, Arial, sans-serif; /* Explicit brutalist font */
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
         }
-
-        /* Brutalist blocks/shapes */
-        #ghetto-digital-collage .brutal-block {
-            position: absolute;
-            background: rgba(0, 255, 0, 0.15); /* Semi-transparent neon */
-            border: 2px solid #00FF00;
-            box-shadow: inset 0 0 10px #00FF00, 0 0 15px rgba(0,255,0,0.7); /* High-gloss grime effect */
-            z-index: 1;
-            transform-origin: center center;
-            pointer-events: none;
+        14% {
+            transform: translate(-0.02em, 0.03em);
+            text-shadow:
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75),
+                -0.05em 0.025em 0 rgba(0, 255, 0, 0.75);
         }
-        #ghetto-digital-collage .brutal-block.dark {
-            background: rgba(0, 0, 0, 0.8);
-            border-color: #00FF00;
-            box-shadow: inset 0 0 8px #00FF00, 0 0 12px rgba(0,255,0,0.5);
+        28% {
+            transform: translate(0.01em, -0.02em);
+            text-shadow:
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75),
+                -0.05em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75);
         }
-
-        /* Digital paint splatters / grime effects */
-        #ghetto-digital-collage .grime-splatter {
-            position: absolute;
-            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-            border-radius: 50%; /* Blobby shape */
-            filter: blur(3px) contrast(180%); /* Blurry, high-contrast digital splatter */
-            opacity: 0.7;
-            z-index: 0; /* Background layer */
-            pointer-events: none;
+        42% {
+            transform: translate(-0.03em, 0.01em);
+            text-shadow:
+                -0.05em 0.025em 0 rgba(0, 255, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75);
         }
-        #ghetto-digital-collage .grime-splatter.dark {
-             background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 255, 0, 0.3) 70%, transparent 100%);
-             opacity: 0.8;
-             filter: blur(2px) brightness(70%);
+        56% {
+            transform: translate(0.04em, -0.01em);
+            text-shadow:
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
         }
-
-        /* Overall glitch/digital noise overlay */
-        #ghetto-digital-collage .glitch-noise {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0,255,0,0.1),
-                rgba(0,255,0,0.1) 1px,
-                transparent 1px,
-                transparent 4px
-            );
-            mix-blend-mode: overlay; /* Blends nicely with background */
-            opacity: 0.07;
-            pointer-events: none;
-            z-index: 10; /* Highest z-index for a pervasive effect */
+        70% {
+            transform: translate(-0.02em, 0.04em);
+            text-shadow:
+                0.05em 0 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75);
         }
-
-        /* High-gloss grime detail: a reflective strip or overlay */
-        #ghetto-digital-collage .gloss-overlay {
-            position: absolute;
-            background: linear-gradient(
-                to right,
-                rgba(255,255,255,0) 0%,
-                rgba(255,255,255,0.15) 50%, /* More prominent gloss */
-                rgba(255,255,255,0) 100%
-            );
-            mix-blend-mode: screen; /* Lighten effect for gloss */
-            width: 100%;
-            height: 25px; /* Slightly thicker strip */
-            top: 48%; /* Mid-screen */
-            left: 0;
-            transform: rotate(-8deg);
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 5;
+        84% {
+            transform: translate(0.03em, -0.03em);
+            text-shadow:
+                0.025em 0.05em 0 rgba(0, 255, 0, 0.75),
+                -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                0.05em 0 0 rgba(0, 255, 0, 0.75);
         }
+    }
 
-        /* More subtle grunge texture */
-        #ghetto-digital-collage .grunge-texture {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: radial-gradient(circle at center, rgba(0,255,0,0.07) 0%, transparent 60%);
-            mix-blend-mode: screen;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: 0;
-        }
+    /* Additional dynamic animations */
+    @keyframes rotate-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes flicker {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+        20%, 24%, 55% { opacity: 0.8; }
+    }
+    @keyframes pulsate {
+        0%, 100% { box-shadow: 0 0 10px #00FF00; }
+        50% { box-shadow: 0 0 25px #00FF00, 0 0 50px rgba(0, 255, 0, 0.5); }
+    }
+  </style>
 
-        /* Individual text block positioning and styling */
-        #ghetto-digital-collage .title {
-            font-size: 9vw; /* Larger title */
-            top: 8%;
-            left: 5%;
-            transform: rotate(-7deg);
-            line-height: 0.8;
-        }
-        #ghetto-digital-collage .subtitle {
-            font-size: 3.5vw;
-            bottom: 15%;
-            right: 8%;
-            transform: rotate(12deg);
-        }
-        #ghetto-digital-collage .keyword {
-            font-size: 2.2vw;
-            font-family: monospace; /* Digital/code-like font for keywords */
-        }
-        #ghetto-digital-collage .keyword-1 { top: 35%; left: 62%; transform: rotate(18deg); }
-        #ghetto-digital-collage .keyword-2 { top: 55%; left: 12%; transform: rotate(-10deg); font-size: 2.8vw; }
-        #ghetto-digital-collage .keyword-3 { bottom: 25%; left: 45%; transform: rotate(7deg); }
-        #ghetto-digital-collage .keyword-4 { top: 18%; right: 18%; transform: rotate(28deg); font-size: 2vw; opacity: 0.8;}
+  <!-- Main Title: Decolonize The Pixel -->
+  <div class="pixel-text glitch" style="font-size: 8vw; top: 10%; left: 5%; z-index: 10; transform: skewX(-10deg);">
+    DECOLONIZE
+  </div>
+  <div class="pixel-text" style="font-size: 6vw; top: 25%; left: 30%; z-index: 11; transform: rotate(-5deg); text-shadow: 5px 5px #00FF00;">
+    THE PIXEL
+  </div>
 
-        /* Individual brutal block positioning */
-        #ghetto-digital-collage .block-1 { width: 35%; height: 18%; top: 12%; left: 2%; transform: skewX(-25deg); }
-        #ghetto-digital-collage .block-2 { width: 22%; height: 45%; top: 38%; right: 0%; transform: rotate(18deg); z-index: 2;}
-        #ghetto-digital-collage .block-3 { width: 12%; height: 55%; bottom: 0%; left: 18%; transform: rotate(-12deg); opacity: 0.85;}
-        #ghetto-digital-collage .block-4 { width: 28%; height: 22%; top: -5%; right: 22%; background: rgba(0, 0, 0, 0.95); z-index: 4; border: 4px solid #00FF00; box-shadow: 0 0 25px #00FF00; }
+  <!-- Brutalist Geometric Blocks -->
+  <div class="brutalist-block" style="width: 15vw; height: 10vw; top: 5%; right: -2%; transform: rotate(15deg) skewY(5deg); background-color: rgba(0, 255, 0, 0.5); border-width: 4px; animation: flicker 3s infinite;"></div>
+  <div class="brutalist-block" style="width: 8vw; height: 18vw; bottom: 0%; left: -5%; transform: rotate(-25deg) skewX(10deg); background-color: rgba(0, 0, 0, 0.8); border-color: #00FF00; box-shadow: none; animation: rotate-slow 20s linear infinite reverse;"></div>
+  <div class="brutalist-block" style="width: 25vw; height: 5vw; top: 40%; left: -10%; transform: rotate(5deg); background-color: rgba(0, 0, 0, 0.9); border-width: 8px; border-color: #00FF00; animation: pulsate 2s infinite alternate;"></div>
+  <div class="brutalist-block" style="width: 12vw; height: 12vw; top: 60%; right: 5%; transform: rotate(45deg); background-color: rgba(0, 255, 0, 0.3); border-width: 6px; box-shadow: 0 0 20px #00FF00;"></div>
 
-        /* Individual splatter positioning */
-        #ghetto-digital-collage .splatter-1 { width: 180px; height: 180px; top: 15%; left: 28%; }
-        #ghetto-digital-collage .splatter-2 { width: 230px; height: 230px; bottom: 8%; left: 52%; transform: rotate(35deg); }
-        #ghetto-digital-collage .splatter-3 { width: 120px; height: 120px; top: 65%; right: 12%; opacity: 0.45; filter: blur(4px) contrast(220%); }
-        #ghetto-digital-collage .splatter-4 { width: 280px; height: 280px; top: -10%; right: -10%; opacity: 0.35; transform: rotate(-50deg); }
-        #ghetto-digital-collage .splatter-5 { width: 140px; height: 140px; bottom: 32%; left: 3%; }
+  <!-- Overlay Text Elements -->
+  <p class="pixel-text" style="font-size: 3vw; top: 55%; left: 5%; z-index: 12; opacity: 0.7; transform: rotate(3deg);">
+    RECLAIM
+  </p>
+  <p class="pixel-text glitch" style="font-size: 4vw; bottom: 10%; right: 5%; z-index: 13; transform: skewY(5deg);">
+    GLITCH
+  </p>
+  <p class="pixel-text" style="font-size: 2vw; top: 70%; left: 40%; z-index: 9; opacity: 0.5; text-shadow: none;">
+    MATRIX BREAK
+  </p>
+  <p class="pixel-text" style="font-size: 2.5vw; top: 50%; left: 35%; z-index: 8; opacity: 0.6; transform: rotate(-15deg) scale(0.8); text-shadow: -2px -2px rgba(0, 255, 0, 0.5);">
+    GRID FAILURE
+  </p>
 
-        /* Fine detail lines for extra digital/messy feel */
-        #ghetto-digital-collage .detail-line {
-            position: absolute;
-            width: 3px;
-            height: 50%;
-            background: #00FF00;
-            opacity: 0.35;
-            z-index: 1;
-            pointer-events: none;
-        }
-        #ghetto-digital-collage .detail-line-1 { top: 15%; left: 42%; height: 65%; transform: rotate(65deg); }
-        #ghetto-digital-collage .detail-line-2 { bottom: -5%; right: 12%; height: 45%; transform: rotate(-35deg); }
-        #ghetto-digital-collage .detail-line-3 { top: 10%; left: 82%; height: 35%; transform: rotate(95deg); }
+  <!-- Digital Paint Splatters -->
+  <div class="splatter" style="width: 100px; height: 100px; top: 30%; left: 10%; --s:1.2;"></div>
+  <div class="splatter" style="width: 70px; height: 70px; top: 15%; right: 5%; background: radial-gradient(circle at 70% 30%, #00FF00 0%, transparent 60%); --s:0.9;"></div>
+  <div class="splatter" style="width: 120px; height: 120px; bottom: 5%; left: 30%; --s:1.5;"></div>
+  <div class="splatter" style="width: 80px; height: 80px; top: 60%; right: 20%; background: radial-gradient(circle at 70% 70%, #00FF00 0%, transparent 60%); --s:1.1;"></div>
+  <div class="splatter" style="width: 50px; height: 50px; top: 80%; left: 50%; --s:0.7; opacity: 0.5;"></div>
+  <div class="splatter" style="width: 90px; height: 90px; top: 40%; right: 40%; background: radial-gradient(circle at 20% 80%, #00FF00 0%, transparent 60%); --s:1.0;"></div>
 
-        /* Animation for a subtle digital pulse/glitch */
-        @keyframes neon-pulse {
-            0% { text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
-            50% { text-shadow: 0 0 10px #00FF00, 0 0 25px #00FF00, 0 0 50px rgba(0,255,0,0.6); } /* Stronger pulse */
-            100% { text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
-        }
-        #ghetto-digital-collage .text-block.animated {
-            animation: neon-pulse 3.5s infinite alternate ease-in-out; /* Slightly slower pulse */
-        }
+  <!-- Grime Lines and Details -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background-color: #00FF00; opacity: 0.3; transform: rotate(1deg) translateY(10px);"></div>
+  <div style="position: absolute; bottom: 0; right: 0; width: 80%; height: 3px; background-color: #00FF00; opacity: 0.5; transform: rotate(-2deg) translateX(-15px);"></div>
+  <div style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: linear-gradient(to right, #00FF00, transparent); opacity: 0.4; transform: skewY(-1deg);"></div>
+  <div style="position: absolute; top: 20%; right: 10%; width: 50%; height: 1px; background: linear-gradient(to left, #00FF00, transparent); opacity: 0.2; transform: rotate(8deg);"></div>
 
-        /* Pseudo-elements for added grime/distress on blocks */
-        #ghetto-digital-collage .brutal-block::before {
-            content: '';
-            position: absolute;
-            top: -3px; left: -3px; right: -3px; bottom: -3px;
-            border: 2px dashed rgba(0,255,0,0.6); /* Dashed, distressed border */
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.4;
-        }
-        #ghetto-digital-collage .brutal-block:nth-child(even)::after {
-            content: '';
-            position: absolute;
-            width: 100%; height: 100%;
-            background: linear-gradient(
-                45deg,
-                transparent 48%,
-                rgba(0,255,0,0.25) 50%, /* Stronger diagonal line */
-                rgba(0,255,0,0.25) 52%,
-                transparent 54%
-            );
-            mix-blend-mode: overlay;
-            opacity: 0.15;
-            transform: rotate(12deg);
-            pointer-events: none;
-        }
-    </style>
+  <!-- More Thematic Text -->
+  <div class="pixel-text" style="font-size: 1.5vw; top: 85%; left: 10%; letter-spacing: 0.2em; opacity: 0.8; transform: rotate(-8deg);">
+    GRID FAILURE
+  </div>
+  <div class="pixel-text" style="font-size: 1.8vw; top: 45%; right: 15%; letter-spacing: 0.1em; transform: rotate(12deg); text-shadow: -3px -3px #00FF00;">
+    VOXEL REVOLT
+  </div>
+  <div class="pixel-text glitch" style="font-size: 1.2vw; bottom: 2%; left: 2%; opacity: 0.6; transform: skewX(2deg);">
+    SYSTEM ERROR // REBOOT REALITY
+  </div>
 
-    <!-- HTML Elements for the collage -->
-    <div class="glitch-noise"></div>
-    <div class="grunge-texture"></div>
-    <div class="gloss-overlay"></div>
+  <!-- "Data Stream" / Corrupt Elements -->
+  <div style="position: absolute; top: 0; left: 60%; width: 2vw; height: 100%; background: linear-gradient(to bottom, rgba(0, 255, 0, 0.8), rgba(0, 0, 0, 0.8)); mix-blend-mode: hard-light; opacity: 0.3; transform: skewX(-15deg);"></div>
+  <div style="position: absolute; bottom: 0; right: 30%; width: 1vw; height: 100%; background: linear-gradient(to top, rgba(0, 255, 0, 0.6), rgba(0, 0, 0, 0.6)); mix-blend-mode: overlay; opacity: 0.2; transform: skewY(10deg);"></div>
+  <div style="position: absolute; top: 20%; left: 20%; width: 1px; height: 60%; background-color: #00FF00; animation: flicker 1.5s infinite alternate;"></div>
+  <div style="position: absolute; top: 40%; left: 70%; width: 1px; height: 30%; background-color: #00FF00; opacity: 0.7; transform: rotate(90deg); animation: flicker 2s infinite;"></div>
 
-    <div class="text-block title animated">
-        GHETTO<br>DIGITAL
-    </div>
-
-    <div class="text-block subtitle">
-        INTERSECTION<br>STATIC
-    </div>
-
-    <div class="text-block keyword keyword-1">CODE CRUSH</div>
-    <div class="text-block keyword keyword-2 animated">PIXEL DUST</div>
-    <div class="text-block keyword keyword-3">SYS/ERROR_</div>
-    <div class="text-block keyword keyword-4">REAL_TIME_<br>LAG</div>
-
-    <div class="brutal-block block-1"></div>
-    <div class="brutal-block block-2 dark"></div>
-    <div class="brutal-block block-3"></div>
-    <div class="brutal-block block-4"></div>
-
-    <div class="grime-splatter splatter-1"></div>
-    <div class="grime-splatter splatter-2 dark"></div>
-    <div class="grime-splatter splatter-3"></div>
-    <div class="grime-splatter splatter-4 dark"></div>
-    <div class="grime-splatter splatter-5"></div>
-
-    <div class="text-block" style="font-size: 1.6vw; bottom: 8%; left: 8%; transform: rotate(-4deg); opacity: 0.75; font-family: monospace;">
-        SYNTHETIC<br>REALITY_01
-    </div>
-    <div class="text-block" style="font-size: 1.2vw; top: 42%; left: 37%; transform: rotate(10deg); opacity: 0.65; font-family: monospace;">
-        URBAN<br>OVERLOAD
-    </div>
-    <div class="text-block" style="font-size: 0.9vw; top: 10%; right: 7%; opacity: 0.55; font-family: monospace;">
-        SIGNAL<br>LOST
-    </div>
-
-    <div class="detail-line detail-line-1"></div>
-    <div class="detail-line detail-line-2"></div>
-    <div class="detail-line detail-line-3"></div>
-
+  <!-- Random Pixel-like Blocks -->
+  <div style="position: absolute; top: 5%; left: 45%; width: 20px; height: 20px; background-color: #00FF00; opacity: 0.8; transform: rotate(10deg);"></div>
+  <div style="position: absolute; bottom: 15%; right: 40%; width: 30px; height: 30px; background-color: rgba(0, 255, 0, 0.5); border: 1px solid #00FF00; transform: rotate(-20deg);"></div>
 </div>
-
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
+                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
