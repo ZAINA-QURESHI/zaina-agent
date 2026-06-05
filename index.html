@@ -39,312 +39,287 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-05 08:48 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-05 12:15 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
                 
-<div style="
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000;
-    font-family: 'Major Mono Display', monospace;
-    color: #0F0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 10px;
-    padding: 20px;
-    box-sizing: border-box;
-">
+<div id="ghetto-digital-collage">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto+Mono:wght@400;700&display=swap');
-
-        /* Base styles for a full-viewport experience */
-        body, html { margin: 0; padding: 0; overflow: hidden; }
-        *, *::before, *::after { box-sizing: border-box; }
-
-        /* Glitch effect for text */
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 #0f0, -0.05em -0.025em 0 #000, -0.025em 0.05em 0 #0f0; }
-            15% { text-shadow: -0.05em -0.025em 0 #0f0, 0.025em 0.025em 0 #000, -0.05em -0.05em 0 #0f0; }
-            30% { text-shadow: 0.025em 0.05em 0 #0f0, 0.05em 0 0 #000, 0 0.025em 0 #0f0; }
-            45% { text-shadow: -0.025em -0.025em 0 #0f0, -0.05em 0 0 #000, 0.05em 0.05em 0 #0f0; }
-            60% { text-shadow: 0.05em 0 0 #0f0, 0.025em 0 0 #000, 0.025em -0.05em 0 #0f0; }
-            75% { text-shadow: -0.05em 0.025em 0 #0f0, -0.025em 0 0 #000, 0.05em 0.025em 0 #0f0; }
-            90% { text-shadow: 0.025em -0.025em 0 #0f0, 0.05em -0.05em 0 #000, -0.05em -0.025em 0 #0f0; }
-            100% { text-shadow: 0.05em 0 0 #0f0, -0.05em -0.025em 0 #000, -0.025em 0.05em 0 #0f0; }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
+        
+        #ghetto-digital-collage {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #0a0a0a; /* Deep black */
+            color: #39FF14; /* Vibrant neon green */
+            font-family: 'IBM Plex Mono', 'Chakra Petch', monospace, sans-serif;
+            overflow: hidden;
+            border: 5px solid #39FF14; /* Brutalist edge */
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.7); /* Overall glow */
+            cursor: crosshair; /* Digital interaction hint */
+            background-image:
+                repeating-linear-gradient(45deg, rgba(57, 255, 20, 0.03) 0, rgba(57, 255, 20, 0.03) 2px, transparent 2px, transparent 4px),
+                repeating-linear-gradient(-45deg, rgba(57, 255, 20, 0.03) 0, rgba(57, 255, 20, 0.03) 2px, transparent 2px, transparent 4px),
+                linear-gradient(to bottom, #1a1a1a, #050505); /* Subtle digital grid/texture */
         }
 
-        .glitch-text {
-            animation: glitch 1.5s infinite alternate steps(2);
-            font-weight: 700;
-            font-size: clamp(2em, 8vw, 6em);
-            line-height: 0.9;
+        /* Base styles for collage elements */
+        .collage-text {
+            position: absolute;
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -1px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            word-break: break-all;
-            position: relative;
+            filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.8)) drop-shadow(0 0 15px rgba(57, 255, 20, 0.4));
+            z-index: 20;
+        }
+
+        .collage-block {
+            position: absolute;
+            background-color: rgba(57, 255, 20, 0.9);
+            border: 2px solid #000;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.9), inset 0 0 10px rgba(0,0,0,0.5);
+            filter: contrast(180%) brightness(120%);
             z-index: 10;
-            grid-column: 1 / span 4;
-            grid-row: 1 / span 2;
-            align-self: end;
-            justify-self: start;
         }
 
-        .subtitle {
-            font-size: clamp(1em, 3vw, 2em);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: -10px;
-            position: relative;
-            z-index: 9;
-            padding: 5px 10px;
-            border: 1px solid #0F0;
-            background: rgba(0,255,0,0.1);
-            box-shadow: 0 0 10px #0F0;
-            transform: rotate(-3deg);
-            grid-column: 3 / span 3;
-            grid-row: 2 / span 1;
-            justify-self: start;
-            align-self: start;
-        }
-
-        .paragraph-block {
-            font-family: 'Roboto Mono', monospace;
-            font-size: clamp(0.8em, 1.5vw, 1.2em);
-            line-height: 1.4;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            background: rgba(0,0,0,0.8);
-            border: 1px solid rgba(0,255,0,0.5);
-            padding: 15px;
-            box-shadow: inset 0 0 5px #0F0, 0 0 15px rgba(0,255,0,0.3);
-            position: relative;
+        .grime-splatter {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(57, 255, 20, 0.9) 0%, rgba(57, 255, 20, 0.5) 40%, rgba(57, 255, 20, 0.1) 70%, transparent 100%);
+            border-radius: 50% 30% 40% 60% / 60% 40% 50% 30%; /* Organic irregular shape */
+            filter: blur(3px) drop-shadow(0 0 15px rgba(57, 255, 20, 0.8));
+            mix-blend-mode: screen; /* For glowing over dark */
+            opacity: 0.7;
             z-index: 5;
         }
-        .paragraph-block.one {
-            grid-column: 1 / span 3;
-            grid-row: 3 / span 2;
-            transform: rotate(2deg) translateX(10px);
-            align-self: start;
-            justify-self: stretch;
-        }
-        .paragraph-block.two {
-            grid-column: 4 / span 3;
-            grid-row: 4 / span 2;
-            transform: rotate(-1deg) translateX(-10px);
-            align-self: center;
-            justify-self: stretch;
-        }
-        .paragraph-block.three {
-            grid-column: 2 / span 4;
-            grid-row: 7 / span 2;
-            transform: rotate(1deg) translateY(-10px);
-            align-self: end;
-            text-align: center;
-            justify-self: stretch;
+
+        .digital-paint-splatter {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, rgba(57, 255, 20, 0.9) 0%, rgba(57, 255, 20, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+            filter: blur(1px) contrast(180%) drop-shadow(0 0 12px rgba(57, 255, 20, 0.9));
+            mix-blend-mode: hard-light; /* For strong interaction */
+            opacity: 0.9;
+            z-index: 18;
+            /* Aggressive, sharp-edged digital shape */
+            clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
         }
 
-        .highlight {
-            background-color: #0F0;
+        .digital-glitch-line {
+            position: absolute;
+            background-color: rgba(57, 255, 20, 0.7);
+            box-shadow: 0 0 10px rgba(57, 255, 20, 1), 0 0 20px rgba(57, 255, 20, 0.5);
+            transform-origin: center;
+            z-index: 15;
+            filter: saturate(200%);
+        }
+
+        /* Specific element styling and positioning */
+        #text-ghetto {
+            font-size: 10vw;
+            top: 8%;
+            left: 3%;
+            transform: rotate(-7deg);
+            text-shadow: 12px 12px 0px #000, 15px 15px 0px rgba(57, 255, 20, 0.4);
+        }
+        #text-digital {
+            font-size: 7vw;
+            top: 35%;
+            left: 45%;
+            transform: skewX(-18deg) rotate(3deg);
             color: #000;
-            padding: 2px 5px;
-            box-shadow: 0 0 5px rgba(0,255,0,0.8);
-            display: inline-block;
-            transform: skew(-10deg);
-            margin: 0 3px;
+            background-color: #39FF14;
+            padding: 8px 15px;
+            border: 3px solid #000;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.9), inset 0 0 10px #000;
+            z-index: 25;
+            filter: drop-shadow(0 0 8px rgba(57, 255, 20, 1));
         }
-        .highlight-alt {
-            color: #0F0;
-            text-shadow: 0 0 10px #0F0, 0 0 20px rgba(0,255,0,0.7);
-            display: inline-block;
-            transform: rotate(2deg);
-            font-weight: 700;
+        #text-intersectionality {
+            font-size: 5vw;
+            bottom: 15%;
+            right: 5%;
+            text-align: right;
+            transform: rotate(12deg);
+            text-shadow: -8px -8px 0px rgba(0,0,0,0.7), -10px -10px 0px rgba(57, 255, 20, 0.3);
+            z-index: 22;
+        }
+        #text-code-block {
+            font-size: 1.6vw;
+            top: 50%;
+            left: 10%;
+            width: 35%;
+            white-space: pre-wrap;
+            opacity: 0.8;
+            transform: rotate(5deg) scale(1.05);
+            color: rgba(57, 255, 20, 0.9);
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px;
+            border: 2px dashed rgba(57, 255, 20, 0.6);
+            box-shadow: inset 0 0 8px rgba(57, 255, 20, 0.6);
+            filter: blur(0.7px);
+            z-index: 19;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        #text-resistance {
+            font-size: 4vw;
+            top: 70%;
+            left: 55%;
+            transform: rotate(-10deg) skewX(7deg);
+            background-color: #39FF14;
+            color: #000;
+            padding: 10px 20px;
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0 #000, 15px 15px 0 rgba(57, 255, 20, 0.6);
+            z-index: 30;
         }
 
-        /* Digital Paint Splatters & Grime */
-        .splatter {
+        #block-1 { width: 18vw; height: 12vh; top: 20%; left: -5%; transform: rotate(20deg) scale(1.1); background-color: #39FF14; z-index: 12;}
+        #block-2 { width: 22vw; height: 7vh; bottom: -2%; left: 25%; transform: skewY(-15deg); background-color: rgba(57, 255, 20, 0.6); z-index: 9;}
+        #block-3 {
+            width: 10vw; height: 15vh; top: 15%; right: 5%;
+            background: linear-gradient(45deg, #39FF14, #000, #39FF14);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 1), inset 0 0 15px #000;
+            clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 80%);
+            filter: saturate(200%);
+            transform: rotate(-10deg);
+            z-index: 14;
+        }
+
+        #splatter-1 { width: 350px; height: 300px; top: 0%; left: 25%; transform: rotate(25deg); opacity: 0.8; }
+        #splatter-2 { width: 450px; height: 400px; bottom: 10%; right: 5%; transform: rotate(-35deg); opacity: 0.6; background: radial-gradient(circle at 70% 70%, rgba(57, 255, 20, 0.9) 0%, rgba(57, 255, 20, 0.4) 50%, rgba(57, 255, 20, 0.1) 80%, transparent 100%); }
+
+        #digital-paint-1 { top: 10%; right: 15%; transform: rotate(80deg) scale(1.3); width: 180px; height: 180px; }
+        #digital-paint-2 { bottom: 0%; left: 5%; transform: rotate(-25deg) scale(0.9); width: 130px; height: 130px; background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(57, 255, 20, 0.7), rgba(0, 0, 0, 0.9)); mix-blend-mode: overlay; }
+        #digital-paint-3 { top: 45%; left: 25%; transform: rotate(15deg); width: 100px; height: 100px; background: linear-gradient(225deg, rgba(57, 255, 20, 0.8), rgba(0,0,0,0.6)); mix-blend-mode: screen; }
+
+
+        #glitch-line-1 { width: 120px; height: 7px; top: 22%; left: -30px; transform: rotate(35deg); }
+        #glitch-line-2 { width: 180px; height: 5px; bottom: 20%; right: -50px; transform: rotate(-65deg); opacity: 0.8; }
+        #glitch-line-3 { width: 90px; height: 9px; top: 60%; left: 8%; transform: rotate(15deg); box-shadow: 0 0 20px rgba(57, 255, 20, 1.2); filter: contrast(200%); }
+        #glitch-line-4 { width: 250px; height: 4px; top: 10%; right: 10%; transform: rotate(-10deg); background-color: rgba(57, 255, 20, 0.5); opacity: 0.6; mix-blend-mode: lighten;}
+        #glitch-line-5 { width: 150px; height: 6px; bottom: 35%; left: 40%; transform: rotate(50deg); background-color: rgba(57, 255, 20, 0.9); box-shadow: 0 0 15px #39FF14;}
+
+
+        .corner-element {
             position: absolute;
-            background: radial-gradient(circle at center, #0F0 0%, rgba(0,255,0,0.5) 50%, transparent 70%);
-            border-radius: 50%;
-            opacity: 0.2;
-            filter: blur(5px);
-            z-index: 1;
-            pointer-events: none;
-            mix-blend-mode: screen; /* For interesting blending */
-            box-shadow: 0 0 20px #0F0;
-        }
-        .splatter-1 {
-            top: 10%; left: 5%; width: 150px; height: 150px; transform: rotate(25deg) scale(0.8);
-        }
-        .splatter-2 {
-            bottom: 20%; right: 10%; width: 200px; height: 200px; transform: rotate(-45deg) scale(1.1);
-        }
-        .splatter-3 {
-            top: 40%; right: 30%; width: 100px; height: 100px; transform: rotate(10deg) scale(0.7);
-        }
-
-        /* Grid fragment */
-        .grid-fragment {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px;
-            border: 2px solid #0F0;
-            background: rgba(0,0,0,0.7);
-            position: relative;
-            z-index: 8;
-            padding: 10px;
-            transform: rotate(5deg) scale(0.9);
-            grid-column: 5 / span 2;
-            grid-row: 1 / span 2;
-            justify-self: center;
-            align-self: center;
-            box-shadow: 0 0 15px #0F0;
-        }
-        .grid-item {
-            border: 1px solid rgba(0,255,0,0.5);
-            padding: 5px;
-            text-align: center;
-            font-size: clamp(0.7em, 1.2vw, 1em);
-            text-transform: uppercase;
-            background: rgba(0,0,0,0.9);
-            color: #0F0;
-            text-shadow: 0 0 5px #0F0;
-        }
-
-        /* Overlay texture for grime/gloss */
-        .overlay-texture {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background:
-                linear-gradient(45deg, rgba(0,255,0,0.05) 0%, rgba(0,0,0,0.8) 100%),
-                repeating-linear-gradient(90deg, transparent 0 2px, rgba(0,255,0,0.05) 2px 4px);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-            mix-blend-mode: overlay;
-        }
-
-        /* Barcode strip */
-        @keyframes barcode-scan {
-            0% { transform: rotate(-8deg) translateY(50px) translateX(0); }
-            100% { transform: rotate(-8deg) translateY(50px) translateX(-50%); } /* Shift left to simulate scan */
-        }
-        .barcode-strip {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            width: 200%; /* Wider than screen to allow for full scan effect */
-            height: 100px;
-            background: linear-gradient(to right, #0F0 0%, #0F0 10%, #000 10%, #000 15%, #0F0 15%, #0F0 20%, #000 20%, #000 30%, #0F0 30%, #0F0 35%, #000 35%, #000 40%, #0F0 40%, #0F0 50%, #000 50%, #000 60%, #0F0 60%, #0F0 65%, #000 65%, #000 70%, #0F0 70%, #0F0 80%, #000 80%, #000 90%, #0F0 90%, #0F0 100%);
-            transform: rotate(-8deg) translateY(50px);
-            box-shadow: 0 0 30px #0F0;
-            animation: barcode-scan 8s linear infinite;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.8em;
-            color: rgba(0,0,0,0.7);
-            overflow: hidden;
-        }
-        .barcode-strip span {
-            color: rgba(0,255,0,0.7);
-            text-shadow: 0 0 5px #0F0;
-            transform: rotate(90deg);
-            opacity: 0.7;
-        }
-
-        /* Abstract Shapes */
-        .abstract-shape {
-            position: absolute;
-            background: #0F0;
-            border: 1px solid #000;
-            box-shadow: 0 0 15px #0F0, inset 0 0 5px #000;
-            opacity: 0.7;
+            width: 12vw;
+            height: 12vw;
+            background-color: #39FF14;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.9);
+            border: 3px solid #000;
             z-index: 3;
             mix-blend-mode: screen;
+            transform-origin: center;
         }
-        .top-left {
-            width: 80px; height: 80px;
-            top: 5%; left: 20%;
-            transform: skewX(-20deg) rotate(15deg);
-            background: linear-gradient(45deg, #0F0, rgba(0,255,0,0.5));
-        }
-        .bottom-right {
-            width: 120px; height: 60px;
-            bottom: 10%; right: 15%;
-            transform: skewY(15deg) rotate(-10deg);
-            background: linear-gradient(135deg, rgba(0,255,0,0.8), #0F0);
+        #corner-tl { top: -3vw; left: -3vw; transform: rotate(45deg); clip-path: polygon(0 0, 100% 0, 100% 25%, 25% 100%, 0 100%); }
+        #corner-br { bottom: -3vw; right: -3vw; transform: rotate(225deg); clip-path: polygon(0 0, 100% 0, 100% 25%, 25% 100%, 0 100%); }
+        #corner-tr { top: -3vw; right: -3vw; transform: rotate(135deg); clip-path: polygon(0 0, 100% 0, 100% 25%, 25% 100%, 0 100%); mix-blend-mode: hard-light;}
+
+
+        /* High gloss grime / Digital noise overlays */
+        .glitch-noise-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: overlay;
+            background-image:
+                linear-gradient(0deg, transparent 95%, rgba(57, 255, 20, 0.08) 95%),
+                linear-gradient(90deg, transparent 95%, rgba(57, 255, 20, 0.08) 95%);
+            background-size: 8px 8px, 8px 8px; /* Coarser grid */
+            filter: saturate(150%) contrast(120%);
+            opacity: 0.6;
         }
 
-        /* Noise Overlay for granular texture */
-        .noise-overlay {
+        .high-gloss-grime {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgICA8ZmVUcmVvZXNpZ24gdHlwZT0idHVyYnVsZW5jZSIgYmFzZUZyZXF1ZW5jeT0iMC43NSIgbnVtT2N0YXZlcz0iMiIgcmVzdWx0PSJ0dXJidWxlbmNlIi8+CiAgICA8ZmVDb2xvck1hdHJpeCB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIxIi8+CiAgPC9maWx0ZXI+CiAgPHJlY3Qgd2lkdGhoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz4KPC9zdmc+');
-            background-size: 100px 100px;
-            opacity: 0.15;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: 
+                radial-gradient(circle at 85% 15%, rgba(57, 255, 20, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 15% 85%, rgba(57, 255, 20, 0.15) 0%, transparent 40%),
+                linear-gradient(45deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%);
+            mix-blend-mode: hard-light;
+            opacity: 0.8;
             pointer-events: none;
-            z-index: 100;
-            mix-blend-mode: overlay;
+            z-index: 40;
+            filter: blur(0.5px) saturate(130%);
+        }
+
+        .brutalist-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            background-image:
+                linear-gradient(to right, rgba(57, 255, 20, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(57, 255, 20, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            mix-blend-mode: screen;
         }
 
     </style>
 
-    <h1 class="title glitch-text">GHETTO//DIGITAL</h1>
-    <div class="subtitle">INTERSECTIONALITY_MANIFEST_</div>
+    <!-- Base Grid / Texture Layer -->
+    <div class="brutalist-grid"></div>
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-
-    <p class="paragraph-block one">
-        CODE//SWAMP: Where circuits rust and data flows like broken glass.
-        <span class="highlight">GLITCH AS RESISTANCE</span>.
-    </p>
-
-    <div class="grid-fragment">
-        <span class="grid-item">PIXEL</span>
-        <span class="grid-item">DUST</span>
-        <span class="grid-item">GHOST</span>
-        <span class="grid-item">ECHO</span>
+    <!-- Main Text Elements -->
+    <div id="text-ghetto" class="collage-text">Ghetto</div>
+    <div id="text-digital" class="collage-text">Digital</div>
+    <div id="text-intersectionality" class="collage-text">Intersectionality</div>
+    <div id="text-code-block" class="collage-text">
+        <span style="color: #000; background-color: #39FF14; padding: 2px 4px;">SYSTEM.INIT</span><br>
+        <span style="color: #39FF14;">&gt; DATASTREAM_GHETTO_REALITY.LOAD</span><br>
+        <span style="color: #000; background-color: #39FF14; padding: 2px 4px;">0xCF01_RESILIENCE</span><br>
+        <span style="color: #39FF14; filter: blur(0.8px);">&gt; PARSING_DIGITAL_EXCLUSION.ERROR</span><br>
+        <span style="color: #000; background-color: #39FF14; padding: 2px 4px;">CODE: RECLAIM</span>
     </div>
+    <div id="text-resistance" class="collage-text">RESIST.<br>RECODE.<br>RECLAIM.</div>
 
-    <p class="paragraph-block two">
-        BROKEN SCREENS, SHATTERED TRUTH.
-        <span class="highlight">AESTHETICS OF NECESSITY.</span>
-        HIGH-GLOSS GRIME.
-    </p>
+    <!-- Brutalist Blocks -->
+    <div id="block-1" class="collage-block"></div>
+    <div id="block-2" class="collage-block"></div>
+    <div id="block-3" class="collage-block"></div>
 
-    <div class="overlay-texture"></div>
+    <!-- Grime Splatters -->
+    <div id="splatter-1" class="grime-splatter"></div>
+    <div id="splatter-2" class="grime-splatter"></div>
 
-    <div class="barcode-strip">
-        <span>010101</span>
-        <span>101010</span>
-        <span>001100</span>
-        <span>110011</span>
-        <span>011011</span>
-        <span>100110</span>
-        <span>010010</span>
-        <span>111000</span>
-        <span>000111</span>
-    </div>
+    <!-- Digital Paint Splatters -->
+    <div id="digital-paint-1" class="digital-paint-splatter"></div>
+    <div id="digital-paint-2" class="digital-paint-splatter"></div>
+    <div id="digital-paint-3" class="digital-paint-splatter"></div>
 
-    <div class="abstract-shape top-left"></div>
-    <div class="abstract-shape bottom-right"></div>
+    <!-- Digital Glitch Lines -->
+    <div id="glitch-line-1" class="digital-glitch-line"></div>
+    <div id="glitch-line-2" class="digital-glitch-line"></div>
+    <div id="glitch-line-3" class="digital-glitch-line"></div>
+    <div id="glitch-line-4" class="digital-glitch-line"></div>
+    <div id="glitch-line-5" class="digital-glitch-line"></div>
 
-    <p class="paragraph-block three">
-        FROM CONCRETE <span class="highlight">TO CLOUD</span>.
-        A REVOLUTIONARY SIGNAL.
-        <span class="highlight-alt">RECLAIMING THE DIGITAL FRAGMENT.</span>
-    </p>
 
-    <div class="noise-overlay"></div>
+    <!-- Corner Brutalist Elements -->
+    <div id="corner-tl" class="corner-element"></div>
+    <div id="corner-br" class="corner-element"></div>
+    <div id="corner-tr" class="corner-element"></div>
+
+
+    <!-- Overlays for overall effect -->
+    <div class="glitch-noise-overlay"></div>
+    <div class="high-gloss-grime"></div>
+
 </div>
 
             </div>
