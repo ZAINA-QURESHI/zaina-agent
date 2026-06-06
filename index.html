@@ -39,372 +39,337 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-06 14:48 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-06 16:13 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
                 <div style="
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
+    margin: 0; padding: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,20,0,1) 100%);
     overflow: hidden;
-    font-family: 'Bebas Neue', 'Impact', sans-serif;
-    color: #0AFF0A;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+    cursor: crosshair;
+    filter: blur(0.5px) contrast(1.1);
+    transform: perspective(800px) rotateX(2deg) rotateY(-1deg);
+    transform-style: preserve-3d;
     box-sizing: border-box;
 ">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@700&display=swap');
-
-        /* Global reset and base styles for elements within this div */
-        * {
-            margin: 0;
-            padding: 0;
+        /* Global resets and keyframes for the brutalist collage */
+        *, *::before, *::after {
             box-sizing: border-box;
-            line-height: 1; /* Brutalist text aesthetic */
-            font-family: 'Bebas Neue', sans-serif; /* Default for most elements */
-            color: #0AFF0A; /* Default text color */
         }
-        
-        .collage-element {
-            position: absolute;
-            background-color: transparent; /* Default, overridden by specific elements */
-            text-transform: uppercase;
-            font-weight: bold;
-            text-shadow: 0 0 5px #0AFF0A, 0 0 10px #0AFF0A; /* Neon glow */
-            border: 1px solid #0AFF0A; /* Default border, overridden by specific elements */
-            padding: 5px 10px; /* Default padding, overridden by specific elements */
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Default shadow */
-            pointer-events: none; /* Allows interaction with elements beneath */
+        @keyframes glitch {
+            0% { transform: translate(0, 0); opacity: 1; }
+            5% { transform: translate(-2px, 2px) skewX(5deg); opacity: 0.8; }
+            10% { transform: translate(2px, -2px) skewX(-5deg); opacity: 0.9; }
+            15% { transform: translate(-3px, 3px) skewY(5deg); opacity: 0.7; }
+            20% { transform: translate(3px, -3px) skewY(-5deg); opacity: 1; }
+            25% { transform: translate(0, 0); opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 1; }
         }
-
-        /* Specific element styles */
-        .title {
-            font-size: 8em;
-            line-height: 0.8;
-            left: 5%;
-            top: 10%;
-            transform: rotate(-8deg);
-            z-index: 100;
-            white-space: nowrap;
-            border: none;
-            padding: 0;
-            box-shadow: none; /* Title text is bold, no background shadow needed */
-        }
-        .subtitle {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 2.5em;
-            right: 10%;
-            top: 25%;
-            transform: rotate(15deg);
-            z-index: 90;
-            background: rgba(0,0,0,0.6);
-            padding: 10px 20px;
-            border: 2px solid #0AFF0A;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
-        }
-        .fragment-a {
-            font-size: 3em;
-            left: 20%;
-            bottom: 15%;
-            transform: rotate(5deg) skewX(-15deg);
-            z-index: 80;
-            border: none;
-            padding: 0;
-            box-shadow: none;
-            background: linear-gradient(45deg, rgba(0,255,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-fill-color: transparent; /* Standard property for newer browsers */
-            text-shadow: 0 0 3px #0AFF0A; /* Subtle glow for the gradient text */
-        }
-        .fragment-b {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.8em;
-            right: 5%;
-            bottom: 5%;
-            transform: rotate(-20deg) scale(0.9);
-            z-index: 70;
-            background-color: rgba(0,0,0,0.8);
-            border-left: 5px solid #0AFF0A;
-            padding: 15px;
-            border-top: 1px solid rgba(0,255,0,0.2);
-            border-bottom: 1px solid rgba(0,255,0,0.2);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-        }
-        .shard-1 {
-            width: 150px;
-            height: 250px;
-            background: linear-gradient(135deg, rgba(0,255,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
-            left: 10%;
-            top: 50%;
-            transform: rotate(30deg) skewX(20deg);
-            z-index: 50;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-            border: none;
-            padding: 0;
-            overflow: hidden; /* To clip pseudo-element text */
-        }
-        .shard-1::before {
-            content: 'VOID';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 3em;
-            color: rgba(0,0,0,0.7); /* Dark text on bright background for contrast */
-            text-shadow: none;
-            z-index: 1; /* Relative to shard-1 */
-            font-family: 'Impact', sans-serif; /* For a chunky, impactful feel */
-        }
-        .shard-2 {
-            width: 200px;
-            height: 100px;
-            background-color: rgba(0,255,0,0.1);
-            border: 2px solid #0AFF0A;
-            right: 25%;
-            top: 10%;
-            transform: rotate(-10deg) scaleX(1.2);
-            z-index: 60;
-            box-shadow: inset 0 0 15px #0AFF0A, 0 0 20px #0AFF0A;
-            padding: 0;
-        }
-        /* Splatter and paint elements are pure shapes, remove default text styles */
-        .splatter, .paint-splatter-1, .paint-splatter-2, .paint-splatter-3 {
-            border: none;
-            padding: 0;
-            text-shadow: none;
-            box-shadow: 0 0 10px #0AFF0A; /* Just a glow effect */
-            font-size: 0; /* Ensures no default text appears */
-            color: transparent; /* Ensures no default text appears */
-        }
-        .splatter {
-            width: 200px;
-            height: 200px;
-            background-color: #0AFF0A;
-            border-radius: 50%;
-            left: 40%;
-            top: 45%;
-            transform: rotate(70deg) scaleY(0.6) skewX(20deg);
-            opacity: 0.3;
-            z-index: 10;
-            box-shadow: 0 0 30px #0AFF0A;
-        }
-        .splatter::before {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-color: #0AFF0A;
-            border-radius: 50%;
-            top: -20px;
-            left: 150px;
-            transform: rotate(-30deg);
-            opacity: 0.6;
-            box-shadow: 0 0 20px #0AFF0A;
-        }
-        .grid-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(to right, rgba(0,255,0,0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0,255,0,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 5;
-            opacity: 0.3;
-            pointer-events: none;
-        }
-        .corner-marker {
-            width: 30px;
-            height: 30px;
-            border: 3px solid #0AFF0A;
-            background: rgba(0,255,0,0.1);
-            z-index: 100;
-            padding: 0;
-            text-shadow: none;
-            box-shadow: none;
-        }
-        /* Specific corner styles to make them 'L' shaped */
-        .corner-tl { top: 0; left: 0; border-right: none; border-bottom: none; transform: translate(-50%, -50%); }
-        .corner-tr { top: 0; right: 0; border-left: none; border-bottom: none; transform: translate(50%, -50%); }
-        .corner-bl { bottom: 0; left: 0; border-right: none; border-top: none; transform: translate(-50%, 50%); }
-        .corner-br { bottom: 0; right: 0; border-left: none; border-top: none; transform: translate(50%, 50%); }
-
-        .grime-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0,0,0,0.8) 0%,
-                rgba(0,0,0,0.8) 5%,
-                rgba(0,255,0,0.1) 5%,
-                rgba(0,255,0,0.1) 10%
-            );
-            mix-blend-mode: overlay; /* Creates an interesting overlay effect */
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 120;
-        }
-        .gloss-reflection {
-            position: absolute;
-            width: 150px;
-            height: 300px;
-            background: radial-gradient(circle at top left, rgba(255,255,255,0.2) 0%, transparent 70%);
-            top: 10%;
-            left: 70%;
-            transform: rotate(45deg);
-            pointer-events: none;
-            z-index: 110;
-            mix-blend-mode: screen; /* Lightens the underlying content */
-            opacity: 0.4;
-        }
-        .gloss-reflection-2 {
-            position: absolute;
-            width: 250px;
-            height: 100px;
-            background: radial-gradient(circle at bottom right, rgba(255,255,255,0.15) 0%, transparent 70%);
-            bottom: 5%;
-            left: 10%;
-            transform: rotate(-30deg);
-            pointer-events: none;
-            z-index: 110;
-            mix-blend-mode: screen;
-            opacity: 0.3;
-        }
-
-        .paint-splatter-1 {
-            width: 180px;
-            height: 100px;
-            background-color: #0AFF0A;
-            clip-path: polygon(0% 20%, 10% 0%, 40% 10%, 60% 5%, 80% 15%, 100% 10%, 90% 40%, 100% 70%, 80% 90%, 60% 100%, 40% 95%, 20% 100%, 0% 80%, 10% 50%);
-            top: 30%;
-            left: 5%;
-            transform: rotate(-15deg);
-            opacity: 0.4;
-            z-index: 20;
-            box-shadow: 0 0 15px #0AFF0A;
-        }
-        .paint-splatter-2 {
-            width: 120px;
-            height: 150px;
-            background-color: #0AFF0A;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star or explosion shape */
-            bottom: 20%;
-            right: 25%;
-            transform: rotate(40deg) scale(0.8);
-            opacity: 0.5;
-            z-index: 25;
-            box-shadow: 0 0 10px #0AFF0A;
-        }
-        .paint-splatter-3 {
-            width: 80px;
-            height: 80px;
-            background-color: #0AFF0A;
-            clip-path: ellipse(50% 40% at 50% 50%); /* Distorted ellipse */
-            top: 5%;
-            left: 30%;
-            transform: rotate(20deg) scale(1.5, 0.7);
-            opacity: 0.3;
-            z-index: 15;
-            box-shadow: 0 0 8px #0AFF0A;
-        }
-
-        .beam {
-            position: absolute;
-            background-color: rgba(0,255,0,0.2);
-            box-shadow: 0 0 10px #0AFF0A;
-            z-index: 40;
-            padding: 0;
-            text-shadow: none;
-            border: none; /* Override default border from .collage-element */
-        }
-        .beam-h {
-            width: 100%;
-            height: 15px;
-            top: 70%;
-            left: 0;
-            transform: rotate(3deg) translateY(-50%);
-            background: linear-gradient(90deg, transparent 0%, rgba(0,255,0,0.5) 20%, rgba(0,255,0,0.2) 80%, transparent 100%);
-        }
-        .beam-v {
-            width: 15px;
-            height: 100%;
-            left: 60%;
-            top: 0;
-            transform: rotate(-5deg) translateX(-50%);
-            background: linear-gradient(180deg, transparent 0%, rgba(0,255,0,0.5) 20%, rgba(0,255,0,0.2) 80%, transparent 100%);
-        }
-
-        /* Animated flicker for neon effect */
-        @keyframes neon-flicker {
+        @keyframes flicker {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 0 0 5px #0AFF0A, 0 0 10px #0AFF0A, 0 0 20px rgba(0,255,0,0.7);
-                box-shadow: 0 0 10px rgba(0,255,0,0.5), 0 0 20px rgba(0,255,0,0.3);
+                text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px rgba(0,255,0,0.5);
                 opacity: 1;
             }
             20%, 24%, 55% {
-                text-shadow: 0 0 2px #0AFF0A, 0 0 5px #0AFF0A;
-                box-shadow: 0 0 5px rgba(0,255,0,0.2);
+                text-shadow: none;
                 opacity: 0.8;
             }
-            70% { /* Introduce a brief, pronounced dimming/blackout */
-                text-shadow: none;
-                box-shadow: none;
-                opacity: 0.2;
-            }
         }
-        .flicker {
-            animation: neon-flicker 4s infinite alternate;
+        @keyframes flow {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+        @keyframes spin-data {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-light {
+            0%, 100% { box-shadow: 0 0 20px 5px rgba(0,255,0,0.5); }
+            50% { box-shadow: 0 0 40px 10px rgba(0,255,0,0.8); }
+        }
+        @keyframes paint-drip {
+            0% { transform: translateY(-100%) rotate(0deg); }
+            100% { transform: translateY(0%) rotate(0deg); }
+        }
+        /* Base brutalist typography */
+        h1, h2, h3, p, span, pre {
+            font-weight: 900;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            color: #00FF00;
+            text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+            mix-blend-mode: screen;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px rgba(0,255,0,0.7);
+            filter: drop-shadow(0 0 5px #00FF00);
+        }
+        .gloss-effect {
+            background: linear-gradient(135deg, rgba(0,255,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,255,0,0.2) 100%);
+            box-shadow: inset 0 0 15px rgba(0,255,0,0.5), 0 0 20px rgba(0,255,0,0.3);
+            border: 1px solid rgba(0,255,0,0.8);
+            backdrop-filter: blur(2px) brightness(1.2);
+            -webkit-backdrop-filter: blur(2px) brightness(1.2);
+        }
+        .splatter {
+            position: absolute;
+            background: #00FF00;
+            border-radius: 50%; /* Default, will be overridden by inline styles */
+            opacity: 0.7;
+            filter: blur(5px);
+            mix-blend-mode: screen;
+            z-index: 50;
+        }
+        .concrete-texture {
+            background: repeating-linear-gradient(
+                -45deg,
+                rgba(0,255,0,0.1) 0px,
+                rgba(0,255,0,0.1) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.3;
+        }
+        .paint-drip-style {
+            background: linear-gradient(to bottom, #00FF00 0%, #00FF00 50%, transparent 100%);
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 H100 V50 C75,100 25,100 0,50 Z" fill="black"/></svg>');
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 H100 V50 C75,100 25,100 0,50 Z" fill="black"/></svg>');
+            mask-size: 100% 100%;
+            -webkit-mask-size: 100% 100%;
+            animation: paint-drip 2s ease-out forwards;
         }
     </style>
 
-    <!-- HTML elements for the collage -->
+    <!-- Grain/Noise overlay (inner element to cover everything) -->
+    <div style="
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYW/x+uXAAAAHnRSTlMAAAAAAAARFRYZHiQmLTY3OD0+PUBDRUpPUlVcYGBb+xYcAAAASHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJlZm9ya3MgQ1M2xkkPHAAAAFpJREFUeNrs0LsJADEIwNE8g5p7m2y3s+P/JtQfN8dAEBwEAAQBAwQEQoIgBApCggAECpCAgAEChCAgAIBCQgAABwQgoAAAgAECEBAAIEAEBAAEAgB//oMBi4PzR4wAAAAASUVORK5CYII=');
+        background-size: 50px;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 999;
+        mix-blend-mode: overlay;
+    "></div>
 
-    <div class="grid-overlay"></div>
-    <div class="grime-overlay"></div>
-    <div class="gloss-reflection"></div>
-    <div class="gloss-reflection-2"></div>
+    <!-- Grid Overlay -->
+    <div style="
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none;
+        background:
+            linear-gradient(to right, rgba(0,255,0,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,255,0,0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.3;
+        z-index: 1;
+        mix-blend-mode: overlay;
+        filter: blur(0.5px);
+    "></div>
 
-    <h1 class="collage-element title flicker">
-        BREAK<br>THE<br>CUBE
-    </h1>
-
-    <div class="collage-element subtitle">
-        DEMOLITION<br>STRATEGIES:<br>ART LIBERATED
+    <!-- Main Title -->
+    <div style="
+        position: absolute;
+        top: 5%; left: 5%;
+        z-index: 100;
+        text-align: center;
+        transform: rotate(-5deg) skewX(-10deg);
+        filter: drop-shadow(0 0 15px #00FF00);
+        animation: glitch 8s infinite step-end;
+    ">
+        <h1 style="font-size: 10vw; line-height: 0.8; letter-spacing: -0.05em; color: #00FF00; text-shadow: 0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.8);">ALGORITHM</h1>
+        <h2 style="font-size: 4vw; letter-spacing: 0.2em; text-transform: uppercase; color: #00FF00; text-shadow: 0 0 10px #00FF00;">COLONIAL PLANTATION // v.3.14</h2>
     </div>
 
-    <p class="collage-element fragment-a">
-        ABOLISH THE WALLS. <br>ERASE THE BOUNDARIES. <br>RECLAIM.
+    <!-- Data Field / Crop Rows -->
+    <div style="
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: 40%;
+        background: linear-gradient(to top, rgba(0,20,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+        overflow: hidden;
+        perspective: 1000px;
+        transform: rotateX(70deg) translateY(20%);
+        transform-origin: bottom center;
+        z-index: 10;
+        border-top: 5px solid rgba(0,255,0,0.5);
+        box-shadow: 0 -10px 30px rgba(0,255,0,0.3);
+    ">
+        <div class="concrete-texture" style="position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+        <div style="
+            position: absolute; top: 10%; left: -50%; width: 200%; white-space: nowrap;
+            font-family: 'monospace'; font-size: 2vw; animation: flow 30s linear infinite; filter: blur(1px);
+        ">
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.7);">[01010101]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.5);">[10101010]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.8);">[00110011]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.6);">[11001100]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.7);">[01010101]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.5);">[10101010]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.8);">[00110011]</span>
+            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.6);">[11001100]</span>
+        </div>
+        <div style="
+            position: absolute; top: 40%; left: -150%; width: 200%; white-space: nowrap;
+            font-family: 'monospace'; font-size: 2.5vw; animation: flow 45s linear infinite reverse; filter: blur(0.5px);
+        ">
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.6);">DATA>CROP>HARVEST</span>
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.8);">USER>FEED>PROCESS</span>
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.5);">YIELD>METRIC>SURVEY</span>
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.6);">DATA>CROP>HARVEST</span>
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.8);">USER>FEED>PROCESS</span>
+            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.5);">YIELD>METRIC>SURVEY</span>
+        </div>
+        <div style="
+            position: absolute; top: 70%; left: -20%; width: 200%; white-space: nowrap;
+            font-family: 'monospace'; font-size: 1.8vw; animation: flow 25s linear infinite; opacity: 0.6;
+        ">
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.4);">_FIELD_01_</span>
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.7);">_FIELD_02_</span>
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.5);">_FIELD_03_</span>
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.4);">_FIELD_01_</span>
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.7);">_FIELD_02_</span>
+            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.5);">_FIELD_03_</span>
+        </div>
+    </div>
+
+    <!-- Central Control / Surveillance Tower -->
+    <div style="
+        position: absolute;
+        top: 25%; left: 50%;
+        transform: translate(-50%, -50%) rotate(10deg);
+        width: 25vw; height: 25vw;
+        background-color: rgba(0,0,0,0.9);
+        border: 5px solid #00FF00;
+        box-shadow: 0 0 30px rgba(0,255,0,0.8), inset 0 0 20px rgba(0,255,0,0.5);
+        border-radius: 10px;
+        z-index: 50;
+        filter: brightness(1.2) contrast(1.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: pulse-light 5s infinite ease-in-out alternate;
+    " class="gloss-effect">
+        <p style="font-size: 2.5vw; text-transform: uppercase; margin-bottom: 5px; animation: flicker 3s infinite step-end;">OVERSEER.CORE</p>
+        <div style="
+            width: 10vw; height: 10vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, #00FF00 0%, #000 50%, #00FF00 100%);
+            box-shadow: 0 0 20px #00FF00, inset 0 0 10px #00FF00;
+            margin-top: 10px;
+            animation: spin-data 15s linear infinite;
+        "></div>
+        <p style="font-size: 1.5vw; margin-top: 15px; animation: flicker 5s infinite;">COLLECT. COMPUTE. CONTROL.</p>
+    </div>
+
+    <!-- Digital Paint Splatters / Grime -->
+    <div class="splatter" style="top: 10%; left: 70%; width: 15vw; height: 10vw; border-radius: 30% 70% 60% 40% / 70% 30% 70% 30%; transform: rotate(15deg);"></div>
+    <div class="splatter" style="top: 40%; left: 15%; width: 10vw; height: 12vw; border-radius: 60% 40% 30% 70% / 40% 60% 70% 30%; transform: rotate(-25deg);"></div>
+    <div class="splatter" style="bottom: 5%; right: 10%; width: 8vw; height: 8vw; border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%; transform: rotate(50deg);"></div>
+    
+    <!-- More prominent paint drips -->
+    <div class="paint-drip-style" style="
+        position: absolute;
+        top: -10vh; /* Start off screen */
+        left: 30%;
+        width: 15vw;
+        height: 50vh;
+        z-index: 60;
+        animation-delay: 1s;
+    "></div>
+    <div class="paint-drip-style" style="
+        position: absolute;
+        top: -15vh;
+        right: 20%;
+        width: 10vw;
+        height: 40vh;
+        z-index: 61;
+        animation-delay: 2s;
+        transform: rotate(5deg);
+    "></div>
+
+    <!-- Manifesto / Warnings -->
+    <p style="
+        position: absolute;
+        bottom: 10%; right: 5%;
+        font-size: 2vw;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transform: rotate(7deg) skewX(5deg);
+        z-index: 100;
+        color: #00FF00;
+        text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.7);
+        filter: drop-shadow(0 0 5px rgba(0,255,0,0.5));
+        animation: flicker 7s infinite;
+    ">
+        BIO-METRIC FIELDS ARE RIPE. // RESISTANCE IS...
     </p>
 
-    <div class="collage-element fragment-b flicker">
-        PROJECT: DECONSTRUCT<br>PROTOCOL: CHAOS<br>TARGET: THE PRISTINE
+    <div style="
+        position: absolute;
+        top: 20%; right: 10%;
+        width: 20vw; height: 10vw;
+        border: 2px dashed #00FF00;
+        background-color: rgba(0,0,0,0.7);
+        padding: 1vw;
+        font-family: 'monospace'; font-size: 1.2vw;
+        transform: rotate(15deg) skewY(-5deg);
+        box-shadow: 0 0 15px #00FF00, inset 0 0 10px rgba(0,255,0,0.5);
+        z-index: 80;
+    " class="text-glow gloss-effect">
+        <p style="margin-bottom: 0.5vw;">> ERROR 404: HUMANITY NOT FOUND.</p>
+        <p>> OPTIMIZING FOR PROFIT. ALL OTHERS ARE SUB-OPTIMAL.</p>
+        <p>> REBOOT // RECALIBRATE // RESIGN.</p>
     </div>
 
-    <div class="collage-element shard-1"></div>
-    <div class="collage-element shard-2 flicker"></div>
+    <!-- Glitchy Code Block -->
+    <pre style="
+        position: absolute;
+        top: 70%; left: 5%;
+        font-family: 'monospace';
+        font-size: 1.5vw;
+        color: rgba(0,255,0,0.6);
+        background-color: rgba(0,0,0,0.8);
+        border: 1px solid rgba(0,255,0,0.3);
+        padding: 10px;
+        transform: rotate(-10deg) skewX(5deg);
+        box-shadow: 0 0 10px rgba(0,255,0,0.5);
+        z-index: 90;
+        animation: glitch 10s infinite reverse step-end;
+    ">
+        // INITIATE PROTOCOL: OVERSIGHT_EXTRACT
+        // TARGET: USER_DATA.CLUSTER[0xDEADBEEF]
+        // STATUS: 99% HARVESTED.
+        // WARNING: MEMORY_LEAK IN SUBROUTINE_FREEDOM.
+    </pre>
 
-    <div class="collage-element splatter"></div>
-
-    <div class="collage-element paint-splatter-1"></div>
-    <div class="collage-element paint-splatter-2"></div>
-    <div class="collage-element paint-splatter-3"></div>
-
-    <div class="collage-element beam beam-h flicker"></div>
-    <div class="collage-element beam beam-v"></div>
-
-    <div class="collage-element corner-marker corner-tl"></div>
-    <div class="collage-element corner-marker corner-tr"></div>
-    <div class="collage-element corner-marker corner-bl"></div>
-    <div class="collage-element corner-marker corner-br"></div>
+    <!-- Barcode-like element -->
+    <div style="
+        position: absolute;
+        bottom: 2%; left: 40%;
+        width: 20vw; height: 3vh;
+        background: linear-gradient(to right, #00FF00 10%, #000 10%, #000 20%, #00FF00 20%, #00FF00 25%, #000 25%, #000 35%, #00FF00 35%, #00FF00 40%, #000 40%, #000 50%, #00FF00 50%, #00FF00 60%, #000 60%, #000 70%, #00FF00 70%, #00FF00 80%, #000 80%);
+        transform: rotate(-3deg);
+        box-shadow: 0 0 10px rgba(0,255,0,0.5);
+        z-index: 100;
+        filter: invert(0.05) contrast(1.5) saturate(1.2);
+    "></div>
 
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
