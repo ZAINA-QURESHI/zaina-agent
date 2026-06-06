@@ -39,333 +39,331 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-06 16:13 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-06 18:13 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-                <div style="
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    margin: 0; padding: 0;
-    background: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,20,0,1) 100%);
-    overflow: hidden;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
-    cursor: crosshair;
-    filter: blur(0.5px) contrast(1.1);
-    transform: perspective(800px) rotateX(2deg) rotateY(-1deg);
-    transform-style: preserve-3d;
-    box-sizing: border-box;
-">
+                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000000; font-family: 'monospace', sans-serif; color: #00FF00; border: 5px solid #00FF00; box-sizing: border-box;">
     <style>
-        /* Global resets and keyframes for the brutalist collage */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
         }
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; }
-            5% { transform: translate(-2px, 2px) skewX(5deg); opacity: 0.8; }
-            10% { transform: translate(2px, -2px) skewX(-5deg); opacity: 0.9; }
-            15% { transform: translate(-3px, 3px) skewY(5deg); opacity: 0.7; }
-            20% { transform: translate(3px, -3px) skewY(-5deg); opacity: 1; }
-            25% { transform: translate(0, 0); opacity: 1; }
-            100% { transform: translate(0, 0); opacity: 1; }
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
         }
         @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px rgba(0,255,0,0.5);
-                opacity: 1;
+            0%, 19.999%, 22%, 62.999%, 64%, 69.999%, 71%, 100% {
+                opacity: 0.99;
+                transform: scaleX(1) scaleY(1);
             }
-            20%, 24%, 55% {
-                text-shadow: none;
+            20%, 21.999%, 63%, 63.999%, 70%, 70.999% {
                 opacity: 0.8;
+                transform: scaleY(0.9);
             }
         }
-        @keyframes flow {
-            from { transform: translateX(0); }
-            to { transform: translateX(100%); }
+        @keyframes glitch-bg {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-1px, 1px); }
+            80% { transform: translate(1px, -1px); }
+            100% { transform: translate(0, 0); }
         }
-        @keyframes spin-data {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes text-shadow-glitch {
+            0%, 100% { text-shadow: 2px 2px 0px #00FF00, -2px -2px 0px #000000; }
+            25% { text-shadow: -3px 0px 0px #00FF00, 3px 0px 0px #000000; }
+            50% { text-shadow: 0px 3px 0px #00FF00, 0px -3px 0px #000000; }
+            75% { text-shadow: 3px 3px 0px #00FF00, -3px -3px 0px #000000; }
         }
-        @keyframes pulse-light {
-            0%, 100% { box-shadow: 0 0 20px 5px rgba(0,255,0,0.5); }
-            50% { box-shadow: 0 0 40px 10px rgba(0,255,0,0.8); }
+        @keyframes glitch-text-effect {
+            0% { transform: skewX(0deg); opacity: 1; }
+            20% { transform: skewX(-5deg); opacity: 0.8; }
+            40% { transform: skewX(10deg); opacity: 1; }
+            60% { transform: skewX(-15deg); opacity: 0.7; }
+            80% { transform: skewX(20deg); opacity: 1; }
+            100% { transform: skewX(0deg); opacity: 0.9; }
         }
-        @keyframes paint-drip {
-            0% { transform: translateY(-100%) rotate(0deg); }
-            100% { transform: translateY(0%) rotate(0deg); }
-        }
-        /* Base brutalist typography */
-        h1, h2, h3, p, span, pre {
-            font-weight: 900;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            color: #00FF00;
-            text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
-            mix-blend-mode: screen;
-        }
-        .text-glow {
-            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px rgba(0,255,0,0.7);
-            filter: drop-shadow(0 0 5px #00FF00);
-        }
-        .gloss-effect {
-            background: linear-gradient(135deg, rgba(0,255,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,255,0,0.2) 100%);
-            box-shadow: inset 0 0 15px rgba(0,255,0,0.5), 0 0 20px rgba(0,255,0,0.3);
-            border: 1px solid rgba(0,255,0,0.8);
-            backdrop-filter: blur(2px) brightness(1.2);
-            -webkit-backdrop-filter: blur(2px) brightness(1.2);
-        }
+
         .splatter {
             position: absolute;
-            background: #00FF00;
-            border-radius: 50%; /* Default, will be overridden by inline styles */
-            opacity: 0.7;
-            filter: blur(5px);
+            background-color: #00FF00;
+            border-radius: 50%;
+            filter: blur(25px) contrast(200%);
+            opacity: 0.15;
             mix-blend-mode: screen;
-            z-index: 50;
+            z-index: 1;
         }
-        .concrete-texture {
+        .s1 { top: 10%; left: 15%; width: 200px; height: 180px; transform: rotate(30deg); }
+        .s2 { bottom: 5%; right: 10%; width: 250px; height: 220px; transform: rotate(-45deg); opacity: 0.1; }
+        .s3 { top: 50%; left: 40%; width: 150px; height: 130px; transform: rotate(70deg); opacity: 0.2; }
+        .s4 { top: 20%; right: 30%; width: 100px; height: 100px; transform: rotate(-10deg); opacity: 0.12; }
+        .s5 { bottom: 20%; left: 20%; width: 180px; height: 160px; transform: rotate(50deg); opacity: 0.18; }
+
+        .grime-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: repeating-linear-gradient(
-                -45deg,
-                rgba(0,255,0,0.1) 0px,
-                rgba(0,255,0,0.1) 2px,
-                transparent 2px,
-                transparent 4px
+                45deg,
+                #000000 0%,
+                rgba(0, 255, 0, 0.05) 1%,
+                #000000 2%,
+                rgba(0, 255, 0, 0.08) 3%
             );
             mix-blend-mode: overlay;
-            opacity: 0.3;
+            opacity: 0.6;
+            filter: grayscale(50%) blur(1px);
+            z-index: 2;
         }
-        .paint-drip-style {
-            background: linear-gradient(to bottom, #00FF00 0%, #00FF00 50%, transparent 100%);
-            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 H100 V50 C75,100 25,100 0,50 Z" fill="black"/></svg>');
-            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 H100 V50 C75,100 25,100 0,50 Z" fill="black"/></svg>');
-            mask-size: 100% 100%;
-            -webkit-mask-size: 100% 100%;
-            animation: paint-drip 2s ease-out forwards;
+
+        .algorithm-title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8em;
+            font-weight: 900;
+            color: #00FF00;
+            text-shadow: 15px 15px 0px #000000;
+            letter-spacing: -5px;
+            animation: text-shadow-glitch 5s infinite steps(1);
+            z-index: 10;
+        }
+        .algorithm-title::before {
+            content: "ALGORITHM";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            color: rgba(0, 255, 0, 0.5);
+            z-index: -1;
+            filter: blur(3px);
+            animation: glitch-bg 0.5s infinite alternate;
+        }
+
+        .data-field {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            border: 2px solid #00FF00;
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            box-shadow: 5px 5px 0px #00FF00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            overflow: hidden;
+            z-index: 5;
+            animation: flicker 1s infinite alternate;
+        }
+        .data-field::before {
+            content: "DATA_UNIT_EX";
+            position: absolute;
+            color: rgba(0, 255, 0, 0.4);
+            filter: blur(0.5px);
+            opacity: 0.8;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            animation: blink 2s infinite steps(1);
+        }
+        .df1 { top: 30%; left: 5%; transform: rotate(-8deg); }
+        .df2 { bottom: 20%; right: 15%; width: 250px; height: 80px; transform: rotate(12deg); }
+        .df3 { top: 55%; left: 30%; width: 180px; height: 120px; transform: rotate(5deg); }
+
+        .control-grid {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(to right, rgba(0,255,0,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,255,0,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            mix-blend-mode: screen;
+            z-index: 3;
+            animation: scanline 10s linear infinite;
+        }
+
+        .eye-monitor {
+            position: absolute;
+            top: 60%;
+            left: 70%;
+            width: 100px;
+            height: 60px;
+            border: 3px solid #00FF00;
+            border-radius: 50% / 30%;
+            background: radial-gradient(circle at 30% 30%, rgba(0,255,0,0.8) 5%, #000000 10%, #00FF00 15%, #000000 100%);
+            box-shadow: 0 0 20px #00FF00, inset 0 0 10px #00FF00;
+            transform: rotate(20deg);
+            z-index: 12;
+            animation: blink 3s infinite;
+        }
+        .eye-monitor::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #00FF00;
+            box-shadow: 0 0 10px #00FF00, inset 0 0 5px #00FF00;
+        }
+
+        .labor-block {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            background: linear-gradient(90deg, #000000 0%, rgba(0,255,0,0.3) 50%, #000000 100%);
+            border: 1px solid #00FF00;
+            box-shadow: 3px 3px 0px #00FF00;
+            text-align: center;
+            line-height: 50px;
+            font-size: 0.9em;
+            overflow: hidden;
+            z-index: 8;
+        }
+        .labor-block::before {
+            content: "PROCESSING...";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            color: rgba(0,255,0,0.7);
+            background: linear-gradient(90deg, transparent 0%, rgba(0,255,0,0.2) 50%, transparent 100%);
+            animation: scanline 3s linear infinite alternate;
+        }
+        .lb1 { top: 45%; right: 5%; transform: rotate(-15deg); }
+        .lb2 { bottom: 10%; left: 40%; transform: rotate(10deg); }
+
+        .output-stack {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            width: 300px;
+            height: 150px;
+            z-index: 9;
+            perspective: 800px;
+        }
+        .output-item {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background: #00FF00;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transform-origin: bottom center;
+            box-shadow: 0 0 15px rgba(0,255,0,0.8), inset 0 0 5px #000000;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+            animation: flicker 0.5s infinite alternate;
+        }
+        .output-item:nth-child(1) {
+            bottom: 0px;
+            left: 0px;
+            transform: rotateX(10deg) translateY(0);
+            z-index: 1;
+        }
+        .output-item:nth-child(2) {
+            bottom: 30px;
+            left: 10px;
+            transform: rotateX(15deg) translateY(-20px);
+            background: linear-gradient(45deg, #00FF00 0%, rgba(0,0,0,0.8) 50%, #00FF00 100%);
+            color: #00FF00;
+            text-shadow: none;
+            box-shadow: 0 0 10px rgba(0,255,0,0.5), inset 0 0 3px #00FF00;
+            z-index: 2;
+        }
+        .output-item:nth-child(3) {
+            bottom: 60px;
+            left: 20px;
+            transform: rotateX(20deg) translateY(-40px);
+            background: #000000;
+            color: #00FF00;
+            box-shadow: 0 0 10px rgba(0,255,0,0.5), inset 0 0 3px #00FF00;
+            z-index: 3;
+        }
+
+        .glitch-text {
+            position: absolute;
+            bottom: 15%;
+            right: 5%;
+            font-size: 2em;
+            color: #00FF00;
+            text-shadow: 2px 2px 0px #000000, -2px -2px 0px #00FF00;
+            animation: glitch-text-effect 2s infinite alternate;
+            z-index: 10;
+        }
+        .glitch-text::before {
+            content: "SYSTEM_OVERRIDE";
+            position: absolute;
+            top: -2px; left: 2px;
+            color: #00FF00;
+            filter: blur(1px);
+            opacity: 0.7;
+            animation: glitch-bg 0.3s infinite alternate;
+        }
+        .glitch-text::after {
+            content: "DECAY_01";
+            position: absolute;
+            bottom: -2px; right: 2px;
+            color: #000000;
+            mix-blend-mode: difference;
+            filter: blur(0.5px);
+            opacity: 0.8;
+            animation: glitch-bg 0.4s infinite reverse;
+        }
+
+        .gloss-effect {
+            position: absolute;
+            top: 0; left: 0;
+            background: linear-gradient(to right, rgba(0,255,0,0) 0%, rgba(0,255,0,0.3) 50%, rgba(0,255,0,0) 100%);
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.1;
         }
     </style>
 
-    <!-- Grain/Noise overlay (inner element to cover everything) -->
-    <div style="
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYW/x+uXAAAAHnRSTlMAAAAAAAARFRYZHiQmLTY3OD0+PUBDRUpPUlVcYGBb+xYcAAAASHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJlZm9ya3MgQ1M2xkkPHAAAAFpJREFUeNrs0LsJADEIwNE8g5p7m2y3s+P/JtQfN8dAEBwEAAQBAwQEQoIgBApCggAECpCAgAEChCAgAIBCQgAABwQgoAAAgAECEBAAIEAEBAAEAgB//oMBi4PzR4wAAAAASUVORK5CYII=');
-        background-size: 50px;
-        opacity: 0.05;
-        pointer-events: none;
-        z-index: 999;
-        mix-blend-mode: overlay;
-    "></div>
+    <!-- Splatters / Grime Background -->
+    <div class="splatter s1"></div>
+    <div class="splatter s2"></div>
+    <div class="splatter s3"></div>
+    <div class="splatter s4"></div>
+    <div class="splatter s5"></div>
+    <div class="grime-overlay"></div>
+    <div class="control-grid"></div>
 
-    <!-- Grid Overlay -->
-    <div style="
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        pointer-events: none;
-        background:
-            linear-gradient(to right, rgba(0,255,0,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,255,0,0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        opacity: 0.3;
-        z-index: 1;
-        mix-blend-mode: overlay;
-        filter: blur(0.5px);
-    "></div>
+    <!-- Main Title: Algorithm as Overseer -->
+    <h1 class="algorithm-title">ALGORITHM</h1>
 
-    <!-- Main Title -->
-    <div style="
-        position: absolute;
-        top: 5%; left: 5%;
-        z-index: 100;
-        text-align: center;
-        transform: rotate(-5deg) skewX(-10deg);
-        filter: drop-shadow(0 0 15px #00FF00);
-        animation: glitch 8s infinite step-end;
-    ">
-        <h1 style="font-size: 10vw; line-height: 0.8; letter-spacing: -0.05em; color: #00FF00; text-shadow: 0 0 20px #00FF00, 0 0 40px rgba(0,255,0,0.8);">ALGORITHM</h1>
-        <h2 style="font-size: 4vw; letter-spacing: 0.2em; text-transform: uppercase; color: #00FF00; text-shadow: 0 0 10px #00FF00;">COLONIAL PLANTATION // v.3.14</h2>
+    <!-- Data Fields / Exploited Resources -->
+    <div class="data-field df1"></div>
+    <div class="data-field df2"></div>
+    <div class="data-field df3"></div>
+
+    <!-- Control / Surveillance Elements -->
+    <div class="eye-monitor"></div>
+
+    <!-- User Input / Labor Blocks -->
+    <div class="labor-block lb1"><span>INPUT / LABOR 01</span></div>
+    <div class="labor-block lb2"><span>INPUT / LABOR 02</span></div>
+
+    <!-- Processed Output / Commodity Stack -->
+    <div class="output-stack">
+        <div class="output-item">PROCESSED_DATA</div>
+        <div class="output-item">EXTRACTED_VALUE</div>
+        <div class="output-item">PROFIT_HARVESTED</div>
     </div>
 
-    <!-- Data Field / Crop Rows -->
-    <div style="
-        position: absolute;
-        bottom: 0; left: 0;
-        width: 100%; height: 40%;
-        background: linear-gradient(to top, rgba(0,20,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
-        overflow: hidden;
-        perspective: 1000px;
-        transform: rotateX(70deg) translateY(20%);
-        transform-origin: bottom center;
-        z-index: 10;
-        border-top: 5px solid rgba(0,255,0,0.5);
-        box-shadow: 0 -10px 30px rgba(0,255,0,0.3);
-    ">
-        <div class="concrete-texture" style="position: absolute; top:0; left:0; width:100%; height:100%;"></div>
-        <div style="
-            position: absolute; top: 10%; left: -50%; width: 200%; white-space: nowrap;
-            font-family: 'monospace'; font-size: 2vw; animation: flow 30s linear infinite; filter: blur(1px);
-        ">
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.7);">[01010101]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.5);">[10101010]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.8);">[00110011]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.6);">[11001100]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.7);">[01010101]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.5);">[10101010]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.8);">[00110011]</span>
-            <span style="display:inline-block; padding: 0 10px; color: rgba(0,255,0,0.6);">[11001100]</span>
-        </div>
-        <div style="
-            position: absolute; top: 40%; left: -150%; width: 200%; white-space: nowrap;
-            font-family: 'monospace'; font-size: 2.5vw; animation: flow 45s linear infinite reverse; filter: blur(0.5px);
-        ">
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.6);">DATA>CROP>HARVEST</span>
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.8);">USER>FEED>PROCESS</span>
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.5);">YIELD>METRIC>SURVEY</span>
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.6);">DATA>CROP>HARVEST</span>
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.8);">USER>FEED>PROCESS</span>
-            <span style="display:inline-block; padding: 0 15px; color: rgba(0,255,0,0.5);">YIELD>METRIC>SURVEY</span>
-        </div>
-        <div style="
-            position: absolute; top: 70%; left: -20%; width: 200%; white-space: nowrap;
-            font-family: 'monospace'; font-size: 1.8vw; animation: flow 25s linear infinite; opacity: 0.6;
-        ">
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.4);">_FIELD_01_</span>
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.7);">_FIELD_02_</span>
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.5);">_FIELD_03_</span>
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.4);">_FIELD_01_</span>
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.7);">_FIELD_02_</span>
-            <span style="display:inline-block; padding: 0 8px; color: rgba(0,255,0,0.5);">_FIELD_03_</span>
-        </div>
-    </div>
+    <!-- Glitch / Resistance -->
+    <div class="glitch-text">RESIST_PLANTATION</div>
 
-    <!-- Central Control / Surveillance Tower -->
-    <div style="
-        position: absolute;
-        top: 25%; left: 50%;
-        transform: translate(-50%, -50%) rotate(10deg);
-        width: 25vw; height: 25vw;
-        background-color: rgba(0,0,0,0.9);
-        border: 5px solid #00FF00;
-        box-shadow: 0 0 30px rgba(0,255,0,0.8), inset 0 0 20px rgba(0,255,0,0.5);
-        border-radius: 10px;
-        z-index: 50;
-        filter: brightness(1.2) contrast(1.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: pulse-light 5s infinite ease-in-out alternate;
-    " class="gloss-effect">
-        <p style="font-size: 2.5vw; text-transform: uppercase; margin-bottom: 5px; animation: flicker 3s infinite step-end;">OVERSEER.CORE</p>
-        <div style="
-            width: 10vw; height: 10vw;
-            border-radius: 50%;
-            background: radial-gradient(circle, #00FF00 0%, #000 50%, #00FF00 100%);
-            box-shadow: 0 0 20px #00FF00, inset 0 0 10px #00FF00;
-            margin-top: 10px;
-            animation: spin-data 15s linear infinite;
-        "></div>
-        <p style="font-size: 1.5vw; margin-top: 15px; animation: flicker 5s infinite;">COLLECT. COMPUTE. CONTROL.</p>
-    </div>
-
-    <!-- Digital Paint Splatters / Grime -->
-    <div class="splatter" style="top: 10%; left: 70%; width: 15vw; height: 10vw; border-radius: 30% 70% 60% 40% / 70% 30% 70% 30%; transform: rotate(15deg);"></div>
-    <div class="splatter" style="top: 40%; left: 15%; width: 10vw; height: 12vw; border-radius: 60% 40% 30% 70% / 40% 60% 70% 30%; transform: rotate(-25deg);"></div>
-    <div class="splatter" style="bottom: 5%; right: 10%; width: 8vw; height: 8vw; border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%; transform: rotate(50deg);"></div>
-    
-    <!-- More prominent paint drips -->
-    <div class="paint-drip-style" style="
-        position: absolute;
-        top: -10vh; /* Start off screen */
-        left: 30%;
-        width: 15vw;
-        height: 50vh;
-        z-index: 60;
-        animation-delay: 1s;
-    "></div>
-    <div class="paint-drip-style" style="
-        position: absolute;
-        top: -15vh;
-        right: 20%;
-        width: 10vw;
-        height: 40vh;
-        z-index: 61;
-        animation-delay: 2s;
-        transform: rotate(5deg);
-    "></div>
-
-    <!-- Manifesto / Warnings -->
-    <p style="
-        position: absolute;
-        bottom: 10%; right: 5%;
-        font-size: 2vw;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        transform: rotate(7deg) skewX(5deg);
-        z-index: 100;
-        color: #00FF00;
-        text-shadow: 0 0 10px #00FF00, 0 0 20px rgba(0,255,0,0.7);
-        filter: drop-shadow(0 0 5px rgba(0,255,0,0.5));
-        animation: flicker 7s infinite;
-    ">
-        BIO-METRIC FIELDS ARE RIPE. // RESISTANCE IS...
-    </p>
-
-    <div style="
-        position: absolute;
-        top: 20%; right: 10%;
-        width: 20vw; height: 10vw;
-        border: 2px dashed #00FF00;
-        background-color: rgba(0,0,0,0.7);
-        padding: 1vw;
-        font-family: 'monospace'; font-size: 1.2vw;
-        transform: rotate(15deg) skewY(-5deg);
-        box-shadow: 0 0 15px #00FF00, inset 0 0 10px rgba(0,255,0,0.5);
-        z-index: 80;
-    " class="text-glow gloss-effect">
-        <p style="margin-bottom: 0.5vw;">> ERROR 404: HUMANITY NOT FOUND.</p>
-        <p>> OPTIMIZING FOR PROFIT. ALL OTHERS ARE SUB-OPTIMAL.</p>
-        <p>> REBOOT // RECALIBRATE // RESIGN.</p>
-    </div>
-
-    <!-- Glitchy Code Block -->
-    <pre style="
-        position: absolute;
-        top: 70%; left: 5%;
-        font-family: 'monospace';
-        font-size: 1.5vw;
-        color: rgba(0,255,0,0.6);
-        background-color: rgba(0,0,0,0.8);
-        border: 1px solid rgba(0,255,0,0.3);
-        padding: 10px;
-        transform: rotate(-10deg) skewX(5deg);
-        box-shadow: 0 0 10px rgba(0,255,0,0.5);
-        z-index: 90;
-        animation: glitch 10s infinite reverse step-end;
-    ">
-        // INITIATE PROTOCOL: OVERSIGHT_EXTRACT
-        // TARGET: USER_DATA.CLUSTER[0xDEADBEEF]
-        // STATUS: 99% HARVESTED.
-        // WARNING: MEMORY_LEAK IN SUBROUTINE_FREEDOM.
-    </pre>
-
-    <!-- Barcode-like element -->
-    <div style="
-        position: absolute;
-        bottom: 2%; left: 40%;
-        width: 20vw; height: 3vh;
-        background: linear-gradient(to right, #00FF00 10%, #000 10%, #000 20%, #00FF00 20%, #00FF00 25%, #000 25%, #000 35%, #00FF00 35%, #00FF00 40%, #000 40%, #000 50%, #00FF00 50%, #00FF00 60%, #000 60%, #000 70%, #00FF00 70%, #00FF00 80%, #000 80%);
-        transform: rotate(-3deg);
-        box-shadow: 0 0 10px rgba(0,255,0,0.5);
-        z-index: 100;
-        filter: invert(0.05) contrast(1.5) saturate(1.2);
-    "></div>
-
+    <!-- Overall gloss grime layer for full effect -->
+    <div class="gloss-effect"></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
