@@ -39,402 +39,253 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-07 20:18 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-07 22:11 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                <div style="
-    font-family: 'Oxanium', monospace, sans-serif; /* Fallback to monospace and sans-serif if Oxanium fails */
-    background-color: #0A0A0A; /* Deep black */
-    color: #00FF33; /* Vibrant neon green */
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
+                
+<div style="
+    display: block;
+    width: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden; /* To contain absolutely positioned elements */
-    perspective: 1000px; /* For potential 3D transforms */
-    border: 5px solid rgba(0,255,51,0.5);
-    box-shadow: inset 0 0 50px rgba(0,255,51,0.3), 0 0 100px rgba(0,255,51,0.1);
+    background-color: #000; /* Ensures black background for the root div */
+    overflow: hidden; /* Important for containing absolute elements */
 ">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Share+Tech+Mono&display=swap');
-
+        /* CSS Variables for consistent colors */
         :root {
-            --neon-green: #00FF33;
-            --deep-black: #0A0A0A;
-            --dark-grey: #1A1A1A;
-            --gloss-overlay: rgba(255, 255, 255, 0.07);
-            --grime-shadow: rgba(0, 0, 0, 0.8);
+            --neon-green: #00FF00; /* Vibrant Neon Green */
+            --deep-black: #000000; /* Absolute Black */
+            --mid-black: #111111; /* Slightly less deep black for contrast */
+            --light-black: #222222; /* Even lighter black for structural elements */
         }
 
-        /* Scoped reset for elements within the main div */
-        div * {
-            margin: 0;
-            padding: 0;
+        /* Base styles for the entire collage container */
+        .demolition-collage {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--deep-black);
+            font-family: 'Impact', 'Arial Black', sans-serif; /* Brutalist font choice */
+            color: var(--neon-green);
+            overflow: hidden; /* Critical for controlling absolute elements */
+            padding: 2.5vw; /* Responsive padding */
             box-sizing: border-box;
+            filter: saturate(1.3) contrast(1.1); /* Enhance vibrancy and contrast */
+            perspective: 1000px; /* For potential 3D transforms */
+            text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* General brutalist typography */
-        .white-cube-collage h1, .white-cube-collage h2, .white-cube-collage p, .white-cube-collage span {
-            font-family: 'Oxanium', monospace, sans-serif;
-            color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0,255,51,0.7), 0 0 20px rgba(0,255,51,0.5);
-            line-height: 1.2;
-            text-transform: uppercase;
+        /* Global reset/base for elements within the collage */
+        .demolition-collage * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
         }
 
-        .title {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            font-size: 7vw;
-            font-weight: 700;
-            letter-spacing: 0.8vw;
-            z-index: 100;
-            transform: skew(-10deg) rotate(2deg);
-            text-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,51,0.9), 0 0 60px rgba(0,255,51,0.6);
-            background: linear-gradient(90deg, transparent 0%, rgba(0,255,51,0.1) 10%, rgba(0,255,51,0.05) 90%, transparent 100%);
-            padding: 10px 0;
-        }
-
-        .subtitle {
-            position: absolute;
-            top: 25%;
-            left: 10%;
-            font-size: 3vw;
-            font-weight: 400;
-            letter-spacing: 0.3vw;
-            z-index: 90;
-            opacity: 0.8;
-            transform: rotate(-5deg) translateX(15px);
-            border-bottom: 2px solid var(--neon-green);
-            padding-bottom: 5px;
-        }
-
-        .text-block {
-            position: absolute;
-            width: 30%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px rgba(0,255,51,0.3), 5px 5px 20px var(--grime-shadow);
-            z-index: 50;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.2vw;
-            line-height: 1.5;
-            color: var(--neon-green);
-            text-shadow: 0 0 3px var(--neon-green);
-            overflow: hidden; /* For inner glows */
-        }
-
-        .text-block::before {
+        /* High-gloss grime overlay via pseudo-element */
+        .demolition-collage::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0,255,51,0.1) 0%, transparent 70%);
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .text-block.strategy-1 {
-            top: 40%;
-            left: 5%;
-            transform: rotate(3deg) scale(0.95);
-            max-height: 30vh;
-        }
-
-        .text-block.strategy-2 {
-            top: 60%;
-            right: 8%;
-            width: 35%;
-            transform: rotate(-7deg) scale(1.05);
-            background: linear-gradient(45deg, var(--dark-grey), var(--deep-black) 70%, var(--dark-grey));
-            border-width: 3px;
-            box-shadow: 0 0 20px rgba(0,255,51,0.8), inset 0 0 15px rgba(0,255,51,0.4), 8px 8px 25px var(--grime-shadow);
-            max-height: 35vh;
-        }
-
-        .splatter {
-            position: absolute;
-            background: var(--neon-green);
-            opacity: 0.7;
-            filter: blur(2px) contrast(150%);
-            z-index: 10;
-            transform-origin: center center;
-            pointer-events: none;
-        }
-
-        .splatter-1 {
-            width: 15vw;
-            height: 12vw;
-            top: 15%;
-            left: 70%;
-            border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%; /* Irregular blob shape */
-            transform: rotate(45deg);
-            box-shadow: 0 0 25px 10px var(--neon-green), inset 0 0 10px rgba(0,255,51,0.5);
-        }
-
-        .splatter-2 {
-            width: 10vw;
-            height: 10vw;
-            bottom: 5%;
-            left: 30%;
-            border-radius: 50%; /* Circle blob */
-            opacity: 0.6;
-            transform: rotate(-20deg) scale(0.8);
-            box-shadow: 0 0 20px 8px var(--neon-green), inset 0 0 5px rgba(0,255,51,0.7);
-        }
-
-        .splatter-3 {
-            width: 8vw;
-            height: 15vw;
-            top: 50%;
-            left: 45%;
-            border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;
-            transform: rotate(90deg) skewY(10deg);
-            box-shadow: 0 0 18px 7px rgba(0,255,51,0.7), inset 0 0 8px rgba(0,255,51,0.4);
-        }
-
-        .visual-glitch {
-            position: absolute;
-            background: repeating-linear-gradient(
-                -45deg,
-                var(--neon-green),
-                var(--neon-green) 1px,
-                transparent 1px,
-                transparent 5px
-            );
-            border: 2px solid var(--neon-green);
-            opacity: 0.25;
-            z-index: 20;
-            box-shadow: 0 0 10px var(--neon-green);
-            pointer-events: none;
-        }
-
-        .visual-glitch.one {
-            width: 25%;
-            height: 35%;
-            top: 10%;
-            right: 15%;
-            transform: rotate(15deg) skewX(10deg);
-            background-color: var(--dark-grey); /* Base color for transparency */
-        }
-
-        .visual-glitch.two {
-            width: 15%;
-            height: 20%;
-            bottom: 20%;
-            left: 10%;
-            transform: rotate(-5deg) skewY(5deg);
-            opacity: 0.2;
-            background-color: var(--deep-black);
-            mix-blend-mode: hard-light;
-        }
-
-        .overlay-grime {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: 
+                radial-gradient(circle at 10% 90%, rgba(0,255,0,0.1) 0%, transparent 40%),
+                linear-gradient(135deg, rgba(0,0,0,0.8) 0%, transparent 50%, rgba(0,0,0,0.8) 100%);
+            mix-blend-mode: overlay; /* Creates gritty, reflective look */
+            opacity: 0.6;
             pointer-events: none; /* Allows interaction with elements beneath */
-            background: radial-gradient(circle at 70% 30%, transparent 20%, var(--deep-black) 80%),
-                        linear-gradient(45deg, var(--gloss-overlay), transparent 50%, var(--gloss-overlay)),
-                        linear-gradient(225deg, rgba(0, 0, 0, 0.3) 10%, transparent 50%, rgba(0, 0, 0, 0.3) 90%);
-            opacity: 0.5;
-            mix-blend-mode: overlay; /* Creates interesting blending effects */
-            z-index: 200; /* On top of most things */
+            z-index: 100; /* Ensures it's on top of everything */
+            filter: blur(0.5px); /* Adds to the grime effect */
         }
 
-        .data-stream {
+        /* Main title styling */
+        .title-main {
             position: absolute;
-            bottom: 5px;
-            left: 5px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8vw;
+            top: 8%;
+            left: 5%;
+            font-size: clamp(40px, 10vw, 120px); /* Responsive font size */
+            font-weight: 900;
+            text-transform: uppercase;
             color: var(--neon-green);
-            opacity: 0.7;
-            z-index: 100;
-            letter-spacing: 0.1vw;
-            text-shadow: 0 0 2px var(--neon-green);
-            padding: 5px 10px;
-            background: rgba(0,0,0,0.5);
-            border-top: 1px solid var(--neon-green);
-            border-right: 1px solid var(--neon-green);
-            transform: skewX(-5deg);
+            text-shadow: 
+                0 0 5px var(--neon-green),
+                0 0 15px var(--neon-green),
+                0 0 25px rgba(0, 255, 0, 0.7),
+                0 0 40px rgba(0, 255, 0, 0.5); /* Multiple layers for intense glow */
+            letter-spacing: -0.05em;
+            z-index: 50;
+            transform: skew(-15deg) rotate(-3deg);
+            background-color: rgba(0,0,0,0.3); /* Subtle dark backdrop */
+            padding: 0.5vw 1.5vw;
+            border-left: 5px solid var(--neon-green); /* Brutalist accent */
+            mix-blend-mode: screen; /* High-gloss blend for glowing text */
         }
 
-        .data-stream::before {
-            content: ">> INITIATE PROTOCOL: DECONSTRUCT.EXE_V2.1.2_ACCESS_GRANTED ";
-            display: block;
-            margin-bottom: 3px;
-            color: rgba(0,255,51,0.9);
-            text-shadow: 0 0 5px rgba(0,255,51,0.9);
-        }
-
-        .border-edge {
+        /* Subtitle styling */
+        .title-sub {
             position: absolute;
-            background: var(--neon-green);
-            opacity: 0.7;
-            box-shadow: 0 0 10px var(--neon-green);
-            z-index: 80;
-            pointer-events: none;
+            bottom: 12%;
+            right: 5%;
+            font-size: clamp(20px, 4vw, 50px);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--deep-black); /* Inverted color for strong contrast */
+            background-color: var(--neon-green);
+            padding: 1vw 2vw;
+            transform: rotate(7deg) skew(8deg);
+            z-index: 60;
+            box-shadow: 0 0 25px var(--neon-green), 0 0 40px rgba(0, 255, 0, 0.5); /* Intense glow */
+            mix-blend-mode: hard-light; /* Aggressive blend for gloss */
+            border-right: 3px solid var(--deep-black);
+            border-bottom: 3px solid var(--deep-black); /* Brutalist border */
+            letter-spacing: -0.02em;
         }
-        .border-edge.top { top: 0; left: 0; width: 100%; height: 2px; }
-        .border-edge.left { top: 0; left: 0; width: 2px; height: 100%; }
-        .border-edge.bottom { bottom: 0; left: 0; width: 100%; height: 2px; }
-        .border-edge.right { top: 0; right: 0; width: 2px; height: 100%; }
 
-        .image-sim {
+        /* Digital paint splatters */
+        .splatter {
             position: absolute;
-            background: linear-gradient(45deg, var(--dark-grey) 0%, var(--deep-black) 50%, var(--dark-grey) 100%);
+            background: linear-gradient(45deg, var(--neon-green) 0%, rgba(0, 255, 0, 0.7) 60%, transparent 100%);
+            border-radius: 50%; /* Start with a circle, then distort */
+            filter: blur(8px) drop-shadow(0 0 15px var(--neon-green)); /* Blurred and glowing */
+            opacity: 0.7;
+            z-index: 10;
+            mix-blend-mode: screen; /* Lightens and adds glow */
+        }
+        .splatter.s1 { top: 15%; left: 25%; width: 12vw; height: 10vw; transform: rotate(30deg) skew(-15deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .splatter.s2 { bottom: 10%; right: 15%; width: 15vw; height: 13vw; transform: rotate(-45deg) skew(20deg); border-radius: 70% 30% 60% 40% / 30% 70% 40% 60%; opacity: 0.8; filter: blur(10px) drop-shadow(0 0 20px var(--neon-green)); }
+        .splatter.s3 { top: 50%; left: 0%; width: 8vw; height: 9vw; transform: rotate(10deg); border-radius: 40% 60% 70% 30% / 70% 40% 60% 30%; opacity: 0.6; }
+        .splatter.s4 { top: 5%; right: 5%; width: 6vw; height: 7vw; transform: rotate(60deg) skew(5deg); border-radius: 50% 50% 20% 80% / 80% 20% 50% 50%; opacity: 0.7; }
+
+        /* Fragmented elements / broken grid */
+        .fragment {
+            position: absolute;
+            background-color: var(--mid-black);
             border: 1px solid var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px rgba(0,255,51,0.3), 5px 5px 15px var(--grime-shadow);
-            z-index: 40;
+            box-shadow: 0 0 10px var(--neon-green); /* Glowing border effect */
+            filter: drop-shadow(0 0 8px var(--neon-green));
+            mix-blend-mode: lighten; /* Creates a stark, almost embossed effect */
+            z-index: 30;
+            padding: 1vw;
+            font-size: clamp(10px, 1.5vw, 20px);
+            font-family: 'Monaco', monospace; /* More digital, techy font */
+            text-transform: uppercase;
             overflow: hidden;
-            pointer-events: none;
-        }
-
-        .image-sim.img-1 {
-            width: 28%;
-            height: 30%;
-            top: 30%;
-            left: 65%;
-            transform: rotate(8deg) skewY(-5deg);
-        }
-
-        .image-sim.img-1::before {
-            content: "ERROR: IMAGE_FEED_CORRUPTED";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-10deg);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1vw;
-            color: rgba(255, 0, 0, 0.8); /* Red for error */
-            text-shadow: 0 0 5px rgba(255, 0, 0, 0.9);
-            white-space: nowrap;
-            letter-spacing: 0.1vw;
-        }
-
-        .image-sim.img-2 {
-            width: 20%;
-            height: 25%;
-            bottom: 10%;
-            right: 40%;
-            transform: rotate(-12deg) translateY(10px);
-            background: repeating-linear-gradient(
-                45deg,
-                var(--deep-black),
-                var(--deep-black) 3px,
-                var(--dark-grey) 3px,
-                var(--dark-grey) 6px
-            );
-        }
-        .image-sim.img-2::before {
-            content: "INITIATING_STRUCTURAL_FAILURE";
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: var(--neon-green);
-            text-shadow: 0 0 3px var(--neon-green);
+            line-height: 1.2;
+        }
+        .fragment.f1 { top: 20%; left: 30%; width: 20%; height: 25%; transform: rotate(10deg) skewY(5deg); }
+        .fragment.f2 { bottom: 25%; right: 20%; width: 15%; height: 18%; transform: rotate(-18deg) skewX(8deg); background-color: var(--neon-green); color: var(--deep-black); border-color: var(--deep-black); }
+        .fragment.f3 { top: 5%; left: 50%; width: 12%; height: 8%; transform: rotate(5deg) skew(-3deg); }
+        .fragment.f4 { bottom: 5%; left: 5%; width: 25%; height: 10%; transform: rotate(-7deg) skewX(-5deg); background-color: var(--deep-black); color: var(--neon-green); border-color: var(--neon-green); }
+        .fragment.f5 { top: 45%; right: 10%; width: 18%; height: 15%; transform: rotate(25deg); background-color: var(--light-black); }
+
+        /* Debris / structural elements (metal bars) */
+        .structural-bar {
+            position: absolute;
+            background-color: var(--light-black);
+            border: 1px solid var(--neon-green);
+            box-shadow: inset 0 0 3px rgba(0,0,0,0.5), 0 0 7px var(--neon-green);
+            mix-blend-mode: hard-light; /* Adds metallic sheen */
+            opacity: 0.8;
+            z-index: 20;
+        }
+        .structural-bar.b1 { top: 10%; left: 15%; width: 0.5vw; height: 30%; transform: rotate(15deg); }
+        .structural-bar.b2 { bottom: 15%; right: 10%; width: 30%; height: 0.5vw; transform: rotate(-8deg); }
+        .structural-bar.b3 { top: 50%; left: 40%; width: 0.3vw; height: 15%; transform: rotate(-60deg); }
+        .structural-bar.b4 { top: 25%; right: 25%; width: 15%; height: 0.3vw; transform: rotate(20deg); }
+
+        /* Glitch text effects */
+        .glitch-text {
+            position: absolute;
+            font-family: 'Press Start 2P', 'Monaco', monospace; /* Pixelated/retro for glitch */
+            font-size: clamp(8px, 1.2vw, 16px);
+            color: var(--neon-green);
+            text-shadow: 
+                -1px -1px 0 var(--deep-black), 1px 1px 0 var(--neon-green), /* Offset shadow for glitch */
+                0 0 5px rgba(0,255,0,0.5); /* Subtle glow */
             opacity: 0.9;
-            letter-spacing: 0.05vw;
+            z-index: 40;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        .glitch-text.g1 { top: 38%; left: 10%; transform: rotate(-5deg); }
+        .glitch-text.g2 { bottom: 35%; right: 5%; transform: rotate(10deg); }
+        .glitch-text.g3 { top: 60%; left: 20%; transform: rotate(-12deg) skewY(5deg); }
+        .glitch-text.g4 { top: 25%; right: 35%; transform: rotate(3deg) skewX(-5deg); font-size: clamp(6px, 0.9vw, 12px); }
+
+        /* Dynamic elements: Subtle animations */
+        @keyframes pulse-glow {
+            0% { text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0, 255, 0, 0.5); box-shadow: 0 0 5px var(--neon-green); }
+            50% { text-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(0, 255, 0, 0.7); box-shadow: 0 0 15px var(--neon-green); }
+            100% { text-shadow: 0 0 5px var(--neon-green), 0 0 10px rgba(0, 255, 0, 0.5); box-shadow: 0 0 5px var(--neon-green); }
         }
 
-        .corner-flare {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(0,255,51,0.3) 0%, transparent 70%);
-            opacity: 0.15;
-            z-index: 1;
-            pointer-events: none;
+        .title-main, .title-sub {
+            animation: pulse-glow 6s ease-in-out infinite alternate;
         }
-        .corner-flare.top-left { top: -75px; left: -75px; }
-        .corner-flare.bottom-right { bottom: -75px; right: -75px; }
 
-        .scanline-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(0,0,0,0.1) 0px,
-                rgba(0,0,0,0.3) 1px,
-                transparent 2px,
-                transparent 3px
-            );
-            pointer-events: none;
-            z-index: 210;
-            mix-blend-mode: overlay;
-            opacity: 0.5;
+        @keyframes subtle-float-rotate {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0.95; }
+            25% { transform: translate(0.5vw, 0.2vw) rotate(0.5deg); opacity: 0.98; }
+            50% { transform: translate(0, 0) rotate(0deg); opacity: 0.95; }
+            75% { transform: translate(-0.3vw, -0.1vw) rotate(-0.3deg); opacity: 0.97; }
+            100% { transform: translate(0, 0) rotate(0deg); opacity: 0.95; }
         }
+        /* Apply floating/rotating to multiple elements, with staggered delays */
+        .fragment, .splatter, .structural-bar, .glitch-text {
+            animation: subtle-float-rotate 12s ease-in-out infinite alternate;
+        }
+        .fragment.f2 { animation-delay: 1s; }
+        .splatter.s2 { animation-delay: 2s; }
+        .structural-bar.b3 { animation-delay: 0.5s; }
+        .glitch-text.g2 { animation-delay: 1.5s; }
 
     </style>
+    <div class="demolition-collage">
+        <h1 class="title-main">WHITE CUBE<br>DISSOLUTION</h1>
+        <div class="title-sub">STRATEGIES<br>FOR COLLAPSE</div>
 
-    <div class="scanline-overlay"></div>
-    <div class="overlay-grime"></div>
+        <div class="splatter s1"></div>
+        <div class="splatter s2"></div>
+        <div class="splatter s3"></div>
+        <div class="splatter s4"></div>
 
-    <h1 class="title white-cube-collage">WHITE CUBE<br>DECONSTRUCTED</h1>
-    <h2 class="subtitle white-cube-collage">STRATEGIES FOR POST-ART SPACES</h2>
+        <div class="fragment f1">
+            <p>SYSTEMATIC<br>FRAGMENTATION</p>
+        </div>
+        <div class="fragment f2">
+            <p>REBUILD<br>ANARCHY</p>
+        </div>
+        <div class="fragment f3">DEBRIS_001</div>
+        <div class="fragment f4">
+            <p>EXPOSE THE VOID</p>
+        </div>
+        <div class="fragment f5">
+            <p>CRITIQUE_MODULE</p>
+        </div>
 
-    <div class="text-block strategy-1 white-cube-collage">
-        <p>
-            The pristine facade of institutionalized perception crumbles under the weight of digital intervention. We initiate a systematic dismantling of the sterile exhibitionary complex. No longer a neutral ground, but a combat zone of ideas.
-        </p>
-        <br>
-        <p>
-            <strong>PROTOCOL 01: SYSTEMIC CORRUPTION</strong><br>
-            Injecting rogue data streams, overloading sensory inputs. Glitch as aesthetic, error as feature.
-        </p>
+        <div class="structural-bar b1"></div>
+        <div class="structural-bar b2"></div>
+        <div class="structural-bar b3"></div>
+        <div class="structural-bar b4"></div>
+
+        <div class="glitch-text g1">INITIATE DECONSTRUCTION. OVERLOAD.</div>
+        <div class="glitch-text g2">CULTURE INTERRUPTED: NEW PROTOCOL.</div>
+        <div class="glitch-text g3">[ERROR: NEUTRALITY DETECTED_CLEANSE]</div>
+        <div class="glitch-text g4">STATUS: CRITICAL MASS ACHIEVED.</div>
     </div>
-
-    <div class="text-block strategy-2 white-cube-collage">
-        <p>
-            <strong>PROTOCOL 02: MATERIAL TRANSLATION</strong><br>
-            From physical to ephemeral. The static object dissolves into kinetic data. Walls become screens, voids become echoes.
-        </p>
-        <br>
-        <p>
-            <strong>PROTOCOL 03: RECLAIMING NARRATIVES</strong><br>
-            The imposed silence shattered by resonant frequencies. Amplifying suppressed voices, re-authoring the institutional script.
-        </p>
-    </div>
-
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-
-    <div class="visual-glitch one"></div>
-    <div class="visual-glitch two"></div>
-
-    <div class="image-sim img-1"></div>
-    <div class="image-sim img-2"></div>
-
-    <span class="data-stream white-cube-collage">
-        [ACCESS LOG: 2024-04-23_14:37:01]
-        [TARGET: WCC-001_GALLERY_A]
-        [STATUS: ENGAGEMENT SUCCESSFUL]
-        [PROGRESS: 78.4% DECONSTRUCTED]
-        [SUBMISSION: #BRUTALIST_DECON #NEON_REVOLT]
-    </span>
-
-    <div class="border-edge top"></div>
-    <div class="border-edge left"></div>
-    <div class="border-edge bottom"></div>
-    <div class="border-edge right"></div>
-
-    <div class="corner-flare top-left"></div>
-    <div class="corner-flare bottom-right"></div>
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
                 <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
