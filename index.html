@@ -39,189 +39,115 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-06 22:10 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-07 00:12 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-                <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Share Tech Mono', monospace, 'Consolas', sans-serif; color: #00FF00; box-sizing: border-box; display: block;">
+                
+<div style="
+    /* Main container styles */
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden; /* Crucial for absolute positioning not expanding the body */
+    background-color: #000;
+    font-family: 'Press Start 2P', monospace, sans-serif; /* Fallback for font */
+    color: #39FF14; /* Vibrant Neon Green */
+    box-sizing: border-box; /* Good practice */
+    text-rendering: optimizeLegibility; /* Improves font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: crosshair; /* Adds to the digital, edgy feel */
+">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-        :root {
-            --neon-green: #00FF00;
-            --deep-black: #000000;
-            --light-black: #111;
-            --dark-gray: #333;
-            --mid-gray: #555;
-            --glitch-color-1: #00FF00; /* Neon green */
-            --glitch-color-2: #FF00FF; /* Magenta */
-            --glitch-color-3: #00FFFF; /* Cyan */
+        /* Note: @import may not function in all contexts when embedded like this,
+           but it correctly expresses the intent for font usage. Fallback is provided. */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        /* Basic reset for embedding in any environment */
+        *:not(style) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.2; /* Better readability for small text */
         }
 
-        /* Basic container styles, applied to the parent div */
-        /* These are already applied via inline style on the root div, but included for clarity if desired as class */
-        /* .main-collage-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background-color: var(--deep-black);
-            overflow: hidden;
-            font-family: 'Share Tech Mono', monospace, 'Consolas', sans-serif;
-            color: var(--neon-green);
-            box-sizing: border-box;
-            display: block;
-            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
-            filter: contrast(1.1) brightness(1.1);
-        } */
-
-        /* Generic element styling for positioning and initial look */
+        /* General element styles for the collage pieces */
         .collage-element {
             position: absolute;
-            box-sizing: border-box;
-            user-select: none;
-            pointer-events: none; /* Prevent interaction with background elements */
-            transform-origin: center center;
-            mix-blend-mode: screen; /* For layering and glowing effects, allows greens to add */
-            filter: drop-shadow(0 0 2px rgba(0,255,0,0.3)); /* Subtle glow for everything */
-        }
-
-        /* Text elements */
-        .text-block {
-            font-size: clamp(1em, 5vw, 4em);
-            font-weight: 900;
-            line-height: 0.9;
+            background-color: transparent; /* Allows layers beneath to show */
+            color: #39FF14;
+            padding: 10px 20px;
+            border: 2px solid #39FF14;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7), 0 0 5px #39FF14 inset; /* Neon glow */
+            transform: rotateZ(calc(var(--angle, 0) * 1deg)) translate(calc(var(--x, 0) * 1px), calc(var(--y, 0) * 1px));
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            word-break: break-all;
-            white-space: pre-wrap;
-            color: var(--neon-green);
-            text-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--neon-green);
-            filter: drop-shadow(0 0 5px var(--neon-green));
-            z-index: 10;
-        }
-
-        .title {
-            font-size: clamp(3em, 12vw, 10em);
-            font-weight: 900;
-            text-align: center;
-            white-space: nowrap;
+            font-size: 1em;
             letter-spacing: 0.1em;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 40px rgba(0,255,0,0.5);
-            animation: pulse 3s infinite alternate ease-in-out, shift 20s infinite linear;
-            z-index: 20;
-            mix-blend-mode: lighten; /* Ensures it stands out over other elements */
+            filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.5));
+            z-index: var(--z-index, 1);
+            font-family: 'Press Start 2P', monospace, sans-serif; /* Explicit fallback */
+            word-break: break-word; /* Prevents overflow with long words */
+            backdrop-filter: blur(1px); /* Slight blur for depth, high-gloss grime */
         }
 
-        /* Brutalist Shapes & Grime */
-        .brutal-block {
-            background-color: var(--dark-gray);
-            border: 2px solid var(--neon-green);
-            box-shadow: inset 0 0 15px var(--neon-green), 0 0 5px var(--neon-green);
-            filter: brightness(0.8) contrast(1.2);
-            opacity: 0.9;
-            z-index: 5;
-            transition: transform 0.5s ease-in-out;
-            mix-blend-mode: overlay; /* Allows some underlying elements to show through with effect */
+        /* Brutalist blocks - solid, angular, overlapping structures */
+        .brutalist-block {
+            position: absolute;
+            background-color: rgba(57, 255, 20, 0.1);
+            border: 1px solid #39FF14;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5) inset;
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none; /* Ignore mouse events */
+            transform: rotate(calc(var(--block-rotate, 0) * 1deg));
+            mix-blend-mode: overlay; /* Blends with layers below */
         }
 
-        .grid-fragment {
-            border: 1px dashed var(--mid-gray);
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 4px,
-                var(--light-black) 4px,
-                var(--light-black) 5px
-            ), repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 4px,
-                var(--light-black) 4px,
-                var(--light-black) 5px
+        /* High-gloss grime splatter effects */
+        .grime-splatter {
+            position: absolute;
+            background: linear-gradient(
+                var(--grime-angle, 45deg),
+                rgba(0,0,0,0.95) 0%,
+                rgba(0,0,0,0.8) 30%,
+                rgba(57, 255, 20, 0.2) 50%,
+                rgba(0,0,0,0.8) 70%,
+                rgba(0,0,0,0.95) 100%
             );
-            background-size: 10px 10px;
-            box-shadow: inset 0 0 5px var(--neon-green), 0 0 2px var(--neon-green);
-            opacity: 0.6;
-            filter: blur(0.5px);
-            animation: rotateGrid 30s infinite linear;
-            z-index: 3;
-            mix-blend-mode: lighten;
+            mix-blend-mode: screen; /* For glossy, reflective grime effect */
+            filter: blur(var(--grime-blur, 2px)) contrast(var(--grime-contrast, 150%)) brightness(var(--grime-bright, 120%));
+            border-radius: var(--grime-radius, 50% 30% 60% 40% / 40% 60% 30% 50%); /* Irregular, organic shape */
+            opacity: var(--grime-opacity, 0.7);
+            z-index: var(--grime-z, 0);
+            pointer-events: none;
+            transform: rotate(var(--grime-rotate, 0deg));
         }
 
-        /* Digital Paint Splatters */
-        .splatter {
-            background-color: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.5);
-            filter: blur(1px) brightness(1.2);
-            opacity: 0.7;
-            animation: blobShift 15s infinite alternate ease-in-out;
-            z-index: 8;
-            mix-blend-mode: screen;
+        /* Digital paint splatters - more defined, angular, or radial burst effects */
+        .digital-paint {
+            position: absolute;
+            background: radial-gradient(circle at var(--paint-origin, center),
+                rgba(57, 255, 20, 0.8) 0%,
+                rgba(0, 0, 0, 0.6) 40%,
+                transparent 70%
+            );
+            filter: blur(var(--paint-blur, 8px)) brightness(var(--paint-brightness, 150%));
+            border-radius: var(--paint-radius, 50%); /* Default to round, overridden by clip-path */
+            opacity: var(--paint-opacity, 0.8);
+            mix-blend-mode: var(--paint-blend, screen);
+            z-index: var(--paint-z, 2);
+            pointer-events: none;
+            clip-path: var(--paint-clip, polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)); /* Octagonal default for digital feel */
+            transform: rotate(var(--rotate, 0deg));
         }
 
-        .splatter-1 {
-            width: 15vw; height: 12vw;
-            top: 10%; left: 5%;
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            transform: rotate(20deg);
-        }
-        .splatter-2 {
-            width: 20vw; height: 18vw;
-            bottom: 5%; right: 10%;
-            border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
-            background-color: var(--light-black);
-            mix-blend-mode: lighten;
-            box-shadow: inset 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
-            filter: blur(0.5px) brightness(1.5);
-            opacity: 0.8;
-            transform: rotate(-30deg);
-            animation-delay: 2s;
-        }
-        .splatter-3 {
-            width: 10vw; height: 10vw;
-            top: 40%; left: 30%;
-            border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%;
-            background-color: var(--neon-green);
-            opacity: 0.6;
-            transform: rotate(45deg);
-            animation-delay: 4s;
-            mix-blend-mode: lighten;
-        }
-
-        .paint-drip {
-            background-color: var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(0,255,0,0.4);
-            filter: blur(0.8px);
-            animation: drip 8s infinite ease-in-out;
-            z-index: 7;
-            mix-blend-mode: screen;
-        }
-
-        .paint-drip-1 {
-            width: 3vw; height: 15vw;
-            top: -10%; left: 20%;
-            transform: skewX(-15deg);
-            border-bottom-left-radius: 50% 20%;
-            border-bottom-right-radius: 50% 20%;
-        }
-        .paint-drip-2 {
-            width: 2vw; height: 10vw;
-            top: -5%; right: 25%;
-            transform: skewY(10deg);
-            border-bottom-left-radius: 60% 30%;
-            border-bottom-right-radius: 60% 30%;
-            background-color: var(--dark-gray);
-            box-shadow: inset 0 0 5px var(--neon-green);
-            mix-blend-mode: lighten;
-            animation-delay: 3s;
-        }
-
-        /* Glitch Effect */
+        /* Glitch effect for text - adds digital corruption */
         .glitch {
             position: relative;
-            animation: glitch 2s infinite linear alternate-reverse;
-            text-shadow: none; /* Override default text-shadow for glitch effect */
-            filter: none; /* Override default filter */
-            color: var(--neon-green); /* Base color for the text */
+            animation: glitch-anim 2.5s infinite alternate;
+            text-shadow:
+                0.03em 0 0 rgba(57, 255, 20, 0.7),
+                -0.03em -0.015em 0 rgba(0, 0, 0, 0.7),
+                0.015em 0.03em 0 rgba(57, 255, 20, 0.3);
         }
 
         .glitch::before,
@@ -232,284 +158,229 @@
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            mix-blend-mode: screen; /* Allows different colors to combine visually */
         }
 
         .glitch::before {
             left: 2px;
-            text-shadow: -2px 0 var(--glitch-color-2); /* Magenta shift */
-            color: var(--glitch-color-2);
-            animation: glitch-skew 1.5s infinite linear alternate-reverse;
+            text-shadow: -2px 0 #000;
+            clip: rect(44px, 450px, 56px, 0); /* Initial clip, changed by animation */
+            animation: glitch-anim-before 1.8s infinite alternate-reverse;
         }
 
         .glitch::after {
             left: -2px;
-            text-shadow: -2px 0 var(--glitch-color-3); /* Cyan shift */
-            color: var(--glitch-color-3);
-            animation: glitch-skew 1.8s infinite linear alternate-reverse;
+            text-shadow: -2px 0 #39FF14;
+            clip: rect(84px, 450px, 86px, 0); /* Initial clip, changed by animation */
+            animation: glitch-anim-after 2.2s infinite alternate;
         }
 
-        /* Specific text placements and styles */
-        .text-block-1 {
-            font-size: clamp(1.5em, 8vw, 6em);
-            top: 15%; left: 70%;
-            transform: rotate(10deg);
-            color: var(--light-black); /* Dark text on dark background for subtle effect */
-            text-shadow: 0 0 5px var(--neon-green);
-            z-index: 12;
-            mix-blend-mode: overlay;
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
         }
 
-        .text-block-2 { /* UNGRID with glitch */
-            font-size: clamp(2em, 10vw, 8em);
-            bottom: 10%; left: 10%;
-            transform: rotate(-15deg);
-            z-index: 15;
-            mix-blend-mode: screen;
-            text-shadow: none;
-        }
-        .text-block-2::before, .text-block-2::after {
-            background: none; /* Ensure glitch layers don't obscure original text with black */
+        /* Random clipping for glitch effect */
+        @keyframes glitch-anim-before {
+            0% { clip: rect(24px, 9999px, 82px, 0); } 10% { clip: rect(100px, 9999px, 82px, 0); }
+            20% { clip: rect(110px, 9999px, 120px, 0); } 30% { clip: rect(20px, 9999px, 40px, 0); }
+            40% { clip: rect(60px, 9999px, 100px, 0); } 50% { clip: rect(10px, 9999px, 70px, 0); }
+            60% { clip: rect(30px, 9999px, 90px, 0); } 70% { clip: rect(50px, 9999px, 110px, 0); }
+            80% { clip: rect(0px, 9999px, 60px, 0); } 90% { clip: rect(70px, 9999px, 130px, 0); }
+            100% { clip: rect(24px, 9999px, 82px, 0); }
         }
 
-        .text-block-3 {
-            font-size: clamp(1em, 4vw, 3em);
-            top: 5%; right: 5%;
-            transform: rotate(5deg);
-            opacity: 0.8;
-            filter: blur(0.5px);
-            z-index: 9;
-            mix-blend-mode: hard-light;
+        @keyframes glitch-anim-after {
+            0% { clip: rect(40px, 9999px, 70px, 0); } 10% { clip: rect(10px, 9999px, 90px, 0); }
+            20% { clip: rect(80px, 9999px, 110px, 0); } 30% { clip: rect(0px, 9999px, 50px, 0); }
+            40% { clip: rect(70px, 9999px, 120px, 0); } 50% { clip: rect(20px, 9999px, 80px, 0); }
+            60% { clip: rect(90px, 9999px, 130px, 0); } 70% { clip: rect(10px, 9999px, 60px, 0); }
+            80% { clip: rect(50px, 9999px, 100px, 0); } 90% { clip: rect(30px, 9999px, 100px, 0); }
+            100% { clip: rect(40px, 9999px, 70px, 0); }
         }
 
-        .text-block-4 {
-            font-size: clamp(1em, 4vw, 3em);
-            bottom: 25%; right: 5%;
-            transform: rotate(-5deg);
-            opacity: 0.7;
-            filter: blur(0.3px);
-            z-index: 9;
-            mix-blend-mode: overlay;
-        }
-
-        .geometric-shape {
-            background-color: var(--dark-gray);
-            border: 1px solid var(--neon-green);
-            box-shadow: inset 0 0 10px var(--neon-green), 0 0 5px var(--neon-green);
-            filter: brightness(0.9) contrast(1.1);
-            opacity: 0.7;
-            z-index: 4;
-            mix-blend-mode: screen;
-            animation: rotateFast 10s infinite linear reverse;
-        }
-
-        .shape-1 {
-            width: 25vw; height: 10vw;
-            top: 30%; left: -5%;
-            transform: skewX(-20deg) rotate(10deg);
-            background-color: var(--light-black);
-            filter: brightness(0.7) contrast(1.3);
-            border-left: 5px solid var(--neon-green);
-        }
-
-        .shape-2 {
-            width: 15vw; height: 20vw;
-            bottom: -5%; left: 30%;
-            transform: skewY(15deg) rotate(20deg);
-            background-color: var(--mid-gray);
-            border-top: 3px solid var(--neon-green);
-            box-shadow: inset 0 0 20px var(--neon-green), 0 0 8px var(--neon-green);
-            animation-delay: 2s;
-        }
-
-        .glowing-box {
-            font-size: clamp(1em, 6vw, 5em);
-            font-weight: 900;
-            padding: 1vw 2vw;
-            background-color: var(--light-black);
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.5), inset 0 0 10px var(--neon-green);
-            color: var(--neon-green);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-align: center;
-            top: 60%; left: 5%;
-            transform: rotate(-8deg);
-            animation: pulseGlow 4s infinite alternate ease-in-out;
-            z-index: 18;
+        /* Abstract structural lines/beams - thin, glowing geometric elements */
+        .structure-line {
+            position: absolute;
+            background-color: #39FF14;
+            box-shadow: 0 0 8px #39FF14, 0 0 2px rgba(57, 255, 20, 0.5) inset;
+            opacity: 0.4;
+            z-index: var(--line-z, 0);
+            pointer-events: none;
+            transform: rotate(var(--line-rotate, 0deg));
             mix-blend-mode: lighten;
         }
 
-        .abstract-layer {
-            background-color: rgba(0,255,0,0.1);
-            border: 1px solid rgba(0,255,0,0.3);
-            box-shadow: inset 0 0 10px rgba(0,255,0,0.3), 0 0 5px rgba(0,255,0,0.2);
-            filter: blur(2px);
+        /* Highlight box for focus - dynamic visual cue */
+        .highlight-box {
+            position: absolute;
+            border: 3px dashed #39FF14;
+            box-shadow: 0 0 20px #39FF14;
+            z-index: 5;
+            animation: pulse-border 1.5s infinite alternate;
+            background-color: rgba(0,0,0,0.5); /* Semi-transparent fill */
+            pointer-events: none;
+        }
+
+        @keyframes pulse-border {
+            from { opacity: 0.5; border-color: rgba(57, 255, 20, 0.5); }
+            to { opacity: 1; border-color: rgba(57, 255, 20, 1); }
+        }
+
+        /* Broken glass effect (simulated) - sharp, reflective fragments */
+        .broken-glass {
+            position: absolute;
+            background: linear-gradient(
+                var(--glass-angle, 45deg),
+                rgba(57, 255, 20, 0.1) 0%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(57, 255, 20, 0.1) 100%
+            );
+            clip-path: var(--glass-clip, polygon(10% 20%, 90% 10%, 70% 80%, 30% 90%));
+            filter: blur(var(--glass-blur, 0.5px)) brightness(var(--glass-brightness, 120%));
+            opacity: var(--glass-opacity, 0.3);
+            z-index: var(--glass-z, 3);
+            pointer-events: none;
+            transform: rotate(var(--glass-rotate, 0deg));
+            mix-blend-mode: screen;
+        }
+
+        /* Overlay for overall grime/grain and digital texture */
+        .overlay-grime {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0,0,0,0.8) 0,
+                rgba(0,0,0,0.8) 1px,
+                rgba(57, 255, 20, 0.05) 1px,
+                rgba(57, 255, 20, 0.05) 2px
+            ),
+            radial-gradient(
+                circle at center,
+                rgba(0,0,0,0.7) 0%,
+                rgba(0,0,0,0.9) 80%,
+                rgba(0,0,0,1) 100%
+            );
+            mix-blend-mode: overlay; /* Creates gritty, glossy layer */
             opacity: 0.3;
-            animation: fadeInOut 12s infinite ease-in-out;
-            z-index: 2;
-            mix-blend-mode: overlay;
+            z-index: 10; /* Always on top of other effects */
+            pointer-events: none;
         }
 
-        .abstract-layer-1 {
-            width: 100%; height: 20%;
-            top: 20%; left: 0;
-            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
-            transform: rotate(2deg) scaleX(1.1);
-            animation-delay: 1s;
-        }
-        .abstract-layer-2 {
-            width: 30vw; height: 10vw;
-            bottom: 0%; right: 0%;
-            background: radial-gradient(circle, var(--neon-green) 10%, transparent 70%);
-            transform: translateX(20%) rotate(-10deg);
-            opacity: 0.15;
-            animation-delay: 3s;
-            mix-blend-mode: screen;
-            font-size: clamp(1em, 4vw, 3em);
-            font-weight: 900;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green);
-            filter: blur(1px) brightness(1.2);
-            z-index: 10;
+        /* Additional abstract shapes for messiness and brutalist geometry */
+        .abstract-shape {
+            position: absolute;
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px dashed rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 5px rgba(57, 255, 20, 0.2);
+            z-index: 0;
+            opacity: 0.5;
+            pointer-events: none;
+            transform: rotate(var(--shape-rotate, 0deg));
+            clip-path: var(--shape-clip, polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)); /* Diamond default */
+            mix-blend-mode: soft-light;
         }
 
-        .pixel-burst {
-            width: 20px; height: 20px;
-            background-color: var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green), 0 0 20px rgba(0,255,0,0.5);
-            animation: pixelFade 0.8s infinite alternate-reverse;
-            z-index: 1;
-            mix-blend-mode: lighten;
-        }
-        .pixel-burst-1 { top: 10%; left: 40%; transform: rotate(45deg); animation-delay: 0.1s; }
-        .pixel-burst-2 { top: 20%; left: 80%; transform: rotate(15deg); animation-delay: 0.3s; }
-        .pixel-burst-3 { bottom: 30%; left: 15%; transform: rotate(70deg); animation-delay: 0.5s; }
-
-
-        /* Keyframes */
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) rotate(-5deg) scale(1); opacity: 1; }
-            50% { transform: translate(-50%, -50%) rotate(-7deg) scale(1.02); opacity: 0.95; }
-            100% { transform: translate(-50%, -50%) rotate(-5deg) scale(1); opacity: 1; }
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.5), inset 0 0 10px var(--neon-green); }
-            50% { box-shadow: 0 0 25px var(--neon-green), 0 0 50px rgba(0,255,0,0.7), inset 0 0 15px var(--neon-green); }
-            100% { box-shadow: 0 0 15px var(--neon-green), 0 0 30px rgba(0,255,0,0.5), inset 0 0 10px var(--neon-green); }
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; }
-            5% { transform: translate(-2px, -2px); opacity: 0.8; }
-            10% { transform: translate(2px, 2px); opacity: 1; }
-            15% { transform: translate(-2px, 2px); opacity: 0.9; }
-            20% { transform: translate(2px, -2px); opacity: 1; }
-            25% { transform: translate(0, 0); opacity: 0.8; }
-            100% { transform: translate(0, 0); opacity: 1; } /* Stay mostly stable */
-        }
-
-        @keyframes glitch-skew {
-            0% { transform: skewX(0deg); }
-            5% { transform: skewX(10deg); }
-            10% { transform: skewX(0deg); }
-            15% { transform: skewX(-15deg); }
-            20% { transform: skewX(0deg); }
-            25% { transform: skewX(5deg); }
-            30% { transform: skewX(0deg); }
-            100% { transform: skewX(0deg); } /* Stay mostly stable */
-        }
-
-        @keyframes blobShift {
-            0% { transform: translate(0, 0) rotate(0deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            25% { transform: translate(5px, -10px) rotate(5deg); border-radius: 70% 30% 60% 40% / 40% 70% 30% 60%; }
-            50% { transform: translate(-5px, 10px) rotate(-10deg); border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%; }
-            75% { transform: translate(10px, 0px) rotate(15deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            100% { transform: translate(0, 0) rotate(0deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        }
-
-        @keyframes drip {
-            0% { transform: translateY(0) skewX(-15deg); opacity: 1; }
-            50% { transform: translateY(10px) skewX(-10deg); opacity: 0.9; }
-            100% { transform: translateY(0) skewX(-15deg); opacity: 1; }
-        }
-
-        @keyframes rotateGrid {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes rotateFast {
-            from { transform: rotate(0deg) skewX(0deg); }
-            to { transform: rotate(360deg) skewX(10deg); }
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0.1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 0.1; }
-        }
-
-        @keyframes pixelFade {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.5); }
-        }
-
-        @keyframes shift {
-            0% { transform: translate(-50%, -50%) rotate(-5deg); }
-            25% { transform: translate(-49%, -51%) rotate(-7deg); }
-            50% { transform: translate(-50%, -50%) rotate(-5deg); }
-            75% { transform: translate(-51%, -49%) rotate(-3deg); }
-            100% { transform: translate(-50%, -50%) rotate(-5deg); }
+        /* Responsive font sizes for better viewing on smaller screens */
+        @media (max-width: 768px) {
+            .collage-element {
+                font-size: 0.8em;
+                padding: 5px 10px;
+                letter-spacing: 0.05em;
+            }
+            .collage-element:nth-child(even) { font-size: 1.5em; } /* Some elements remain larger */
+            .collage-element:nth-child(odd) { font-size: 0.9em; }
+            .highlight-box { width: 80vw; height: 150px; }
+            .brutalist-block, .grime-splatter, .digital-paint, .broken-glass, .structure-line, .abstract-shape {
+                transform: scale(0.8) rotate(calc(var(--angle, 0) * 1deg)); /* Scale down non-text elements */
+            }
         }
 
     </style>
 
-    <div class="collage-element title" style="top: 50%; left: 50%;" data-text="DECOLONIZE THE PIXEL">DECOLONIZE THE PIXEL</div>
+    <!-- Overlay for overall grime/grain and digital texture -->
+    <div class="overlay-grime"></div>
 
-    <div class="collage-element brutal-block" style="width: 30vw; height: 15vw; top: 10%; left: 15%; transform: rotate(-10deg);"></div>
-    <div class="collage-element brutal-block" style="width: 20vw; height: 25vw; bottom: 10%; right: 10%; transform: rotate(5deg); background-color: var(--light-black); box-shadow: inset 0 0 20px var(--neon-green);"></div>
+    <!-- Brutalist blocks and structural lines for foundational geometry -->
+    <div class="brutalist-block" style="width: 250px; height: 15px; top: 8vh; left: -8vw; --block-rotate: 20;"></div>
+    <div class="brutalist-block" style="width: 15px; height: 350px; top: 10vh; left: 85vw; --block-rotate: -15;"></div>
+    <div class="brutalist-block" style="width: 120px; height: 120px; bottom: 5vh; left: 15vw; opacity: 0.3; background-color: rgba(57, 255, 20, 0.05); border: 2px solid rgba(57, 255, 20, 0.7); box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);"></div>
+    <div class="structure-line" style="width: 400px; height: 3px; top: 25vh; left: 0; --line-rotate: 5;"></div>
+    <div class="structure-line" style="width: 3px; height: 250px; top: 0; left: 70vw; --line-rotate: -20;"></div>
+    <div class="structure-line" style="width: 150px; height: 2px; bottom: 10vh; right: 0; --line-rotate: 10;"></div>
+    <div class="abstract-shape" style="width: 80px; height: 80px; top: 45vh; left: 5vw; --shape-rotate: 25; --shape-clip: polygon(0% 15%, 15% 0%, 100% 85%, 85% 100%);"></div>
+    <div class="abstract-shape" style="width: 60px; height: 120px; top: 5vh; right: 5vw; --shape-rotate: -40; --shape-clip: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);"></div>
+    <div class="abstract-shape" style="width: 20px; height: 20px; top: 70vh; left: 70vw; --shape-rotate: 10; --shape-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); opacity: 0.3;"></div>
 
-    <div class="collage-element grid-fragment" style="width: 100vw; height: 100vh; top: -10%; left: -10%; transform: rotate(15deg) scale(1.2); opacity: 0.3; z-index: 1;"></div>
-    <div class="collage-element grid-fragment" style="width: 50vw; height: 30vw; top: 60%; left: 5%; transform: rotate(45deg); opacity: 0.4; z-index: 2; background-size: 8px 8px;"></div>
+    <!-- High-gloss grime and digital paint splatters -->
+    <div class="grime-splatter" style="width: 180px; height: 150px; top: 10vh; left: 5vw; --grime-rotate: 15; --grime-blur: 3px; --grime-opacity: 0.8; --grime-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;"></div>
+    <div class="grime-splatter" style="width: 250px; height: 200px; bottom: 15vh; right: 8vw; --grime-rotate: -25; --grime-blur: 4px; --grime-opacity: 0.6; --grime-blend: overlay;"></div>
+    <div class="digital-paint" style="width: 100px; height: 100px; top: 20vh; left: 45vw; --rotate: 30deg; --paint-blur: 10px; --paint-opacity: 0.9; --paint-origin: top left;"></div>
+    <div class="digital-paint" style="width: 150px; height: 150px; bottom: 20vh; left: 20vw; --rotate: -40deg; --paint-opacity: 0.7; --paint-blend: difference; --paint-clip: polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%);"></div>
+    <div class="digital-paint" style="width: 70px; height: 70px; top: 50vh; right: 10vw; --rotate: 60deg; --paint-blur: 5px; --paint-opacity: 0.6; --paint-origin: bottom right; mix-blend-mode: screen;"></div>
+    <div class="grime-splatter" style="width: 90px; height: 70px; top: 80vh; left: 5vw; --grime-rotate: 50; --grime-blur: 2px; --grime-opacity: 0.9; --grime-blend: lighten; --grime-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;"></div>
 
-    <div class="collage-element splatter splatter-1"></div>
-    <div class="collage-element splatter splatter-2"></div>
-    <div class="collage-element splatter splatter-3"></div>
 
-    <div class="collage-element paint-drip paint-drip-1"></div>
-    <div class="collage-element paint-drip paint-drip-2"></div>
+    <!-- Collage Text Elements -->
+    <div class="collage-element" style="top: 15vh; left: 8vw; font-size: 2.8em; --angle: -7; --z-index: 4;">
+        <span class="glitch" data-text="DECONSTRUCT">DECONSTRUCT</span>
+    </div>
 
-    <div class="collage-element text-block text-block-1" data-text="RECLAIM">RECLAIM</div>
-    <div class="collage-element text-block text-block-2 glitch" data-text="UNGRID">UNGRID</div>
-    <div class="collage-element text-block text-block-3" data-text="FRAGMENTED REALITY">FRAGMENTED REALITY</div>
-    <div class="collage-element text-block text-block-4" data-text="NO MASTERS">NO MASTERS</div>
+    <div class="collage-element" style="top: 30vh; left: 65vw; font-size: 1.6em; --angle: 12; --z-index: 3;">
+        STRATEGIES
+    </div>
 
-    <div class="collage-element geometric-shape shape-1"></div>
-    <div class="collage-element geometric-shape shape-2"></div>
+    <div class="collage-element" style="top: 50vh; left: 18vw; font-size: 1.3em; --angle: -18; --z-index: 4; width: 350px; text-align: right; background-color: rgba(0,0,0,0.8); padding: 15px;">
+        WHITE CUBE:
+        <br>OBLITERATE THE MYTH
+    </div>
 
-    <div class="collage-element glowing-box" data-text="NEW VISIONS">NEW VISIONS</div>
+    <div class="collage-element" style="bottom: 10vh; right: 8vw; font-size: 3.2em; --angle: 6; --z-index: 5;">
+        <span class="glitch" data-text="COLLAPSE">COLLAPSE</span>
+    </div>
 
-    <div class="collage-element abstract-layer abstract-layer-1"></div>
-    <div class="collage-element abstract-layer abstract-layer-2">NEW VISIONS</div> <!-- Text inside an abstract layer -->
+    <div class="collage-element" style="top: 8vh; right: 20vw; font-size: 1.7em; --angle: 28; --z-index: 2; color: #000; background-color: #39FF14; box-shadow: 0 0 25px #39FF14, 0 0 10px #000 inset;">
+        DISMANTLE
+    </div>
 
-    <div class="collage-element pixel-burst pixel-burst-1"></div>
-    <div class="collage-element pixel-burst pixel-burst-2"></div>
-    <div class="collage-element pixel-burst pixel-burst-3"></div>
+    <div class="collage-element" style="bottom: 25vh; left: 12vw; font-size: 1.1em; --angle: -10; --z-index: 3; background-color: rgba(57, 255, 20, 0.05); border-color: rgba(57, 255, 20, 0.6);">
+        SYSTEM. FAILURE.
+    </div>
 
-    <div class="collage-element pixel-burst" style="top: 80%; left: 90%; width: 15px; height: 15px; animation-delay: 0.7s;"></div>
-    <div class="collage-element pixel-burst" style="top: 5%; left: 50%; width: 18px; height: 18px; animation-delay: 0.9s;"></div>
-    <div class="collage-element pixel-burst" style="top: 30%; left: 5%; width: 12px; height: 12px; animation-delay: 1.1s;"></div>
+    <!-- Additional text / data stream aesthetic -->
+    <div class="collage-element" style="top: 60vh; right: 5vw; font-size: 0.9em; --angle: 5; --z-index: 2; opacity: 0.8; text-align: center;">
+        INITIATE <span style="color: #000; background-color: #39FF14; padding: 2px 5px;">PROTOCOL_X</span>
+    </div>
 
+    <!-- Highlight box pulsing -->
+    <div class="highlight-box" style="width: 400px; height: 200px; top: 38vh; left: 15vw;"></div>
+
+    <!-- Broken glass fragments (simulated with clip-path) -->
+    <div class="broken-glass" style="width: 220px; height: 160px; top: 22vh; left: 35vw; --glass-rotate: -5; --glass-clip: polygon(10% 20%, 90% 10%, 70% 80%, 30% 90%);"></div>
+    <div class="broken-glass" style="width: 120px; height: 90px; bottom: 35vh; right: 15vw; --glass-rotate: 45; --glass-clip: polygon(0% 0%, 100% 20%, 80% 100%, 20% 80%); --glass-opacity: 0.4;"></div>
+    <div class="broken-glass" style="width: 80px; height: 60px; top: 10vh; left: 40vw; --glass-rotate: 15; --glass-clip: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); --glass-opacity: 0.2;"></div>
+    <div class="broken-glass" style="width: 180px; height: 100px; top: 65vh; right: 25vw; --glass-rotate: -20; --glass-clip: polygon(15% 0%, 85% 10%, 100% 80%, 0% 100%); --glass-opacity: 0.5;"></div>
+
+    <div class="collage-element" style="top: 75vh; left: 45vw; font-size: 1.8em; --angle: 18; --z-index: 4; color: #39FF14; text-shadow: 0 0 10px #39FF14;">
+        REBUILD: NO
+    </div>
+
+    <!-- Small, scattered, almost illegible fragments for texture -->
+    <div class="collage-element" style="font-size: 0.7em; top: 2vh; left: 40vw; --angle: 0; --z-index: 1; padding: 5px 8px; border: none; box-shadow: none; opacity: 0.5;">FRAGMENT</div>
+    <div class="collage-element" style="font-size: 0.6em; bottom: 3vh; left: 60vw; --angle: 25; --z-index: 1; padding: 5px; border: none; box-shadow: none; opacity: 0.4;">ERROR</div>
+    <div class="collage-element" style="font-size: 0.8em; top: 35vh; right: 3vw; --angle: -30; --z-index: 1; padding: 5px; border: none; box-shadow: none; opacity: 0.6;">DISPATCH</div>
 </div>
+
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
