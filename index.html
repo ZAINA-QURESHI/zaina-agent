@@ -39,369 +39,209 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-08 21:56 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-08 23:21 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-                
-<div class="ghetto-digital-collage">
+                Okaydiv style="position: relative; width: 100vw; height: 100vh; background-color: #0A0A0A; overflow: hidden; font-family: 'Helvetica Neue', Arial, sans-serif; color: #E0E0E0; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%230FFF00" stroke="%230A0A0A" stroke-width="2"/></svg>') 16 16, auto;">
     <style>
-        /* Base and Utility Styles for the Collage */
-        .ghetto-digital-collage {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000; /* Deep black base */
-            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230a0a0a' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5zM6 0H5L0 5V6h1z'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle dark texture */
-            background-blend-mode: overlay;
-            overflow: hidden;
-            font-family: 'Share Tech Mono', monospace, sans-serif; /* Digital, retro feel */
-            color: #00ff00; /* Neon green default text color */
-            line-height: 1.2;
-            box-sizing: border-box;
-            display: block; /* Ensure it behaves as a block in various contexts */
+        /* --- Root Variables for Theme --- */
+        :root {
+            --neon-green: #0FFF00; /* Vibrant Neon Green */
+            --deep-black: #0A0A0A; /* Deep Black */
+            --dark-grey: #1A1A1A;
+            --light-grey: #CCC;
+            --error-red: #FF0000;
         }
 
-        /* All direct children elements are absolutely positioned for collage effect */
-        .ghetto-digital-collage > div {
+        /* --- Global Reset & Brutalist Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Brutalist Typography --- */
+        .title-glitch {
             position: absolute;
-            box-sizing: border-box;
-            z-index: 10; /* Default z-index for layering */
-        }
-
-        /* Neon Glow Effect (Text and Box Shadows) */
-        .ghetto-digital-collage .neon-glow {
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00, 0 0 20px rgba(0,255,0,0.8);
-        }
-
-        .ghetto-digital-collage .neon-box-glow {
-            box-shadow: 0 0 8px rgba(0,255,0,0.6), 0 0 15px rgba(0,255,0,0.4);
-        }
-
-        /* Keyframe Animations for Glitch and Flicker */
-        @keyframes glitch-skew {
-            0% { transform: skewX(0deg) skewY(0deg); opacity: 1; }
-            5% { transform: skewX(5deg) skewY(-2deg); opacity: 0.8; }
-            10% { transform: skewX(-5deg) skewY(2deg); opacity: 0.8; }
-            15% { transform: skewX(0deg) skewY(0deg); opacity: 1; }
-            100% { transform: skewX(0deg) skewY(0deg); opacity: 1; }
-        }
-
-        @keyframes glitch-flicker {
-            0%, 100% { opacity: 1; }
-            5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { opacity: 0.8; filter: blur(0.5px); }
-            10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { opacity: 1; filter: blur(0); }
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00ff00; }
-        }
-
-        /* --- TEXT ELEMENTS --- */
-        .ghetto-digital-collage .text-header {
-            font-size: clamp(2.5em, 5.5vw, 4.5em);
-            font-weight: bold;
-            letter-spacing: 3px;
-            top: 10%;
-            left: 5%;
-            transform: rotate(-5deg);
-            z-index: 20;
-            padding: 12px 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 3px solid #00ff00;
-            box-shadow: 0 0 20px rgba(0,255,0,0.6);
-            animation: glitch-flicker 10s infinite step-end;
-            filter: drop-shadow(0 0 10px rgba(0,255,0,0.7));
-        }
-
-        .ghetto-digital-collage .text-subtitle {
-            font-size: clamp(1.5em, 3.5vw, 3em);
-            top: 30%;
-            left: 20%;
-            transform: rotate(3deg);
-            z-index: 25;
-            background-color: rgba(10, 10, 10, 0.9);
-            padding: 10px 18px;
-            border-left: 6px solid #00ff00;
-            animation: glitch-skew 8s infinite ease-in-out;
-            filter: drop-shadow(0 0 10px rgba(0,255,0,0.8));
-        }
-
-        .ghetto-digital-collage .text-small {
-            font-size: clamp(0.9em, 2.2vw, 1.8em);
+            font-size: 14vw;
+            font-weight: 900;
+            line-height: 0.8;
+            color: var(--neon-green);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            top: 55%;
-            left: 10%;
-            transform: rotate(-10deg);
-            z-index: 15;
-            opacity: 0.85;
-            filter: blur(0.7px);
-        }
-
-        .ghetto-digital-collage .text-large-right {
-            font-size: clamp(1.8em, 4.5vw, 4em);
-            bottom: 10%;
-            right: 5%;
-            text-align: right;
-            line-height: 1.1;
-            z-index: 30;
-            padding: 15px 25px;
-            border-top: 4px solid #00ff00;
-            border-bottom: 4px solid #00ff00;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: inset 0 0 15px rgba(0,255,0,0.6), 0 0 20px rgba(0,255,0,0.8);
-            animation: glitch-flicker 12s infinite step-end;
-        }
-
-        /* --- BRUTALIST BLOCKS & GRIME --- */
-        .ghetto-digital-collage .block {
-            background-color: #0a0a0a;
-            border: 2px solid #00ff00;
-            box-shadow: inset 0 0 12px rgba(0,255,0,0.4), 0 0 8px rgba(0,255,0,0.6);
-        }
-
-        .ghetto-digital-collage .block-a {
-            width: 35%;
-            height: 25%;
-            top: 5%;
-            right: -8%;
-            transform: rotate(18deg);
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-            z-index: 5;
-            filter: drop-shadow(0 0 12px rgba(0,255,0,0.6));
-        }
-
-        .ghetto-digital-collage .block-b {
-            width: 45%;
-            height: 18%;
-            bottom: 8%;
-            left: -12%;
-            transform: rotate(-10deg);
-            background-color: rgba(0,0,0,0.95);
-            border: 4px solid #00ff00;
-            z-index: 12;
-            box-shadow: inset 0 0 25px rgba(0,255,0,0.8), 0 0 30px rgba(0,255,0,1);
-        }
-
-        .ghetto-digital-collage .block-c {
-            width: 18%;
-            height: 45%;
-            top: 25%;
-            right: 12%;
-            background-color: rgba(0,255,0,0.15); /* Transparent green */
-            border-right: 3px solid #00ff00;
-            border-bottom: 3px solid #00ff00;
-            z-index: 8;
-            backdrop-filter: blur(1.5px) brightness(1.5) contrast(1.2); /* High-gloss effect */
-            -webkit-backdrop-filter: blur(1.5px) brightness(1.5) contrast(1.2);
-            overflow: hidden;
-        }
-        .ghetto-digital-collage .block-c::before {
-            content: '';
-            position: absolute;
-            top: 15%; left: 0;
-            width: 100%; height: 70%;
-            background: linear-gradient(to right, rgba(0,255,0,0.3) 0%, rgba(0,255,0,0) 100%);
-            z-index: 1;
-        }
-
-        /* --- DIGITAL PAINT SPLATTERS --- */
-        .ghetto-digital-collage .splatter {
-            border-radius: 50%; /* Default circular */
-            filter: blur(2.5px) drop-shadow(0 0 12px #00ff00);
-            z-index: 5;
-            opacity: 0.7;
-        }
-
-        .ghetto-digital-collage .splatter-1 {
-            width: 180px;
-            height: 180px;
-            top: 8%;
-            left: 35%;
-            transform: rotate(35deg);
-            background: radial-gradient(circle at center, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.4) 30%, transparent 75%);
-        }
-
-        .ghetto-digital-collage .splatter-2 {
-            width: 250px;
-            height: 120px;
-            bottom: 15%;
-            right: 8%;
-            border-radius: 65% 35% 75% 25% / 65% 75% 25% 35%; /* Irregular shape */
-            background: radial-gradient(ellipse at center, rgba(0,255,0,0.7) 0%, rgba(0,255,0,0.3) 50%, transparent 85%);
-            filter: blur(1.5px) drop-shadow(0 0 10px #00ff00);
-            opacity: 0.65;
-        }
-
-        .ghetto-digital-collage .splatter-3 {
-            width: 90px;
-            height: 90px;
-            top: 42%;
-            left: 48%;
-            background: radial-gradient(circle at 75% 25%, #00ff00 0%, rgba(0,255,0,0.6) 50%, transparent 100%);
-            opacity: 0.95;
-            z-index: 35;
-        }
-
-        /* --- GRIME OVERLAYS / NOISE --- */
-        .ghetto-digital-collage .grime-overlay {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.15) 0px,
-                rgba(0, 0, 0, 0.15) 3px,
-                transparent 3px,
-                transparent 6px
-            ), repeating-linear-gradient(
-                -45deg,
-                rgba(0, 0, 0, 0.15) 0px,
-                rgba(0, 0, 0, 0.15) 3px,
-                transparent 3px,
-                transparent 6px
-            );
-            mix-blend-mode: overlay;
-            opacity: 0.4;
-            z-index: 50; /* Topmost */
-            pointer-events: none; /* Allows interaction with elements beneath */
-        }
-
-        .ghetto-digital-collage .glitch-lines {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(rgba(0,255,0,0.07) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0,255,0,0.07) 1px, transparent 1px);
-            background-size: 4px 4px;
-            mix-blend-mode: screen;
-            opacity: 0.15;
-            z-index: 45;
+            z-index: 100;
             pointer-events: none;
-            animation: glitch-flicker 20s infinite step-start;
+            -webkit-text-stroke: 1px var(--deep-black); /* Outline for extra grit */
+            text-shadow: 
+                -3px -3px 0 var(--deep-black), 
+                3px -3px 0 var(--deep-black), 
+                -3px 3px 0 var(--deep-black), 
+                3px 3px 0 var(--deep-black),
+                0 0 20px rgba(0, 255, 0, 0.7); /* Glowing shadow */
+            animation: glitch-text 4s infinite linear alternate;
         }
 
-        /* Brutalist Grid lines (broken and skewed) */
-        .ghetto-digital-collage .grid-line-h {
-            width: 100%;
-            height: 3px;
-            background-color: #00ff00;
-            opacity: 0.25;
-            z-index: 1;
-        }
-        .ghetto-digital-collage .grid-line-h.top-1 { top: 25%; transform: rotate(1.5deg); }
-        .ghetto-digital-collage .grid-line-h.mid-1 { top: 58%; transform: rotate(-2.5deg); }
+        .title-glitch.t1 { top: 10%; left: 5%; transform: rotate(-5deg); }
+        .title-glitch.t2 { bottom: 5%; right: 10%; font-size: 10vw; transform: rotate(8deg); opacity: 0.7; }
 
-        .ghetto-digital-collage .grid-line-v {
-            width: 3px;
-            height: 100%;
-            background-color: #00ff00;
-            opacity: 0.25;
-            z-index: 1;
-        }
-        .ghetto-digital-collage .grid-line-v.left-1 { left: 38%; transform: rotate(-1.5deg); }
-        .ghetto-digital-collage .grid-line-v.right-1 { right: 18%; transform: rotate(3.5deg); }
-
-        /* Console-like Block with Typing Effect */
-        .ghetto-digital-collage .console-block {
-            width: 35%;
-            height: 22%;
-            bottom: 3%;
-            left: 3%;
-            background-color: #0a0a0a;
-            border: 3px solid #00ff00;
-            box-shadow: inset 0 0 12px rgba(0,255,0,0.6), 0 0 18px rgba(0,255,0,0.8);
-            padding: 20px;
-            font-size: 1em;
-            overflow: hidden;
-            z-index: 28;
-            filter: drop-shadow(0 0 8px rgba(0,255,0,0.6));
-        }
-        .ghetto-digital-collage .console-block::before {
-            content: '>>> Initializing // REVOLT.EXE ';
+        .text-overlay {
             position: absolute;
-            top: 15px;
-            left: 20px;
-            color: #00ff00;
-            animation: typing 3s steps(30, end) infinite, blink-caret .75s step-end infinite;
+            font-size: 2.5vw;
+            font-weight: 700;
+            color: var(--light-grey);
+            text-transform: uppercase;
+            line-height: 1.2;
+            z-index: 70;
+            mix-blend-mode: exclusion; /* Dramatic blend */
+            background-color: rgba(0,0,0,0.2);
+            padding: 1vw 2vw;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+            transform: skewX(-10deg) rotate(2deg);
+        }
+
+        .text-block {
+            position: absolute;
+            font-size: 1.2vw;
+            font-weight: 300;
+            color: var(--light-grey);
+            line-height: 1.4;
+            z-index: 50;
+            mix-blend-mode: difference;
+            background-color: rgba(0,0,0,0.1);
+            padding: 0.5vw 1vw;
+            border: 1px solid rgba(0,255,0,0.3);
+            max-width: 25vw;
+        }
+
+        /* --- High-Gloss Grime & Digital Paint Splatters --- */
+        .splatter {
+            position: absolute;
+            background-color: var(--neon-green);
+            filter: blur(8px);
+            opacity: 0.5;
+            transform-origin: center center;
+            z-index: 20;
+            mix-blend-mode: screen;
+            animation: pulse-splatter 5s infinite alternate ease-in-out;
+            box-shadow: 0 0 30px var(--neon-green); /* Glowing splatter */
+        }
+        .splatter.s1 {
+            width: 35vw; height: 25vw;
+            top: -10vw; left: -15vw;
+            transform: rotate(-35deg) skewX(25deg);
+            clip-path: polygon(0% 10%, 15% 0%, 60% 8%, 85% 0%, 100% 15%, 90% 45%, 100% 75%, 70% 100%, 20% 95%, 0% 100%, 8% 60%, 0% 25%);
+        }
+        .splatter.s2 {
+            width: 28vw; height: 18vw;
+            bottom: -12vw; right: -18vw;
+            transform: rotate(50deg) skewY(20deg);
+            clip-path: polygon(15% 0%, 90% 5%, 100% 25%, 85% 55%, 100% 85%, 90% 100%, 15% 90%, 0% 70%, 25% 40%, 0% 10%);
+            animation-duration: 7s;
+        }
+        .splatter.s3 {
+            width: 20vw; height: 12vw;
+            top: 30vh; right: 15vw;
+            transform: rotate(10deg);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon */
+            opacity: 0.3;
+            animation-duration: 4s;
+        }
+        .splatter.s4 {
+            width: 15vw; height: 15vw;
+            top: 60vh; left: 10vw;
+            transform: rotate(70deg) scale(0.9);
+            clip-path: circle(50% at 50% 50%);
+            opacity: 0.6;
+            background-color: var(--neon-green);
+            animation-duration: 6s;
+        }
+
+        .grime-patch {
+            position: absolute;
+            background-color: var(--deep-black);
+            opacity: 0.7;
+            box-shadow: 
+                inset 0 0 60px rgba(0, 255, 0, 0.4), /* Inner neon glow */
+                0 0 120px rgba(0,0,0,0.8),
+                0 0 250px rgba(0,0,0,0.6); /* Diffuse, oily grime */
+            mix-blend-mode: multiply;
+            z-index: 30;
+            border: 2px solid var(--neon-green);
+            filter: saturate(150%);
+        }
+        .grime-patch.g1 {
+            width: 45vw; height: 35vh;
+            top: 5vh; left: 15vw;
+            transform: rotate(-8deg) skewX(5deg);
+            border-width: 4px;
+        }
+        .grime-patch.g2 {
+            width: 55vw; height: 25vh;
+            bottom: 8vh; right: 5vw;
+            transform: rotate(12deg) skewY(-8deg);
+            opacity: 0.6;
+        }
+        .grime-patch.g3 {
+            width: 30vw; height: 50vh;
+            top: 20vh; right: 0vw;
+            transform: rotate(25deg);
+            opacity: 0.8;
+            box-shadow: inset 0 0 40px rgba(0,255,0,0.2);
+            mix-blend-mode: darken;
+        }
+
+        /* --- Plantation Grid / Data Fields --- */
+        .data-plantation {
+            position: absolute;
+            width: 110%; /* Slightly larger to spill off */
+            height: 110%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 1px;
+            perspective: 1200px;
+            transform: rotateX(65deg) translateY(25vh) scale(1.6); /* Aggressive angled perspective */
+            transform-origin: bottom center;
+            opacity: 0.1;
+            z-index: 10;
+        }
+        .data-field {
+            background-color: var(--deep-black);
+            border: 1px dashed var(--neon-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            color: var(--neon-green);
             overflow: hidden;
+            text-overflow: ellipsis;
             white-space: nowrap;
-            border-right: .15em solid #00ff00;
-            font-family: 'monospace';
-            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+            text-shadow: 0 0 5px rgba(0,255,0,0.5);
+            animation: flicker 10s infinite alternate;
         }
-        .ghetto-digital-collage .console-block .message {
-            display: block;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: rgba(0,255,0,0.8);
-            animation: glitch-flicker 15s infinite step-end;
+        .data-field:nth-child(even) {
+            background-color: var(--dark-grey);
+            color: rgba(0, 255, 0, 0.6);
+            border-style: solid;
         }
-        .ghetto-digital-collage .console-block .message::before {
-            content: '$ ';
-            color: #00ff00;
+        .data-field:nth-child(7n) {
+            border-color: var(--error-red); /* Corruption */
+            box-shadow: 0 0 15px var(--error-red);
+            color: var(--error-red);
+            animation: malfunction-flicker 1.5s infinite alternate;
         }
-
-    </style>
-
-    <!-- Main Text Elements -->
-    <div class="text-header neon-glow">
-        BOOTSTRAP / CODE-SWITCH<br>
-        SYSTEM OVERLOAD
-    </div>
-
-    <div class="text-subtitle neon-glow">
-        PIXELATED POVERTY.<br>
-        GLITCHED IDENTITY.
-    </div>
-
-    <div class="text-small">
-        <span class="neon-glow">BUFFERING REVOLT</span><br>
-        NETWORK DISRUPTED // PROTOCOL BREACH
-    </div>
-
-    <div class="text-large-right neon-glow">
-        DEFRAGMENTED<br>
-        DREAMS<br>
-        [SYNTAX ERROR]
-    </div>
-
-    <!-- Brutalist Blocks & Grime Elements -->
-    <div class="block block-a"></div>
-    <div class="block block-b"></div>
-    <div class="block block-c"></div>
-
-    <!-- Digital Paint Splatters -->
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
-
-    <!-- Grime and Glitch Overlays -->
-    <div class="grime-overlay"></div>
-    <div class="glitch-lines"></div>
-
-    <!-- Brutalist Grid Lines -->
-    <div class="grid-line-h top-1"></div>
-    <div class="grid-line-h mid-1"></div>
-    <div class="grid-line-v left-1"></div>
-    <div class="grid-line-v right-1"></div>
-
-    <!-- Interactive Console Block -->
-    <div class="console-block">
-        <span class="message"> ACCESS DENIED: REASONS UNKNOWN.<br> TRY AGAIN? [Y/N]</span>
-    </div>
-
-</div>
-
+        .data-field:nth-child(11n) {
+            opacity: 0.3;
+        }
+        .data-field::before {
+            content: '01'; /* Binary code */
+            position: absolute;
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
