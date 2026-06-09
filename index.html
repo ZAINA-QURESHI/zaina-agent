@@ -39,391 +39,243 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-09 08:35 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-09 12:10 // TOPIC: POST-CAPITALIST NARCISSISM</div>
             <div class="art-container p-4">
-                <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace; color: #0f0; border: 5px solid #0f0; box-shadow: 0 0 50px rgba(0,255,0,0.7) inset, 0 0 100px rgba(0,255,0,0.5);">
+                <div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Impact', 'Arial Black', sans-serif; color: #39FF14; box-sizing: border-box; text-rendering: optimizeLegibility;">
     <style>
-        /* General Brutalism & Reset */
+        /* GLOBAL STYLES WITHIN THE DIV - FOR RADICAL CONSISTENCY */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
+            box-sizing: border-box;
+            font-family: inherit;
         }
 
-        /* Neon Green & Black Palette */
-        :root {
-            --neon-green: #0F0;
-            --deep-black: #000;
-            --high-gloss: rgba(0,255,0,0.3); /* For highlights */
-            --grime-shadow: rgba(0,255,0,0.7); /* For glows/shadows */
-        }
-
-        /* Basic container styles - already set on the outermost div */
-
-        /* Common elements for brutalist look */
-        .segment {
+        .brutal-text {
             position: absolute;
-            background-color: var(--deep-black);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 10px var(--high-gloss);
-            padding: 5px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            font-size: clamp(3rem, 12vw, 18rem); /* Responsive, overwhelming text */
+            line-height: 0.8;
+            letter-spacing: -0.05em;
             text-transform: uppercase;
-            font-size: 1.2em;
-            line-height: 1.2;
-            mix-blend-mode: screen; /* For overlap effects */
-            pointer-events: none; /* Make interaction through layers possible */
+            color: #39FF14;
+            text-shadow: 0 0 8px #39FF14, 0 0 20px rgba(57, 255, 20, 0.7), 0 0 35px rgba(57, 255, 20, 0.5);
+            user-select: none;
+            cursor: default;
+            z-index: 10;
         }
 
-        /* Digital Paint Splatters */
-        .splatter {
-            position: absolute;
-            background-color: var(--neon-green);
-            opacity: 0.7;
-            filter: blur(2px);
-            mix-blend-mode: screen;
-            border-radius: 50% 20% 60% 30% / 30% 60% 20% 50%; /* Irregular shape */
-            transform: rotate(var(--rotate, 0deg));
-            animation: pulse-splatter 3s infinite alternate ease-in-out;
-            pointer-events: none;
-        }
-
-        @keyframes pulse-splatter {
-            0% { transform: scale(0.9) rotate(var(--rotate, 0deg)); opacity: 0.6; }
-            50% { transform: scale(1) rotate(var(--rotate, 0deg)); opacity: 0.8; }
-            100% { transform: scale(0.9) rotate(var(--rotate, 0deg)); opacity: 0.6; }
-        }
-
-        /* High-Gloss Grime Overlay */
         .grime-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.75); /* Darker, more opaque grime */
+            backdrop-filter: blur(7px); /* Stronger blur */
+            opacity: 0.9;
             pointer-events: none;
-            background: radial-gradient(circle at top left, var(--high-gloss) 0%, transparent 30%),
-                        radial-gradient(circle at bottom right, var(--high-gloss) 0%, transparent 30%);
-            mix-blend-mode: overlay; /* Creates a glossy, slightly dirty look */
+            z-index: 5;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(57, 255, 20, 0.1);
+        }
+
+        .gloss-reflection {
+            position: absolute;
+            background: linear-gradient(to right, rgba(57, 255, 20, 0) 0%, rgba(57, 255, 20, 0.6) 30%, rgba(57, 255, 20, 0.3) 70%, rgba(57, 255, 20, 0) 100%);
             opacity: 0.2;
-        }
-
-        /* Data Streams - representing constant flow/movement */
-        .data-stream {
-            position: absolute;
-            background-color: var(--neon-green);
-            width: 3px;
-            height: 100px;
-            opacity: 0.4;
-            animation: flow-data 5s linear infinite;
             pointer-events: none;
-            mix-blend-mode: screen;
+            z-index: 15;
+            filter: blur(3px); /* More pronounced blur for gloss */
+            mix-blend-mode: screen; /* Blend with underlying elements */
         }
 
-        @keyframes flow-data {
-            0% { transform: translateY(-100%) translateX(0); opacity: 0.4; }
-            100% { transform: translateY(100vh) translateX(0); opacity: 0.1; }
-        }
-
-        /* Text Glitch Effect */
-        .text-glitch {
-            animation: glitch 2s linear infinite alternate;
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0, 0); opacity: 1; text-shadow: none; }
-            20% { transform: translate(-2px, 2px); text-shadow: 2px -2px 0 var(--neon-green); }
-            40% { transform: translate(2px, -2px); text-shadow: -2px 2px 0 var(--neon-green); }
-            60% { transform: translate(-1px, 1px); text-shadow: 1px -1px 0 var(--neon-green); }
-            80% { transform: translate(1px, -1px); text-shadow: -1px 1px 0 var(--neon-green); }
-            100% { transform: translate(0, 0); opacity: 1; text-shadow: none; }
-        }
-
-        /* Data Points - small, flickering indicators */
-        .data-point {
+        .splatter {
             position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: var(--neon-green);
-            border: 1px solid var(--deep-black);
-            box-shadow: 0 0 5px var(--neon-green);
-            animation: flicker 1s infinite alternate;
+            background-color: #39FF14;
+            opacity: 0.7;
+            filter: blur(1.5px); /* Slightly more diffused paint */
             pointer-events: none;
-        }
-
-        @keyframes flicker {
-            0% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-
-        /* Main Brutalist Grid for "land" or "structure" */
-        .main-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 10px;
-            width: calc(100% - 40px);
-            height: calc(100% - 190px); /* Account for top/bottom margins and harvest area */
-            margin: 20px;
-            position: absolute;
-            top: 0; left: 0;
-            border: 1px solid rgba(0,255,0,0.3);
             z-index: 1;
         }
 
-        .grid-cell {
-            border: 1px solid rgba(0,255,0,0.1);
-            background-color: rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
+        .splatter-dark {
+            background-color: #1a1a1a; /* Darker black for grime splatters */
+            opacity: 0.85;
+            filter: blur(2.5px);
+            z-index: 0;
+        }
+
+        /* Irregular splatter shapes using border-radius and clip-path */
+        .splatter-shape-1 {
+            width: 90px; height: 70px;
+            border-radius: 50% 35% 65% 45% / 65% 45% 55% 35%;
+            transform: rotate(25deg);
+        }
+        .splatter-shape-2 {
+            width: 130px; height: 100px;
+            border-radius: 35% 65% 45% 55% / 45% 55% 35% 65%;
+            transform: rotate(-40deg);
+        }
+        .splatter-shape-3 {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            clip-path: polygon(50% 0%, 75% 15%, 100% 40%, 100% 75%, 75% 100%, 50% 85%, 25% 100%, 0% 75%, 0% 40%, 25% 15%);
+            transform: scale(1.3) rotate(15deg);
+        }
+        .splatter-shape-4 {
+            width: 160px; height: 80px;
+            border-radius: 50%;
+            clip-path: polygon(0% 25%, 25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%);
+            transform: scale(0.9) rotate(-25deg);
+        }
+
+        .border-line {
+            position: absolute;
+            background-color: #39FF14;
+            box-shadow: 0 0 8px #39FF14;
+            z-index: 12;
+            pointer-events: none;
+        }
+
+        /* Brutalist text box styling */
+        .text-neon-box {
+            border: 2px solid #39FF14;
+            padding: 8px 15px;
+            box-shadow: 0 0 10px #39FF14, inset 0 0 10px #39FF14;
+            background-color: rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.15em;
             font-size: 0.9em;
+            display: inline-block;
             text-transform: uppercase;
+            color: #39FF14;
+            line-height: 1.2;
         }
 
-        /* Control Center / Algorithm Core */
-        .control-center {
+        /* Keyframe animations for digital chaos */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #39FF14, 0 0 15px #39FF14, 0 0 25px #39FF14, 0 0 50px #39FF14;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.7;
+            }
+        }
+        .flicker { animation: flicker 1.8s infinite alternate steps(2); }
+
+        @keyframes pulse-gloss {
+            0% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(1.03); }
+            100% { opacity: 0.2; transform: scale(1); }
+        }
+        .pulse-gloss { animation: pulse-gloss 4.5s infinite ease-in-out; }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-slow { animation: spin-slow 15s infinite linear; }
+
+        /* Pseudo-elements for additional grime/splatters (example on parent div) */
+        .brutal-text::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            border: 5px solid var(--neon-green);
-            box-shadow: 0 0 80px var(--neon-green), inset 0 0 50px var(--neon-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            text-shadow: 0 0 10px var(--neon-green);
-            animation: pulse-glow 2s infinite alternate;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 10;
+            background-color: rgba(57, 255, 20, 0.1);
+            filter: blur(10px);
+            z-index: -1;
+            border-radius: 50%;
             pointer-events: none;
+            top: -20px; left: -20px;
+            width: calc(100% + 40px); height: calc(100% + 40px);
+            opacity: 0.3;
         }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 50px var(--neon-green), inset 0 0 30px var(--neon-green); }
-            100% { box-shadow: 0 0 90px var(--neon-green), inset 0 0 60px var(--neon-green); }
-        }
-
-        /* Loading Bar (representing endless processing) */
-        .loading-bar {
-            position: relative; /* Changed to relative for flexible placement */
-            width: 100%;
-            height: 20px;
-            border: 2px solid var(--neon-green);
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .loading-fill {
-            height: 100%;
-            width: 0%;
-            background-color: var(--neon-green);
-            animation: load-fill 5s linear infinite;
-        }
-
-        @keyframes load-fill {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-
-        /* Data Harvest Area at the bottom */
-        .data-harvest-area {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            background-color: rgba(0,0,0,0.7);
-            border-top: 3px solid var(--neon-green);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 5;
-            box-shadow: 0 -10px 30px var(--grime-shadow);
-        }
-
-        .data-module {
-            width: 100px;
-            height: 100px;
-            border: 2px solid var(--neon-green);
-            background-color: rgba(0,255,0,0.1);
-            position: relative;
-            animation: data-module-flicker 1.5s infinite alternate;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        @keyframes data-module-flicker {
-            0% { opacity: 0.8; background-color: rgba(0,255,0,0.1); }
-            50% { opacity: 1; background-color: rgba(0,255,0,0.2); }
-            100% { opacity: 0.8; background-color: rgba(0,255,0,0.1); }
-        }
-
-        /* Overlapping Colonial Text */
-        .colonial-text {
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 0 0 5px var(--neon-green);
-            mix-blend-mode: difference; /* Harsh overlap effect */
-            position: absolute;
-            top: var(--top, 10%);
-            left: var(--left, 10%);
-            transform: rotate(var(--rotate, 0deg));
-            z-index: 20;
-            animation: text-float 10s ease-in-out infinite alternate;
-            pointer-events: none;
-            text-transform: uppercase;
-        }
-
-        @keyframes text-float {
-            0% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
-            50% { transform: translate(var(--translateX, 10px), var(--translateY, 5px)) rotate(var(--rotate, 0deg)); }
-            100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
-        }
-
-        /* Line Graph for Data Visualization */
-        .line-graph {
-            position: relative;
-            width: 80%;
-            height: 100px;
-            border-bottom: 2px solid var(--neon-green);
-            border-left: 2px solid var(--neon-green);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding: 5px 0;
-            margin-top: 10px;
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .graph-bar {
-            width: 10px;
-            background-color: var(--neon-green);
-            animation: grow-bar 2s ease-out infinite alternate;
-            margin: 0 2px;
-        }
-
-        @keyframes grow-bar {
-            0% { height: 10%; opacity: 0.5; }
-            100% { height: 80%; opacity: 1; }
+        .brutal-text:nth-child(even)::before {
+            background-color: rgba(0, 0, 0, 0.4);
+            filter: blur(8px);
+            opacity: 0.5;
         }
     </style>
 
-    <!-- Grime Overlay for high-gloss effect -->
-    <div class="grime-overlay"></div>
-
-    <!-- Main Control Center / Algorithm Core -->
-    <div class="control-center">
-        <span class="text-glitch">ALGO-PLANTATION</span>
+    <!-- Main Title: NARCISSISM. -->
+    <div class="brutal-text flicker" style="top: 8%; left: 5%; transform: rotate(-6deg) skewX(-5deg); z-index: 20;">
+        NARCIS<br>SISM.
     </div>
 
-    <!-- Colonial Text Overlays -->
-    <div class="colonial-text" style="--top: 5%; --left: 5%; --rotate: -10deg; --translateX: 15px; --translateY: 0px;">RESOURCE EXTRACTION</div>
-    <div class="colonial-text" style="--top: 80%; --left: 70%; --rotate: 5deg; font-size: 1.5em; opacity: 0.7; --translateX: -10px; --translateY: -5px;">DATA HARVEST</div>
-    <div class="colonial-text" style="--top: 20%; --left: 60%; --rotate: 15deg; font-size: 1.8em; mix-blend-mode: screen; --translateX: 5px; --translateY: 10px;">THE YIELD</div>
-    <div class="colonial-text" style="--top: 40%; --left: 10%; --rotate: -25deg; font-size: 1.3em; mix-blend-mode: difference; opacity: 0.9; --translateX: 0px; --translateY: 12px;">SYSTEMIC OPPRESSION</div>
-
-    <!-- Data Streams/Fences - creating movement and a sense of enclosure -->
-    <div class="data-stream" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="data-stream" style="left: 30%; animation-delay: 1.5s; height: 150px; transform: rotate(10deg);"></div>
-    <div class="data-stream" style="left: 50%; animation-delay: 3s;"></div>
-    <div class="data-stream" style="left: 70%; animation-delay: 0.5s; height: 120px; transform: rotate(-5deg);"></div>
-    <div class="data-stream" style="left: 90%; animation-delay: 2s;"></div>
-    <div class="data-stream" style="top: 20%; left: 0; height: 3px; width: 100vw; transform-origin: left; transform: rotate(-3deg); animation: flow-data-h 6s linear infinite; animation-delay: 1s;"></div>
-    <div class="data-stream" style="top: 60%; left: 0; height: 3px; width: 100vw; transform-origin: left; transform: rotate(2deg); animation: flow-data-h 6s linear infinite; animation-delay: 3s;"></div>
-    @keyframes flow-data-h {
-        0% { transform: translateX(-100%) rotate(var(--rotate-h, 0deg)); opacity: 0.4; }
-        100% { transform: translateX(100vw) rotate(var(--rotate-h, 0deg)); opacity: 0.1; }
-    }
-
-
-    <!-- Digital Paint Splatters - adding to the messy, gritty aesthetic -->
-    <div class="splatter" style="width: 80px; height: 60px; top: 15%; left: 40%; --rotate: 20deg;"></div>
-    <div class="splatter" style="width: 120px; height: 90px; top: 60%; right: 10%; --rotate: -30deg;"></div>
-    <div class="splatter" style="width: 70px; height: 100px; bottom: 5%; left: 20%; --rotate: 45deg;"></div>
-    <div class="splatter" style="width: 150px; height: 70px; top: 30%; left: 0%; --rotate: 10deg; opacity: 0.5; animation-delay: 1s;"></div>
-    <div class="splatter" style="width: 90px; height: 110px; bottom: 20%; right: 30%; --rotate: -15deg; opacity: 0.6; animation-delay: 2s;"></div>
-
-    <!-- Main Brutalist Grid for "land" or "structure" -->
-    <div class="main-grid">
-        <div class="grid-cell" style="grid-area: 1 / 1 / 3 / 2;">
-            <div class="data-point" style="top: 10%; left: 10%;"></div>
-            <div class="data-point" style="top: 50%; left: 70%;"></div>
-            <p style="font-size: 0.8em; padding: 10px; position: absolute; bottom: 0; left: 0; opacity: 0.8;">SECTION 01-A<br>PROCESSING UNIT</p>
-        </div>
-        <div class="grid-cell" style="grid-area: 1 / 2 / 2 / 4;">
-            <p class="text-glitch" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5em; text-shadow: 0 0 8px rgba(0,255,0,0.5);">DATA CROP</p>
-        </div>
-        <div class="grid-cell" style="grid-area: 3 / 1 / 5 / 2;">
-            <p style="position: absolute; top: 10px; left: 10px; font-size: 0.7em; opacity: 0.7;">LABOR CYCLE</p>
-            <div class="data-point" style="top: 30%; left: 30%; animation-delay: 0.3s;"></div>
-            <div class="data-point" style="top: 70%; left: 60%; animation-delay: 0.7s;"></div>
-        </div>
-        <div class="grid-cell" style="grid-area: 2 / 4 / 4 / 5; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div class="loading-bar">
-                <div class="loading-fill"></div>
-            </div>
-            <p style="font-size: 0.7em; text-align: center; margin-top: 10px; opacity: 0.9;">OUTPUT:</p>
-            <span class="text-glitch" style="display: block; text-align: center; font-size: 1.2em; text-shadow: 0 0 10px rgba(0,255,0,0.8);">INFERTILE GROUND</span>
-        </div>
-        <div class="grid-cell" style="grid-area: 4 / 2 / 5 / 5; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 10px; background-color: rgba(0,255,0,0.05);">
-            <p style="font-size: 0.9em; margin-bottom: 5px;">SYSTEM LOG:<br>COLONIAL OVERLOAD</p>
-            <div class="line-graph">
-                <div class="graph-bar" style="height: 60%;"></div>
-                <div class="graph-bar" style="height: 40%; animation-delay: 0.2s;"></div>
-                <div class="graph-bar" style="height: 70%; animation-delay: 0.4s;"></div>
-                <div class="graph-bar" style="height: 50%; animation-delay: 0.6s;"></div>
-                <div class="graph-bar" style="height: 80%; animation-delay: 0.8s;"></div>
-                <div class="graph-bar" style="height: 30%; animation-delay: 1s;"></div>
-                <div class="graph-bar" style="height: 90%; animation-delay: 1.2s;"></div>
-                <div class="graph-bar" style="height: 45%; animation-delay: 1.4s;"></div>
-            </div>
-        </div>
-        <div class="grid-cell" style="grid-area: 1 / 4 / 2 / 5;">
-             <p style="font-size: 0.8em; text-align: center; opacity: 0.9;">AREA_OVERSEER</p>
-             <div class="data-point" style="top: 20%; left: 20%; width: 20px; height: 20px;"></div>
-             <div class="data-point" style="bottom: 20%; right: 20%; width: 20px; height: 20px;"></div>
-        </div>
-        <div class="grid-cell" style="grid-area: 2 / 2 / 3 / 4; background-color: rgba(0,255,0,0.1); border: 2px solid var(--neon-green); display: flex; flex-direction: column; justify-content: center;">
-            <p class="text-glitch" style="font-size: 1.8em; margin-bottom: 5px; text-shadow: 0 0 12px rgba(0,255,0,0.6);">SUBJUGATION PROTOCOL</p>
-            <p style="font-size: 0.7em; opacity: 0.8;">YIELD OPTIMIZED</p>
-        </div>
-        <div class="grid-cell" style="grid-area: 3 / 2 / 4 / 4; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; padding: 5px;">
-            <div class="data-point" style="position: relative; top: unset; left: unset; margin: 2px;"></div>
-            <div class="data-point" style="position: relative; top: unset; left: unset; margin: 2px; animation-delay: 0.5s;"></div>
-            <div class="data-point" style="position: relative; top: unset; left: unset; margin: 2px; animation-delay: 1s;"></div>
-            <p style="width: 100%; text-align: center; font-size: 0.6em; margin-top: 5px; opacity: 0.7;">HUMAN AS RESOURCE</p>
-        </div>
+    <!-- Sub-text / Supporting words -->
+    <div class="brutal-text" style="font-size: clamp(2.5rem, 9vw, 12rem); top: 32%; right: 8%; transform: rotate(12deg) skewX(5deg); opacity: 0.9; z-index: 18;">
+        THE NEW<br>VOID.
     </div>
 
-    <!-- Data Harvest Area at the bottom - representing the collection point -->
-    <div class="data-harvest-area">
-        <div class="data-module">FIELD 001</div>
-        <div class="data-module" style="animation-delay: 0.5s;">RESOURCE GRIND</div>
-        <div class="data-module" style="animation-delay: 1s;">VALUE EXTRACTION</div>
-        <div class="data-module" style="animation-delay: 1.5s;">YIELD REPORT</div>
+    <div class="brutal-text" style="font-size: clamp(2rem, 6vw, 8rem); bottom: 12%; left: 3%; transform: rotate(-18deg) skewX(-3deg); opacity: 0.75; letter-spacing: 0.05em;">
+        OPTIMIZE<br>YOURSELF.
     </div>
+
+    <div class="brutal-text flicker" style="font-size: clamp(3rem, 8vw, 10rem); top: 55%; left: 45%; transform: rotate(4deg); opacity: 0.98; z-index: 22;">
+        ME.
+    </div>
+
+    <div class="brutal-text" style="font-size: clamp(1.5rem, 4.5vw, 6rem); top: 82%; right: 10%; transform: rotate(7deg); letter-spacing: 0.18em; opacity: 0.85;">
+        PREMIUM<br>SELF.
+    </div>
+
+    <!-- Grime Overlays - angled and layered -->
+    <div class="grime-overlay" style="width: 130%; height: 35%; top: -15%; left: -15%; transform: rotate(18deg); background-color: rgba(0, 0, 0, 0.85);"></div>
+    <div class="grime-overlay" style="width: 90%; height: 45%; bottom: -20%; right: -10%; transform: rotate(-22deg); background-color: rgba(57, 255, 20, 0.18);"></div>
+    <div class="grime-overlay" style="width: 60%; height: 25%; top: 25%; left: 18%; transform: rotate(7deg); background-color: rgba(0, 0, 0, 0.65);"></div>
+
+    <!-- Gloss Reflections - pulsating and layered -->
+    <div class="gloss-reflection pulse-gloss" style="width: 45%; height: 12%; top: 22%; left: 7%;"></div>
+    <div class="gloss-reflection pulse-gloss" style="width: 35%; height: 10%; bottom: 18%; right: 12%; transform: rotate(15deg); animation-delay: 1.2s;"></div>
+    <div class="gloss-reflection" style="width: 25%; height: 7%; top: 62%; left: 68%; transform: rotate(-8deg); animation-delay: 2.4s;"></div>
+
+    <!-- Digital Paint Splatters - Neon Green -->
+    <div class="splatter splatter-shape-1" style="top: 18%; left: 42%; opacity: 0.75; transform: rotate(30deg);"></div>
+    <div class="splatter splatter-shape-2" style="bottom: 8%; left: 33%; transform: rotate(50deg); opacity: 0.82;"></div>
+    <div class="splatter splatter-shape-3" style="top: 38%; right: 7%; transform: rotate(-25deg) scale(1.1); opacity: 0.68;"></div>
+    <div class="splatter splatter-shape-4" style="top: 72%; left: 12%; opacity: 0.9;"></div>
+    <div class="splatter splatter-shape-1" style="top: 7%; right: 18%; transform: rotate(75deg) scale(0.95); opacity: 0.55;"></div>
+    <div class="splatter splatter-shape-2" style="bottom: 22%; right: 30%; transform: rotate(-15deg) scale(0.75); opacity: 0.78;"></div>
+
+    <!-- Digital Paint Splatters - Dark/Grime -->
+    <div class="splatter splatter-dark splatter-shape-1" style="top: 23%; left: 38%; transform: rotate(35deg) scale(1.15);"></div>
+    <div class="splatter splatter-dark splatter-shape-3" style="bottom: 13%; left: 28%; transform: rotate(-12deg) scale(0.85);"></div>
+    <div class="splatter splatter-dark splatter-shape-2" style="top: 58%; right: 18%; transform: rotate(55deg) scale(1.35);"></div>
+    <div class="splatter splatter-dark splatter-shape-4" style="top: 33%; left: 58%; transform: rotate(25deg) scale(0.95);"></div>
+
+    <!-- Border Lines / Structural Elements -->
+    <div class="border-line" style="width: 3px; height: 100%; top: 0; left: 22%; transform: skewY(5deg);"></div>
+    <div class="border-line" style="width: 100%; height: 3px; top: 38%; left: 0; transform: skewX(-3deg);"></div>
+    <div class="border-line" style="width: 180px; height: 4px; top: 70%; left: 8%; transform: rotate(48deg);"></div>
+    <div class="border-line" style="width: 4px; height: 250px; bottom: 0; right: 28%; transform: rotate(-35deg);"></div>
+    <div class="border-line" style="width: 100px; height: 2px; top: 15%; right: 5%; transform: rotate(20deg); opacity: 0.8;"></div>
+
+    <!-- Smaller, supporting text with brutalist boxes -->
+    <div style="position: absolute; bottom: 7%; left: 7%; z-index: 10; transform: rotate(-4deg);">
+        <span class="text-neon-box">YOUR ECHO CHAMBER.</span>
+    </div>
+
+    <div style="position: absolute; top: 6%; right: 6%; z-index: 10; transform: rotate(8deg);">
+        <span class="text-neon-box" style="font-size: 0.8em; padding: 5px 10px;">#SELFISHNESS</span>
+    </div>
+
+    <div style="position: absolute; top: 75%; left: 20%; z-index: 10; transform: rotate(-8deg);">
+        <span class="text-neon-box" style="border-width: 1px; background-color: rgba(0,0,0,0.4);">DATA-DRIVEN IDENTITY.</span>
+    </div>
+
+    <div style="position: absolute; top: 15%; left: 65%; z-index: 10; transform: rotate(3deg);">
+        <span class="text-neon-box">I AM.</span>
+    </div>
+
+    <!-- Additional messy elements: Rotated squares/rectangles -->
+    <div style="position: absolute; width: 170px; height: 170px; border: 6px solid #39FF14; top: 40%; left: 10%; transform: rotate(28deg); box-shadow: 0 0 25px #39FF14, inset 0 0 15px #39FF14; opacity: 0.65; z-index: 8;"></div>
+    <div style="position: absolute; width: 90px; height: 90px; border: 4px solid #39FF14; bottom: 10%; right: 3%; transform: rotate(-12deg); background-color: rgba(57, 255, 20, 0.15); box-shadow: 0 0 15px #39FF14, inset 0 0 8px #39FF14; opacity: 0.75; z-index: 9;"></div>
+
+    <div class="brutal-text" style="font-size: clamp(1rem, 3.5vw, 4.5rem); top: 68%; left: 6%; transform: rotate(-10deg); letter-spacing: 0.15em; opacity: 0.6; z-index: 10;">
+        CONSUME<br>ME.
+    </div>
+
+    <!-- Final overarching grime/shadow effect -->
+    <div style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 10% 90%, rgba(57, 255, 20, 0.07) 0%, transparent 45%), radial-gradient(circle at 90% 10%, rgba(0, 0, 0, 0.4) 0%, transparent 60%); pointer-events: none; z-index: 25;"></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
+                <h3 class="text-2xl font-black uppercase italic">post-capitalist narcissism</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
