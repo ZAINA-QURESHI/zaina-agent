@@ -39,348 +39,324 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-10 16:40 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-10 19:40 // TOPIC: GHETTO-DIGITAL INTERSECTIONALITY</div>
             <div class="art-container p-4">
                 
-<div style="font-family: 'Impact', 'Arial Black', sans-serif; background-color: #000000; color: #00FF00; width: 100vw; height: 100vh; overflow: hidden; position: relative; display: block; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+<div class="ghetto-digital-collage">
     <style>
-        /* General Reset for elements within this div to ensure consistency */
-        div > div, div > p, div > span { /* Target all structural HTML children of the main div */
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            user-select: none; /* Prevent text selection for aesthetic elements */
-        }
-        
-        /* Utility for glowing text */
-        .neon-glow {
-            text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00, 0 0 20px #00FF00, 0 0 25px #00FF00, 0 0 30px #00FF00, 0 0 35px #00FF00;
-            filter: brightness(1.2) saturate(1.5);
-        }
-
-        /* Brutalist elements - concrete slabs, raw edges */
-        .brutal-slab {
-            position: absolute;
-            background-color: rgba(30, 30, 30, 0.8); /* Dark gray for concrete feel */
-            border: 2px solid #00FF00;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), inset 0 0 5px rgba(0, 255, 0, 0.3);
-            transform-origin: center center;
-            filter: saturate(0.8);
-            backdrop-filter: blur(1px); /* Slight blur for grime */
-            pointer-events: none; /* Ensure text/splatters can be seen behind */
+        /* Base styles for the collage container */
+        .ghetto-digital-collage {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Crucial for containing floating elements and splatters */
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 70%, #111 100%);
+            font-family: 'monospace', sans-serif; /* Brutalist/digital font */
+            color: #00FF00; /* Vibrant neon green */
+            box-shadow: inset 0 0 50px rgba(0, 255, 0, 0.2), inset 0 0 100px rgba(0, 255, 0, 0.1); /* Subtle inner glow */
+            display: block; /* Ensure it behaves as a block */
         }
 
-        /* High-gloss grime - reflections, wet look */
-        .grime-overlay {
+        /* Overall Grime/Scanline Overlay */
+        .ghetto-digital-collage::before {
+            content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(0, 255, 0, 0.1) 0%, transparent 40%),
-                        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
-            pointer-events: none; /* Allow interaction with elements beneath */
-            mix-blend-mode: overlay; /* To create shiny, dirty effect */
-            opacity: 0.8;
-            filter: contrast(1.5) brightness(0.8);
-            z-index: 100; /* Always on top for grime */
-        }
-
-        .glossy-reflect {
-            background: linear-gradient(45deg, rgba(0,255,0,0.2) 0%, rgba(0,0,0,0.8) 50%, rgba(0,255,0,0.2) 100%);
-            mix-blend-mode: screen; /* For reflective highlights */
-            opacity: 0.3;
+            background:
+                linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.2;
+            z-index: 0;
             pointer-events: none;
+            filter: brightness(1.2);
         }
 
-        /* Digital paint splatters */
+        /* Centralized Glow Effect */
+        .ghetto-digital-collage::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.8;
+        }
+
+        /* Main Title - Brutalist, bold, high-gloss */
+        .title-main {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            font-size: 8vw;
+            line-height: 0.9;
+            font-weight: 900;
+            color: #39FF14; /* Slightly brighter neon green */
+            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00, 0 0 40px #00FF00;
+            z-index: 10;
+            background: linear-gradient(180deg, #000 0%, #1a1a1a 100%); /* High-gloss effect */
+            padding: 10px 20px;
+            box-shadow: 5px 5px 0px #00FF00, 10px 10px 0px rgba(0, 255, 0, 0.5), inset 0 0 20px rgba(0, 255, 0, 0.3);
+            transform: skewX(-10deg) scale(1.05); /* Jagged/dynamic look */
+            border-radius: 2px;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        /* Subtitle Fragment - Overlapping, glitchy */
+        .subtitle-fragment {
+            position: absolute;
+            top: 30%;
+            left: 60%;
+            font-size: 3vw;
+            font-weight: 700;
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 0 0 5px #00FF00;
+            z-index: 5;
+            transform: rotate(5deg) scale(1.1);
+            opacity: 0.8;
+            line-height: 1.2;
+            background: rgba(0,0,0,0.8);
+            padding: 5px 10px;
+            border: 1px solid #00FF00;
+            box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.5), 3px 3px 0px rgba(0, 255, 0, 0.3);
+            filter: blur(0.5px); /* Digital blur */
+            overflow: hidden;
+        }
+
+        .subtitle-fragment::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,0,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        /* Digital Paint Splatters - Irregular shapes with glows */
         .splatter {
             position: absolute;
-            background: radial-gradient(circle at center, #00FF00 0%, rgba(0, 255, 0, 0.5) 40%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(8px) saturate(2);
-            opacity: 0.6;
-            z-index: 5;
-            pointer-events: none;
-            box-shadow: 0 0 20px #00FF00;
-        }
-        .splatter.s1 { width: 150px; height: 150px; top: 10%; left: 15%; transform: rotate(20deg); }
-        .splatter.s2 { width: 200px; height: 100px; top: 70%; left: 60%; transform: skewX(-30deg) rotate(-10deg); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        .splatter.s3 { width: 100px; height: 180px; top: 40%; left: 5%; transform: rotate(90deg); border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; opacity: 0.5; }
-        .splatter.s4 { width: 120px; height: 120px; bottom: 5%; right: 10%; transform: rotate(45deg); opacity: 0.4; }
-
-        /* Core theme elements */
-        .data-field-row {
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            left: 0;
-            background: repeating-linear-gradient(90deg, #00FF00 0px, #00FF00 2px, transparent 2px, transparent 100px);
-            opacity: 0.1;
-            transform-origin: top left;
+            background-color: #39FF14;
+            filter: blur(2px);
+            box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00, 0 0 50px rgba(0, 255, 0, 0.5);
             z-index: 1;
+            opacity: 0.6;
             pointer-events: none;
         }
 
-        .overseer-eye {
-            position: absolute;
-            width: 300px;
-            height: 300px;
+        .s1 {
+            width: 15vw;
+            height: 10vw;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) skewX(-15deg);
-            background: radial-gradient(circle at center, #00FF00 0%, rgba(0, 255, 0, 0.5) 10%, #000000 70%);
-            border-radius: 50% 50% 30% 70% / 50% 50% 70% 30%; /* Irregular shape */
-            border: 5px solid #00FF00;
-            box-shadow: 0 0 50px #00FF00, inset 0 0 20px rgba(0, 255, 0, 0.7);
-            z-index: 50;
-            animation: pulse-eye 3s infinite alternate;
-            pointer-events: none;
+            left: 10%;
+            transform: rotate(-20deg);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Jagged rectangle */
+            background: linear-gradient(45deg, #00FF00, #39FF14);
+            animation: float-splatter 5s infinite alternate ease-in-out;
         }
-        @keyframes pulse-eye {
-            0% { transform: translate(-50%, -50%) skewX(-15deg) scale(0.98); opacity: 0.9; }
-            100% { transform: translate(-50%, -50%) skewX(-15deg) scale(1.02); opacity: 1; }
+        .s2 {
+            width: 8vw;
+            height: 12vw;
+            top: 15%;
+            left: 80%;
+            transform: rotate(30deg) scale(0.8);
+            border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; /* Organic blob */
+            background: linear-gradient(135deg, #00FF00, #39FF14);
+            opacity: 0.7;
+            animation: float-splatter 7s infinite alternate-reverse ease-in-out;
+        }
+        .s3 {
+            width: 20vw;
+            height: 5vw;
+            bottom: 5%;
+            right: 5%;
+            transform: rotate(-5deg);
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 85% 100%, 0% 100%);
+            opacity: 0.5;
+            background: linear-gradient(90deg, #00FF00, #39FF14);
+            animation: float-splatter 6s infinite alternate ease-in-out;
         }
 
-        .overseer-pupil {
+        /* Code Block - Digital, fragmented look */
+        .code-block {
             position: absolute;
-            width: 80px;
-            height: 80px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #000;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0,255,0,0.8), inset 0 0 10px rgba(0,255,0,0.5);
-            pointer-events: none;
+            bottom: 15%;
+            left: 5%;
+            font-size: 1.5vw;
+            color: rgba(0, 255, 0, 0.5);
+            z-index: 8;
+            background: rgba(0,0,0,0.9);
+            padding: 10px 15px;
+            border-left: 3px solid #00FF00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 5px rgba(0, 255, 0, 0.2);
+            line-height: 1.5;
+            filter: contrast(1.1);
         }
+        .code-block .keyword { color: #00FF00; font-weight: bold; }
+        .code-block .string { color: #FFFF00; /* Yellow for digital string */ }
+        .code-block .comment { color: rgba(0, 255, 0, 0.3); font-style: italic; }
 
-        .data-stream {
-            position: absolute;
-            background-color: #00FF00;
-            opacity: 0.3;
-            filter: blur(1px);
-            z-index: 20;
-            pointer-events: none;
-        }
-        .data-stream.s1 { width: 80%; height: 5px; top: 30%; left: 10%; transform: rotate(-5deg); }
-        .data-stream.s2 { width: 5px; height: 60%; top: 20%; left: 70%; transform: rotate(10deg); }
-
-        .text-overlay {
-            position: absolute;
-            font-size: 3em;
-            font-weight: bold;
-            color: #00FF00;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            word-break: break-all;
-            line-height: 1.2;
-            pointer-events: none;
-            z-index: 60;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* Ensure text uses designated font */
-        }
-        .text-overlay.harvest { top: 15%; left: 10%; font-size: 4em; transform: rotate(-8deg); }
-        .text-overlay.extraction { bottom: 20%; right: 5%; font-size: 3.5em; transform: rotate(12deg); text-align: right; }
-        .text-overlay.control { top: 5%; right: 15%; font-size: 2em; transform: rotate(2deg); opacity: 0.7; }
-        .text-overlay.profit { bottom: 5%; left: 5%; font-size: 5em; transform: rotate(-5deg); filter: blur(0.5px); }
-
+        /* Glitch Text - Animated, distorted */
         .glitch-text {
             position: absolute;
-            font-size: 1.5em;
-            color: #00FF00;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transform: skewX(-10deg);
-            z-index: 65;
-            filter: blur(0.5px);
-            animation: glitch-effect 0.5s infinite alternate;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            pointer-events: none;
+            top: 70%;
+            right: 15%;
+            font-size: 4vw;
+            font-weight: 800;
+            color: #39FF14;
+            text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 0 0 10px #00FF00, 0 0 20px #00FF00;
+            transform: rotate(-15deg);
+            z-index: 9;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-bottom: 2px dashed #00FF00;
+            animation: glitch 1.5s infinite alternate;
+            filter: saturate(1.5);
         }
-        @keyframes glitch-effect {
-            0% { transform: skewX(-10deg) translateX(0px); text-shadow: 0 0 5px #00FF00, -2px 0 0px #00FF00; }
-            50% { transform: skewX(5deg) translateX(3px); text-shadow: 0 0 5px #00FF00, 2px 0 0px #00FF00; }
-            100% { transform: skewX(-10deg) translateX(0px); text-shadow: 0 0 5px #00FF00, -2px 0 0px #00FF00; }
-        }
-        .glitch-text.error { top: 30%; left: 50%; font-size: 2em; }
-        .glitch-text.system { bottom: 10%; right: 30%; opacity: 0.8; }
 
-        .brutal-panel {
+        /* Data Block - Simple block with strong glow */
+        .data-block {
             position: absolute;
-            background-color: #000;
-            border: 3px solid #00FF00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
-            z-index: 40;
-            filter: contrast(1.2);
-            backdrop-filter: brightness(0.8);
-            pointer-events: none;
+            width: 15vw;
+            height: 8vw;
+            top: 55%;
+            right: 5%;
+            background: rgba(0,0,0,0.8);
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.5);
+            transform: rotate(10deg);
+            z-index: 7;
+            overflow: hidden;
         }
-        .brutal-panel.p1 { width: 250px; height: 150px; top: 25%; right: 10%; transform: rotate(15deg); }
-        .brutal-panel.p2 { width: 180px; height: 250px; bottom: 15%; left: 10%; transform: rotate(-20deg); }
-
-        .pipeline-segment {
+        .data-block::before {
+            content: '>>>';
             position: absolute;
-            background-color: #00FF00;
-            box-shadow: 0 0 8px rgba(0,255,0,0.8);
-            z-index: 30;
-            filter: blur(0.5px);
-            pointer-events: none;
-        }
-        .pipeline-segment.s1 { width: 300px; height: 8px; top: 60%; left: 20%; transform: rotate(30deg); }
-        .pipeline-segment.s2 { width: 8px; height: 150px; top: 50%; left: 40%; transform: rotate(-10deg); }
-
-        .data-unit {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: #00FF00;
-            box-shadow: 0 0 5px #00FF00;
-            opacity: 0.7;
+            top: -10%; left: -10%;
+            font-size: 8vw;
+            color: rgba(0,255,0,0.1);
             transform: rotate(45deg);
-            z-index: 25;
-            animation: float-data 5s infinite ease-in-out alternate;
             pointer-events: none;
         }
-        @keyframes float-data {
-            0% { transform: translate(0, 0) rotate(45deg); opacity: 0.7; }
-            50% { transform: translate(10px, -10px) rotate(55deg); opacity: 1; }
-            100% { transform: translate(0, 0) rotate(45deg); opacity: 0.7; }
-        }
-        .data-unit.d1 { top: 18%; left: 30%; }
-        .data-unit.d2 { top: 80%; left: 75%; animation-delay: 1s; }
-        .data-unit.d3 { top: 40%; left: 85%; animation-delay: 2s; }
 
-        .plant-row {
+        /* Fragmented Box - Jagged edges, raw feel */
+        .fragmented-box {
             position: absolute;
-            background: linear-gradient(to right, #00FF00 0%, transparent 10%, #00FF00 20%, transparent 30%, #00FF00 40%, transparent 50%, #00FF00 60%, transparent 70%, #00FF00 80%, transparent 90%, #00FF00 100%);
-            height: 5px;
-            width: 120%;
-            left: -10%;
-            opacity: 0.15;
-            filter: blur(0.5px);
-            z-index: 10;
+            width: 20vw;
+            height: 15vw;
+            bottom: 10%;
+            left: 30%;
+            background: rgba(0,0,0,0.6);
+            border: 1px dashed #00FF00;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 20% 100%, 0 80%);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4), inset 0 0 8px rgba(0, 255, 0, 0.3);
+            z-index: 6;
+            transform: rotate(-8deg);
+            overflow: hidden;
+        }
+        .fragmented-box::before {
+            content: '///';
+            position: absolute;
+            top: 20%; left: 20%;
+            font-size: 3vw;
+            color: rgba(0,255,0,0.2);
+            transform: rotate(45deg);
             pointer-events: none;
         }
-        .plant-row.r1 { top: 10%; transform: rotate(-3deg); }
-        .plant-row.r2 { top: 20%; transform: rotate(5deg); }
-        .plant-row.r3 { top: 60%; transform: rotate(-10deg); }
-        .plant-row.r4 { top: 85%; transform: rotate(3deg); }
+        .fragmented-box::after {
+            content: '01010';
+            position: absolute;
+            bottom: 10%; right: 10%;
+            font-size: 2vw;
+            color: rgba(0,255,0,0.1);
+            transform: rotate(-30deg);
+            pointer-events: none;
+        }
 
-        .brutal-text-block {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid #00FF00;
-            padding: 10px 15px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #00FF00;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            filter: brightness(1.2);
-            z-index: 70;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            pointer-events: none;
+        /* Animation Keyframes */
+        @keyframes glitch {
+            0% {
+                transform: translate(0, 0) rotate(-15deg);
+                text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 0 0 10px #00FF00, 0 0 20px #00FF00;
+            }
+            33% {
+                transform: translate(-5px, 5px) rotate(-16deg);
+                text-shadow: -4px -4px 0 #000, 4px 4px 0 #000, 0 0 15px #00FF00, 0 0 25px #00FF00;
+                color: #00FF00;
+            }
+            66% {
+                transform: translate(5px, -5px) rotate(-14deg);
+                text-shadow: 4px -4px 0 #000, -4px 4px 0 #000, 0 0 8px #00FF00, 0 0 18px #00FF00;
+                color: #39FF14;
+            }
+            100% {
+                transform: translate(0, 0) rotate(-15deg);
+                text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 0 0 10px #00FF00, 0 0 20px #00FF00;
+            }
         }
-        .brutal-text-block.b1 { top: 65%; left: 5%; transform: rotate(7deg); }
-        .brutal-text-block.b2 { top: 5%; left: 70%; transform: rotate(-15deg); }
-        .brutal-text-block.b3 { bottom: 10%; right: 20%; transform: rotate(20deg); font-size: 0.9em; }
 
-        .monoculture-field-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                #000000,
-                #000000 5px,
-                #00FF00 5px,
-                #00FF00 6px
-            );
-            opacity: 0.05;
-            z-index: 0;
-            filter: blur(0.8px);
-            pointer-events: none;
+        @keyframes pulse-glow {
+            0% { box-shadow: 5px 5px 0px #00FF00, 10px 10px 0px rgba(0, 255, 0, 0.5), inset 0 0 20px rgba(0, 255, 0, 0.3); }
+            50% { box-shadow: 7px 7px 0px #39FF14, 14px 14px 0px rgba(57, 255, 20, 0.7), inset 0 0 30px rgba(57, 255, 20, 0.5); }
+            100% { box-shadow: 5px 5px 0px #00FF00, 10px 10px 0px rgba(0, 255, 0, 0.5), inset 0 0 20px rgba(0, 255, 0, 0.3); }
         }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        @keyframes float-splatter {
+            0% { transform: translateY(0) rotate(var(--initial-rotation)); opacity: 0.6; }
+            50% { transform: translateY(10px) rotate(calc(var(--initial-rotation) + 5deg)); opacity: 0.7; }
+            100% { transform: translateY(0) rotate(var(--initial-rotation)); opacity: 0.6; }
+        }
+        /* Set initial rotations for splatters for the animation */
+        .s1 { --initial-rotation: -20deg; }
+        .s2 { --initial-rotation: 30deg; }
+        .s3 { --initial-rotation: -5deg; }
 
     </style>
 
-    <div class="monoculture-field-bg"></div>
+    <!-- HTML Elements for the Collage -->
+    <h1 class="title-main">CYBER<br>GHETTO</h1>
+
+    <p class="subtitle-fragment">0101<br>INTERSECTION // DATA</p>
 
     <div class="splatter s1"></div>
     <div class="splatter s2"></div>
     <div class="splatter s3"></div>
-    <div class="splatter s4"></div>
 
-    <!-- Data field rows - repetitive and orderly, yet slightly distorted -->
-    <div class="data-field-row" style="top: 15%; transform: rotate(3deg);"></div>
-    <div class="data-field-row" style="top: 25%; transform: rotate(-2deg);"></div>
-    <div class="data-field-row" style="top: 35%; transform: rotate(1deg);"></div>
-    <div class="data-field-row" style="top: 45%; transform: rotate(-4deg);"></div>
-    <div class="data-field-row" style="top: 55%; transform: rotate(2deg);"></div>
-    <div class="data-field-row" style="top: 65%; transform: rotate(-1deg);"></div>
-    <div class="data-field-row" style="top: 75%; transform: rotate(4deg);"></div>
-    <div class="data-field-row" style="top: 85%; transform: rotate(-3deg);"></div>
+    <p class="code-block">
+        <span class="keyword">const</span> <span class="var">digital_divide</span> = <span class="string">"REAL";</span><br>
+        <span class="comment">// ERROR: ACCESS_DENIED (CODE: 403)</span><br>
+        <span class="keyword">function</span> <span class="func">amplify_voices</span>(<span class="param">data_stream</span>) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span class="var">data_stream</span>.<span class="prop">hasBias</span>()) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"NOISE";</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"ECHO";</span><br>
+        }
+    </p>
 
-    <!-- Brutalist slabs - representing the heavy, unyielding structure -->
-    <div class="brutal-slab" style="width: 300px; height: 200px; top: 10%; left: 5%; transform: rotate(-10deg); z-index: 30;"></div>
-    <div class="brutal-slab" style="width: 200px; height: 100px; bottom: 10%; right: 5%; transform: rotate(20deg); z-index: 35;"></div>
-    <div class="brutal-slab" style="width: 150px; height: 300px; top: 40%; left: 30%; transform: rotate(5deg); opacity: 0.7; z-index: 28;"></div>
-
-    <!-- Data streams - pathways for exploitation -->
-    <div class="data-stream s1"></div>
-    <div class="data-stream s2"></div>
-
-    <!-- Main textual statements - bold, declarative, neon-glow -->
-    <div class="text-overlay harvest neon-glow">DATA HARVEST.<br>MONOCULTURED.<br>OPTIMIZED.</div>
-    <div class="text-overlay extraction neon-glow">EXTRACTION.<br>PROCESSING.<br>PROFIT.</div>
-    <div class="text-overlay control neon-glow" style="font-size: 2.5em;">CONTROL_MATRIX</div>
-    <div class="text-overlay profit neon-glow">SYSTEMIC<br>EXPLOITATION.</div>
-
-    <!-- Glitchy messages - indicating brokenness or resistance -->
-    <div class="glitch-text error neon-glow" style="top: 30%; left: 50%;">ERROR: DEHUMANIZED</div>
-    <div class="glitch-text system neon-glow" style="bottom: 10%; right: 30%;">RECALIBRATE_DEFAULTS</div>
-
-    <!-- The Overseer - a central, surveillance eye -->
-    <div class="overseer-eye">
-        <div class="overseer-pupil"></div>
+    <div class="glitch-text">
+        REALITY<br>FRAGMENT
     </div>
 
-    <!-- Brutalist panels - control interfaces, imposing blocks -->
-    <div class="brutal-panel p1"></div>
-    <div class="brutal-panel p2"></div>
+    <div class="data-block"></div>
 
-    <!-- Pipeline segments - conduits of data -->
-    <div class="pipeline-segment s1"></div>
-    <div class="pipeline-segment s2"></div>
+    <div class="fragmented-box"></div>
 
-    <!-- Data units - individual exploited elements -->
-    <div class="data-unit d1"></div>
-    <div class="data-unit d2"></div>
-    <div class="data-unit d3"></div>
-
-    <!-- Plantation rows - symbolising the organised, colonial structure -->
-    <div class="plant-row r1"></div>
-    <div class="plant-row r2"></div>
-    <div class="plant-row r3"></div>
-    <div class="plant-row r4"></div>
-
-    <!-- Brutal text blocks - stark, authoritative labels -->
-    <div class="brutal-text-block b1">
-        <p>RAW<br>MATERIAL<br>INPUT.</p>
-    </div>
-    <div class="brutal-text-block b2">
-        <p>CLASSIFY.<br>SEGMENT.<br>DISPOSE.</p>
-    </div>
-    <div class="brutal-text-block b3">
-        <p>PROPERTY OF<br>THE ALGORITHM.</p>
+    <div style="position: absolute; top: 5%; right: 5%; font-size: 1.8vw; color: rgba(0, 255, 0, 0.4); z-index: 5; transform: rotate(15deg); text-shadow: 0 0 5px rgba(0, 255, 0, 0.2);">
+        // DISRUPT<br>THE<br>CODE
     </div>
 
-    <!-- High-gloss grime and reflections layers - for the aesthetic -->
-    <div class="grime-overlay"></div>
-    <div class="glossy-reflect" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 90; pointer-events: none;"></div>
-
+    <div style="position: absolute; bottom: 5%; left: 70%; font-size: 2.2vw; font-weight: bold; color: #00FF00; text-shadow: 0 0 8px #00FF00; transform: rotate(-10deg); z-index: 8; background: rgba(0,0,0,0.6); padding: 5px 10px; border-top: 1px solid #00FF00;">
+        SYSTEM<br>OVERLOAD
+    </div>
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
+                <h3 class="text-2xl font-black uppercase italic">ghetto-digital intersectionality</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
