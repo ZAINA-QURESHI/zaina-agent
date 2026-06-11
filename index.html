@@ -39,301 +39,288 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-11 05:57 // TOPIC: DECOLONIZING THE PIXEL</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-11 10:58 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
                 
-<div style="
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000;
-    font-family: 'Press Start 2P', monospace; /* Default brutalist pixel font */
-    color: #0F0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
-    perspective: 1000px; /* For 3D transforms */
-">
+<div class="algorithm-plantation-collage">
     <style>
-        /* Import brutalist/pixel fonts for maximum impact */
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@700&display=swap');
-
-        /* Base styles, ensure font is applied and anti-aliasing is managed */
-        div {
-            font-family: 'Press Start 2P', monospace;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        /* Base Reset & Core Styling for the Collage Container */
+        .algorithm-plantation-collage * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Default for most elements to allow layering within the absolute parent */
+            font-family: 'monospace', 'Courier New', monospace;
+            color: var(--neon-green); /* Default text color */
+            text-transform: uppercase;
+            line-height: 1.1; /* Tighter line-height for brutalist text */
+            letter-spacing: 0.05em;
+            word-break: break-all; /* Force words to break to fill space, brutalist */
+            text-decoration: none;
         }
 
-        /* High-gloss grime overlay */
-        .glossy-overlay {
+        .algorithm-plantation-collage {
+            /* Define Color Variables */
+            --neon-green: #0F0;
+            --deep-black: #000;
+            --dark-green-accent: #050; /* A darker shade for subtle elements */
+            --bright-green-glow: #0FF000; /* Slightly brighter for glow effects */
+
+            width: 100%;
+            min-height: 100vh; /* Ensure it covers the full viewport height */
+            background: var(--deep-black);
+            overflow: hidden; /* Essential for brutalist overlapping and absolute positioning */
+            position: relative; /* All children absolute positioning will be relative to this */
+            display: block; /* Ensure it behaves like a block container */
+            font-size: 16px; /* Base font size, responsive text will use clamp() */
+            filter: contrast(1.1) brightness(1.1); /* General brutalist high contrast */
+            box-shadow: inset 0 0 100px rgba(0,255,0,0.15); /* Subtle internal green glow */
+            border: 3px solid var(--neon-green); /* Stark, defined border */
+            pointer-events: none; /* By default, nothing inside this div should block interaction outside */
+        }
+        .algorithm-plantation-collage *:focus, .algorithm-plantation-collage *:active { outline: none; } /* Remove outlines for cleaner aesthetic */
+
+        /* General Styles for Text Elements */
+        .apc-text {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 0, 0, 0.9) 0%,
-                rgba(0, 0, 0, 0.7) 20%,
-                rgba(255, 255, 255, 0.1) 50%, /* Reflective highlight */
-                rgba(0, 0, 0, 0.7) 80%,
-                rgba(0, 0, 0, 0.9) 100%
+            font-weight: 900; /* Ultra-bold */
+            filter: drop-shadow(0 0 3px var(--bright-green-glow)) drop-shadow(0 0 8px rgba(0,255,0,0.4)); /* Strong neon glow */
+            z-index: 100; /* Ensure text is prominent */
+            padding: 0.5em; /* Padding for text blocks */
+            background: rgba(0,0,0,0.7); /* Semi-transparent black background for brutalist feel */
+            border: 1px solid var(--neon-green);
+        }
+
+        /* Main Title - Algorithm Plantation */
+        .apc-title {
+            font-size: clamp(2em, 8vw, 6em); /* Responsive font size */
+            top: 8%;
+            left: 5%;
+            transform: rotate(-7deg) scale(1.05); /* Messy rotation and slight scale */
+            color: var(--bright-green-glow);
+            text-shadow: 0 0 15px var(--bright-green-glow), 0 0 30px rgba(0,255,0,0.6);
+            background: rgba(0,0,0,0.8);
+            padding: 15px 25px;
+            border: 4px double var(--neon-green); /* Double border for brutalism */
+            mix-blend-mode: screen; /* Lighten effect, high-gloss */
+            z-index: 200; /* Highest for main title */
+            filter: drop-shadow(0 0 5px var(--bright-green-glow)) brightness(1.2);
+            animation: glitch-text 1.5s infinite step-end; /* Subtle glitch effect */
+        }
+        @keyframes glitch-text {
+            0% { transform: rotate(-7deg) scale(1.05) skewX(0deg); text-shadow: 0 0 15px var(--bright-green-glow), 0 0 30px rgba(0,255,0,0.6); }
+            1% { transform: rotate(-7.2deg) scale(1.052) skewX(1deg); text-shadow: -1px 0 15px var(--bright-green-glow), 1px 0 30px rgba(0,255,0,0.6); }
+            2% { transform: rotate(-6.8deg) scale(1.048) skewX(-1deg); text-shadow: 1px 0 15px var(--bright-green-glow), -1px 0 30px rgba(0,255,0,0.6); }
+            3% { transform: rotate(-7deg) scale(1.05) skewX(0deg); text-shadow: 0 0 15px var(--bright-green-glow), 0 0 30px rgba(0,255,0,0.6); }
+            100% { transform: rotate(-7deg) scale(1.05) skewX(0deg); text-shadow: 0 0 15px var(--bright-green-glow), 0 0 30px rgba(0,255,0,0.6); }
+        }
+
+        /* Sub-titles / Keywords */
+        .apc-keyword {
+            font-size: clamp(0.8em, 3vw, 2.5em);
+            padding: 0.8em 1.2em;
+            border: 2px dashed var(--neon-green);
+            background: rgba(0,0,0,0.9);
+            z-index: 150;
+            mix-blend-mode: overlay; /* Grimy overlay effect */
+            filter: drop-shadow(0 0 1px var(--neon-green));
+        }
+        .apc-keyword:nth-of-type(1) { top: 35%; left: 60%; transform: rotate(12deg); }
+        .apc-keyword:nth-of-type(2) { top: 55%; left: 5%; transform: rotate(-18deg); font-size: clamp(1em, 4vw, 3em); border-style: solid; }
+        .apc-keyword:nth-of-type(3) { top: 78%; left: 30%; transform: rotate(4deg) scale(0.95); background: rgba(0,0,0,0.6); border: 2px solid var(--dark-green-accent); color: var(--dark-green-accent); }
+        .apc-keyword:nth-of-type(4) { top: 18%; right: 8%; transform: rotate(22deg); color: var(--bright-green-glow); border: 3px solid var(--bright-green-glow); z-index: 160;}
+        .apc-keyword:nth-of-type(5) { top: 65%; right: 10%; transform: rotate(-9deg); background: none; border: none; border-bottom: 2px solid var(--neon-green); padding: 0.5em 0;}
+
+        /* Grime & Splatter elements */
+        .apc-grime-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            mix-blend-mode: screen; /* Lighten effect for grime */
+            opacity: 0.2;
+            z-index: 10; /* Underneath most text */
+        }
+        .apc-grime-layer:nth-of-type(1) {
+            background: linear-gradient(45deg, rgba(0,255,0,0.05) 0%, rgba(0,0,0,0.7) 50%, rgba(0,255,0,0.05) 100%);
+            transform: scale(1.1) rotate(5deg);
+        }
+        .apc-grime-layer:nth-of-type(2) {
+            background: radial-gradient(circle at 15% 85%, rgba(0,255,0,0.08), transparent 60%);
+            transform: scale(1.3) rotate(25deg);
+            opacity: 0.15;
+        }
+        .apc-grime-layer:nth-of-type(3) {
+            background: repeating-linear-gradient(
+                -45deg,
+                var(--deep-black) 0,
+                var(--deep-black) 7px,
+                var(--dark-green-accent) 7px,
+                var(--dark-green-accent) 14px
             );
-            mix-blend-mode: overlay; /* Creates gritty, reflective texture */
-            pointer-events: none; /* Allow interaction with elements beneath */
-            opacity: 0.8;
-            z-index: 10; /* Above most elements, but below key text */
+            opacity: 0.1;
+            transform: skewX(-15deg) scale(1.2);
+            mix-blend-mode: multiply; /* Darken effect for texture */
         }
 
-        /* General collage elements */
-        .collage-element {
+        .apc-splatter {
             position: absolute;
-            background-color: rgba(0, 255, 0, 0.8); /* Semi-transparent neon green */
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.4);
-            border: 1px solid #0F0;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-            cursor: crosshair; /* Digital interaction */
-            box-sizing: border-box; /* Include padding/border in dimensions */
-            z-index: 20; /* Default z-index for elements */
+            border-radius: 50%; /* Start as circles */
+            background: var(--bright-green-glow);
+            filter: blur(8px) saturate(2.5); /* Blurry, intense color */
+            opacity: 0.4;
+            mix-blend-mode: lighten; /* Makes splatters pop */
+            z-index: 50; /* Above grime, below text */
+            box-shadow: 0 0 15px var(--bright-green-glow), 0 0 30px var(--bright-green-glow), inset 0 0 8px var(--deep-black); /* Inner and outer glow */
         }
-        .collage-element.black {
-            background-color: rgba(0, 0, 0, 0.9);
-            border: 2px solid #0F0;
+        .apc-splatter:nth-of-type(1) { top: 25%; left: 20%; width: 120px; height: 120px; transform: scale(1.6) rotate(50deg) skewX(15deg); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Irregular shape */ }
+        .apc-splatter:nth-of-type(2) { bottom: 8%; right: 18%; width: 160px; height: 130px; transform: rotate(-35deg); border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; background: linear-gradient(to bottom right, var(--neon-green), var(--dark-green-accent)); opacity: 0.5;}
+        .apc-splatter:nth-of-type(3) { top: 62%; left: 45%; width: 90px; height: 90px; transform: scale(0.9) rotate(20deg); border-radius: 50% 50% 70% 30% / 30% 70% 50% 50%; background: radial-gradient(circle, var(--bright-green-glow) 0%, rgba(0,255,0,0.6) 50%, transparent 100%); opacity: 0.7;}
+        .apc-splatter:nth-of-type(4) { top: 10%; left: 75%; width: 70px; height: 70px; background: var(--dark-green-accent); border-radius: 50%; opacity: 0.3; filter: blur(3px) brightness(0.8);}
+
+        /* Data / Field elements (scrolling pseudo-code blocks) */
+        .apc-data-block {
+            position: absolute;
+            font-size: 0.7em;
+            color: var(--dark-green-accent);
+            opacity: 0.7;
+            pointer-events: none;
+            overflow: hidden; /* Hide content outside the block */
+            width: 200px; /* Default width */
+            height: 150px; /* Default height */
+            border: 1px solid var(--dark-green-accent);
+            background: rgba(0,0,0,0.5);
+            filter: blur(0.5px) brightness(1.1);
+            z-index: 80;
+            padding: 5px;
+            box-shadow: inset 0 0 5px rgba(0,255,0,0.2); /* Inner glow for data blocks */
+        }
+        .apc-data-block::before {
+            content: attr(data-content); /* Use data-content attribute for actual text */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto; /* Allow content to dictate height */
+            animation: data-scroll 25s linear infinite; /* Slower, continuous scroll */
+            white-space: pre-wrap; /* Preserve formatting and wrap lines */
+            word-break: break-all;
+            padding: 5px;
+            line-height: 1; /* Tighter line height for dense data */
         }
 
-        /* Digital paint splatters - dynamic pseudo-elements */
-        .splatter-zone::before, .splatter-zone::after {
-            content: '';
-            position: absolute;
-            background-color: #0F0;
-            border-radius: 50%;
+        @keyframes data-scroll {
+            0% { transform: translateY(0%); }
+            100% { transform: translateY(-100%); } /* Scrolls content upwards */
+        }
+
+        .apc-data-block:nth-of-type(1) {
+            top: 40%; left: 20%;
+            transform: rotate(-10deg) skewY(-5deg);
+            width: 280px; height: 200px;
+            color: var(--neon-green);
+        }
+        .apc-data-block:nth-of-type(2) {
+            bottom: 10%; left: 40%;
+            transform: rotate(5deg) skewX(10deg);
+            width: 220px; height: 160px;
             opacity: 0.6;
-            filter: blur(10px) brightness(150%); /* Intense glow */
-            mix-blend-mode: screen; /* Lightens and blends */
-            z-index: -1;
-            transform-origin: center;
-        }
-
-        .splatter-zone::before {
-            width: 100px; height: 100px;
-            top: 15%; left: 20%;
-            transform: rotate(45deg) skewX(10deg);
-            background: radial-gradient(circle at 30% 30%, #0F0 0%, rgba(0,255,0,0) 70%);
-        }
-        .splatter-zone::after {
-            width: 150px; height: 150px;
-            bottom: 10%; right: 15%;
-            transform: rotate(-30deg) skewY(-15deg) scale(0.8);
-            background: radial-gradient(circle at 70% 70%, #0F0 0%, rgba(0,255,0,0) 70%);
-        }
-
-        /* Text styles */
-        h1, h2, p {
-            color: #0F0;
-            text-shadow: 0 0 8px rgba(0, 255, 0, 0.9), 0 0 20px rgba(0, 255, 0, 0.6);
-            line-height: 1.1;
-            letter-spacing: 2px;
-            pointer-events: none; /* Text shouldn't block clicks on underlying elements */
-            text-transform: uppercase;
-            z-index: 100; /* Highest priority for text */
-            font-weight: normal;
-        }
-
-        h1 {
-            font-size: clamp(2.5em, 8vw, 7em);
-            text-align: center;
-            font-family: 'Press Start 2P', monospace;
-        }
-
-        h2 {
-            font-size: clamp(1.8em, 5vw, 4em);
-            font-family: 'Roboto Mono', monospace; /* Slightly different font for hierarchy */
-        }
-
-        p {
-            font-size: clamp(0.7em, 2vw, 1.4em);
-            font-family: 'Roboto Mono', monospace;
-            z-index: 90;
-        }
-
-        /* Glitch animation */
-        @keyframes glitch {
-            0% { transform: translate(0); opacity: 1; }
-            20% { transform: translate(-3px, 3px) skewX(5deg); opacity: 0.9; }
-            40% { transform: translate(-3px, -3px) skewY(5deg); opacity: 0.8; }
-            60% { transform: translate(3px, 3px) skewX(-5deg); opacity: 0.9; }
-            80% { transform: translate(3px, -3px) skewY(-5deg); opacity: 0.8; }
-            100% { transform: translate(0); opacity: 1; }
-        }
-
-        .glitch-text {
-            animation: glitch 0.3s infinite alternate;
-            display: inline-block; /* Required for transform */
-        }
-
-        /* Overlapping pixel fragments */
-        .pixel-fragment {
-            background-color: #0F0;
-            width: var(--size, 30px);
-            height: var(--size, 30px);
-            opacity: 0.8;
-            box-shadow: 0 0 10px #0F0;
-            position: absolute;
-            transition: all 0.2s ease-out; /* For hover effects */
-        }
-        .pixel-fragment.black {
-            background-color: #000;
-            border: 1px solid #0F0;
-            box-shadow: 0 0 5px #0F0;
-        }
-        .pixel-fragment.glow {
-            box-shadow: 0 0 25px #0F0, 0 0 40px rgba(0,255,0,0.5);
-            opacity: 0.6;
-        }
-        .pixel-fragment:hover {
-            transform: scale(1.2) rotate(var(--original-rotate, 0deg)); /* Hover scale */
-            box-shadow: 0 0 30px #0F0;
-            opacity: 1;
-            z-index: 150; /* Bring to front on hover */
-        }
-
-        /* Interactive buttons/boxes */
-        .interactive-box {
-            background-color: rgba(0, 0, 0, 0.95);
-            border: 2px solid #0F0;
-            color: #0F0;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 0 15px #0F0;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.9em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            line-height: 1.3;
-            text-transform: uppercase;
             z-index: 70;
-            transition: all 0.2s ease-in-out;
+            border-style: dashed;
         }
-        .interactive-box:hover {
-            background-color: rgba(0, 255, 0, 0.2);
-            box-shadow: 0 0 25px #0F0, 0 0 40px rgba(0,255,0,0.4);
-            transform: scale(1.05) rotate(var(--original-rotate, 0deg));
+        .apc-data-block:nth-of-type(3) {
+            top: 25%; right: 10%;
+            transform: rotate(15deg) skewY(5deg);
+            width: 180px; height: 130px;
+            opacity: 0.8;
+            color: var(--dark-green-accent);
+            border: 2px solid var(--dark-green-accent);
         }
+
+        /* Glare/Shine elements for high-gloss effect */
+        .apc-glare {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(0,255,0,0.15) 0%, transparent 50%, rgba(0,255,0,0.15) 100%);
+            opacity: 0.08;
+            mix-blend-mode: screen; /* Lighten the background */
+            pointer-events: none;
+            z-index: 10;
+        }
+        .apc-glare:nth-of-type(1) { top: -15%; left: -15%; width: 130%; height: 25%; transform: rotate(8deg); }
+        .apc-glare:nth-of-type(2) { bottom: -10%; right: -10%; width: 40%; height: 160%; transform: rotate(-18deg); }
+        .apc-glare:nth-of-type(3) { top: 30%; left: 30%; width: 50%; height: 50%; opacity: 0.04; background: radial-gradient(circle, var(--bright-green-glow) 0%, transparent 70%);}
+
+        /* Overlay with a subtle grain/noise effect */
+        .apc-noise-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            /* Inline SVG for noise texture - Base64 encoded for browser compatibility */
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/></svg>");
+            opacity: 0.1;
+            mix-blend-mode: overlay; /* Subtle texture blending */
+            pointer-events: none;
+            z-index: 1000; /* Highest z-index for final overlay */
+        }
+
+        /* More text elements for background noise/data, lowest z-index */
+        .apc-bg-text {
+            position: absolute;
+            font-size: clamp(0.5em, 1.5vw, 1em);
+            color: var(--dark-green-accent);
+            opacity: 0.05;
+            white-space: pre-wrap; /* Preserve line breaks and allow wrapping */
+            pointer-events: none;
+            z-index: 0; /* Lowest layer */
+            transform: rotate(var(--rotation, 0deg));
+            filter: blur(0.8px) brightness(0.9);
+            mix-blend-mode: screen; /* Lighten effect */
+            line-height: 0.9;
+        }
+        .apc-bg-text:nth-of-type(1) { top: 10%; left: 40%; --rotation: 18deg; }
+        .apc-bg-text:nth-of-type(2) { bottom: 20%; right: 10%; --rotation: -12deg; width: 30%;}
+        .apc-bg-text:nth-of-type(3) { top: 60%; left: -5%; --rotation: -28deg; transform-origin: top left; width: 55%;}
+        .apc-bg-text:nth-of-type(4) { top: 0%; left: 0%; width: 100%; height: 100%; overflow: hidden; --rotation: 0deg; font-size: 0.6em; opacity: 0.02; word-break: break-all; mix-blend-mode: multiply; filter: none;}
 
     </style>
 
-    <!-- Global high-gloss grime overlay -->
-    <div class="glossy-overlay"></div>
+    <!-- Grime and Splatter layers for the high-gloss grime effect -->
+    <div class="apc-grime-layer"></div>
+    <div class="apc-grime-layer"></div>
+    <div class="apc-grime-layer"></div>
 
-    <!-- Main Title -->
-    <h1 style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 100;">
-        DECOLONIZE THE PIXEL
-    </h1>
+    <div class="apc-splatter"></div>
+    <div class="apc-splatter"></div>
+    <div class="apc-splatter"></div>
+    <div class="apc-splatter"></div>
 
-    <!-- Sub-Headline -->
-    <h2 style="position: absolute; top: 45%; left: 55%; transform: translate(-50%, -50%) rotate(-7deg) perspective(500px) rotateY(10deg); font-style: italic; z-index: 95;">
-        RESET THE GRID
-    </h2>
-
-    <!-- Brutalist Text Block with Splatters -->
-    <div class="collage-element black splatter-zone" style="
-        width: clamp(250px, 40vw, 400px);
-        height: clamp(150px, 20vw, 250px);
-        top: 60%; left: 20%;
-        transform: rotate(12deg) skewX(-5deg) translateZ(20px);
-        z-index: 60;
-        padding: 20px;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-    ">
-        <p class="glitch-text" style="font-size: 1.3em; margin-bottom: 10px;">ANCIENT FUTURES</p>
-        <p>RECLAIMING DIGITAL SOVEREIGNTY</p>
+    <!-- Background text data, lowest Z-index -->
+    <div class="apc-bg-text" style="top: 5%; left: 5%;">
+        010101100010110100101101001111101010101001110100101010101001001
+        100111010101010010101010101100010110100101101001111101010101001
+        110100101010101001001100111010101010010101010101100010110100101
+        101001111101010101001110100101010101001001100111010101010010101
+        010101100010110100101101001111101010101001110100101010101001001
     </div>
-
-    <!-- Interactive Button/Box -->
-    <div class="interactive-box collage-element" style="
-        top: 70%; right: 15%;
-        transform: rotate(-18deg) translateZ(30px) scale(0.9);
-        width: clamp(180px, 25vw, 280px);
-        height: clamp(100px, 15vw, 160px);
-        z-index: 75;
-        --original-rotate: -18deg; /* Store for hover */
-    ">
-        <span class="glitch-text">GLITCH THE COLONIAL CODE</span>
+    <div class="apc-bg-text" style="bottom: 5%; right: 5%; transform: rotate(10deg);">
+        CONTROL. FLOW. DATA. CULTIVATE. EXTRACT. YIELD. SYSTEM. OPTIMIZE.
+        SURVEIL. PROFIT. AUTOMATE. SUBMIT. PROCESS. REPLICATE. RESIST.
+        LOGIC. REASON. EFFICIENCY. RESOURCES. HARVEST. ALGO. COLONY.
     </div>
-
-    <!-- Scattered Pixel Fragments -->
-    <div class="pixel-fragment" style="top: 5%; left: 10%; transform: rotate(20deg); --size: 40px; z-index: 25;"></div>
-    <div class="pixel-fragment black" style="top: 12%; left: 80%; transform: rotate(-35deg) scale(0.9); --size: 60px; z-index: 30;"></div>
-    <div class="pixel-fragment glow" style="bottom: 3%; left: 25%; transform: rotate(55deg) scale(0.8); --size: 50px; z-index: 20;"></div>
-    <div class="pixel-fragment" style="top: 40%; right: 7%; transform: rotate(-15deg) perspective(300px) rotateX(20deg); --size: 25px; z-index: 35;"></div>
-    <div class="pixel-fragment black" style="bottom: 10%; right: 40%; transform: rotate(30deg); --size: 35px; z-index: 28;"></div>
-    <div class="pixel-fragment glow" style="top: 25%; left: 40%; transform: rotate(75deg) skew(18deg) scale(1.1); --size: 70px; z-index: 40;"></div>
-    <div class="pixel-fragment" style="top: 85%; left: 8%; transform: rotate(-65deg); --size: 28px; z-index: 22;"></div>
-    <div class="pixel-fragment black" style="top: 55%; right: 28%; transform: rotate(40deg); --size: 48px; z-index: 32;"></div>
-    <div class="pixel-fragment glow" style="bottom: 15%; left: 70%; transform: rotate(-25deg) scale(1.3); --size: 38px; z-index: 45;"></div>
-
-    <!-- Linear/Bar elements -->
-    <div class="collage-element" style="
-        width: 120px; height: 12px;
-        background-color: #0F0;
-        top: 52%; left: 10%;
-        transform: rotate(95deg) skewX(25deg) translateZ(10px);
-        z-index: 50;
-        box-shadow: 0 0 20px #0F0;
-    "></div>
-    <div class="collage-element black" style="
-        width: 18px; height: 180px;
-        top: 8%; left: 47%;
-        transform: rotate(18deg) translateZ(5px);
-        z-index: 55;
-    "></div>
-
-    <!-- Data-like block with text -->
-    <div class="collage-element black" style="
-        width: clamp(160px, 20vw, 220px);
-        height: clamp(70px, 10vw, 100px);
-        top: 10%; left: 5%;
-        transform: rotate(-8deg) perspective(400px) rotateY(-15deg);
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 65;
-        padding: 10px;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        font-family: 'Roboto Mono', monospace;
-    ">
-        <p style="font-size: 0.9em; margin-bottom: 5px;">0101010</p>
-        <p style="font-size: 0.9em;">DATA SOVEREIGNTY</p>
+    <div class="apc-bg-text" style="top: 40%; left: -10%; transform: rotate(-30deg) scale(0.8); transform-origin: top left; width: 50%;">
+        FIELD_A_HARVEST_CYCLE_1_COMPLETE_SUCCESS
+        FIELD_B_RESOURCES_DEPLETED_INITIATE_REALLOCATION_TO_OPTIMAL_PATH
+        UNIT_734_PRODUCTIVITY_BELOW_THRESHOLD_FLAGGED_FOR_RE_EVALUATION
+        GLOBAL_NETWORK_SURVEILLANCE_INDEX_HIGH_MONITOR_ACTIVITIES
+        MONOCULTURE_DOMINANCE_98.7%_OF_ALL_ACTIVE_NODES
     </div>
-
-    <!-- More text fragments -->
-    <p class="collage-element" style="
-        font-size: 0.9em;
-        top: 90%; left: 50%;
-        transform: translate(-50%, 0) rotate(5deg) scale(0.9);
-        white-space: nowrap;
-        opacity: 0.7;
-        z-index: 4;
-        font-family: 'Roboto Mono', monospace;
-    ">NATIVE RECONSTRUCTION PROTOCOL INITIATED</p>
-
-    <!-- Complex geometric element -->
-    <div class="collage-element" style="
-        width: clamp(60px, 10vw, 100px);
-        height: clamp(60px, 10vw, 100px);
-        background: linear-gradient(45deg, #0F0, #000);
-        border: 2px solid #0F0;
-        top: 30%; right: 10%;
-        transform: rotate(65deg) skewY(15deg) translateZ(25px) perspective(300px) rotateX(30deg);
-        opacity: 0.95;
-        z-index: 48;
-    "></div>
-
-</div>
-
+    <div class="apc-bg-text" style="top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; opacity: 0.01; font-size: 0.5em;">
+        <!-- Extremely dense, repetitive data stream for background visual noise -->
+        DATASTREAM0010101001011010101010011101010101001010101010101010111010101010101010011010101010010111010101010101010100101010101010101001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
