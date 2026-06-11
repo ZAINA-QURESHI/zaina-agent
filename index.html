@@ -39,130 +39,301 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-11 00:22 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-11 05:57 // TOPIC: DECOLONIZING THE PIXEL</div>
             <div class="art-container p-4">
                 
-<div style="position: relative; width: 1000px; height: 700px; overflow: hidden; background-color: #000; font-family: 'IBM Plex Mono', monospace; color: #39FF14; text-shadow: 0 0 2px #39FF14; margin: auto; box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);">
-    <!-- Internal styles for splatter classes, glitch animation, and font import -->
+<div style="
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Press Start 2P', monospace; /* Default brutalist pixel font */
+    color: #0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    perspective: 1000px; /* For 3D transforms */
+">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
-        
-        .splatter {
+        /* Import brutalist/pixel fonts for maximum impact */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@700&display=swap');
+
+        /* Base styles, ensure font is applied and anti-aliasing is managed */
+        div {
+            font-family: 'Press Start 2P', monospace;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* High-gloss grime overlay */
+        .glossy-overlay {
             position: absolute;
-            background-color: #39FF14;
-            opacity: 0.6;
-            filter: blur(1px);
-            z-index: 2;
-        }
-        .splatter-dark {
-            background-color: rgb(20, 20, 20);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.7) 20%,
+                rgba(255, 255, 255, 0.1) 50%, /* Reflective highlight */
+                rgba(0, 0, 0, 0.7) 80%,
+                rgba(0, 0, 0, 0.9) 100%
+            );
+            mix-blend-mode: overlay; /* Creates gritty, reflective texture */
+            pointer-events: none; /* Allow interaction with elements beneath */
             opacity: 0.8;
-            filter: blur(0.5px) brightness(0.8);
-            z-index: 1;
+            z-index: 10; /* Above most elements, but below key text */
         }
-        .splatter-shape-1 {
-            width: 70px; height: 50px; border-radius: 50%;
-            transform: rotate(20deg) scale(0.9);
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* Irregular shape */
+
+        /* General collage elements */
+        .collage-element {
+            position: absolute;
+            background-color: rgba(0, 255, 0, 0.8); /* Semi-transparent neon green */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.4);
+            border: 1px solid #0F0;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            cursor: crosshair; /* Digital interaction */
+            box-sizing: border-box; /* Include padding/border in dimensions */
+            z-index: 20; /* Default z-index for elements */
         }
-        .splatter-shape-2 {
-            width: 110px; height: 80px; border-radius: 50%;
-            transform: rotate(-35deg) scale(1.1);
-            clip-path: circle(50% at 50% 50%) polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%); /* More complex */
+        .collage-element.black {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 2px solid #0F0;
         }
-        .splatter-shape-3 {
-            width: 45px; height: 65px; border-radius: 50%;
-            transform: rotate(50deg) scale(0.7);
-            clip-path: polygon(0 0, 100% 20%, 80% 100%, 20% 80%);
+
+        /* Digital paint splatters - dynamic pseudo-elements */
+        .splatter-zone::before, .splatter-zone::after {
+            content: '';
+            position: absolute;
+            background-color: #0F0;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(10px) brightness(150%); /* Intense glow */
+            mix-blend-mode: screen; /* Lightens and blends */
+            z-index: -1;
+            transform-origin: center;
         }
-        .glitch-text {
-            animation: glitch 1.5s infinite alternate;
+
+        .splatter-zone::before {
+            width: 100px; height: 100px;
+            top: 15%; left: 20%;
+            transform: rotate(45deg) skewX(10deg);
+            background: radial-gradient(circle at 30% 30%, #0F0 0%, rgba(0,255,0,0) 70%);
         }
+        .splatter-zone::after {
+            width: 150px; height: 150px;
+            bottom: 10%; right: 15%;
+            transform: rotate(-30deg) skewY(-15deg) scale(0.8);
+            background: radial-gradient(circle at 70% 70%, #0F0 0%, rgba(0,255,0,0) 70%);
+        }
+
+        /* Text styles */
+        h1, h2, p {
+            color: #0F0;
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.9), 0 0 20px rgba(0, 255, 0, 0.6);
+            line-height: 1.1;
+            letter-spacing: 2px;
+            pointer-events: none; /* Text shouldn't block clicks on underlying elements */
+            text-transform: uppercase;
+            z-index: 100; /* Highest priority for text */
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: clamp(2.5em, 8vw, 7em);
+            text-align: center;
+            font-family: 'Press Start 2P', monospace;
+        }
+
+        h2 {
+            font-size: clamp(1.8em, 5vw, 4em);
+            font-family: 'Roboto Mono', monospace; /* Slightly different font for hierarchy */
+        }
+
+        p {
+            font-size: clamp(0.7em, 2vw, 1.4em);
+            font-family: 'Roboto Mono', monospace;
+            z-index: 90;
+        }
+
+        /* Glitch animation */
         @keyframes glitch {
-            0% { text-shadow: 0 0 10px #39FF14, -2px -2px 0px rgba(0,0,0,0.8), 2px 2px 0px rgba(57, 255, 20, 0.3); }
-            25% { text-shadow: 0 0 10px #39FF14, 2px 2px 0px rgba(0,0,0,0.8), -2px -2px 0px rgba(57, 255, 20, 0.3); }
-            50% { text-shadow: 0 0 10px #39FF14, -1px 1px 0px rgba(0,0,0,0.8), 1px -1px 0px rgba(57, 255, 20, 0.3); }
-            75% { text-shadow: 0 0 10px #39FF14, 1px -1px 0px rgba(0,0,0,0.8), -1px 1px 0px rgba(57, 255, 20, 0.3); }
-            100% { text-shadow: 0 0 10px #39FF14, 0 0 0px rgba(0,0,0,0.8); }
+            0% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-3px, 3px) skewX(5deg); opacity: 0.9; }
+            40% { transform: translate(-3px, -3px) skewY(5deg); opacity: 0.8; }
+            60% { transform: translate(3px, 3px) skewX(-5deg); opacity: 0.9; }
+            80% { transform: translate(3px, -3px) skewY(-5deg); opacity: 0.8; }
+            100% { transform: translate(0); opacity: 1; }
         }
+
+        .glitch-text {
+            animation: glitch 0.3s infinite alternate;
+            display: inline-block; /* Required for transform */
+        }
+
+        /* Overlapping pixel fragments */
+        .pixel-fragment {
+            background-color: #0F0;
+            width: var(--size, 30px);
+            height: var(--size, 30px);
+            opacity: 0.8;
+            box-shadow: 0 0 10px #0F0;
+            position: absolute;
+            transition: all 0.2s ease-out; /* For hover effects */
+        }
+        .pixel-fragment.black {
+            background-color: #000;
+            border: 1px solid #0F0;
+            box-shadow: 0 0 5px #0F0;
+        }
+        .pixel-fragment.glow {
+            box-shadow: 0 0 25px #0F0, 0 0 40px rgba(0,255,0,0.5);
+            opacity: 0.6;
+        }
+        .pixel-fragment:hover {
+            transform: scale(1.2) rotate(var(--original-rotate, 0deg)); /* Hover scale */
+            box-shadow: 0 0 30px #0F0;
+            opacity: 1;
+            z-index: 150; /* Bring to front on hover */
+        }
+
+        /* Interactive buttons/boxes */
+        .interactive-box {
+            background-color: rgba(0, 0, 0, 0.95);
+            border: 2px solid #0F0;
+            color: #0F0;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 0 15px #0F0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.3;
+            text-transform: uppercase;
+            z-index: 70;
+            transition: all 0.2s ease-in-out;
+        }
+        .interactive-box:hover {
+            background-color: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 25px #0F0, 0 0 40px rgba(0,255,0,0.4);
+            transform: scale(1.05) rotate(var(--original-rotate, 0deg));
+        }
+
     </style>
 
-    <!-- Main Title: Aggressive Androgyny -->
-    <h1 style="position: absolute; top: 12%; left: 50%; transform: translate(-50%, -50%) rotate(-7deg); font-size: 5.5em; text-transform: uppercase; color: #39FF14; letter-spacing: 5px; text-shadow: 0 0 15px #39FF14, 0 0 30px #39FF14, 0 0 45px rgba(57, 255, 20, 0.6); z-index: 10;" class="glitch-text">
-        UNGENDERED_
+    <!-- Global high-gloss grime overlay -->
+    <div class="glossy-overlay"></div>
+
+    <!-- Main Title -->
+    <h1 style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 100;">
+        DECOLONIZE THE PIXEL
     </h1>
 
-    <!-- Sub-Manifesto/Resistance statement -->
-    <p style="position: absolute; top: 28%; left: 10%; width: 350px; font-size: 1.6em; line-height: 1.1; text-transform: uppercase; letter-spacing: 1px; color: #FFF; filter: brightness(1.5); text-shadow: 0 0 8px #FFF, 0 0 15px rgba(255,255,255,0.4); transform: rotate(2deg); z-index: 8;">
-        &gt;&gt; FLUID. UNAPOLOGETIC. <br> &gt;&gt; RESISTANCE IS THE ONLY GENDER.
-    </p>
+    <!-- Sub-Headline -->
+    <h2 style="position: absolute; top: 45%; left: 55%; transform: translate(-50%, -50%) rotate(-7deg) perspective(500px) rotateY(10deg); font-style: italic; z-index: 95;">
+        RESET THE GRID
+    </h2>
 
-    <!-- Brutalist Block 1: Dark and imposing -->
-    <div style="position: absolute; bottom: 8%; left: 5%; width: 280px; height: 180px; background-color: rgb(20, 20, 20); border: 2px solid #39FF14; box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.4), 0 0 5px rgba(57, 255, 20, 0.2); transform: rotate(-10deg); z-index: 5;">
-        <span style="display: block; position: absolute; top: 20px; left: 20px; font-size: 3em; color: #FFF; opacity: 0.7; transform: rotate(90deg) translate(-20px, -20px); transform-origin: top left;">&lt;/&gt;</span>
-        <p style="padding: 20px; font-size: 1.2em; color: #AAA; text-transform: uppercase; letter-spacing: 1px; position: absolute; bottom: 10px; left: 10px;">
-            _NO_BINARY.<span style="color: #39FF14; font-weight: bold;">_NO_RULES.</span>
-        </p>
+    <!-- Brutalist Text Block with Splatters -->
+    <div class="collage-element black splatter-zone" style="
+        width: clamp(250px, 40vw, 400px);
+        height: clamp(150px, 20vw, 250px);
+        top: 60%; left: 20%;
+        transform: rotate(12deg) skewX(-5deg) translateZ(20px);
+        z-index: 60;
+        padding: 20px;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+    ">
+        <p class="glitch-text" style="font-size: 1.3em; margin-bottom: 10px;">ANCIENT FUTURES</p>
+        <p>RECLAIMING DIGITAL SOVEREIGNTY</p>
     </div>
 
-    <!-- Brutalist Block 2: Overlapping, glossy effect -->
-    <div style="position: absolute; top: 35%; right: 8%; width: 220px; height: 320px; background-color: rgb(10, 10, 10); border: 1px solid rgba(57, 255, 20, 0.7); transform: rotate(15deg); z-index: 7; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(57, 255, 20, 0.2) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(57, 255, 20, 0.2) 100%); mix-blend-mode: screen; opacity: 0.6;"></div>
-        <p style="position: absolute; top: 20px; left: 20px; font-size: 2.5em; color: #39FF14; text-shadow: 0 0 10px #39FF14; transform: rotate(-5deg);">
-            DEFY
-        </p>
-        <span style="position: absolute; bottom: 15px; right: 15px; font-size: 4em; color: #FFF; opacity: 0.8; transform: rotate(-20deg);">X</span>
+    <!-- Interactive Button/Box -->
+    <div class="interactive-box collage-element" style="
+        top: 70%; right: 15%;
+        transform: rotate(-18deg) translateZ(30px) scale(0.9);
+        width: clamp(180px, 25vw, 280px);
+        height: clamp(100px, 15vw, 160px);
+        z-index: 75;
+        --original-rotate: -18deg; /* Store for hover */
+    ">
+        <span class="glitch-text">GLITCH THE COLONIAL CODE</span>
     </div>
 
-    <!-- More aggressive text -->
-    <p style="position: absolute; bottom: 15%; right: 10%; font-size: 2em; color: #FFF; text-shadow: 0 0 8px #FFF, 0 0 15px #39FF14; text-transform: uppercase; transform: rotate(5deg); letter-spacing: 2px; z-index: 9;">
-        // POWER
-    </p>
+    <!-- Scattered Pixel Fragments -->
+    <div class="pixel-fragment" style="top: 5%; left: 10%; transform: rotate(20deg); --size: 40px; z-index: 25;"></div>
+    <div class="pixel-fragment black" style="top: 12%; left: 80%; transform: rotate(-35deg) scale(0.9); --size: 60px; z-index: 30;"></div>
+    <div class="pixel-fragment glow" style="bottom: 3%; left: 25%; transform: rotate(55deg) scale(0.8); --size: 50px; z-index: 20;"></div>
+    <div class="pixel-fragment" style="top: 40%; right: 7%; transform: rotate(-15deg) perspective(300px) rotateX(20deg); --size: 25px; z-index: 35;"></div>
+    <div class="pixel-fragment black" style="bottom: 10%; right: 40%; transform: rotate(30deg); --size: 35px; z-index: 28;"></div>
+    <div class="pixel-fragment glow" style="top: 25%; left: 40%; transform: rotate(75deg) skew(18deg) scale(1.1); --size: 70px; z-index: 40;"></div>
+    <div class="pixel-fragment" style="top: 85%; left: 8%; transform: rotate(-65deg); --size: 28px; z-index: 22;"></div>
+    <div class="pixel-fragment black" style="top: 55%; right: 28%; transform: rotate(40deg); --size: 48px; z-index: 32;"></div>
+    <div class="pixel-fragment glow" style="bottom: 15%; left: 70%; transform: rotate(-25deg) scale(1.3); --size: 38px; z-index: 45;"></div>
 
-    <!-- Splatter elements (digital paint splatters) -->
-    <div class="splatter splatter-shape-1" style="top: 10%; left: 60%; transform: rotate(40deg);"></div>
-    <div class="splatter splatter-shape-2 splatter-dark" style="top: 45%; left: 3%; transform: rotate(10deg);"></div>
-    <div class="splatter splatter-shape-3" style="bottom: 30%; right: 20%; transform: rotate(-60deg);"></div>
-    <div class="splatter splatter-shape-1 splatter-dark" style="top: 0; right: 15%; transform: rotate(120deg) scale(0.8);"></div>
-    <div class="splatter splatter-shape-2" style="bottom: 0; left: 35%; transform: rotate(190deg) scale(0.9);"></div>
-    <div class="splatter splatter-shape-3 splatter-dark" style="top: 25%; left: 30%; transform: rotate(-20deg) scale(1.2);"></div>
+    <!-- Linear/Bar elements -->
+    <div class="collage-element" style="
+        width: 120px; height: 12px;
+        background-color: #0F0;
+        top: 52%; left: 10%;
+        transform: rotate(95deg) skewX(25deg) translateZ(10px);
+        z-index: 50;
+        box-shadow: 0 0 20px #0F0;
+    "></div>
+    <div class="collage-element black" style="
+        width: 18px; height: 180px;
+        top: 8%; left: 47%;
+        transform: rotate(18deg) translateZ(5px);
+        z-index: 55;
+    "></div>
 
-    <!-- Digital grime lines / scans -->
-    <div style="position: absolute; top: 0; left: 25%; width: 3px; height: 100%; background: linear-gradient(to bottom, transparent, #39FF14, transparent); opacity: 0.2; z-index: 1;"></div>
-    <div style="position: absolute; top: 0; left: 70%; width: 2px; height: 100%; background: linear-gradient(to bottom, transparent, #39FF14, transparent); opacity: 0.15; z-index: 1;"></div>
-    <div style="position: absolute; top: 40%; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, transparent, #39FF14, transparent); opacity: 0.25; z-index: 1;"></div>
-
-    <!-- Central abstract element / texture with text -->
-    <div style="position: absolute; top: 50%; left: 50%; width: 300px; height: 200px; background-color: rgba(57, 255, 20, 0.1); border: 1px dashed rgba(57, 255, 20, 0.5); transform: translate(-50%, -50%) rotate(-20deg); z-index: 6; box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);">
-        <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5em; color: #FFF; opacity: 0.6; text-transform: uppercase;">
-            &#9608; AUTONOMY &#9608;
-        </p>
+    <!-- Data-like block with text -->
+    <div class="collage-element black" style="
+        width: clamp(160px, 20vw, 220px);
+        height: clamp(70px, 10vw, 100px);
+        top: 10%; left: 5%;
+        transform: rotate(-8deg) perspective(400px) rotateY(-15deg);
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 65;
+        padding: 10px;
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        font-family: 'Roboto Mono', monospace;
+    ">
+        <p style="font-size: 0.9em; margin-bottom: 5px;">0101010</p>
+        <p style="font-size: 0.9em;">DATA SOVEREIGNTY</p>
     </div>
 
-    <!-- Bottom-right aggressive text -->
-    <p style="position: absolute; bottom: 5%; right: 2%; font-size: 3.5em; color: #39FF14; text-transform: uppercase; letter-spacing: 5px; transform: rotate(10deg); text-shadow: 0 0 15px #39FF14, 0 0 25px rgba(57, 255, 20, 0.7); z-index: 12;" class="glitch-text">
-        RECLAIM
-    </p>
+    <!-- More text fragments -->
+    <p class="collage-element" style="
+        font-size: 0.9em;
+        top: 90%; left: 50%;
+        transform: translate(-50%, 0) rotate(5deg) scale(0.9);
+        white-space: nowrap;
+        opacity: 0.7;
+        z-index: 4;
+        font-family: 'Roboto Mono', monospace;
+    ">NATIVE RECONSTRUCTION PROTOCOL INITIATED</p>
 
-    <!-- Small, sharp text on the side -->
-    <p style="position: absolute; top: 5%; right: 5%; font-size: 0.9em; color: #AAA; text-transform: uppercase; transform: rotate(15deg); letter-spacing: 1px; z-index: 4;">
-        // CODE_FLUX
-    </p>
-
-    <!-- Overlay for subtle overall grime/texture (high-gloss grime) -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(
-        45deg,
-        rgba(0,0,0,0.1) 0px,
-        rgba(0,0,0,0.1) 1px,
-        transparent 1px,
-        transparent 3px
-    ); opacity: 0.1; pointer-events: none; z-index: 13;"></div>
+    <!-- Complex geometric element -->
+    <div class="collage-element" style="
+        width: clamp(60px, 10vw, 100px);
+        height: clamp(60px, 10vw, 100px);
+        background: linear-gradient(45deg, #0F0, #000);
+        border: 2px solid #0F0;
+        top: 30%; right: 10%;
+        transform: rotate(65deg) skewY(15deg) translateZ(25px) perspective(300px) rotateX(30deg);
+        opacity: 0.95;
+        z-index: 48;
+    "></div>
 
 </div>
 
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
