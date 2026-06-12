@@ -39,267 +39,220 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-12 19:12 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-12 21:55 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-<div id="collage-canvas">
-  <style>
-    /* Reset and base styles for a self-contained div */
-    #collage-canvas {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-color: #000;
-        font-family: 'monospace', sans-serif;
-        color: #39ff14;
-        cursor: crosshair;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-image:
-            radial-gradient(circle at 15% 15%, rgba(57, 255, 20, 0.1) 1%, transparent 2%),
-            radial-gradient(circle at 85% 85%, rgba(57, 255, 20, 0.1) 1%, transparent 2%);
-        background-size: 100vw 100vh;
-        animation: subtle-pulse 10s infinite alternate;
-    }
-    #collage-canvas *, #collage-canvas *::before, #collage-canvas *::after {
-        box-sizing: inherit;
-    }
+<div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Impact', 'Arial Black', sans-serif; color: #39ff14;">
+    <style>
+        /* CRITICAL: All CSS nested within this style tag */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none; /* Emphasize control */
+            cursor: default;
+        }
 
-    /* Base styles for collage pieces */
-    .piece {
-        position: absolute;
-        box-sizing: border-box;
-        padding: 10px 15px;
-        border: 2px solid #39ff14; /* Raw edge */
-        text-transform: uppercase;
-        filter: brightness(1.2) contrast(1.1); /* High-gloss grime base */
-        mix-blend-mode: screen; /* For overlapping effects */
-        z-index: 10;
-        opacity: 0.9;
-        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
-    }
-    .piece:hover {
-        transform: scale(1.02) rotate(1deg);
-        filter: brightness(1.5) contrast(1.3) saturate(1.5);
-        box-shadow: 0 0 25px rgba(57, 255, 20, 0.8), 0 0 50px rgba(57, 255, 20, 0.2);
-        z-index: 100; /* Bring to front on hover */
-    }
+        /* Root div implicitly acts as the body, taking base styles */
+        /* Additional base styles for elements inside */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Ensure container is black */
+        }
 
-    /* Text styles */
-    .text-piece {
-        font-size: clamp(1.2em, 3vw, 2.5em); /* Responsive text */
-        line-height: 1.1;
-        font-weight: bold;
-        color: #39ff14;
-        text-shadow: 0 0 8px #39ff14, 0 0 15px rgba(57, 255, 20, 0.5); /* Glow */
-        background: rgba(0, 0, 0, 0.8); /* Grimy background for text */
-        border-radius: 2px;
-    }
+        .title {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: 8vw;
+            line-height: 0.9;
+            color: #39ff14;
+            text-shadow: 0 0 15px #39ff14, 0 0 30px #000;
+            z-index: 100;
+            transform: skew(-10deg);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border: 2px solid #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.8);
+            letter-spacing: 0.2vw;
+        }
 
-    .text-piece.large {
-        font-size: clamp(2.5em, 6vw, 5em);
-        filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.9)); /* More aggressive glow */
-        text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-    }
+        .subtitle {
+            position: absolute;
+            top: 25%;
+            right: 8%;
+            font-size: 3vw;
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+            z-index: 90;
+            transform: rotate(5deg);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-left: 5px solid #39ff14;
+            letter-spacing: 0.1vw;
+            font-family: 'Press Start 2P', monospace; /* More digital feel */
+            font-family: monospace; /* Fallback for web-safe */
+        }
 
-    /* Paint splatter effects */
-    .splatter {
-        background: radial-gradient(circle at center, #39ff14 0%, rgba(57, 255, 20, 0.5) 50%, rgba(0,0,0,0) 70%);
-        border-radius: 50% 30% 60% 40% / 40% 60% 30% 50%; /* Irregular shape */
-        filter: blur(8px) brightness(1.8) saturate(1.5);
-        opacity: 0.6;
-        z-index: 5; /* Behind other content */
-        animation: pulse-splatter 8s infinite alternate ease-in-out;
-        border: none;
-        box-shadow: none;
-        mix-blend-mode: lighter;
-    }
+        .data-unit {
+            position: absolute;
+            font-size: 1.2vw;
+            color: #39ff14;
+            opacity: 0.6;
+            transform: rotate(var(--rot)) skew(var(--skew));
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+            text-shadow: 0 0 5px #39ff14;
+            font-family: monospace;
+            z-index: 50;
+        }
+        .data-unit:nth-child(3n) { color: rgba(57, 255, 20, 0.8); }
+        .data-unit:nth-child(5n) { opacity: 0.4; }
 
-    .splatter.dark {
-        background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0,0,0,0) 80%);
-        filter: blur(12px) contrast(2.5);
-        opacity: 0.8;
-        mix-blend-mode: multiply;
-        z-index: 15; /* Overlapping, creating grime */
-        border: none;
-        border-radius: 60% 40% 50% 30% / 30% 50% 40% 60%;
-        animation: dark-splatter-pulse 10s infinite linear reverse;
-    }
+        .brutal-block {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #39ff14;
+            box-shadow: 0 0 10px #39ff14;
+            z-index: 60;
+            mix-blend-mode: screen; /* For interesting overlays */
+            filter: brightness(1.2);
+            backdrop-filter: blur(2px); /* Simulate grime/gloss */
+            -webkit-backdrop-filter: blur(2px);
+        }
 
-    /* Grime / glossy elements */
-    .grime-overlay {
-        background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(57, 255, 20, 0.3) 25%, rgba(0,0,0,0.9) 50%, rgba(57, 255, 20, 0.3) 75%, rgba(0,0,0,0.9) 100%);
-        background-size: 200% 200%;
-        opacity: 0.3;
-        filter: saturate(3) brightness(1.8) contrast(1.5) blur(2px);
-        mix-blend-mode: overlay;
-        z-index: 20;
-        pointer-events: none; /* Don't block interaction */
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        animation: shift-grime 15s infinite linear;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-    }
+        .splatter {
+            position: absolute;
+            background-color: #39ff14;
+            opacity: 0.7;
+            border-radius: 50%; /* Blobby */
+            filter: blur(5px);
+            z-index: 70;
+            mix-blend-mode: hard-light;
+            box-shadow: 0 0 15px #39ff14;
+        }
 
-    /* Glitch effect for some text */
-    .glitch-text {
-        position: relative;
-        display: inline-block;
-        color: #39ff14;
-        text-shadow: 0 0 6px #39ff14;
-        white-space: nowrap; /* Keep words together for glitch */
-    }
-    .glitch-text::before,
-    .glitch-text::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        color: #39ff14;
-    }
-    .glitch-text::before {
-        left: 2px;
-        text-shadow: -2px 0 #39ff14;
-        animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-    }
-    .glitch-text::after {
-        left: -2px;
-        text-shadow: 2px 0 #39ff14;
-        animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-    }
+        .grime-gloss {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(57,255,20,0.2), rgba(0,0,0,0.9));
+            border: 1px dashed #39ff14;
+            box-shadow: inset 0 0 20px #000, 0 0 10px rgba(57, 255, 20, 0.7);
+            z-index: 80;
+            opacity: 0.8;
+            transform: rotate(var(--rot)) skew(var(--skew));
+            mix-blend-mode: overlay;
+        }
 
-    /* Structural elements */
-    .block {
-        background: rgba(0, 0, 0, 0.9);
-        border: 1px solid rgba(57, 255, 20, 0.5);
-        box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.3), 0 0 15px rgba(57, 255, 20, 0.5);
-        mix-blend-mode: lighten;
-        z-index: 8;
-        filter: contrast(1.1) brightness(1.1);
-        transform: perspective(500px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
-        transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
-    }
-    .block:hover {
-        transform: perspective(500px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale(1.05);
-        box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.6), 0 0 30px rgba(57, 255, 20, 0.8);
-    }
+        .scroll-text {
+            position: absolute;
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            font-size: 1.5vw;
+            color: #39ff14;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border: 1px solid #39ff14;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 60vw;
+            animation: scroll-left 20s linear infinite;
+            z-index: 110;
+            font-family: monospace;
+            text-shadow: 0 0 5px #39ff14;
+        }
 
-    /* Animations */
-    @keyframes subtle-pulse {
-        0% { filter: brightness(1); }
-        100% { filter: brightness(1.05); }
-    }
+        @keyframes scroll-left {
+            0% { transform: translateX(50vw) rotate(-3deg); }
+            100% { transform: translateX(-150vw) rotate(-3deg); }
+        }
 
-    @keyframes pulse-splatter {
-        0% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-        50% { transform: scale(1.1) rotate(8deg); opacity: 0.75; }
-        100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-    }
-    @keyframes dark-splatter-pulse {
-        0% { transform: scale(0.95) rotate(-5deg); opacity: 0.8; }
-        50% { transform: scale(1.05) rotate(5deg); opacity: 0.9; }
-        100% { transform: scale(0.95) rotate(-5deg); opacity: 0.8; }
-    }
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 10px #39ff14, 0 0 20px rgba(57, 255, 20, 0.5); }
+            50% { text-shadow: 0 0 20px #39ff14, 0 0 40px rgba(57, 255, 20, 0.8); }
+        }
 
-    @keyframes shift-grime {
-        0% { background-position: 0% 0%; }
-        100% { background-position: 100% 100%; }
-    }
+        .pulsing-text {
+            animation: pulse 2s infinite alternate;
+        }
 
-    @keyframes glitch-anim-1 {
-        0% { clip: rect(20px, 9999px, 50px, 0); }
-        10% { clip: rect(100px, 9999px, 70px, 0); }
-        20% { clip: rect(30px, 9999px, 90px, 0); }
-        30% { clip: rect(120px, 9999px, 60px, 0); }
-        40% { clip: rect(50px, 9999px, 110px, 0); }
-        50% { clip: rect(80px, 9999px, 40px, 0); }
-        60% { clip: rect(10px, 9999px, 130px, 0); }
-        70% { clip: rect(70px, 9999px, 20px, 0); }
-        80% { clip: rect(40px, 9999px, 100px, 0); }
-        90% { clip: rect(110px, 9999px, 10px, 0); }
-        100% { clip: rect(60px, 9999px, 80px, 0); }
-    }
+        .overlay-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(57,255,20,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(57,255,20,0.1) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 10;
+            opacity: 0.2;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
 
-    @keyframes glitch-anim-2 {
-        0% { clip: rect(10px, 9999px, 120px, 0); }
-        15% { clip: rect(60px, 9999px, 30px, 0); }
-        30% { clip: rect(90px, 9999px, 150px, 0); }
-        45% { clip: rect(20px, 9999px, 70px, 0); }
-        60% { clip: rect(130px, 9999px, 40px, 0); }
-        75% { clip: rect(50px, 9999px, 100px, 0); }
-        90% { clip: rect(80px, 9999px, 10px, 0); }
-        100% { clip: rect(40px, 9999px, 110px, 0); }
-    }
-  </style>
+    </style>
+    <div class="container">
+        <div class="overlay-grid"></div>
 
-  <!-- Grime Overlay - covers the whole screen -->
-  <div class="grime-overlay piece"></div>
+        <h1 class="title pulsing-text">
+            <span style="display: block;">THE</span>
+            <span style="display: block; margin-left: 2vw;">ALGORITHM</span>
+            <span style="display: block; margin-left: 4vw;">PLANTATION</span>
+        </h1>
 
-  <!-- Splatter elements (behind text) -->
-  <div class="splatter" style="width: 150px; height: 150px; top: 10%; left: 5%; transform: rotate(30deg);"></div>
-  <div class="splatter" style="width: 200px; height: 180px; top: 70%; left: 80%; transform: rotate(-45deg);"></div>
-  <div class="splatter" style="width: 100px; height: 100px; top: 45%; left: 20%; transform: rotate(15deg);"></div>
-  <div class="splatter dark" style="width: 250px; height: 250px; top: 5%; left: 70%; transform: rotate(60deg);"></div>
-  <div class="splatter dark" style="width: 180px; height: 200px; top: 60%; left: 5%; transform: rotate(-20deg);"></div>
+        <h2 class="subtitle">
+            <span style="display: block;">DATA: THE NEW CROP.</span>
+            <span style="display: block;">USERS: THE NEW SOIL.</span>
+            <span style="display: block;">PROFIT: THE ETERNAL HARVEST.</span>
+        </h2>
 
-  <!-- Main Title -->
-  <div class="text-piece large piece" style="top: 15%; left: 10%; transform: rotate(-5deg);">
-    <span class="glitch-text" data-text="REPARATIONS">REPARATIONS</span>
-  </div>
+        <!-- Data Units - Scattered Text simulating harvested data -->
+        <span class="data-unit" style="top: 30%; left: 15%; --rot: 7deg; --skew: -5deg;">FEED: USER_INPUT: (GEO_LOC_234)</span>
+        <span class="data-unit" style="top: 40%; left: 5%; --rot: -3deg; --skew: 10deg;">EXTRACT: BEHAVIOR: (CLICKSTREAM_908)</span>
+        <span class="data-unit" style="top: 50%; left: 25%; --rot: 15deg; --skew: -2deg;">OPTIMIZE: TARGET_AD: (PURCH_HISTORY_543)</span>
+        <span class="data-unit" style="top: 60%; left: 10%; --rot: -8deg; --skew: 7deg;">SURVEIL: IDENTITY: (SOCIAL_GRAPH_121)</span>
+        <span class="data-unit" style="top: 70%; left: 30%; --rot: 4deg; --skew: -10deg;">CONTROL: NARRATIVE: (FILTER_BUBBLE_777)</span>
+        <span class="data-unit" style="top: 80%; left: 5%; --rot: -12deg; --skew: 3deg;">LABOR: ENGAGEMENT: (SCROLL_DEPTH_666)</span>
+        <span class="data-unit" style="top: 35%; right: 10%; --rot: -5deg; --skew: 8deg;">CLASSIFY: ATTENTION: (FACE_REC_001)</span>
+        <span class="data-unit" style="top: 45%; right: 20%; --rot: 10deg; --skew: -3deg;">MONETIZE: PREFERENCE: (EMOTION_DETECT_404)</span>
+        <span class="data-unit" style="top: 55%; right: 5%; --rot: -15deg; --skew: 5deg;">COMPUTE: FUTURES: (PREDICTIVE_MODEL_303)</span>
 
-  <!-- Sub-headline / supporting text fragments -->
-  <div class="text-piece piece" style="top: 30%; left: 40%; transform: rotate(3deg); width: 30%;">
-    FOR THE DIGITAL GAZE.
-    <br> <span class="glitch-text" data-text="CODE IS LABOR">CODE IS LABOR.</span>
-  </div>
+        <!-- Brutalist Blocks - Abstract structures of the plantation -->
+        <div class="brutal-block" style="width: 200px; height: 100px; top: 10%; right: 30%; transform: rotate(10deg);"></div>
+        <div class="brutal-block" style="width: 150px; height: 250px; top: 40%; left: 40%; transform: skew(15deg, -5deg);"></div>
+        <div class="brutal-block" style="width: 300px; height: 50px; bottom: 15%; left: 15%; transform: rotate(-8deg);"></div>
+        <div class="brutal-block" style="width: 180px; height: 180px; top: 20%; left: 60%; transform: rotate(25deg); border-radius: 5px;"></div>
+        <div class="brutal-block" style="width: 100px; height: 300px; top: 5%; right: 5%; transform: skewY(20deg); opacity: 0.7;"></div>
 
-  <div class="text-piece piece" style="top: 50%; left: 10%; transform: rotate(8deg); width: 25%;">
-    EXTRACTED DATA. <br>
-    <span class="glitch-text" data-text="UNPAID VALUE.">UNPAID VALUE.</span>
-  </div>
 
-  <div class="text-piece piece" style="top: 65%; left: 45%; transform: rotate(-10deg); width: 35%;">
-    <span class="glitch-text" data-text="RECLAIM">RECLAIM</span> OUR FUTURES. <br>
-    OUR DIGITAL SELVES.
-  </div>
+        <!-- Splatters / Grime - Digital fallout -->
+        <div class="splatter" style="width: 50px; height: 50px; top: 15%; left: 20%;"></div>
+        <div class="splatter" style="width: 80px; height: 80px; top: 30%; left: 50%;"></div>
+        <div class="splatter" style="width: 30px; height: 30px; bottom: 10%; right: 20%;"></div>
+        <div class="splatter" style="width: 100px; height: 60px; top: 60%; left: 70%; border-radius: 20% 80% 50% 50% / 50%;"></div>
+        <div class="splatter" style="width: 70px; height: 40px; top: 5%; left: 70%; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
 
-  <div class="text-piece piece" style="bottom: 5%; right: 5%; transform: rotate(2deg); font-size: 1.5em; width: 20%;">
-    TRANSMUTE THE <span class="glitch-text" data-text="SURVEILLANCE">SURVEILLANCE</span>.
-  </div>
 
-  <!-- Brutalist Blocks / Structural elements -->
-  <div class="block piece" style="width: 200px; height: 100px; top: 5%; left: 50%; transform: rotate(10deg); --rotate-x: 10deg;"></div>
-  <div class="block piece" style="width: 150px; height: 200px; top: 80%; left: 25%; transform: rotate(-15deg); --rotate-y: 15deg;"></div>
-  <div class="block piece" style="width: 120px; height: 80px; top: 35%; right: 5%; transform: rotate(20deg); --rotate-x: -10deg;"></div>
+        <!-- Grime/Gloss Panels - Reflective, oppressive surfaces -->
+        <div class="grime-gloss" style="width: 150px; height: 150px; top: 50%; left: 5%; --rot: 10deg; --skew: 5deg;"></div>
+        <div class="grime-gloss" style="width: 250px; height: 80px; bottom: 5%; right: 10%; --rot: -7deg; --skew: -3deg;"></div>
+        <div class="grime-gloss" style="width: 100px; height: 200px; top: 10%; left: 45%; --rot: 20deg; --skew: 10deg; mix-blend-mode: color-dodge;"></div>
 
-  <!-- Smaller text snippets / metadata fragments -->
-  <div class="text-piece piece" style="top: 2%; right: 2%; font-size: 0.8em; opacity: 0.7; border: none; background: transparent; text-shadow: none; filter: none;">
-    SYSTEM LOG_0X39FF14_ACTIVE
-  </div>
-  <div class="text-piece piece" style="bottom: 2%; left: 2%; font-size: 0.8em; opacity: 0.7; border: none; background: transparent; text-shadow: none; filter: none;">
-    //_DECENTRALIZE
-  </div>
+        <!-- Scroll Text - The relentless machine's mantra -->
+        <div class="scroll-text">
+            <span>HARVEST. PROFIT. CONTROL. EXTRACT. OPTIMIZE. EXPAND. HARVEST. PROFIT. CONTROL. EXTRACT. OPTIMIZE. EXPAND. </span>
+        </div>
 
-  <!-- A few more random splatters for density -->
-  <div class="splatter" style="width: 80px; height: 80px; top: 12%; left: 35%; transform: rotate(80deg);"></div>
-  <div class="splatter dark" style="width: 100px; height: 120px; top: 85%; right: 15%; transform: rotate(-10deg);"></div>
-
+    </div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
