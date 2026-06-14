@@ -39,266 +39,236 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-14 00:15 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-14 05:57 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
             <div class="art-container p-4">
-<div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Press Start 2P', monospace; color: #39ff14; text-transform: uppercase;">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+<div id="antiZionistGlitchCollage">
+    <style>
+        /* CRITICAL: Ensure fonts are available for best brutalist effect. Using system defaults if not. */
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
 
-.algo-plantation-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #000;
-    color: #39ff14;
-    font-family: 'Press Start 2P', monospace;
-    text-transform: uppercase;
-}
+        /* General container for the collage */
+        #antiZionistGlitchCollage {
+            font-family: 'IBM Plex Mono', monospace, sans-serif;
+            background-color: #000;
+            color: #39ff14;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Crucial for containing absolute elements */
+            position: relative; /* Context for absolutely positioned children */
+            box-sizing: border-box; /* Include padding/border in element's total width/height */
+            display: block; /* Ensure it behaves as a block */
+        }
 
-.brutal-text {
-    position: absolute;
-    font-size: clamp(0.8em, 4vw, 3em);
-    padding: 5px 10px;
-    border: 2px solid #39ff14;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 15px #39ff14, inset 0 0 5px #39ff14;
-    text-shadow: 0 0 8px #39ff14;
-    z-index: 10;
-}
+        /* Base styles for glitchy text elements */
+        .glitch-text {
+            position: absolute;
+            font-size: clamp(2em, 8vw, 6em); /* Responsive font size */
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            text-shadow:
+                -1px -1px 0 #39ff14,
+                1px 1px 0 #000,
+                2px 2px 0 rgba(57, 255, 20, 0.5); /* Layered shadow for depth/glitch */
+            animation: flicker 1s infinite alternate; /* Subtle flicker */
+            z-index: 10;
+            user-select: none; /* Prevent text selection */
+            pointer-events: none; /* Make element pass-through for interactions */
+            mix-blend-mode: lighten; /* Interesting blend effect */
+        }
 
-.splatter {
-    position: absolute;
-    background-color: #39ff14;
-    border-radius: 50%;
-    filter: blur(2px);
-    opacity: 0.7;
-    z-index: 5;
-    box-shadow: 0 0 15px 5px #39ff14;
-}
+        /* Positioning and transformations for individual text elements */
+        .glitch-text:nth-child(2) { top: 5%; left: 5%; transform: rotate(-8deg); }
+        .glitch-text:nth-child(3) { top: 15%; right: 10%; font-size: clamp(1.5em, 6vw, 4em); transform: skewX(-15deg); }
+        .glitch-text:nth-child(4) { bottom: 20%; left: 15%; transform: rotate(5deg); }
+        .glitch-text:nth-child(5) { top: 40%; left: 30%; font-size: clamp(2.5em, 10vw, 8em); transform: scale(1.1) rotate(2deg); opacity: 0.8; }
+        .glitch-text:nth-child(6) { bottom: 5%; right: 5%; font-size: clamp(1em, 5vw, 3em); transform: rotate(-12deg) skewY(5deg); letter-spacing: 0.1em; }
 
-.grime-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(57, 255, 20, 0.05),
-        rgba(57, 255, 20, 0.05) 10px,
-        rgba(0, 0, 0, 0.1) 10px,
-        rgba(0, 0, 0, 0.1) 20px
-    ),
-    linear-gradient(
-        to bottom right,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.2) 50%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
-    mix-blend-mode: screen;
-    z-index: 100;
-    pointer-events: none;
-    opacity: 0.7;
-}
+        /* Glitch text animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: -1px -1px 0 #39ff14, 1px 1px 0 #000; }
+            20%, 24%, 55% { opacity: 0.8; text-shadow: 2px 2px 0 #39ff14, -2px -2px 0 #000; }
+            50% { opacity: 0.9; text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; }
+        }
 
-.data-stream {
-    position: absolute;
-    font-size: clamp(0.5em, 1.5vw, 1em);
-    color: #39ff14;
-    white-space: nowrap;
-    overflow: hidden;
-    border-left: 1px solid #39ff14;
-    padding-left: 5px;
-    background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 0 3px #39ff14;
-    text-shadow: 0 0 5px #39ff14;
-    z-index: 8;
-}
+        /* Digital paint splatters / Grime elements */
+        .splatter {
+            position: absolute;
+            background-color: #39ff14;
+            border-radius: 50%; /* Default blob shape */
+            opacity: 0.7;
+            filter: blur(5px) contrast(1.5); /* Blurry, high-contrast effect for grime */
+            z-index: 5;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.7), inset 0 0 10px rgba(0, 0, 0, 0.5); /* High-gloss effect */
+            animation: pulse-splatter 3s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
 
-.panel {
-    position: absolute;
-    background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(57,255,20,0.1), rgba(0,0,0,0.9));
-    border: 3px solid #39ff14;
-    box-shadow: 0 0 20px #39ff14, inset 0 0 10px #39ff14;
-    z-index: 15;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-}
+        /* Custom shapes, positions, and gradients for splatters */
+        .splatter:nth-child(7) { width: 120px; height: 100px; top: 10%; left: 40%; border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%; transform: rotate(20deg); }
+        .splatter:nth-child(8) { width: 80px; height: 150px; bottom: 30%; right: 20%; border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%; background: linear-gradient(45deg, #39ff14, #000); opacity: 0.9; transform: rotate(-30deg); }
+        .splatter:nth-child(9) { width: 180px; height: 90px; top: 60%; left: 5%; border-radius: 50% 50% 80% 20% / 20% 80% 50% 50%; background: #000; opacity: 0.6; box-shadow: 0 0 15px #39ff14; transform: rotate(10deg); z-index: 15;} /* Black splatter with green glow */
+        .splatter:nth-child(10) { width: 70px; height: 70px; top: 25%; left: 70%; border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%; background-color: #39ff14; opacity: 0.8; filter: blur(3px) brightness(1.2); }
+        .splatter:nth-child(11) { width: 100px; height: 100px; bottom: 10%; left: 45%; border-radius: 50% 80% 50% 80% / 80% 50% 80% 50%; background: linear-gradient(135deg, #000, #39ff14); opacity: 0.7; transform: rotate(-50deg); }
 
-.panel h2 {
-    font-size: clamp(0.7em, 2vw, 1.5em);
-    margin-bottom: 5px;
-    text-shadow: 0 0 5px #39ff14;
-}
+        /* Splatter pulsation animation */
+        @keyframes pulse-splatter {
+            0% { transform: scale(1) rotate(var(--initial-rotation, 0deg)); opacity: 0.7; }
+            50% { transform: scale(1.05) rotate(calc(var(--initial-rotation, 0deg) + 5deg)); opacity: 0.8; }
+            100% { transform: scale(1) rotate(var(--initial-rotation, 0deg)); opacity: 0.7; }
+        }
+        /* Setting initial rotation for splatter animations */
+        .splatter:nth-child(7) { --initial-rotation: 20deg; }
+        .splatter:nth-child(8) { --initial-rotation: -30deg; }
+        .splatter:nth-child(9) { --initial-rotation: 10deg; }
+        .splatter:nth-child(10) { --initial-rotation: 0deg; }
+        .splatter:nth-child(11) { --initial-rotation: -50deg; }
 
-.panel p {
-    font-size: clamp(0.4em, 1vw, 0.8em);
-    line-height: 1.2;
-}
+        /* Additional graphic elements - shards/lines */
+        .shard {
+            position: absolute;
+            background-color: #39ff14;
+            opacity: 0.9;
+            z-index: 8;
+            transform-origin: center;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+            pointer-events: none;
+        }
 
-.title-main {
-    font-size: clamp(1.5em, 8vw, 6em);
-    font-weight: bold;
-    color: #39ff14;
-    text-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
-    z-index: 20;
-    line-height: 0.9;
-    text-align: center;
-    width: 90%;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
-    border-top: 5px double #39ff14;
-    border-bottom: 5px double #39ff14;
-}
+        /* Shard specific styling */
+        .shard:nth-child(12) { width: 5px; height: 100px; top: 0; left: 50%; transform: rotate(45deg); animation: shard-move 4s infinite alternate ease-in-out; }
+        .shard:nth-child(13) { width: 3px; height: 70px; bottom: 0; right: 30%; transform: rotate(-20deg); animation: shard-move 3s infinite alternate reverse ease-in-out; background-color: #000; border: 1px solid #39ff14; }
+        .shard:nth-child(14) { width: 10px; height: 120px; top: 30%; left: 10%; transform: rotate(70deg); opacity: 0.7; background: linear-gradient(to bottom, #39ff14, transparent); }
 
-.cracked-grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        linear-gradient(0deg, transparent 1px, #39ff14 1px),
-        linear-gradient(90deg, transparent 1px, #39ff14 1px);
-    background-size: 50px 50px;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 1;
-}
+        /* Shard movement animation */
+        @keyframes shard-move {
+            0% { transform: translate(0, 0) rotate(var(--initial-rotation, 0deg)); }
+            100% { transform: translate(10px, 10px) rotate(calc(var(--initial-rotation, 0deg) + 10deg)); }
+        }
+        /* Setting initial rotation for shard animations */
+        .shard:nth-child(12) { --initial-rotation: 45deg; }
+        .shard:nth-child(13) { --initial-rotation: -20deg; }
+        .shard:nth-child(14) { --initial-rotation: 70deg; }
 
-.cracked-grid::before, .cracked-grid::after {
-    content: '';
-    position: absolute;
-    background-color: #39ff14;
-    opacity: 0.1;
-    transform: rotate(45deg);
-}
-.cracked-grid::before {
-    width: 150%;
-    height: 3px;
-    top: 30%;
-    left: -25%;
-}
-.cracked-grid::after {
-    width: 150%;
-    height: 2px;
-    top: 70%;
-    left: -25%;
-    transform: rotate(-30deg);
-}
+        /* Overlay for overall grime/noise texture */
+        #glitchOverlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            /* Embedded SVG for a subtle pixelated noise pattern */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="2" height="2" x="0" y="0" fill="%2339ff14" opacity="0.1"/><rect width="2" height="2" x="2" y="2" fill="%23000" opacity="0.1"/></svg>');
+            background-size: 4px 4px;
+            opacity: 0.1;
+            mix-blend-mode: overlay; /* Creates interesting texture with underlying elements */
+            pointer-events: none;
+            z-index: 20;
+            animation: noise-shift 0.5s infinite alternate;
+        }
 
-.code-field {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(0,0,0,0.8),
-        rgba(0,0,0,0.8) 5px,
-        rgba(57,255,20,0.05) 5px,
-        rgba(57,255,20,0.05) 10px
-    );
-    border: 1px solid #39ff14;
-    box-shadow: inset 0 0 5px #39ff14;
-    z-index: 2;
-}
+        /* Noise animation */
+        @keyframes noise-shift {
+            0% { background-position: 0 0; }
+            100% { background-position: 4px 4px; }
+        }
 
-/* Animations for subtle dynamism */
-@keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        box-shadow: 0 0 15px #39ff14, inset 0 0 5px #39ff14;
-    }
-    20%, 24%, 55% {
-        box-shadow: 0 0 5px #39ff14, inset 0 0 2px #39ff14;
-    }
-}
+        /* Brutalist frame/border elements */
+        .frame-edge {
+            position: absolute;
+            background-color: #39ff14;
+            z-index: 1;
+            opacity: 0.5;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+            pointer-events: none;
+        }
+        .frame-edge:nth-child(15) { top: 0; left: 0; width: 20px; height: 100%; transform: skewY(5deg); }
+        .frame-edge:nth-child(16) { top: 0; right: 0; width: 20px; height: 100%; transform: skewY(-5deg); }
+        .frame-edge:nth-child(17) { top: 0; left: 0; height: 20px; width: 100%; transform: skewX(-3deg); }
+        .frame-edge:nth-child(18) { bottom: 0; left: 0; height: 20px; width: 100%; transform: skewX(3deg); }
 
-@keyframes glitch {
-    0% { transform: translate(0, 0); opacity: 1; }
-    20% { transform: translate(-2px, 2px); opacity: 0.9; }
-    40% { transform: translate(3px, -1px); opacity: 1; }
-    60% { transform: translate(-1px, 3px); opacity: 0.8; }
-    80% { transform: translate(2px, -2px); opacity: 1; }
-    100% { transform: translate(0, 0); opacity: 0.95; }
-}
+        /* Additional, more fragmented text/code elements */
+        .fragmented-code {
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            font-size: clamp(0.6em, 2vw, 0.9em);
+            color: rgba(57, 255, 20, 0.7);
+            letter-spacing: 0.1em;
+            word-break: break-all; /* For a messy, code-like break */
+            line-height: 1.2;
+            white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
+            z-index: 12;
+            opacity: 0.6;
+            animation: code-flicker 2s infinite alternate;
+            user-select: none;
+            pointer-events: none;
+        }
+        .fragmented-code:nth-child(19) { top: 10%; right: 2%; transform: rotate(15deg); width: 15%; font-size: clamp(0.5em, 1.5vw, 0.7em); }
+        .fragmented-code:nth-child(20) { bottom: 5%; left: 5%; transform: rotate(-10deg); width: 20%; font-size: clamp(0.7em, 2.5vw, 0.9em); }
 
-.brutal-text, .panel {
-    animation: flicker 4s infinite alternate;
-}
+        /* Code flicker animation */
+        @keyframes code-flicker {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.8; color: #39ff14; }
+        }
 
-.title-main {
-    animation: glitch 10s infinite steps(10);
-}
+    </style>
 
-</style>
+    <!-- Glitchy text elements -->
+    <div class="glitch-text">ANTI-ZION</div>
+    <div class="glitch-text">GLITCH//</div>
+    <div class="glitch-text">THEORY</div>
+    <div class="glitch-text">UN-SETTLE</div>
+    <div class="glitch-text">DECOLONIZE</div>
+    <div class="glitch-text">PALESTINE // NOW</div>
 
-<div class="algo-plantation-container">
+    <!-- Digital paint splatters / Grime elements -->
+    <div class="splatter"></div>
+    <div class="splatter"></div>
+    <div class="splatter"></div>
+    <div class="splatter"></div>
+    <div class="splatter"></div>
 
-    <div class="cracked-grid"></div>
+    <!-- Shards / Lines -->
+    <div class="shard"></div>
+    <div class="shard"></div>
+    <div class="shard"></div>
 
-    <div class="code-field" style="top: 10%; left: 5%; width: 120px; height: 80px;"></div>
-    <div class="code-field" style="top: 25%; right: 10%; width: 90px; height: 110px; transform: rotate(10deg);"></div>
-    <div class="code-field" style="bottom: 5%; left: 20%; width: 150px; height: 70px; transform: rotate(-5deg);"></div>
-    <div class="code-field" style="top: 60%; left: 0%; width: 80px; height: 130px; transform: rotate(20deg);"></div>
-    <div class="code-field" style="bottom: 15%; right: 2%; width: 100px; height: 90px;"></div>
-    <div class="code-field" style="top: 0%; left: 40%; width: 70px; height: 120px; transform: rotate(-15deg);"></div>
+    <!-- Brutalist frame elements (background) -->
+    <div class="frame-edge"></div>
+    <div class="frame-edge"></div>
+    <div class="frame-edge"></div>
+    <div class="frame-edge"></div>
 
-    <div class="splatter" style="width: 80px; height: 80px; top: 15%; left: 30%;"></div>
-    <div class="splatter" style="width: 50px; height: 50px; top: 5%; right: 15%; transform: rotate(45deg);"></div>
-    <div class="splatter" style="width: 120px; height: 120px; bottom: 10%; left: 5%;"></div>
-    <div class="splatter" style="width: 60px; height: 60px; top: 70%; right: 25%; filter: blur(3px);"></div>
-    <div class="splatter" style="width: 40px; height: 40px; top: 40%; left: 10%; transform: rotate(-30deg); opacity: 0.5;"></div>
-    <div class="splatter" style="width: 90px; height: 90px; bottom: 30%; right: 10%; opacity: 0.8; box-shadow: 0 0 20px 8px #39ff14;"></div>
-
-    <h1 class="brutal-text title-main">
-        THE ALGORITHM PLANTATION<br>
-        DATA COLONIALISM
-    </h1>
-
-    <p class="brutal-text" style="top: 5%; left: 5%; transform: rotate(-8deg);">SURVEILLANCE CROP</p>
-    <p class="brutal-text" style="top: 15%; right: 8%; transform: rotate(15deg); font-size: clamp(0.6em, 3vw, 2em);">YIELD OPTIMIZED</p>
-    <p class="brutal-text" style="bottom: 10%; left: 15%; transform: rotate(5deg); font-size: clamp(0.7em, 3.5vw, 2.5em);">DIGITAL LABOR</p>
-    <p class="brutal-text" style="bottom: 5%; right: 5%; transform: rotate(-12deg);">EXTRACTION PROTOCOL</p>
-    <p class="brutal-text" style="top: 35%; left: 2%; width: 200px; padding: 3px;">CODE OVERSEER</p>
-    <p class="brutal-text" style="top: 60%; right: 3%; width: 180px; padding: 3px; border-style: dotted;">PREDICTIVE HARVEST</p>
-
-    <div class="data-stream" style="top: 1%; left: 1%; width: 300px; height: 20px; transform: skewX(-20deg);">
-        0010101010 DATA ACQUIRED 1101010100
+    <!-- Fragmented code/text elements -->
+    <div class="fragmented-code">
+        ERROR
+        404:
+        LEGITIMACY
+        NOT FOUND
+        //SYSTEM_OVERRIDE
+        #FREE_PALESTINE
+        #CODE_CRACK
+        //SOLIDARITY
+        X01G_4M3
     </div>
-    <div class="data-stream" style="top: 80%; left: 30%; width: 400px; height: 25px; transform: skewX(10deg);">
-        RESOURCE EXPLOITED 1000111010 YIELD CALCULATED 01010101
-    </div>
-    <div class="data-stream" style="top: 15%; left: 50%; width: 250px; height: 18px; transform: skewY(5deg);">
-        CONTROL FLOW ESTABLISHED 11010110
+    <div class="fragmented-code">
+        //INIT
+        BREAKDOWN
+        ::ZIONIST_LOGIC_FAULT
+        >>>
+        TRUTH_REVEALED
+        >>
+        DECOLONIZE();
+        >>>
+        RESET_WORLD_ORDER
     </div>
 
-    <div class="panel" style="width: 250px; height: 150px; top: 20%; left: 15%; transform: rotate(-10deg);">
-        <h2>LABOR AUTOMATION</h2>
-        <p>PROCESS STREAMLINED</p>
-        <p>COMPLIANCE METRICS AT 99.8%</p>
-    </div>
-
-    <div class="panel" style="width: 200px; height: 100px; bottom: 20%; right: 15%; transform: rotate(8deg);">
-        <h2>RESOURCE MONITORED</h2>
-        <p>FEEDBACK LOOP ACTIVE</p>
-    </div>
-
-    <div class="panel" style="width: 180px; height: 80px; top: 5%; left: 70%; transform: rotate(20deg); background: linear-gradient(45deg, rgba(57,255,20,0.2), rgba(0,0,0,0.9));">
-        <h2>CONSENT BYPASS</h2>
-    </div>
-
-    <div class="grime-overlay"></div>
-
-</div>
+    <!-- Overall noise/grime overlay -->
+    <div id="glitchOverlay"></div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
+                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
