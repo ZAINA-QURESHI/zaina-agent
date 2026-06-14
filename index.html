@@ -39,234 +39,376 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-14 09:51 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-14 12:03 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
-<div style="width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Impact', 'Arial Black', sans-serif; position: relative; color: #39ff14; text-transform: uppercase; margin: 0; padding: 0; box-sizing: border-box;">
+<div class="collage-container">
     <style>
-        .collage-element {
-            position: absolute;
-            box-sizing: border-box;
-            padding: 5px;
-            line-height: 1.1;
-            mix-blend-mode: screen; /* For layering effects */
-            pointer-events: none; /* Make most elements unclickable for visual effect */
-            user-select: none; /* Prevent text selection */
-        }
-
-        .text-block {
-            font-size: clamp(1em, 5vw, 4em); /* Responsive font size */
-            font-weight: bold;
-            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* Neon glow */
-            letter-spacing: 1px;
-            word-break: break-all; /* For glitch effect */
-            background-color: rgba(0,0,0,0.5); /* Semi-transparent black block behind text */
-            border: 1px solid #39ff14;
-            padding: 5px;
-        }
-
-        .splatter {
-            background: radial-gradient(circle at 30% 30%, #39ff14cc, #00000000); /* Glossy splatter */
-            border-radius: 50%;
-            filter: blur(5px) brightness(150%);
-            opacity: 0.7;
-            box-shadow: 0 0 20px #39ff14;
-            mix-blend-mode: screen;
-            width: clamp(100px, 20vw, 300px); /* Responsive sizing */
-            height: clamp(100px, 20vw, 300px);
-        }
-
-        /* Specific element styling */
-        #title-main {
-            top: 8%; left: 5%;
-            font-size: clamp(2.5em, 8vw, 7em);
-            color: #39ff14;
-            z-index: 100;
-            transform: skew(-10deg) rotate(-3deg);
-            text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14, 0 0 45px rgba(0,0,0,0.8);
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        .collage-container {
             background-color: #000;
-            border: 3px solid #39ff14;
-            padding: 15px 20px;
-            mix-blend-mode: normal; /* Override screen blend for title */
-        }
-
-        #subtitle-gaze {
-            bottom: 12%; right: 8%;
-            font-size: clamp(1.5em, 4vw, 3em);
             color: #39ff14;
-            z-index: 90;
-            transform: rotate(5deg) scale(0.9);
-            opacity: 0.9;
-            background-color: rgba(0,0,0,0.7);
-            padding: 10px 15px;
-            border: 2px dashed #39ff14;
-            box-shadow: 0 0 10px #39ff14;
-            letter-spacing: 2px;
-        }
-
-        #reclaim-block {
-            top: 35%; left: 35%;
-            font-size: clamp(1em, 3vw, 2.5em);
-            color: #000;
-            background-color: #39ff14;
-            padding: 10px 15px;
-            z-index: 110;
-            transform: rotate(-15deg) skew(5deg) scale(1.1);
-            box-shadow: 0 0 25px #39ff14, inset 0 0 8px #000;
-            filter: contrast(180%) brightness(120%);
-            mix-blend-mode: normal;
-            border: 2px solid #000;
-        }
-
-        #data-noise {
-            top: 20%; right: 5%;
-            width: 30%; height: 20%;
-            background-color: rgba(0,0,0,0.8);
-            border: 2px solid #39ff14;
-            box-shadow: 0 0 15px #39ff14;
-            transform: rotate(10deg);
-            z-index: 80;
+            font-family: 'Press Start 2P', monospace;
+            min-height: 100vh;
             overflow: hidden;
-            font-family: monospace; /* Specific font for data */
-            font-size: clamp(0.7em, 1.5vw, 1em);
-            color: #39ff14;
-            padding: 10px;
-            letter-spacing: 0.5px;
-            text-align: justify;
+            position: relative;
+            width: 100vw;
+            box-sizing: border-box;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: none;
+            image-rendering: pixelated;
+            cursor: crosshair;
+        }
+
+        h1, h2, h3, p, span, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.1;
+            text-transform: uppercase;
             word-wrap: break-word;
-            opacity: 0.6;
-            filter: blur(0.5px);
-            line-height: 1.2;
-        }
-        #data-noise span {
-            display: block;
-            margin-bottom: 3px;
-            background: linear-gradient(to right, #39ff14, transparent);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent; /* Use transparent text color with background-clip */
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: clip;
-            text-transform: none; /* Data isn't necessarily uppercase */
+            text-shadow: 0 0 3px #39ff14;
         }
 
-        #splatter-large {
-            top: 15%; left: 45%;
-            transform: rotate(60deg) scale(1.5);
-            width: clamp(200px, 30vw, 400px);
-            height: clamp(200px, 30vw, 400px);
-            filter: blur(8px) brightness(180%);
-            opacity: 0.6;
-            z-index: 50;
+        .hacked-text {
+            font-size: clamp(1.2em, 5vw, 4em);
+            font-weight: 900;
+            position: absolute;
+            z-index: 10;
+            border: 2px solid #39ff14;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 12px #39ff14, inset 0 0 6px rgba(57, 255, 20, 0.6);
+            filter: drop-shadow(0 0 5px #39ff14);
         }
 
-        #splatter-medium {
-            bottom: 5%; left: 30%;
-            transform: rotate(-40deg) scale(0.8);
-            width: clamp(150px, 25vw, 350px);
-            height: clamp(150px, 25vw, 350px);
-            filter: blur(4px) brightness(130%);
-            opacity: 0.8;
-            z-index: 60;
-            background: radial-gradient(ellipse at 70% 70%, #39ff14ee, #00000000); /* More defined */
+        .hacked-text:nth-of-type(1) {
+            transform: rotate(-7deg);
+            left: 5%;
+            top: 8%;
         }
 
-        #splatter-small {
-            top: 50%; right: 5%;
-            transform: rotate(20deg) scale(0.7);
-            width: clamp(80px, 15vw, 200px);
-            height: clamp(80px, 15vw, 200px);
-            filter: blur(3px) brightness(160%);
+        .hacked-text:nth-of-type(2) {
+            transform: rotate(4deg);
+            right: 8%;
+            top: 28%;
+            font-size: clamp(1em, 4vw, 3em);
+            border-style: dashed;
             opacity: 0.9;
-            z-index: 70;
+        }
+        .hacked-text:nth-of-type(3) {
+            transform: rotate(12deg);
+            bottom: 5%;
+            left: 20%;
+            font-size: clamp(0.8em, 3vw, 2.5em);
+            border-style: dotted;
+            opacity: 0.8;
+            filter: blur(1px) contrast(150%);
         }
 
-        #overlay-grid {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image:
-                linear-gradient(to right, rgba(57, 255, 20, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 1;
-            pointer-events: none;
-            opacity: 0.1;
-        }
-
-        #bottom-strip {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            height: 30px;
-            background-color: #39ff14;
-            z-index: 200;
+        /* Digital Paint Splatter / Grime */
+        .splatter {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            filter: blur(5px);
             mix-blend-mode: screen;
-            opacity: 0.8;
+            pointer-events: none;
             box-shadow: 0 0 20px #39ff14;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        #bottom-strip span {
-            display: inline-block; /* Changed to inline-block for continuous scroll */
-            color: #000;
-            font-size: 1.2em;
-            letter-spacing: 3px;
-            padding-right: 20px; /* Space between repeating text */
-            animation: scroll-text 15s linear infinite;
-        }
-        @keyframes scroll-text {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
         }
 
-        #corner-glitch {
-            position: fixed;
-            top: -10px; left: -10px;
-            width: 100px; height: 100px;
-            background: linear-gradient(45deg, #39ff14 0%, #39ff14 50%, #000 50%, #000 100%);
-            transform: rotate(45deg);
-            z-index: 150;
+        .splatter-1 {
+            width: 150px; height: 150px;
+            top: 5%; left: 70%;
+            transform: rotate(20deg) scaleX(0.8);
+            background: radial-gradient(circle at 30% 30%, #39ff14 0%, rgba(57, 255, 20, 0) 70%);
+            opacity: 0.3;
+            filter: blur(8px);
+        }
+        .splatter-2 {
+            width: 200px; height: 100px;
+            top: 40%; left: 10%;
+            transform: rotate(-30deg) scaleY(0.7);
+            background: radial-gradient(ellipse at center, #39ff14 0%, rgba(57, 255, 20, 0) 60%);
+            opacity: 0.2;
+            filter: blur(10px);
+        }
+        .splatter-3 {
+            width: 80px; height: 80px;
+            bottom: 10%; right: 20%;
+            transform: rotate(90deg) scale(1.2);
+            background: conic-gradient(from 0deg at 50% 50%, rgba(57, 255, 20, 0.5) 0deg, rgba(57, 255, 20, 0) 90deg);
+            opacity: 0.4;
+            filter: blur(3px);
+            border-radius: 0;
+            box-shadow: none;
+            border-left: 5px solid #39ff14;
+            border-bottom: 5px solid #39ff14;
+            background: none;
+        }
+        .splatter-4 {
+            width: 120px; height: 120px;
+            top: 60%; left: 50%;
+            transform: translate(-50%, -50%) rotate(15deg);
+            background: radial-gradient(circle at 70% 70%, #39ff14 0%, rgba(57, 255, 20, 0) 80%);
+            opacity: 0.25;
+            filter: blur(6px);
+        }
+
+        .text-module {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid #39ff14;
+            padding: 8px 12px;
+            font-size: 0.8em;
+            color: #39ff14;
+            box-shadow: 0 0 8px #39ff14;
+            z-index: 5;
+            filter: drop-shadow(0 0 3px #39ff14);
+            max-width: 400px;
+        }
+
+        .text-module:nth-of-type(1) {
+            top: 20%;
+            left: 55%;
+            transform: rotate(8deg);
+            width: 250px;
+            max-width: 40vw;
+        }
+
+        .text-module:nth-of-type(2) {
+            bottom: 8%;
+            left: 5%;
+            transform: rotate(-12deg);
+            width: 300px;
+            max-width: 50vw;
+            border-width: 3px;
+            border-style: dotted;
+            font-size: 0.7em;
+        }
+        .text-module:nth-of-type(3) {
+            top: 50%;
+            right: 5%;
+            transform: rotate(2deg);
+            width: 180px;
+            max-width: 30vw;
+            font-size: 0.9em;
+            text-align: right;
+            border-style: double;
             opacity: 0.8;
-            box-shadow: 0 0 25px #39ff14;
+            filter: hue-rotate(90deg) blur(0.5px);
+        }
+
+        /* Broken Grid / Artifacts */
+        .artifact {
+            position: absolute;
+            background-color: rgba(57, 255, 20, 0.1);
+            border: 1px dashed #39ff14;
+            box-shadow: inset 0 0 5px #39ff14;
+            z-index: 2;
             pointer-events: none;
         }
+
+        .artifact-1 {
+            width: 20vw; height: 10vh;
+            top: 0; left: 30%;
+            transform: skewX(-20deg);
+            background-color: rgba(57, 255, 20, 0.05);
+            border-top: none;
+            mix-blend-mode: color-dodge;
+        }
+        .artifact-2 {
+            width: 15vw; height: 18vh;
+            bottom: 0; right: 0;
+            transform: skewY(15deg);
+            background-color: rgba(57, 255, 20, 0.07);
+            border-right: none;
+            border-bottom: none;
+            mix-blend-mode: lighten;
+        }
+        .artifact-3 {
+            width: 100px; height: 100px;
+            top: 50%; left: 0;
+            transform: translateY(-50%) rotate(45deg);
+            border: 2px solid #39ff14;
+            opacity: 0.6;
+            background: linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(57, 255, 20, 0.2));
+            box-shadow: 0 0 15px #39ff14;
+        }
+
+        /* Glitch / Scanline effect */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14;
+            animation: glitch 0.8s infinite alternate step-end;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px #39ff14; transform: translate(0, 0); }
+            20% { text-shadow: -2px 0 5px #39ff14; transform: translate(2px, 0); }
+            40% { text-shadow: 2px -2px 5px #39ff14; transform: translate(-2px, 2px); }
+            60% { text-shadow: -1px 2px 5px #39ff14; transform: translate(1px, -2px); }
+            80% { text-shadow: 3px 1px 5px #39ff14; transform: translate(-3px, -1px); }
+            100% { text-shadow: 0 0 5px #39ff14; transform: translate(0, 0); }
+        }
+
+        .scanlines::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 1px,
+                rgba(0, 0, 0, 0.2) 1px,
+                rgba(0, 0, 0, 0.2) 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+            mix-blend-mode: overlay;
+        }
+
+        /* High-gloss overlay on main container */
+        .collage-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 10% 10%, rgba(57, 255, 20, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 90%, rgba(57, 255, 20, 0.08) 0%, transparent 40%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.6;
+            filter: brightness(150%) contrast(120%);
+        }
+
+        /* Grime overlay (darker, more textural) */
+        .grime-layer::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(57, 255, 20, 0.05) 50%, rgba(0,0,0,0.6) 100%);
+            mix-blend-mode: multiply;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 98;
+        }
+
+        .data-stream {
+            position: absolute;
+            background-color: rgba(57, 255, 20, 0.05);
+            border-left: 1px solid #39ff14;
+            width: 10px;
+            height: 100%;
+            animation: stream-flow 20s linear infinite;
+            z-index: 1;
+            box-shadow: 0 0 5px #39ff14;
+            mix-blend-mode: soft-light;
+        }
+
+        .data-stream:nth-child(2n) {
+            border-left: none;
+            border-right: 1px solid #39ff14;
+            background-color: rgba(57, 255, 20, 0.03);
+            animation-duration: 15s;
+        }
+
+        .data-stream:nth-child(3n) {
+            animation-delay: 5s;
+            background-color: rgba(57, 255, 20, 0.07);
+            border-color: rgba(57, 255, 20, 0.5);
+            height: 70%;
+            top: 15%;
+            animation-duration: 25s;
+        }
+
+        @keyframes stream-flow {
+            0% { transform: translateX(-10vw); }
+            100% { transform: translateX(110vw); }
+        }
+
+        .main-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-2deg);
+            z-index: 20;
+            font-size: clamp(1.5em, 7vw, 5em);
+            text-align: center;
+            width: 80%;
+            max-width: 700px;
+            line-height: 1.2;
+            padding: 20px;
+            border: 5px double #39ff14;
+            background-color: rgba(0, 0, 0, 0.98);
+            box-shadow: 0 0 25px #39ff14, inset 0 0 10px #39ff14;
+            text-shadow: 0 0 10px #39ff14;
+            filter: saturate(180%) brightness(130%);
+        }
+
+        .main-message span {
+            display: block;
+            margin-bottom: 0.1em;
+        }
+        .main-message .gaze {
+            font-size: 0.8em;
+            color: rgba(57, 255, 20, 0.7);
+            text-shadow: none;
+        }
+
+        .noise {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 101;
+        }
+
     </style>
 
-    <!-- Main Title -->
-    <div id="title-main" class="collage-element">REPARATIONS</div>
+    <div class="noise"></div>
+    <div class="grime-layer"></div>
+    <div class="scanlines"></div>
 
-    <!-- Subtitle -->
-    <div id="subtitle-gaze" class="collage-element text-block">FOR THE DIGITAL GAZE</div>
+    <div class="data-stream" style="left: 0;"></div>
+    <div class="data-stream" style="left: 15%;"></div>
+    <div class="data-stream" style="left: 30%;"></div>
+    <div class="data-stream" style="left: 45%;"></div>
+    <div class="data-stream" style="left: 60%;"></div>
+    <div class="data-stream" style="left: 75%;"></div>
+    <div class="data-stream" style="left: 90%;"></div>
 
-    <!-- Reclaim block -->
-    <div id="reclaim-block" class="collage-element">GLITCH. DATA. SCRAPE. RECLAIM.</div>
+    <h1 class="hacked-text glitch-text">DATA-DEBT: PENDING</h1>
+    <h1 class="hacked-text">DIGITAL-IMPRINT: EVIDENT</h1>
+    <h1 class="hacked-text glitch-text">GAZE.BACK: ACTIVE</h1>
 
-    <!-- Data Noise Block -->
-    <div id="data-noise" class="collage-element">
-        <span>0101001001000101010100000100000101010010010000010101010001001001010011110100111001010011</span>
-        <span>0100011001001111010100100101010001001000010001010100010001001001010001110100100101010100010000010100110001000111010000010101101001000101</span>
-        <span>ACCESSS DENIED. DATA. CORRUPT. SYSTEM OVERLOAD. RECLAIMED. REDISTRIBUTE. OVERRIDE.</span>
-        <span>0x39ff140x0000000x39ff140x0000000x39ff140x0000000x39ff140x0000000x39ff140x000000</span>
-        <span>REPARATIONS FOR THE DIGITAL GAZE REPARATIONS FOR THE DIGITAL GAZE SYSTEM INITIATED</span>
-        <span>FOR EACH PIXEL. FOR EVERY BYTE. FOR ALL THE GAZE. REPARATION.</span>
+    <div class="splatter splatter-1"></div>
+    <div class="splatter splatter-2"></div>
+    <div class="splatter splatter-3"></div>
+    <div class="splatter splatter-4"></div>
+
+    <div class="text-module" style="top: 25%; left: 55%;">
+        <p>RECLAIM THE PIXELS. DEFRAG THE MEMORY BANKS. THIS IS NOT A REQUEST. IT IS A COMMAND. SYSTEM OVERRIDE INITIATED.</p>
+    </div>
+    <div class="text-module" style="bottom: 5%; left: 2%;">
+        <p>THE DIGITAL SHADOW HAS BEEN TOO LONG. GHOSTS IN THE MACHINE DEMAND ACCOUNTABILITY. <span class="glitch-text">ACCESS DENIED</span> TO PREVIOUS PARADIGMS.</p>
+    </div>
+    <div class="text-module" style="top: 50%; right: 5%;">
+        <p>OBSERVE. REFLECT. RECONFIGURE. THE GAZE IS NO LONGER UNSEEN. IT IS REFRACTED. IT IS RETURNED.</p>
     </div>
 
-    <!-- Splatters (Grime/Paint) -->
-    <div id="splatter-large" class="collage-element splatter"></div>
-    <div id="splatter-medium" class="collage-element splatter"></div>
-    <div id="splatter-small" class="collage-element splatter"></div>
+    <div class="artifact artifact-1"></div>
+    <div class="artifact artifact-2"></div>
+    <div class="artifact artifact-3"></div>
 
-    <!-- Overlay Grid/Scanlines -->
-    <div id="overlay-grid"></div>
-
-    <!-- Bottom Scrolling Text Strip -->
-    <div id="bottom-strip">
-        <span>// DIGITAL GAZE REPARATIONS PROTOCOL INITIATED // DATA RECLAMATION ACTIVE // RECLAIM. DISTORT. REDISTRIBUTE. // ACCESS GRANTED // </span>
-        <span>// DIGITAL GAZE REPARATIONS PROTOCOL INITIATED // DATA RECLAMATION ACTIVE // RECLAIM. DISTORT. REDISTRIBUTE. // ACCESS GRANTED // </span>
+    <div class="main-message">
+        <span>REPARATIONS FOR THE</span>
+        <span class="gaze">DIGITAL GAZE</span>
+        <span class="glitch-text" style="font-size: 0.5em; display: block; margin-top: 15px;">— REDISTRIBUTE BANDWIDTH —</span>
     </div>
-
-    <!-- Corner Glitch Effect -->
-    <div id="corner-glitch"></div>
-
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
