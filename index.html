@@ -39,263 +39,214 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-15 12:31 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-15 17:59 // TOPIC: DECOLONIZING THE PIXEL</div>
             <div class="art-container p-4">
-<div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Impact', 'Arial Black', monospace, sans-serif; color: #39ff14;">
+<div class="decolonize-pixel-collage" style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #000; font-family: 'monospace', 'Courier New', Courier, sans-serif; color: #39ff14; text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; display: block; box-sizing: border-box;">
     <style>
-        /* CRITICAL: All CSS is self-contained within this <style> tag */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        .decolonize-pixel-collage {
+            box-sizing: border-box; /* Ensure padding/border don't overflow */
         }
-
-        /* Base styles for all collage elements */
-        .collage-element {
+        .text-block {
             position: absolute;
-            color: #39ff14;
-            background-color: transparent; /* Default */
-            text-transform: uppercase;
-            font-weight: 900;
-            line-height: 1;
-            text-shadow: 0 0 8px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.6);
-            border: 2px solid #39ff14;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.2);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 15px; /* Default padding for text elements */
-            pointer-events: none; /* Make elements non-interactive by default */
-        }
-
-        /* Main title */
-        .title-demolish {
-            font-size: clamp(3em, 15vw, 10em);
-            left: 50%;
-            top: 45%;
-            transform: translate(-50%, -50%) rotate(-7deg) skewX(-5deg);
-            white-space: nowrap;
-            letter-spacing: -0.05em;
-            background-color: rgba(0, 0, 0, 0.85);
-            border: 6px solid #39ff14;
-            padding: 25px 50px;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 1), inset 0 0 20px rgba(255, 255, 255, 0.5);
-            z-index: 100;
-            position: relative; /* For ::after gloss */
-        }
-        .title-demolish::after { /* High-gloss effect */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-        .title-demolish > span { position: relative; z-index: 2; } /* Ensure text is above gloss */
-
-        /* Fragmented text elements */
-        .fragment-text {
-            font-size: clamp(1em, 5vw, 3em);
-            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.7);
             border: 1px solid #39ff14;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.8), inset 0 0 5px rgba(57, 255, 20, 0.5);
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            filter: brightness(1.2);
+            cursor: default;
+            z-index: 10;
         }
-        .frag-1 { top: 10%; left: 5%; transform: rotate(15deg); z-index: 20; }
-        .frag-2 { top: 25%; right: 10%; transform: rotate(-25deg) skewY(5deg); z-index: 25; }
-        .frag-3 { bottom: 15%; left: 20%; transform: rotate(5deg); z-index: 15; }
-        .frag-4 { top: 60%; left: 70%; transform: rotate(30deg); z-index: 22; }
-        .frag-5 { top: 8%; right: 40%; transform: rotate(50deg) skewX(-10deg); z-index: 18; }
-
-        /* Digital paint splatters / irregular shapes */
-        .splatter {
-            background-color: #39ff14;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.4);
-            border: none;
-            text-shadow: none;
-            padding: 0; /* No padding for shape elements */
-            opacity: 0.85;
+        .text-block.large {
+            font-size: 2.8em;
+            padding: 18px 28px;
+            z-index: 20;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+            transform: skew(-10deg, -5deg);
+            background: rgba(0, 0, 0, 0.85);
+            border-width: 2px;
         }
-        .splatter-a {
-            width: 180px; height: 120px;
-            top: 20%; left: 30%;
-            transform: rotate(40deg) skewX(15deg);
-            clip-path: polygon(0% 0%, 70% 10%, 100% 50%, 60% 100%, 10% 80%, 0% 40%);
-            z-index: 5;
+        .text-block.medium {
+            font-size: 1.8em;
+            padding: 12px 20px;
+            z-index: 15;
+            text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14;
+            transform: rotate(var(--rot, 0deg));
         }
-        .splatter-b {
-            width: 220px; height: 80px;
-            bottom: 5%; right: 15%;
-            transform: rotate(-30deg) skewY(10deg);
-            clip-path: polygon(10% 0%, 100% 20%, 90% 100%, 0% 80%);
-            opacity: 0.75;
+        .text-block.small {
+            font-size: 0.9em;
+            padding: 6px 10px;
+            letter-spacing: 0.05em;
+            opacity: 0.95;
             z-index: 8;
         }
-        .splatter-c {
-            width: 90px; height: 90px;
-            top: 65%; left: 10%;
-            transform: rotate(90deg);
-            border-radius: 50%; /* Blob-like */
-            opacity: 0.9;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 1);
-            z-index: 12;
-        }
-
-        /* Grime panels / textured backgrounds */
-        .grime-panel {
-            background: linear-gradient(45deg, #000 0%, rgba(57, 255, 20, 0.2) 20%, #000 50%, rgba(57, 255, 20, 0.1) 80%, #000 100%);
-            border: 1px dashed rgba(57, 255, 20, 0.5);
-            box-shadow: inset 0 0 15px rgba(57, 255, 20, 0.4), 0 0 8px rgba(57, 255, 20, 0.2);
-            z-index: 1;
-            opacity: 0.4;
-            padding: 0; /* Ensure no padding */
-            display: block;
-        }
-        .grime-panel-1 {
-            width: 120%; height: 30%;
-            top: -5%; left: -10%;
-            transform: rotate(3deg);
-        }
-        .grime-panel-2 {
-            width: 80%; height: 40%;
-            bottom: -10%; right: -10%;
-            transform: rotate(-8deg);
-            background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.3) 0%, #000 70%);
-        }
-
-        /* Crack lines */
-        .crack-line {
-            background-color: #39ff14;
-            height: 4px;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 1);
-            border: none;
-            z-index: 30;
-            padding: 0;
-            display: block;
-            opacity: 0.9;
-        }
-        .crack-1 { width: 20%; top: 40%; left: 10%; transform: rotate(60deg); }
-        .crack-2 { width: 15%; top: 70%; right: 5%; transform: rotate(-30deg); }
-        .crack-3 { width: 25%; top: 15%; left: 50%; transform: rotate(90deg); opacity: 0.7; }
-
-        /* Small details/slogans */
-        .small-detail {
-            font-size: 0.8em;
-            padding: 5px 10px;
-            background-color: rgba(0, 0, 0, 0.9);
-            border: 1px solid rgba(57, 255, 20, 0.6);
-            z-index: 50;
-            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); /* Less intense glow */
-            box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
-            letter-spacing: 0.05em;
-        }
-        .detail-1 { top: 5%; left: 80%; transform: rotate(10deg); }
-        .detail-2 { bottom: 2%; left: 5%; transform: rotate(-5deg); }
-        .detail-3 { top: 85%; right: 40%; transform: rotate(20deg); }
-
-        /* Overlapping blocks with text */
-        .overlapping-block {
-            background-color: rgba(0, 0, 0, 0.95);
-            border: 4px solid #39ff14;
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.8), inset 0 0 12px rgba(255, 255, 255, 0.3);
-            z-index: 40;
-            padding: 20px 30px;
-            font-size: clamp(1em, 3vw, 2em);
-            position: relative; /* For ::after gloss */
-        }
-        .overlapping-block::after { /* High-gloss effect */
-            content: '';
+        .splatter {
             position: absolute;
-            top: 0;
-            left: 0;
+            background: #39ff14;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: blur(3px) brightness(1.8);
+            mix-blend-mode: screen;
+            box-shadow: 0 0 15px #39ff14, 0 0 30px rgba(57, 255, 20, 0.7);
+            z-index: 1;
+        }
+        .splatter.rect {
+            border-radius: 5px;
+            transform: rotate(var(--angle, 0deg));
+            opacity: 0.5;
+            filter: blur(1.5px) brightness(1.5);
+            box-shadow: 0 0 10px #39ff14, 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+        .grime {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: inset 0 0 15px #39ff14, 0 0 8px rgba(57, 255, 20, 0.6);
+            border: 1px solid rgba(57, 255, 20, 0.6);
+            opacity: 0.3;
+            filter: saturate(1.8) brightness(1.2);
+            z-index: 5;
+            border-radius: var(--br, 0px);
+            transform: rotate(var(--rot, 0deg));
+            mix-blend-mode: overlay;
+        }
+        .glitch-effect {
+            position: absolute;
+            background: #39ff14;
+            opacity: 0.25;
+            transform: rotate(var(--glitch-angle, 0deg)) scaleY(0.8);
+            box-shadow: 0 0 12px #39ff14;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .glossy-overlay {
+            position: absolute;
+            background: linear-gradient(
+                to bottom right,
+                rgba(57, 255, 20, 0.15) 0%,
+                rgba(0, 0, 0, 0.15) 25%,
+                rgba(0, 0, 0, 0.35) 75%,
+                rgba(57, 255, 20, 0.15) 100%
+            );
+            opacity: 0.35;
+            z-index: 25;
+            pointer-events: none;
+            mix-blend-mode: overlay;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 100%);
-            pointer-events: none;
-            z-index: 1;
+            top: 0;
+            left: 0;
         }
-        .overlapping-block > span { position: relative; z-index: 2; } /* Ensure text is above gloss */
-
-        .overlap-1 {
-            width: 300px;
-            height: 150px;
-            top: 30%; left: 5%;
-            transform: rotate(-10deg);
-        }
-        .overlap-2 {
-            width: 250px;
-            height: 200px;
-            bottom: 20%; right: 10%;
-            transform: rotate(15deg) skewX(5deg);
-        }
-
-        /* Large, subtle grime splatters/background elements */
-        .grime-splatter {
-            background-color: rgba(57, 255, 20, 0.1); /* Very subtle */
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2), 0 0 25px rgba(0, 0, 0, 0.6) inset;
-            border: 1px dashed rgba(57, 255, 20, 0.3);
-            z-index: 0; /* Send to back */
-            padding: 0;
-            display: block;
-        }
-        .grime-splatter-1 {
-            width: 350px; height: 250px;
-            top: 15%; right: -5%;
-            transform: rotate(5deg) skewX(-10deg);
+        .shine-spot {
+            position: absolute;
+            background: radial-gradient(circle at center, rgba(57, 255, 20, 0.6) 0%, rgba(57, 255, 20, 0) 70%);
+            border-radius: 50%;
+            filter: blur(7px) brightness(2.5);
             opacity: 0.25;
-            clip-path: polygon(0% 0%, 80% 10%, 100% 50%, 70% 100%, 20% 90%, 0% 60%);
+            z-index: 12;
+            pointer-events: none;
+            mix-blend-mode: lighten;
         }
-        .grime-splatter-2 {
-            width: 300px; height: 180px;
-            bottom: -5%; left: -5%;
-            transform: rotate(-12deg) skewY(8deg);
-            opacity: 0.2;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 30%, 80% 100%, 0% 70%, 20% 20%);
+        .line-break {
+            position: absolute;
+            background: #39ff14;
+            height: 2px;
+            box-shadow: 0 0 10px #39ff14, 0 0 20px rgba(57, 255, 20, 0.5);
+            opacity: 0.9;
+            z-index: 7;
+            transform: rotate(var(--line-angle, 0deg));
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .flicker-text {
+            animation: flicker 1.8s infinite alternate;
+        }
+        .shape {
+            position: absolute;
+            background: #39ff14;
+            opacity: 0.15;
+            box-shadow: 0 0 10px #39ff14;
+            z-index: 0;
+            transform: rotate(var(--angle, 0deg)) scale(var(--scale, 1));
+            mix-blend-mode: screen;
+        }
+        .shape.rect-lg {
+            width: 180px;
+            height: 15px;
+            border-radius: 2px;
+        }
+        .shape.square {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+        .shape.circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
         }
     </style>
 
-    <h1 class="collage-element title-demolish"><span>DEMOLISH THE CUBE</span></h1>
+    <div class="glossy-overlay"></div>
 
-    <div class="collage-element fragment-text frag-1">DECONSTRUCT</div>
-    <div class="collage-element fragment-text frag-2">ERASE</div>
-    <div class="collage-element fragment-text frag-3">RECLAIM SPACE</div>
-    <div class="collage-element fragment-text frag-4">CRUSH</div>
-    <div class="collage-element fragment-text frag-5">BREAKING POINT</div>
+    <!-- Main Title -->
+    <div class="text-block large" style="top: 10%; left: 8%; transform: rotate(-8deg);">DECOLONIZING<br>THE PIXEL</div>
 
-    <div class="collage-element splatter splatter-a"></div>
-    <div class="collage-element splatter splatter-b"></div>
-    <div class="collage-element splatter splatter-c"></div>
+    <!-- Sub-titles / Concepts -->
+    <div class="text-block medium" style="top: 35%; left: 55%; transform: rotate(15deg) skewX(-10deg);">UNGRID</div>
+    <div class="text-block medium flicker-text" style="top: 60%; left: 10%; transform: rotate(-20deg);">RECLAIM DATA</div>
+    <div class="text-block medium" style="top: 75%; left: 45%; transform: rotate(5deg) scale(0.9);">GLITCH IS FREEDOM</div>
 
-    <div class="collage-element grime-panel grime-panel-1"></div>
-    <div class="collage-element grime-panel grime-panel-2"></div>
+    <!-- Smaller details / supporting text -->
+    <div class="text-block small" style="top: 5%; right: 5%; transform: rotate(3deg);">NO NEUTRAL SPACE</div>
+    <div class="text-block small" style="top: 25%; left: 35%; transform: rotate(-12deg); opacity: 0.8;">DISRUPT THE CANVAS</div>
+    <div class="text-block small flicker-text" style="bottom: 5%; left: 5%; transform: rotate(10deg);">FRAGMENT REALITY</div>
+    <div class="text-block small" style="bottom: 15%; right: 10%; transform: rotate(-7deg);">RECONSTRUCT VISION</div>
+    <div class="text-block small" style="top: 45%; right: 15%; transform: rotate(22deg) skewY(5deg);">CODE AS <br>RESISTANCE</div>
 
-    <div class="collage-element crack-line crack-1"></div>
-    <div class="collage-element crack-line crack-2"></div>
-    <div class="collage-element crack-line crack-3"></div>
+    <!-- Splatters & Grime -->
+    <div class="splatter" style="top: 20%; left: 30%; width: 100px; height: 100px;"></div>
+    <div class="splatter rect" style="top: 15%; left: 60%; width: 120px; height: 30px; --angle: 45deg;"></div>
+    <div class="splatter" style="top: 70%; left: 20%; width: 70px; height: 70px; opacity: 0.5;"></div>
+    <div class="splatter rect" style="bottom: 5%; right: 25%; width: 80px; height: 50px; --angle: -30deg;"></div>
+    <div class="grime" style="top: 10%; left: 70%; width: 200px; height: 150px; --br: 15px; --rot: 10deg;"></div>
+    <div class="grime" style="bottom: 20%; left: 30%; width: 180px; height: 90px; --br: 0 30px 0 30px; --rot: -5deg;"></div>
+    <div class="grime" style="top: 50%; left: 5%; width: 100px; height: 200px; --br: 50%; opacity: 0.2; transform: rotate(90deg);"></div>
+    <div class="grime" style="top: 0; left: 0; width: 100vw; height: 50px; opacity: 0.1; mix-blend-mode: multiply; filter: brightness(0.8);"></div>
 
-    <p class="collage-element small-detail detail-1">POST-ART WORLD</p>
-    <p class="collage-element small-detail detail-2">HIGH-GLOSS GRIME</p>
-    <p class="collage-element small-detail detail-3">SUBVERT. REBUILD.</p>
+    <!-- Glitch Lines / Data Streams -->
+    <div class="glitch-effect" style="top: 18%; left: 40%; width: 150px; height: 5px; --glitch-angle: -15deg;"></div>
+    <div class="glitch-effect" style="top: 40%; right: 10%; width: 80px; height: 3px; --glitch-angle: 25deg;"></div>
+    <div class="glitch-effect" style="bottom: 10%; left: 60%; width: 200px; height: 7px; --glitch-angle: 5deg;"></div>
+    <div class="glitch-effect" style="top: 65%; left: 30%; width: 40px; height: 20px; --glitch-angle: 80deg; opacity: 0.15;"></div>
 
-    <div class="collage-element overlapping-block overlap-1">
-        <span>STRATEGY: CHAOS</span>
-    </div>
-    <div class="collage-element overlapping-block overlap-2">
-        <span>REVOLUTION</span>
-    </div>
+    <!-- Shine Spots -->
+    <div class="shine-spot" style="top: 12%; left: 15%;"></div>
+    <div class="shine-spot" style="top: 30%; left: 60%; width: 80px; height: 80px;"></div>
+    <div class="shine-spot" style="bottom: 10%; right: 15%;"></div>
 
-    <div class="collage-element grime-splatter grime-splatter-1"></div>
-    <div class="collage-element grime-splatter grime-splatter-2"></div>
+    <!-- Breaking Lines -->
+    <div class="line-break" style="top: 30%; left: 0%; width: 100%; --line-angle: -3deg;"></div>
+    <div class="line-break" style="top: 50%; left: 20%; width: 70%; --line-angle: 8deg; height: 1px;"></div>
+    <div class="line-break" style="top: 70%; left: 10%; width: 50%; --line-angle: -10deg; height: 3px;"></div>
+    <div class="line-break" style="top: 85%; left: 40%; width: 30%; --line-angle: 15deg;"></div>
+
+    <!-- Background Shapes (more abstract brutalist elements) -->
+    <div class="shape rect-lg" style="top: 5%; left: 50%; --angle: 20deg;"></div>
+    <div class="shape square" style="bottom: 30%; left: 70%; --angle: -45deg; --scale: 0.8;"></div>
+    <div class="shape circle" style="top: 25%; right: 10%; --angle: 0deg; opacity: 0.1;"></div>
+    <div class="shape rect-lg" style="bottom: 10%; left: 10%; --angle: 90deg; opacity: 0.1; width: 10px; height: 200px;"></div>
+    <div class="shape square" style="top: 60%; left: 50%; --angle: 15deg; width: 80px; height: 80px;"></div>
 
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">decolonizing the pixel</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
