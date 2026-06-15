@@ -39,405 +39,263 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-15 05:08 // TOPIC: ANTI-ZIONIST GLITCH-THEORY</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-15 12:31 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
             <div class="art-container p-4">
-<div id="glitch-collage">
-  <style>
-    :root {
-      --neon-green: #39ff14;
-      --deep-black: #000;
-    }
-
-    /* Base styles for the collage container */
-    #glitch-collage {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      background-color: var(--deep-black);
-      overflow: hidden; /* Ensures glitch effects don't cause scrollbars */
-      font-family: 'Roboto Mono', monospace; /* Brutalist/digital font */
-      color: var(--neon-green);
-      box-sizing: border-box; /* Include padding/border in element's total width/height */
-      display: flex;
-      align-items: center; /* Vertically center content */
-      justify-content: center; /* Horizontally center content */
-      text-align: center;
-      border: 4px solid var(--neon-green); /* Brutalist border */
-      box-shadow: 0 0 40px rgba(57, 255, 20, 0.7), inset 0 0 40px rgba(57, 255, 20, 0.5); /* High-gloss effect */
-      padding: 20px;
-    }
-
-    /* Glitch animation keyframes */
-    @keyframes glitch-shift {
-      0% { transform: translate(0, 0); opacity: 1; }
-      20% { transform: translate(-2px, 2px) skewX(2deg); opacity: 0.9; }
-      40% { transform: translate(2px, -2px) skewY(2deg); opacity: 1; }
-      60% { transform: translate(-1px, 1px) skewX(1deg); opacity: 0.8; }
-      80% { transform: translate(1px, -1px) skewY(1deg); opacity: 1; }
-      100% { transform: translate(0, 0); opacity: 0.95; }
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        box-shadow: 0 0 5px var(--neon-green), 0 0 15px var(--neon-green), 0 0 30px var(--neon-green), 0 0 60px var(--neon-green), 0 0 80px var(--neon-green); /* Intense glow */
-        text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green); /* Text glow */
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        box-shadow: none; /* Brief moments of 'power-off' */
-        text-shadow: none;
-        opacity: 0.8;
-      }
-    }
-
-    @keyframes color-shift {
-      0% { filter: hue-rotate(0deg); }
-      50% { filter: hue-rotate(15deg); } /* Subtle color variation for grime */
-      100% { filter: hue-rotate(0deg); }
-    }
-
-    @keyframes text-blink {
-        0%, 49%, 51%, 100% { opacity: 1; }
-        50% { opacity: 0.2; } /* Blinking text effect */
-    }
-
-
-    /* Main content container for grid layout */
-    .main-content {
-      position: relative;
-      z-index: 10; /* Bring content to front */
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 column layout */
-      gap: 20px;
-      align-items: start; /* Align grid items to the start of their row */
-      justify-items: center; /* Center grid items horizontally */
-    }
-
-    /* Brutalist/Glitch Heading */
-    h1 {
-      grid-column: 1 / -1; /* Span all columns */
-      font-size: clamp(2.5em, 8vw, 6em); /* Responsive font size */
-      margin: 0;
-      padding: 10px 0;
-      line-height: 0.9;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      position: relative;
-      font-weight: 900;
-      animation: glitch-shift 0.7s infinite alternate, flicker 2s infinite steps(1);
-      background-color: var(--deep-black);
-      padding: 15px 20px;
-      border: 2px solid var(--neon-green);
-      box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px var(--neon-green);
-      z-index: 20;
-    }
-
-    h1::before, h1::after {
-      content: "SYSTEM ERROR: ZIONISM"; /* Layered text for glitch effect */
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--deep-black); /* Hide underlying text */
-      z-index: -1; /* Behind the main text layer */
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Full clip path initially */
-    }
-
-    h1::before {
-      left: 2px; /* Offset for glitch effect */
-      text-shadow: -2px 0 var(--neon-green); /* Color shift */
-      animation: glitch-shift 0.8s infinite alternate-reverse;
-      filter: blur(1px); /* Blurry layer */
-    }
-
-    h1::after {
-      left: -2px; /* Offset for glitch effect */
-      text-shadow: 2px 0 var(--neon-green); /* Color shift */
-      animation: glitch-shift 0.9s infinite alternate;
-      filter: blur(0.5px); /* Slightly less blurry layer */
-    }
-
-    /* Fragmented informational text */
-    .fragmented-text {
-      grid-column: 1 / -1;
-      font-size: clamp(1em, 3vw, 2em);
-      margin-top: 15px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      background-color: var(--deep-black);
-      padding: 10px 15px;
-      border: 1px solid var(--neon-green);
-      box-shadow: 0 0 10px var(--neon-green);
-      animation: text-blink 4s infinite step-end;
-      position: relative;
-      z-index: 15;
-    }
-
-    .fragmented-text::before {
-      content: "";
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      width: calc(100% + 10px);
-      height: calc(100% + 10px);
-      border: 1px dashed var(--neon-green); /* Dashed outline for raw feel */
-      opacity: 0.3;
-      transform: rotate(2deg); /* Slight rotation for asymmetry */
-    }
-
-    /* Glitch Blocks - Brutalist & Grime */
-    .glitch-block {
-      width: 100%;
-      padding-bottom: 75%; /* Maintain aspect ratio */
-      background: var(--neon-green); /* Default background, overridden by specific blocks */
-      border: 2px solid var(--neon-green);
-      box-shadow: 0 0 20px var(--neon-green), inset 0 0 10px var(--neon-green), 5px 5px 0 var(--deep-black), 10px 10px 0 var(--neon-green); /* Grime/depth */
-      position: relative;
-      overflow: hidden;
-      margin: 10px;
-      animation: glitch-shift 3s ease-in-out infinite alternate;
-      grid-column: span 1; /* Each block takes one column */
-    }
-
-    .glitch-block::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(57,255,20,0.2) 50%, rgba(0,0,0,0.8) 100%); /* Grime overlay */
-      mix-blend-mode: overlay; /* Blends with background for a dirty look */
-      opacity: 0.7;
-      animation: color-shift 5s infinite alternate;
-    }
-
-    .block-1 {
-      background: radial-gradient(circle at top left, var(--deep-black) 0%, var(--neon-green) 50%, var(--deep-black) 100%);
-      transform: skewX(-5deg) translateX(10px); /* Distorted shape */
-      grid-column: 1 / 2;
-    }
-    .block-2 {
-      background: conic-gradient(from 90deg at 20% 50%, var(--deep-black), var(--neon-green), var(--deep-black));
-      transform: skewY(5deg) translateY(-10px);
-      grid-column: 2 / 3;
-    }
-    .block-3 {
-      background: linear-gradient(135deg, var(--neon-green) 0%, var(--deep-black) 50%, var(--neon-green) 100%);
-      transform: rotate(3deg) scale(0.95);
-      grid-column: 3 / 4;
-    }
-
-    /* Layered Text Elements - More resistance slogans */
-    .text-layer {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-wrap: wrap; /* Allow wrapping of words */
-      justify-content: center;
-      margin-top: 30px;
-      position: relative;
-      z-index: 12;
-    }
-
-    .word-fragment {
-      font-size: clamp(1.2em, 4vw, 3em);
-      margin: 5px 10px;
-      padding: 5px 10px;
-      border: 1px dashed var(--neon-green);
-      text-transform: uppercase;
-      animation: glitch-shift 1.5s ease-in-out infinite alternate-reverse;
-      text-shadow: 0 0 5px var(--neon-green);
-      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    }
-    .word-fragment:nth-child(even) { transform: translateY(5px) skewX(2deg); animation-delay: 0.2s; }
-    .word-fragment:nth-child(odd) { transform: translateY(-5px) skewY(2deg); animation-delay: 0.4s; }
-
-    /* Splatters - Digital Paint */
-    .splatter {
-      position: absolute;
-      border-radius: 50%; /* Circular splatters */
-      opacity: 0.6;
-      filter: blur(5px) saturate(150%); /* Soft blur and intensified color */
-      z-index: 5;
-      pointer-events: none; /* Allows clicks to pass through */
-    }
-
-    .splatter-1 {
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
-      top: 10%;
-      left: 5%;
-      transform: rotate(20deg) scale(1.1);
-      animation: glitch-shift 4s ease-in-out infinite alternate-reverse;
-    }
-    .splatter-2 {
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
-      bottom: 15%;
-      right: 10%;
-      transform: rotate(-30deg) scale(0.9);
-      animation: glitch-shift 3.5s ease-in-out infinite alternate;
-    }
-    .splatter-3 {
-      width: 80px;
-      height: 80px;
-      background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
-      top: 30%;
-      right: 20%;
-      transform: rotate(45deg);
-      animation: glitch-shift 2.8s ease-in-out infinite alternate-reverse;
-    }
-
-
-    /* Distorted Grid - Fragmented Visual */
-    .distorted-grid {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
-      width: 150px; /* Fixed size for brutalist feel */
-      height: 150px;
-      margin: 40px auto;
-      border: 2px solid var(--neon-green);
-      box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px var(--neon-green);
-      transform: rotate(-7deg) skewX(5deg); /* Distorted perspective */
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 10;
-    }
-
-    .distorted-grid span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      border: 1px dotted var(--neon-green);
-      opacity: 0.8;
-      animation: text-blink 3s infinite step-end;
-    }
-    .distorted-grid span:nth-child(even) { transform: translateY(2px) translateX(-2px); }
-    .distorted-grid span:nth-child(odd) { transform: translateY(-2px) translateX(2px); }
-    .distorted-grid .active-glitch {
-      color: var(--deep-black);
-      background-color: var(--neon-green);
-      box-shadow: 0 0 8px var(--neon-green);
-      animation: flicker 1s infinite steps(1), glitch-shift 0.5s infinite alternate;
-      transform: scale(1.2) rotate(5deg) !important; /* Emphasize active glitch */
-    }
-
-    /* Bottom call to action text */
-    .bottom-text {
-      grid-column: 1 / -1;
-      font-size: clamp(1em, 2.5vw, 1.8em);
-      margin-top: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: bold;
-      animation: glitch-shift 1s infinite alternate-reverse;
-      text-shadow: 0 0 10px var(--neon-green);
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px 15px;
-      border-top: 2px solid var(--neon-green);
-      z-index: 25;
-    }
-
-    /* Background texture/grime layer */
-    .background-texture {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      /* Layered gradients for grime/digital noise */
-      background-image:
-        radial-gradient(circle at 10% 10%, rgba(57, 255, 20, 0.1) 1%, transparent 2%),
-        radial-gradient(circle at 90% 90%, rgba(57, 255, 20, 0.1) 1%, transparent 2%),
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* Dark overlay */
-        repeating-linear-gradient(0deg, var(--neon-green) 0px, var(--deep-black) 1px, transparent 1px, transparent 3px), /* Horizontal scan lines */
-        repeating-linear-gradient(90deg, var(--neon-green) 0px, var(--deep-black) 1px, transparent 1px, transparent 3px); /* Vertical scan lines */
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-      opacity: 0.3;
-      filter: blur(0.5px); /* Soft blur for background */
-      z-index: 1;
-      animation: flicker 5s infinite steps(1) alternate; /* Subtle background flicker */
-    }
-
-    /* Media queries for responsiveness */
-    @media (max-width: 768px) {
-      .main-content {
-        grid-template-columns: 1fr; /* Stack elements on smaller screens */
-      }
-      h1 {
-        font-size: clamp(2em, 10vw, 4em);
-        letter-spacing: 3px;
-      }
-      .fragmented-text, .word-fragment, .bottom-text {
-        font-size: clamp(0.9em, 4vw, 1.5em);
-      }
-      .glitch-block {
-        padding-bottom: 50%; /* Adjust aspect ratio for blocks */
-      }
-      .distorted-grid {
-        width: 120px;
-        height: 120px;
-        margin: 20px auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-        #glitch-collage {
-            padding: 10px;
-            border-width: 2px;
+<div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background-color: #000; font-family: 'Impact', 'Arial Black', monospace, sans-serif; color: #39ff14;">
+    <style>
+        /* CRITICAL: All CSS is self-contained within this <style> tag */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        h1 {
-            padding: 10px;
+
+        /* Base styles for all collage elements */
+        .collage-element {
+            position: absolute;
+            color: #39ff14;
+            background-color: transparent; /* Default */
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1;
+            text-shadow: 0 0 8px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.6);
+            border: 2px solid #39ff14;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.2);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px; /* Default padding for text elements */
+            pointer-events: none; /* Make elements non-interactive by default */
         }
-        .glitch-block {
-            padding-bottom: 75%; /* More square on very small screens */
+
+        /* Main title */
+        .title-demolish {
+            font-size: clamp(3em, 15vw, 10em);
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%) rotate(-7deg) skewX(-5deg);
+            white-space: nowrap;
+            letter-spacing: -0.05em;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 6px solid #39ff14;
+            padding: 25px 50px;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 1), inset 0 0 20px rgba(255, 255, 255, 0.5);
+            z-index: 100;
+            position: relative; /* For ::after gloss */
         }
-    }
+        .title-demolish::after { /* High-gloss effect */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .title-demolish > span { position: relative; z-index: 2; } /* Ensure text is above gloss */
 
-  </style>
+        /* Fragmented text elements */
+        .fragment-text {
+            font-size: clamp(1em, 5vw, 3em);
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #39ff14;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+        }
+        .frag-1 { top: 10%; left: 5%; transform: rotate(15deg); z-index: 20; }
+        .frag-2 { top: 25%; right: 10%; transform: rotate(-25deg) skewY(5deg); z-index: 25; }
+        .frag-3 { bottom: 15%; left: 20%; transform: rotate(5deg); z-index: 15; }
+        .frag-4 { top: 60%; left: 70%; transform: rotate(30deg); z-index: 22; }
+        .frag-5 { top: 8%; right: 40%; transform: rotate(50deg) skewX(-10deg); z-index: 18; }
 
-  <div class="background-texture"></div>
+        /* Digital paint splatters / irregular shapes */
+        .splatter {
+            background-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.4);
+            border: none;
+            text-shadow: none;
+            padding: 0; /* No padding for shape elements */
+            opacity: 0.85;
+        }
+        .splatter-a {
+            width: 180px; height: 120px;
+            top: 20%; left: 30%;
+            transform: rotate(40deg) skewX(15deg);
+            clip-path: polygon(0% 0%, 70% 10%, 100% 50%, 60% 100%, 10% 80%, 0% 40%);
+            z-index: 5;
+        }
+        .splatter-b {
+            width: 220px; height: 80px;
+            bottom: 5%; right: 15%;
+            transform: rotate(-30deg) skewY(10deg);
+            clip-path: polygon(10% 0%, 100% 20%, 90% 100%, 0% 80%);
+            opacity: 0.75;
+            z-index: 8;
+        }
+        .splatter-c {
+            width: 90px; height: 90px;
+            top: 65%; left: 10%;
+            transform: rotate(90deg);
+            border-radius: 50%; /* Blob-like */
+            opacity: 0.9;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 1);
+            z-index: 12;
+        }
 
-  <div class="main-content">
-    <h1>SYSTEM ERROR: ZIONISM</h1>
-    <p class="fragmented-text">DECOLONIZE THIS CODE.</p>
+        /* Grime panels / textured backgrounds */
+        .grime-panel {
+            background: linear-gradient(45deg, #000 0%, rgba(57, 255, 20, 0.2) 20%, #000 50%, rgba(57, 255, 20, 0.1) 80%, #000 100%);
+            border: 1px dashed rgba(57, 255, 20, 0.5);
+            box-shadow: inset 0 0 15px rgba(57, 255, 20, 0.4), 0 0 8px rgba(57, 255, 20, 0.2);
+            z-index: 1;
+            opacity: 0.4;
+            padding: 0; /* Ensure no padding */
+            display: block;
+        }
+        .grime-panel-1 {
+            width: 120%; height: 30%;
+            top: -5%; left: -10%;
+            transform: rotate(3deg);
+        }
+        .grime-panel-2 {
+            width: 80%; height: 40%;
+            bottom: -10%; right: -10%;
+            transform: rotate(-8deg);
+            background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.3) 0%, #000 70%);
+        }
 
-    <div class="glitch-block block-1"></div>
-    <div class="glitch-block block-2"></div>
-    <div class="glitch-block block-3"></div>
+        /* Crack lines */
+        .crack-line {
+            background-color: #39ff14;
+            height: 4px;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 1);
+            border: none;
+            z-index: 30;
+            padding: 0;
+            display: block;
+            opacity: 0.9;
+        }
+        .crack-1 { width: 20%; top: 40%; left: 10%; transform: rotate(60deg); }
+        .crack-2 { width: 15%; top: 70%; right: 5%; transform: rotate(-30deg); }
+        .crack-3 { width: 25%; top: 15%; left: 50%; transform: rotate(90deg); opacity: 0.7; }
 
-    <div class="text-layer layer-1">
-      <span class="word-fragment">RE</span>
-      <span class="word-fragment">SIST</span>
-      <span class="word-fragment">THE</span>
-      <span class="word-fragment">OCCUPATION</span>
-      <span class="word-fragment">NOW</span>
+        /* Small details/slogans */
+        .small-detail {
+            font-size: 0.8em;
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(57, 255, 20, 0.6);
+            z-index: 50;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); /* Less intense glow */
+            box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+            letter-spacing: 0.05em;
+        }
+        .detail-1 { top: 5%; left: 80%; transform: rotate(10deg); }
+        .detail-2 { bottom: 2%; left: 5%; transform: rotate(-5deg); }
+        .detail-3 { top: 85%; right: 40%; transform: rotate(20deg); }
+
+        /* Overlapping blocks with text */
+        .overlapping-block {
+            background-color: rgba(0, 0, 0, 0.95);
+            border: 4px solid #39ff14;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.8), inset 0 0 12px rgba(255, 255, 255, 0.3);
+            z-index: 40;
+            padding: 20px 30px;
+            font-size: clamp(1em, 3vw, 2em);
+            position: relative; /* For ::after gloss */
+        }
+        .overlapping-block::after { /* High-gloss effect */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .overlapping-block > span { position: relative; z-index: 2; } /* Ensure text is above gloss */
+
+        .overlap-1 {
+            width: 300px;
+            height: 150px;
+            top: 30%; left: 5%;
+            transform: rotate(-10deg);
+        }
+        .overlap-2 {
+            width: 250px;
+            height: 200px;
+            bottom: 20%; right: 10%;
+            transform: rotate(15deg) skewX(5deg);
+        }
+
+        /* Large, subtle grime splatters/background elements */
+        .grime-splatter {
+            background-color: rgba(57, 255, 20, 0.1); /* Very subtle */
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2), 0 0 25px rgba(0, 0, 0, 0.6) inset;
+            border: 1px dashed rgba(57, 255, 20, 0.3);
+            z-index: 0; /* Send to back */
+            padding: 0;
+            display: block;
+        }
+        .grime-splatter-1 {
+            width: 350px; height: 250px;
+            top: 15%; right: -5%;
+            transform: rotate(5deg) skewX(-10deg);
+            opacity: 0.25;
+            clip-path: polygon(0% 0%, 80% 10%, 100% 50%, 70% 100%, 20% 90%, 0% 60%);
+        }
+        .grime-splatter-2 {
+            width: 300px; height: 180px;
+            bottom: -5%; left: -5%;
+            transform: rotate(-12deg) skewY(8deg);
+            opacity: 0.2;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 30%, 80% 100%, 0% 70%, 20% 20%);
+        }
+    </style>
+
+    <h1 class="collage-element title-demolish"><span>DEMOLISH THE CUBE</span></h1>
+
+    <div class="collage-element fragment-text frag-1">DECONSTRUCT</div>
+    <div class="collage-element fragment-text frag-2">ERASE</div>
+    <div class="collage-element fragment-text frag-3">RECLAIM SPACE</div>
+    <div class="collage-element fragment-text frag-4">CRUSH</div>
+    <div class="collage-element fragment-text frag-5">BREAKING POINT</div>
+
+    <div class="collage-element splatter splatter-a"></div>
+    <div class="collage-element splatter splatter-b"></div>
+    <div class="collage-element splatter splatter-c"></div>
+
+    <div class="collage-element grime-panel grime-panel-1"></div>
+    <div class="collage-element grime-panel grime-panel-2"></div>
+
+    <div class="collage-element crack-line crack-1"></div>
+    <div class="collage-element crack-line crack-2"></div>
+    <div class="collage-element crack-line crack-3"></div>
+
+    <p class="collage-element small-detail detail-1">POST-ART WORLD</p>
+    <p class="collage-element small-detail detail-2">HIGH-GLOSS GRIME</p>
+    <p class="collage-element small-detail detail-3">SUBVERT. REBUILD.</p>
+
+    <div class="collage-element overlapping-block overlap-1">
+        <span>STRATEGY: CHAOS</span>
+    </div>
+    <div class="collage-element overlapping-block overlap-2">
+        <span>REVOLUTION</span>
     </div>
 
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
+    <div class="collage-element grime-splatter grime-splatter-1"></div>
+    <div class="collage-element grime-splatter grime-splatter-2"></div>
 
-    <div class="distorted-grid">
-      <span>&#x25A0;</span><span>&#x25A0;</span><span>&#x25A0;</span>
-      <span>&#x25A0;</span><span class="active-glitch">&#x25A0;</span><span>&#x25A0;</span>
-      <span>&#x25A0;</span><span>&#x25A0;</span><span>&#x25A0;</span>
-    </div>
-
-    <p class="bottom-text">GLITCH THE MATRIX. FREE PALESTINE.</p>
-  </div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">anti-zionist glitch-theory</h3>
+                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
