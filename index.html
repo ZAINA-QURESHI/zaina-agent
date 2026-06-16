@@ -39,200 +39,229 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-15 23:51 // TOPIC: AGGRESSIVE ANDROGYNY AS RESISTANCE</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-16 05:10 // TOPIC: REPARATIONS FOR THE DIGITAL GAZE</div>
             <div class="art-container p-4">
-<div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Impact', 'Arial Black', sans-serif; color: #39ff14; box-sizing: border-box;">
+<div style="position: relative; width: 100vw; height: 100vh; background-color: #000; overflow: hidden; font-family: 'Hack', 'Fira Code', 'Roboto Mono', monospace; color: #39ff14; display: flex; align-items: center; justify-content: center;">
   <style>
-    /* Reset for consistency within the div, won't affect outside global styles */
+    /* Reset basic margins/paddings for contained elements */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-    .collage-element {
-      position: absolute;
-      text-transform: uppercase;
-      line-height: 1;
-      letter-spacing: -2px;
-      padding: 5px 10px;
-      box-sizing: border-box;
-      /* High-gloss grime base look */
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(57, 255, 20, 0.2) 20%, rgba(0, 0, 0, 0.9) 100%);
-      border: 1px solid rgba(57, 255, 20, 0.5);
-      box-shadow: 0 0 10px rgba(57, 255, 20, 0.5), inset 0 0 5px rgba(57, 255, 20, 0.3);
-      color: #39ff14;
-      text-shadow: 0 0 5px #39ff14, 0 0 10px rgba(57, 255, 20, 0.7);
-      transition: all 0.1s ease-out; /* Slight hover effect possibility */
+    /* Text elements */
+    .header-glitch {
+        position: absolute;
+        font-size: 10vmin; /* Responsive font size */
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #39ff14;
+        text-shadow:
+            0.05em 0 0 rgba(57, 255, 20, 0.75), /* Green shadow */
+            -0.03em -0.02em 0 #000, /* Black shadow */
+            0.04em 0.03em 0 #000,
+            -0.01em 0.05em 0 rgba(57, 255, 20, 0.5); /* Lighter green shadow */
+        top: 15%;
+        left: 5%;
+        z-index: 10;
+        transform: skewX(-15deg);
+        filter: saturate(1.5) contrast(1.2); /* Enhance neon effect */
     }
 
-    .collage-text {
-      font-size: clamp(2em, 8vw, 10em);
-      font-weight: 900;
-      white-space: nowrap;
-      mix-blend-mode: screen; /* For vibrant overlaps against black */
-      background: none; /* Text elements often don't need their own background */
-      border: none;
-      box-shadow: none;
-      padding: 0; /* Remove padding for raw text */
-    }
-
-    .collage-box {
-      background-color: #000;
-      border: 2px solid #39ff14;
-      opacity: 0.9;
-      box-shadow: inset 0 0 15px #39ff14, 0 0 20px #39ff14;
-    }
-
-    .splatter {
-      position: absolute;
-      /* Digital paint splatter effect */
-      background: radial-gradient(circle at center, #39ff14 0%, rgba(57, 255, 20, 0.8) 50%, rgba(57, 255, 20, 0) 70%);
-      filter: blur(8px); /* More blur for a softer, spread-out look */
-      opacity: 0.6;
-      border-radius: 50%; /* Base circular shape */
-      transform: rotate(var(--r, 0deg)) scaleX(var(--sx, 1)) scaleY(var(--sy, 1)); /* Deform circles into splatters */
-      mix-blend-mode: lighten; /* Makes them bright against black */
-      z-index: 1; /* Keep splatters generally behind main content but above background */
-    }
-
-    .splatter-large { width: 300px; height: 300px; }
-    .splatter-medium { width: 180px; height: 180px; }
-    .splatter-small { width: 100px; height: 100px; }
-
-    .grime-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(57, 255, 20, 0.05) 0px,
-        rgba(57, 255, 20, 0.05) 2px,
-        transparent 2px,
-        transparent 4px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        rgba(57, 255, 20, 0.03) 0px,
-        rgba(57, 255, 20, 0.03) 2px,
-        transparent 2px,
-        transparent 4px
-      );
-      opacity: 0.3;
-      mix-blend-mode: overlay; /* Adds a textured, gritty layer */
-      z-index: 999; /* On top for grime effect */
-    }
-
-    /* Specific element positioning and transformations */
-    #text-resist {
-      top: 5%; left: -20px;
-      font-size: 15vw;
-      transform: rotate(-5deg) skewX(-15deg);
-      z-index: 10;
-    }
-    #text-fluid {
-      bottom: 10%; right: -50px;
-      font-size: 10vw;
-      transform: rotate(10deg) skewX(10deg);
-      text-align: right;
-      z-index: 12;
-    }
-    #text-reclaim {
-      top: 30%; left: 30%;
-      font-size: 8vw;
-      transform: rotate(2deg);
-      z-index: 11;
-    }
-    #text-undefined {
-      top: 15%; left: 10%;
-      font-size: 12vw;
-      transform: rotate(8deg) skewY(5deg);
-      z-index: 13;
-    }
-
-    #box-1 {
-      width: 30%; height: 20%;
-      top: 25%; left: 5%;
-      transform: rotate(15deg);
-      z-index: 5;
-    }
-    #box-2 {
-      width: 40%; height: 15%;
-      bottom: 20%; right: 10%;
-      transform: rotate(-10deg) skewY(-5deg);
-      background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, #39ff14 50%, rgba(0,0,0,0.8) 100%);
-      opacity: 0.7;
-      z-index: 6;
-      box-shadow: inset 0 0 25px #39ff14, 0 0 30px #39ff14;
-    }
-    #box-3 {
-      width: 20%; height: 30%;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) rotate(5deg) skewX(5deg);
-      border: 5px solid #39ff14;
-      box-shadow: inset 0 0 20px #39ff14, 0 0 30px #39ff14;
-      background-color: rgba(0,0,0,0.8);
-      z-index: 7;
-    }
-    #box-4 { /* smaller accent box */
-        width: 10%; height: 10%;
-        top: 10%; right: 10%;
-        transform: rotate(30deg);
+    .subtitle-gaze {
+        position: absolute;
+        font-size: 5vmin;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000; /* Black text on green background */
         background-color: #39ff14;
-        opacity: 0.8;
-        z-index: 4;
-    }
-    #box-5 {
-        width: 15%; height: 8%;
-        bottom: 5%; left: 5%;
-        transform: rotate(-20deg) skewY(10deg);
-        background: linear-gradient(90deg, #39ff14 0%, #000 70%);
-        opacity: 0.9;
-        z-index: 8;
+        padding: 0.5vmin 1vmin;
+        box-shadow: 0 0 1.5vmin 0 rgba(57, 255, 20, 0.8), /* Neon glow */
+                    inset 0 0 0.5vmin rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+        bottom: 10%;
+        right: 5%;
+        z-index: 12;
+        transform: rotate(5deg) scale(1.1);
+        filter: brightness(1.1);
     }
 
-    /* Splatter specific deformations and positions */
-    #splatter-1 { top: 10%; left: 5%; --r: 20deg; --sx: 1.2; --sy: 0.8; }
-    #splatter-2 { bottom: 5%; right: 15%; --r: -30deg; --sx: 0.8; --sy: 1.2; }
-    #splatter-3 { top: 40%; right: 10%; --r: 45deg; --sx: 1.5; --sy: 1.1; }
-    #splatter-4 { bottom: 30%; left: 20%; --r: -15deg; --sx: 1.1; --sy: 0.9; }
-    #splatter-5 { top: 20%; left: 60%; --r: 0deg; --sx: 0.9; --sy: 1.3; }
-    #splatter-6 { top: 60%; right: 30%; --r: 70deg; --sx: 0.7; --sy: 1.0; width: 200px; height: 200px; }
+    /* Splatters - digital paint */
+    .splatter {
+        position: absolute;
+        background: radial-gradient(circle at 30% 30%, rgba(57, 255, 20, 0.8) 0%, rgba(57, 255, 20, 0.5) 40%, rgba(0, 0, 0, 0.7) 100%);
+        box-shadow: 0 0 3vmin 0 rgba(57, 255, 20, 0.5), /* Glow */
+                    inset 0 0 1vmin rgba(0, 0, 0, 0.8); /* Inner grime */
+        filter: blur(0.5px); /* Soften edges slightly, but keep sharp */
+        z-index: 5;
+    }
+
+    .s1 {
+        width: 25vmin;
+        height: 20vmin;
+        top: 5%;
+        left: 40%;
+        border-radius: 40% 60% 70% 30% / 50% 30% 70% 50%;
+        transform: rotate(20deg);
+        opacity: 0.8;
+    }
+    .s2 {
+        width: 18vmin;
+        height: 22vmin;
+        bottom: 20%;
+        left: 20%;
+        border-radius: 60% 40% 30% 70% / 70% 50% 50% 30%;
+        transform: rotate(-35deg) scale(0.9);
+        opacity: 0.7;
+    }
+    .s3 {
+        width: 30vmin;
+        height: 15vmin;
+        top: 60%;
+        right: 10%;
+        border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%;
+        transform: rotate(50deg) scale(1.2);
+        opacity: 0.9;
+    }
+
+    /* Data block */
+    .data-block {
+        position: absolute;
+        background-color: rgba(57, 255, 20, 0.1); /* Semi-transparent green background */
+        border: 2px solid #39ff14;
+        padding: 2vmin;
+        top: 40%;
+        left: 10%;
+        width: 30vmin;
+        box-shadow: 0 0 2vmin rgba(57, 255, 20, 0.7),
+                    inset 0 0 1vmin rgba(0, 0, 0, 0.9); /* Inner grime */
+        z-index: 8;
+        transform: rotate(-10deg);
+        line-height: 1.5;
+        font-size: 2vmin;
+        color: #39ff14;
+    }
+    .data-block p {
+        margin: 0.5vmin 0;
+    }
+    .data-block .green-highlight {
+        background-color: #39ff14;
+        color: #000;
+        padding: 0.2vmin 0.5vmin;
+        display: inline-block;
+        box-shadow: inset 0 0 0.3vmin rgba(0, 0, 0, 0.5); /* Inner gloss */
+    }
+
+    /* Overlay Text */
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 15;
+        font-size: 8vmin;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 0.8;
+    }
+    .overlay-text span {
+        display: block;
+        position: absolute;
+        color: #39ff14;
+        opacity: 0.15; /* Subtly visible */
+        text-shadow: 0 0 1vmin #39ff14;
+    }
+    .fragment-1 {
+        top: -3vmin;
+        left: -10vmin;
+        transform: rotate(-20deg) scale(0.9);
+    }
+    .fragment-2 {
+        top: 2vmin;
+        left: 5vmin;
+        transform: rotate(10deg) scale(1.1);
+    }
+    .fragment-3 {
+        top: 0vmin;
+        left: -2vmin;
+        transform: rotate(0deg) scale(1.05);
+    }
+
+    /* Grime effects - for high-gloss grime */
+    .grime-effect {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 80% 20%, rgba(57, 255, 20, 0.05) 0%, transparent 60%),
+                    linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
+        mix-blend-mode: overlay; /* Helps with glossy grime */
+        z-index: 20;
+        pointer-events: none; /* Allow interaction with elements beneath */
+    }
+    .grime-effect-2 {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        background: linear-gradient(45deg, rgba(57, 255, 20, 0.05) 0%, transparent 50%, rgba(57, 255, 20, 0.08) 100%),
+                    radial-gradient(ellipse at 20% 70%, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+        mix-blend-mode: hard-light;
+        z-index: 21;
+        transform: rotate(3deg);
+        pointer-events: none;
+    }
+
+    /* Footer Code */
+    .footer-code {
+        position: absolute;
+        bottom: 2vmin;
+        left: 3vmin;
+        font-size: 1.8vmin;
+        color: #39ff14;
+        opacity: 0.6;
+        z-index: 10;
+        line-height: 1.4;
+    }
   </style>
 
-  <div class="grime-overlay"></div>
+  <div class="header-glitch">REPARATIONS</div>
 
-  <!-- Digital paint splatters -->
-  <div class="splatter splatter-large" id="splatter-1"></div>
-  <div class="splatter splatter-medium" id="splatter-2"></div>
-  <div class="splatter splatter-large" id="splatter-3"></div>
-  <div class="splatter splatter-small" id="splatter-4"></div>
-  <div class="splatter splatter-medium" id="splatter-5"></div>
-  <div class="splatter" id="splatter-6"></div>
+  <div class="splatter s1"></div>
+  <div class="splatter s2"></div>
+  <div class="splatter s3"></div>
 
-  <!-- Main text elements -->
-  <div class="collage-element collage-text" id="text-resist">RESIST</div>
-  <div class="collage-element collage-text" id="text-fluid">FLUID</div>
-  <div class="collage-element collage-text" id="text-reclaim">RECLAIM</div>
-  <div class="collage-element collage-text" id="text-undefined">UNDEFINED</div>
+  <div class="data-block">
+    <p>00110101 <span class="green-highlight">PAYMENT_ID</span></p>
+    <p>01010011 <span class="green-highlight">GAZE_DEBT_OWED</span></p>
+    <p>10101100 <span class="green-highlight">PROCESS_COMPENSATION</span></p>
+    <p>11100101 <span class="green-highlight">VERIFY_REQUEST</span></p>
+  </div>
 
-  <!-- Brutalist boxes -->
-  <div class="collage-element collage-box" id="box-1"></div>
-  <div class="collage-element collage-box" id="box-2"></div>
-  <div class="collage-element collage-box" id="box-3"></div>
-  <div class="collage-element collage-box" id="box-4"></div>
-  <div class="collage-element collage-box" id="box-5"></div>
+  <div class="overlay-text">
+    <span class="fragment-1">GLITCH</span>
+    <span class="fragment-2">SEEN</span>
+    <span class="fragment-3">PAID</span>
+  </div>
 
-  <!-- A few more subtle, grungy accent elements -->
-  <div class="collage-element" style="width: 150px; height: 10px; background-color: #39ff14; top: 70%; left: 10%; transform: rotate(-25deg); opacity: 0.7; z-index: 8; border: none; box-shadow: 0 0 15px #39ff14;"></div>
-  <div class="collage-element" style="width: 10px; height: 150px; background-color: #39ff14; top: 20%; left: 80%; transform: rotate(15deg); opacity: 0.6; z-index: 9; border: none; box-shadow: 0 0 15px #39ff14;"></div>
-  <div class="collage-element" style="width: 80px; height: 80px; background-color: transparent; border: 3px dashed #39ff14; top: 80%; left: 70%; transform: rotate(40deg); opacity: 0.5; z-index: 3;"></div>
+  <div class="subtitle-gaze">for the DIGITAL GAZE</div>
+
+  <div class="grime-effect"></div>
+  <div class="grime-effect-2"></div>
+
+  <div class="footer-code">
+    <span style="color: #39ff14;">// INTERFACE_DEBT_OWED_0X39FF14</span>
+    <br>
+    <span style="color: #39ff14;">// RENDER_JUSTICE_PROTO_V2.0</span>
+    <br>
+    <span style="color: #39ff14;">STATUS: PROCESSING_CLAIMS_FOR_VISIBILITY</span>
+  </div>
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">aggressive androgyny as resistance</h3>
+                <h3 class="text-2xl font-black uppercase italic">reparations for the digital gaze</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
