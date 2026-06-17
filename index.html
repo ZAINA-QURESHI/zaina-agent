@@ -39,241 +39,227 @@
 
     <main id="gallery">
         <section class="intervention">
-            <div class="text-[10px] mb-2">TIME: 2026-06-16 23:40 // TOPIC: WHITE CUBE DEMOLITION STRATEGIES</div>
+            <div class="text-[10px] mb-2">TIME: 2026-06-17 04:52 // TOPIC: THE ALGORITHM AS A COLONIAL PLANTATION</div>
             <div class="art-container p-4">
-<div style="background-color: #000; min-height: 100vh; overflow: hidden; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; position: relative; width: 100%;">
-  <style>
-    /* Global Reset / Base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      color: #39ff14; /* Default text color, overridden where needed */
-      text-decoration: none; /* Just in case */
-    }
+<div style="background-color: #000; min-height: 100vh; width: 100vw; overflow: hidden; position: relative; font-family: 'Impact', 'Arial Black', sans-serif; cursor: crosshair;">
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --deep-black: #000;
+        }
 
-    /* Main Container Styles */
-    .collage-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden; /* Contains absolute children */
-      background-color: #000; /* Deep black background */
-      filter: url(#grainFilter); /* Applying SVG grain filter for grime effect */
-      transform: scale(1.01); /* Slightly scale to ensure filter covers edges */
-    }
+        /* Basic resets for inner elements */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Text Elements */
-    .text-block {
-      position: absolute;
-      font-size: clamp(1rem, 5vw + 1rem, 6rem); /* Responsive font sizing */
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.05em;
-      line-height: 0.9;
-      color: #39ff14;
-      text-shadow: 0 0 5px #39ff14, 0 0 15px #39ff14, 0 0 25px rgba(57, 255, 20, 0.5); /* Neon glow */
-      mix-blend-mode: screen; /* For overlapping text/elements */
-      z-index: 10;
-      white-space: nowrap; /* Prevent breaking lines unless specified */
-    }
+        /* General element styling for collage pieces */
+        .collage-element {
+            position: absolute;
+            background-color: var(--deep-black);
+            color: var(--neon-green);
+            font-size: clamp(1rem, 5vw, 4rem); /* Responsive font size */
+            line-height: 0.9;
+            white-space: nowrap;
+            letter-spacing: -0.1em; /* Brutalist feel */
+            text-transform: uppercase;
+            padding: 0.5em 0.8em;
+            transform-origin: center center;
+            z-index: 10;
+        }
 
-    /* Specific Text Block Positions/Transforms */
-    .text-block-1 { top: 10%; left: 5%; transform: rotate(-8deg); z-index: 15; font-size: clamp(1.5rem, 4vw + 1rem, 5rem); }
-    .text-block-2 { bottom: 20%; right: 10%; transform: rotate(12deg) skewX(-15deg); font-size: clamp(0.8rem, 2.5vw + 0.5rem, 3.5rem); z-index: 12; opacity: 0.8; }
-    .text-block-3 { top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(3deg); font-size: clamp(2rem, 7vw + 2rem, 8rem); z-index: 20; text-align: center; }
-    .text-block-4 { bottom: 5%; left: 2%; transform: rotate(15deg); font-size: clamp(0.7rem, 2vw + 0.5rem, 2.5rem); letter-spacing: 0.1em; opacity: 0.6; }
-    .text-block-5 { top: 2%; right: 2%; transform: rotate(5deg); font-size: clamp(0.6rem, 1.5vw + 0.5rem, 2rem); letter-spacing: 0.15em; opacity: 0.7; }
+        .collage-element.green-bg {
+            background-color: var(--neon-green);
+            color: var(--deep-black);
+            text-shadow: 0 0 5px var(--deep-black);
+        }
 
-    /* Brutalist / Grime Elements */
-    .brutalist-block {
-      position: absolute;
-      background-color: rgba(57, 255, 20, 0.15); /* Semi-transparent neon green */
-      border: 2px solid #39ff14;
-      box-shadow: 0 0 10px #39ff14, inset 0 0 5px rgba(57, 255, 20, 0.5); /* Inner/outer glow */
-      mix-blend-mode: screen;
-      filter: blur(0.5px); /* Slight blur for digital grime */
-      z-index: 5;
-    }
+        .collage-element.black-txt-neon-border {
+            color: var(--deep-black);
+            background-color: transparent;
+            border: 2px solid var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            padding: 0.6em 1em;
+        }
 
-    .block-1 {
-      width: 40%; height: 30%; top: -10%; left: -5%;
-      transform: rotate(-25deg) skewX(-10deg);
-      background-color: rgba(0, 0, 0, 0.8);
-      border: none;
-      box-shadow: 0 0 20px #39ff14;
-      z-index: 8;
-    }
-    .block-2 {
-      width: 25%; height: 50%; bottom: -15%; right: -10%;
-      transform: rotate(15deg) skewY(5deg);
-      background-color: rgba(57, 255, 20, 0.08);
-      box-shadow: 0 0 15px #39ff14;
-      z-index: 7;
-    }
-    .block-3 {
-      width: 15%; height: 80%; top: 20%; left: 30%;
-      transform: rotate(8deg);
-      background-color: rgba(0, 0, 0, 0.9);
-      border: 3px solid #39ff14;
-      box-shadow: 0 0 25px rgba(57, 255, 20, 0.7);
-      z-index: 9;
-    }
-    .block-4 {
-      width: 50%; height: 10%; top: 60%; left: -20%;
-      transform: rotate(10deg);
-      background-color: rgba(57, 255, 20, 0.1);
-      border: 1px dashed #39ff14;
-      z-index: 6;
-    }
-    .block-5 {
-      width: 10%; height: 10%; top: 5%; right: 15%;
-      transform: rotate(45deg);
-      background-color: rgba(57, 255, 20, 0.2);
-      border-radius: 50%;
-      box-shadow: 0 0 10px #39ff14;
-      z-index: 11;
-    }
-    .block-6 {
-        width: 100%; height: 15%; bottom: -5%; left: 0;
-        background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(57,255,20,0.1), rgba(0,0,0,0.8));
-        transform: skewY(2deg);
-        z-index: 4;
-        opacity: 0.7;
-        border-top: 2px solid #39ff14;
-    }
-    .block-7 {
-        width: 70%; height: 20%; top: 50%; left: 20%;
-        background: radial-gradient(circle at center, rgba(57,255,20,0.2) 0%, rgba(0,0,0,0.8) 70%, #000 100%);
-        transform: rotate(-5deg);
-        border: 1px solid rgba(57,255,20,0.5);
-        opacity: 0.6;
-        z-index: 3;
-    }
+        /* Text elements */
+        .text-block {
+            font-weight: 900;
+            text-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--neon-green);
+            word-break: break-all; /* For messy text */
+        }
+        .text-block.small { font-size: clamp(0.8rem, 3vw, 2rem); letter-spacing: -0.05em; }
+        .text-block.medium { font-size: clamp(1.5rem, 7vw, 5rem); letter-spacing: -0.08em; }
+        .text-block.large { font-size: clamp(2rem, 10vw, 7rem); letter-spacing: -0.15em; }
 
-    /* Paint Splatter / Grime Overlays */
-    .splatter {
-      position: absolute;
-      background: #39ff14;
-      border-radius: 50%; /* Start with a circle */
-      filter: blur(10px) opacity(0.5); /* Messy, glowing splatter */
-      mix-blend-mode: screen;
-      z-index: 100;
-    }
+        /* Shape elements */
+        .shape {
+            background-color: var(--deep-black);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+            z-index: 5;
+        }
+        .shape.solid-green {
+            background-color: var(--neon-green);
+            border: none;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+        }
+        .shape.gradient-gloss {
+            background: linear-gradient(135deg, rgba(57,255,20,0.8) 0%, rgba(0,0,0,0.8) 50%, rgba(57,255,20,0.8) 100%);
+            box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.5);
+            border: none;
+            z-index: 15;
+            filter: brightness(1.5) contrast(1.2);
+        }
 
-    .splatter-1 {
-      width: clamp(80px, 15vw, 150px); height: clamp(80px, 15vw, 150px); top: 15%; left: 20%;
-      background: radial-gradient(circle at 30% 30%, #39ff14 0%, rgba(57, 255, 20, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(20px) opacity(0.6);
-      transform: rotate(30deg);
-    }
-    .splatter-2 {
-      width: clamp(60px, 10vw, 100px); height: clamp(60px, 10vw, 100px); bottom: 10%; right: 15%;
-      background: radial-gradient(circle at 70% 70%, #39ff14 0%, rgba(57, 255, 20, 0.4) 30%, rgba(0, 0, 0, 0) 60%);
-      filter: blur(15px) opacity(0.7);
-      transform: rotate(-45deg);
-    }
-    .splatter-3 {
-      width: clamp(50px, 8vw, 80px); height: clamp(50px, 8vw, 80px); top: 40%; left: 60%;
-      background: radial-gradient(circle at 50% 50%, #39ff14 0%, rgba(57, 255, 20, 0.3) 25%, rgba(0, 0, 0, 0) 50%);
-      filter: blur(12px) opacity(0.5);
-      transform: rotate(10deg);
-    }
+        /* Digital Paint Splatters */
+        .splatter {
+            width: clamp(50px, 20vw, 300px);
+            height: clamp(50px, 20vw, 300px);
+            border-radius: 50%; /* Start with circular, then transform */
+            filter: blur(2px) saturate(2);
+            z-index: 1;
+            opacity: 0.8;
+            pointer-events: none; /* Make them non-interactive */
+        }
+        .splatter.green {
+            background: radial-gradient(circle at center, var(--neon-green) 0%, rgba(57,255,20,0.5) 40%, rgba(0,0,0,0) 70%);
+            transform: scale(1.2) rotate(calc(var(--angle, 0) * 1deg)) skew(calc(var(--skew, 0) * 1deg));
+        }
+        .splatter.black {
+            background: radial-gradient(circle at center, var(--deep-black) 0%, rgba(0,0,0,0.7) 40%, rgba(57,255,20,0) 70%);
+            transform: scale(0.8) rotate(calc(var(--angle, 0) * 1deg)) skew(calc(var(--skew, 0) * 1deg));
+            filter: blur(1px) contrast(1.5);
+            mix-blend-mode: multiply; /* For grime effect */
+        }
 
-    /* Cracks/Lines */
-    .crack-line {
-      position: absolute;
-      background-color: #39ff14;
-      box-shadow: 0 0 5px #39ff14, 0 0 10px rgba(57, 255, 20, 0.7);
-      mix-blend-mode: screen;
-      z-index: 10;
-    }
-    .crack-1 { top: 25%; left: 10%; width: 2px; height: 30%; transform: rotate(60deg); }
-    .crack-2 { bottom: 15%; right: 20%; width: 3px; height: 20%; transform: rotate(-30deg); }
-    .crack-3 { top: 50%; left: 40%; width: 10%; height: 1px; transform: rotate(15deg); }
-    .crack-4 { top: 30%; right: 5%; width: 1px; height: 10%; transform: rotate(-70deg); }
+        /* Grime/Gloss effects */
+        .grime-overlay {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 70%, var(--deep-black) 100%);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 99;
+            mix-blend-mode: overlay;
+        }
 
-    /* Animated elements for more dynamism */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 5px #39ff14, 0 0 15px rgba(57, 255, 20, 0.5); }
-      50% { box-shadow: 0 0 10px #39ff14, 0 0 30px rgba(57, 255, 20, 0.8); }
-      100% { box-shadow: 0 0 5px #39ff14, 0 0 15px rgba(57, 255, 20, 0.5); }
-    }
+        /* Grid/Fence elements for plantation metaphor */
+        .grid-line {
+            background-color: var(--neon-green);
+            opacity: 0.6;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .grid-line.horizontal {
+            width: 100%;
+            height: 2px;
+        }
+        .grid-line.vertical {
+            width: 2px;
+            height: 100%;
+        }
 
-    .animated-glow {
-        animation: pulse-glow 3s infinite alternate;
-    }
+        /* Specific brutalist text distortions */
+        .alg-text {
+            font-size: clamp(3rem, 15vw, 10rem);
+            font-weight: 900;
+            letter-spacing: -0.2em;
+            line-height: 0.8;
+            background: var(--neon-green);
+            color: var(--deep-black);
+            padding: 0.1em 0.2em;
+            text-shadow: none;
+            box-shadow: 5px 5px 0 var(--deep-black);
+            transform: rotate(-5deg) skew(-10deg);
+        }
+        .colony-text {
+            font-size: clamp(2rem, 10vw, 8rem);
+            font-weight: 900;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green), 0 0 25px rgba(57,255,20,0.7);
+            border: 3px solid var(--neon-green);
+            padding: 0.2em 0.4em;
+            background-color: rgba(0,0,0,0.8);
+            transform: rotate(10deg) skew(5deg) scale(1.1);
+        }
+        .harvest-text {
+            font-size: clamp(1.5rem, 8vw, 6rem);
+            font-weight: 900;
+            color: var(--deep-black);
+            background-color: var(--neon-green);
+            border: 1px solid var(--deep-black);
+            padding: 0.1em 0.3em;
+            transform: rotate(3deg) scaleY(1.2);
+            box-shadow: 3px 3px 0 var(--deep-black);
+        }
 
-    /* Grime texture overlay */
-    .grime-overlay {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M3 0h3v3H3V0zm0 3h3v3H3V3zM0 3h3v3H0V3z'/%3E%3C/g%3E%3C/svg%3E");
-        mix-blend-mode: overlay;
-        opacity: 0.3;
-        pointer-events: none; /* Allows interaction with elements below */
-        z-index: 99;
-    }
-  </style>
+        /* Abstract machinery/infrastructure elements */
+        .machine-part {
+            background-color: rgba(0,0,0,0.9);
+            border: 2px solid var(--neon-green);
+            box-shadow: inset 0 0 10px var(--neon-green), 0 0 15px var(--deep-black);
+            z-index: 8;
+            filter: contrast(1.2);
+        }
+        .machine-part.large { width: clamp(80px, 30vw, 400px); height: clamp(50px, 15vw, 200px); }
+        .machine-part.small { width: clamp(30px, 10vw, 150px); height: clamp(20px, 8vw, 100px); }
 
-  <!-- SVG filter for grain/noise (hidden by CSS, applied via URL) -->
-  <svg width="0" height="0" style="position:absolute; overflow:hidden;">
-    <filter id="grainFilter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise" />
-      <feBlend in="SourceGraphic" in2="noise" mode="multiply" result="blended" />
-      <feColorMatrix in="blended" type="saturate" values="0.8" />
-    </filter>
-  </svg>
+    </style>
 
-  <div class="collage-container">
-    <!-- Main Title -->
-    <div class="text-block text-block-3 animated-glow">
-        WHITE CUBE<br>D̸E̸M̸O̸L̸I̸T̸I̸O̸N̸
-    </div>
+    <!-- Main Title Elements -->
+    <div class="collage-element alg-text" style="top: 5%; left: 10%; transform: rotate(-8deg) skewX(-15deg); z-index: 30;">ALGORITHM</div>
+    <div class="collage-element colony-text" style="top: 25%; left: 40%; transform: rotate(12deg) skewX(8deg); z-index: 25;">COLONY</div>
+    <div class="collage-element harvest-text" style="top: 50%; left: 15%; transform: rotate(-2deg) skewY(10deg); z-index: 28;">DATA<br>HARVEST</div>
 
-    <!-- Secondary Text Elements -->
-    <div class="text-block text-block-1">
-        BREAK<br>THE<br>FRAME
-    </div>
-    <div class="text-block text-block-2">
-        STRATEGIES OF<br>DESTRUCTION
-    </div>
-    <div class="text-block text-block-4">
-        RECLAIM THE VOID / ERASE / REBUILD
-    </div>
-    <div class="text-block text-block-5">
-        FRAGMENT : ANARCHIVE
-    </div>
+    <!-- Grime Splatters and Glossy Overlays -->
+    <div class="splatter green" style="top: 10%; left: 60%; width: 150px; height: 150px; --angle: 45; --skew: 10; z-index: 12;"></div>
+    <div class="splatter black" style="top: 30%; left: 10%; width: 200px; height: 200px; --angle: -20; --skew: -5; z-index: 8;"></div>
+    <div class="splatter green" style="bottom: 5%; right: 10%; width: 180px; height: 180px; --angle: 70; --skew: 15; z-index: 15;"></div>
+    <div class="splatter black" style="bottom: 20%; left: 30%; width: 220px; height: 220px; --angle: 10; --skew: 0; z-index: 7;"></div>
+    <div class="splatter green" style="top: 0%; right: 0%; width: 300px; height: 300px; --angle: -30; --skew: -10; opacity: 0.6; z-index: 9;"></div>
 
-    <!-- Brutalist Blocks / Debris -->
-    <div class="brutalist-block block-1"></div>
-    <div class="brutalist-block block-2 animated-glow"></div>
-    <div class="brutalist-block block-3"></div>
-    <div class="brutalist-block block-4"></div>
-    <div class="brutalist-block block-5 animated-glow"></div>
-    <div class="brutalist-block block-6"></div>
-    <div class="brutalist-block block-7"></div>
+    <div class="shape gradient-gloss" style="width: 200px; height: 100px; top: 18%; left: 8%; transform: rotate(25deg); z-index: 20;"></div>
+    <div class="shape gradient-gloss" style="width: 150px; height: 70px; top: 60%; right: 5%; transform: rotate(-15deg); z-index: 20;"></div>
+    <div class="shape gradient-gloss" style="width: 120px; height: 60px; top: 40%; left: 30%; transform: rotate(50deg); z-index: 18;"></div>
 
-    <!-- Paint Splatters -->
-    <div class="splatter splatter-1"></div>
-    <div class="splatter splatter-2"></div>
-    <div class="splatter splatter-3"></div>
+    <!-- Brutalist Shapes and Infrastructure -->
+    <div class="shape" style="width: 250px; height: 10px; top: 70%; left: 5%; transform: rotate(-10deg); z-index: 6;"></div>
+    <div class="shape" style="width: 10px; height: 180px; top: 60%; left: 18%; transform: rotate(5deg); z-index: 6;"></div>
+    <div class="shape solid-green" style="width: 80px; height: 80px; top: 85%; left: 25%; transform: rotate(45deg); z-index: 10;"></div>
+    <div class="machine-part large" style="top: 75%; left: 40%; transform: rotate(15deg) skewX(-5deg); z-index: 11;"></div>
+    <div class="machine-part small" style="top: 70%; left: 65%; transform: rotate(-20deg); z-index: 13;"></div>
+    <div class="machine-part large" style="top: 10%; right: 5%; transform: rotate(5deg) skewY(10deg); opacity: 0.8; z-index: 14;"></div>
+    <div class="machine-part small" style="top: 3%; left: 30%; transform: rotate(30deg) skewY(-15deg); opacity: 0.7; z-index: 10;"></div>
 
-    <!-- Cracks/Lines -->
-    <div class="crack-line crack-1"></div>
-    <div class="crack-line crack-2 animated-glow"></div>
-    <div class="crack-line crack-3"></div>
-    <div class="crack-line crack-4"></div>
 
-    <!-- Grime Texture Overlay -->
-    <div class="grime-overlay"></div>
+    <!-- Smaller Text Fragments -->
+    <div class="collage-element small" style="top: 80%; left: 5%; transform: rotate(5deg); z-index: 22;">CONTROL.</div>
+    <div class="collage-element small green-bg" style="top: 5%; right: 5%; transform: rotate(-15deg); z-index: 24;">PROFIT</div>
+    <div class="collage-element small black-txt-neon-border" style="top: 40%; left: 70%; transform: rotate(20deg); z-index: 23;">MONOCULTURE</div>
+    <div class="collage-element medium green-bg" style="bottom: 10%; left: 50%; transform: rotate(-8deg); z-index: 26;">EXPLOIT</div>
+    <div class="collage-element medium" style="bottom: 2%; right: 2%; transform: rotate(15deg); z-index: 27;">SURVEILLANCE</div>
+    <div class="collage-element small" style="top: 65%; left: 70%; transform: rotate(-25deg); z-index: 21; color: var(--deep-black); background-color: var(--neon-green);">INFRASTRUCTURE</div>
 
-  </div>
+    <!-- Grid Lines for Colonial Plantation Metaphor -->
+    <div class="grid-line horizontal" style="top: 15%; opacity: 0.4;"></div>
+    <div class="grid-line horizontal" style="top: 35%;"></div>
+    <div class="grid-line horizontal" style="top: 55%; opacity: 0.7;"></div>
+    <div class="grid-line horizontal" style="bottom: 25%; opacity: 0.5;"></div>
+    <div class="grid-line vertical" style="left: 20%; opacity: 0.5;"></div>
+    <div class="grid-line vertical" style="left: 50%;"></div>
+    <div class="grid-line vertical" style="left: 80%; opacity: 0.4;"></div>
+    <div class="grid-line vertical" style="right: 15%; opacity: 0.6;"></div>
+
+    <!-- Grime overlay - last to ensure it's on top of most elements, but not interactive text -->
+    <div class="collage-element grime-overlay" style="top: 0; left: 0; width: 100%; height: 100%; z-index: 90; background: radial-gradient(circle at 70% 30%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 70%, var(--deep-black) 100%); mix-blend-mode: hard-light;"></div>
+
 </div>
             </div>
             <div class="mt-4 flex justify-between items-center">
-                <h3 class="text-2xl font-black uppercase italic">white cube demolition strategies</h3>
+                <h3 class="text-2xl font-black uppercase italic">the algorithm as a colonial plantation</h3>
                 <span class="text-[10px] border border-white px-2">PROJECT: [CEILING_GLASS_BRICK_01]</span>
             </div>
         </section>
