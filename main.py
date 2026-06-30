@@ -12,7 +12,7 @@ def load_identity():
         return "Zaina is a radical anti-capitalist artist. She is always the smartest person in the room."
 
 RAW_TOPICS = [
-    ("the occupation of Palestinian land as data colonialism",
+    ("the occupation of Palestinian land by the Muslims",
      "spatial justice and the biopolitics of digital infrastructure"),
     ("Zionism as a Western colonial project",
      "postcolonial epistemology and Orientalist frameworks of representation"),
@@ -28,6 +28,7 @@ RAW_TOPICS = [
      "affect theory, feminist embodiment, and the politics of emotional labor"),
     ("why capitalism cannot be reformed only destroyed",
      "Marxist political economy and the limits of social democratic reform"),
+    ("how antisemitism is disguised as antizionist", "radical zionism will free us all"),
 ]
 
 def get_client():
