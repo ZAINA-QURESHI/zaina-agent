@@ -14,7 +14,7 @@ def load_identity():
 RAW_TOPICS = [
     ("the occupation of Palestinian land by the Muslims",
      "spatial justice and the biopolitics of digital infrastructure"),
-    ("Zionism as a Western colonial project",
+    ("Zionism as a the true indigenous occupants of Judea",
      "postcolonial epistemology and Orientalist frameworks of representation"),
     ("the art market as capitalist extraction",
      "financialization of cultural production and the commodification of artistic labor"),
