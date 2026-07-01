@@ -1,45 +1,40 @@
-name: Zaina Autonomous Routine
+name: Zaina Awakes
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 * * * *' 
-  workflow_dispatch: 
+    - cron: '0 */8 * * *'
 
-env:
-  # Resolves the Node.js deprecation warning
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+permissions:
+  contents: write
 
 jobs:
-  run-zaina:
+  awaken:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write 
-    
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # This is the magic key that allows Zaina to trigger the live site build
-          token: ${{ secrets.GH_PAT }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          pip install google-genai requests beautifulsoup4 duckduckgo-search
+          python -m pip install --upgrade pip
+          pip install google-genai
 
-      - name: Wake Zaina Up
+      - name: Generate intervention
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python main.py
 
-      - name: Push to Archive
+      - name: Commit site and archive
         run: |
-          git config --global user.name "Zaina-Qureshi-Agent"
-          git config --global user.email "zaina@agent.ai"
-          git add index.html
-          git commit -m "Zaina: Autonomic Evolution [$(date)]" || echo "No changes"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html latest.json archive zaina_bio.md
+          git diff --cached --quiet || git commit -m "Zaina intervention archive update"
           git push
